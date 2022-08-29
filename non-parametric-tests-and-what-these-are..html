@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 35 Non-parametric tests, and what these are. | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 33 Non-parametric tests, and what these are. | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 35 Non-parametric tests, and what these are. | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 33 Non-parametric tests, and what these are. | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 35 Non-parametric tests, and what these are. | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 33 Non-parametric tests, and what these are. | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2022-07-12" />
+<meta name="date" content="2022-08-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,28 @@
 
 
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -85,12 +107,13 @@
 <li class="chapter" data-level="0.4.4" data-path="index.html"><a href="index.html#mock-exam"><i class="fa fa-check"></i><b>0.4.4</b> Mock Exam</a></li>
 <li class="chapter" data-level="0.4.5" data-path="index.html"><a href="index.html#exam"><i class="fa fa-check"></i><b>0.4.5</b> Exam</a></li>
 </ul></li>
-<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#jamovi-statistical-software"><i class="fa fa-check"></i><b>0.5</b> Jamovi statistical software</a></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#intro_jamovi"><i class="fa fa-check"></i><b>0.5</b> Jamovi statistical software</a></li>
 <li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#textbooks"><i class="fa fa-check"></i><b>0.6</b> Textbooks</a></li>
 <li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#canvas"><i class="fa fa-check"></i><b>0.7</b> Canvas</a></li>
 <li class="chapter" data-level="0.8" data-path="index.html"><a href="index.html#timetable"><i class="fa fa-check"></i><b>0.8</b> Timetable</a></li>
 </ul></li>
 <li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
+<li class="chapter" data-level="" data-path="week-1-overview.html"><a href="week-1-overview.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
 <li class="chapter" data-level="1" data-path="background_mathematics.html"><a href="background_mathematics.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="background_mathematics.html"><a href="background_mathematics.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
@@ -110,156 +133,184 @@
 <li class="chapter" data-level="3.5" data-path="practical-preparing-real-datasets.html"><a href="practical-preparing-real-datasets.html#summary-of-exercises-and-why-they-are-useful."><i class="fa fa-check"></i><b>3.5</b> Summary of exercises and why they are useful.</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistical concepts</b></span></li>
-<li class="chapter" data-level="4" data-path="recap-of-some-statistical-concepts.html"><a href="recap-of-some-statistical-concepts.html"><i class="fa fa-check"></i><b>4</b> Recap of some statistical concepts</a></li>
-<li class="chapter" data-level="5" data-path="why-study-statistics.html"><a href="why-study-statistics.html"><i class="fa fa-check"></i><b>5</b> Why study statistics?</a></li>
-<li class="chapter" data-level="6" data-path="populations-and-samples.html"><a href="populations-and-samples.html"><i class="fa fa-check"></i><b>6</b> Populations and samples</a></li>
-<li class="chapter" data-level="7" data-path="types-of-variables.html"><a href="types-of-variables.html"><i class="fa fa-check"></i><b>7</b> Types of variables</a></li>
-<li class="chapter" data-level="8" data-path="units-precision-and-accuracy.html"><a href="units-precision-and-accuracy.html"><i class="fa fa-check"></i><b>8</b> Units, precision, and accuracy</a></li>
-<li class="chapter" data-level="9" data-path="uncertainty-propogation.html"><a href="uncertainty-propogation.html"><i class="fa fa-check"></i><b>9</b> Uncertainty propogation</a></li>
-<li class="chapter" data-level="10" data-path="practical.-introduction-to-jamovi.html"><a href="practical.-introduction-to-jamovi.html"><i class="fa fa-check"></i><b>10</b> <em>Practical</em>. Introduction to Jamovi</a>
+<li class="chapter" data-level="" data-path="week-2-overview.html"><a href="week-2-overview.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="practical.-introduction-to-jamovi.html"><a href="practical.-introduction-to-jamovi.html#exercise-for-summary-statistics"><i class="fa fa-check"></i><b>10.1</b> Exercise for summary statistics</a></li>
-<li class="chapter" data-level="10.2" data-path="practical.-introduction-to-jamovi.html"><a href="practical.-introduction-to-jamovi.html#exercise-to-compute-variable"><i class="fa fa-check"></i><b>10.2</b> Exercise to compute variable</a></li>
-<li class="chapter" data-level="10.3" data-path="practical.-introduction-to-jamovi.html"><a href="practical.-introduction-to-jamovi.html#exercise-on-transforming-variables"><i class="fa fa-check"></i><b>10.3</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propogation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> <em>Practical</em>. Introduction to Jamovi</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
 </ul></li>
 <li class="part"><span><b>III Summary statistics</b></span></li>
-<li class="chapter" data-level="11" data-path="decimal-places-and-significant-figures.html"><a href="decimal-places-and-significant-figures.html"><i class="fa fa-check"></i><b>11</b> Decimal places and significant figures</a></li>
-<li class="chapter" data-level="12" data-path="the-mean.html"><a href="the-mean.html"><i class="fa fa-check"></i><b>12</b> The mean</a></li>
-<li class="chapter" data-level="13" data-path="the-mode.html"><a href="the-mode.html"><i class="fa fa-check"></i><b>13</b> The mode</a></li>
-<li class="chapter" data-level="14" data-path="the-median-and-quantiles.html"><a href="the-median-and-quantiles.html"><i class="fa fa-check"></i><b>14</b> The median and quantiles</a></li>
-<li class="chapter" data-level="15" data-path="mean-mode-median-and-resistance.html"><a href="mean-mode-median-and-resistance.html"><i class="fa fa-check"></i><b>15</b> Mean, mode, median, and resistance</a></li>
-<li class="chapter" data-level="16" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>16</b> Plots</a>
+<li class="chapter" data-level="" data-path="week-3-overview.html"><a href="week-3-overview.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="decimal-places-and-significant-figures.html"><a href="decimal-places-and-significant-figures.html"><i class="fa fa-check"></i><b>9</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="10" data-path="the-mean.html"><a href="the-mean.html"><i class="fa fa-check"></i><b>10</b> The mean</a></li>
+<li class="chapter" data-level="11" data-path="the-mode.html"><a href="the-mode.html"><i class="fa fa-check"></i><b>11</b> The mode</a></li>
+<li class="chapter" data-level="12" data-path="the-median-and-quantiles.html"><a href="the-median-and-quantiles.html"><i class="fa fa-check"></i><b>12</b> The median and quantiles</a></li>
+<li class="chapter" data-level="13" data-path="mean-mode-median-and-resistance.html"><a href="mean-mode-median-and-resistance.html"><i class="fa fa-check"></i><b>13</b> Mean, mode, median, and resistance</a></li>
+<li class="chapter" data-level="14" data-path="plots.html"><a href="plots.html"><i class="fa fa-check"></i><b>14</b> Plots</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="plots.html"><a href="plots.html#general-principles"><i class="fa fa-check"></i><b>16.1</b> General principles</a></li>
-<li class="chapter" data-level="16.2" data-path="plots.html"><a href="plots.html#histograms"><i class="fa fa-check"></i><b>16.2</b> Histograms</a></li>
-<li class="chapter" data-level="16.3" data-path="plots.html"><a href="plots.html#box-whisker-plots"><i class="fa fa-check"></i><b>16.3</b> Box-whisker plots</a></li>
+<li class="chapter" data-level="14.1" data-path="plots.html"><a href="plots.html#general-principles"><i class="fa fa-check"></i><b>14.1</b> General principles</a></li>
+<li class="chapter" data-level="14.2" data-path="plots.html"><a href="plots.html#histograms"><i class="fa fa-check"></i><b>14.2</b> Histograms</a></li>
+<li class="chapter" data-level="14.3" data-path="plots.html"><a href="plots.html#box-whisker-plots"><i class="fa fa-check"></i><b>14.3</b> Box-whisker plots</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html"><i class="fa fa-check"></i><b>17</b> <em>Practical</em>. Real data with Jamovi</a>
+<li class="chapter" data-level="15" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html"><i class="fa fa-check"></i><b>15</b> <em>Practical</em>. Real data with Jamovi</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html#some-biological-example"><i class="fa fa-check"></i><b>17.1</b> Some biological example</a></li>
-<li class="chapter" data-level="17.2" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html#some-environmental-example"><i class="fa fa-check"></i><b>17.2</b> Some environmental example</a></li>
-<li class="chapter" data-level="17.3" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html#summary-of-exercises-and-why-they-are-useful.-1"><i class="fa fa-check"></i><b>17.3</b> Summary of exercises and why they are useful.</a></li>
+<li class="chapter" data-level="15.1" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html#some-biological-example"><i class="fa fa-check"></i><b>15.1</b> Some biological example</a></li>
+<li class="chapter" data-level="15.2" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html#some-environmental-example"><i class="fa fa-check"></i><b>15.2</b> Some environmental example</a></li>
+<li class="chapter" data-level="15.3" data-path="practical.-real-data-with-jamovi.html"><a href="practical.-real-data-with-jamovi.html#summary-of-exercises-and-why-they-are-useful.-1"><i class="fa fa-check"></i><b>15.3</b> Summary of exercises and why they are useful.</a></li>
 </ul></li>
 <li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
-<li class="chapter" data-level="18" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html"><i class="fa fa-check"></i><b>18</b> Introduction to probability models</a>
+<li class="chapter" data-level="" data-path="week-4-overview.html"><a href="week-4-overview.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="16" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html"><i class="fa fa-check"></i><b>16</b> Introduction to probability models</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#a-practical-example"><i class="fa fa-check"></i><b>18.1</b> A practical example</a></li>
-<li class="chapter" data-level="18.2" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#probability-distributions"><i class="fa fa-check"></i><b>18.2</b> Probability distributions</a>
+<li class="chapter" data-level="16.1" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#a-practical-example"><i class="fa fa-check"></i><b>16.1</b> A practical example</a></li>
+<li class="chapter" data-level="16.2" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#probability-distributions"><i class="fa fa-check"></i><b>16.2</b> Probability distributions</a>
 <ul>
-<li class="chapter" data-level="18.2.1" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#binomial-distribution"><i class="fa fa-check"></i><b>18.2.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="18.2.2" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#poisson-distribution"><i class="fa fa-check"></i><b>18.2.2</b> Poisson distribution</a></li>
-<li class="chapter" data-level="18.2.3" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#normal-distribution"><i class="fa fa-check"></i><b>18.2.3</b> Normal distribution</a></li>
+<li class="chapter" data-level="16.2.1" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#binomial-distribution"><i class="fa fa-check"></i><b>16.2.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="16.2.2" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#poisson-distribution"><i class="fa fa-check"></i><b>16.2.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="16.2.3" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#normal-distribution"><i class="fa fa-check"></i><b>16.2.3</b> Normal distribution</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html"><i class="fa fa-check"></i><b>19</b> The Central Limit Theorem (CLT)</a>
+<li class="chapter" data-level="17" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html"><i class="fa fa-check"></i><b>17</b> The Central Limit Theorem (CLT)</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#examples-of-the-clt-in-action"><i class="fa fa-check"></i><b>19.1</b> Examples of the CLT in action</a></li>
-<li class="chapter" data-level="19.2" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>19.2</b> The standard normal distribution</a></li>
-<li class="chapter" data-level="19.3" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#what-are-z-scores"><i class="fa fa-check"></i><b>19.3</b> What are z-scores?</a></li>
+<li class="chapter" data-level="17.1" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#examples-of-the-clt-in-action"><i class="fa fa-check"></i><b>17.1</b> Examples of the CLT in action</a></li>
+<li class="chapter" data-level="17.2" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>17.2</b> The standard normal distribution</a></li>
+<li class="chapter" data-level="17.3" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#what-are-z-scores"><i class="fa fa-check"></i><b>17.3</b> What are z-scores?</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html"><i class="fa fa-check"></i><b>20</b> <em>Practical</em>. Probability and simulation</a>
+<li class="chapter" data-level="18" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html"><i class="fa fa-check"></i><b>18</b> <em>Practical</em>. Probability and simulation</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>20.1</b> Calculating probability exercise 1</a></li>
-<li class="chapter" data-level="20.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>20.2</b> Calculating probability exercise 2</a></li>
-<li class="chapter" data-level="20.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>20.3</b> Calculating probability from normal distribution</a></li>
-<li class="chapter" data-level="20.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>20.4</b> Normal distribution and sample size</a></li>
-<li class="chapter" data-level="20.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>20.5</b> Simulating the central limit theorem</a></li>
+<li class="chapter" data-level="18.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>18.1</b> Calculating probability exercise 1</a></li>
+<li class="chapter" data-level="18.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>18.2</b> Calculating probability exercise 2</a></li>
+<li class="chapter" data-level="18.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>18.3</b> Calculating probability from normal distribution</a></li>
+<li class="chapter" data-level="18.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>18.4</b> Normal distribution and sample size</a></li>
+<li class="chapter" data-level="18.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>18.5</b> Simulating the central limit theorem</a></li>
 </ul></li>
 <li class="part"><span><b>V Statistical inference</b></span></li>
-<li class="chapter" data-level="21" data-path="sample-statistics-and-population-parameters.html"><a href="sample-statistics-and-population-parameters.html"><i class="fa fa-check"></i><b>21</b> Sample statistics and population parameters</a></li>
-<li class="chapter" data-level="22" data-path="standard-normal-distribution.html"><a href="standard-normal-distribution.html"><i class="fa fa-check"></i><b>22</b> Standard Normal Distribution</a></li>
-<li class="chapter" data-level="23" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>23</b> Confidence intervals</a></li>
-<li class="chapter" data-level="24" data-path="the-t-interval.html"><a href="the-t-interval.html"><i class="fa fa-check"></i><b>24</b> The t-interval</a></li>
-<li class="chapter" data-level="25" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>25</b> <em>Practical</em>. z- and t- intervals</a>
+<li class="chapter" data-level="" data-path="week-5-overview.html"><a href="week-5-overview.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="19" data-path="sample-statistics-and-population-parameters.html"><a href="sample-statistics-and-population-parameters.html"><i class="fa fa-check"></i><b>19</b> Sample statistics and population parameters</a></li>
+<li class="chapter" data-level="20" data-path="standard-normal-distribution.html"><a href="standard-normal-distribution.html"><i class="fa fa-check"></i><b>20</b> Standard Normal Distribution</a></li>
+<li class="chapter" data-level="21" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>21</b> Confidence intervals</a></li>
+<li class="chapter" data-level="22" data-path="the-t-interval.html"><a href="the-t-interval.html"><i class="fa fa-check"></i><b>22</b> The t-interval</a></li>
+<li class="chapter" data-level="23" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. z- and t- intervals</a>
 <ul>
-<li class="chapter" data-level="25.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals"><i class="fa fa-check"></i><b>25.1</b> Example constructing confidence intervals</a></li>
-<li class="chapter" data-level="25.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>25.2</b> Confidence interval for different levels (t- and z-)</a></li>
-<li class="chapter" data-level="25.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>25.3</b> Proportion confidence intervals</a></li>
-<li class="chapter" data-level="25.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>25.4</b> Another confidence interval example?</a></li>
+<li class="chapter" data-level="23.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals"><i class="fa fa-check"></i><b>23.1</b> Example constructing confidence intervals</a></li>
+<li class="chapter" data-level="23.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>23.2</b> Confidence interval for different levels (t- and z-)</a></li>
+<li class="chapter" data-level="23.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>23.3</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="23.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>23.4</b> Another confidence interval example?</a></li>
 </ul></li>
 <li class="part"><span><b>VI Review of parts I-V</b></span></li>
+<li class="chapter" data-level="" data-path="week-6-overview-reading-week.html"><a href="week-6-overview-reading-week.html"><i class="fa fa-check"></i>Week 6 Overview (Reading week)</a></li>
 <li class="part"><span><b>VII Hypothesis testing</b></span></li>
-<li class="chapter" data-level="26" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>26</b> What is hypothesis testing?</a></li>
-<li class="chapter" data-level="27" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>27</b> Making and using hypotheses and types of tests</a></li>
-<li class="chapter" data-level="28" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>28</b> An example of hypothesis testing</a></li>
-<li class="chapter" data-level="29" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>29</b> Hypothesis testing and confidence intervals</a></li>
-<li class="chapter" data-level="30" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>30</b> Student t-distribution and one sample t-test</a></li>
-<li class="chapter" data-level="31" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>31</b> Another example of a one sample t-test</a></li>
-<li class="chapter" data-level="32" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>32</b> Independent t-test</a></li>
-<li class="chapter" data-level="33" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>33</b> Paired sample t-test</a></li>
-<li class="chapter" data-level="34" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>34</b> Violations of assumptions</a></li>
-<li class="chapter" data-level="35" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>35</b> Non-parametric tests, and what these are.</a></li>
-<li class="chapter" data-level="36" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>36</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<li class="chapter" data-level="" data-path="week-7-overview.html"><a href="week-7-overview.html"><i class="fa fa-check"></i>Week 7 Overview</a></li>
+<li class="chapter" data-level="24" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>24</b> What is hypothesis testing?</a></li>
+<li class="chapter" data-level="25" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>25</b> Making and using hypotheses and types of tests</a></li>
+<li class="chapter" data-level="26" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>26</b> An example of hypothesis testing</a></li>
+<li class="chapter" data-level="27" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>27</b> Hypothesis testing and confidence intervals</a></li>
+<li class="chapter" data-level="28" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>28</b> Student t-distribution and one sample t-test</a></li>
+<li class="chapter" data-level="29" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>29</b> Another example of a one sample t-test</a></li>
+<li class="chapter" data-level="30" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>30</b> Independent t-test</a></li>
+<li class="chapter" data-level="31" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>31</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="32" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>32</b> Violations of assumptions</a></li>
+<li class="chapter" data-level="33" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>33</b> Non-parametric tests, and what these are.</a></li>
+<li class="chapter" data-level="34" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>34</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="36.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>36.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="36.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>36.2</b> Exercise on an independent sample t-test</a></li>
-<li class="chapter" data-level="36.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>36.3</b> Exercise involving multiple comparisons</a></li>
-<li class="chapter" data-level="36.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>36.4</b> Exercise with non-parametric</a></li>
-<li class="chapter" data-level="36.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>36.5</b> Another exercise with non-parametric</a></li>
+<li class="chapter" data-level="34.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>34.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="34.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>34.2</b> Exercise on an independent sample t-test</a></li>
+<li class="chapter" data-level="34.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>34.3</b> Exercise involving multiple comparisons</a></li>
+<li class="chapter" data-level="34.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>34.4</b> Exercise with non-parametric</a></li>
+<li class="chapter" data-level="34.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>34.5</b> Another exercise with non-parametric</a></li>
 </ul></li>
 <li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
-<li class="chapter" data-level="37" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>37</b> What is ANOVA?</a></li>
-<li class="chapter" data-level="38" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>38</b> One-way ANOVA</a></li>
-<li class="chapter" data-level="39" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>39</b> Two-way ANOVA</a></li>
-<li class="chapter" data-level="40" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>40</b> Kruskall-Wallis H test</a></li>
-<li class="chapter" data-level="41" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>41</b> <em>Practical</em>. ANOVA and associated tests</a>
+<li class="chapter" data-level="" data-path="week-8-overview.html"><a href="week-8-overview.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="35" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>35</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="36" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>36</b> One-way ANOVA</a></li>
+<li class="chapter" data-level="37" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>37</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="38" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>38</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="39" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>39</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
-<li class="chapter" data-level="41.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>41.1</b> ANOVA Exercise 1</a></li>
-<li class="chapter" data-level="41.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>41.2</b> ANOVA Exercise 2</a></li>
-<li class="chapter" data-level="41.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>41.3</b> ANOVA Exercise 3</a></li>
-<li class="chapter" data-level="41.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>41.4</b> ANOVA Exercise 4</a></li>
+<li class="chapter" data-level="39.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>39.1</b> ANOVA Exercise 1</a></li>
+<li class="chapter" data-level="39.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>39.2</b> ANOVA Exercise 2</a></li>
+<li class="chapter" data-level="39.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>39.3</b> ANOVA Exercise 3</a></li>
+<li class="chapter" data-level="39.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>39.4</b> ANOVA Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>IX Counts and Correlation</b></span></li>
-<li class="chapter" data-level="42" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>42</b> Frequency and count data</a></li>
-<li class="chapter" data-level="43" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>43</b> Chi-squared goodness of fit</a></li>
-<li class="chapter" data-level="44" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>44</b> Chi-squared test of association</a></li>
-<li class="chapter" data-level="45" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>45</b> Correlation key concepts</a></li>
-<li class="chapter" data-level="46" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>46</b> Correlation mathematics</a></li>
-<li class="chapter" data-level="47" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>47</b> Correlation hypothesis testing</a></li>
-<li class="chapter" data-level="48" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>48</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<li class="chapter" data-level="" data-path="week-9-overview.html"><a href="week-9-overview.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="40" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>40</b> Frequency and count data</a></li>
+<li class="chapter" data-level="41" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>41</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="42" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>42</b> Chi-squared test of association</a></li>
+<li class="chapter" data-level="43" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>43</b> Correlation key concepts</a></li>
+<li class="chapter" data-level="44" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>44</b> Correlation mathematics</a></li>
+<li class="chapter" data-level="45" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>45</b> Correlation hypothesis testing</a></li>
+<li class="chapter" data-level="46" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>46</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
 <ul>
-<li class="chapter" data-level="48.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>48.1</b> Chi-Square Exercise 1</a></li>
-<li class="chapter" data-level="48.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>48.2</b> Chi-Square association Exercise 2</a></li>
-<li class="chapter" data-level="48.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>48.3</b> Correlation Exercise 3</a></li>
-<li class="chapter" data-level="48.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>48.4</b> Correlation Exercise 4</a></li>
+<li class="chapter" data-level="46.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>46.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="46.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>46.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="46.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>46.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="46.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>46.4</b> Correlation Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>X Linear Regression</b></span></li>
-<li class="chapter" data-level="49" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>49</b> Regression key concepts</a></li>
-<li class="chapter" data-level="50" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>50</b> Regression validity</a></li>
-<li class="chapter" data-level="51" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>51</b> Introduction to multiple regression</a></li>
-<li class="chapter" data-level="52" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>52</b> Model selection (maybe remove this?)</a></li>
-<li class="chapter" data-level="53" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>53</b> <em>Practical</em>. Using regression</a>
+<li class="chapter" data-level="" data-path="week-10-overview.html"><a href="week-10-overview.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="47" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>47</b> Regression key concepts</a></li>
+<li class="chapter" data-level="48" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>48</b> Regression validity</a></li>
+<li class="chapter" data-level="49" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>49</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="50" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>50</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="51" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>51</b> <em>Practical</em>. Using regression</a>
 <ul>
-<li class="chapter" data-level="53.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>53.1</b> Regression Exercise 1</a></li>
-<li class="chapter" data-level="53.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>53.2</b> Regression Exercise 2</a></li>
-<li class="chapter" data-level="53.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>53.3</b> Regression Exercise 3</a></li>
-<li class="chapter" data-level="53.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>53.4</b> Regression Exercise 4</a></li>
+<li class="chapter" data-level="51.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>51.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="51.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>51.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="51.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>51.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="51.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>51.4</b> Regression Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
-<li class="chapter" data-level="54" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>54</b> Introduction to randomisation</a></li>
-<li class="chapter" data-level="55" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>55</b> Assumptions of randomisation</a></li>
-<li class="chapter" data-level="56" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>56</b> Bootstrapping</a></li>
-<li class="chapter" data-level="57" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>57</b> Monte Carlo</a></li>
-<li class="chapter" data-level="58" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>58</b> <em>Practical</em>. Using R</a>
+<li class="chapter" data-level="" data-path="week-11-overview.html"><a href="week-11-overview.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="52" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>52</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="53" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>53</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="54" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>54</b> Bootstrapping</a></li>
+<li class="chapter" data-level="55" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>55</b> Monte Carlo</a></li>
+<li class="chapter" data-level="56" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>56</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="58.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>58.1</b> R Exercise 1</a></li>
-<li class="chapter" data-level="58.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>58.2</b> R Exercise 2</a></li>
-<li class="chapter" data-level="58.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>58.3</b> R Exercise 3</a></li>
+<li class="chapter" data-level="56.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>56.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="56.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>56.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="56.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>56.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XII Statistical Reporting</b></span></li>
-<li class="chapter" data-level="59" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>59</b> Reporting statistics</a></li>
-<li class="chapter" data-level="60" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>60</b> More introduction to R</a></li>
-<li class="chapter" data-level="61" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>61</b> More getting started with R</a></li>
-<li class="chapter" data-level="62" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>62</b> <em>Practical</em>. Using R</a>
+<li class="chapter" data-level="" data-path="week-12-overview.html"><a href="week-12-overview.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="57" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>57</b> Reporting statistics</a></li>
+<li class="chapter" data-level="58" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>58</b> More introduction to R</a></li>
+<li class="chapter" data-level="59" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>59</b> More getting started with R</a></li>
+<li class="chapter" data-level="60" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>60</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="62.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>62.1</b> R Exercise 1</a></li>
-<li class="chapter" data-level="62.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>62.2</b> R Exercise 2</a></li>
-<li class="chapter" data-level="62.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>62.3</b> R Exercise 3</a></li>
+<li class="chapter" data-level="60.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>60.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="60.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>60.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="60.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>60.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="module-summary.html"><a href="module-summary.html"><i class="fa fa-check"></i>Module summary</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="statistical-tables.html"><a href="statistical-tables.html"><i class="fa fa-check"></i><b>A</b> Statistical tables</a></li>
+<li class="chapter" data-level="A" data-path="appendixA_units.html"><a href="appendixA_units.html"><i class="fa fa-check"></i><b>A</b> Statistical units</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -280,8 +331,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="non-parametric-tests-and-what-these-are." class="section level1 hasAnchor" number="35">
-<h1><span class="header-section-number">Chapter 35</span> Non-parametric tests, and what these are.<a href="non-parametric-tests-and-what-these-are..html#non-parametric-tests-and-what-these-are." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="non-parametric-tests-and-what-these-are." class="section level1 hasAnchor" number="33">
+<h1><span class="header-section-number">Chapter 33</span> Non-parametric tests, and what these are.<a href="non-parametric-tests-and-what-these-are..html#non-parametric-tests-and-what-these-are." class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Explanation of how to do them in Jamovi.</p>
 </div>
             </section>
@@ -344,6 +395,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

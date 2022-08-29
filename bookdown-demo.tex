@@ -1,9 +1,10 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-]{book}
+]{scrbook}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage{iftex}
@@ -38,7 +39,11 @@
 \hypersetup{
   pdftitle={Statistical Techniques for Biological and Environmental Sciences},
   pdfauthor={Brad Duthie},
-  hidelinks,
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs,array}
@@ -84,12 +89,13 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2022-07-12}
+\date{2022-08-29}
 
 \begin{document}
 \maketitle
 
 {
+\hypersetup{linkcolor=}
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
@@ -144,8 +150,8 @@ Information about the mock exam
 
 Information about the exam
 
-\hypertarget{jamovi-statistical-software}{%
-\section{Jamovi statistical software}\label{jamovi-statistical-software}}
+\hypertarget{intro_jamovi}{%
+\section{Jamovi statistical software}\label{intro_jamovi}}
 
 Introduction to \href{https://www.jamovi.org/}{Jamovi}, and why we are using it instead of other software.
 
@@ -164,6 +170,10 @@ How we will use Canvas, and how this book relates to it (Learning and Teaching c
 
 \hypertarget{part-background-mathematics-and-data-organisation}{%
 \part{Background mathematics and data organisation}\label{part-background-mathematics-and-data-organisation}}
+
+\hypertarget{week-1-overview}{%
+\chapter*{Week 1 Overview}\label{week-1-overview}}
+\addcontentsline{toc}{chapter}{Week 1 Overview}
 
 In week 1, we will focus on a refresher of some necessary background mathematics for this module. We will then turn to the topic of how to organise data sets. We will then practice organising datasets and saving them in a usable format.
 
@@ -230,59 +240,713 @@ Walks through Exercise 1.3.4, saving all of these as CSV files
 \hypertarget{part-statistical-concepts}{%
 \part{Statistical concepts}\label{part-statistical-concepts}}
 
-Overview of what this week will include.
+\hypertarget{week-2-overview}{%
+\chapter*{Week 2 Overview}\label{week-2-overview}}
+\addcontentsline{toc}{chapter}{Week 2 Overview}
 
-Week: 2
-Dates:
-Suggested Readings: Textbook intro to Jamovi
-Assessments: Practice quiz
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3269}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6731}}@{}}
+\toprule
+\endhead
+\textbf{Dates} & 30 January 2022 - 3 February 2022 \\
+\textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 4-8 \\
+& \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#the-spreadsheet}{Section 3.3}-\href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#summary-1}{3.9} \\
+& \textbf{Optional:} \citet{Rowntree2018} Chapter 2 \\
+& \textbf{Advanced:} \citet{Spiegelhalter2019} Chapters 1-3 \\
+\textbf{Lectures} & 2.0: Introduction to Week 1 (2 min.) \\
+& 2.1: Why study statistics? (18 min.) \\
+& 2.2: Populations and samples (7 min.) \\
+& 2.3: Types of variables (11 min.) \\
+& 2.4: Units, precision, and accuracy (9 min.) \\
+& 2.5. Uncertainty propagation (11 min.) \\
+\textbf{Practical} & Introduction to Jamovi \\
+\textbf{Assessments} & Week 2 Practice quiz on Canvas \\
+\bottomrule
+\end{longtable}
 
-\hypertarget{recap-of-some-statistical-concepts}{%
-\chapter{Recap of some statistical concepts}\label{recap-of-some-statistical-concepts}}
+In \protect\hyperlink{Chapter_4}{Chapter 4}, we focus on key concepts that will be used throughout this module.
+In particular, it is important to understand the difference between a \textbf{population} and a \textbf{sample}, and to recognise that there are many types of variables in statistics.
 
-Some introduction
+In \protect\hyperlink{Chapter_5}{Chapter 5}, we look at different variable types. Different types of variables have different characteristics, which will affect how these variables are best visualised in figures and analysed with statistical hypothesis tests introduced later in the semester.
+Identifying variable types will therefore be important, both for module assessments and when working with new datasets.
+A variable's type will rarely be stated explicitly when doing scientific research, and will not always be provided in assessments for this module.
+Being able to infer variable type is therefore an importat skill.
 
-\hypertarget{why-study-statistics}{%
-\chapter{Why study statistics?}\label{why-study-statistics}}
+\protect\hyperlink{Chapter_6}{Chapter 6} focus on units of measurement, and how these units are communicated in text.
+Units are essential in scientific measurement, and we will use them throughout the module to indicate the type and scale of data measurement.
+We are not expecting you to memorise all scientific units, so a \protect\hyperlink{appendixA_units}{table on units} is provided at the end of this workbook.
 
-General discussion
+\protect\hyperlink{Chapter_7}{Chapter 7} will introduce the propogation of measurement errors.
+This is important to understand because no measurement is perfectly accurate, and predicting how errors in measurement combine is fundamental to understanding measurement accuracy.
 
-\hypertarget{populations-and-samples}{%
-\chapter{Populations and samples}\label{populations-and-samples}}
+Finally, \protect\hyperlink{Chapter_8}{Chapter 8} guides you through the Week 2 practical, which is an introduction to Jamovi.
+This aim of this practical is to become familiar with the Jamovi interface and comfortable importing data into Jamovi to collect some descriptive statistics.
 
-Explanation of the mode
+\hypertarget{Chapter_4}{%
+\chapter{Populations and samples}\label{Chapter_4}}
 
-\hypertarget{types-of-variables}{%
-\chapter{Types of variables}\label{types-of-variables}}
+When we collect data, we are recording some kind of observation or measurement.
+If we are working in a forest, for example, we might want to measure the heights of different trees, or measure the concentration of carbon in the soil.
+The idea might be to use these measurements to make some kind of inference about the forest.
+But as scientists, we are almost always limited in the amount of data that we can collect.
+We cannot measure everything, so we need to collect a \emph{sample} of data and use it to make inferences about the \emph{population} of interest.
+For example, while we probably cannot measure the height of every tree in a forest, nor can we measure the concentration of carbon at every possible location in the forest's soil, we can collect a smaller number of measurements and still make useful conclusions about overall forest trees and carbon concentration.
 
-Categorical, ordinal, continuous, etc.
+Statistics thereby allows us to approximate properties of entire populations from a limited number of samples.
+This needs to be done with caution, but before getting into the details of how, it is important to understand the difference between a \textbf{population} and a \textbf{sample} to avoid confusing these two concepts.
+A \textbf{population} is the entire set of possible observations that could be collected.
+Some examples will make it easier to understand:
 
-\hypertarget{units-precision-and-accuracy}{%
-\chapter{Units, precision, and accuracy}\label{units-precision-and-accuracy}}
+\begin{itemize}
+\tightlist
+\item
+  All of the genes in the human genome
+\item
+  All individuals of voting age in Scotland
+\item
+  All common pipistrelle bats in the United Kingdom
+\end{itemize}
 
-Resistance in statistics
+These populations might be important for a particular research question.
+For example, we might want to know something about the feeding behaviours of pipistrelle bats in the UK.
+But there is no way that we can find and observe the behaviour of every bat, so we need to take a subset of the population (a sample) instead.
+Examples of samples include the following:
 
-\hypertarget{uncertainty-propogation}{%
-\chapter{Uncertainty propogation}\label{uncertainty-propogation}}
+\begin{itemize}
+\tightlist
+\item
+  A selection of 20 human genes
+\item
+  A pub full of Scottish voters
+\item
+  40 caught common pipistrelle bats
+\end{itemize}
 
-Some simple equations
+It is important to recognise that the word ``population'' means something slightly different in statistics than it does in biology.
+A biological population, for example, could be defined as all of the individuals of the same species in the same general location.
+A statistical population, in contrast, refers to a set of observations (i.e., things that we can measure).
+\citet{Sokal1995} provide a more technical definition for ``population'',
 
-\hypertarget{practical.-introduction-to-jamovi}{%
-\chapter{\texorpdfstring{\emph{Practical}. Introduction to Jamovi}{Practical. Introduction to Jamovi}}\label{practical.-introduction-to-jamovi}}
+\begin{quote}
+In statistics, population always means the \emph{totality of individual observations about which inferences are to be made, existing anywhere in the world or at least within a definitely specified sampling area limited in space and time} {[}p.~9, emphasis theirs{]}.
+\end{quote}
 
-Some introductory text to Jamovi. Particular attention, and maybe an example, on different data types and how to find them in Jamovi.
+They define a sample to be ``a collection of individual observations selected by a specified procedure'' \citep{Sokal1995}.
+For our purposes, it is not necessary to be able to recite the technical definitions, but it is important to understand the relationship between a population and a sample.
+When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population.
 
-\hypertarget{exercise-for-summary-statistics}{%
-\section{Exercise for summary statistics}\label{exercise-for-summary-statistics}}
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-1}
+\end{figure}
 
-\hypertarget{exercise-to-compute-variable}{%
-\section{Exercise to compute variable}\label{exercise-to-compute-variable}}
+\hypertarget{Chapter_5}{%
+\chapter{Types of variables}\label{Chapter_5}}
 
-\hypertarget{exercise-on-transforming-variables}{%
-\section{Exercise on transforming variables}\label{exercise-on-transforming-variables}}
+A variable is any property that is measured in an observation \citep{Sokal1995}; i.e., anything that varies among things that we can measure \citep{Dytham2011}.
+We can summarise how these measurements vary with summary statistics, or visually with figures.
+Often, we will want to predict one variable from a second variable.
+In this case, the variable that we want to predict is called the \textbf{response variable}, also known as the \textbf{dependent variable} or \textbf{Y} variable (`dependent' because it \emph{depends} on other variables, and `Y' because this is the letter we often use to represent it).
+The variable that we use to predict our response variable is the \textbf{explanatory variable}, also known as the \textbf{independent variable} or \textbf{X} variable (`independent' because it does not depend on other variables, and `X' because this is the letter most often used to represent it).
+There are several different types of variables:
+
+\begin{itemize}
+\item
+  \textbf{Categorical} variables take on a fixed number of discrete values \citep{Spiegelhalter2019}.
+  In other words, the measurement that we record will assign our data to a specific category.
+  Examples of categorical variables include species (e.g., ``Robin'', ``Nightingale'', ``Wren'') or life history stage (e.g., ``egg'', ``juvenile'', ``adult'').
+  Categorical variables can be either nominal or ordinal.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Nominal} variables do not have any inherent order (e.g., classifying land as ``forest'', ``grassland'', or ``urban'').
+  \item
+    \textbf{Ordinal} variables do have an inherent order (e.g., ``low'', ``medium'', and ``high'' elevation).
+  \end{itemize}
+\item
+  \textbf{Quantitative} variables are variables represented by numbers that reflect a magnitude.
+  That is, unlike categorical variables, we are collecting numbers that really mean something tangible (in contrast, while we might represent low, medium, and high elevations with the numbers 1, 2, and 3, respectively, this is just for convenience; a value of `2' does not always mean `medium').
+  Categorical variables can be either discrete or continuous.
+
+  \begin{itemize}
+  \item
+    \textbf{Discrete} variables can take only certain values.
+    For example, if we want to record the number of species in a forest, then our variable can only take discrete counts (i.e., integer values).
+    There could conceivably be any whole number of species (1, 2, 3, etc.), but there could not be 2.51 different species in a forest; that does not make sense.
+  \item
+    \textbf{Continuous} variables can take any real value within some range of values (i.e., any number that can be represented by a decimal).
+    For example, we could measure height to as many decimals as our measuring device will allow, with a range of values from zero to the maximum possible height of whatever it is we are measuring.
+    Similarly, we could measure temperature to any number of decimals, at least in theory, so temperature is a continuous variable.
+  \end{itemize}
+\end{itemize}
+
+The reason for organising variables into all of these different types is that different types of variables need to be handled in different ways.
+For example, it would not make sense to visualise a nominal variable in the same way as a continuous variable.
+Similarly, the choice of statistical test to apply to answer a statistical question will almost always depend on the types of variables involved.
+If presented with a new data set, it is therefore very important to be able to interpret the different variables and apply the correct statistical techniques (this will be part of the assessment for this module).
+
+\hypertarget{Chapter_6}{%
+\chapter{Accuracy, precision, and units}\label{Chapter_6}}
+
+The science of measurements is called ``metrology'', which, among other topics, focuses on measurement accuracy, precision, and units \citep{Rabinovich2013}.
+We will not discuss these topics in depth, but they are important for statistical techniques because measurement, in the broadest sense of the word, is the foundation of data collection.
+When collecting data, we want measurements to be accurate, precise, and clearly defined.
+
+\hypertarget{accuracy}{%
+\section{Accuracy}\label{accuracy}}
+
+When we collect data, we are trying to obtain information about the world.
+We might, for example, want to know the number of seedlings in an area of forest, them temperature of the soil at a location, or the mass of a particular animal in the field.
+To get this information, we need to make measurements.
+Some measurements can be collected by simple observation (e.g., counting seedlings), while others will require measuring devices such as a thermometer (for measuring temperature) or scale (for measuring mass).
+All of these measurements are subject to error.
+The \emph{true} value of whatever it is that we are trying to measure (called the ``measurand'') can differ from what we record when collecting data.
+This is true even for simple observations (e.g., we might miscount seedlings), so it is important to recognise that the data we collect comes with some uncertainty.
+The \textbf{accuracy} of a measurement is defined by how close the measurement is to the \emph{true} value of what we are trying to measure \citep{Rabinovich2013}.
+
+\hypertarget{precision}{%
+\section{Precision}\label{precision}}
+
+The \textbf{precision} of a measurement is how consistent it will be if measurement is replicated multiple times.
+In other words, precision describes how similar measurements are expected to be.
+If, for example, a scale measures an object to be the exact same mass ever time it is weighed (regardless of whether the mass is accurate), then the measurement is highly precise.
+If, however, the scale measures a different mass each time the object is weighed (for this hypothetical, assume that the true mass of the object does not change), then the measurement is not as precise.
+
+One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg}{Egon Willighagen} on 8 March 2014.}.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+Note again that accuracy and precision are not necessarily the same.
+Measurement can be accurate but not precise (Figure 6.1B) or precise but not accurate (Figure 6.1C).
+
+\hypertarget{systems-of-units}{%
+\section{Systems of units}\label{systems-of-units}}
+
+Scientific units are standardised with the Système International D'Unités (SI).
+Having standardised units of measurement is highly important to ensure measurement accuracy \citep{Quinn1995}.
+Originally, these units were often defined in terms of physical artefacts.
+For example, the kilogram (kg) was once defined by physical cylinder metal housed in the Buereau International des Poids et Mesures (BIPM).
+In other words, the mass of a metal sitting at the BIPM \emph{defined} what a kg was, with the mass of every other measurement being based on this physical object \citep{Quinn1995}.
+This can potentially present a problem if the mass of that one object changes over time, thereby causing a change in how a kg is defined.
+Where possible, it is therefore preferable to define units in terms of fundamental constants of nature.
+In 2019, for example, the kg was redefined in terms of the Planck constant, a specific atomic transition frequency, and the speed of light \citep{Stock2019}.
+This ensures that measurements of mass remain accurate over time because what a kg represents in terms of mass cannot change.
+
+We can separate units into base units and derived units.
+Table 6.1 below lists some common base units for convenience \citep{Quinn1995}.
+You do not need to memorise these units, but it is good to be familiar with them.
+We will use these units throughout the module.
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{Base units of SI measurements. For details see \citet{Quinn1995}.}\tabularnewline
+\toprule
+\textbf{Measured Quantity} & \textbf{Name of SI unit} & Symbol \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Measured Quantity} & \textbf{Name of SI unit} & Symbol \\
+\midrule
+\endhead
+Mass & kilogram & \(kg\) \\
+Length & metre & \(m\) \\
+Time & second & \(s\) \\
+Electric current & ampere & \(A\) \\
+Temperature & kelvin & \(K\) \\
+Amount of a substance & mole & \(mol\) \\
+Luminous intensity & candela & \(cd\) \\
+\bottomrule
+\end{longtable}
+
+We can also define derived SI units from the base units of Table 6.1; examples of these derived SI units are provided in Table 6.2 below.
+Again, you do not need to memorise these units, but it is good to be aware of them.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1565}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1043}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2435}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2957}}@{}}
+\caption{Examples of derived SI units.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Measured Quantity}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Name of unit}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Symbol}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Definition in SI units}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Alternative in derived units}
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Measured Quantity}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Name of unit}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Symbol}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Definition in SI units}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Alternative in derived units}
+\end{minipage} \\
+\midrule
+\endhead
+Energy & Joule & \(J\) & \(m^{2}\) \(kg\) \(s^{-2}\) & \(N\) \(m\) \\
+Force & Newton & \(N\) & \(m\) \(kg\) \(s^{-2}\) & \(J\) \(m^{-1}\) \\
+Pressure & Pascal & \(Pa\) & \(kg\) \(m^{-1}\) \(s^{-2}\) & \(N\) \(m^{-2}\) \\
+Power & Watt & \(W\) & \(m^{-2}\) \(kg\) \(s^{-3}\) & \(J\) \(s^{-1}\) \\
+Frequency & Hertz & \(Hz\) & \(s^{-1}\) & \\
+Radioactivity & Becquerel & \(Bq\) & \(s^{-1}\) & \\
+\bottomrule
+\end{longtable}
+
+When numbers are associated with units, it is important to recognise that the units must be carried through and combined when calculating equation.
+As a very simple example, if want to know the speed at which an object is moving, and we find that it has moved 10 metres in 20 seconds, then we calculate the speed and report the correct units as below,
+
+\[speed = \frac{10\:m}{20\:s} = 0.5\:m/s = 0.5\:m\:s^{-1}.\]
+Notice that the final units are in metres per second, which can be written as \(m/s\) or \(m\:s^{-1}\) (remember that raising \(s\) to the \(-1\) power is the same as \(1/s\); see below for a quick reminder about superscripts).
+It is a common error to calculate just the numeric components of a calculation and ignore the associated units.
+Often on assessments, we will ask you not to include units in your answer (this is just for convenience on the tests and exam), but recognising that units are also part of calculations is important.
+
+\hypertarget{other-examples-of-units}{%
+\section{Other examples of units}\label{other-examples-of-units}}
+
+Remember that an exponent (indicated by a superscript, e.g., the 3 in \(m^{3}\)) indicates the number of times to multiply a base by itself, so \(m^{3} = m \times m \times m\).
+
+\hypertarget{units-of-density}{%
+\subsection{Units of density}\label{units-of-density}}
+
+Density (\(\rho\)) is calculated by,
+
+\[\rho = \frac{mass}{volume} = \frac{kg}{m^{3}}.\]
+
+The units of density are therefore mass per unit volume, \(kg\:m^{-3}\).
+
+\hypertarget{mass-of-metal-discharged-from-a-catchment}{%
+\subsection{Mass of metal discharged from a catchment}\label{mass-of-metal-discharged-from-a-catchment}}
+
+The mass of metal carried by a stream per unit time (\(M\)) is given by multiplying the concentration of metal per unit volume (\(C\)) of water by the volume of water discharged per unit time (\(V\)),
+
+\[M = C \times V.\]
+This equation is useful in showing how units can cancel each other out.
+If we calculate the above with just the units (ignoring numbers for \(C\) and \(V\)),
+
+\[M = \frac{mg}{l} \times \frac{l}{s} = \frac{mg}{s}.\]
+
+Notice above how the \(l\) units on the top and bottom of the equation cancel each other out, so we are left with just \(mg/s\).
+
+\hypertarget{soil-carbon-inventories}{%
+\subsection{Soil carbon inventories}\label{soil-carbon-inventories}}
+
+For one final example, the inventory of carbon \(I\) within a soil is given by the specific carbon concentration \(C\) (\(g\) of carbon per \(kg\) of soil), multiplied by the depth of soil analysed (\(D\), \(m\)), and by the density (\(\rho\), \(kg\:m^{-3}\)),
+
+\[I = C \times D \times \rho = \frac{g\times m \times kg}{kg \times m^{3}} = \frac{g}{m^{2}} = g\:m^{-2}.\]
+Notice above how the \(kg\) on the top and bottom of the fraction cancel each other out, and how one \(m\) on the top cancels out one \(m\) on the bottom, so that what we are left with is grams per metre squared (\(g\:m^{-2}\)).
+
+\hypertarget{Chapter_7}{%
+\chapter{Uncertainty propogation}\label{Chapter_7}}
+
+Nothing can be measured with perfect accuracy, meaning that every measurement has some associated error.
+The measurement error might be caused by random noise in the measuring environment, or by mistakes made by the person doing the measuring.
+The measurement error might also be caused by limitations or imperfections associated with a measuring device.
+The device might be limited in its measurement precision, or perhaps it is biased in its measurements due to improper calibration, manufacture, or damage from previous use.
+All of this generates uncertainty with respect to individual measurements.
+
+Recall from \protect\hyperlink{Chapter_6}{Chapter 6} the difference between precision and accuracy.
+We can evaluate the precision and accuracy of measurements in different ways.
+Measurement precision can be estimated by replicating a measurement (i.e., taking the same measurement over and over again).
+The more replicate measurements made, the more precisely a value can be estimated.
+For example, if we wanted to evaluate the precision with which the mass of an object is measured, then we might repeat the measurement with the same scale multiple times and see how much mass changes across different measurements.
+To evaluate measurement accuracy, we might need to measure a value in multiple different ways (e.g., with different measuring devices).
+For example, we might repeat the measurement of an object's mass with a different scale.
+
+Sometimes it is necessary to combine different values.
+For example, we might measure the mass of 2 different bird eggs in a nest, then calculate the total mass of all the 2 eggs combined.
+The measurement of each egg will have its own error, and these errors will propagate to determine the error of the total egg mass for the nest.
+How this error propagates differs depending on if they are being added or subtracted, or if they are being multiplied or divided.
+
+\hypertarget{adding-or-subtracting-errors}{%
+\section{Adding or subtracting errors}\label{adding-or-subtracting-errors}}
+
+In the case of our egg masses, we can assign the mass of the first egg to the variable \(X\) and the mass of the second egg to the variable \(Y\).
+We can assign the total mass to the variable \(Z\), where \(Z = X + Y\).
+The errors associated with the variables \(X\), \(Y\), and \(Z\) can be indicated by \(E_{X}\), \(E_{Y}\), and \(E_{Z}\), respectively.
+In general, if the variable \(Z\) is calculated by adding (or subtracting) 2 or more values together, then this is the formula for calculating \(E_{Z}\),
+
+\[E_{Z} = \sqrt{E^{2}_{X} + E^{2}_{Y}}.\]
+
+Hence, for the egg masses, the error of the combined masses () equals the square root of the error associated with the mass of egg 1 squared (\(E^{2}_{X}\)) plus the error associated with the mass of egg 2 squared (\(E^{2}_{Y}\)).
+It often helps to provide a concrete example.
+If the error associated with the measurement of egg 1 is \(E^{2}_{X} = 2\), and the error associated with the measurement of egg 2 is \(E^{2}_{X} = 3\), then we can calculate,
+
+\[E_{Z} = \sqrt{2^{2} + 3^{2}} \approx 3.61.\]
+
+\hypertarget{multiplying-or-dividing-errors}{%
+\section{Multiplying or dividing errors}\label{multiplying-or-dividing-errors}}
+
+Multiplying or dividing errors works a bit differently.
+As an example, suppose that we need to measure the total area of a rectangular field.
+If we measure the length (\(L\)) and width (\(W\)) of the field, then the total area is the product of these measurements, \(A = L \times W\).
+Again, there is going to be error associated with the measurement of both length (\(E_{L}\)) and width (\(E_{W}\)).
+How the error of the total area (\(E_{A}\)) is propagated by \(E_{L}\) and \(E_{W}\) is determined by the formula,
+
+\[E_{A} = A \sqrt{\left(\frac{E_{L}}{L} \right)^{2} + \left(\frac{E_{W}}{W} \right)^{2}}.\]
+Notice that just knowing the error of each measurement (\(E_{L}\) and \(E_{W}\)) is no longer sufficient to calculate the error associated with the measurement of the total area.
+We also need to know \(L\), \(W\), and \(A\).
+If our field has a length of \(L = 20\) m and width of \(W = 10\), then \(A = 20 \times 10 = 200\).
+If length and width measurements have associated errors of \(E_{L} = 2\) m \(E_{W} = 1\) m, then,
+
+\[E_{A} = 200 \sqrt{\left(\frac{2}{20} \right)^{2} + \left(\frac{1}{10} \right)^{2}} \approx 28.3.\]
+Of course, not every set of measurements with errors to be multiplied with be lengths and widths.
+To avoid confusion, the general formula for multiplying or dividing errors is below, with the variables \(L\), \(W\), and \(A\) replaced with \(X\), \(Y\), and \(Z\), respectively, to match the case of addition and subtraction explained above,
+
+\[E_{Z} = Z \sqrt{\left(\frac{E_{X}}{X} \right)^{2} + \left(\frac{E_{Y}}{Y} \right)^{2}}.\]
+
+Note that the structure of the equation is the exact same, just with different letters used as variables.
+\textbf{It is necessary to be able to apply these equations correctly to estimate combined error.}
+
+\hypertarget{applying-formulas-for-combining-errors}{%
+\section{Applying formulas for combining errors}\label{applying-formulas-for-combining-errors}}
+
+It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in \protect\hyperlink{uncertainty_derivation}{Appendix B} for the curious.
+
+\hypertarget{Chapter_8}{%
+\chapter{\texorpdfstring{\emph{Practical}. Introduction to Jamovi}{Practical. Introduction to Jamovi}}\label{Chapter_8}}
+
+This practical focuses on learning how to work with datasets in Jamovi.
+Jamovi is available in the university laboratory computers through AppsAnywhere.
+You can also \href{https://www.jamovi.org/download.html}{download it} on your own computer for free or run it directly \href{https://www.jamovi.org/cloud.html}{from a browser}.
+For an introduction to what Jamovi is and why we are using it in this module, see \protect\hyperlink{intro_jamovi}{Section 0.5} of this workbook and \href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#the-spreadsheet}{Sections 3.3}-\href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#summary-1}{3.9} of \citet{Navarro2022}.
+In this module, we will work with two datasets, both of which are based on real biological and environmental studies conducted by researchers at the University of Stirling.
+
+The first dataset includes measurements of soil organic carbon (grams of Carbon per kg of soil) from the topsoil and subsoil collected in a national park in Gabon.
+These data were collected by Dr Carmen Rosa Medina-Carmona in an effort to understand how \href{https://bg.copernicus.org/articles/3/397/2006/bg-3-397-2006.pdf}{pyrogenic carbon} (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas \citep{Santin2016, Preston2006}.
+\textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil\_organic\_carbon.csv}}
+
+The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) in Baja, Mexico.
+These data were collected by Dr Brad Duthie in an effort to understand coexistence in a fig wasp community \citep{Duthie2015b, Duthie2016}.
+Measurements include fig lengths, widths, and heights in centimeters from 4 different fig trees, and the number of seeds in each fruit.
+\textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig\_fruits.csv}}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+This lab will use the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
+The \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} will be used for \protect\hyperlink{02_transforming_variables}{Exercise 8.2} on transforming variables and \protect\hyperlink{02_computing_variables}{Exercise 8.3} on computing a variable.
+
+\hypertarget{summary_statistics_02}{%
+\section{Exercise for summary statistics}\label{summary_statistics_02}}
+
+Download the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset if you have not already done so, and save it in a location where you know you will be able to find it again, then open Jamovi.
+Once Jamovi is open, you can import the dataset by clicking on the three lines in the upper left corner of the tool bar, then selecting `Open' (Figure 8.2).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+You might need to click `Browse' in the upper right of Jamovi to find the file.
+Figure 8.3 below shows how this will look when you browse for a data file.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+Once the data are imported, you should see two separate columns.
+The first column will show soil organic carbon values for topsoil samples, and the second column will show soil organic carbon values for subsoil samples.
+Notice right away that these data are not formatted in a tidy way.
+We need to fix this so that each row is a unique sample, and each column represents some property of the sample (see the previous chapter section on \protect\hyperlink{data_organisation}{data organisation} for a reminder of why).
+It might be easiest to reorganise the data in a spreadsheet such as LibreOffice Calc or Microsoft Excel.
+But you can also edit the directly in Jamovi by clicking on the `Data' tab in the toolbar (see Figure 8.2).
+The best way to reorganise the data in Jamovi is to double-click on the third column of data next to `subsoil' (see Figure 8.4).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-7}
+\end{figure}
+
+After double-clicking on the location shown in Figure 8.4, there will be three buttons visible.
+You can click the `New Data Variable' to insert a new variable named `soil\_type' in place of the default name `C'.
+Keep the `Measure type' as `Nominal', but change the `Data type' to `text'.
+When you are done, click the \texttt{\textgreater{}} character to the right so that the variable is fixed (Figure 8.5).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+After typing in the new variable `soil\_type', add another variable called `organic\_carbon'.
+The organic\_carbon variable should have a measure type of `Continuous' and a data type of `Decimal'.
+After both soil\_type and organic\_carbon variables have been set, you can click the up arrow with the upper right circle (Figure 8.5) to get the new variable window out of the way.
+
+With the two new variables created, we can now rearrange the data in a tidy way.
+The first 19 rows of soil\_type should be `topsoil', and the remaining 15 rows should be `subsoil'.
+To do this quickly, you can write `topsoil' in the first row of soil\_type and copy-paste into the remaining rows.
+You can do the same to write `subsoil' in the remaining rows 20-34.
+Next, copy all of the topsoil values in column 1 into the first 19 rows of column 4, and copy all of the subsoil values in column 2 into the next 15 rows.
+After doing all of this, you column 3 (soil\_type) should have the word `topsoil' in rows 1-19 and `subsoil' in rows 20-34.
+The values from columns 1 and 2 should now fill rows 1-34 of column 4.
+You can now delete the first column of data by right clicking on the column name `topsoil' and selecting `Delete Variable'.
+Do the same for the second column `subsoil'.
+Now you should have a tidy data set with two columns of data, one called `soil\_type' and one called `organic\_carbon'.
+You are now ready to calculate some descriptive statistics from the data.
+
+First, we can calculate the minimum, maximum, and mean of all of the organic carbon values.
+To do this, select the `Analyses' tab, then click on the left-most button called `Exploration' in the toolbar (Figure 8.6).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+After clicking on `Exploration', a pull-down box will appear with an option for `Descriptives'.
+Select this option, and you will see a new window with our two columns of data in the left-most box.
+Click once on the `organic\_carbon' variable and use the right arrow to move it into the `Variables' box.
+In the right-most panel of Jamovi, a table called `Descriptives' will appear, which will include values for the organic carbon mean, minimum, and maximum.
+Write these values on the lines below, and remember to include units.
+
+Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+These values might be useful, but recall that there are two different soil types that need to be considered, topsoil and subsoil.
+The mean, minimum, and maximum above pools both of these soil types together, but we might instead want to know the mean, minimum, and maximum values for topsoil and subsoil separately.
+Splitting organic carbon by soil types is straightforward in Jamovi.
+To do it, go back to the Exploration \(\to\) Descriptives option and again put `organic\_carbon' in the Variables box.
+This time, however, notice the `Split by' box below the Variables box.
+Now, click on `soil\_type' in the descriptives and click on the lower right arrow to move soil type into the `Split by' box.
+The table of descriptives in the right window will now break down all of the summary statistics by soil type.
+First, write the mean, minimum, and maximum topsoil values below.
+
+Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Next, do the same for the mean, minimum, and maximum subsoil values.
+
+Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+From the values above, the mean of organic carbon sampled from the topsoil appears to be greater than the mean of organic carbon sampled from the subsoil.
+Assuming that Jamovi has calculated the means correctly, we can be confident that the topsoil sample mean is higher.
+But what about the \emph{population} means?
+Think back to concepts of populations versus samples from \protect\hyperlink{Chapter_4}{Chapter 4}.
+Based on these samples in the dataset, can we really say for certain that the population mean of topsoil is higher than the population mean of subsoil?
+Think about this, then write a sentence below about how confident we can be about concluding that topsoil organic carbon is greater than subsoil organic carbon.
+
+\begin{verbatim}
+
+
+
+
+\end{verbatim}
+
+What would make you more (or less) confident that topsoil and subsoil population means are different?
+Think about this, then write another sentence below that answers the question.
+
+\begin{verbatim}
+
+
+
+
+\end{verbatim}
+
+Note that there is no right or wrong answer for the above two questions.
+The entire point of the questions is to help you reflect on your own learning and better link the concepts of populations and samples to the real dataset in this practical.
+Doing this will make the statistical hypothesis testing that comes later in the module more clear.
+
+\hypertarget{transforming_variables_02}{%
+\section{Exercise on transforming variables}\label{transforming_variables_02}}
+
+In this next exercise, we will work with the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} dataset.
+Open this dataset into Jamovi.
+Note that there are five columns of data, and all of the data appear to be in a tidy format.
+Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
+The first several rows should look like the below.
+
+\begin{verbatim}
+##   Tree Length_cm Width_cm Height_cm Seeds
+## 1    A       1.5      1.8       1.4   238
+## 2    A       1.7      1.9       1.5   198
+## 3    A       2.1      2.1       1.6   220
+## 4    A       1.5      1.6       1.4   188
+## 5    A       1.6      1.6       1.5   139
+## 6    A       1.5      1.4       1.5   173
+\end{verbatim}
+
+The dataset includes the tree from which the fig was sampled in column 1 (A, B, C, and D), then the length, width, and heights of the fig in cm.
+Finally, the last column shows how many seeds were counted within the fig.
+Use the Descriptives option in Jamovi to find the overall (i.e., not split by Tree) mean length, width, and height of figs in the dataset.
+Write these means down below (remember the units).
+
+Mean length: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Mean height: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Mean width: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now look at the different rows in the Descriptives table of Jamovi.
+Note that there is a row for `Missing', and there appears to be one missing value for fig width and fig height.
+This is very common in real datasets.
+Sometimes practical limitations in the field prevent data from being collected, or something happens that causes data to be lost.
+We therefore need to be able to work with datasets that have missing data.
+For now, we will just note the missing data and find them in the actual data set.
+Go back to the `Data' tab in Jamovi and find the figs with a missing width and height value.
+Report the rows of these missing values below.
+
+Missing width row: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Missing height row: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Next, we will go back to working with the actual data.
+Note that the length, width, and height variables are all recorded in cm to a single decimal place.
+Suppose we want to transform these variables so that they are represented in mm instead of cm.
+We will start by creating a new column `Length\_mm' by transforming the existing `Length\_cm' column.
+To do this, click on the `Data' tab at the top of the toolbar again, then click on the `Length\_cm' column name to highlight the entire column.
+Your screen should look like the image in Figure 8.7.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+With the `Length\_cm' column highlighted, click on the `Transform' button in the toolbar.
+Two things happen next.
+First, a new column appears in the dataset that looks identical to `Length\_cm'; ignore this for now.
+Second, a box appears below the toolbar allowing us to type in a new name for the transformed variable.
+We can call this variable `Length\_mm'.
+Below, note the first pulldown menu `Source variable'.
+The source value should be `Length\_cm', so we can leave this alone.
+The second pulldown menu `using transform' will need to change.
+To change the transform from `None', click the arrow and select `Create New Transform' from the pulldown.
+A new box will pop up allowing us to name the transformation.
+It does not matter what we call it (e.g., `cm\_to\_mm' is fine).
+Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multiply the values of `Length\_cm' by 10.
+We can do this by appending a \texttt{*\ 10} to the lower box of the transform window, so that it reads \texttt{=\ \$source\ *\ 10} (Figure 8.8).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
+Now we have a new column called `Length\_mm', in which values are 10 times greater than they are in the adjacent `Length\_cm' column, and therefore represent fig length in mm.
+If we want to, we can always change the transformation by double-clicking the `Length\_mm' column.
+For now, apply the same transformation to fig width and height, so we have three new columns of length, width, and height all measured in mm (note, if you want to, you can use the saved transformation `cm\_to\_mm' that you used to transform length, saving some time).
+At the end of this, you should have eight columns of data, including three new columns that you just created by transforming the existing columns of Length\_cm, Width\_cm, and Height\_cm into the new columns Length\_mm, Width\_mm, and Height\_mm.
+Find the means of these three new columns and write them below.
+
+Mean length: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Mean height: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Mean width: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Compare these means to the means calculated above in cm.
+Do the differences between means in cm and the means in mm make sense?
+
+\hypertarget{computing_variables_02}{%
+\section{Exercise on computing variables}\label{computing_variables_02}}
+
+In this last exercise, we will compute a new variable `fig\_volume'.
+Because of the way that the dimensions of the fig were measured in the field, we need to make some simplifying assumptions when calculating volume.
+We will assume that fig fruits are perfect spheres, and that the radius of each fig is half of its measured width (i.e., `Width\_mm / 2').
+This is obviously not ideal, but sometimes practical limitations in the field make it necessary to make these kinds of simplifying assumptions.
+In this case, how might assuming that figs are perfectly spherical affect the accuracy of our estimated fig volume?
+Write a sentence of reflection on this question below, drawing from what you have learned this week about accuracy and precision of measurements.
+
+\begin{verbatim}
+
+
+
+
+\end{verbatim}
+
+Now we are ready to make our calculation of fig volume.
+The formula for the volume of a sphere (\(V\)) given its radius \(r\) is,
+
+\[V = \frac{4}{3} \pi r^{3}.\]
+
+In words, sphere volume equals four thirds times \(\pi\), times \(r\) cubed (i.e., to the third power).
+If this equation is confusing, remember that \(\pi\) is approximately 3.14, and taking \(r\) to the third power means that we are multiplying \(r\) by itself 3 times.
+We could therefore rewrite the equation above,
+
+\[V = \frac{4}{3} \times 3.14 \times r \times r \times r.\]
+
+This is the formula that we can use to create our new column of data for fig volume.
+To do this, click on the first empty column of the dataset, just to the right of the `Seeds' column header.
+You will see a pull down option in Jamovi with 3 options, one of which is `NEW COMPUTED VARIABLE'.
+This is the option that we want.
+We need to name this new variable, so we can call it `fig\_volume'.
+Next, we need to type in the formula for calculating volume.
+First, in the small box next to the \(f_{x}\), type in the (4/3) multiplied by 3.14 as below.
+
+\begin{verbatim}
+= (4/3) * 3.14 *
+\end{verbatim}
+
+Next, we need to multiply by the variable `Width\_mm' divided by 2 (to get the radius), three times. We can do this by clicking on the \(f_{x}\) box to the left.
+Two new boxes will appear; the first is named `Functions', and the second is named `Variables'.
+Ignore the functions box for now, and find `Width\_mm' in the list of variables.
+Double click on this to put it into the formula, then divide it by 2.
+You can repeat this two more times to complete the computed variable as shown in Figure 8.9.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+Note that we can get the cube of `Width\_mm' more concisely by using the carrot character (\texttt{\^{}}).
+That is, we would get the same answer shown in Figure 8.9 if we instead typed the below in the function box.
+
+\begin{verbatim}
+= (4/3) * 3.14 * (Width_mm/2)^3
+\end{verbatim}
+
+Note that the order of operations is important here, which is why there are parentheses around \texttt{Width\_mm/2}. This calculation needs to be done before taking the value to the power of 3. If we instead had written, \texttt{Width\_mm/2\^{}3}, the Jamovi would first take the cube of 2 \((2 \times 2 \times 2 = 8)\), then divided \texttt{Width\_mm} by this value giving a different and incorrect answer. When in doubt, it is always useful to use parentheses to specify what calculations should be done first.
+
+You now have the new column of data `fig\_volume'.
+Remember that the calculations underlying this new variable need to be done for the units.
+The width of the fig was calculated in mm, but we have taken width to the power of 3 when calculating the volume.
+In the spaces below, find the overall mean, minimum, and maximum volumes of figs and report them in the correct units.
+
+Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Finally, it would be good to plot these newly calculated fig volume data.
+These data are continuous, so we can use a histogram to visualise the fig volume distribution.
+To make a histogram, go to the Exploration \(\to\) Descriptives window in Jamovi (the same place where you found the mean, minimum, and maximum).
+Now, look on the lower left-hand side of the window and find the pulldown menu for `Plots'.
+Click `Plots', and you should see several different plotting options.
+Check the option for `Histogram' and see the new histogram plotted in the window to the right.
+Draw a rough sketch of the histogram in the area below.
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
 
 \hypertarget{part-summary-statistics}{%
 \part{Summary statistics}\label{part-summary-statistics}}
+
+\hypertarget{week-3-overview}{%
+\chapter*{Week 3 Overview}\label{week-3-overview}}
+\addcontentsline{toc}{chapter}{Week 3 Overview}
 
 Overview of what this week will include.
 
@@ -356,6 +1020,10 @@ Useful for scientific publications, reading, and dissertation work.
 
 \hypertarget{part-probability-models-and-the-central-limit-theorem}{%
 \part{Probability models and the Central Limit Theorem}\label{part-probability-models-and-the-central-limit-theorem}}
+
+\hypertarget{week-4-overview}{%
+\chapter*{Week 4 Overview}\label{week-4-overview}}
+\addcontentsline{toc}{chapter}{Week 4 Overview}
 
 General overview of what will be the focus of this week.
 
@@ -442,6 +1110,10 @@ Doing the example from a uniform distribution in Jamovi.
 \hypertarget{part-statistical-inference}{%
 \part{Statistical inference}\label{part-statistical-inference}}
 
+\hypertarget{week-5-overview}{%
+\chapter*{Week 5 Overview}\label{week-5-overview}}
+\addcontentsline{toc}{chapter}{Week 5 Overview}
+
 General overview of what will be the focus of this week.
 
 Week: 5
@@ -488,10 +1160,18 @@ What this is and how it relates to the normal distribution, and why it is import
 \hypertarget{part-review-of-parts-i-v}{%
 \part{Review of parts I-V}\label{part-review-of-parts-i-v}}
 
+\hypertarget{week-6-overview-reading-week}{%
+\chapter*{Week 6 Overview (Reading week)}\label{week-6-overview-reading-week}}
+\addcontentsline{toc}{chapter}{Week 6 Overview (Reading week)}
+
 This is a special chapter for week 6, which is a reading week, and it will function as a very brief pause for review. It will also ensure that the numbers of chapters will correspond to weeks.
 
 \hypertarget{part-hypothesis-testing}{%
 \part{Hypothesis testing}\label{part-hypothesis-testing}}
+
+\hypertarget{week-7-overview}{%
+\chapter*{Week 7 Overview}\label{week-7-overview}}
+\addcontentsline{toc}{chapter}{Week 7 Overview}
 
 General overview of what will be the focus of this week.
 
@@ -572,6 +1252,10 @@ Explanation of how to do them in Jamovi.
 \hypertarget{part-analysis-of-variance-anova}{%
 \part{Analysis of Variance (ANOVA)}\label{part-analysis-of-variance-anova}}
 
+\hypertarget{week-8-overview}{%
+\chapter*{Week 8 Overview}\label{week-8-overview}}
+\addcontentsline{toc}{chapter}{Week 8 Overview}
+
 General overview of what will be the focus of this week.
 
 Week: 8
@@ -617,6 +1301,10 @@ Non-parametric explanation
 
 \hypertarget{part-counts-and-correlation}{%
 \part{Counts and Correlation}\label{part-counts-and-correlation}}
+
+\hypertarget{week-9-overview}{%
+\chapter*{Week 9 Overview}\label{week-9-overview}}
+\addcontentsline{toc}{chapter}{Week 9 Overview}
 
 General overview of what will be the focus of this week.
 
@@ -668,7 +1356,9 @@ More explanation
 \hypertarget{part-linear-regression}{%
 \part{Linear Regression}\label{part-linear-regression}}
 
-General overview of what will be the focus of this week.
+\hypertarget{week-10-overview}{%
+\chapter*{Week 10 Overview}\label{week-10-overview}}
+\addcontentsline{toc}{chapter}{Week 10 Overview}
 
 Week: 10
 Dates:
@@ -709,6 +1399,10 @@ Seriously consider moving the regression into this week. and ease the amount of 
 
 \hypertarget{part-randomisation-approaches}{%
 \part{Randomisation approaches}\label{part-randomisation-approaches}}
+
+\hypertarget{week-11-overview}{%
+\chapter*{Week 11 Overview}\label{week-11-overview}}
+\addcontentsline{toc}{chapter}{Week 11 Overview}
 
 The aim of this lecture is to introduce the randomisation approach to statistical hypothesis testing. We will first introduce the general idea of what randomisation is and how it relates to the hypothesis testing that we have been doing since week five. We will then consider an instructive example in which a randomisation approach is used in place of a traditional t-test to test whether or not the mean values of two different groups are identical. We will then compare the assumptions underlying randomisation and how they differ slightly from the assumptions of traditional hypothesis testing. We will then look at how randomisation can be used to build confidence intervals and test hypotheses that would difficult to test with other approaches. In learning about randomisation approaches, we will also review some key concepts from earlier in the module. The aim is not to understand all of the nuances of randomisation, but to understand, conceptually, what is going on in the methods described below.
 
@@ -751,6 +1445,10 @@ What this is and why we use it.
 \hypertarget{part-statistical-reporting}{%
 \part{Statistical Reporting}\label{part-statistical-reporting}}
 
+\hypertarget{week-12-overview}{%
+\chapter*{Week 12 Overview}\label{week-12-overview}}
+\addcontentsline{toc}{chapter}{Week 12 Overview}
+
 Week: 12
 Dates:
 Suggested Readings: Textbook
@@ -787,14 +1485,140 @@ Just more to do.
 \hypertarget{part-review-of-parts-vii-xii}{%
 \part{Review of parts (VII-XII)}\label{part-review-of-parts-vii-xii}}
 
+\hypertarget{module-summary}{%
+\chapter*{Module summary}\label{module-summary}}
+\addcontentsline{toc}{chapter}{Module summary}
+
 This chapter will be specifically to prepare for exam.
 
 \hypertarget{appendix-appendix}{%
 \appendix}
 
 
-\hypertarget{statistical-tables}{%
-\chapter{Statistical tables}\label{statistical-tables}}
+\hypertarget{appendixA_units}{%
+\chapter{Statistical units}\label{appendixA_units}}
+
+\hypertarget{uncertainty_derivation}{%
+\chapter{Uncertainty derivation}\label{uncertainty_derivation}}
+
+It is not necessary to be able to derive the equations for propagating error from week 2, but working through the below might be interesting, and provide a better appreciation for why these formulas make sense.
+Another derivation is available in \citet{Box1978} (page 563), but this derivation is expressed in terms of variances and covariances, which is likely to be less helpful for this module.
+
+\textbf{Propagation of error for addition and subtraction}.
+
+For adding and subtracting error, we know that we get our variable \(Z\) by adding \(X\) and \(Y\). This is just how \(Z\) is defined. We also know that \(Z\) is going to have some error \(E_Z\), and we know that \(Z\) plus or minus its error will equal \(X\) plus or minus its error plus \(Y\) plus or minus its error,
+
+\[(Z \pm E_Z) = (X  \pm E_X) + (Y \pm E_Y).\]
+
+Again, this is just our starting definition, but double-check to make sure it makes sense. We can now note that we know,
+
+\[Z =X+Y.\]
+
+If it is not intuitive as to why, just imagine that there is no error associated with the measurement of \(X\) an \(Y\) (i.e., \(E_{X} = 0\) and \(E_{Y} = 0\)).
+In this case, there cannot be any error in \(Z\). So, if we substitute \(X + Y\) for \(Z\), we have the below,
+
+\[((X + Y) \pm E_Z) = (X  \pm E_X) + (Y \pm E_Y).\]
+
+By the \href{https://en.wikipedia.org/wiki/Associative_property}{associative property}, we can get rid of the parenthesis for addition and subtraction, giving us the below,
+
+\[X + Y \pm E_Z = X  \pm E_X + Y \pm E_Y.\]
+
+Now we can subtract \(X\) and \(Y\) from both sides and see that we just have the errors of \(X\), \(Y\), and \(Z\),
+
+\[\pm E_Z = \pm E_X \pm E_Y.\]
+
+The plus/minus is a bother. Note, however, that for any real number \(m\), \(m^{2} = (-m)^2\). For example, if \(m = 4\), then \((4)2 = 16\) and \((-4)2 = 16\), so we can square both sides to get positive numbers and make things easier,
+
+\[E_Z^2 = (\pm E_X \pm E_Y)^2.\]
+We can expand the above,
+
+\[E_Z^2 = E_X^2 + E_Y^2 \pm2E_X E_Y.\]
+
+Now here is an assumption that we have not told you about elsewhere in the module.
+With the formulas that we have given you, we are assuming that the errors of \(X\) and \(Y\) are independent.
+To put it in more statistical terms, the covariance between the errors of \(X\) and \(Y\) is assumed to be zero.
+Without going into the details (covariance will be introduced later in the module), if we assume that the covariance between these errors is zero, then we can also assume the last term of the above is zero, so we can get rid of it (i.e., \(2E_{X}E_{Y} = 0\)),
+
+\[E_Z^2 = E_X^2 + E_Y^2.\]
+
+If we take the square root of both sides, then we have the equation from \protect\hyperlink{Chapter_7}{Chapter 7},
+
+\[E_Z = \sqrt{E_X^2 + E_Y^2}.\]
+
+\textbf{Propagation of error for multiplication and division}.
+
+Now that we have seen the logic for propagating errors in addition and subtraction, we can do the same for multiplication and division.
+We can start with the same point that we are getting our new variable \(Z\) by multiplying \(X\) and \(Y\) together, \(Z = XY\). So, if both \(X\) and \(Y\) have errors, the errors will be multiplicative as below,
+
+\[Z \pm E_Z = (X \pm E_X)(Y \pm E_Y).\]
+
+Again, all we are doing here is substituting \(Z\), \(X\), and \(Y\), for an expression in parentheses that includes the variable plus or minus its associated error.
+Now we can expand the right hand side of the equation,
+
+\[Z \pm E_Z = XY + Y E_X + X E_Y + E_X E_Y.\]
+
+As with our propagation of error in addition, here we are also going to assume that the sources of error for \(X\) and \(Y\) are independent (i.e., their covariance is zero).
+This allows us to set \(E_{X}E_{Y} = 0\), which leaves us with the below,
+
+\[Z \pm E_Z = XY + Y E_X + X E_Y.\]
+
+Now, because \(Z = XY\), we can substitute on the left hand side of the equation,
+
+\[XY \pm E_Z = XY + Y E_X + X E_Y.\]
+
+Now we can subtract the \(XY\) from both sides of the equation,
+
+\[\pm E_Z = Y E_X + X E_Y.\]
+
+Next, let us divide both sides by \(XY\),
+
+\[\frac{\pm E_Z}{XY} = \frac{Y E_X + X E_Y}{XY}.\]
+
+We can expand the right hand side,
+
+\[\frac{\pm E_Z}{XY} = \frac{Y E_X}{XY} +\frac{X E_Y}{XY}.\]
+
+This allows us to cancel out the \(Y\) variables in the first term of the right hand side, and the \(X\) variables in second term of the right hand side,
+
+\[\frac{\pm E_Z}{XY} = \frac{E_X}{X} +\frac{E_Y}{Y}.\]
+
+Again, we have the plus/minus on the left, so let us square both sides,
+
+\[\left(\frac{\pm E_Z}{XY}\right)^2 = \left(\frac{E_X}{X} +\frac{E_Y}{Y}\right)^2.\]
+
+We can expand the right hand side,
+
+\[\left(\frac{\pm E_Z}{XY}\right)^2 = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2 + 2\left(\frac{E_X}{X}\right)\left(\frac{E_Y}{Y}\right).\]
+
+Again, because we are assuming that the errors of \(X\) and \(Y\) are independent, we can set the third term on the right hand side of the equation to zero.
+This leaves,
+
+\[\left(\frac{\pm E_Z}{XY}\right)^2 = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2.\]
+
+Note that \(XY = Z\), so we can substitute in the left hand side,
+
+\[\left(\frac{\pm E_Z}{Z}\right)^2 = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2.\]
+
+Now we can apply the square on the left hand side to the top and bottom, which gets rid of the plus/minus,
+
+\[\frac{E_Z^2}{Z^2} = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2.\]
+
+We can now multiply both sides of the equation by \(Z^2\),
+
+\[E_Z^2 = Z^2 \left(\left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2 \right).\]
+
+We can now take the square root of both sides,
+
+\[E_Z = \sqrt{ Z^2 \left( \left( \frac{E_X}{X}\right)^2 + \left(\frac{E_Y}{Y}\right)^2 \right) }.\]
+
+We can pull the \(Z^2\) out of the square root,
+
+\[E_Z = Z \sqrt{\left( \frac{E_X}{X}\right)^2 + \left(\frac{E_Y}{Y}\right)^2}.\]
+
+That leaves us with the equation that was given in \protect\hyperlink{Chapter_7}{Chapter 7}.
+
+\hypertarget{appendixC_tables}{%
+\chapter{Statistical tables}\label{appendixC_tables}}
 
   \bibliography{book.bib,packages.bib}
 
