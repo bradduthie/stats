@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 10 Graphs | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 10 Graphs | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 10 Graphs | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data_organisation.html"/>
-<link rel="next" href="week-2-overview.html"/>
+<link rel="prev" href="Chapter_9.html"/>
+<link rel="next" href="Chapter_11.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -348,40 +348,135 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="practical-preparing-real-datasets" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> <em>Practical</em>: Preparing real datasets<a href="practical-preparing-real-datasets.html#practical-preparing-real-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this practical, we will use a spreadsheet to organise datastes.</p>
-<div id="libreoffice-calc" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> LibreOffice Calc<a href="practical-preparing-real-datasets.html#libreoffice-calc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>LibreOffice Calc is a free and open source spreadsheet program. The instructions for this section will be identical to the more popular commercial Microsoft Excel.</p>
+<div id="Chapter_10" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Graphs<a href="Chapter_10.html#Chapter_10" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Graphs are useful tools for visualising and communicating data.
+Graphs come in many different types, and different types of graphs are effective for different types of data.
+This chapter focuses on four types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.</p>
+<p>After collecting or obtaining a new dataset, it is almost always a good idea to plot the data in some way.
+Visualising a dataset can often highlight important and obvious properties of a dataset more efficiently that inspecting raw data, calculating summary statistics, or running statistical tests.
+When making graphs to communicate data visually, it is important to ensure the person reading the graph has a clear understanding what is being presented.
+In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descripting caption, and indicating what any graph symbols mean.
+In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or unnecessary distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher and Wagener 2011</a>)</span>.
+It is also important to ensure that graphs are as accessible as possible, e.g., by providing strong colour contrast and appropriate colour combinations <span class="citation">(<a href="#ref-Elavsky2022" role="doc-biblioref">Elavsky, Bennett, and Moritz 2022</a>)</span>, and alternative text for images where possible.
+As a guide, the histogram, pie chart, barplot, and box-whisker plot below illustrate good practice when making graphs.</p>
+<div id="histograms" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Histograms<a href="Chapter_10.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Histograms illustrate the distribution of <a href="Chapter_5.html#Chapter_5">continuous data</a>.
+They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
+The histogram shown in Figure 10.1 provides an example from the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv">fig fruits</a> data set from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
+<p class="caption">
+Figure 10.1: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.
+</p>
 </div>
-<div id="exercise-organising-data-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Exercise Organising data 1<a href="practical-preparing-real-datasets.html#exercise-organising-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.2</p>
+<p>The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see <a href="https://bradduthie.shinyapps.io/build_histogram/">this interactive application</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>).
+That is, the frequency with which fruits within some width interval occur in the data.
+For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
+In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
+The bars of the histogram touch each other, which reinforces that the data are <a href="Chapter_5.html#Chapter_5">continuous</a> <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+<p>It is especially important to be able to read and understand information from a histogram because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
+For example, the <em>shape</em> of the distribution of fig fruit widths might be important for performing a particular test.
+For the purposes of this module, the <em>shape</em> of the distribution just means what the data look like when plotted like this in a histogram.
+In this case, there is a peak toward the centre of the distribution, with fewer low and high values (this kind of distribution is quite common).
+Different distribution shapes will be discussed more in Part IV (next week).</p>
 </div>
-<div id="exercise-organising-data-2" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Exercise Organising data 2<a href="practical-preparing-real-datasets.html#exercise-organising-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.3</p>
+<div id="barplots-and-pie-charts" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Barplots and pie charts<a href="Chapter_10.html#barplots-and-pie-charts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While histograms are an effective way of visualising <a href="Chapter_5.html#Chapter_5">continuous data</a>, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise <a href="Chapter_5.html#Chapter_5">categorical data</a>.
+For example, in the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv">fig fruits</a> data set <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
+A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
+<p class="caption">
+Figure 10.2: Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
+</p>
 </div>
-<div id="exercise-organising-data-3" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Exercise Organising data 3<a href="practical-preparing-real-datasets.html#exercise-organising-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.4, saving all of these as CSV files</p>
+<p>In Figure 10.2, each tree is represented by a separate bar on the x-axis.
+Unlike a histogram, the bars do not touch each other, which reinforces that different categories of data are being shown (in this case, different trees).
+The height of bar indicates how many fruits were sampled for each tree.
+For example, 14 fruits were sampled from tree A, and 22 fruits were sampled from tree B.
+At a glance, it is therefore possible to compare different trees and make inferences about how they differ in sampled fruits.</p>
+<p>Pie charts are similar to barplots in that both present categorical data, but pie charts are more effective for visualising the relative quantity for each category.
+That is, pie charts illustrate the percentage of measurements for each category.
+For example, in the case of the fig fruits, it might be useful to visualise what percentage of fruits were sampled from each tree.
+A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" alt="An example pie chart shows the percentage of fruits collected from four trees labelled A, B, C, and D." width="100%" />
+<p class="caption">
+Figure 10.3: Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
+</p>
 </div>
-<div id="summary-of-exercises-and-why-they-are-useful." class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Summary of exercises and why they are useful.<a href="practical-preparing-real-datasets.html#summary-of-exercises-and-why-they-are-useful." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-
+<p>Pie charts can be useful in some situations, but in the biological and environmental they are not used as often as barplots.
+In contrast to pie charts, barplots present the absolute quantities (in Figure 10.2, e.g., the actual number of fruits sampled per tree), and it is still possible with barplots to infer the percentage each category contributes to the total from the relative sizes of the bars.
+Pie charts, in contrast, only illustrate relative percentages unless numbers are used to indicate absolute quantities.
+Unless only percentage is important, barplots are often the preferred way to communicate count data.</p>
+</div>
+<div id="box-whisker-plots" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Box-whisker plots<a href="Chapter_10.html#box-whisker-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Box-whisker plots (also called boxplots) can be used to visualise distributions in a different way than histograms.
+Instead of presenting the full distribution, as in a histogram, a box-whisker plot shows where summary statistics are located (summary statistics are explained below).
+This allows the distribution of data to be represented in a more compact way, but does not show the full shape of a distribution.
+Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histogram of fig fruit widths (10.4B).
+In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information" width="100%" />
+<p class="caption">
+Figure 10.4: Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.
+</p>
+</div>
+<p>To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5A) are located in the histogram (Figure 10.5B).
+These summary statistics include the median (black circles of Figure 10.5), quartiles (red squares of Figure 10.5), and the limits of the distribution (i.e., the minimum and maximum values; blue triangles of Figure 10.5).
+Note that in boxplots, if outliers exist, they are presented as separate points.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-18-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information, with points showing how properties of the two panels match." width="100%" />
+<p class="caption">
+Figure 10.5: Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).
+</p>
+</div>
+<p>One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
+For example, the distribution of fig fruit width can be shown for each of the four trees side by side on the same x-axis of a boxplot (Figure 10.6).
+While it is possible to show histograms side by side, it will quickly take up a lot of space.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-19-1.png" alt="Example of boxplot showing the distributions of fig fruit width for four different trees." width="100%" />
+<p class="caption">
+Figure 10.6: Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.
+</p>
+</div>
+<p>The boxplot in Figure 10.6 can be used to quickly compare the distribution of Trees A-D.
+The point at the bottom of the distribution of Tree A shows an outlier.
+This outlier is an especially low value of fig fruit width compared to the other fruits of Tree A.</p>
 </div>
 </div>
-
-
-
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Dytham2011" class="csl-entry">
+Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-Elavsky2022" class="csl-entry">
+Elavsky, Frank, Cynthia Bennett, and Dominik Moritz. 2022. <span>“<span class="nocase">How accessible is my visualization? Evaluating visualization accessibility with Chartability</span>.”</span> <em>Computer Graphics Forum</em> 41 (3): 57–70. <a href="https://doi.org/10.1111/cgf.14522">https://doi.org/10.1111/cgf.14522</a>.
+</div>
+<div id="ref-Kelleher2011" class="csl-entry">
+Kelleher, Christa, and Thorsten Wagener. 2011. <span>“<span class="nocase">Ten guidelines for effective data visualization in scientific publications</span>.”</span> <em>Environmental Modelling and Software</em> 26 (6): 822–27. <a href="https://doi.org/10.1016/j.envsoft.2010.12.006">https://doi.org/10.1016/j.envsoft.2010.12.006</a>.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Here is the full URL: <a href="https://bradduthie.shinyapps.io/build_histogram/" class="uri">https://bradduthie.shinyapps.io/build_histogram/</a>.<a href="Chapter_10.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data_organisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-2-overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_9.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_11.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -412,7 +507,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Background.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
 "text": "Edit"
 },
 "history": {

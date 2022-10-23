@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 Practical. Real data with Jamovi | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 10 Graphs and summary statistics | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 Practical. Real data with Jamovi | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 10 Graphs and summary statistics | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 Practical. Real data with Jamovi | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 10 Graphs and summary statistics | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="graphs-and-summary-statistics.html"/>
-<link rel="next" href="week-4-overview.html"/>
+<link rel="prev" href="Chapter_9.html"/>
+<link rel="next" href="practical.-real-data-with-jamovi.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -341,33 +341,268 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="practical.-real-data-with-jamovi" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chapter 11</span> <em>Practical</em>. Real data with Jamovi<a href="practical.-real-data-with-jamovi.html#practical.-real-data-with-jamovi" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Using some real datasets in Jamovi</p>
-<div id="some-biological-example" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Some biological example<a href="practical.-real-data-with-jamovi.html#some-biological-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Remember to first put it in a tidy format. Get summary statistics here too.</p>
+<div id="graphs-and-summary-statistics" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Graphs and summary statistics<a href="graphs-and-summary-statistics.html#graphs-and-summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Graphs are useful tools for visualising and communicating data.
+Graphs come in many different types, and different types of graphs are effective for different types of data.
+This chapter focuses on four types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.
+While these graphs summarise data visually, summary statistics summarise data numerically.
+This chapter will focus on four summary statistics: (1) the mean, (2) the mode, (3) the median, and (4) quantiles.
+It will also explain the concept of resistance.</p>
+<div id="graphs" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Graphs<a href="graphs-and-summary-statistics.html#graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Graphs are a highly effective way of summarising data.
+After collecting or obtaining a new dataset, it is almost always a good idea to plot the data in some way.
+Visualising a dataset can often highlight important and obvious properties of a dataset more efficiently that inspecting raw data, calculating summary statistics, or running statistical tests.
+When making graphs to communicate data visually, it is important to ensure the person reading the graph has a clear understanding what is being presented.
+In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descripting caption, and indicating what any graph symbols mean.
+In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or unnecessary distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher and Wagener 2011</a>)</span>.
+It is also important to ensure that graphs are as accessible as possible, e.g., by providing strong colour contrast and appropriate colour combinations <span class="citation">(<a href="#ref-Elavsky2022" role="doc-biblioref">Elavsky, Bennett, and Moritz 2022</a>)</span>, and alternative text for images where possible.
+As a guide, the histogram, pie chart, barplot, and box-whisker plot below illustrate good practice when making graphs.</p>
+<div id="histograms" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Histograms<a href="graphs-and-summary-statistics.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Histograms illustrate the distribution of <a href="Chapter_5.html#Chapter_5">continuous data</a>.
+They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
+The histogram shown in Figure 10.1 provides an example from the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv">fig fruits</a> data set from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-14-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
+<p class="caption">
+Figure 10.1: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.
+</p>
 </div>
-<div id="some-environmental-example" class="section level2 hasAnchor" number="11.2">
-<h2><span class="header-section-number">11.2</span> Some environmental example<a href="practical.-real-data-with-jamovi.html#some-environmental-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Transform and compute a new variable, plotting in Jamovi.</p>
+<p>The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see <a href="https://bradduthie.shinyapps.io/build_histogram/">this interactive application</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>).
+That is, the frequency with which fruits within some width interval occur in the data.
+For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
+In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
+The bars of the histogram touch each other, which reinforces that the data are <a href="Chapter_5.html#Chapter_5">continuous</a> <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+<p>It is especially important to be able to read and understand information from a histogram because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
+For example, the <em>shape</em> of the distribution of fig fruit widths might be important for performing a particular test.
+For the purposes of this module, the <em>shape</em> of the distribution just means what the data look like when plotted like this in a histogram.
+In this case, there is a peak toward the centre of the distribution, with fewer low and high values (this kind of distribution is quite common).
+Different distribution shapes will be discussed more in Part IV (next week).</p>
 </div>
-<div id="summary-of-exercises-and-why-they-are-useful.-1" class="section level2 hasAnchor" number="11.3">
-<h2><span class="header-section-number">11.3</span> Summary of exercises and why they are useful.<a href="practical.-real-data-with-jamovi.html#summary-of-exercises-and-why-they-are-useful.-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Useful for scientific publications, reading, and dissertation work.</p>
-
+<div id="barplots-and-pie-charts" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Barplots and pie charts<a href="graphs-and-summary-statistics.html#barplots-and-pie-charts" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While histograms are an effective way of visualising <a href="Chapter_5.html#Chapter_5">continuous data</a>, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise <a href="Chapter_5.html#Chapter_5">categorical data</a>.
+For example, in the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv">fig fruits</a> data set <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
+A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-15-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
+<p class="caption">
+Figure 10.2: Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
+</p>
+</div>
+<p>In Figure 10.2, each tree is represented by a separate bar on the x-axis.
+Unlike a histogram, the bars do not touch each other, which reinforces that different categories of data are being shown (in this case, different trees).
+The height of bar indicates how many fruits were sampled for each tree.
+For example, 14 fruits were sampled from tree A, and 22 fruits were sampled from tree B.
+At a glance, it is therefore possible to compare different trees and make inferences about how they differ in sampled fruits.</p>
+<p>Pie charts are similar to barplots in that both present categorical data, but pie charts are more effective for visualising the relative quantity for each category.
+That is, pie charts illustrate the percentage of measurements for each category.
+For example, in the case of the fig fruits, it might be useful to visualise what percentage of fruits were sampled from each tree.
+A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-16-1.png" alt="An example pie chart shows the percentage of fruits collected from four trees labelled A, B, C, and D." width="100%" />
+<p class="caption">
+Figure 10.3: Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
+</p>
+</div>
+<p>Pie charts can be useful in some situations, but in the biological and environmental they are not used as often as barplots.
+In contrast to pie charts, barplots present the absolute quantities (in Figure 10.2, e.g., the actual number of fruits sampled per tree), and it is still possible with barplots to infer the percentage each category contributes to the total from the relative sizes of the bars.
+Pie charts, in contrast, only illustrate relative percentages unless numbers are used to indicate absolute quantities.
+Unless only percentage is important, barplots are often the preferred way to communicate count data.</p>
+</div>
+<div id="box-whisker-plots" class="section level3 hasAnchor" number="10.1.3">
+<h3><span class="header-section-number">10.1.3</span> Box-whisker plots<a href="graphs-and-summary-statistics.html#box-whisker-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Box-whisker plots (also called boxplots) can be used to visualise distributions in a different way than histograms.
+Instead of presenting the full distribution, as in a histogram, a box-whisker plot shows where summary statistics are located (summary statistics are explained below).
+This allows the distribution of data to be represented in a more compact way, but does not show the full shape of a distribution.
+Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histogram of fig fruit widths (10.4B).
+In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-17-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information" width="100%" />
+<p class="caption">
+Figure 10.4: Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.
+</p>
+</div>
+<p>To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5A) are located in the histogram (Figure 10.5B).
+These summary statistics include the median (black circles of Figure 10.5), quartiles (red squares of Figure 10.5), and the limits of the distribution (i.e., the minimum and maximum values; blue triangles of Figure 10.5).
+Note that in boxplots, if outliers exist, they are presented as separate points.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-18-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information, with points showing how properties of the two panels match." width="100%" />
+<p class="caption">
+Figure 10.5: Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).
+</p>
+</div>
+<p>One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
+For example, the distribution of fig fruit width can be shown for each of the four trees side by side on the same x-axis of a boxplot (Figure 10.6).
+While it is possible to show histograms side by side, it will quickly take up a lot of space.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-19-1.png" alt="Example of boxplot showing the distributions of fig fruit width for four different trees." width="100%" />
+<p class="caption">
+Figure 10.6: Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.
+</p>
+</div>
+<p>The boxplot in Figure 10.6 can be used to quickly compare the distribution of Trees A-D.
+The point at the bottom of the distribution of Tree A shows an outlier.
+This outlier is an especially low value of fig fruit width compared to the other fruits of Tree A.</p>
 </div>
 </div>
-
-
-
+<div id="summary-statistics" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Summary statistics<a href="graphs-and-summary-statistics.html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Summary statistics describe properties of data in a single number (e.g., the mean), or a set of numbers (e.g., quartiles).
+This section focuses primarily on summary statistics that describe the centre of a distribution.
+It also introduces quantiles, which divide a distribution into different percentages of the data (e.g., the lowest 50% or highest 75%).
+Throughout this section, verbal and mathematical explanations of summary statistics will be presented alongside histograms or boxplots that convey the same information.
+The point of doing this is to help connect the two ways of summarising the data.
+All of the summary statistics that follow describe calculations for a <em>sample</em> and are therefore estimates of the true values in a <em>population</em>.
+Recall from <a href="Chapter_4.html#Chapter_4">Chapter 4</a> the difference between a population and a sample.
+This module focuses on statistical techniques, not statistical theory, so summary statistics will just focus on how to estimate statistics from sampled data instead of how statistics are defined mathematically<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<div id="the-mean" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> The mean<a href="graphs-and-summary-statistics.html#the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The arithmetic mean (hereafter just <em>the mean</em><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>) of a sample is one of the most commonly reported statistics when communicating information about a dataset.
+The mean is a measure of central tendency, so it is located somewhere in the centre of a distribution.
+Figure 10.7 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-20-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
+<p class="caption">
+Figure 10.7: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.
+</p>
+</div>
+<p>The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+This is a fairly straightforward calculation, so we can use the mean as an example to demonstrate some new mathematical notation that will be used throughout the module.
+We will start with a concrete example with actual numbers, then end with a more abstract equation describing how any sample mean is calculated.
+The notation might be a bit confusing at first, but learning it will make understanding statistical concepts easier later in the module.
+There are a lot of equations in what follows, but this is because we want to explain what is happening as clearly as possible, step by step.
+We start with the following 8 values.</p>
+<pre><code>4.2, 5.0, 3.1, 4.2, 3.8, 4.6, 4.0, 3.5</code></pre>
+<p>To calculate the mean of a sample, we just need to add up all of the values and divide by 8 (the total number of values),</p>
+<p><span class="math display">\[\bar{x} = \frac{4.2 + 5.0 + 3.1 + 4.2 + 3.8 + 4.6 + 4.0 + 3.5}{8}.\]</span></p>
+<p>Note that I have used the symbol <span class="math inline">\(\bar{x}\)</span> to represent the mean of <span class="math inline">\(x\)</span>, which is a common notation <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In the example above, <span class="math inline">\(\bar{x} = 4.05\)</span>.</p>
+<p>Writing the calculation above is not a problem because we only have 8 points of data.
+But sample sizes are often much larger than 8.
+If we had a sample size of 80 or 800, then there is no way that we could write down every number to show how the mean is calculated.
+One way to get around this is to use ellipses and just show the first and last couple of numbers,</p>
+<p><span class="math display">\[\bar{x} = \frac{4.2 + 5.0 + ... + 4.0 + 3.5}{8}.\]</span></p>
+<p>This is a more compact, and perfectly acceptable, way to write the sample mean.
+But it is often necessary to have an even more compact way of indicating the sum over a set of values (i.e., the top of the fraction above).
+To do this, each value can be symbolised by an <span class="math inline">\(x\)</span>, with a unique subscript <span class="math inline">\(i\)</span>, so that <span class="math inline">\(x_{i}\)</span> corresponds to a specific value in the list above.
+The usefulness of this notation, <span class="math inline">\(x_{i}\)</span>, will become clear soon.
+It takes some getting used to, but the table below shows each symbol with its corresponding value to make it more intuitive.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_{1}\)</span></td>
+<td>4.2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{2}\)</span></td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{3}\)</span></td>
+<td>3.1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{4}\)</span></td>
+<td>4.2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{5}\)</span></td>
+<td>3.8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{6}\)</span></td>
+<td>4.6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{7}\)</span></td>
+<td>4.0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{8}\)</span></td>
+<td>3.5</td>
+</tr>
+</tbody>
+</table>
+<p>Note that we can first replace the actual values with their corresponding <span class="math inline">\(x_{i}\)</span>, so the mean can be written as,</p>
+<p><span class="math display">\[\bar{x} = \frac{x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} + x_{7} + x_{8}}{8}.\]</span>
+Next, we can rewrite the top of the equation in a different form using a summation sign,</p>
+<p><span class="math display">\[\sum_{i = 1}^{8}x_{i} = x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} + x_{7} + x_{8}.\]</span>
+Like the use of <span class="math inline">\(x_{i}\)</span>, the summation sign <span class="math inline">\(\sum\)</span> takes some getting used to, but here it just means “sum up all of the <span class="math inline">\(x_{i}\)</span> values”.
+You can think of it as a big ‘S’ that just says “sum up”.
+The bottom of the S is the starting point and the top of it is the ending point for adding numbers.
+Verbally, we can read this as saying, “starting with <span class="math inline">\(i = 1\)</span>, add up all of the <span class="math inline">\(x_{i}\)</span> values until <span class="math inline">\(i = 8\)</span>”.
+We can then replace the long list of <span class="math inline">\(x\)</span> values with a summation,</p>
+<p><span class="math display">\[\bar{x} = \frac{\sum_{i = 1}^{8}x_{i}}{8}.\]</span></p>
+<p>This looks a bit messy, so we can rewrite the above equation.
+Instead of dividing the summation by 8, we can multiply it by 1/8, which gives us the same answer,</p>
+<p><span class="math display">\[\bar{x} = \frac{1}{8}\sum_{i = 1}^{8}x_{i}.\]</span></p>
+<p>There is one more step.
+We have started with 8 actual values and ended with a compact and abstract equation for calculating the mean.
+But if we want a general description for calculating <em>any</em> mean, then we need to account for sample sizes not equal to 8.
+To do this, we can use <span class="math inline">\(N\)</span> to represent the sample size.
+In our example, <span class="math inline">\(N = 8\)</span>, but it is possible to have a sample size be any finite value above zero.
+We can therefore replace 8 with <span class="math inline">\(N\)</span> in the equation for the sample mean,</p>
+<p><span class="math display">\[\bar{x} = \frac{1}{N}\sum_{i = 1}^{N}x_{i}.\]</span></p>
+<p>There we have it.
+Verbally, the above equation tells us to multiply <span class="math inline">\(1/N\)</span> by the sum of all <span class="math inline">\(x_{i}\)</span> values from 1 to <span class="math inline">\(N\)</span>.
+This describes the mean for any sample that we might collect.</p>
+</div>
+<div id="the-mode" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> The mode<a href="graphs-and-summary-statistics.html#the-mode" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Explanation of the mode</p>
+</div>
+<div id="the-median-and-quantiles" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> The median and quantiles<a href="graphs-and-summary-statistics.html#the-median-and-quantiles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Notes on the median and quantiles</p>
+</div>
+<div id="mean-mode-median-and-resistance" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> Mean, mode, median, and resistance<a href="graphs-and-summary-statistics.html#mean-mode-median-and-resistance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Resistance in statistics</p>
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Dytham2011" class="csl-entry">
+Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-Elavsky2022" class="csl-entry">
+Elavsky, Frank, Cynthia Bennett, and Dominik Moritz. 2022. <span>“<span class="nocase">How accessible is my visualization? Evaluating visualization accessibility with Chartability</span>.”</span> <em>Computer Graphics Forum</em> 41 (3): 57–70. <a href="https://doi.org/10.1111/cgf.14522">https://doi.org/10.1111/cgf.14522</a>.
+</div>
+<div id="ref-Kelleher2011" class="csl-entry">
+Kelleher, Christa, and Thorsten Wagener. 2011. <span>“<span class="nocase">Ten guidelines for effective data visualization in scientific publications</span>.”</span> <em>Environmental Modelling and Software</em> 26 (6): 822–27. <a href="https://doi.org/10.1016/j.envsoft.2010.12.006">https://doi.org/10.1016/j.envsoft.2010.12.006</a>.
+</div>
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Here is the full URL: <a href="https://bradduthie.shinyapps.io/build_histogram/" class="uri">https://bradduthie.shinyapps.io/build_histogram/</a>.<a href="graphs-and-summary-statistics.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>If interested, a good textbook for learning about theoretical statistics and the mathematics underlying what we do in this module is <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>. Note, <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span> will not be useful for this module.<a href="graphs-and-summary-statistics.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>There are other types of means, such as the geometric mean or the harmonic mean, but we will not use these at all in this module.<a href="graphs-and-summary-statistics.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="graphs-and-summary-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-4-overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_9.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="practical.-real-data-with-jamovi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

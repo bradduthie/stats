@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 11 Measures of central tendency | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 11 Measures of central tendency | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 11 Measures of central tendency | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data_organisation.html"/>
-<link rel="next" href="week-2-overview.html"/>
+<link rel="prev" href="Chapter_10.html"/>
+<link rel="next" href="Chapter_12.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -348,40 +348,146 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="practical-preparing-real-datasets" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> <em>Practical</em>: Preparing real datasets<a href="practical-preparing-real-datasets.html#practical-preparing-real-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this practical, we will use a spreadsheet to organise datastes.</p>
-<div id="libreoffice-calc" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> LibreOffice Calc<a href="practical-preparing-real-datasets.html#libreoffice-calc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>LibreOffice Calc is a free and open source spreadsheet program. The instructions for this section will be identical to the more popular commercial Microsoft Excel.</p>
+<div id="Chapter_11" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Measures of central tendency<a href="Chapter_11.html#Chapter_11" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Summary statistics describe properties of data in a single number (e.g., the mean), or a set of numbers (e.g., quartiles).
+This chapter focuses on summary statistics that describe the centre of a distribution.
+It also introduces quantiles, which divide a distribution into different percentages of the data (e.g., the lowest 50% or highest 75%).
+Throughout this section, verbal and mathematical explanations of summary statistics will be presented alongside histograms or boxplots that convey the same information.
+The point of doing this is to help connect the two ways of summarising the data.
+All of the summary statistics that follow describe calculations for a <em>sample</em> and are therefore estimates of the true values in a <em>population</em>.
+Recall from <a href="Chapter_4.html#Chapter_4">Chapter 4</a> the difference between a population and a sample.
+This module focuses on statistical techniques, not statistical theory, so summary statistics will just focus on how to estimate statistics from sampled data instead of how statistics are defined mathematically<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<div id="the-mean" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> The mean<a href="Chapter_11.html#the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The arithmetic mean (hereafter just <em>the mean</em><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>) of a sample is one of the most commonly reported statistics when communicating information about a dataset.
+The mean is a measure of central tendency, so it is located somewhere in the centre of a distribution.
+Figure 10.7 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-20-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
+<p class="caption">
+Figure 11.1: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.
+</p>
 </div>
-<div id="exercise-organising-data-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Exercise Organising data 1<a href="practical-preparing-real-datasets.html#exercise-organising-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.2</p>
+<p>The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+This is a fairly straightforward calculation, so we can use the mean as an example to demonstrate some new mathematical notation that will be used throughout the module.
+We will start with a concrete example with actual numbers, then end with a more abstract equation describing how any sample mean is calculated.
+The notation might be a bit confusing at first, but learning it will make understanding statistical concepts easier later in the module.
+There are a lot of equations in what follows, but this is because we want to explain what is happening as clearly as possible, step by step.
+We start with the following 8 values.</p>
+<pre><code>4.2, 5.0, 3.1, 4.2, 3.8, 4.6, 4.0, 3.5</code></pre>
+<p>To calculate the mean of a sample, we just need to add up all of the values and divide by 8 (the total number of values),</p>
+<p><span class="math display">\[\bar{x} = \frac{4.2 + 5.0 + 3.1 + 4.2 + 3.8 + 4.6 + 4.0 + 3.5}{8}.\]</span></p>
+<p>Note that I have used the symbol <span class="math inline">\(\bar{x}\)</span> to represent the mean of <span class="math inline">\(x\)</span>, which is a common notation <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In the example above, <span class="math inline">\(\bar{x} = 4.05\)</span>.</p>
+<p>Writing the calculation above is not a problem because we only have 8 points of data.
+But sample sizes are often much larger than 8.
+If we had a sample size of 80 or 800, then there is no way that we could write down every number to show how the mean is calculated.
+One way to get around this is to use ellipses and just show the first and last couple of numbers,</p>
+<p><span class="math display">\[\bar{x} = \frac{4.2 + 5.0 + ... + 4.0 + 3.5}{8}.\]</span></p>
+<p>This is a more compact, and perfectly acceptable, way to write the sample mean.
+But it is often necessary to have an even more compact way of indicating the sum over a set of values (i.e., the top of the fraction above).
+To do this, each value can be symbolised by an <span class="math inline">\(x\)</span>, with a unique subscript <span class="math inline">\(i\)</span>, so that <span class="math inline">\(x_{i}\)</span> corresponds to a specific value in the list above.
+The usefulness of this notation, <span class="math inline">\(x_{i}\)</span>, will become clear soon.
+It takes some getting used to, but the table below shows each symbol with its corresponding value to make it more intuitive.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Symbol</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(x_{1}\)</span></td>
+<td>4.2</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{2}\)</span></td>
+<td>5.0</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{3}\)</span></td>
+<td>3.1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{4}\)</span></td>
+<td>4.2</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{5}\)</span></td>
+<td>3.8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{6}\)</span></td>
+<td>4.6</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x_{7}\)</span></td>
+<td>4.0</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x_{8}\)</span></td>
+<td>3.5</td>
+</tr>
+</tbody>
+</table>
+<p>Note that we can first replace the actual values with their corresponding <span class="math inline">\(x_{i}\)</span>, so the mean can be written as,</p>
+<p><span class="math display">\[\bar{x} = \frac{x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} + x_{7} + x_{8}}{8}.\]</span>
+Next, we can rewrite the top of the equation in a different form using a summation sign,</p>
+<p><span class="math display">\[\sum_{i = 1}^{8}x_{i} = x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} + x_{7} + x_{8}.\]</span>
+Like the use of <span class="math inline">\(x_{i}\)</span>, the summation sign <span class="math inline">\(\sum\)</span> takes some getting used to, but here it just means “sum up all of the <span class="math inline">\(x_{i}\)</span> values”.
+You can think of it as a big ‘S’ that just says “sum up”.
+The bottom of the S is the starting point and the top of it is the ending point for adding numbers.
+Verbally, we can read this as saying, “starting with <span class="math inline">\(i = 1\)</span>, add up all of the <span class="math inline">\(x_{i}\)</span> values until <span class="math inline">\(i = 8\)</span>”.
+We can then replace the long list of <span class="math inline">\(x\)</span> values with a summation,</p>
+<p><span class="math display">\[\bar{x} = \frac{\sum_{i = 1}^{8}x_{i}}{8}.\]</span></p>
+<p>This looks a bit messy, so we can rewrite the above equation.
+Instead of dividing the summation by 8, we can multiply it by 1/8, which gives us the same answer,</p>
+<p><span class="math display">\[\bar{x} = \frac{1}{8}\sum_{i = 1}^{8}x_{i}.\]</span></p>
+<p>There is one more step.
+We have started with 8 actual values and ended with a compact and abstract equation for calculating the mean.
+But if we want a general description for calculating <em>any</em> mean, then we need to account for sample sizes not equal to 8.
+To do this, we can use <span class="math inline">\(N\)</span> to represent the sample size.
+In our example, <span class="math inline">\(N = 8\)</span>, but it is possible to have a sample size be any finite value above zero.
+We can therefore replace 8 with <span class="math inline">\(N\)</span> in the equation for the sample mean,</p>
+<p><span class="math display">\[\bar{x} = \frac{1}{N}\sum_{i = 1}^{N}x_{i}.\]</span></p>
+<p>There we have it.
+Verbally, the above equation tells us to multiply <span class="math inline">\(1/N\)</span> by the sum of all <span class="math inline">\(x_{i}\)</span> values from 1 to <span class="math inline">\(N\)</span>.
+This describes the mean for any sample that we might collect.</p>
 </div>
-<div id="exercise-organising-data-2" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Exercise Organising data 2<a href="practical-preparing-real-datasets.html#exercise-organising-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.3</p>
+<div id="the-mode" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> The mode<a href="Chapter_11.html#the-mode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Explanation of the mode</p>
 </div>
-<div id="exercise-organising-data-3" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Exercise Organising data 3<a href="practical-preparing-real-datasets.html#exercise-organising-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.4, saving all of these as CSV files</p>
-</div>
-<div id="summary-of-exercises-and-why-they-are-useful." class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Summary of exercises and why they are useful.<a href="practical-preparing-real-datasets.html#summary-of-exercises-and-why-they-are-useful." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-
+<div id="the-median-and-quantiles" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> The median and quantiles<a href="Chapter_11.html#the-median-and-quantiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Notes on the median and quantiles</p>
 </div>
 </div>
-
-
-
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>If interested, a good textbook for learning about theoretical statistics and the mathematics underlying what we do in this module is <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>. Note, <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span> will not be useful for this module.<a href="Chapter_11.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>There are other types of means, such as the geometric mean or the harmonic mean, but we will not use these at all in this module.<a href="Chapter_11.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="data_organisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-2-overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_12.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -412,7 +518,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Background.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
 "text": "Edit"
 },
 "history": {

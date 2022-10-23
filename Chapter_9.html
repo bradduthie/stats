@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 9 Decimal places, significant figures, and rounding | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 9 Decimal places, significant figures, and rounding | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Practical: Preparing real datasets | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 9 Decimal places, significant figures, and rounding | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="data_organisation.html"/>
-<link rel="next" href="week-2-overview.html"/>
+<link rel="prev" href="week-3-overview.html"/>
+<link rel="next" href="Chapter_10.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -348,40 +348,139 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="practical-preparing-real-datasets" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> <em>Practical</em>: Preparing real datasets<a href="practical-preparing-real-datasets.html#practical-preparing-real-datasets" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this practical, we will use a spreadsheet to organise datastes.</p>
-<div id="libreoffice-calc" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> LibreOffice Calc<a href="practical-preparing-real-datasets.html#libreoffice-calc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>LibreOffice Calc is a free and open source spreadsheet program. The instructions for this section will be identical to the more popular commercial Microsoft Excel.</p>
+<div id="Chapter_9" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Decimal places, significant figures, and rounding<a href="Chapter_9.html#Chapter_9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>When making calculations, it is important that any numbers reported are communicated with <a href="Chapter_6.html#Chapter_6">accuracy and precision</a>.
+This means reporting numbers with the correct number of digits.
+This chapter focuses on correctly interpreting the decimal places and significant figures of a number, and correctly rounding.
+In your assessments, you will frequently be asked to report an answer to a specific number of decimal places or significant figures, and you will be expected to round numbers correctly.</p>
+<div id="decimal-places-and-significant-figures" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Decimal places and significant figures<a href="Chapter_9.html#decimal-places-and-significant-figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A higher number of digits communicates a greater level of accuracy
+For example, the number 2.718 expresses a higher precision than 2.7 does.
+Reporting 2.718 implies that we know the value is somewhere between 2.7175 and 2.1785, but reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+These numbers therefore have a different number of <em>decimal places</em> and a different number <em>significant figures</em>.
+Decimal places and significant figures are related, but not the same.</p>
+<p><strong>Decimal places</strong> are conceptually easier to understand. These are just the number of digits to the right of the decimal point. For example, 2.718 has 3 decimal places and 2.7 has 1 decimal place.</p>
+<p><strong>Significant figures</strong> are a bit more challenging. These are the number of digits that you need to infer the accuracy of a value. For example, the number 2.718 has 4 significant figures and 2.7 has 2 significant figures. This sounds straightforward, but it can get confusing when numbers start or end with zeros. For example, the number 0.045 has only two significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy). In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.44995 and 0.45005, not just 0.0445 and 0.0455). Lastly, the measurement 4500 has only 2 significant figures because the last 2 zeros are only serving as a placeholder to indicate magnitude, not accuracy (if we wanted to represent 4500 with 4 significant figures, we could use scientific notation and express it as <span class="math inline">\(4.500 \times 10^3\)</span>).</p>
+<p>Here is a table with some examples of some numbers, their decimal places, and their significant figures.</p>
+<table>
+<caption>Numbers are presented in rows of the first column. Decimal places and significant figures for each row number are presented in the second and third column, respectively.</caption>
+<thead>
+<tr class="header">
+<th>Number</th>
+<th>Decimal places</th>
+<th>Significant figures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3.14159</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>0.0333</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>1250</td>
+<td>0</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>50000.0</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>0.12</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>1000000</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>It is a good idea to double-check that the values in these tables make sense.
+For assessments, make sure that you are confident that you can report your answer to a given number of decimal places or significant figures.</p>
 </div>
-<div id="exercise-organising-data-1" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Exercise Organising data 1<a href="practical-preparing-real-datasets.html#exercise-organising-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.2</p>
+<div id="rounding" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Rounding<a href="Chapter_9.html#rounding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Often if you are asked to report a number to a specific number of decimals or significant figures, you will need to round the number.<br />
+Rounding reduces the number of significant digits in a number, which might be necessary if a number that we calculate has more significant digits than we are justified in expressing.
+There are different rules for rounding numbers, but in this module, we will follow <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span>.
+When rounding to the nearest decimal, the last decimal written should not be changed if the number that immediately follows is 0, 1, 2, 3, or 4.
+If the number that immediately follows is 5, 6, 7, 8, or 9, then the last decimal written should be increased by 1.</p>
+<p>For example, if we wanted to round the number 3.141593 to 2 significant digits, then we would write it as 3.1 because the digit that immediately follows (i.e., the third digit) is 4.
+If we wanted to round the number to 5 significant digits, then we would write it as 3.1415 because the digit that immediately follows is 9.
+And if we wanted to round 3.141593 to 4 significant digits, then we would write it as 3.146 because the digit that immediately follows is 5.
+Note that this does not just apply for decimals.
+If we wanted to round 1253 to 3 significant figures, then we would round by writing it as 1250.</p>
+<p>Here is a table with some examples of numbers rounded to a given significant figure.</p>
+<table>
+<caption>Numbers to be rounded are presented in rows of the first column. The significant figures to which rounding is desired is in the second column, and the third column shows the correctly rounded number.</caption>
+<thead>
+<tr class="header">
+<th>Original number</th>
+<th>Significant figures</th>
+<th>Rounded number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>23.2439</td>
+<td>4</td>
+<td>23.24</td>
+</tr>
+<tr class="even">
+<td>10.235</td>
+<td>4</td>
+<td>10.24</td>
+</tr>
+<tr class="odd">
+<td>102.39</td>
+<td>2</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>5.3955</td>
+<td>3</td>
+<td>5.40</td>
+</tr>
+<tr class="odd">
+<td>37.449</td>
+<td>3</td>
+<td>37.4</td>
+</tr>
+<tr class="even">
+<td>0.00345</td>
+<td>2</td>
+<td>0.0035</td>
+</tr>
+</tbody>
+</table>
+<p>In this module, it will be necessary to round calculated values to specified decimal or significant figure.
+It is therefore important to understand the rules for rounding and why the values in the table above are rounded correctly.</p>
 </div>
-<div id="exercise-organising-data-2" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Exercise Organising data 2<a href="practical-preparing-real-datasets.html#exercise-organising-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.3</p>
 </div>
-<div id="exercise-organising-data-3" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Exercise Organising data 3<a href="practical-preparing-real-datasets.html#exercise-organising-data-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Walks through Exercise 1.3.4, saving all of these as CSV files</p>
-</div>
-<div id="summary-of-exercises-and-why-they-are-useful." class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Summary of exercises and why they are useful.<a href="practical-preparing-real-datasets.html#summary-of-exercises-and-why-they-are-useful." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="data_organisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-2-overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-3-overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_10.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -412,7 +511,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Background.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
 "text": "Edit"
 },
 "history": {
