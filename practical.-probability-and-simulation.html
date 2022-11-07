@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2022-11-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,11 +216,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="16" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>16.1</b> Calculating probability exercise 1</a></li>
-<li class="chapter" data-level="16.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>16.2</b> Calculating probability exercise 2</a></li>
-<li class="chapter" data-level="16.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>16.3</b> Calculating probability from normal distribution</a></li>
-<li class="chapter" data-level="16.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>16.4</b> Normal distribution and sample size</a></li>
-<li class="chapter" data-level="16.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>16.5</b> Simulating the central limit theorem</a></li>
+<li class="chapter" data-level="16.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+<li class="chapter" data-level="16.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>16.4</b> Calculating probability exercise 1</a></li>
+<li class="chapter" data-level="16.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>16.5</b> Calculating probability exercise 2</a></li>
+<li class="chapter" data-level="16.6" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>16.6</b> Calculating probability from normal distribution</a></li>
+<li class="chapter" data-level="16.7" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>16.7</b> Normal distribution and sample size</a></li>
+<li class="chapter" data-level="16.8" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>16.8</b> Simulating the central limit theorem</a></li>
 </ul></li>
 <li class="part"><span><b>V Statistical inference</b></span></li>
 <li class="chapter" data-level="" data-path="week-5-overview.html"><a href="week-5-overview.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
@@ -350,25 +353,242 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="practical.-probability-and-simulation" class="section level1 hasAnchor" number="16">
 <h1><span class="header-section-number">Chapter 16</span> <em>Practical</em>. Probability and simulation<a href="practical.-probability-and-simulation.html#practical.-probability-and-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Some of these examples will be similar to what will be on the assessment</p>
-<div id="calculating-probability-exercise-1" class="section level2 hasAnchor" number="16.1">
-<h2><span class="header-section-number">16.1</span> Calculating probability exercise 1<a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This practical focuses on applying the concepts from chapter 14 and 15 in Jamovi.
+There will be 3 exercises.</p>
+<ol style="list-style-type: decimal">
+<li>Calculating probabilities from a dataset.</li>
+<li>Calculating probabilities from a normal distribution.</li>
+<li>Demonstrating the central limit theorem (CLT).</li>
+</ol>
+<p>To complete exercises 2 and 3, we will need to download and install two new Jamovi modules.
+Jamovi Modules are add-ons that make it possible to run specialised statistical tools inside Jamovi.
+These tools are written by a community of statisticians, scientists, and educators and listed in the <a href="https://www.jamovi.org/library.html">Jamovi library</a>.
+Like Jamovi, these tools are open source and free to use.</p>
+<p>The dataset for this practical is something a bit different.
+It comes from the <a href="https://www.thebeaconproject.net/">Beacon Project</a>, which is an interdisciplinary scientific research programme led by <a href="https://www.stir.ac.uk/people/256518">Dr Isabel Jones</a> at the University of Stirling.
+This project focuses on large hydropower dams as a way to understand the trade-offs between different United Nations <a href="https://sdgs.un.org/goals">Sustainable Development Goals</a>.
+It addresses challenging questions about environmental justice, biodiversity, and sustainable development.<br />
+The project works with people affected, and sometimes displaced, by dam construction in Brazil, Kazakhstan, India, USA, and the UK.
+Part of this project involves the use of mobile games to investigate how people make decisions about sustainable development.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-29"></span>
+<img src="img/power_up.png" alt="Decorative image shown of the interface of the mobile app game Power Up!" width="80%" />
+<p class="caption">
+Figure 16.1: Welcome screen of the mobile game Power Up!
+</p>
+</div>
+<p>The game “Power Up!” is freely available as an <a href="https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame">Android</a> and <a href="https://apps.apple.com/gb/app/power-up/id1585634888">iPhone</a> app (Figure 16.1).
+Data are collected from players’ decisions and used to investigate social-ecological questions.
+We will use the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv">power_up</a> dataset in exercises 1 and 2.
+To get started, first download the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv">power_up</a> dataset and open them in Jamovi.
+Note that these data are already in a tidy format, so we do not need to do any reorganising.
+The dataset includes columns for each player’s ID, the OS that they use, the dam size that they decided to build in the game, their in-game investment in Biodiversity, Community, and Energy, and their final Score.</p>
+<div id="probabilities-from-a-dataset" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Probabilities from a dataset<a href="practical.-probability-and-simulation.html#probabilities-from-a-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose that we want to estimate the probability that a new Power Up! game player will be an Android user.
+To estimate this probability, we can use the proportion of players in the dataset who are Android users.
+To get this proportion, we need to divide the number of Android users by the total number of players,</p>
+<p><span class="math display">\[P_{(Android)} = \frac{Number\:of\:Android\:users}{Number\:of\:players}.\]</span></p>
+<p>In Jamovi, you could figure this out the long way by counting up the number of rows with ‘Android’ in the second column, then dividing by the total number of rows.
+But there is an easier way, which is faster and less prone to human error than manually tallying up items.
+To do this, go to the Analyses tab in Jamovi and navigate to Exploration, then Descriptives.
+Place the ‘OS’ variable in to the ‘Variables’ box.
+Next, find the check box called ‘Frequency tables’ just under the ‘Split by’ box and above the ‘Statistics’ drop down tab.
+Check this box to get a table of frequencies for Android versus iPhone users.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30"></span>
+<img src="img/jamovi_power_up_frequencies.png" alt="Jamovi interface of Descriptives with OS selected as a Variable and a frequency table to the right showing the frequencies of Android and iPhone users" width="100%" />
+<p class="caption">
+Figure 16.2: Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The ‘Frequency tables’ checkbox builds a table of counts and percentages.
+</p>
+</div>
+<p>The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
+We can see that 56 of the 74 total game players use Android, while 18 players use iPhone.
+To get the proportion of Android users we could divide 56 by 74 to get 0.7567568.
+Similarly, the proportion of iPhone users, we could calculate 18 / 74 = 0.2432432.
+But Jamovi already does that for us, with a bit of rounding.
+The second column of the Frequencies table gives us these proportions, but expressed as a percentage.
+The percentage of Android users is 75.7%, and the percentage of iPhone users is 24.3%.
+Percentages are out of a total of 100, so to get back to the proportions, we can just divide by 100, 75.7 / 100 = 0.757 for Android and 24.3 / 100 = 0.243 for iPhone.
+To answer the original question, our best estimate of the probability that a new Power Up! game player will be an Android user is therefore 0.757.</p>
+<p>Next, use the same procedure to find the probability that a game player will make a small, medium, and large size dam.
+Now, fill in Table 16.1 with counts, percentage, and the estimated probability of a player selecting a small, medium, or large dam.</p>
+<table>
+<caption>Statistics of Power Up! decisions for dam size.</caption>
+<thead>
+<tr class="header">
+<th>Dam size</th>
+<th>Counts</th>
+<th>Percentage</th>
+<th>Estimated Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Small</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Medium</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Large</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We can use these estimated probabilities of small, medium, and large dam size selection to predict what will happen in future games.
+Suppose that a new player decides to play the game.
+What is the probability that this player chooses a small <strong>or</strong> a large dam?</p>
+<p><span class="math inline">\(Pr_{(small\:or\:large)} =\)</span> : __________________________</p>
+<p>Now suppose that 3 new players arrive and decide to play the game.
+What is the probability that all 3 of these new players choose a large dam?</p>
+<p><span class="math inline">\(Pr_{(3\:large)} =\)</span> : __________________________</p>
+<p>What is the probability that all 3 of these new players choose <em>different</em> dam sizes?</p>
+<p><span class="math inline">\(Pr_{(small,\:medium,\:large)} =\)</span> : __________________________</p>
+<p>Now consider a slightly different type of question.
+Instead of trying to predict the probability of new player decisions, we will focus on sampling from the existing power up dataset.
+Imagine that you randomly choose one of the 74 players with equal probability (i.e., every player is equally likely to be chosen).
+What is the probability that you choose player 20?</p>
+<p><span class="math inline">\(Pr_{(Player\:20)} =\)</span> : __________________________</p>
+<p>What is the probability that you choose player 20, <em>then</em> choose a different player with a large dam?
+As a hint, remember that you are now sampling <em>without replacement</em>.
+The second choice cannot be player 20 again, so the probability of choosing a player with a large dam has changed from the estimated probability in Table 16.1.</p>
+<p><span class="math inline">\(Pr_{(Player\:20,\:Large)} =\)</span> : __________________________</p>
+<p>Now we can use the Descriptives tool in Jamovi to ask a slightly different question with the data.
+Suppose that we wanted to estimate the probability that an Android user will choose a large dam.
+We could multiply the proportion of Android users times the proportion of players who choose a large dam (i.e., find the probability of Android <em>and</em> large dam).
+But this assumes that the two characteristics are independent (i.e., that Android users are not more or less likely than iPhone users to build large dams).
+To estimate the probability that a player chooses a large dam <em>given</em> that they are using Android, we can keep Dam_size in the Variables box, but now put OS in the ‘Split by’ box.
+Figure 16.3 shows the output of Jamovi.
+A new frequency table breaks down dam choice for each OS.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-31"></span>
+<img src="img/jamovi_power_up_frequencies2.png" alt="Jamovi interface of Descriptives with dam size selected as a Variable split by OS, and a frequency table to the right showing the frequencies of Android and iPhone users who chose small, medium, and large dams." width="100%" />
+<p class="caption">
+Figure 16.3: Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The ‘Frequency tables’ checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.
+</p>
+</div>
+<p>To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).</p>
+<p><span class="math display">\[P_{(Large | Android)} = \frac{Number\:of\:Android\:users\:choosing\:large\:dam}{Number\:of\:Android\:users}.\]</span></p>
+<p>Now, recreate the table in Figure 16.3 and estimate the probability that an Android user will choose to build a large dam,</p>
+<p><span class="math inline">\(P_{(Large | Android)} =\)</span> : __________________________</p>
+<p>Is <span class="math inline">\(P_{(Large | Android)}\)</span> much different from the probability that <em>any</em> player chooses a large dam, as calculated in Table 16.1? Do you think that the difference is significant?</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>Next, we will move on to calculating probabilities from a normal distribution.</p>
+</div>
+<div id="probabilities-from-a-normal-distribution" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Probabilities from a normal distribution<a href="practical.-probability-and-simulation.html#probabilities-from-a-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the example of the first exercise, we looked at OS and dam size choice.
+Players only use Android or iPhone, and they could only choose one of three sizes of dam.
+For these nominal variables, estimating the probability of a particular discrete outcome (e.g., Android versus iPhone) was just a matter of dividing counts.
+But we cannot use the same approach for calculating probabilities from continuous data.
+Consider, for example, the final score for each player in the column ‘Score’.
+Because of how the game was designed, Score can potentially be any real number, although most scores are somewhere around 100.
+We can use a histogram to see the distribution of player scores (Figure 16.4).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-32"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" alt="A histogram is shown with a normal shape. The x-axis is labelled 'Player Score'." width="100%" />
+<p class="caption">
+Figure 16.4: Distribution of player scores in the game Power Up!
+</p>
+</div>
+<p>In this case, it does not really make sense to ask what the probability is of a particular score.
+If the score can take <em>any</em> real value, out to as many decimals as we want, then what is the probability of a score being <em>exactly</em> 94.97 (i.e., 94.97 with infinite zeros after it, <span class="math inline">\(94.9700000\bar{0}\)</span>)?
+The probability is infinitesimal, i.e., basically zero, because there are an infinite number of real numbers.
+Consequently, we are not really interested in the probabilities of specific values of continuous data.
+Instead, we want to focus on intervals.
+For example, what is the probability that a player scores higher than 120?
+What is the probability that a player scores lower than 100?
+What is the probability that a player scores between 120 and 100?</p>
+<p>Take another look at Figure 16.4 above, then take a guess at each of these probabilities.
+As a hint, the y-axis of this histogram is showing density instead of frequency.
+What this means is that the total grey area (i.e., the histogram bars) sums to 1.
+Guessing the probability that a player scores higher than 120 is the same as guessing the proportion of grey space in the highest 4 bars of Figure 16.4 (i.e., grey space &gt;120).</p>
+<p><span class="math inline">\(P_{(Score&gt;120)} =\)</span> : __________________________</p>
+<p><span class="math inline">\(P_{(Score&lt;100)} =\)</span> : __________________________</p>
+<p><span class="math inline">\(P_{(100&lt;Score&lt;120)} =\)</span> : __________________________</p>
+<p>Trying to do this by looking at a histogram is not easy, and it is really not the best way to get the above probabilities.
+We can get much better estimates using Jamovi, but we need to make an assumption about the distribution of Player Score.
+Specifically, we need to assume that the distribution of Player Score has a specific shape.
+More technically, we must assume a specific probability density function that we can use to mathematically calculate probabilities of different ranges of player scores.
+Inspecting Figure 16.4, Player Score appears to be normally distributed.
+In other words, the shape of Player Score distribution appears to be normal, or ‘Gaussian’.
+If we are willing to assume this, then we can calculate probabilities using its mean and standard deviation.
+Use Jamovi to find the mean and the standard deviation of player score (note, we can just say that score is unitless, so no need to include units).</p>
+<p>Mean score: __________________________</p>
+<p>Standard deviation score: __________________________</p>
+<p>We will assume that the <em>sample</em> of scores shown in Figure 16.4 came from a <em>population</em> that is normally distributed with the mean and standard deviation above that you wrote above (recall sample versus population from <a href="Chapter_4.html#Chapter_4">Chapter 4</a>).
+We can overlay his distribution on the histogram above using a curved line (Figure 16.5).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" alt="A histogram is shown with a normal shape. The x-axis is labelled 'Player Score', and there is a line indicating the probability density function of a normal distribution overlaid." width="100%" />
+<p class="caption">
+Figure 16.5: Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.
+</p>
+</div>
+<p>We can interpret the area under the curve in the same way that we interpret the area in the grey bars.
+As mentioned earlier, the total area of the histogram bars must sum to 1.
+The total area under the curve must also sum to 1.
+Both represent the probability of different ranges of player scores.
+Notice that the normal distribution is not a perfect match for the histogram bars.
+For example, the middle bar of values illustrating scores between 90 and 100 appears to be a bit low compared to a perfect normal distribution, and there are more scores between 40 and 50 than we might expect.
+Nevertheless, the two distributions broadly overlap, so we might be willing to assume that the player scores represented in the histogram bars are sampled from the population described by the curve.</p>
+<p>Because the curve relating player score to probability density is described by an equation (see <a href="#Chapter_14">Chapter 14</a>), we can use that equation to make inferences about the probabilities of different ranges of scores.
+The simplest example is the mean.
+Because the normal distribution is symmetric, the area to the left of the mean must be the same as the area to the right of the mean.
+And since the whole area under the curve must sum to 1, we can conclude that the probability of sampling a player score that is less than the mean is 1/2, and the probability of sampling a player score greater than the mean is also 1/2.
+Traditionally, we would need to do some maths to get other player score probabilities, but Jamovi can do this much more easily.</p>
+<p>To get Jamovi to calculate probabilities from a normal distribution, we need to go to the Modules option and download a new module (Figure 16.5).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
+<img src="img/jamovi_toolbar_modules.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules'." width="100%" />
+<p class="caption">
+Figure 16.6: Jamovi tool bar, which includes an option for downloading new Modules (right hand side)
+</p>
+</div>
+<p>Click on the ‘Modules’ button, and select the first option called ‘jamovi library’ from the pull-down menu.
+From the ‘Available’ tab, scroll down until you find the Module called ‘distrACTION - Quantiles and Probabilities of Continuous and Discrete Distributions’ <span class="citation">(<a href="#ref-Rihs2018" role="doc-biblioref">Rihs and Mayer 2018</a>)</span>.
+Click the ‘Install’ button to install it into Jamovi.
+A new button in the toolbar called ‘distrACTION’ should become visible (Figure 16.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
+<img src="img/jamovi_toolbar_modules.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules' and a button called distrACTION." width="100%" />
+<p class="caption">
+Figure 16.7: Jamovi tool bar, which includes an added module called distrACTION.
+</p>
+</div>
+<p>If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
+Click on the module and choose ‘Normal Distribution’ from the pulldown menu.</p>
+</div>
+<div id="central-limit-theorem" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> Central limit theorem<a href="practical.-probability-and-simulation.html#central-limit-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="calculating-probability-exercise-1" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> Calculating probability exercise 1<a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Example exercise 1 with some simple probability calculations</p>
 </div>
-<div id="calculating-probability-exercise-2" class="section level2 hasAnchor" number="16.2">
-<h2><span class="header-section-number">16.2</span> Calculating probability exercise 2<a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calculating-probability-exercise-2" class="section level2 hasAnchor" number="16.5">
+<h2><span class="header-section-number">16.5</span> Calculating probability exercise 2<a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Example exercise 2 with some simple probability calculations</p>
 </div>
-<div id="calculating-probability-from-normal-distribution" class="section level2 hasAnchor" number="16.3">
-<h2><span class="header-section-number">16.3</span> Calculating probability from normal distribution<a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="calculating-probability-from-normal-distribution" class="section level2 hasAnchor" number="16.6">
+<h2><span class="header-section-number">16.6</span> Calculating probability from normal distribution<a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Example exercise for getting a the probability of some value sampled above, below, or between some threshold in Jamovi.</p>
 </div>
-<div id="normal-distribution-and-sample-size" class="section level2 hasAnchor" number="16.4">
-<h2><span class="header-section-number">16.4</span> Normal distribution and sample size<a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="normal-distribution-and-sample-size" class="section level2 hasAnchor" number="16.7">
+<h2><span class="header-section-number">16.7</span> Normal distribution and sample size<a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Showing how we get closer to the normal distribution as sample size increases in Jamovi.</p>
 </div>
-<div id="simulating-the-central-limit-theorem" class="section level2 hasAnchor" number="16.5">
-<h2><span class="header-section-number">16.5</span> Simulating the central limit theorem<a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simulating-the-central-limit-theorem" class="section level2 hasAnchor" number="16.8">
+<h2><span class="header-section-number">16.8</span> Simulating the central limit theorem<a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Doing the example from a uniform distribution in Jamovi.</p>
 
 </div>
@@ -376,6 +596,12 @@ div.csl-indent {
 
 
 
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Rihs2018" class="csl-entry">
+Rihs, Michael, and Boris Mayer. 2018. <span>“distrACTION-Calculating and Plotting Distributions.”</span>
+</div>
+</div>
             </section>
 
           </div>

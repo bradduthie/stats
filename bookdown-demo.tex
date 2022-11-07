@@ -89,7 +89,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2022-10-23}
+\date{2022-11-06}
 
 \begin{document}
 \maketitle
@@ -1211,6 +1211,11 @@ The usefulness of this notation, \(x_{i}\), will become clear soon.
 It takes some getting used to, but the table below shows each symbol with its corresponding value to make it more intuitive.
 
 \begin{longtable}[]{@{}ll@{}}
+\caption{A sample dataset that includes eight values.}\tabularnewline
+\toprule
+Symbol & Value \\
+\midrule
+\endfirsthead
 \toprule
 Symbol & Value \\
 \midrule
@@ -1261,12 +1266,81 @@ This describes the mean for any sample that we might collect.
 \hypertarget{the-mode}{%
 \section{The mode}\label{the-mode}}
 
-Explanation of the mode
+The mode of a dataset is simply the value that appears most often.
+As a simple example, we can again consider the sample dataset of 8 values.
+
+\begin{verbatim}
+4.2, 5.0, 3.1, 4.2, 3.8, 4.6, 4.0, 3.5
+\end{verbatim}
+
+In this dataset, the values 5.0, 3.1, 3.8, 4.6, 4.0, and 3.5 are all represented once.
+But the value 4.2 appears twice, once in the first position and once in the fourth position.
+Because 4.2 therefore appears most frequently in the dataset, it is the mode of the dataset.
+
+Note that it is possible for a dataset to have more than one mode.
+Also, somewhat confusingly, distributions that have more than one peak are often described as multimodal, even if the peaks are not of the same height \citep{Sokal1995}.
+For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-21-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-21}
+\end{figure}
+
+In very rare cases, data might have a U-shape.
+The lowest point of the U would then be described as the antimode \citep{Sokal1995}.
 
 \hypertarget{the-median-and-quantiles}{%
 \section{The median and quantiles}\label{the-median-and-quantiles}}
 
-Notes on the median and quantiles
+The median of a dataset is the middle value when the data are sorted.
+More technically, the median is defined as the value that has the same number of lower and higher values than it \citep{Sokal1995}.
+If there are an odd number of values in the dataset, then finding the median is often easy.
+For example, the median of the values \{8, 5, 3, 2, 6\} is 5.
+This is because if we sort the values from lowest to highest (2, 3, 5, 6, 8), the value 5 is exactly in the middle.
+It gets more complicated for an even number of values, such as the sample dataset used for explaining the mean and mode.
+
+\begin{verbatim}
+4.2, 5.0, 3.1, 4.2, 3.8, 4.6, 4.0, 3.5
+\end{verbatim}
+
+We can order these values from lowest to highest.
+
+\begin{verbatim}
+3.1, 3.5, 3.8, 4.0, 4.2, 4.2, 4.6, 5.0
+\end{verbatim}
+
+Again, there is no middle value here.
+But we can find a value that has the same number of lower and higher values.
+To do this, we just need to find the mean of the middle 2 numbers, in this case 4.0 and 4.2, which are in positions 4 and 5, respectively.
+The mean of 4.0 and 4.2 is, \((4.0 + 4.2)/2 = 4.1\), so 4.1 is the median value.
+
+The median is a type of quantile.
+A quantile divides a sorted dataset into different percentages that are lower or higher than it.
+Hence, the median could also be called the 50\% quantile because 50\% of values are lower than the median and 50\% of values are higher than it.
+Two other quantiles besides the median are also noteworthy.
+The first quartile (also called the ``lower quartile'') defines the value for which 25\% of values of lower and 75\% of values are higher.
+The third quartile (also called the ``upper quartile'') defines the value for which 75\% of values are lower and 25\% of values are higher.
+Sometimes this is easy to calculate.
+For example, if there are only five values in a dataset, then the lower quartile is the number in the second position when the data are sorted because 1 value (25\%) is below it and 3 values (75\%) are above it.
+For example, for the values \{1, 3, 4, 8, 9\}, the value 3 is the first quartile and 8 is the third quartile.
+
+In some cases, it is not always this clear.
+We can show how quantiles get more complicated using the same 8 values as above where the first quartiles is somewhere between 3.5 and 3.8.
+
+\begin{verbatim}
+3.1, 3.5, 3.8, 4.0, 4.2, 4.2, 4.6, 5.0
+\end{verbatim}
+
+There are at least 9 different ways to calculate the first quartile in this case, and different statistical software package will sometimes use different default methods \citep{Hyndman1996}.
+One logical way is to calculate the mean between the second (3.5) and third (3.8) position as you would do for the median \citep{Rowntree2018}, \((3.5 + 3.8) / 2 = 3.65\).
+Jamovi uses a slightly more complex method, which will give a value of \(3.725\).
+
+It is important to emphasise that no one way of calculating quantiles is the one and only correct way.
+Statisticians have just proposed different approaches to calculating quantiles from data, and these different approaches sometimes give slightly different results.
+This can be unsatisfying when first learning statistics because it would be nice to have a single approach that is demonstrably correct, i.e., the \emph{right} answer under all circumstances.
+Unfortunately, this is not the case here, nor is it the case for a lot of statistical techniques.
+Often there are different approaches to answering the same statistical question and no simple right answer.
+For this module, we will almost always be reporting calculations of quantiles from Jamovi, and we will clearly indicate that this is how they should be calculated for assessment questions.
+But it is important to recognise that different statistical tools might give different answers \citep{Hyndman1996}.
 
 \hypertarget{Chapter_12}{%
 \chapter{Measures of spread}\label{Chapter_12}}
@@ -1297,7 +1371,7 @@ The data that we will work with in this practical were collected from a research
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, \emph{Nymphaea alba}, which beavers regularly consume (Figure 13.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Nymphaea_alba._Reader.jpg}{Аlexej Potupin} on 8 June 2018.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-21}
+\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-22}
 \end{figure}
 
 As an instructive example, this lab will use the data from \citet{Law2014} on the petiole diameter (mm) from \emph{N. alba} collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
@@ -1347,7 +1421,7 @@ This is a bit tedious, and we will not ask you to do it for every dataset, but i
 See Figure 13.2 for how this would look in Jamovi.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-23}
+\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-24}
 \end{figure}
 
 Note that to insert a new column, we need to right click on an existing column and select `Add Variable' \(\to\) `Insert'.
@@ -1375,7 +1449,7 @@ We will start by making a histogram of the full dataset of petiole diameter.
 To do this, we need to go to `Analyses' tab of the Jamovi toolbar, then select the `Exploration' button.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-25}
+\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-26}
 \end{figure}
 
 Next, select the `Descriptives' option (Figure 13.3).
@@ -1388,7 +1462,7 @@ Choose the `Histogram' option by clicking the checkbox.
 A histogram will open up in the window on the right (you might need to scroll down).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-26}
+\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-27}
 \end{figure}
 
 Take a look at the histogram to the right (Figure 13.4).
@@ -1411,8 +1485,11 @@ Based on the histogram, do you think that the mean and median are the same? Why 
 
 \end{verbatim}
 
-The histogram needs an informative caption.
-To write one in Jamovi, click on the `Edit' tab at the very top of the toolbar.
+The histogram needs better labelled axes and an informative caption.
+To label the axes better, go back to the data tab and double click on the column heading `petiole\_diameter\_mm'.
+Change the name of the data variable to `Petiole diameter (mm)'.
+The newly named variable will then appear when a new histogram of the petiole diameter data is made.
+To write a caption in Jamovi, click on the `Edit' tab at the very top of the toolbar.
 You will see some blue boxes above and below the histogram, and you can write your caption by clicking on the box immediately below the histogram.
 Write a caption for the histogram below.
 
@@ -1495,7 +1572,7 @@ To calculate all of the variables explained in \protect\hyperlink{Chapter_11}{Ch
 When you do this, the Statistics option in Jamovi should like like it does in Figure 13.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-27}
+\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-28}
 \end{figure}
 
 Once you check these boxes, you will see a `Descriptives' table open on the right hand side of Jamovi.
@@ -1698,7 +1775,242 @@ General overview
 \hypertarget{practical.-probability-and-simulation}{%
 \chapter{\texorpdfstring{\emph{Practical}. Probability and simulation}{Practical. Probability and simulation}}\label{practical.-probability-and-simulation}}
 
-Some of these examples will be similar to what will be on the assessment
+This practical focuses on applying the concepts from chapter 14 and 15 in Jamovi.
+There will be 3 exercises.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Calculating probabilities from a dataset.
+\item
+  Calculating probabilities from a normal distribution.
+\item
+  Demonstrating the central limit theorem (CLT).
+\end{enumerate}
+
+To complete exercises 2 and 3, we will need to download and install two new Jamovi modules.
+Jamovi Modules are add-ons that make it possible to run specialised statistical tools inside Jamovi.
+These tools are written by a community of statisticians, scientists, and educators and listed in the \href{https://www.jamovi.org/library.html}{Jamovi library}.
+Like Jamovi, these tools are open source and free to use.
+
+The dataset for this practical is something a bit different.
+It comes from the \href{https://www.thebeaconproject.net/}{Beacon Project}, which is an interdisciplinary scientific research programme led by \href{https://www.stir.ac.uk/people/256518}{Dr Isabel Jones} at the University of Stirling.
+This project focuses on large hydropower dams as a way to understand the trade-offs between different United Nations \href{https://sdgs.un.org/goals}{Sustainable Development Goals}.
+It addresses challenging questions about environmental justice, biodiversity, and sustainable development.\\
+The project works with people affected, and sometimes displaced, by dam construction in Brazil, Kazakhstan, India, USA, and the UK.
+Part of this project involves the use of mobile games to investigate how people make decisions about sustainable development.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-29}
+\end{figure}
+
+The game ``Power Up!'' is freely available as an \href{https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame}{Android} and \href{https://apps.apple.com/gb/app/power-up/id1585634888}{iPhone} app (Figure 16.1).
+Data are collected from players' decisions and used to investigate social-ecological questions.
+We will use the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv}{power\_up} dataset in exercises 1 and 2.
+To get started, first download the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv}{power\_up} dataset and open them in Jamovi.
+Note that these data are already in a tidy format, so we do not need to do any reorganising.
+The dataset includes columns for each player's ID, the OS that they use, the dam size that they decided to build in the game, their in-game investment in Biodiversity, Community, and Energy, and their final Score.
+
+\hypertarget{probabilities-from-a-dataset}{%
+\section{Probabilities from a dataset}\label{probabilities-from-a-dataset}}
+
+Suppose that we want to estimate the probability that a new Power Up! game player will be an Android user.
+To estimate this probability, we can use the proportion of players in the dataset who are Android users.
+To get this proportion, we need to divide the number of Android users by the total number of players,
+
+\[P_{(Android)} = \frac{Number\:of\:Android\:users}{Number\:of\:players}.\]
+
+In Jamovi, you could figure this out the long way by counting up the number of rows with `Android' in the second column, then dividing by the total number of rows.
+But there is an easier way, which is faster and less prone to human error than manually tallying up items.
+To do this, go to the Analyses tab in Jamovi and navigate to Exploration, then Descriptives.
+Place the `OS' variable in to the `Variables' box.
+Next, find the check box called `Frequency tables' just under the `Split by' box and above the `Statistics' drop down tab.
+Check this box to get a table of frequencies for Android versus iPhone users.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-30}
+\end{figure}
+
+The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
+We can see that 56 of the 74 total game players use Android, while 18 players use iPhone.
+To get the proportion of Android users we could divide 56 by 74 to get 0.7567568.
+Similarly, the proportion of iPhone users, we could calculate 18 / 74 = 0.2432432.
+But Jamovi already does that for us, with a bit of rounding.
+The second column of the Frequencies table gives us these proportions, but expressed as a percentage.
+The percentage of Android users is 75.7\%, and the percentage of iPhone users is 24.3\%.
+Percentages are out of a total of 100, so to get back to the proportions, we can just divide by 100, 75.7 / 100 = 0.757 for Android and 24.3 / 100 = 0.243 for iPhone.
+To answer the original question, our best estimate of the probability that a new Power Up! game player will be an Android user is therefore 0.757.
+
+Next, use the same procedure to find the probability that a game player will make a small, medium, and large size dam.
+Now, fill in Table 16.1 with counts, percentage, and the estimated probability of a player selecting a small, medium, or large dam.
+
+\begin{longtable}[]{@{}llll@{}}
+\caption{Statistics of Power Up! decisions for dam size.}\tabularnewline
+\toprule
+Dam size & Counts & Percentage & Estimated Probability \\
+\midrule
+\endfirsthead
+\toprule
+Dam size & Counts & Percentage & Estimated Probability \\
+\midrule
+\endhead
+Small & & & \\
+Medium & & & \\
+Large & & & \\
+\bottomrule
+\end{longtable}
+
+We can use these estimated probabilities of small, medium, and large dam size selection to predict what will happen in future games.
+Suppose that a new player decides to play the game.
+What is the probability that this player chooses a small \textbf{or} a large dam?
+
+\(Pr_{(small\:or\:large)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now suppose that 3 new players arrive and decide to play the game.
+What is the probability that all 3 of these new players choose a large dam?
+
+\(Pr_{(3\:large)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+What is the probability that all 3 of these new players choose \emph{different} dam sizes?
+
+\(Pr_{(small,\:medium,\:large)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now consider a slightly different type of question.
+Instead of trying to predict the probability of new player decisions, we will focus on sampling from the existing power up dataset.
+Imagine that you randomly choose one of the 74 players with equal probability (i.e., every player is equally likely to be chosen).
+What is the probability that you choose player 20?
+
+\(Pr_{(Player\:20)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+What is the probability that you choose player 20, \emph{then} choose a different player with a large dam?
+As a hint, remember that you are now sampling \emph{without replacement}.
+The second choice cannot be player 20 again, so the probability of choosing a player with a large dam has changed from the estimated probability in Table 16.1.
+
+\(Pr_{(Player\:20,\:Large)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now we can use the Descriptives tool in Jamovi to ask a slightly different question with the data.
+Suppose that we wanted to estimate the probability that an Android user will choose a large dam.
+We could multiply the proportion of Android users times the proportion of players who choose a large dam (i.e., find the probability of Android \emph{and} large dam).
+But this assumes that the two characteristics are independent (i.e., that Android users are not more or less likely than iPhone users to build large dams).
+To estimate the probability that a player chooses a large dam \emph{given} that they are using Android, we can keep Dam\_size in the Variables box, but now put OS in the `Split by' box.
+Figure 16.3 shows the output of Jamovi.
+A new frequency table breaks down dam choice for each OS.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-31}
+\end{figure}
+
+To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).
+
+\[P_{(Large | Android)} = \frac{Number\:of\:Android\:users\:choosing\:large\:dam}{Number\:of\:Android\:users}.\]
+
+Now, recreate the table in Figure 16.3 and estimate the probability that an Android user will choose to build a large dam,
+
+\(P_{(Large | Android)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Is \(P_{(Large | Android)}\) much different from the probability that \emph{any} player chooses a large dam, as calculated in Table 16.1? Do you think that the difference is significant?
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+Next, we will move on to calculating probabilities from a normal distribution.
+
+\hypertarget{probabilities-from-a-normal-distribution}{%
+\section{Probabilities from a normal distribution}\label{probabilities-from-a-normal-distribution}}
+
+In the example of the first exercise, we looked at OS and dam size choice.
+Players only use Android or iPhone, and they could only choose one of three sizes of dam.
+For these nominal variables, estimating the probability of a particular discrete outcome (e.g., Android versus iPhone) was just a matter of dividing counts.
+But we cannot use the same approach for calculating probabilities from continuous data.
+Consider, for example, the final score for each player in the column `Score'.
+Because of how the game was designed, Score can potentially be any real number, although most scores are somewhere around 100.
+We can use a histogram to see the distribution of player scores (Figure 16.4).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-32}
+\end{figure}
+
+In this case, it does not really make sense to ask what the probability is of a particular score.
+If the score can take \emph{any} real value, out to as many decimals as we want, then what is the probability of a score being \emph{exactly} 94.97 (i.e., 94.97 with infinite zeros after it, \(94.9700000\bar{0}\))?
+The probability is infinitesimal, i.e., basically zero, because there are an infinite number of real numbers.
+Consequently, we are not really interested in the probabilities of specific values of continuous data.
+Instead, we want to focus on intervals.
+For example, what is the probability that a player scores higher than 120?
+What is the probability that a player scores lower than 100?
+What is the probability that a player scores between 120 and 100?
+
+Take another look at Figure 16.4 above, then take a guess at each of these probabilities.
+As a hint, the y-axis of this histogram is showing density instead of frequency.
+What this means is that the total grey area (i.e., the histogram bars) sums to 1.
+Guessing the probability that a player scores higher than 120 is the same as guessing the proportion of grey space in the highest 4 bars of Figure 16.4 (i.e., grey space \textgreater120).
+
+\(P_{(Score>120)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\(P_{(Score<100)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\(P_{(100<Score<120)} =\) : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Trying to do this by looking at a histogram is not easy, and it is really not the best way to get the above probabilities.
+We can get much better estimates using Jamovi, but we need to make an assumption about the distribution of Player Score.
+Specifically, we need to assume that the distribution of Player Score has a specific shape.
+More technically, we must assume a specific probability density function that we can use to mathematically calculate probabilities of different ranges of player scores.
+Inspecting Figure 16.4, Player Score appears to be normally distributed.
+In other words, the shape of Player Score distribution appears to be normal, or `Gaussian'.
+If we are willing to assume this, then we can calculate probabilities using its mean and standard deviation.
+Use Jamovi to find the mean and the standard deviation of player score (note, we can just say that score is unitless, so no need to include units).
+
+Mean score: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Standard deviation score: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+We will assume that the \emph{sample} of scores shown in Figure 16.4 came from a \emph{population} that is normally distributed with the mean and standard deviation above that you wrote above (recall sample versus population from \protect\hyperlink{Chapter_4}{Chapter 4}).
+We can overlay his distribution on the histogram above using a curved line (Figure 16.5).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-33}
+\end{figure}
+
+We can interpret the area under the curve in the same way that we interpret the area in the grey bars.
+As mentioned earlier, the total area of the histogram bars must sum to 1.
+The total area under the curve must also sum to 1.
+Both represent the probability of different ranges of player scores.
+Notice that the normal distribution is not a perfect match for the histogram bars.
+For example, the middle bar of values illustrating scores between 90 and 100 appears to be a bit low compared to a perfect normal distribution, and there are more scores between 40 and 50 than we might expect.
+Nevertheless, the two distributions broadly overlap, so we might be willing to assume that the player scores represented in the histogram bars are sampled from the population described by the curve.
+
+Because the curve relating player score to probability density is described by an equation (see \protect\hyperlink{Chapter_14}{Chapter 14}), we can use that equation to make inferences about the probabilities of different ranges of scores.
+The simplest example is the mean.
+Because the normal distribution is symmetric, the area to the left of the mean must be the same as the area to the right of the mean.
+And since the whole area under the curve must sum to 1, we can conclude that the probability of sampling a player score that is less than the mean is 1/2, and the probability of sampling a player score greater than the mean is also 1/2.
+Traditionally, we would need to do some maths to get other player score probabilities, but Jamovi can do this much more easily.
+
+To get Jamovi to calculate probabilities from a normal distribution, we need to go to the Modules option and download a new module (Figure 16.5).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-34}
+\end{figure}
+
+Click on the `Modules' button, and select the first option called `jamovi library' from the pull-down menu.
+From the `Available' tab, scroll down until you find the Module called `distrACTION - Quantiles and Probabilities of Continuous and Discrete Distributions' \citep{Rihs2018}.
+Click the `Install' button to install it into Jamovi.
+A new button in the toolbar called `distrACTION' should become visible (Figure 16.6).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-35}
+\end{figure}
+
+If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
+Click on the module and choose `Normal Distribution' from the pulldown menu.
+
+\hypertarget{central-limit-theorem}{%
+\section{Central limit theorem}\label{central-limit-theorem}}
 
 \hypertarget{calculating-probability-exercise-1}{%
 \section{Calculating probability exercise 1}\label{calculating-probability-exercise-1}}

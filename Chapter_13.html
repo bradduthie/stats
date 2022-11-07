@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2022-10-23" />
+<meta name="date" content="2022-11-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,11 +216,14 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="16" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>16.1</b> Calculating probability exercise 1</a></li>
-<li class="chapter" data-level="16.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>16.2</b> Calculating probability exercise 2</a></li>
-<li class="chapter" data-level="16.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>16.3</b> Calculating probability from normal distribution</a></li>
-<li class="chapter" data-level="16.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>16.4</b> Normal distribution and sample size</a></li>
-<li class="chapter" data-level="16.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>16.5</b> Simulating the central limit theorem</a></li>
+<li class="chapter" data-level="16.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+<li class="chapter" data-level="16.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>16.4</b> Calculating probability exercise 1</a></li>
+<li class="chapter" data-level="16.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>16.5</b> Calculating probability exercise 2</a></li>
+<li class="chapter" data-level="16.6" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>16.6</b> Calculating probability from normal distribution</a></li>
+<li class="chapter" data-level="16.7" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>16.7</b> Normal distribution and sample size</a></li>
+<li class="chapter" data-level="16.8" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>16.8</b> Simulating the central limit theorem</a></li>
 </ul></li>
 <li class="part"><span><b>V Statistical inference</b></span></li>
 <li class="chapter" data-level="" data-path="week-5-overview.html"><a href="week-5-overview.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
@@ -353,7 +356,7 @@ div.csl-indent {
 <p>This practical focuses on applying the concepts from Chapters 9-12 in Jamovi.
 The data that we will work with in this practical were collected from a research project conducted by Dr Alan Law, Prof Nils Bunnefeld, and Prof Nigel Willby at the University of Stirling <span class="citation">(<a href="#ref-Law2014" role="doc-biblioref">Law, Bunnefeld, and Willby 2014</a>)</span>.
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, <em>Nymphaea alba</em>, which beavers regularly consume (Figure 13.1)<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
 <img src="img/Nymphaea_alba_pads.jpg" alt="Lilypads shown covering a small strip of water with three flowers in bloom." width="100%" />
 <p class="caption">
 Figure 13.1: Photo of white water lillies on the water.
@@ -398,7 +401,7 @@ Second, we could use the ‘Data’ tab in Jamovi to create two new columns of d
 Either way, we need to copy and paste site names into the first column and petiole diameters in the second column.
 This is a bit tedious, and we will not ask you to do it for every dataset, but it is an important step in the process of data analysis.
 See Figure 13.2 for how this would look in Jamovi.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
 <img src="img/lilypad_tidy.png" alt="Jamovi interface is shown with new columns being added to the dataset." width="100%" />
 <p class="caption">
 Figure 13.2: Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing ‘Add Variable’.
@@ -422,7 +425,7 @@ We will start with some plotting.</p>
 <h2><span class="header-section-number">13.2</span> Histograms and box-whisker plots<a href="Chapter_13.html#histograms-and-box-whisker-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will start by making a histogram of the full dataset of petiole diameter.
 To do this, we need to go to ‘Analyses’ tab of the Jamovi toolbar, then select the ‘Exploration’ button.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
 <img src="img/lilypad_descriptives.png" alt="Jamovi interface is shown with an Exploration and Descriptive option being selected." width="100%" />
 <p class="caption">
 Figure 13.3: Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.
@@ -436,7 +439,7 @@ To get started, select the petiole diameter variable in the box to the left, the
 Next, open the Plots option at the bottom of the interface.
 Choose the ‘Histogram’ option by clicking the checkbox.
 A histogram will open up in the window on the right (you might need to scroll down).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
 <img src="img/lilypad_histogram.png" alt="Jamovi Descriptives interface is shown with a histogram of petiole diameter." width="100%" />
 <p class="caption">
 Figure 13.4: Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.
@@ -456,8 +459,11 @@ Just looking at the histogram, write down what you think the following summary s
 
 
 </code></pre>
-<p>The histogram needs an informative caption.
-To write one in Jamovi, click on the ‘Edit’ tab at the very top of the toolbar.
+<p>The histogram needs better labelled axes and an informative caption.
+To label the axes better, go back to the data tab and double click on the column heading ‘petiole_diameter_mm’.
+Change the name of the data variable to ‘Petiole diameter (mm)’.
+The newly named variable will then appear when a new histogram of the petiole diameter data is made.
+To write a caption in Jamovi, click on the ‘Edit’ tab at the very top of the toolbar.
 You will see some blue boxes above and below the histogram, and you can write your caption by clicking on the box immediately below the histogram.
 Write a caption for the histogram below.</p>
 <pre><code>
@@ -515,7 +521,7 @@ To calculate all of the variables explained in <a href="Chapter_11.html#Chapter_
 <li>Std. error of mean: _______________________</li>
 </ul>
 <p>When you do this, the Statistics option in Jamovi should like like it does in Figure 13.5.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
 <img src="img/lilypad_summary_statistics.png" alt="Jamovi Descriptives interface is shown with checkboxes for different summary statistics, most of which are checked." width="100%" />
 <p class="caption">
 Figure 13.5: Jamovi Descriptives toolbar showing the summary statistics available to report.
