@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2022-11-06" />
+<meta name="date" content="2022-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,52 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -219,11 +265,6 @@ div.csl-indent {
 <li class="chapter" data-level="16.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
 <li class="chapter" data-level="16.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
 <li class="chapter" data-level="16.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
-<li class="chapter" data-level="16.4" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1"><i class="fa fa-check"></i><b>16.4</b> Calculating probability exercise 1</a></li>
-<li class="chapter" data-level="16.5" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2"><i class="fa fa-check"></i><b>16.5</b> Calculating probability exercise 2</a></li>
-<li class="chapter" data-level="16.6" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution"><i class="fa fa-check"></i><b>16.6</b> Calculating probability from normal distribution</a></li>
-<li class="chapter" data-level="16.7" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size"><i class="fa fa-check"></i><b>16.7</b> Normal distribution and sample size</a></li>
-<li class="chapter" data-level="16.8" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem"><i class="fa fa-check"></i><b>16.8</b> Simulating the central limit theorem</a></li>
 </ul></li>
 <li class="part"><span><b>V Statistical inference</b></span></li>
 <li class="chapter" data-level="" data-path="week-5-overview.html"><a href="week-5-overview.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
@@ -544,7 +585,7 @@ Notice that the normal distribution is not a perfect match for the histogram bar
 For example, the middle bar of values illustrating scores between 90 and 100 appears to be a bit low compared to a perfect normal distribution, and there are more scores between 40 and 50 than we might expect.
 Nevertheless, the two distributions broadly overlap, so we might be willing to assume that the player scores represented in the histogram bars are sampled from the population described by the curve.</p>
 <p>Because the curve relating player score to probability density is described by an equation (see <a href="#Chapter_14">Chapter 14</a>), we can use that equation to make inferences about the probabilities of different ranges of scores.
-The simplest example is the mean.
+The simplest example is the mean of the distribution.
 Because the normal distribution is symmetric, the area to the left of the mean must be the same as the area to the right of the mean.
 And since the whole area under the curve must sum to 1, we can conclude that the probability of sampling a player score that is less than the mean is 1/2, and the probability of sampling a player score greater than the mean is also 1/2.
 Traditionally, we would need to do some maths to get other player score probabilities, but Jamovi can do this much more easily.</p>
@@ -560,36 +601,246 @@ From the ‘Available’ tab, scroll down until you find the Module called ‘di
 Click the ‘Install’ button to install it into Jamovi.
 A new button in the toolbar called ‘distrACTION’ should become visible (Figure 16.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
-<img src="img/jamovi_toolbar_modules.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules' and a button called distrACTION." width="100%" />
+<img src="img/jamovi_toolbar_modules_distrACTION.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules' and a button called distrACTION." width="100%" />
 <p class="caption">
 Figure 16.7: Jamovi tool bar, which includes an added module called distrACTION.
 </p>
 </div>
 <p>If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
-Click on the module and choose ‘Normal Distribution’ from the pulldown menu.</p>
+Click on the module and choose ‘Normal Distribution’ from the pulldown menu.
+Next, we can see a box for the mean and standard deviation (SD) under the ‘Parameters’ subtitle in bold.
+Put the mean and the standard deviation calculated from above into these boxes.
+In the panel on the right, Jamovi will produce the same normal distribution that is in Figure 16.5 (note that the axes might be scaled a bit differently).</p>
+<p>Given this normal distribution, we can compute the probability that a player scores less than x1 = 80 by checking the box ‘Compute probability’, which is located just under ‘Function’ (Figure 16.8).
+We can then select the first radio button to find the probability that a randomly sampled value X from this distribution is less than x1, <span class="math inline">\(P(X \leq x1)\)</span>.
+Notice in the panel on the right that the probability is given as <span class="math inline">\(P =\)</span> 0.237.
+This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (<span class="math inline">\(P =\)</span> 0.237, i.e., ca 23.7 per cent).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-36"></span>
+<img src="img/jamovi_normal_distribution.png" alt="Jamovi options for a module that calculates probabilities associated with a normal distribution, with computing probability checkboxes and radio buttons selected" width="80%" />
+<p class="caption">
+Figure 16.8: Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.
+</p>
+</div>
+<p>To find the probability that a value is greater than 80, we could subtract our answer of 0.237 from 1, <span class="math inline">\(1 - 0.237 = 0.763\)</span> (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
+We could also just select the second radio button for <span class="math inline">\(P(X \geq x1)\)</span>.
+Give this a try, and notice that the shaded and unshaded regions have flipped in the plot, and we get our answer in the table of <span class="math inline">\(P =\)</span> 0.763.</p>
+<p>Finally, to compute the probability of an interval, we can check the third radio button and set x2 in the bottom box (Figure 16.8).
+For example, to see the probability of a score between 80 and 120, we can choose select <span class="math inline">\(P(x1 \leq X \leq x2)\)</span>, then setting x2 = 120 in the bottom box.
+Notice where the shaded area is in the newly drawn plot.
+What is the probability of a player getting a score between 80 and 120?</p>
+<p><span class="math inline">\(P(80 \leq X \leq 120)\)</span> = : __________________________</p>
+<p>What is the probability of a player getting a score greater than 130?</p>
+<p><span class="math inline">\(P(X \geq 130)\)</span> = : __________________________</p>
+<p>Now try the following probabilities for different scores.</p>
+<p><span class="math inline">\(P(X \geq 120)\)</span> = : __________________________</p>
+<p><span class="math inline">\(P(X \leq 100)\)</span> = : __________________________</p>
+<p><span class="math inline">\(P(100 \leq X \leq 120)\)</span> = : __________________________</p>
+<p>Note, these last three were the same intervals that you guessed using the histogram.
+How close was your original guess to the calculations above?</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>One last one.
+What is the probability of a player getting a score lower than 70 or higher than 130?</p>
+<p><span class="math inline">\(P(X \leq 70 \: | \: X \geq 130)\)</span> = : __________________________</p>
+<p>There is more than one way to figure this last one out.
+How did you do it, and what was your reasoning?</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>We will now move on to the central limit theorem.</p>
 </div>
 <div id="central-limit-theorem" class="section level2 hasAnchor" number="16.3">
 <h2><span class="header-section-number">16.3</span> Central limit theorem<a href="practical.-probability-and-simulation.html#central-limit-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To demonstrate the central limit theorem, we need to download and install another module in Jamovi.
+This time, go to ‘Modules’, and from the ‘Available’ tab, scroll down until you find ‘Rj’ in the Jamovi library.
+Install ‘Rj’, then a new button ‘R’ should become available in the toolbar.
+This will allow us to run a bit of script using the coding language R.
+We will work with R a bit more in future practicals, but for now you will not need to do anymore than copying and pasting code.
+For now, click on the new ‘R’ button in the toolbar and select ‘Rj Editor’ from the pulldown menu.
+You will see an open editor; this is where the code will go.
+If it has some code in it already (e.g., <code># summary(data[1:3])</code>), just delete it so that we can start with a clean slate.
+Copy and paste the following lines into the Rjeditor.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="practical.-probability-and-simulation.html#cb24-1" aria-hidden="true" tabindex="-1"></a>v1  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-2"><a href="practical.-probability-and-simulation.html#cb24-2" aria-hidden="true" tabindex="-1"></a>v2  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-3"><a href="practical.-probability-and-simulation.html#cb24-3" aria-hidden="true" tabindex="-1"></a>v3  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-4"><a href="practical.-probability-and-simulation.html#cb24-4" aria-hidden="true" tabindex="-1"></a>v4  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-5"><a href="practical.-probability-and-simulation.html#cb24-5" aria-hidden="true" tabindex="-1"></a>v5  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-6"><a href="practical.-probability-and-simulation.html#cb24-6" aria-hidden="true" tabindex="-1"></a>v6  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-7"><a href="practical.-probability-and-simulation.html#cb24-7" aria-hidden="true" tabindex="-1"></a>v7  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-8"><a href="practical.-probability-and-simulation.html#cb24-8" aria-hidden="true" tabindex="-1"></a>v8  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-9"><a href="practical.-probability-and-simulation.html#cb24-9" aria-hidden="true" tabindex="-1"></a>v9  <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-10"><a href="practical.-probability-and-simulation.html#cb24-10" aria-hidden="true" tabindex="-1"></a>v10 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-11"><a href="practical.-probability-and-simulation.html#cb24-11" aria-hidden="true" tabindex="-1"></a>v11 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-12"><a href="practical.-probability-and-simulation.html#cb24-12" aria-hidden="true" tabindex="-1"></a>v12 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-13"><a href="practical.-probability-and-simulation.html#cb24-13" aria-hidden="true" tabindex="-1"></a>v13 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-14"><a href="practical.-probability-and-simulation.html#cb24-14" aria-hidden="true" tabindex="-1"></a>v14 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-15"><a href="practical.-probability-and-simulation.html#cb24-15" aria-hidden="true" tabindex="-1"></a>v15 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-16"><a href="practical.-probability-and-simulation.html#cb24-16" aria-hidden="true" tabindex="-1"></a>v16 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-17"><a href="practical.-probability-and-simulation.html#cb24-17" aria-hidden="true" tabindex="-1"></a>v17 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-18"><a href="practical.-probability-and-simulation.html#cb24-18" aria-hidden="true" tabindex="-1"></a>v18 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-19"><a href="practical.-probability-and-simulation.html#cb24-19" aria-hidden="true" tabindex="-1"></a>v19 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-20"><a href="practical.-probability-and-simulation.html#cb24-20" aria-hidden="true" tabindex="-1"></a>v20 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-21"><a href="practical.-probability-and-simulation.html#cb24-21" aria-hidden="true" tabindex="-1"></a>v21 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-22"><a href="practical.-probability-and-simulation.html#cb24-22" aria-hidden="true" tabindex="-1"></a>v22 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-23"><a href="practical.-probability-and-simulation.html#cb24-23" aria-hidden="true" tabindex="-1"></a>v23 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-24"><a href="practical.-probability-and-simulation.html#cb24-24" aria-hidden="true" tabindex="-1"></a>v24 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-25"><a href="practical.-probability-and-simulation.html#cb24-25" aria-hidden="true" tabindex="-1"></a>v25 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-26"><a href="practical.-probability-and-simulation.html#cb24-26" aria-hidden="true" tabindex="-1"></a>v26 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-27"><a href="practical.-probability-and-simulation.html#cb24-27" aria-hidden="true" tabindex="-1"></a>v27 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-28"><a href="practical.-probability-and-simulation.html#cb24-28" aria-hidden="true" tabindex="-1"></a>v28 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-29"><a href="practical.-probability-and-simulation.html#cb24-29" aria-hidden="true" tabindex="-1"></a>v29 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-30"><a href="practical.-probability-and-simulation.html#cb24-30" aria-hidden="true" tabindex="-1"></a>v30 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-31"><a href="practical.-probability-and-simulation.html#cb24-31" aria-hidden="true" tabindex="-1"></a>v31 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-32"><a href="practical.-probability-and-simulation.html#cb24-32" aria-hidden="true" tabindex="-1"></a>v32 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-33"><a href="practical.-probability-and-simulation.html#cb24-33" aria-hidden="true" tabindex="-1"></a>v33 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-34"><a href="practical.-probability-and-simulation.html#cb24-34" aria-hidden="true" tabindex="-1"></a>v34 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-35"><a href="practical.-probability-and-simulation.html#cb24-35" aria-hidden="true" tabindex="-1"></a>v35 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-36"><a href="practical.-probability-and-simulation.html#cb24-36" aria-hidden="true" tabindex="-1"></a>v36 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-37"><a href="practical.-probability-and-simulation.html#cb24-37" aria-hidden="true" tabindex="-1"></a>v37 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-38"><a href="practical.-probability-and-simulation.html#cb24-38" aria-hidden="true" tabindex="-1"></a>v38 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-39"><a href="practical.-probability-and-simulation.html#cb24-39" aria-hidden="true" tabindex="-1"></a>v39 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-40"><a href="practical.-probability-and-simulation.html#cb24-40" aria-hidden="true" tabindex="-1"></a>v40 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">200</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>);</span>
+<span id="cb24-41"><a href="practical.-probability-and-simulation.html#cb24-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-42"><a href="practical.-probability-and-simulation.html#cb24-42" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> v1, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Random uniform variable&quot;</span>);</span></code></pre></div>
+<p>What this code is doing is creating 40 different datasets of 200 random numbers from 0 to 100 (there is a way to do all of this in much fewer lines of code, but it requires a bit more advanced use of R).
+The <code>hist</code> function plots a histogram of the first variable.
+To run the code, find the green triangle in the upper right (Figure 16.9).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-38"></span>
+<img src="img/jamovi_RjEditor.png" alt="Jamovi window with an R editor open and several lines of code for generating uniform numbers." width="80%" />
+<p class="caption">
+Figure 16.9: Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.
+</p>
 </div>
-<div id="calculating-probability-exercise-1" class="section level2 hasAnchor" number="16.4">
-<h2><span class="header-section-number">16.4</span> Calculating probability exercise 1<a href="practical.-probability-and-simulation.html#calculating-probability-exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Example exercise 1 with some simple probability calculations</p>
+<p>When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
+The histogram for <code>v1</code> is plotted to the right (to plot other variables, substitute <code>v1</code> in the <code>hist</code> function for some other variable).
+How would you describe the shape of the distribution of <code>v1</code>?</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>Next, we are going to get the mean value of each of the 40 variables.
+To do this, copy the code below and paste it at the bottom of the Rj Editor (somewhere below the <code>hist</code> function).</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="practical.-probability-and-simulation.html#cb26-1" aria-hidden="true" tabindex="-1"></a>m1  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v1);</span>
+<span id="cb26-2"><a href="practical.-probability-and-simulation.html#cb26-2" aria-hidden="true" tabindex="-1"></a>m2  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v2);</span>
+<span id="cb26-3"><a href="practical.-probability-and-simulation.html#cb26-3" aria-hidden="true" tabindex="-1"></a>m3  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v3);</span>
+<span id="cb26-4"><a href="practical.-probability-and-simulation.html#cb26-4" aria-hidden="true" tabindex="-1"></a>m4  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v4);</span>
+<span id="cb26-5"><a href="practical.-probability-and-simulation.html#cb26-5" aria-hidden="true" tabindex="-1"></a>m5  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v5);</span>
+<span id="cb26-6"><a href="practical.-probability-and-simulation.html#cb26-6" aria-hidden="true" tabindex="-1"></a>m6  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v6);</span>
+<span id="cb26-7"><a href="practical.-probability-and-simulation.html#cb26-7" aria-hidden="true" tabindex="-1"></a>m7  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v7);</span>
+<span id="cb26-8"><a href="practical.-probability-and-simulation.html#cb26-8" aria-hidden="true" tabindex="-1"></a>m8  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v8);</span>
+<span id="cb26-9"><a href="practical.-probability-and-simulation.html#cb26-9" aria-hidden="true" tabindex="-1"></a>m9  <span class="ot">&lt;-</span> <span class="fu">mean</span>(v9);</span>
+<span id="cb26-10"><a href="practical.-probability-and-simulation.html#cb26-10" aria-hidden="true" tabindex="-1"></a>m10 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v10);</span>
+<span id="cb26-11"><a href="practical.-probability-and-simulation.html#cb26-11" aria-hidden="true" tabindex="-1"></a>m11 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v11);</span>
+<span id="cb26-12"><a href="practical.-probability-and-simulation.html#cb26-12" aria-hidden="true" tabindex="-1"></a>m12 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v12);</span>
+<span id="cb26-13"><a href="practical.-probability-and-simulation.html#cb26-13" aria-hidden="true" tabindex="-1"></a>m13 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v13);</span>
+<span id="cb26-14"><a href="practical.-probability-and-simulation.html#cb26-14" aria-hidden="true" tabindex="-1"></a>m14 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v14);</span>
+<span id="cb26-15"><a href="practical.-probability-and-simulation.html#cb26-15" aria-hidden="true" tabindex="-1"></a>m15 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v15);</span>
+<span id="cb26-16"><a href="practical.-probability-and-simulation.html#cb26-16" aria-hidden="true" tabindex="-1"></a>m16 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v16);</span>
+<span id="cb26-17"><a href="practical.-probability-and-simulation.html#cb26-17" aria-hidden="true" tabindex="-1"></a>m17 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v17);</span>
+<span id="cb26-18"><a href="practical.-probability-and-simulation.html#cb26-18" aria-hidden="true" tabindex="-1"></a>m18 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v18);</span>
+<span id="cb26-19"><a href="practical.-probability-and-simulation.html#cb26-19" aria-hidden="true" tabindex="-1"></a>m19 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v19);</span>
+<span id="cb26-20"><a href="practical.-probability-and-simulation.html#cb26-20" aria-hidden="true" tabindex="-1"></a>m20 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v20);</span>
+<span id="cb26-21"><a href="practical.-probability-and-simulation.html#cb26-21" aria-hidden="true" tabindex="-1"></a>m21 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v21);</span>
+<span id="cb26-22"><a href="practical.-probability-and-simulation.html#cb26-22" aria-hidden="true" tabindex="-1"></a>m22 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v22);</span>
+<span id="cb26-23"><a href="practical.-probability-and-simulation.html#cb26-23" aria-hidden="true" tabindex="-1"></a>m23 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v23);</span>
+<span id="cb26-24"><a href="practical.-probability-and-simulation.html#cb26-24" aria-hidden="true" tabindex="-1"></a>m24 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v24);</span>
+<span id="cb26-25"><a href="practical.-probability-and-simulation.html#cb26-25" aria-hidden="true" tabindex="-1"></a>m25 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v25);</span>
+<span id="cb26-26"><a href="practical.-probability-and-simulation.html#cb26-26" aria-hidden="true" tabindex="-1"></a>m26 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v26);</span>
+<span id="cb26-27"><a href="practical.-probability-and-simulation.html#cb26-27" aria-hidden="true" tabindex="-1"></a>m27 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v27);</span>
+<span id="cb26-28"><a href="practical.-probability-and-simulation.html#cb26-28" aria-hidden="true" tabindex="-1"></a>m28 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v28);</span>
+<span id="cb26-29"><a href="practical.-probability-and-simulation.html#cb26-29" aria-hidden="true" tabindex="-1"></a>m29 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v29);</span>
+<span id="cb26-30"><a href="practical.-probability-and-simulation.html#cb26-30" aria-hidden="true" tabindex="-1"></a>m30 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v30);</span>
+<span id="cb26-31"><a href="practical.-probability-and-simulation.html#cb26-31" aria-hidden="true" tabindex="-1"></a>m31 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v31);</span>
+<span id="cb26-32"><a href="practical.-probability-and-simulation.html#cb26-32" aria-hidden="true" tabindex="-1"></a>m32 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v32);</span>
+<span id="cb26-33"><a href="practical.-probability-and-simulation.html#cb26-33" aria-hidden="true" tabindex="-1"></a>m33 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v33);</span>
+<span id="cb26-34"><a href="practical.-probability-and-simulation.html#cb26-34" aria-hidden="true" tabindex="-1"></a>m34 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v34);</span>
+<span id="cb26-35"><a href="practical.-probability-and-simulation.html#cb26-35" aria-hidden="true" tabindex="-1"></a>m35 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v35);</span>
+<span id="cb26-36"><a href="practical.-probability-and-simulation.html#cb26-36" aria-hidden="true" tabindex="-1"></a>m36 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v36);</span>
+<span id="cb26-37"><a href="practical.-probability-and-simulation.html#cb26-37" aria-hidden="true" tabindex="-1"></a>m37 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v37);</span>
+<span id="cb26-38"><a href="practical.-probability-and-simulation.html#cb26-38" aria-hidden="true" tabindex="-1"></a>m38 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v38);</span>
+<span id="cb26-39"><a href="practical.-probability-and-simulation.html#cb26-39" aria-hidden="true" tabindex="-1"></a>m39 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v39);</span>
+<span id="cb26-40"><a href="practical.-probability-and-simulation.html#cb26-40" aria-hidden="true" tabindex="-1"></a>m40 <span class="ot">&lt;-</span> <span class="fu">mean</span>(v40);</span>
+<span id="cb26-41"><a href="practical.-probability-and-simulation.html#cb26-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-42"><a href="practical.-probability-and-simulation.html#cb26-42" aria-hidden="true" tabindex="-1"></a>all_means <span class="ot">&lt;-</span> <span class="fu">c</span>(m1,  m2,  m3,  m4,  m5,  m6,  m7,  m8,  m9,  m10, </span>
+<span id="cb26-43"><a href="practical.-probability-and-simulation.html#cb26-43" aria-hidden="true" tabindex="-1"></a>               m11, m12, m13, m14, m15, m16, m17, m18, m19, m20,</span>
+<span id="cb26-44"><a href="practical.-probability-and-simulation.html#cb26-44" aria-hidden="true" tabindex="-1"></a>               m21, m22, m23, m24, m25, m26, m27, m28, m29, m30,</span>
+<span id="cb26-45"><a href="practical.-probability-and-simulation.html#cb26-45" aria-hidden="true" tabindex="-1"></a>               m31, m32, m33, m34, m35, m36, m37, m38, m39, m40);</span></code></pre></div>
+<p>Now we have calculated the mean for each variable.
+The last line of code defines <code>all_means</code>, which makes a new dataset that includes the mean value of each of our original variables.
+Think about what you think the distribution of these mean values will look like.
+Sketch what you predict the shape of its distribution will be below.</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>Now, add one more line of code to the very bottom of the Rj Editor.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="practical.-probability-and-simulation.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> all_means, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;All variable means&quot;</span>);</span></code></pre></div>
+<p>This last line will make a histogram of the means of all 40 variables.
+Click the green button again to run the code.
+Compare the distribution of the original <code>v1</code> to the means of variables 1-40, and to your prediction above.
+Is this what you expected?
+As best you can, explain why the shapes of the two distributions differ.</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>We did all of this the long way to make it easier to see and think about the relationship between the original, uniformly distributed, variables and the distribution of their means.
+Now, we can repeat this more quickly using one more Jamovi module.
+Go to ‘Modules’, and from the ‘Available’ tab, download the ‘clt - Demonstrations’ module from the Jamovi library.
+Once it is downloaded, go to the ‘Demonstrations’ button in the Jamovi toolbar and select ‘Central Limit Theorem’ from the pulldown menu.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-41"></span>
+<img src="img/jamovi_clt.png" alt="Jamovi window with the central limit theorem (CLT) module open and boxes for changing the distribution, sample size, and trial number" width="80%" />
+<p class="caption">
+Figure 16.10: Jamovi interface for the ‘Demonstrations’ module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)
+</p>
 </div>
-<div id="calculating-probability-exercise-2" class="section level2 hasAnchor" number="16.5">
-<h2><span class="header-section-number">16.5</span> Calculating probability exercise 2<a href="practical.-probability-and-simulation.html#calculating-probability-exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Example exercise 2 with some simple probability calculations</p>
-</div>
-<div id="calculating-probability-from-normal-distribution" class="section level2 hasAnchor" number="16.6">
-<h2><span class="header-section-number">16.6</span> Calculating probability from normal distribution<a href="practical.-probability-and-simulation.html#calculating-probability-from-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Example exercise for getting a the probability of some value sampled above, below, or between some threshold in Jamovi.</p>
-</div>
-<div id="normal-distribution-and-sample-size" class="section level2 hasAnchor" number="16.7">
-<h2><span class="header-section-number">16.7</span> Normal distribution and sample size<a href="practical.-probability-and-simulation.html#normal-distribution-and-sample-size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Showing how we get closer to the normal distribution as sample size increases in Jamovi.</p>
-</div>
-<div id="simulating-the-central-limit-theorem" class="section level2 hasAnchor" number="16.8">
-<h2><span class="header-section-number">16.8</span> Simulating the central limit theorem<a href="practical.-probability-and-simulation.html#simulating-the-central-limit-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Doing the example from a uniform distribution in Jamovi.</p>
+<p>To replicate what we did in the Rjeditor above, we just need to set the ‘Source distribution’ to ‘uniform’ using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 16.10).
+Try doing this, then look at the histogram generated to the lower right.
+It should look similar, but not identical, to the histogram produced with the R code.
+Now try increasing the number of trials to 200.
+What happens to the histogram?
+What about when you increase the number of trials to 2000?</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
+<p>Try playing around with different source distributions, sample sizes, and numbers of trials.
+What general conclusion can you make about the distribution of sample means from the different distributions?</p>
+<pre><code>
+
+
+
+
+
+
+</code></pre>
 
 </div>
 </div>

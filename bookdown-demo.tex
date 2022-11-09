@@ -46,6 +46,46 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -89,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2022-11-06}
+\date{2022-11-09}
 
 \begin{document}
 \maketitle
@@ -1986,7 +2026,7 @@ For example, the middle bar of values illustrating scores between 90 and 100 app
 Nevertheless, the two distributions broadly overlap, so we might be willing to assume that the player scores represented in the histogram bars are sampled from the population described by the curve.
 
 Because the curve relating player score to probability density is described by an equation (see \protect\hyperlink{Chapter_14}{Chapter 14}), we can use that equation to make inferences about the probabilities of different ranges of scores.
-The simplest example is the mean.
+The simplest example is the mean of the distribution.
 Because the normal distribution is symmetric, the area to the left of the mean must be the same as the area to the right of the mean.
 And since the whole area under the curve must sum to 1, we can conclude that the probability of sampling a player score that is less than the mean is 1/2, and the probability of sampling a player score greater than the mean is also 1/2.
 Traditionally, we would need to do some maths to get other player score probabilities, but Jamovi can do this much more easily.
@@ -2003,39 +2043,285 @@ Click the `Install' button to install it into Jamovi.
 A new button in the toolbar called `distrACTION' should become visible (Figure 16.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-35}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-35}
 \end{figure}
 
 If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
 Click on the module and choose `Normal Distribution' from the pulldown menu.
+Next, we can see a box for the mean and standard deviation (SD) under the `Parameters' subtitle in bold.
+Put the mean and the standard deviation calculated from above into these boxes.
+In the panel on the right, Jamovi will produce the same normal distribution that is in Figure 16.5 (note that the axes might be scaled a bit differently).
+
+Given this normal distribution, we can compute the probability that a player scores less than x1 = 80 by checking the box `Compute probability', which is located just under `Function' (Figure 16.8).
+We can then select the first radio button to find the probability that a randomly sampled value X from this distribution is less than x1, \(P(X \leq x1)\).
+Notice in the panel on the right that the probability is given as \(P =\) 0.237.
+This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (\(P =\) 0.237, i.e., ca 23.7 per cent).
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-36}
+\end{figure}
+
+To find the probability that a value is greater than 80, we could subtract our answer of 0.237 from 1, \(1 - 0.237 = 0.763\) (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
+We could also just select the second radio button for \(P(X \geq x1)\).
+Give this a try, and notice that the shaded and unshaded regions have flipped in the plot, and we get our answer in the table of \(P =\) 0.763.
+
+Finally, to compute the probability of an interval, we can check the third radio button and set x2 in the bottom box (Figure 16.8).
+For example, to see the probability of a score between 80 and 120, we can choose select \(P(x1 \leq X \leq x2)\), then setting x2 = 120 in the bottom box.
+Notice where the shaded area is in the newly drawn plot.
+What is the probability of a player getting a score between 80 and 120?
+
+\(P(80 \leq X \leq 120)\) = : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+What is the probability of a player getting a score greater than 130?
+
+\(P(X \geq 130)\) = : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Now try the following probabilities for different scores.
+
+\(P(X \geq 120)\) = : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\(P(X \leq 100)\) = : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+\(P(100 \leq X \leq 120)\) = : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Note, these last three were the same intervals that you guessed using the histogram.
+How close was your original guess to the calculations above?
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+One last one.
+What is the probability of a player getting a score lower than 70 or higher than 130?
+
+\(P(X \leq 70 \: | \: X \geq 130)\) = : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+There is more than one way to figure this last one out.
+How did you do it, and what was your reasoning?
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+We will now move on to the central limit theorem.
 
 \hypertarget{central-limit-theorem}{%
 \section{Central limit theorem}\label{central-limit-theorem}}
 
-\hypertarget{calculating-probability-exercise-1}{%
-\section{Calculating probability exercise 1}\label{calculating-probability-exercise-1}}
+To demonstrate the central limit theorem, we need to download and install another module in Jamovi.
+This time, go to `Modules', and from the `Available' tab, scroll down until you find `Rj' in the Jamovi library.
+Install `Rj', then a new button `R' should become available in the toolbar.
+This will allow us to run a bit of script using the coding language R.
+We will work with R a bit more in future practicals, but for now you will not need to do anymore than copying and pasting code.
+For now, click on the new `R' button in the toolbar and select `Rj Editor' from the pulldown menu.
+You will see an open editor; this is where the code will go.
+If it has some code in it already (e.g., \texttt{\#\ summary(data{[}1:3{]})}), just delete it so that we can start with a clean slate.
+Copy and paste the following lines into the Rjeditor.
 
-Example exercise 1 with some simple probability calculations
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v1  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v2  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v3  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v4  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v5  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v6  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v7  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v8  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v9  }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v10 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v11 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v12 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v13 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v14 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v15 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v16 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v17 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v18 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v19 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v20 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v21 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v22 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v23 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v24 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v25 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v26 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v27 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v28 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v29 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v30 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v31 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v32 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v33 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v34 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v35 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v36 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v37 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v38 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v39 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
+\NormalTok{v40 }\OtherTok{\textless{}{-}} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n =} \DecValTok{200}\NormalTok{, }\AttributeTok{min =} \DecValTok{0}\NormalTok{, }\AttributeTok{max =} \DecValTok{100}\NormalTok{);}
 
-\hypertarget{calculating-probability-exercise-2}{%
-\section{Calculating probability exercise 2}\label{calculating-probability-exercise-2}}
+\FunctionTok{hist}\NormalTok{(}\AttributeTok{x =}\NormalTok{ v1, }\AttributeTok{main =} \StringTok{""}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Random uniform variable"}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
 
-Example exercise 2 with some simple probability calculations
+What this code is doing is creating 40 different datasets of 200 random numbers from 0 to 100 (there is a way to do all of this in much fewer lines of code, but it requires a bit more advanced use of R).
+The \texttt{hist} function plots a histogram of the first variable.
+To run the code, find the green triangle in the upper right (Figure 16.9).
 
-\hypertarget{calculating-probability-from-normal-distribution}{%
-\section{Calculating probability from normal distribution}\label{calculating-probability-from-normal-distribution}}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-38}
+\end{figure}
 
-Example exercise for getting a the probability of some value sampled above, below, or between some threshold in Jamovi.
+When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
+The histogram for \texttt{v1} is plotted to the right (to plot other variables, substitute \texttt{v1} in the \texttt{hist} function for some other variable).
+How would you describe the shape of the distribution of \texttt{v1}?
 
-\hypertarget{normal-distribution-and-sample-size}{%
-\section{Normal distribution and sample size}\label{normal-distribution-and-sample-size}}
+\begin{verbatim}
 
-Showing how we get closer to the normal distribution as sample size increases in Jamovi.
 
-\hypertarget{simulating-the-central-limit-theorem}{%
-\section{Simulating the central limit theorem}\label{simulating-the-central-limit-theorem}}
 
-Doing the example from a uniform distribution in Jamovi.
+
+
+
+\end{verbatim}
+
+Next, we are going to get the mean value of each of the 40 variables.
+To do this, copy the code below and paste it at the bottom of the Rj Editor (somewhere below the \texttt{hist} function).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{m1  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v1);}
+\NormalTok{m2  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v2);}
+\NormalTok{m3  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v3);}
+\NormalTok{m4  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v4);}
+\NormalTok{m5  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v5);}
+\NormalTok{m6  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v6);}
+\NormalTok{m7  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v7);}
+\NormalTok{m8  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v8);}
+\NormalTok{m9  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v9);}
+\NormalTok{m10 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v10);}
+\NormalTok{m11 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v11);}
+\NormalTok{m12 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v12);}
+\NormalTok{m13 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v13);}
+\NormalTok{m14 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v14);}
+\NormalTok{m15 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v15);}
+\NormalTok{m16 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v16);}
+\NormalTok{m17 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v17);}
+\NormalTok{m18 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v18);}
+\NormalTok{m19 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v19);}
+\NormalTok{m20 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v20);}
+\NormalTok{m21 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v21);}
+\NormalTok{m22 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v22);}
+\NormalTok{m23 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v23);}
+\NormalTok{m24 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v24);}
+\NormalTok{m25 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v25);}
+\NormalTok{m26 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v26);}
+\NormalTok{m27 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v27);}
+\NormalTok{m28 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v28);}
+\NormalTok{m29 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v29);}
+\NormalTok{m30 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v30);}
+\NormalTok{m31 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v31);}
+\NormalTok{m32 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v32);}
+\NormalTok{m33 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v33);}
+\NormalTok{m34 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v34);}
+\NormalTok{m35 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v35);}
+\NormalTok{m36 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v36);}
+\NormalTok{m37 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v37);}
+\NormalTok{m38 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v38);}
+\NormalTok{m39 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v39);}
+\NormalTok{m40 }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(v40);}
+
+\NormalTok{all\_means }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(m1,  m2,  m3,  m4,  m5,  m6,  m7,  m8,  m9,  m10, }
+\NormalTok{               m11, m12, m13, m14, m15, m16, m17, m18, m19, m20,}
+\NormalTok{               m21, m22, m23, m24, m25, m26, m27, m28, m29, m30,}
+\NormalTok{               m31, m32, m33, m34, m35, m36, m37, m38, m39, m40);}
+\end{Highlighting}
+\end{Shaded}
+
+Now we have calculated the mean for each variable.
+The last line of code defines \texttt{all\_means}, which makes a new dataset that includes the mean value of each of our original variables.
+Think about what you think the distribution of these mean values will look like.
+Sketch what you predict the shape of its distribution will be below.
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+Now, add one more line of code to the very bottom of the Rj Editor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(}\AttributeTok{x =}\NormalTok{ all\_means, }\AttributeTok{main =} \StringTok{""}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"All variable means"}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+This last line will make a histogram of the means of all 40 variables.
+Click the green button again to run the code.
+Compare the distribution of the original \texttt{v1} to the means of variables 1-40, and to your prediction above.
+Is this what you expected?
+As best you can, explain why the shapes of the two distributions differ.
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+We did all of this the long way to make it easier to see and think about the relationship between the original, uniformly distributed, variables and the distribution of their means.
+Now, we can repeat this more quickly using one more Jamovi module.
+Go to `Modules', and from the `Available' tab, download the `clt - Demonstrations' module from the Jamovi library.
+Once it is downloaded, go to the `Demonstrations' button in the Jamovi toolbar and select `Central Limit Theorem' from the pulldown menu.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-41}
+\end{figure}
+
+To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 16.10).
+Try doing this, then look at the histogram generated to the lower right.
+It should look similar, but not identical, to the histogram produced with the R code.
+Now try increasing the number of trials to 200.
+What happens to the histogram?
+What about when you increase the number of trials to 2000?
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
+
+Try playing around with different source distributions, sample sizes, and numbers of trials.
+What general conclusion can you make about the distribution of sample means from the different distributions?
+
+\begin{verbatim}
+
+
+
+
+
+
+\end{verbatim}
 
 \hypertarget{part-statistical-inference}{%
 \part{Statistical inference}\label{part-statistical-inference}}
