@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2022-11-09}
+\date{2022-12-28}
 
 \begin{document}
 \maketitle
@@ -215,44 +215,432 @@ How we will use Canvas, and how this book relates to it (Learning and Teaching c
 \chapter*{Week 1 Overview}\label{week-1-overview}}
 \addcontentsline{toc}{chapter}{Week 1 Overview}
 
-In week 1, we will focus on a refresher of some necessary background mathematics for this module. We will then turn to the topic of how to organise data sets. We will then practice organising datasets and saving them in a usable format.
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3269}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6731}}@{}}
+\toprule
+\endhead
+\textbf{Dates} & 23 January 2023 - 27 January 2023 \\
+\textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 1-2 \\
+& \textbf{Recommended:} \citet{Wickham2014} (\href{https://www.jstatsoft.org/index.php/jss/article/view/v059i10/772}{Download}) \\
+& \textbf{Optional:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/02-A-brief-introduction-to-research-design.html}{Section 2.1} \\
+\textbf{Lectures} & 1.0: Introduction to Module (20 min.) \\
+& 1.1: Numbers and operations (18 min.) \\
+& 1.2: Orders of operations (7 min.) \\
+\textbf{Practical} & Preparing real datasets \\
+& Room: Cottrell 2A17 \\
+& Group A: 25 JAN 2023 (WED) 13:05-15:55 \\
+& Group B: 26 JAN 2023 (THU) 09:05-11:55 \\
+\textbf{Help hours} & Brad Duthie \\
+& Room: Cottrell 1A13 \\
+& 27 JAN 2023 (FRI) 15:05-17:55 \\
+\textbf{Assessments} & Week 1 Practice quiz on Canvas \\
+\bottomrule
+\end{longtable}
 
-Week: 1
-Dates:
-Suggested Readings: Textbook intro, Hadley's paper
-Assessments: Practice quiz
-Practical: Quick summary of topics covered
+\protect\hyperlink{Chapter_1}{Chapter 1} will review some background mathematics that is relevant the statistical techniques that you will learn in this module.
+This information might not be new to you, but it is important to review some fundamental mathematical concepts that will be used throughout the module.
+Specific topics include numbers and operations, logarithms, and the order of operations.
 
-\hypertarget{background_mathematics}{%
-\chapter{Background mathematics}\label{background_mathematics}}
+\protect\hyperlink{Chapter_2}{Chapter 2} will focus on data organisation.
+Before actually doing any statistics, it is important to organise data in a way that can be interpreted by other researchers, and by statistical software.
+This chapter will focus on what to do with data that have been recorded in the field or laboratory.
 
-Some of this will be review, but it is important. Suggested reading for this (some mathematics text).
+\protect\hyperlink{Chapter_3}{Chapter 3} guides you through the Week 1 practical, which focuses on organising datasets and preparing them for statistical analysis.
+The aim of this practical is for you to learn how to take data recorded in the field, laboratory, or some other source and put it into a format that can be used in statistical programs such as Jamovi.
+
+\hypertarget{Chapter_1}{%
+\chapter{Background mathematics}\label{Chapter_1}}
+
+There are at least two types of mathematical challenges that come with first learning statistics.
+The first challenge is simply knowing the background mathematics upon which many statistical tools rely.
+While the theory underlying statistical techniques does rely on some quite advanced mathematics \citep[e.g., see][]{Mclean1991, Rencher2000, Miller2004}, applying standard statistical tools to actual data usually does not.
+This module focuses on the application of statistical techniques, so all that is required is a background in some fundamental mathematical concepts such as mathematical operations (addition, subtraction, multiplication, division), simple algebra, and probability.
+This chapter will review these operations and the mathematical symbols used to communicate them.
+
+The second mathematical challenge in learning statistics for the first time is a bit more subtle.
+Students with no statistical background sometimes have an expectation that statistics will be similar to previously learned mathematical topics such as algebra, geometry, or trigonometry.
+In some ways, this is true, but in a lot of ways statistics is a much different way of thinking than any of these topics.
+A lot of mathematical subjects focus on questions that have very clear right or wrong answers (or, at least, this is how they are often taught).
+If, for example, we are given the lengths of two sides of a right triangle, then we might be expected to calculate the hypotenuse of the triangle using Pythagorean theorem (\(a^{2} + b^{2} = c^{2}\), where c is the hypotenuse).
+If we know the two sides, then the hypotenuse has a clear correct answer (at least, on a Euclidean plane).
+In statistics, answers are not always so clear.
+Statistics, by its very nature, deals with uncertainty.
+While all of the standard rules of mathematics still apply, statistical questions such as ``Can I use this statistical test on my data?'', ``Do I have a large enough sample size'', or even ``Is my hypothesis well-supported'' often do not have unequivocal `correct' answers.
+A lot of being a good statistician is about making well-informed, transparent, but ultimately at least somewhat subjective judgement calls about how to best make inferences from data.
+
+For the purpose of assessments in this module (tests and exams), please note that we will only ask questions that \textbf{do} have clear and correct answers.
+This is to keep the module assessment fair and transparent.
+For example, we will not ask you questions like, ``Can I use this statistical test on my data'' unless the answer is a very clear yes or no.
+And we will not ask you questions like, ``Is my hypothesis well-supported'', but instead specify what we mean by asking questions such as, ``should you reject the null hypothesis at the 0.05 level of Type I error'' (we will worry about what this means later).
+We will give practice questions, and a practice test, so that the nature of test questions is clear before you are actually assessed for a grade.
+
+For now, we will move on to looking at numbers and operations, logarithms, order of operations, and units.
+These topics are relevant throughout the semester, so it is important to understand them and be able to apply them when doing calculations.
 
 \hypertarget{numbers-and-operations}{%
 \section{Numbers and operations}\label{numbers-and-operations}}
 
-A very broad reminder of mathematics, which you will need for this module
+Calculating statistics and reading statistical output requires some knowledge of basic mathematical numbers and operations.
+This section is a reminder of the basic mathematical tools that will be used in introductory statistics.
+Much of this section is inspired by \citet{Courant1996} and chapter 2 of \citet{Pastor2008}.
+This section will be abridged to focus on only the numbers and mathematical operations relevant to this lab book.
+The objective here is to present some very well-known ideas in an interesting way, and to intermix them with interesting bits of information that might be new.
+For doing statistics, what you really \emph{need} to know here are is the notation; that is, how operations such as addition, multiplication, and exponents are represented mathematically.
+
+We can start with the natural numbers, which are the kinds of numbers that can be counted using fingers, toothpicks, pebbles, or any other numbers that can be represented by discrete objects.
+
+\[1, 2, 3, 4, 5, 6, 7, 8, ...\]
+
+There are an infinite number of natural numbers (we can represent all of them using the symbol \(\mathbb{N}\).
+For any given natural number, we can always find a higher natural number using the operation of addition.
+For example, a number higher than 5 can be obtained by simply adding 1 to it,
+
+\[5 + 1 = 6.\]
+
+This is obvious to anyone with any kind of background in elementary mathematics, but it highlights why the natural numbers are countably infinite (for any number you can think of, \(N\), there is always a higher value \(N + 1\)).
+It also leads to a reminder about two other important mathematical symbols for this module (in addition to \(+\), which indicats addition), greater than (\(>\)) and less than (\(<\)).
+We know that the number 6 is greater than 5, and express this mathematically as the \emph{inequality}, \(6 > 5\).
+Note that the large end of the inequality faces the higher number, while the pointy end (i.e., the smaller end) faces the lower number.
+Inequalities are used regularly in statistics, e.g., to indicate with a probability of something is less than a given value (e.g., \(P < 0.05\), which can be read `P is less than 0.05').
+We might also use the symbols \(\geq\) or \(\leq\) to indicate when something is greater than or equal to (\(\geq\)) or less than or equal to (\(\leq\)) a particular value.
+For example, \(x \geq 10\) indicates that some number \(x\) has a value of 10 or greater.
+
+Whenever we add one natural number to a different natural number, the result is another natural number (e.g., \(5 + 1 = 6\)).
+If we want to go back from the sum to one of the values being summed (i.e., get from \(6\) to \(5\)), then we need to subtract,
+
+\[6 - 1 = 5.\]
+
+Again, this operation is basic elementary mathematics, but a subtle point that is often missed is that the introduction of subtraction creates the need for a broader set of numbers, the integers (we can represent these using the symbol \(\mathbb{Z}\)).
+If, for example we want to subtract 5, from 1, we get a number that cannot be represented on our fingers,
+
+\[1 - 5 = -4.\]
+
+The value \(-4\) is an integer, which includes 0 and all negative whole numbers,
+
+\[..., -4, -3, -2, -1, 0, 1, 2, 3, 4,  ...\]
+
+Whenever we add or subtract integers, the result is always another integer.
+
+Now, suppose we wanted to add the same value up multiple times.
+For example,
+
+\[2 + 2 + 2 + 2 + 2 + 2 = 12.\]
+
+The number 2 is being added 6 times in the equation above to get a value of 12.
+But we can represent this sum more easily using the operation of multiplication,
+
+\[2 \times 6 = 12.\]
+The 6 in the equation just represents the number of times that 2 is being added up.
+The equation can also be written as \(2(6) = 12\), or sometimes, \texttt{2*6\ =\ 12} (i.e., the asterisk is sometimes used to indicate multiplication).
+Parentheses indicate multiplication when no other symbol is used.
+This also applies to numbers that come immediately before variables.
+For example, \(2x\) can be interpreted as \emph{two times x}.
+When multiplying integers, we always get another integer.
+Note that multiplying two positive numbers always equals another positive number (e.g., \(2 \times 6 = 12\)).
+Multiplying a positive and a negative number equals a negative number (e.g., \(-2 \times 6 = -12\)).
+And multiplying two negative numbers equals a positive number (e.g., \(-2 \times -6 = 12\)).
+There are multiple ways of thinking about why this is true \citep[see, e.g.,][ for a brief explanation]{Askey1999}, but for now we can take it as a given.
+
+As with addition and subtraction, we need an operation that can go back from multiplied values to the numbers being multiplied.
+In other words, if we multiply to get \(2 \times 6 = 12\), then we need something that goes back from 12 to 2.
+Division allows us to do this, where \(12 \div 6 = 2\).
+In statistics, the symbol \(\div\) is rarely used, and we would more often express the calculation as either \(12/6 = 2\) or,
+
+\[\frac{12}{6} = 2.\]
+
+Again, as with subtraction, we have a familiar mathematical operation, but there is again a subtle point that the introduction of division also requires a new set of numbers.
+If instead of dividing 6 into 12, we divided 12 into 6,
+
+\[\frac{6}{12} = \frac{1}{2} = 0.5.\]
+
+We now have a number that is not an integer.
+We now need an even broader set of numbers, the rational numbers (we can represent these using the symbol \(\mathbb{Q}\)).
+The rationals include all numbers that can be expressed as a fraction of integers.
+That is, \(p / q\), where both \(p\) and \(q\) are in the set \(\mathbb{Z}\).
+
+We have one more set of operations relevant for introductory statistics.
+Recall that we introduced \(2 \times 6\) as a way to represent \(2 + 2 + 2 + 2 + 2 + 2\).
+We can apply the same logic to multiplying a number multiple times.
+For example, we might want to multiply the number 2 by itself 4 times,
+
+\[2 \times 2 \times 2 \times 2 = 16.\]
+
+We can represent this more easily using an exponent, which is written as a superscript,
+
+\[2^{4} = 16.\]
+
+The 4 in the equation above indicates that the 2 should be multiplied 4 times to get 16.
+Sometimes this is also represented by a carrot in writing or code, such that 2\^{}4 = 16.
+Very occasionally, some authors will use two asterisks in a row, 2**4 = 16, probably because this is how exponents are represented in some statistical software and programming languages.
+One quick note that can be confusing is that a negative in the exponent indicates a reciprocal.
+For example,
+
+\[2^{-4} = \frac{1}{16}.\]
+
+This can sometimes be useful for representing the reciprocal of a number or unit (see below) in a more compact way than using a fraction.
+
+As with addition and subtraction, and multiplication and division, we also need an operation to get back from the exponentiated value back to the original number.
+That is, for \(2^{4} = 16\), there should be an operation that gets us back from 16 to 2.
+We can do this using the root of an equation,
+
+\[\sqrt[4]{16} = 2.\]
+
+The number under the radical symbol \(\sqrt{}\) (in this case 16) is the one that we are taking the root of, and the index (in this case 4) is the root that we are calculating.
+When the index is absent, we assume that it is 2 (i.e., a square root),
+
+\[\sqrt[2]{16} = \sqrt{16} = 4.\]
+
+Note that \(4^{2} = 16\) (i.e., 4 squared is 16).
+
+Instead of using the radical symbol, we could also use a fraction in the exponent.
+That is, instead of writing \(\sqrt[4]{16} = 2\), we could write \(16^{1/4} = 2\) or \(16^{1/2} = 4\).
+In statistics, however, the \(\sqrt{}\) is often used.
+Either way, this again creates a subtlety that requires an even broader set of numbers.
+This is because expressions such as \(\sqrt{2}\) do not equal any rational number.
+In other words, there are no integers \(p\) and \(q\) such that their \emph{ratio}, \(p/q = \sqrt{2}\) (the proof for why is very elegant!).
+Consequently, we can say that \(\sqrt{2}\) is \emph{irrational} (not in the sense of being illogical or unreasonable, but in the sense that it cannot be represented as a ratio of two integers).
+Irrational numbers cannot be represented as a ratio of integers, or with a finite or repeating decimal.
+Remarkably, the set of irrational numbers is larger than the set of rational numbers (i.e., rational numbers are countably infinite, while irrational numbers are uncountably infinite, and there are more irrationals; you do not need to know this or even believe it, but it is true!).
+
+Perhaps the most famous irrational number is \(\pi\), which appears throughout mathematics and is most commonly introduced as the ratio of a circle's circumference to its diameter.
+Its value is \(\pi \approx 3.14159\), where the symbol \(\approx\) means `approximately'.
+Actually, the decimal expansion of \(\pi\) is infinite and non-repeating; the decimals go on forever and never repeat themselves in a predictable way.
+As of 2019, over 31 trillion (i.e., 31000000000000) decimals of \(\pi\) have been calculated \citep{Yee2019}.
+
+The rational and irrational numbers together comprise a set of numbers called real numbers (we can represent these as \(\mathbb{R}\)), and this is where we will stop.
+This story of numbers and operations continues with imaginary and complex numbers \citep{Courant1996, Pastor2008}, but these are not necessary for introductory statistics.
+
+\hypertarget{logarithms}{%
+\section{Logarithms}\label{logarithms}}
+
+There is one more important mathematical operation to mention that is relevant to introductory statistics.
+Logarithms are important functions, which will appear in multiple places (e.g., statistical transformations of variables).
+A logarithm tells us the exponent to which a number needs to be raised to get another number.
+For example,
+
+\[10^{3} = 1000.\]
+
+Verbally, 10 raised to the power of 3 equals 1000.
+In other words, we need to raise 10 to the power of 3 to get a value of 1000.
+We can express this using a logarithm,
+
+\[\log_{10}\left(1000\right) = 3.\]
+
+Again, the same relationship is expressed in \(10^{3} = 1000\) and \(\log_{10}(1000) = 3\).
+For the latter, we might say that the base 10 logarithm of 1000 is 3.
+This is actually extremely useful in mathematics and statistics.
+Mathematically, logarithms have the very useful property,
+
+\[log_{10}(ab) = log_{10}(a) + log_{10}(b).\]
+
+Historically, this has been used to make calculations easier by converting multiplication to addition \citep{Stewart2008}.
+In statistics, and across the biological and environmental sciences, we often use logarithms when we want to represent something that changes exponentially on a logarithmic scale.
+For example, suppose that we wanted to illustrate the change in global CO\(_{2}\) over time \citep{Friedlingstein2022}.
+We could show year on the x-axis and emissions in billions of tonnes of CO\(_{2}\) on the y-axis (Figure 1.1).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-1-1} \caption{Global carbon dioxide emissions from 1750-2021.}\label{fig:unnamed-chunk-1}
+\end{figure}
+
+We can clearly see from Figure 1.1 that global CO\(_{2}\) emissions go up exponentially over time, but this exponential relationship means that the y-axis has to cover a large range of values.
+This makes it difficult to see what is actually happening in the first 100 years.
+Are CO\(_{2}\) emissions increasing from 1750-1850, or do they stay about the same?
+If instead of plotting billions of tonnes of CO\(_{2}\) on the y-axis, we plotted the logarithm of these values, then the pattern in the first 100 years becomes a bit more clear (Figure 1.2).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-2-1} \caption{Natural logarithm of global carbon dioxide emissions from 1750-2021.}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+It appears from the logged data in Figure 1.2 that global CO\(_{2}\) emissions were indeed increasing from 1750-1850.
+Note that Figure 1.2 presents the natural logarithm of CO\(_{2}\) emissions on the y-axis.
+The \emph{natural logarithm} uses Euler's number, \(e \approx 2.718282\), as a base.
+Euler's number \(e\) is an irrational number, like \(\pi\), which corresponds to the intrinsic rate of increase of population size in ecology \citep{Gotelli2001}, or, in banking, interest compounded continually (\(e\) actually shows up in a lot of different places throughout science and mathematics).
+We probably could have just as easily used 10 as a base, but \(e\) is the usually the default base to use in science (base 10 or 2 are also frequently used).
+Note that we can convert back to the non-logged scale by raising numbers to the power of \(e\).
+For example, \(e^{-4} \approx 0.018\), \(e^{-2} \approx 0.135\), \(e^{0} = 1\), and \(e^{2} = 7.390\).
 
 \hypertarget{order-of-operations}{%
 \section{Order of operations}\label{order-of-operations}}
 
-This is easy to forget
+Every once in a while, a maths problem like the one below seems to go viral online,
 
-\hypertarget{data_organisation}{%
-\chapter{Data organisation}\label{data_organisation}}
+\[x = 8 \div 2\left(2+2\right).\]
 
-It is important to organise data properly so that statistical analysis can be done. Here I explain the tidy approach to data. Suggested reading Hadley Wickam's paper.
+Depending on the order in which calculations are made, some people will conclude that \(x = 16\), while others conclude that \(x = 1\) \citep{Chernoff2022}.
+The confusion is not caused by the above calculation being difficult, but by peoples' differences in interpreting the rules for what order calculations should be carried out.
+If we first divide 8/2 to get 4, then multiply by (2 + 2), we get 16.
+If we first multiply 2 by (2 + 2) to get 8, then divide, we get 1.
+The truth is that even if there is a `right' answer here \citep{Chernoff2022}, the equation could be written more clearly.
+We might, for example, rewrite the above one way to more clearly express the intended order of operations,
+
+\[x = \frac{8}{2}\left(2 + 2\right) = 16.\]
+
+We could also write it a different way to express a different intended order of operations,
+
+\[x = \frac{8}{2(2+2)} = 1.\]
+
+The key point is that that the order in which operations are calculated matters, so it is important to write equations clearly, and to know the order of operations to calculate an answer correctly.
+By convention there are some rules for the order in which calculations should proceed.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Anything within parentheses should always be calculated first.
+\item
+  Exponents and radicals should be applied second
+\item
+  Multiplication and division should be applied third
+\item
+  Addition and subtraction should be done last
+\end{enumerate}
+
+These conventions are not really rooted in anything fundamental about numbers or operations (i.e., we made these rules up), but there is a logic to them.
+First, parentheses are a useful tool for being unequivocal about the order of operations.
+We could, for example, always be completely clear about the order to calculate by writing something like \((8/2) \times (2+2)\) or \(8 / (2(2 + 2))\), although this can get a bit messy.
+Second, rules 2-4 are ordered by the magnitude of effects; for example, exponents have a bigger effect than multiplication, which has a bigger effect than addition.
+In general, however, these are just standard conventions that need to be known for reading and writing mathematical expressions.
+In this module, you will not see something ambiguous like \(x = 8 \div 2\left(2+2\right)\), but you should be able to correctly calculate something like this,
+
+\[x = 3^{2} + 2\left(1 + 3\right)^{2} - 6 \times 0.\]
+
+First, remember that parentheses come first, so we can rewrite the above to,
+
+\[x = 3^{2} + 2\left(4\right)^{2} - 6 \times 0.\]
+
+Exponents come next, so we can calculate those,
+
+\[x = 9 + 2\left(16\right) - 6 \times 0.\]
+
+Next comes multiplication and division,
+
+\[x = 9 + 32 -  0.\]
+Lastly, we calculate addition and subtraction,
+
+\[x = 41.\]
+
+In reality, you will very rarely need to calculate something with this many different steps.
+But you will often need to calculate equations like the one below,
+
+\[x = 20 + 1.96 \times 2.1.\]
+
+It is important to remember to multiply \(1.96 \times 2.1\) \emph{before} adding 20.
+Getting the order of operations wrong will usually result in the calculation being completely off.
+
+One last note is that when operations are above or below a fraction, or below a radical, then parentheses are implied.
+For example, we might have something like the fraction below,
+
+\[x = \frac{2^{2} + 1}{3^{2} +2}.\]
+
+Although the rules 2-4 still apply, it is implied that there are parentheses in both the top (numerator) and bottom (denominator), so you can always read the above equation like this,
+
+\[x = \frac{\left(2^{2} + 1\right)}{\left(3^{2} + 2\right)} = \frac{\left(4 + 1\right)}{\left(9 + 2\right)} = \frac{5}{11}.\]
+
+Similarly, anything under the \(\sqrt{}\) can be interpreted as being within parentheses.
+For example,
+
+\[x = \sqrt{3 + 4^{2}} = \sqrt{\left(3 + 4^{2} \right)}.\]
+
+This can take some getting used to, but with practice, it will become second nature to read equations in this way.
+
+\hypertarget{Chapter_2}{%
+\chapter{Data organisation}\label{Chapter_2}}
+
+In the field or the lab, data collection can be messy.
+Often data need to be recorded with a pencil and paper, and in a format that is most efficient for writing in adverse weather or a tightly controlled laboratory.
+Sometimes data from a particular sample, such as a bird nest (Figure 2.1), cannot all be collected in one place.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/becky_field} \caption{Dr Becky Boulton collects data from nest boxes in the field (A), then processes nest material in the lab (B).}\label{fig:unnamed-chunk-3}
+\end{figure}
+
+Data are sometimes missing due to circumstances outwith the researcher's control, and data are usually not collected in a format that is immediately ready for statistical analysis.
+Consequently, we often need to reorganise data from a lab or field book to a spreadsheet.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.}\label{fig:unnamed-chunk-4}
+\end{figure}
+
+Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
+This chapter introduces the tidy format for organising data \citep{Wickham2014}, which can be used for structuring data files to be used in statistical software.
+It will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in statistical software such as Jamovi or R.
 
 \hypertarget{tidy-data}{%
 \section{Tidy data}\label{tidy-data}}
 
+After data are collected, they need to be stored digitally (i.e., in a computer file, such as a spreadsheet).
+This should happen as soon as possible so that it is possible to make back up copies of the data.
+While it is always a good idea to save data field notes and lab notebooks, these can be lost or destroyed accidentally.
+Nevertheless, retaining field and lab notes as a record of the originally collected data is always a good idea.
+Sometimes it is necessary to return to these notes, even years after they were collected.
+Often we will want to double-check to make sure that we copied a value or observation correctly from handwritten notes to a spreadsheet.
+Note that sometimes data can be input directly into a spreadsheet or mobile app, bypassing handwritten notes altogether, but it is usually helpful to have a physical copy of collected data.
+
+Most biological and environmental scientists store data digitally in the form of a spreadsheet.
+Spreadsheets enable data input, manipulation, and calculation in a highly flexible way.
+Most spreadsheet programs even have some capacity for data visualisation and statistical analysis.
+For the purposes of statistical analysis, spreadsheets are probably most often used for inputting data in a way that can be used by statistical software.
+Commonly used spreadsheet programs are MS Excel, Google Sheets, LibreOffice Calc.
+The interface and functions of these programs are very similar, nearly identical for most purposes.
+They all can open and save the same file types (e.g., XLSX, ODS, CSV), and they all have the same overall look, feel, and functionality for data input, so the program used is mostly a matter of personal preference.
+In this text, we will use LibreOffice because it is completely free and open source, and easily available to \href{https://www.libreoffice.org/download/download-libreoffice/}{download} at \url{http://libreoffice.org}.
+Excel and \href{https://docs.google.com/spreadsheets}{Google Sheets} are also fine to use.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/wasp_data_spreadsheet} \caption{A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+Spreadsheets are separated into individual cells, which are identified a specific column and row (Figure 2.3).
+Columns are indicated by letters, and rows are indicated by numbers.
+We can refer to the a specific cell by its letter and number combination.
+For example, the active cell in Figure 2.3 is F3, which has a value of `3' indicating the value recorded in that specific sample (in this case, foundress pollinators in the fig fruit).
+We will look more at how to interact with the spreadsheet in the \protect\hyperlink{Chapter_3}{Chapter 3} lab practical, but for now we will focus on how the data are organised.
+
+{[}EXPLAIN TIDY DATA HERE{]}
+
 \hypertarget{data-files}{%
 \section{Data files}\label{data-files}}
 
-\hypertarget{practical-preparing-real-datasets}{%
-\chapter{\texorpdfstring{\emph{Practical}: Preparing real datasets}{Practical: Preparing real datasets}}\label{practical-preparing-real-datasets}}
+Data can be saved using many different file types.
+File type is typically indicated by an extension following the name of a file and a full stop.
+For example, ``photo.png'' would indicate a PNG image file named ``photo''.
+A peer-reviewed journal article might be saved as a PDF, e.g., ``Wickham2014.pdf''.
+A file's type affects what programs can be used to open it.
+One relevant distinction to make is between text files and binary files.
 
-In this practical, we will use a spreadsheet to organise datastes.
+\textbf{Text files} are generally very simple.
+They only allow information to be stored as plain text; no colour, bold, italic, or anything else is encoded.
+All of the information is just made up of characters on a line.
+This sounds so simple as to be almost obsolete; what is the point of not allowing anything besides plain text?
+The point is that text files are generally much more secure for long-term storage.
+The plain text format makes data easier to recover if corrupted, readable by a wider range of software, and more amenable to version control (\href{https://bradduthie.github.io/version_control/vc_notes.html}{version control} is a tool that essentially saves the whole history of folder, and potentially different versions in parallel; it is not necessary for introductory statistics, but is often critical for big collaborative projects).
+There are many types of text files with extensions such as TXT, CSV, HTML, R, CPP, or MD.
+For data storage, we will use comma separated value (CSV) files.
+As the name implies, CSV files include plain text separated by commas.
+Each line of the CSV file is a new row, and commas separate information into columns.
+These CSV files can be opened in any text editor, but are also recognised by nearly all spreadsheet programs and statistical software.
+The data shown in Figure 2.3 are from a CSV file called ``wasp\_data.csv''.
+Figure 2.X shows the same data when opened with a text editor.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/wasp_data_csv} \caption{A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called 'Mousepad', but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.}\label{fig:unnamed-chunk-6}
+\end{figure}
+
+The data shown in Figure 2.X are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.
+The information will therefore always look \emph{exactly} the same, and can be easily recovered by any text editor, even after years pass and old software inevitably becomes obsolete.
+
+\textbf{Binary files} are different from text files and typically contain information besides just plain text.
+This information could include formatted text, images, sound, or video (basically, anything that can be stored in a file).
+The advantages of being able to store this kind of information are obvious, but downside is that the information needs to be interpreted in a specific way, usually using a specific program.
+Examples of binary files include those with extensions such as DOC, XLS, PNG, GIF, MP3, or PPT.
+Some file types such as DOCX are not technically binary files, but a collection of zipped files (which, in the case of DOCX, include plain text files).
+Overall, the important point is that saving data in a text file format such as CSV is generally more secure.
+
+\hypertarget{Chapter_3}{%
+\chapter{\texorpdfstring{\emph{Practical}: Preparing real datasets}{Practical: Preparing real datasets}}\label{Chapter_3}}
+
+In this practical, we will use a spreadsheet to organise datasets.
 
 \hypertarget{libreoffice-calc}{%
 \section{LibreOffice Calc}\label{libreoffice-calc}}
@@ -294,13 +682,19 @@ Walks through Exercise 1.3.4, saving all of these as CSV files
 & \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#the-spreadsheet}{Section 3.3}-\href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#summary-1}{3.9} \\
 & \textbf{Optional:} \citet{Rowntree2018} Chapter 2 \\
 & \textbf{Advanced:} \citet{Spiegelhalter2019} Chapters 1-3 \\
-\textbf{Lectures} & 2.0: Introduction to Week 1 (2 min.) \\
+\textbf{Lectures} & 2.0: Introduction to Week 2 (2 min.) \\
 & 2.1: Why study statistics? (18 min.) \\
 & 2.2: Populations and samples (7 min.) \\
 & 2.3: Types of variables (11 min.) \\
 & 2.4: Units, precision, and accuracy (9 min.) \\
 & 2.5. Uncertainty propagation (11 min.) \\
 \textbf{Practical} & Introduction to Jamovi \\
+& Room: Cottrell 2A17 \\
+& Group A: 01 FEB 2023 (WED) 13:05-15:55 \\
+& Group B: 02 FEB 2023 (THU) 09:05-11:55 \\
+\textbf{Help hours} & Ian Jones \\
+& Room: Cottrell 1A13 \\
+& 03 FEB 2023 (FRI) 15:05-17:55 \\
 \textbf{Assessments} & Week 2 Practice quiz on Canvas \\
 \bottomrule
 \end{longtable}
@@ -377,7 +771,7 @@ For our purposes, it is not necessary to be able to recite the technical definit
 When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-1}
+\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-7}
 \end{figure}
 
 \hypertarget{Chapter_5}{%
@@ -456,7 +850,7 @@ If, however, the scale measures a different mass each time the object is weighed
 One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg}{Egon Willighagen} on 8 March 2014.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-2}
+\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-8}
 \end{figure}
 
 Note again that accuracy and precision are not necessarily the same.
@@ -676,7 +1070,7 @@ Measurements include fig lengths, widths, and heights in centimeters from 4 diff
 \textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig\_fruits.csv}}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-3}
+\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-9}
 \end{figure}
 
 This lab will use the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
@@ -689,14 +1083,14 @@ Download the \href{https://raw.githubusercontent.com/bradduthie/statistical_tech
 Once Jamovi is open, you can import the dataset by clicking on the three lines in the upper left corner of the tool bar, then selecting `Open' (Figure 8.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-5}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-11}
 \end{figure}
 
 You might need to click `Browse' in the upper right of Jamovi to find the file.
 Figure 8.3 below shows how this will look when you browse for a data file.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-6}
+\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-12}
 \end{figure}
 
 Once the data are imported, you should see two separate columns.
@@ -708,7 +1102,7 @@ But you can also edit the directly in Jamovi by clicking on the `Data' tab in th
 The best way to reorganise the data in Jamovi is to double-click on the third column of data next to `subsoil' (see Figure 8.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-7}
+\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-13}
 \end{figure}
 
 After double-clicking on the location shown in Figure 8.4, there will be three buttons visible.
@@ -717,7 +1111,7 @@ Keep the `Measure type' as `Nominal', but change the `Data type' to `text'.
 When you are done, click the \texttt{\textgreater{}} character to the right so that the variable is fixed (Figure 8.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-8}
+\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-14}
 \end{figure}
 
 After typing in the new variable `soil\_type', add another variable called `organic\_carbon'.
@@ -740,7 +1134,7 @@ First, we can calculate the minimum, maximum, and mean of all of the organic car
 To do this, select the `Analyses' tab, then click on the left-most button called `Exploration' in the toolbar (Figure 8.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-9}
+\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-15}
 \end{figure}
 
 After clicking on `Exploration', a pull-down box will appear with an option for `Descriptives'.
@@ -857,7 +1251,7 @@ To do this, click on the `Data' tab at the top of the toolbar again, then click 
 Your screen should look like the image in Figure 8.7.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-11}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-17}
 \end{figure}
 
 With the `Length\_cm' column highlighted, click on the `Transform' button in the toolbar.
@@ -875,7 +1269,7 @@ Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multi
 We can do this by appending a \texttt{*\ 10} to the lower box of the transform window, so that it reads \texttt{=\ \$source\ *\ 10} (Figure 8.8).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-12}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-18}
 \end{figure}
 
 When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
@@ -941,7 +1335,7 @@ Double click on this to put it into the formula, then divide it by 2.
 You can repeat this two more times to complete the computed variable as shown in Figure 8.9.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-13}
+\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-19}
 \end{figure}
 
 Note that we can get the cube of `Width\_mm' more concisely by using the carrot character (\texttt{\^{}}).
@@ -1117,10 +1511,10 @@ They are especially useful visualisation tools because it is often important to 
 The histogram shown in Figure 10.1 provides an example from the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-14-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-14}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-20-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-20}
 \end{figure}
 
-The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}.}).
+The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}}).
 That is, the frequency with which fruits within some width interval occur in the data.
 For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
 In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
@@ -1140,7 +1534,7 @@ For example, in the \href{https://raw.githubusercontent.com/bradduthie/statistic
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-15-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-15}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-21-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-21}
 \end{figure}
 
 In Figure 10.2, each tree is represented by a separate bar on the x-axis.
@@ -1155,7 +1549,7 @@ For example, in the case of the fig fruits, it might be useful to visualise what
 A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-16-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-16}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-22-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-22}
 \end{figure}
 
 Pie charts can be useful in some situations, but in the biological and environmental they are not used as often as barplots.
@@ -1173,7 +1567,7 @@ Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histo
 In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-17-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-17}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-23-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-23}
 \end{figure}
 
 To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5A) are located in the histogram (Figure 10.5B).
@@ -1181,7 +1575,7 @@ These summary statistics include the median (black circles of Figure 10.5), quar
 Note that in boxplots, if outliers exist, they are presented as separate points.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-18-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-18}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-24-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-24}
 \end{figure}
 
 One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
@@ -1189,7 +1583,7 @@ For example, the distribution of fig fruit width can be shown for each of the fo
 While it is possible to show histograms side by side, it will quickly take up a lot of space.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-19-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-19}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-25-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-25}
 \end{figure}
 
 The boxplot in Figure 10.6 can be used to quickly compare the distribution of Trees A-D.
@@ -1216,7 +1610,7 @@ The mean is a measure of central tendency, so it is located somewhere in the cen
 Figure 10.7 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-20-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-20}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-26-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-26}
 \end{figure}
 
 The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data \citep{Sokal1995}.
@@ -1322,7 +1716,7 @@ Also, somewhat confusingly, distributions that have more than one peak are often
 For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-21-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-21}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-27-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-27}
 \end{figure}
 
 In very rare cases, data might have a U-shape.
@@ -1385,23 +1779,370 @@ But it is important to recognise that different statistical tools might give dif
 \hypertarget{Chapter_12}{%
 \chapter{Measures of spread}\label{Chapter_12}}
 
+It is often important to know how much a set of numbers is spread out.
+That is, do all of the data cluster close to the mean, or are most values distant from the mean.
+For example, all of the numbers below are quite close to the mean of 5.0 (three numbers are exactly 5.0).
+
+\begin{verbatim}
+4.9, 5.3, 5.0, 4.7, 5.1, 5.0, 5.0
+\end{verbatim}
+
+In contrast, all of the numbers that follow are relatively distant to the same mean of 5.0.
+
+\begin{verbatim}
+3.0, 5.6, 7.8, 1.2, 4.3, 8.2, 4.9
+\end{verbatim}
+
+This chapter focuses on summary statistics that describe the spread of data.
+The approach in this chapter is similar to \protect\hyperlink{Chapter_11}{Chapter 11}, which provided verbal and mathematical explanations of measures of central tendency.
+We will start with the most intuitive measures of spread, the range and inter-quartile range.
+Then, we will move on to some more conceptually challenging measures of spread, the variance, standard deviation, coefficient of variation, and standard error.
+These more challenging measures can be a bit confusing at first, but they are absolutely critical for doing statistics.
+The best approach to learning them is to see them and practice using them in different contexts, which we will do here, in the \protect\hyperlink{Chapter_13}{Chapter 13} practical, and throughout the semester.
+
 \hypertarget{the-range}{%
 \section{The range}\label{the-range}}
+
+The range of a set of numbers is probably the most intuitive measure of spread.
+It is simply the difference between the highest and the lowest value of a dataset \citep{Sokal1995}.
+To calculate it, we just need to take the highest value minus the lowest value.
+If we want to be fancy, then we can write a general equation for the range of a variable \(X\),
+
+\[Range(X) = \max(X) - \min(X).\]
+
+But really, all that we need to worry about is finding the highest and lowest values, then subtracting.
+Consider again the two sets of numbers introduced at the beginning of the chapter.
+In examples, it is often helpful to imagine numbers as something concrete that has been measured, so suppose that these numbers are the measured masses (in grams) of leaves from two different plants.
+Below are the masses of plant A, in which leaf masses are very similar and close to the mean of 5.
+
+\begin{verbatim}
+4.9, 5.3, 5.0, 4.7, 5.1, 5.0, 5.0
+\end{verbatim}
+
+Plant B masses are below, which are more spread out around the same mean of 5.
+
+\begin{verbatim}
+3.0, 5.6, 7.8, 1.2, 4.3, 8.2, 4.9
+\end{verbatim}
+
+To get the range of plant A, we just need to find the highest (5.3 g) and lowest (4.7 g) mass, then subtract,
+
+\[Range(Plant\:A) = 5.3 - 4.7 = 0.6\]
+
+Plant A therefore has a range of 0.6 g.
+We can do the same for plant B, which has a highest value of 8.2 g and lowest value of 1.2 g,
+
+\[Range(Plant\:B) = 8.2 - 1.2 = 7.0\]
+
+Plant B therefore has a much higher range than plant A.
+
+It is important to mention that the range is highly sensitive to outliers \citep{Navarro2022}.
+Just adding a single number to either plant A or plant B could dramatically change the range.
+For example, imagine if we measured a leaf in plant A to have a mass of 19.7 g (i.e., we found a huge leaf!).
+The range of plant A would then be \(19.7 - 4.7 = 14\).
+Just this one massive leaf would then make the range of plant A double the range of plant B.
+This lack of robustness can really limit how useful the range is as a statistical measure of spread.
 
 \hypertarget{the-inter-quartile-range}{%
 \section{The inter-quartile range}\label{the-inter-quartile-range}}
 
+The inter-quartile range (usually abbreviated as `IQR') is conceptually the same as the range.
+The only difference is that we are calculating the range between quartiles rather than the range between the highest and lowest numbers in the dataset.
+A general formula subtracting the first quartile (\(Q_{1}\)) from the third quartile (\(Q_{3}\)) is,
+
+\[IQR = Q_{3} - Q_{1}.\]
+
+Recall from \protect\hyperlink{Chapter_11}{Chapter 11} how to calculate first and third quartiles.
+As a reminder, we can sort the leaf masses for plant A below.
+
+\begin{verbatim}
+4.7, 4.9, 5.0, 5.0, 5.0, 5.1, 5.3
+\end{verbatim}
+
+The first quartile will be the mean between 4.9 and 5.0 (4.95).
+The second quartile will be the the mean between 5.0 and 5.1 (5.05).
+The IQR of plant A is therefore,
+
+\[IQR_{plant\:A} = 5.05 - 4.95 = 0.1.\]
+
+We can calculate the IQR for plant B in the same way.
+Here are the masses of plant B leaves sorted.
+
+\begin{verbatim}
+1.2, 3.0, 4.3, 4.9, 5.6, 7.8, 8.2
+\end{verbatim}
+
+The first quartile of plant B is 3.65, and the third quartile is 6.70.
+To get the IQR of plant B,
+
+\[IQR_{plant\:B} = 6.70 - 3.65 = 3.05.\]
+
+An important point about the IQR is that it is more robust than the range \citep{Dytham2011}.
+Recall that if we found an outlier leaf of 19.7 g on plant A, it would change the range of plant leaf mass from 0.6 g to 14 g.
+The IQR is not nearly so sensitive.
+If we include the outlier, the first quartile for plant A changes from \(Q_{1} = 4.95\) to \(Q_{1} = 4.975\).
+The second quartile changes from \(Q_{3} = 5.05\) to \(Q_{3} = 5.150\).
+The resulting IQR is therefore \(5.150 - 4.975 = 0.175\).
+Hence, the IQR only changes from 0.1 to 0.175, rather than from 0.6 to 14.
+The one outlier therefore has a huge effect on the range, but only a modest effect on the IQR.
+
 \hypertarget{the-variance}{%
 \section{The variance}\label{the-variance}}
+
+The range and inter-quartile range were reasonably intuitive, in the sense that it is not too difficult to think about what a range of 10, e.g., actually means in terms of the data.
+We now move into measures of spread that are less intuitive.
+These measures of spread are the variance, standard deviation, coefficient of variation, and standard error.
+These can be confusing and unintuitive at first, but they are extremely useful.
+The variance of a dataset (is a measure of the expected distance of data from the mean.
+To calculate the variance of a sample, we need to know the sample size (\(N\), i.e., how many measurements in total), and the mean of the sample (\(\bar{x}\)).
+We can calculate the variance of a sample (\(s^{2}\)) as follows,
+
+\[s^{2} = \frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]
+
+This looks like a lot, but we can break down what the equation is doing verbally.
+First, we can look inside the summation (\(\sum\)).
+Here we are taking an individual measurement \(x_{i}\), subtracting the mean \(\bar{x}\), then squaring.
+We do this for each \(x_{i}\), summing up all of the values from \(i = 1\) to \(i = N\).
+This part of the equation is called the \textbf{sum of squares} (\(SS\)),
+
+\[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}\]
+
+That is, we need to subtract the mean of each value \(x_{i}\), square the result, and add everything up.
+Once we have this sum \(SS\), then we just need to multiply by \(1 / (N - 1)\) to get the variance.
+
+An example of how to do the actual calculation should help make it easier to understand what is going on.
+We can use the same values from plant A earlier.
+
+\begin{verbatim}
+4.9, 5.3, 5.0, 4.7, 5.1, 5.0, 5.0
+\end{verbatim}
+
+To calculate the variance of plant A leaf masses, we start with the sum of squares.
+That is, take 4.7, subtract the sample mean of 5.0 (\(4.7 - 5.0 = -0.3\)), then square the result (\((-0.3)^{2} = 0.09\)).
+We do the same for 4.9, \((4.9 - 5.0)^{2} = 0.1\), and add it to the 0.09, then continue down the list of numbers finishing with 5.3.
+This is what the sum of squares calculation looks like all written out,
+
+\[SS = (4.9 - 5)^{2} + (5.3 - 5)^{2} + (5 - 5)^{2} + (4.7 - 5)^{2} + (5.1 - 5)^{2} + (5 - 5)^{2} + (5 - 5)^{2}.\]
+
+Remember that the calculations in parentheses need to be done first, so the next step for calculating the sum of squares would be the following,
+
+\[SS = (-0.1)^{2} + (0.3)^{2} + (0)^{2} + (-0.3)^{2} + (0.1)^{2} + (0)^{2} + (0)^{2}.\]
+
+Next, we need to square all of the values,
+
+\[SS = 0.01 + 0.09 + 0 + 0.09 + 0.01 + 0 + 0.\]
+
+If we sum the above, we get \(SS = 0.2\).
+We now just need to multiply this by \(1 / N( - 1)\), where \(N = 7\) because this is the total number of measurements in the plant A dataset,
+
+\[s^{2} = \frac{1}{7 - 1}\left(0.2\right).\]
+
+From the above, we get a variance of approximately \(s^{2} = 0.0333\).
+
+Fortunately, it will almost never be necessary to calculate a variance manually in this way.
+Any statistical software will do all of these steps and calculate the variance for us (the \protect\hyperlink{Chapter_13}{Chapter 13} explains how in Jamovi).
+The only reason that we present the step-by-step calculation here is to help explain the equation for \(s^{2}\).
+The details can be helpful for understanding how the variance works as a measure of spread.
+For example, note that what we are really doing here is getting the distance of each value from the mean, \(x_{i} - \bar{x}\).
+If these distances tend to be large, then it means that most data points (\(x_{i}\)) are far away from the mean (\(\bar{x}\)), and the variance (\(s^{2}\)) will therefore increase.
+The differences \(x_{i} - \bar{x}\) are squared because we need all of the values to be positive, so that variance increases regardless of whether a value \(x_{i}\) is higher or lower than the mean.
+It does not matter if \(x_{i}\) is 0.1 lower than \(\bar{x}\) (i.e., \(x_{i} - \bar{x} = -0.1\)), or 0.1 higher (i.e., \(x_{i} - \bar{x} = 0.1\)).
+In both cases, the deviation from the mean is the same.
+Moreover, if we did not square the values, then the sum of \(x_{i} - \bar{x}\) values would always be 0 (you can try this yourself)\footnote{If you are wondering why we square the difference \(x_{i} - \bar{x}\) instead of just taking its absolute value, this is an excellent question! You have just invented something called the mean absolute deviation. There are some reasons why the mean absolute deviation is not as good of a measure of spread as the variance. \citet{Navarro2022} explain the mean absolute deviation, and how it relates to the variance, very well in section 4.2.3 of their textbook. We will not get into these points here, but it would be good to check out \citet{Navarro2022} for more explanation.}.
+Lastly, it turns out that the variance is actually a special case of a more general concept called the \emph{covariance}, which we will look at later in \protect\hyperlink{Chapter_41}{Chapter 41} and makes the squaring of differences make a bit more sense.
+
+We sum up all of the squared deviations to get \(SS\), then divide by the sample size minus 1, to get the mean squared deviation from the mean.
+That is, the whole process gives us the average squared deviation from the mean.
+But wait, why is it the sample size minus 1, \(N - 1\)?
+Why would we subtract 1 here?
+The short answer is that in calculating a \emph{sample} variance, \(s^{2}\), we are almost always trying to estimate the corresponding \emph{population} variance (\(\sigma^{2}\)).
+And if we were to just use \(N\) instead of \(N - 1\), then our \(s^{2}\) would be a biased estimate of \(\sigma^{2}\) (see \protect\hyperlink{Chapter_4}{Chapter 4} for a reminder on the difference between samples and populations).
+By subtracting 1, we are correcting for this bias to get a more accurate estimate of the population variance.
+It is not necessary to do this ourselves; statistical software like Jamovi and R will do it automatically.
+This is really all that it is necessary to know for now, but see this footnote\footnote{To get the true population variance \(\sigma^{2}\), we would also need to know the true mean \(\mu\). But we can only estimate \(\mu\) from the sample, \(\bar{x}\). That is, what we would really want to calculate is \(x_{i} - \mu\), but the best we can do is \(x_{i} - \bar{x}\). The consequence of this is that there will be some error that underestimates the true distance of \(x_{i}\) values from the population mean, \(\mu\). Here is the really cool part; to determine the extent to which our estimate of the variance is biased by using \(\bar{x}\) instead of \(\mu\), we just need to know the expected squared difference between the two values, \((\bar{x} - \mu)^{2}\). It turns out that this difference (i.e., the bias of our estimate \(s^{2}\)) is just \(\sigma^{2} / N\); that is, the true variance of the population divided by the sample size. If we subtract this value from \(\sigma^{2}\), so \(\sigma^{2} - \sigma^{2}/N\), then we can get the expected difference between the true variance and the estimate from the sample size. We can rearrange \(\sigma^{2} - \sigma^{2}/N\) to get \(\sigma^{2} \times (N - 1)/N\), which means that we need to correct our sample variance by \(N / (N-1)\) to get an unbiased estimate of \(\sigma^{2}\). If all of this is confusing, that is okay! This is really only relevant for those interested in statistical theory, which is not the focus of this module.} for a bit more detailed explanation to try to make this intuitive (it is actually quite cool!).
+Later, we will explore the broader concept of \emph{degrees of freedom}, which explains why we need to take into account the number of parameters in a statistic that are free to vary when calculating a statistic\footnote{Briefly, in the case of sample variance, note that we needed to use all the values \(x_{i}\) in the dataset and the sample mean \(\bar{x}\). But if we know what all of the \(x_{i}\) values are, then we also know \(\bar{x}\). And if we know all but one value of \(x_{i}\) and \(\bar{x}\), then we could figure out the last \(x_{i}\). Hence, while we are using \(N\) values in the calculation of \(s^{2}\), the use of \(\bar{x}\) reduces the degree to which these values are free to vary. We have lost 1 degree of freedom in the calculation of \(\bar{x}\), so we need to account for this in our calculation of \(s^{2}\) by dividing by \(N - 1\). This is another way to think about the \(N - 1\) correction factor \citep{Sokal1995} explained in the previous footnote.}.
+
+This was a lot of information.
+The variance is not an intuitive concept.
+In addition to being a challenge to calculate, the calculation of a variance leaves us with a value in units squared.
+That is, for the example of plant leaf mass in grams, the variance is measured in grams squared, \(g^{2}\), which is not particularly easy to interpret.
+For more on this, \citet{Navarro2022} have a really good \href{https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html\#variance}{section} on the variance.
+Despite its challenges as a descriptive statistic, the variance has some mathematical properties that are very useful \citep{Navarro2022}, especially in the biological and environmental sciences.
+For example, variances are additive, meaning that if we are measuring two separate characteristics of a sample, A and B, then the variance of A+B equals the variance of A plus the variance of B; i.e., \(Var(A + B) = Var(A) + Var(B)\) \footnote{This has one caveat, which is not important for now. Values of A and B must be uncorrelated. That is, A and B cannot covary. If A and B covary, i.e., \(Cov(A, B) \neq 0\), then \(Var(A+B) = Var(A) + Var(B) + Cov(A, B)\). That is, we need to account for the covariance when calculating \(Var(A+B)\).}.
+This is relevant to Evolution and Genetics when measuring heritability in quantitative genetics.
+Here, the total variance in the phenotype of a population (e.g., body mass of animals) can be partitioned into variance attributable to genetics plus variance attributable to the environment,
+
+\[Var(Phenotype) = Var(Genotype) + Var(Environment).\]
+This is also sometimes written as \(V_{P} = V_{G} + V_{E}\).
+Applying this equation to calculate heritability (\(H^{2} = V_{G} / V_{P}\)) can be used to predict how a population will respond to natural selection.
+This is just one place where variance reveals itself to be a highly useful statistic in practice.
+As a descriptive statistic to communicate the spread of a variable, it usually makes more sense to calculate the standard deviation of the mean.
 
 \hypertarget{the-standard-deviation}{%
 \section{The standard deviation}\label{the-standard-deviation}}
 
+The standard deviation of the mean (\(s\)) is just the square root of the variance,
+
+\[s = \sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}}.\]
+
+This is a simple step, mathematically, but it also is easier to understand conceptually as a measure of spread \citep{Navarro2022}.
+By taking the square root of the variance, our units are no longer squared, so we can interpret the standard deviation in the same terms as our original data.
+For example, the leaf masses of plant A and plant B in the example above were measured in grams.
+While the variance of these masses were in \(g^{2}\), the standard deviation is in \(g\), just like the original measurements.
+For plant A, we calculated a leaf mass variance of \(s^{2} = 0.0333\:g^{2}\), which means that the standard deviation of leaf masses is \(s = \sqrt{0.0333}\:g^{2} = 0.1825\:g\).
+Because we are reporting \(s\) in the original units, it is a very useful measure of spread to report, and it is an important one to be able to interpret.
+To help with the interpretation, here is \href{https://bradduthie.shinyapps.io/forest/}{an interactive tool} showing how the heights of trees in a forest change across different standard deviation values\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/forest/}}.
+Here is another \href{https://bradduthie.shinyapps.io/normal_pos_neg/}{interactive tool} showing how the shape of a histogram changes when the standard deviation of a distribution is changed\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/normal_pos_neg/}}.
+The practical in \protect\hyperlink{Chapter_13}{Chapter 13} explains how to calculate the standard deviation in Jamovi.
+
 \hypertarget{the-coefficient-of-variation}{%
 \section{The coefficient of variation}\label{the-coefficient-of-variation}}
 
+The coefficient of variation (CV) is just the standard deviation divided by the mean,
+
+\[CV = \frac{s}{\bar{x}}.\]
+
+Dividing by the mean seems a bit arbitrary at first, but this can often be useful for comparing variables with different means or different units.
+The reason for this is that the units cancel out when dividing the standard deviation by the mean.
+For example, for the leaf masses of plant A, we calculated a standard deviation of 0.1825 g and a mean of 5 g.
+We can see the units cancel below,
+
+\[CV = \frac{0.1825\:g}{5\:g} = 0.0365.\]
+
+The resulting CV of 0.0365 has no units; it is \emph{dimensionless} \citep{Lande1977}.
+Because it has no units, it often used to compare measurements with much different means or with different measurement units.
+For example, \citet{Sokal1995} suggest that biologists might want to compare tail length variation between animals with much different body sizes, such as elephants and mice.
+The standard deviation of tail lengths between these two species will likely be much different just because of their difference in size, so by standardising by mean tail length, it can be easier to compare relative standard deviation.
+This is a common application of the CV in biology, but it needs to be interpreted carefully \citep{Pelabon2020}.
+
+Often, we will want to express the coefficient of variation as a percentage of the mean.
+To do this, we just need to multiply the CV above by 100\%.
+For example, to express the CV as a percentage, we would multiply the 0.0365 above by 100\%, which would give us a final answer of \(CV = 3.65\)\%.
+
 \hypertarget{the-standard-error}{%
 \section{The standard error}\label{the-standard-error}}
+
+The standard error of the mean is the last measurement that we will introduce here.
+It is slightly different than the previous estimates in that it is a measure of the variation in the \emph{mean} of a sample rather than the sample itself.
+That is, the standard error tells us how far our sample mean \(\bar{x}\) is expected to deviate from the true mean \(\mu\).
+Technically, the standard error of the mean is the standard deviation \emph{of sample means} rather than the standard deviation \emph{of samples}.
+What does that even mean?
+It is easier to explain with a concrete example.
+
+Imagine that we want to measure nitrogen levels in the water of Airthrey Loch (the loch at the centre of campus at the University of Stirling)
+We collect 12 water samples and record the nitrate levels in milligrams per litre (mg/l).
+The measurements are reported below.
+
+\begin{verbatim}
+0.63, 0.60, 0.53, 0.72, 0.61, 0.48, 0.67, 0.59, 0.67, 0.54, 0.47, 0.87
+\end{verbatim}
+
+We can calculate the mean of the above sample to be \(\bar{x} = 0.615\), and we can calculate the standard deviation of the sample to be \(s = 0.111\).
+We do not know what the \emph{true} mean \(\mu\) is, but our best guess is the sample mean \(\bar{x}\).
+Suppose, however, that we then went back to the loch to collect another 8 measurements (assume that the nitrogen level of the lake has not changed in the meantime).
+We would expect to get similar values as our first 8 measurements, but certainly not the \emph{exact} same measurements, right?
+The sample mean of these new measurements would also be a bit different.
+Maybe we actually go out and do this and get the following new sample.
+
+\begin{verbatim}
+0.47, 0.56, 0.72, 0.61, 0.54, 0.64, 0.68, 0.54, 0.48, 0.59, 0.62, 0.78
+\end{verbatim}
+
+The mean of our new sample is 0.603, which is a bit different from our first.
+In other words, the sample means vary.
+We can therefore ask what the variance and standard deviation is \emph{of the sample means}.
+In other words, suppose that we kept going back out to the loch, collecting 8 new samples, and recording the sample mean each time?
+The standard deviation of those sample means would be the standard error.
+It is the standard deviation of \(\bar{x}\) values around the true mean \(\mu\).
+But we do not actually need to go through the repetitive resampling process to estimate the standard error.
+We can estimate it with just the standard deviation and the sample size.
+To do this, we just need to take the standard deviation of the sample (\(s\)) and divide by the square root of the sample size (\(\sqrt{N}\)),
+
+\[SE = \frac{s}{\sqrt{N}}.\]
+
+In the case of the first 12 samples from the loch in the example above,
+
+\[SE = \frac{0.111}{\sqrt{12}} = 0.032.\]
+
+The standard error is important because it can be used to evaluate the uncertainty of the sample mean in comparison with the true mean.
+We can use the standard error to place confidence intervals around our sample mean to express this uncertainty.
+We will calculate confidence intervals in \protect\hyperlink{Chapter_19}{Chapter 19}, so it is important to understand what the standard error is measuring.
+
+If the concept of standard error is still a but unclear, we can work through one more hypothetical example.
+Suppose again that we want to measure the nitrogen concentration of a loch.
+This time, however, assume that we somehow \emph{know} that the true mean N concentration is \(\mu = 0.7\), and that the standard deviation of water sample N concentration is \(\sigma = 0.1\).
+Of course, we can never actually know the \emph{true} parameter values, but we can use a computer to simulate sampling from a population in which the true parameter values are known.
+In Table 12.1, we simulate the process of going out and collecting 10 water samples from Airthrey Loch.
+This collecting of 10 water samples is repeated 20 different times.
+Each row is a different sampling effort, and columns report the 10 samples from each effort.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-29}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
+\hline
+Sample\_1 & 0.53 & 0.72 & 0.76 & 0.62 & 0.65 & 0.75 & 0.72 & 0.83 & 0.71 & 0.68\\
+\hline
+Sample\_2 & 0.60 & 0.69 & 0.74 & 0.62 & 0.55 & 0.96 & 0.64 & 0.68 & 0.51 & 0.75\\
+\hline
+Sample\_3 & 0.72 & 0.89 & 0.56 & 0.72 & 0.86 & 0.50 & 0.85 & 0.68 & 0.75 & 0.55\\
+\hline
+Sample\_4 & 0.69 & 0.66 & 0.71 & 0.75 & 0.65 & 0.69 & 0.74 & 0.87 & 0.63 & 0.66\\
+\hline
+Sample\_5 & 0.84 & 0.58 & 0.87 & 0.91 & 0.63 & 0.67 & 0.67 & 0.56 & 0.81 & 0.71\\
+\hline
+Sample\_6 & 0.56 & 0.81 & 0.53 & 0.73 & 0.64 & 0.60 & 0.48 & 0.59 & 0.66 & 0.84\\
+\hline
+Sample\_7 & 0.68 & 0.60 & 0.84 & 0.70 & 0.67 & 0.78 & 0.84 & 0.75 & 0.70 & 0.54\\
+\hline
+Sample\_8 & 0.74 & 0.49 & 0.81 & 0.67 & 0.70 & 0.57 & 0.62 & 0.63 & 0.80 & 0.56\\
+\hline
+Sample\_9 & 0.88 & 0.70 & 0.81 & 0.63 & 0.62 & 0.78 & 0.83 & 0.76 & 0.57 & 0.63\\
+\hline
+Sample\_10 & 0.63 & 0.56 & 0.79 & 0.70 & 0.65 & 0.66 & 0.71 & 0.75 & 0.68 & 0.86\\
+\hline
+Sample\_11 & 0.72 & 0.71 & 0.78 & 0.75 & 0.60 & 0.64 & 0.77 & 0.88 & 0.89 & 0.66\\
+\hline
+Sample\_12 & 0.77 & 0.63 & 0.64 & 0.78 & 0.78 & 0.81 & 0.62 & 0.73 & 0.70 & 0.77\\
+\hline
+Sample\_13 & 0.56 & 0.69 & 0.78 & 0.66 & 0.64 & 0.67 & 0.66 & 0.57 & 0.80 & 0.58\\
+\hline
+Sample\_14 & 0.68 & 0.70 & 0.68 & 0.69 & 0.43 & 0.65 & 0.70 & 0.65 & 0.77 & 0.77\\
+\hline
+Sample\_15 & 0.59 & 0.65 & 0.72 & 0.88 & 0.62 & 0.62 & 0.84 & 0.57 & 0.90 & 0.89\\
+\hline
+Sample\_16 & 0.77 & 0.64 & 0.54 & 0.77 & 0.72 & 0.78 & 0.82 & 0.47 & 0.68 & 0.54\\
+\hline
+Sample\_17 & 0.82 & 0.58 & 0.71 & 0.67 & 0.74 & 0.87 & 0.75 & 0.58 & 0.52 & 0.76\\
+\hline
+Sample\_18 & 0.72 & 0.82 & 0.71 & 0.68 & 0.78 & 0.81 & 0.64 & 0.62 & 0.73 & 0.80\\
+\hline
+Sample\_19 & 0.70 & 0.75 & 0.69 & 0.70 & 0.74 & 0.49 & 0.77 & 0.62 & 0.86 & 0.83\\
+\hline
+Sample\_20 & 0.72 & 0.84 & 0.78 & 0.56 & 0.67 & 0.48 & 0.68 & 0.60 & 0.70 & 0.84\\
+\hline
+\end{tabular}
+\end{table}
+
+We can calculate the mean of each sample by calculating the mean of each row.
+These means are reported below.
+
+\begin{verbatim}
+##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6] [,7]  [,8]  [,9] [,10]
+## [1,] 0.697 0.674 0.708 0.705 0.725 0.644 0.71 0.659 0.721 0.699
+## [2,] 0.740 0.723 0.661 0.672 0.728 0.673 0.70 0.731 0.715 0.687
+\end{verbatim}
+
+The standard deviation of the sample means reported above is 0.027165.
+Now suppose that we only had Sample 1 (i.e., the top row of data).
+The standard deviation of Sample 1 is \(s =\) 0.083006.
+We can calculate the standard error from these sample values below,
+
+\[s = \frac{0.083006}{\sqrt{10}} = 0.0262488.\]
+
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.027165, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0262488.
+These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
 \chapter{\texorpdfstring{\emph{Practical}. Plotting and statistical summaries in Jamovi}{Practical. Plotting and statistical summaries in Jamovi}}\label{Chapter_13}}
@@ -1411,7 +2152,7 @@ The data that we will work with in this practical were collected from a research
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, \emph{Nymphaea alba}, which beavers regularly consume (Figure 13.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Nymphaea_alba._Reader.jpg}{Аlexej Potupin} on 8 June 2018.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-22}
+\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-31}
 \end{figure}
 
 As an instructive example, this lab will use the data from \citet{Law2014} on the petiole diameter (mm) from \emph{N. alba} collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
@@ -1461,7 +2202,7 @@ This is a bit tedious, and we will not ask you to do it for every dataset, but i
 See Figure 13.2 for how this would look in Jamovi.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-24}
+\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-33}
 \end{figure}
 
 Note that to insert a new column, we need to right click on an existing column and select `Add Variable' \(\to\) `Insert'.
@@ -1489,7 +2230,7 @@ We will start by making a histogram of the full dataset of petiole diameter.
 To do this, we need to go to `Analyses' tab of the Jamovi toolbar, then select the `Exploration' button.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-26}
+\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-35}
 \end{figure}
 
 Next, select the `Descriptives' option (Figure 13.3).
@@ -1502,7 +2243,7 @@ Choose the `Histogram' option by clicking the checkbox.
 A histogram will open up in the window on the right (you might need to scroll down).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-27}
+\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-36}
 \end{figure}
 
 Take a look at the histogram to the right (Figure 13.4).
@@ -1612,7 +2353,7 @@ To calculate all of the variables explained in \protect\hyperlink{Chapter_11}{Ch
 When you do this, the Statistics option in Jamovi should like like it does in Figure 13.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-28}
+\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-37}
 \end{figure}
 
 Once you check these boxes, you will see a `Descriptives' table open on the right hand side of Jamovi.
@@ -1842,7 +2583,7 @@ The project works with people affected, and sometimes displaced, by dam construc
 Part of this project involves the use of mobile games to investigate how people make decisions about sustainable development.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-29}
+\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-38}
 \end{figure}
 
 The game ``Power Up!'' is freely available as an \href{https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame}{Android} and \href{https://apps.apple.com/gb/app/power-up/id1585634888}{iPhone} app (Figure 16.1).
@@ -1869,7 +2610,7 @@ Next, find the check box called `Frequency tables' just under the `Split by' box
 Check this box to get a table of frequencies for Android versus iPhone users.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-30}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-39}
 \end{figure}
 
 The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
@@ -1938,7 +2679,7 @@ Figure 16.3 shows the output of Jamovi.
 A new frequency table breaks down dam choice for each OS.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-31}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-40}
 \end{figure}
 
 To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).
@@ -1974,7 +2715,7 @@ Because of how the game was designed, Score can potentially be any real number, 
 We can use a histogram to see the distribution of player scores (Figure 16.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-32}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-41-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-41}
 \end{figure}
 
 In this case, it does not really make sense to ask what the probability is of a particular score.
@@ -2014,7 +2755,7 @@ We will assume that the \emph{sample} of scores shown in Figure 16.4 came from a
 We can overlay his distribution on the histogram above using a curved line (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-33}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-42-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-42}
 \end{figure}
 
 We can interpret the area under the curve in the same way that we interpret the area in the grey bars.
@@ -2034,7 +2775,7 @@ Traditionally, we would need to do some maths to get other player score probabil
 To get Jamovi to calculate probabilities from a normal distribution, we need to go to the Modules option and download a new module (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-34}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-43}
 \end{figure}
 
 Click on the `Modules' button, and select the first option called `jamovi library' from the pull-down menu.
@@ -2043,7 +2784,7 @@ Click the `Install' button to install it into Jamovi.
 A new button in the toolbar called `distrACTION' should become visible (Figure 16.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-35}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-44}
 \end{figure}
 
 If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
@@ -2058,7 +2799,7 @@ Notice in the panel on the right that the probability is given as \(P =\) 0.237.
 This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (\(P =\) 0.237, i.e., ca 23.7 per cent).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-36}
+\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-45}
 \end{figure}
 
 To find the probability that a value is greater than 80, we could subtract our answer of 0.237 from 1, \(1 - 0.237 = 0.763\) (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
@@ -2180,7 +2921,7 @@ The \texttt{hist} function plots a histogram of the first variable.
 To run the code, find the green triangle in the upper right (Figure 16.9).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-38}
+\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
@@ -2292,7 +3033,7 @@ Go to `Modules', and from the `Available' tab, download the `clt - Demonstration
 Once it is downloaded, go to the `Demonstrations' button in the Jamovi toolbar and select `Central Limit Theorem' from the pulldown menu.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-41}
+\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-50}
 \end{figure}
 
 To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 16.10).

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Background mathematics | Statistical Techniques for Biological and Environmental Sciences</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Background mathematics | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="bradduthie/statistical_techniques" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Background mathematics | Statistical Techniques for Biological and Environmental Sciences" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Brad Duthie" />
+
+
+<meta name="date" content="2022-12-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-1-overview.html"/>
+<link rel="next" href="Chapter_2.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#what-is-statistics"><i class="fa fa-check"></i><b>0.1</b> What is statistics?</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#why-this-module-is-important"><i class="fa fa-check"></i><b>0.2</b> Why this module is important</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#teaching-overview"><i class="fa fa-check"></i><b>0.3</b> Teaching overview</a></li>
+<li class="chapter" data-level="0.4" data-path="index.html"><a href="index.html#assessment-overview"><i class="fa fa-check"></i><b>0.4</b> Assessment overview</a>
+<ul>
+<li class="chapter" data-level="0.4.1" data-path="index.html"><a href="index.html#test-1f"><i class="fa fa-check"></i><b>0.4.1</b> Test 1F</a></li>
+<li class="chapter" data-level="0.4.2" data-path="index.html"><a href="index.html#test-1s"><i class="fa fa-check"></i><b>0.4.2</b> Test 1S</a></li>
+<li class="chapter" data-level="0.4.3" data-path="index.html"><a href="index.html#test-2s"><i class="fa fa-check"></i><b>0.4.3</b> Test 2S</a></li>
+<li class="chapter" data-level="0.4.4" data-path="index.html"><a href="index.html#mock-exam"><i class="fa fa-check"></i><b>0.4.4</b> Mock Exam</a></li>
+<li class="chapter" data-level="0.4.5" data-path="index.html"><a href="index.html#exam"><i class="fa fa-check"></i><b>0.4.5</b> Exam</a></li>
+</ul></li>
+<li class="chapter" data-level="0.5" data-path="index.html"><a href="index.html#intro_jamovi"><i class="fa fa-check"></i><b>0.5</b> Jamovi statistical software</a></li>
+<li class="chapter" data-level="0.6" data-path="index.html"><a href="index.html#textbooks"><i class="fa fa-check"></i><b>0.6</b> Textbooks</a></li>
+<li class="chapter" data-level="0.7" data-path="index.html"><a href="index.html#canvas"><i class="fa fa-check"></i><b>0.7</b> Canvas</a></li>
+<li class="chapter" data-level="0.8" data-path="index.html"><a href="index.html#timetable"><i class="fa fa-check"></i><b>0.8</b> Timetable</a></li>
+</ul></li>
+<li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
+<li class="chapter" data-level="" data-path="week-1-overview.html"><a href="week-1-overview.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_1.html"><a href="Chapter_1.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter_1.html"><a href="Chapter_1.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter_1.html"><a href="Chapter_1.html#logarithms"><i class="fa fa-check"></i><b>1.2</b> Logarithms</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter_1.html"><a href="Chapter_1.html#order-of-operations"><i class="fa fa-check"></i><b>1.3</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_2.html"><a href="Chapter_2.html"><i class="fa fa-check"></i><b>2</b> Data organisation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>: Preparing real datasets</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#libreoffice-calc"><i class="fa fa-check"></i><b>3.1</b> LibreOffice Calc</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-organising-data-1"><i class="fa fa-check"></i><b>3.2</b> Exercise Organising data 1</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-organising-data-2"><i class="fa fa-check"></i><b>3.3</b> Exercise Organising data 2</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-organising-data-3"><i class="fa fa-check"></i><b>3.4</b> Exercise Organising data 3</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary-of-exercises-and-why-they-are-useful."><i class="fa fa-check"></i><b>3.5</b> Summary of exercises and why they are useful.</a></li>
+</ul></li>
+<li class="part"><span><b>II Statistical concepts</b></span></li>
+<li class="chapter" data-level="" data-path="week-2-overview.html"><a href="week-2-overview.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propogation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> <em>Practical</em>. Introduction to Jamovi</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
+</ul></li>
+<li class="part"><span><b>III Summary statistics</b></span></li>
+<li class="chapter" data-level="" data-path="week-3-overview.html"><a href="week-3-overview.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="Chapter_9.html"><a href="Chapter_9.html"><i class="fa fa-check"></i><b>9</b> Decimal places, significant figures, and rounding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter_9.html"><a href="Chapter_9.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>9.1</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter_9.html"><a href="Chapter_9.html#rounding"><i class="fa fa-check"></i><b>9.2</b> Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Chapter_10.html"><a href="Chapter_10.html"><i class="fa fa-check"></i><b>10</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter_10.html"><a href="Chapter_10.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="Chapter_10.html"><a href="Chapter_10.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>10.2</b> Barplots and pie charts</a></li>
+<li class="chapter" data-level="10.3" data-path="Chapter_10.html"><a href="Chapter_10.html#box-whisker-plots"><i class="fa fa-check"></i><b>10.3</b> Box-whisker plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Chapter_11.html"><a href="Chapter_11.html"><i class="fa fa-check"></i><b>11</b> Measures of central tendency</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mean"><i class="fa fa-check"></i><b>11.1</b> The mean</a></li>
+<li class="chapter" data-level="11.2" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mode"><i class="fa fa-check"></i><b>11.2</b> The mode</a></li>
+<li class="chapter" data-level="11.3" data-path="Chapter_11.html"><a href="Chapter_11.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>11.3</b> The median and quantiles</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Chapter_12.html"><a href="Chapter_12.html"><i class="fa fa-check"></i><b>12</b> Measures of spread</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Chapter_12.html"><a href="Chapter_12.html#the-range"><i class="fa fa-check"></i><b>12.1</b> The range</a></li>
+<li class="chapter" data-level="12.2" data-path="Chapter_12.html"><a href="Chapter_12.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>12.2</b> The inter-quartile range</a></li>
+<li class="chapter" data-level="12.3" data-path="Chapter_12.html"><a href="Chapter_12.html#the-variance"><i class="fa fa-check"></i><b>12.3</b> The variance</a></li>
+<li class="chapter" data-level="12.4" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-deviation"><i class="fa fa-check"></i><b>12.4</b> The standard deviation</a></li>
+<li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
+<li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>13.3</b> Calculate summary statistics</a></li>
+<li class="chapter" data-level="13.4" data-path="Chapter_13.html"><a href="Chapter_13.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>13.4</b> Reporting decimals and significant figures</a></li>
+<li class="chapter" data-level="13.5" data-path="Chapter_13.html"><a href="Chapter_13.html#comparing-across-sites"><i class="fa fa-check"></i><b>13.5</b> Comparing across sites</a></li>
+</ul></li>
+<li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
+<li class="chapter" data-level="" data-path="week-4-overview.html"><a href="week-4-overview.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="14" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html"><i class="fa fa-check"></i><b>14</b> Introduction to probability models</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#a-practical-example"><i class="fa fa-check"></i><b>14.1</b> A practical example</a></li>
+<li class="chapter" data-level="14.2" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#probability-distributions"><i class="fa fa-check"></i><b>14.2</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#binomial-distribution"><i class="fa fa-check"></i><b>14.2.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="14.2.2" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#poisson-distribution"><i class="fa fa-check"></i><b>14.2.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="14.2.3" data-path="introduction-to-probability-models.html"><a href="introduction-to-probability-models.html#normal-distribution"><i class="fa fa-check"></i><b>14.2.3</b> Normal distribution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#examples-of-the-clt-in-action"><i class="fa fa-check"></i><b>15.1</b> Examples of the CLT in action</a></li>
+<li class="chapter" data-level="15.2" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#the-standard-normal-distribution"><i class="fa fa-check"></i><b>15.2</b> The standard normal distribution</a></li>
+<li class="chapter" data-level="15.3" data-path="the-central-limit-theorem-clt.html"><a href="the-central-limit-theorem-clt.html#what-are-z-scores"><i class="fa fa-check"></i><b>15.3</b> What are z-scores?</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="practical.-probability-and-simulation.html"><a href="practical.-probability-and-simulation.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+</ul></li>
+<li class="part"><span><b>V Statistical inference</b></span></li>
+<li class="chapter" data-level="" data-path="week-5-overview.html"><a href="week-5-overview.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="17" data-path="sample-statistics-and-population-parameters.html"><a href="sample-statistics-and-population-parameters.html"><i class="fa fa-check"></i><b>17</b> Sample statistics and population parameters</a></li>
+<li class="chapter" data-level="18" data-path="standard-normal-distribution.html"><a href="standard-normal-distribution.html"><i class="fa fa-check"></i><b>18</b> Standard Normal Distribution</a></li>
+<li class="chapter" data-level="19" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>19</b> Confidence intervals</a></li>
+<li class="chapter" data-level="20" data-path="the-t-interval.html"><a href="the-t-interval.html"><i class="fa fa-check"></i><b>20</b> The t-interval</a></li>
+<li class="chapter" data-level="21" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>21</b> <em>Practical</em>. z- and t- intervals</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals"><i class="fa fa-check"></i><b>21.1</b> Example constructing confidence intervals</a></li>
+<li class="chapter" data-level="21.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>21.2</b> Confidence interval for different levels (t- and z-)</a></li>
+<li class="chapter" data-level="21.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>21.3</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="21.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>21.4</b> Another confidence interval example?</a></li>
+</ul></li>
+<li class="part"><span><b>VI Review of parts I-V</b></span></li>
+<li class="chapter" data-level="" data-path="week-6-overview-reading-week.html"><a href="week-6-overview-reading-week.html"><i class="fa fa-check"></i>Week 6 Overview (Reading week)</a></li>
+<li class="part"><span><b>VII Hypothesis testing</b></span></li>
+<li class="chapter" data-level="" data-path="week-7-overview.html"><a href="week-7-overview.html"><i class="fa fa-check"></i>Week 7 Overview</a></li>
+<li class="chapter" data-level="22" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>22</b> What is hypothesis testing?</a></li>
+<li class="chapter" data-level="23" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>23</b> Making and using hypotheses and types of tests</a></li>
+<li class="chapter" data-level="24" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>24</b> An example of hypothesis testing</a></li>
+<li class="chapter" data-level="25" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>25</b> Hypothesis testing and confidence intervals</a></li>
+<li class="chapter" data-level="26" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>26</b> Student t-distribution and one sample t-test</a></li>
+<li class="chapter" data-level="27" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>27</b> Another example of a one sample t-test</a></li>
+<li class="chapter" data-level="28" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>28</b> Independent t-test</a></li>
+<li class="chapter" data-level="29" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>29</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="30" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>30</b> Violations of assumptions</a></li>
+<li class="chapter" data-level="31" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>31</b> Non-parametric tests, and what these are.</a></li>
+<li class="chapter" data-level="32" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>32</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>32.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="32.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>32.2</b> Exercise on an independent sample t-test</a></li>
+<li class="chapter" data-level="32.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>32.3</b> Exercise involving multiple comparisons</a></li>
+<li class="chapter" data-level="32.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>32.4</b> Exercise with non-parametric</a></li>
+<li class="chapter" data-level="32.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>32.5</b> Another exercise with non-parametric</a></li>
+</ul></li>
+<li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
+<li class="chapter" data-level="" data-path="week-8-overview.html"><a href="week-8-overview.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="33" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>33</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="34" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>34</b> One-way ANOVA</a></li>
+<li class="chapter" data-level="35" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>35</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="36" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>36</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="37" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>37</b> <em>Practical</em>. ANOVA and associated tests</a>
+<ul>
+<li class="chapter" data-level="37.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>37.1</b> ANOVA Exercise 1</a></li>
+<li class="chapter" data-level="37.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>37.2</b> ANOVA Exercise 2</a></li>
+<li class="chapter" data-level="37.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>37.3</b> ANOVA Exercise 3</a></li>
+<li class="chapter" data-level="37.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>37.4</b> ANOVA Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>IX Counts and Correlation</b></span></li>
+<li class="chapter" data-level="" data-path="week-9-overview.html"><a href="week-9-overview.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="38" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>38</b> Frequency and count data</a></li>
+<li class="chapter" data-level="39" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>39</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="40" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>40</b> Chi-squared test of association</a></li>
+<li class="chapter" data-level="41" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>41</b> Correlation key concepts</a></li>
+<li class="chapter" data-level="42" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>42</b> Correlation mathematics</a></li>
+<li class="chapter" data-level="43" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>43</b> Correlation hypothesis testing</a></li>
+<li class="chapter" data-level="44" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>44</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<ul>
+<li class="chapter" data-level="44.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>44.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="44.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>44.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="44.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>44.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="44.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>44.4</b> Correlation Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>X Linear Regression</b></span></li>
+<li class="chapter" data-level="" data-path="week-10-overview.html"><a href="week-10-overview.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="45" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>45</b> Regression key concepts</a></li>
+<li class="chapter" data-level="46" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>46</b> Regression validity</a></li>
+<li class="chapter" data-level="47" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>47</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="48" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>48</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="49" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>49</b> <em>Practical</em>. Using regression</a>
+<ul>
+<li class="chapter" data-level="49.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>49.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="49.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>49.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="49.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>49.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="49.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>49.4</b> Regression Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>XI Randomisation approaches</b></span></li>
+<li class="chapter" data-level="" data-path="week-11-overview.html"><a href="week-11-overview.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="50" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>50</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="51" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>51</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="52" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>52</b> Bootstrapping</a></li>
+<li class="chapter" data-level="53" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>53</b> Monte Carlo</a></li>
+<li class="chapter" data-level="54" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>54</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="54.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>54.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="54.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>54.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="54.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>54.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XII Statistical Reporting</b></span></li>
+<li class="chapter" data-level="" data-path="week-12-overview.html"><a href="week-12-overview.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="55" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>55</b> Reporting statistics</a></li>
+<li class="chapter" data-level="56" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>56</b> More introduction to R</a></li>
+<li class="chapter" data-level="57" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>57</b> More getting started with R</a></li>
+<li class="chapter" data-level="58" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>58</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="58.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>58.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="58.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>58.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="58.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>58.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
+<li class="chapter" data-level="" data-path="module-summary.html"><a href="module-summary.html"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixA_units.html"><a href="appendixA_units.html"><i class="fa fa-check"></i><b>A</b> Statistical units</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Techniques for Biological and Environmental Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter_1" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Background mathematics<a href="Chapter_1.html#Chapter_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>There are at least two types of mathematical challenges that come with first learning statistics.
+The first challenge is simply knowing the background mathematics upon which many statistical tools rely.
+While the theory underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991" role="doc-biblioref">Mclean, Sanders, and Stroup 1991</a>; <a href="#ref-Rencher2000" role="doc-biblioref">Rencher 2000</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, applying standard statistical tools to actual data usually does not.
+This module focuses on the application of statistical techniques, so all that is required is a background in some fundamental mathematical concepts such as mathematical operations (addition, subtraction, multiplication, division), simple algebra, and probability.
+This chapter will review these operations and the mathematical symbols used to communicate them.</p>
+<p>The second mathematical challenge in learning statistics for the first time is a bit more subtle.
+Students with no statistical background sometimes have an expectation that statistics will be similar to previously learned mathematical topics such as algebra, geometry, or trigonometry.
+In some ways, this is true, but in a lot of ways statistics is a much different way of thinking than any of these topics.
+A lot of mathematical subjects focus on questions that have very clear right or wrong answers (or, at least, this is how they are often taught).
+If, for example, we are given the lengths of two sides of a right triangle, then we might be expected to calculate the hypotenuse of the triangle using Pythagorean theorem (<span class="math inline">\(a^{2} + b^{2} = c^{2}\)</span>, where c is the hypotenuse).
+If we know the two sides, then the hypotenuse has a clear correct answer (at least, on a Euclidean plane).
+In statistics, answers are not always so clear.
+Statistics, by its very nature, deals with uncertainty.
+While all of the standard rules of mathematics still apply, statistical questions such as “Can I use this statistical test on my data?”, “Do I have a large enough sample size”, or even “Is my hypothesis well-supported” often do not have unequivocal ‘correct’ answers.
+A lot of being a good statistician is about making well-informed, transparent, but ultimately at least somewhat subjective judgement calls about how to best make inferences from data.</p>
+<p>For the purpose of assessments in this module (tests and exams), please note that we will only ask questions that <strong>do</strong> have clear and correct answers.
+This is to keep the module assessment fair and transparent.
+For example, we will not ask you questions like, “Can I use this statistical test on my data” unless the answer is a very clear yes or no.
+And we will not ask you questions like, “Is my hypothesis well-supported”, but instead specify what we mean by asking questions such as, “should you reject the null hypothesis at the 0.05 level of Type I error” (we will worry about what this means later).
+We will give practice questions, and a practice test, so that the nature of test questions is clear before you are actually assessed for a grade.</p>
+<p>For now, we will move on to looking at numbers and operations, logarithms, order of operations, and units.
+These topics are relevant throughout the semester, so it is important to understand them and be able to apply them when doing calculations.</p>
+<div id="numbers-and-operations" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Numbers and operations<a href="Chapter_1.html#numbers-and-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Calculating statistics and reading statistical output requires some knowledge of basic mathematical numbers and operations.
+This section is a reminder of the basic mathematical tools that will be used in introductory statistics.
+Much of this section is inspired by <span class="citation">Courant, Robbins, and Stewart (<a href="#ref-Courant1996" role="doc-biblioref">1996</a>)</span> and chapter 2 of <span class="citation">Pastor (<a href="#ref-Pastor2008" role="doc-biblioref">2008</a>)</span>.
+This section will be abridged to focus on only the numbers and mathematical operations relevant to this lab book.
+The objective here is to present some very well-known ideas in an interesting way, and to intermix them with interesting bits of information that might be new.
+For doing statistics, what you really <em>need</em> to know here are is the notation; that is, how operations such as addition, multiplication, and exponents are represented mathematically.</p>
+<p>We can start with the natural numbers, which are the kinds of numbers that can be counted using fingers, toothpicks, pebbles, or any other numbers that can be represented by discrete objects.</p>
+<p><span class="math display">\[1, 2, 3, 4, 5, 6, 7, 8, ...\]</span></p>
+<p>There are an infinite number of natural numbers (we can represent all of them using the symbol <span class="math inline">\(\mathbb{N}\)</span>.
+For any given natural number, we can always find a higher natural number using the operation of addition.
+For example, a number higher than 5 can be obtained by simply adding 1 to it,</p>
+<p><span class="math display">\[5 + 1 = 6.\]</span></p>
+<p>This is obvious to anyone with any kind of background in elementary mathematics, but it highlights why the natural numbers are countably infinite (for any number you can think of, <span class="math inline">\(N\)</span>, there is always a higher value <span class="math inline">\(N + 1\)</span>).
+It also leads to a reminder about two other important mathematical symbols for this module (in addition to <span class="math inline">\(+\)</span>, which indicats addition), greater than (<span class="math inline">\(&gt;\)</span>) and less than (<span class="math inline">\(&lt;\)</span>).
+We know that the number 6 is greater than 5, and express this mathematically as the <em>inequality</em>, <span class="math inline">\(6 &gt; 5\)</span>.
+Note that the large end of the inequality faces the higher number, while the pointy end (i.e., the smaller end) faces the lower number.
+Inequalities are used regularly in statistics, e.g., to indicate with a probability of something is less than a given value (e.g., <span class="math inline">\(P &lt; 0.05\)</span>, which can be read ‘P is less than 0.05’).
+We might also use the symbols <span class="math inline">\(\geq\)</span> or <span class="math inline">\(\leq\)</span> to indicate when something is greater than or equal to (<span class="math inline">\(\geq\)</span>) or less than or equal to (<span class="math inline">\(\leq\)</span>) a particular value.
+For example, <span class="math inline">\(x \geq 10\)</span> indicates that some number <span class="math inline">\(x\)</span> has a value of 10 or greater.</p>
+<p>Whenever we add one natural number to a different natural number, the result is another natural number (e.g., <span class="math inline">\(5 + 1 = 6\)</span>).
+If we want to go back from the sum to one of the values being summed (i.e., get from <span class="math inline">\(6\)</span> to <span class="math inline">\(5\)</span>), then we need to subtract,</p>
+<p><span class="math display">\[6 - 1 = 5.\]</span></p>
+<p>Again, this operation is basic elementary mathematics, but a subtle point that is often missed is that the introduction of subtraction creates the need for a broader set of numbers, the integers (we can represent these using the symbol <span class="math inline">\(\mathbb{Z}\)</span>).
+If, for example we want to subtract 5, from 1, we get a number that cannot be represented on our fingers,</p>
+<p><span class="math display">\[1 - 5 = -4.\]</span></p>
+<p>The value <span class="math inline">\(-4\)</span> is an integer, which includes 0 and all negative whole numbers,</p>
+<p><span class="math display">\[..., -4, -3, -2, -1, 0, 1, 2, 3, 4,  ...\]</span></p>
+<p>Whenever we add or subtract integers, the result is always another integer.</p>
+<p>Now, suppose we wanted to add the same value up multiple times.
+For example,</p>
+<p><span class="math display">\[2 + 2 + 2 + 2 + 2 + 2 = 12.\]</span></p>
+<p>The number 2 is being added 6 times in the equation above to get a value of 12.
+But we can represent this sum more easily using the operation of multiplication,</p>
+<p><span class="math display">\[2 \times 6 = 12.\]</span>
+The 6 in the equation just represents the number of times that 2 is being added up.
+The equation can also be written as <span class="math inline">\(2(6) = 12\)</span>, or sometimes, <code>2*6 = 12</code> (i.e., the asterisk is sometimes used to indicate multiplication).
+Parentheses indicate multiplication when no other symbol is used.
+This also applies to numbers that come immediately before variables.
+For example, <span class="math inline">\(2x\)</span> can be interpreted as <em>two times x</em>.
+When multiplying integers, we always get another integer.
+Note that multiplying two positive numbers always equals another positive number (e.g., <span class="math inline">\(2 \times 6 = 12\)</span>).
+Multiplying a positive and a negative number equals a negative number (e.g., <span class="math inline">\(-2 \times 6 = -12\)</span>).
+And multiplying two negative numbers equals a positive number (e.g., <span class="math inline">\(-2 \times -6 = 12\)</span>).
+There are multiple ways of thinking about why this is true <span class="citation">(see, e.g., <a href="#ref-Askey1999" role="doc-biblioref">Askey 1999</a> for a brief explanation)</span>, but for now we can take it as a given.</p>
+<p>As with addition and subtraction, we need an operation that can go back from multiplied values to the numbers being multiplied.
+In other words, if we multiply to get <span class="math inline">\(2 \times 6 = 12\)</span>, then we need something that goes back from 12 to 2.
+Division allows us to do this, where <span class="math inline">\(12 \div 6 = 2\)</span>.
+In statistics, the symbol <span class="math inline">\(\div\)</span> is rarely used, and we would more often express the calculation as either <span class="math inline">\(12/6 = 2\)</span> or,</p>
+<p><span class="math display">\[\frac{12}{6} = 2.\]</span></p>
+<p>Again, as with subtraction, we have a familiar mathematical operation, but there is again a subtle point that the introduction of division also requires a new set of numbers.
+If instead of dividing 6 into 12, we divided 12 into 6,</p>
+<p><span class="math display">\[\frac{6}{12} = \frac{1}{2} = 0.5.\]</span></p>
+<p>We now have a number that is not an integer.
+We now need an even broader set of numbers, the rational numbers (we can represent these using the symbol <span class="math inline">\(\mathbb{Q}\)</span>).
+The rationals include all numbers that can be expressed as a fraction of integers.
+That is, <span class="math inline">\(p / q\)</span>, where both <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> are in the set <span class="math inline">\(\mathbb{Z}\)</span>.</p>
+<p>We have one more set of operations relevant for introductory statistics.
+Recall that we introduced <span class="math inline">\(2 \times 6\)</span> as a way to represent <span class="math inline">\(2 + 2 + 2 + 2 + 2 + 2\)</span>.
+We can apply the same logic to multiplying a number multiple times.
+For example, we might want to multiply the number 2 by itself 4 times,</p>
+<p><span class="math display">\[2 \times 2 \times 2 \times 2 = 16.\]</span></p>
+<p>We can represent this more easily using an exponent, which is written as a superscript,</p>
+<p><span class="math display">\[2^{4} = 16.\]</span></p>
+<p>The 4 in the equation above indicates that the 2 should be multiplied 4 times to get 16.
+Sometimes this is also represented by a carrot in writing or code, such that 2^4 = 16.
+Very occasionally, some authors will use two asterisks in a row, 2**4 = 16, probably because this is how exponents are represented in some statistical software and programming languages.
+One quick note that can be confusing is that a negative in the exponent indicates a reciprocal.
+For example,</p>
+<p><span class="math display">\[2^{-4} = \frac{1}{16}.\]</span></p>
+<p>This can sometimes be useful for representing the reciprocal of a number or unit (see below) in a more compact way than using a fraction.</p>
+<p>As with addition and subtraction, and multiplication and division, we also need an operation to get back from the exponentiated value back to the original number.
+That is, for <span class="math inline">\(2^{4} = 16\)</span>, there should be an operation that gets us back from 16 to 2.
+We can do this using the root of an equation,</p>
+<p><span class="math display">\[\sqrt[4]{16} = 2.\]</span></p>
+<p>The number under the radical symbol <span class="math inline">\(\sqrt{}\)</span> (in this case 16) is the one that we are taking the root of, and the index (in this case 4) is the root that we are calculating.
+When the index is absent, we assume that it is 2 (i.e., a square root),</p>
+<p><span class="math display">\[\sqrt[2]{16} = \sqrt{16} = 4.\]</span></p>
+<p>Note that <span class="math inline">\(4^{2} = 16\)</span> (i.e., 4 squared is 16).</p>
+<p>Instead of using the radical symbol, we could also use a fraction in the exponent.
+That is, instead of writing <span class="math inline">\(\sqrt[4]{16} = 2\)</span>, we could write <span class="math inline">\(16^{1/4} = 2\)</span> or <span class="math inline">\(16^{1/2} = 4\)</span>.
+In statistics, however, the <span class="math inline">\(\sqrt{}\)</span> is often used.
+Either way, this again creates a subtlety that requires an even broader set of numbers.
+This is because expressions such as <span class="math inline">\(\sqrt{2}\)</span> do not equal any rational number.
+In other words, there are no integers <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> such that their <em>ratio</em>, <span class="math inline">\(p/q = \sqrt{2}\)</span> (the proof for why is very elegant!).
+Consequently, we can say that <span class="math inline">\(\sqrt{2}\)</span> is <em>irrational</em> (not in the sense of being illogical or unreasonable, but in the sense that it cannot be represented as a ratio of two integers).
+Irrational numbers cannot be represented as a ratio of integers, or with a finite or repeating decimal.
+Remarkably, the set of irrational numbers is larger than the set of rational numbers (i.e., rational numbers are countably infinite, while irrational numbers are uncountably infinite, and there are more irrationals; you do not need to know this or even believe it, but it is true!).</p>
+<p>Perhaps the most famous irrational number is <span class="math inline">\(\pi\)</span>, which appears throughout mathematics and is most commonly introduced as the ratio of a circle’s circumference to its diameter.
+Its value is <span class="math inline">\(\pi \approx 3.14159\)</span>, where the symbol <span class="math inline">\(\approx\)</span> means ‘approximately’.
+Actually, the decimal expansion of <span class="math inline">\(\pi\)</span> is infinite and non-repeating; the decimals go on forever and never repeat themselves in a predictable way.
+As of 2019, over 31 trillion (i.e., 31000000000000) decimals of <span class="math inline">\(\pi\)</span> have been calculated <span class="citation">(<a href="#ref-Yee2019" role="doc-biblioref">Yee 2019</a>)</span>.</p>
+<p>The rational and irrational numbers together comprise a set of numbers called real numbers (we can represent these as <span class="math inline">\(\mathbb{R}\)</span>), and this is where we will stop.
+This story of numbers and operations continues with imaginary and complex numbers <span class="citation">(<a href="#ref-Courant1996" role="doc-biblioref">Courant, Robbins, and Stewart 1996</a>; <a href="#ref-Pastor2008" role="doc-biblioref">Pastor 2008</a>)</span>, but these are not necessary for introductory statistics.</p>
+</div>
+<div id="logarithms" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Logarithms<a href="Chapter_1.html#logarithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There is one more important mathematical operation to mention that is relevant to introductory statistics.
+Logarithms are important functions, which will appear in multiple places (e.g., statistical transformations of variables).
+A logarithm tells us the exponent to which a number needs to be raised to get another number.
+For example,</p>
+<p><span class="math display">\[10^{3} = 1000.\]</span></p>
+<p>Verbally, 10 raised to the power of 3 equals 1000.
+In other words, we need to raise 10 to the power of 3 to get a value of 1000.
+We can express this using a logarithm,</p>
+<p><span class="math display">\[\log_{10}\left(1000\right) = 3.\]</span></p>
+<p>Again, the same relationship is expressed in <span class="math inline">\(10^{3} = 1000\)</span> and <span class="math inline">\(\log_{10}(1000) = 3\)</span>.
+For the latter, we might say that the base 10 logarithm of 1000 is 3.
+This is actually extremely useful in mathematics and statistics.
+Mathematically, logarithms have the very useful property,</p>
+<p><span class="math display">\[log_{10}(ab) = log_{10}(a) + log_{10}(b).\]</span></p>
+<p>Historically, this has been used to make calculations easier by converting multiplication to addition <span class="citation">(<a href="#ref-Stewart2008" role="doc-biblioref">Stewart 2008</a>)</span>.
+In statistics, and across the biological and environmental sciences, we often use logarithms when we want to represent something that changes exponentially on a logarithmic scale.
+For example, suppose that we wanted to illustrate the change in global CO<span class="math inline">\(_{2}\)</span> over time <span class="citation">(<a href="#ref-Friedlingstein2022" role="doc-biblioref">Friedlingstein et al. 2022</a>)</span>.
+We could show year on the x-axis and emissions in billions of tonnes of CO<span class="math inline">\(_{2}\)</span> on the y-axis (Figure 1.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-1-1.png" alt="A plot showing an exponential increase in global carbon dioxide emissions over time" width="100%" />
+<p class="caption">
+Figure 1.1: Global carbon dioxide emissions from 1750-2021.
+</p>
+</div>
+<p>We can clearly see from Figure 1.1 that global CO<span class="math inline">\(_{2}\)</span> emissions go up exponentially over time, but this exponential relationship means that the y-axis has to cover a large range of values.
+This makes it difficult to see what is actually happening in the first 100 years.
+Are CO<span class="math inline">\(_{2}\)</span> emissions increasing from 1750-1850, or do they stay about the same?
+If instead of plotting billions of tonnes of CO<span class="math inline">\(_{2}\)</span> on the y-axis, we plotted the logarithm of these values, then the pattern in the first 100 years becomes a bit more clear (Figure 1.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" alt="A plot showing linear increase in global carbon dioxide emissions over time, with emissions plotted on a natural log scale." width="100%" />
+<p class="caption">
+Figure 1.2: Natural logarithm of global carbon dioxide emissions from 1750-2021.
+</p>
+</div>
+<p>It appears from the logged data in Figure 1.2 that global CO<span class="math inline">\(_{2}\)</span> emissions were indeed increasing from 1750-1850.
+Note that Figure 1.2 presents the natural logarithm of CO<span class="math inline">\(_{2}\)</span> emissions on the y-axis.
+The <em>natural logarithm</em> uses Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, as a base.
+Euler’s number <span class="math inline">\(e\)</span> is an irrational number, like <span class="math inline">\(\pi\)</span>, which corresponds to the intrinsic rate of increase of population size in ecology <span class="citation">(<a href="#ref-Gotelli2001" role="doc-biblioref">Gotelli 2001</a>)</span>, or, in banking, interest compounded continually (<span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
+We probably could have just as easily used 10 as a base, but <span class="math inline">\(e\)</span> is the usually the default base to use in science (base 10 or 2 are also frequently used).
+Note that we can convert back to the non-logged scale by raising numbers to the power of <span class="math inline">\(e\)</span>.
+For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span class="math inline">\(e^{-2} \approx 0.135\)</span>, <span class="math inline">\(e^{0} = 1\)</span>, and <span class="math inline">\(e^{2} = 7.390\)</span>.</p>
+</div>
+<div id="order-of-operations" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Order of operations<a href="Chapter_1.html#order-of-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Every once in a while, a maths problem like the one below seems to go viral online,</p>
+<p><span class="math display">\[x = 8 \div 2\left(2+2\right).\]</span></p>
+<p>Depending on the order in which calculations are made, some people will conclude that <span class="math inline">\(x = 16\)</span>, while others conclude that <span class="math inline">\(x = 1\)</span> <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>.
+The confusion is not caused by the above calculation being difficult, but by peoples’ differences in interpreting the rules for what order calculations should be carried out.
+If we first divide 8/2 to get 4, then multiply by (2 + 2), we get 16.
+If we first multiply 2 by (2 + 2) to get 8, then divide, we get 1.
+The truth is that even if there is a ‘right’ answer here <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>, the equation could be written more clearly.
+We might, for example, rewrite the above one way to more clearly express the intended order of operations,</p>
+<p><span class="math display">\[x = \frac{8}{2}\left(2 + 2\right) = 16.\]</span></p>
+<p>We could also write it a different way to express a different intended order of operations,</p>
+<p><span class="math display">\[x = \frac{8}{2(2+2)} = 1.\]</span></p>
+<p>The key point is that that the order in which operations are calculated matters, so it is important to write equations clearly, and to know the order of operations to calculate an answer correctly.
+By convention there are some rules for the order in which calculations should proceed.</p>
+<ol style="list-style-type: decimal">
+<li>Anything within parentheses should always be calculated first.</li>
+<li>Exponents and radicals should be applied second</li>
+<li>Multiplication and division should be applied third</li>
+<li>Addition and subtraction should be done last</li>
+</ol>
+<p>These conventions are not really rooted in anything fundamental about numbers or operations (i.e., we made these rules up), but there is a logic to them.
+First, parentheses are a useful tool for being unequivocal about the order of operations.
+We could, for example, always be completely clear about the order to calculate by writing something like <span class="math inline">\((8/2) \times (2+2)\)</span> or <span class="math inline">\(8 / (2(2 + 2))\)</span>, although this can get a bit messy.
+Second, rules 2-4 are ordered by the magnitude of effects; for example, exponents have a bigger effect than multiplication, which has a bigger effect than addition.
+In general, however, these are just standard conventions that need to be known for reading and writing mathematical expressions.
+In this module, you will not see something ambiguous like <span class="math inline">\(x = 8 \div 2\left(2+2\right)\)</span>, but you should be able to correctly calculate something like this,</p>
+<p><span class="math display">\[x = 3^{2} + 2\left(1 + 3\right)^{2} - 6 \times 0.\]</span></p>
+<p>First, remember that parentheses come first, so we can rewrite the above to,</p>
+<p><span class="math display">\[x = 3^{2} + 2\left(4\right)^{2} - 6 \times 0.\]</span></p>
+<p>Exponents come next, so we can calculate those,</p>
+<p><span class="math display">\[x = 9 + 2\left(16\right) - 6 \times 0.\]</span></p>
+<p>Next comes multiplication and division,</p>
+<p><span class="math display">\[x = 9 + 32 -  0.\]</span>
+Lastly, we calculate addition and subtraction,</p>
+<p><span class="math display">\[x = 41.\]</span></p>
+<p>In reality, you will very rarely need to calculate something with this many different steps.
+But you will often need to calculate equations like the one below,</p>
+<p><span class="math display">\[x = 20 + 1.96 \times 2.1.\]</span></p>
+<p>It is important to remember to multiply <span class="math inline">\(1.96 \times 2.1\)</span> <em>before</em> adding 20.
+Getting the order of operations wrong will usually result in the calculation being completely off.</p>
+<p>One last note is that when operations are above or below a fraction, or below a radical, then parentheses are implied.
+For example, we might have something like the fraction below,</p>
+<p><span class="math display">\[x = \frac{2^{2} + 1}{3^{2} +2}.\]</span></p>
+<p>Although the rules 2-4 still apply, it is implied that there are parentheses in both the top (numerator) and bottom (denominator), so you can always read the above equation like this,</p>
+<p><span class="math display">\[x = \frac{\left(2^{2} + 1\right)}{\left(3^{2} + 2\right)} = \frac{\left(4 + 1\right)}{\left(9 + 2\right)} = \frac{5}{11}.\]</span></p>
+<p>Similarly, anything under the <span class="math inline">\(\sqrt{}\)</span> can be interpreted as being within parentheses.
+For example,</p>
+<p><span class="math display">\[x = \sqrt{3 + 4^{2}} = \sqrt{\left(3 + 4^{2} \right)}.\]</span></p>
+<p>This can take some getting used to, but with practice, it will become second nature to read equations in this way.</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Askey1999" class="csl-entry">
+Askey, R. 1999. <span>“<span class="nocase">Why does a negative x a negative = a positive?</span>”</span> <em>American Educator</em>, 4–5. <a href="http://homepages.math.uic.edu/~saunders/MTHT467_2011/AskeyGelfand.pdf">http://homepages.math.uic.edu/~saunders/MTHT467_2011/AskeyGelfand.pdf</a>.
+</div>
+<div id="ref-Chernoff2022" class="csl-entry">
+Chernoff, Egan J, and Rina Zazkis. 2022. <span>“<span class="nocase">The simple reason a viral math equation stumped the internet</span>.”</span> <a href="https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518">https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518</a>.
+</div>
+<div id="ref-Courant1996" class="csl-entry">
+Courant, Richard, Herbert Robbins, and Ian Stewart. 1996. <em><span class="nocase">What is Mathematics?</span></em> 2nd ed. Oxford: Oxford University Press.
+</div>
+<div id="ref-Friedlingstein2022" class="csl-entry">
+Friedlingstein, P., M. O’Sullivan, M. W. Jones, R. M. Andrew, L. Gregor, J. Hauck, C. Le Quéré, et al. 2022. <span>“Global Carbon Budget 2022.”</span> <em>Earth System Science Data</em> 14 (11): 4811–4900. <a href="https://doi.org/10.5194/essd-14-4811-2022">https://doi.org/10.5194/essd-14-4811-2022</a>.
+</div>
+<div id="ref-Gotelli2001" class="csl-entry">
+Gotelli, Nicholas J. 2001. <em><span>Gotelli</span></em>. 3rd ed. Sunderland, Massachusetts: Sinauer Associates, Inc.
+</div>
+<div id="ref-Mclean1991" class="csl-entry">
+Mclean, Robert A, William L Sanders, and Walter W Stroup. 1991. <span>“<span class="nocase">A unified approach to mixed linear models</span>.”</span> <em>American Statistician</em> 45 (1): 54–64.
+</div>
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Pastor2008" class="csl-entry">
+Pastor, John. 2008. <em><span class="nocase">Mathematical Ecoogy of Populations and Ecosystems</span></em>. West Sussex, England: John Wiley &amp; Sons, Inc.
+</div>
+<div id="ref-Rencher2000" class="csl-entry">
+Rencher, Alivn C. 2000. <em><span class="nocase">Linear Models in Statistics</span></em>. Provo, Utah: John Wiley &amp; Sons, Inc.
+</div>
+<div id="ref-Stewart2008" class="csl-entry">
+Stewart, Ian. 2008. <em><span class="nocase">Taming the Infinite</span></em>. London: Quercus.
+</div>
+<div id="ref-Yee2019" class="csl-entry">
+Yee, Alexander J. 2019. <span>“<span class="nocase">Google Cloud Topples the Pi Record</span>.”</span> <a href="http://www.numberworld.org/blogs/2019_3_14_pi_record/">http://www.numberworld.org/blogs/2019_3_14_pi_record/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-1-overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Background.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
