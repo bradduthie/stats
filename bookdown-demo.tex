@@ -208,6 +208,56 @@ How we will use Canvas, and how this book relates to it (Learning and Teaching c
 \hypertarget{timetable}{%
 \section{Timetable}\label{timetable}}
 
+\begin{longtable}[]{@{}rllllll@{}}
+\caption{\label{tab:unnamed-chunk-1}Table caption.}\tabularnewline
+\toprule
+Week & Date & Day & Time & Room & Lead & Session \\
+\midrule
+\endfirsthead
+\toprule
+Week & Date & Day & Time & Room & Lead & Session \\
+\midrule
+\endhead
+1 & 25 JAN & WED & 13:05-15:55 & C2A17 & BD & Preparing data (A) \\
+1 & 26 JAN & THU & 09:05-11:55 & C2A17 & BD & Preparing data (B) \\
+1 & 27 JAN & FRI & 15:05-17:55 & C1A13 & BD & Help (optional) \\
+2 & 01 FEB & WED & 13:05-15:55 & C2A17 & IJ & Stats concepts (A) \\
+2 & 02 FEB & THU & 09:05-11:55 & C2A17 & IJ & Stats concepts (B) \\
+2 & 03 FEB & FRI & 15:05-17:55 & C1A13 & IJ & Help (optional) \\
+3 & 08 FEB & WED & 13:05-15:55 & C2A17 & IJ & Summary stats (A) \\
+3 & 09 FEB & THU & 09:05-11:55 & C2A17 & IJ & Summary stats (B) \\
+3 & 10 FEB & FRI & 15:05-17:55 & C1A13 & IJ & Help (optional) \\
+4 & 15 FEB & WED & 13:05-15:55 & C2A17 & IJ & Prob models (A) \\
+4 & 16 FEB & THU & 09:05-11:55 & C2A17 & IJ & Prob models (B) \\
+4 & 17 FEB & FRI & 15:05-17:55 & C1A13 & IJ & Help (optional) \\
+5 & 22 FEB & WED & 10:05-11:55 & Online & BD & Test 1F \\
+5 & 22 FEB & WED & 13:05-15:55 & C2A17 & IJ & Stats inference (A) \\
+5 & 23 FEB & THU & 09:05-11:55 & C2A17 & IJ & Stats inference (B) \\
+5 & 24 FEB & FRI & 15:05-17:55 & C1A13 & IJ & Help (optional) \\
+6 & 01 MAR & WED & 13:05-15:55 & C2A17 & MQ & Hypo testing (A) \\
+6 & 02 MAR & THU & 09:05-11:55 & C2A17 & MQ & Hypo testing (B) \\
+6 & 03 MAR & FRI & 15:05-17:55 & C1A13 & MQ & Help (optional) \\
+8 & 15 MAR & WED & 10:05-11:55 & Online & BD & Test 1S \\
+8 & 15 MAR & WED & 13:05-15:55 & C2A17 & MQ & ANOVA (A) \\
+8 & 16 MAR & THU & 09:05-11:55 & C2A17 & MQ & ANOVA (B) \\
+8 & 17 MAR & FRI & 15:05-17:55 & C1A13 & MQ & Help (optional) \\
+9 & 22 MAR & WED & 13:05-15:55 & C2A17 & MQ & Counts (A) \\
+9 & 23 MAR & THU & 09:05-11:55 & C2A17 & MQ & Counts (B) \\
+9 & 24 MAR & FRI & 15:05-17:55 & C1A13 & MQ & Help (optional) \\
+10 & 29 MAR & WED & 13:05-15:55 & C2A17 & BD & Regression (A) \\
+10 & 30 MAR & THU & 09:05-11:55 & C2A17 & BD & Regression (B) \\
+10 & 31 MAR & FRI & 15:05-17:55 & C1A13 & BD & Help (optional) \\
+11 & 05 APR & WED & 10:05-11:55 & Online & BD & Test 2S \\
+11 & 05 APR & WED & 13:05-15:55 & C2A17 & BD & Randomisation (A) \\
+11 & 06 APR & THU & 09:05-11:55 & C2A17 & BD & Randomisation (B) \\
+11 & 07 APR & FRI & 15:05-17:55 & Tutorial & BD & Help (optional) \\
+12 & 12 APR & WED & 13:05-15:55 & C2A17 & BD & Stats reporting (A) \\
+12 & 13 APR & THU & 09:05-11:55 & C2A17 & BD & Stats reporting (B) \\
+12 & 14 APR & FRI & 15:05-17:55 & C1A13 & BD & Help (optional) \\
+13 & 18 APR & TUE & 14:05-16:55 & C1A13 & BD & Help (optional) \\
+\bottomrule
+\end{longtable}
+
 \hypertarget{part-background-mathematics-and-data-organisation}{%
 \part{Background mathematics and data organisation}\label{part-background-mathematics-and-data-organisation}}
 
@@ -440,7 +490,7 @@ For example, suppose that we wanted to illustrate the change in global CO\(_{2}\
 We could show year on the x-axis and emissions in billions of tonnes of CO\(_{2}\) on the y-axis (Figure 1.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-1-1} \caption{Global carbon dioxide emissions from 1750-2021.}\label{fig:unnamed-chunk-1}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-2-1} \caption{Global carbon dioxide emissions from 1750-2021.}\label{fig:unnamed-chunk-2}
 \end{figure}
 
 We can clearly see from Figure 1.1 that global CO\(_{2}\) emissions go up exponentially over time, but this exponential relationship means that the y-axis has to cover a large range of values.
@@ -449,7 +499,7 @@ Are CO\(_{2}\) emissions increasing from 1750-1850, or do they stay about the sa
 If instead of plotting billions of tonnes of CO\(_{2}\) on the y-axis, we plotted the logarithm of these values, then the pattern in the first 100 years becomes a bit more clear (Figure 1.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-2-1} \caption{Natural logarithm of global carbon dioxide emissions from 1750-2021.}\label{fig:unnamed-chunk-2}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-3-1} \caption{Natural logarithm of global carbon dioxide emissions from 1750-2021.}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 It appears from the logged data in Figure 1.2 that global CO\(_{2}\) emissions were indeed increasing from 1750-1850.
@@ -552,14 +602,14 @@ Often data need to be recorded with a pencil and paper, and in a format that is 
 Sometimes data from a particular sample, such as a bird nest (Figure 2.1), cannot all be collected in one place.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/becky_field} \caption{Dr Becky Boulton collects data from nest boxes in the field (A), then processes nest material in the lab (B).}\label{fig:unnamed-chunk-3}
+\includegraphics[width=1\linewidth]{img/becky_field} \caption{Dr Becky Boulton collects data from nest boxes in the field (A), then processes nest material in the lab (B).}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 Data are sometimes missing due to circumstances outwith the researcher's control, and data are usually not collected in a format that is immediately ready for statistical analysis.
 Consequently, we often need to reorganise data from a lab or field book to a spreadsheet.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.}\label{fig:unnamed-chunk-4}
+\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.}\label{fig:unnamed-chunk-5}
 \end{figure}
 
 Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
@@ -588,7 +638,7 @@ In this text, we will use LibreOffice because it is completely free and open sou
 Excel and \href{https://docs.google.com/spreadsheets}{Google Sheets} are also fine to use.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/wasp_data_spreadsheet} \caption{A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.}\label{fig:unnamed-chunk-5}
+\includegraphics[width=1\linewidth]{img/wasp_data_spreadsheet} \caption{A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.}\label{fig:unnamed-chunk-6}
 \end{figure}
 
 Spreadsheets are separated into individual cells, which are identified a specific column and row (Figure 2.3).
@@ -624,7 +674,7 @@ The data shown in Figure 2.3 are from a CSV file called ``wasp\_data.csv''.
 Figure 2.X shows the same data when opened with a text editor.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/wasp_data_csv} \caption{A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called 'Mousepad', but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.}\label{fig:unnamed-chunk-6}
+\includegraphics[width=1\linewidth]{img/wasp_data_csv} \caption{A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called 'Mousepad', but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.}\label{fig:unnamed-chunk-7}
 \end{figure}
 
 The data shown in Figure 2.X are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.
@@ -640,30 +690,297 @@ Overall, the important point is that saving data in a text file format such as C
 \hypertarget{Chapter_3}{%
 \chapter{\texorpdfstring{\emph{Practical}: Preparing real datasets}{Practical: Preparing real datasets}}\label{Chapter_3}}
 
-In this practical, we will use a spreadsheet to organise datasets.
+In this practical, we will use a spreadsheet to organise datasets following the tidy approach explained in \protect\hyperlink{Chapter_2}{Chapter 2}, then save these datasets as CSV files to be opened in Jamovi statistical software.
+The data organisation in this lab can be completed using \href{https://www.libreoffice.org/discover/calc/}{LibreOffice Calc}, MS Excel, or \href{https://docs.google.com/spreadsheets/}{Google Sheets}.
+In the computer lab, MS Excel is probably the easiest program to use, either through AppsAnywhere or within a browser.
+The screenshots below will mostly be of LibreOffice Calc, but the instructions provided will work on any of the three aforementioned spreadsheet programs.
 
-\hypertarget{libreoffice-calc}{%
-\section{LibreOffice Calc}\label{libreoffice-calc}}
+There are three data exercises in this practical.
+All of these exercises will focus on organising data into a tidy format.
+Being able to do this will be essential for later practicals and assessments, and for future modules (especially fourth year dissertation work).
+Exercise 1 uses handwritten field data that need to be input into a spreadsheet in a tidy format.
+These data include information recorded in the field and shown in Figure 2.2, plus tallies of seed count.
+The goal is to get all of this information into a tidy format and save it as a CSV file.
+Exercise 2 presents some data on the number of eggs produced by five different fig wasp species (more on these in \protect\hyperlink{Chapter_8}{Chapter 8}).
+The data are in an untidy format, so the goal is to reorganise them and save them as a tidy CSV file.
+Exercise 3 presents data that are even more messy.
+These are morphological measurements of the same five species of wasps, including lengths and widths of wasp heads, thoraxes, and abdomens.
+The goal in this exercise is to tidy the data, then estimate total wasp volume from the morphological measurements using mathematical formulas.
 
-LibreOffice Calc is a free and open source spreadsheet program. The instructions for this section will be identical to the more popular commercial Microsoft Excel.
+\hypertarget{exercise-1}{%
+\section{Exercise 1}\label{exercise-1}}
 
-\hypertarget{exercise-organising-data-1}{%
-\section{Exercise Organising data 1}\label{exercise-organising-data-1}}
+Exercise 1 focuses on data collected from the fruits of fig trees collected from Baja, Mexico in 2010 \citep{Duthie2015b, Duthie2016}.
+Due to the nature of the work, the data needed to be recorded in notebooks and collected in two different locations.
+The first location was the field, where data were collected identifying tree locations and fruit dimensions.
+Baja is hot and sunny; fruit measurements were made with a ruler and recorded in a field notebook.
 
-Walks through Exercise 1.3.2
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/Ficus_petiolaris} \caption{A fully grown Sonoran Desert Rock Fig (*Ficus petiolaris*) in the desert of Baja, Mexico.}\label{fig:unnamed-chunk-8}
+\end{figure}
 
-\hypertarget{exercise-organising-data-2}{%
-\section{Exercise Organising data 2}\label{exercise-organising-data-2}}
+These measurements are shown in Figure 2.2, which is reproduced again in Figure 3.1.
+The second location was in a lab in Iowa, USA.
+Fruits were dried and shipped to Iowa State University so that seeds could be counted under a microscope.
+Counts were originally recorded as tallies in a lab notebook (Figure 3.2).
+The goal of Exercise 1 is to get all of this information into a single tidy spreadsheet.
 
-Walks through Exercise 1.3.3
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.}\label{fig:unnamed-chunk-9}
+\end{figure}
 
-\hypertarget{exercise-organising-data-3}{%
-\section{Exercise Organising data 3}\label{exercise-organising-data-3}}
+The best place to start is with an empty spreadsheet, so open a new one in LibreOffice Calc, MS Excel, or Google Sheets.
+Remember that each row will be a unique sample; in this case, a unique fig fruit from which observations were recorded.
+Each column will be a characteristic of that sample.
+Fortunately, the data in Figure 3.2 are already looking quite tidy.
+The information here can be put into the spreadsheet mostly as written in the notebook.
+But there are a few points to keep in mind:
 
-Walks through Exercise 1.3.4, saving all of these as CSV files
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  It is important to start in column A and row 1; do not leave any empty rows or columns because when we get to the statistical analysis in Jamovi, Jamovi will assume that empty rows and columns signify missing data.
+\item
+  There is no need to include any formatting (e.g., bold, underline, colour) because it will not be saved in the CSV or recognised by Jamovi.
+\item
+  Missing information, such as the empty boxes for the fruit dimensions in row 4 in the notebook (Figure 3.2) should be indicated with an `NA' (without the quotes). This will let Jamovi know that these data are missing.
+\item
+  The date is written in an American style of month-day-year, which might get confusing. It might be better to have separate columns for year, month, and day, and to write out the full year (2010).
+\end{enumerate}
 
-\hypertarget{summary-of-exercises-and-why-they-are-useful.}{%
-\section{Summary of exercises and why they are useful.}\label{summary-of-exercises-and-why-they-are-useful.}}
+The column names in Figure 3.2 are (1) Date, (2) Species, (3) Site number, (4) Tree number, (5) Fruit length in mm, (6) Fruit width in mm, and (7) Fruit height in mm.
+All of the species are \emph{Ficus petiolaris}, which is abbreviated to ``F-pet'' in the field notebook.
+How you choose to write some of this information down is up to you (e.g., the date format, capitalisation of column names), but when finished, the spreadsheet should be organised like the one in Figure 3.3.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex1a} \caption{A spreadsheet with data organised in a tidy format and nearly ready for analysis.}\label{fig:unnamed-chunk-10}
+\end{figure}
+
+This leaves us with the data that had to be collected later in the lab.
+Small seeds needed to be meticulously separated from other material in the fig fruit, then tallied under a microscope.
+Tallies from this notebook are shown in Figures 3.4 and 3.5.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex1_seeds1} \caption{Tallies of seed counts collected from 4 fig fruits in Baja, Mexico in 2010.}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex1_seeds2} \caption{Tallies of seed counts collected from 4 fig fruits in Baja, Mexico in 2010.}\label{fig:unnamed-chunk-12}
+\end{figure}
+
+Fortunately, the summed tallies have been written and circled in the right margin of the notebook, which makes inputting them into a spreadsheet easier.
+But it is important to recognise this step as another potential source of human error in data collection.
+It is possible that the tallies were counted inaccurately, meaning that the tallies on the left do not sum to the numbers in the right margins.
+It is always good to be able to go back and check.
+There are at least two other potential sources of human error in counting seeds and inputting them into the spreadsheet, one before, and one after counting the tallies.
+Fill in 1 and 3 below with potential causes of error.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\item
+  Tallies are not counted correctly in the lab notebook
+\item
+  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\end{enumerate}
+
+Next, create a new column in the spreadsheet and call it ``Seeds'' (use column K).
+Fill in the seed counts for each of the six rows.
+The end result will be a tidy dataset that is ready to be saved as a CSV.
+
+What you do next depends on the spreadsheet program that you are using and how you are using it.
+If you are using LibreOffice Calc or MS Excel on a your computer, then you should be able to simply save your file as something like ``Fig\_fruits.csv'', and the program will recognise that you intend to save as a CSV file (in MS Excel, you might need to find the pulldown box for `Save as type:' under the `File name:' box and choose `CSV').
+If you are using Google Sheets, you can navigate in the toolbar to \texttt{File\ \textgreater{}\ Download\ \textgreater{}\ Comma-separated\ values\ (.csv)}, which will start a download of your spreadsheet in CSV format.
+If you are using MS Excel in a browser
+If you are using MS Excel in a browser online, it is a bit more tricky.
+At the time of writing, the online version of MS Excel does not allow users to save or export to a CSV.
+It will therefore be necessary to save as an XLSX, then convert to CSV later in another spreadsheet program (either a local version of MS Excel, LibreOffice Calc, or Google Sheets).
+
+Save your file in a location where you know that you can find it again.
+It might be a good idea to create a new folder on your computer or your cloud storage online for files in Statistical Techniques.
+This will ensure that you always know where your data files are located and can access them easily.
+
+\hypertarget{exercise-2}{%
+\section{Exercise 2}\label{exercise-2}}
+
+Exercise 2 is more self-guided than Exercise 1.
+After reading \protect\hyperlink{Chapter_2}{Chapter 2} and completing Exercise 1, you should have a bit more confidence in organising data in a tidy format.
+Here we will work with a dataset that includes counts of the number of eggs collected from female fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers \citep{Weiblen2002}.
+You can \textbf{download the dataset \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_egg_loads_untidy.csv}{here}}, or recreate it from Figure 3.6.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/wasp_egg_loads_untidy} \caption{An untidy dataset of egg loads from fig wasps of five different species, including two unnamed species of the genus *Heterandrium* (Het1 and Het2) and three unnamed species of the genus *Idarnes* (LO1, SO1, and SO2).}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+Using what you have learned in \protect\hyperlink{Chapter_2}{Chapter 2} and Exercise 1, create a tidy version of the wasp egg loads dataset.
+For a helpful hint, it might be most efficient to open a new spreadsheet and copy and paste information from the old to the new.
+
+How many columns did you need to create the new dataset? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Are there any missing data in this dataset? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Save the tidy dataset to a CSV file.
+It might be a good idea to check with classmates and an instructor to confirm that the dataset is in the correct format.
+
+\hypertarget{exercise-3}{%
+\section{Exercise 3}\label{exercise-3}}
+
+Exercise 3 requires some restructuring and calculations.
+The dataset that will be used in this exercise includes morphological measurements from five species of fig wasps, the same species used in Exercise 2.
+\textbf{Download this dataset from the file \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_morphology_untidy.xlsx}{wasp\_morphology\_untidy.xlsx} (XLSX file) or \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_morphology_untidy.ods}{wasp\_morphology\_untidy.ods} (ODS open-source file).}
+Both files contain identical information, so which one you use is a matter of personal preference.
+This dataset is about as untidy as it gets.
+First note that there are multiple sheets in the spreadsheet, which is not allowed in a tidy CSV file.
+You can see these sheets by looking at the very bottom of the spreadsheet, which will have separating tabs called Het1, Het2, LO1, SO1, and SO2 (Figure 3.7).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/spreadsheet_tabs} \caption{Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.}\label{fig:unnamed-chunk-14}
+\end{figure}
+
+You can click on all of the different tabs to see the measurements of head length, head width, thorax length, thorax width, abdomen length, and abdomen width for wasps of each of the 5 species.
+All of the measurements are collected in millimeters.
+Note that the individual sheets contain text formatting (titles highlighted, and in bold), and there is a picture of each wasp in its respective sheet.
+The formatting and pictures are a nice touch for providing some context, but they cannot be used in statistical analysis.
+The first task is to create a tidy version of this dataset.
+Probably the best way to do this is to create a new spreadsheet entirely and copy-paste from the old.
+It is good idea to think about how the tidy dataset will look before getting started.
+What columns should this new dataset include?
+
+\begin{verbatim}
+
+
+
+
+\end{verbatim}
+
+How many rows are needed? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+When you are ready, create the new dataset.
+Your dataset should have all of the relevant information about wasp head, thorax, and abdomen measurements.
+It should look something like Figure 3.8.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex3_tidy} \caption{A tidy dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010.}\label{fig:unnamed-chunk-15}
+\end{figure}
+
+Next comes a slightly more tricky part, which will make use of some of the background mathematics reviewed in \protect\hyperlink{Chapter_1}{Chapter 1}.
+Suppose that we wanted our new dataset to include information about the volumes of each of the three wasp body segments, and wasp total volume.
+To do this, let us assume that the wasp head is a sphere (it is not, exactly, but this is probably the best estimate that we can get under the circumstances).
+Calculate the head volume of each wasp using the following formula,
+
+\[V_{head} = \frac{4}{3}\pi \left(\frac{Head_L + Head_W}{4}\right)^{3}.\]
+
+In the equation above, \(Head_{L}\) is head length (mm) and \(Head_{W}\) is head width (note, \((Head_L + Head_W)/4\) estimates the radius of the head).
+You can replace \(\pi\) with the approximation \(\pi \approx 3.14\).
+To make this calculation in your spreadsheet, find the cell in which you want the head volume to be input.
+By typing in the sign \texttt{=}, the spreadsheet will know to start a new calculation or function in that cell.
+Try this with an empty cell by typing \texttt{=\ 5\ +\ 4} in it.
+When you hit `Enter', the spreadsheet will make the calculation for you and the number in the new cell will be 9.
+To see the equation again, you just need to double-click on the cell.
+
+To get an estimate of head volume into the dataset, we can create a new column of data.
+Based on the equation for \(V_{head}\) above, what will be the units for this newly calculated variable?
+
+\begin{verbatim}
+\end{verbatim}
+
+To calculate \(V_{head}\) for the first wasp in row 2 of Figure 3.8, we could select the spreadsheet cell H2 and type the code, \texttt{=(4/3)*(3.14)*((B2+C2)/2)\^{}3}.
+Notice that the code recognises \texttt{B2} and \texttt{C2} as spreadsheet cells, and takes the values from these cells when doing these calculations.
+If the values of \texttt{B2} or \texttt{C2} were to change, then so would the calculated value in H2.
+Also notice that we are using parentheses to make sure that the order of operations is correct.
+We want to add head length and width before dividing by two, so we type \texttt{((B2+C2)/2)} to ensure with the innermost parentheses that head length and width are added before dividing.
+Once all of this is completed, we raise everything in parentheses to the third power using the \texttt{\^{}3}, so \texttt{((B2+C2)/2)\^{}3}.
+In general, the different mathematical operations can be carried out using the the symbols in Table 3.1.
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{List of mathematical operations available in a spreadsheet.}\tabularnewline
+\toprule
+Symbol & Operation \\
+\midrule
+\endfirsthead
+\toprule
+Symbol & Operation \\
+\midrule
+\endhead
+\texttt{+} & Addition \\
+\texttt{-} & Subtraction \\
+\texttt{*} & Multiplication \\
+\texttt{/} & Division \\
+\texttt{\^{}} & Exponent \\
+\texttt{sqrt()} & Square-root \\
+\bottomrule
+\end{longtable}
+
+The last operation in Table 3.1 is a function that takes the square-root of anything within the parentheses.
+Other functions are also available that can make calculations across cells (e.g., \texttt{SUM} or \texttt{AVERAGE}), but we will ignore these for now.
+
+Once head volume is calculated for the first wasp in cell H2, it is very easy to do the rest.
+One nice feature of a spreadsheet is that it can usually recognise when the cells need to change (B2 and C2, in this case).
+To get the rest of the head volumes, we just need to select the bottom right of the H2 cell.
+There will be a very small square in this bottom right (see Figure 3.9), and if we drag it down, the spreadsheet will do the same calculation for each row (e.g., in H3, it will use B3 and C3 in the formula rather than B2 and C2).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex3_copy_formula} \caption{A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.}\label{fig:unnamed-chunk-16}
+\end{figure}
+
+Another way to achieve the same result is to copy (Ctrl + C) the contents of cell H2, highlight cells H3-H27, then paste (Ctrl + V).
+However you do it, you should now have a new column of calculated head volume.
+
+Next, suppose that we want to calculate thorax and abdomen volumes for all wasps.
+Unlike wasp heads, wasp thoraxes and abdomens are clearly not spheres.
+But it is perhaps not entirely unreasonable to model them as ellipses.
+To calculate wasp thorax and abdomen volumes assuming an ellipse, we can use the formula,
+
+\[V_{thorax} = \frac{4}{3}\pi \left(\frac{Thorax_{L}}{2}\right)\left(\frac{Thorax_{W}}{2}\right)^{2}.\]
+In the equation above, \(Thorax_{L}\) is thorax length (mm) and \(Thorax_{W}\) is thorax width.
+Substitute \(Abdomen_{L}\) and \(Abdomen_{W}\) to instead calculate abdomen volume (\(V_{abdomen}\)).
+Before doing anything in your spreadsheet, what are the units of \(V_{thorax}\) and \(V_{abdomen}\)?
+
+\begin{verbatim}
+\end{verbatim}
+
+What formula will you type into your empty spreadsheet cell to calculate \(V_{thorax}\)? Keep in mind the order of operations indicated in the equation above.
+
+\begin{verbatim}
+
+
+
+
+\end{verbatim}
+
+Now fill in the columns for thorax volume and abdomen volume.
+You should now have three new columns of data from calculations of the volumes of the head, thorax, and abdomen of each wasp.
+Lastly, add one final column of data for total volume, which is the sum of the three segments.
+
+What are the units of total wasp volume? \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+There are a lot of potential sources of error and uncertainty in these final volumes.
+What are some reasons that we might want to be cautious about our calculated wasp volumes?
+Explain in 2-3 sentences.
+
+\begin{verbatim}
+
+
+
+
+\end{verbatim}
+
+Save your wasp morphology file as a CSV.
+This was the last exercise of the practical.
+You should now be comfortable formatting tidy dataset for use in statistical software.
+Next week, we will begin using Jamovi to do some descriptive statistics and plotting.
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+This practical should give you the skills that you need to prepare datasets for statistical analysis.
+There are some additional features of spreadsheets that were not introduced (mainly because we will do them in Jamovi), but could be useful.
+For example, if we wanted to calculate the sum of all head lengths, we could use the function \texttt{=sum(B2:B27)} in any spreadsheet cell (where B2 is the head length of the first wasp, and B27 is the head length of the last wasp).
+Other functions such as \texttt{=count()}, \texttt{=min()}, \texttt{=max()}, or \texttt{=average()} can be similarly used for calculations.
+You can also
+If you have time at the end of the lab, we recommend exploring the spreadsheet interface and seeing what you can do.
 
 \hypertarget{part-statistical-concepts}{%
 \part{Statistical concepts}\label{part-statistical-concepts}}
@@ -771,7 +1088,7 @@ For our purposes, it is not necessary to be able to recite the technical definit
 When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-7}
+\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-17}
 \end{figure}
 
 \hypertarget{Chapter_5}{%
@@ -850,7 +1167,7 @@ If, however, the scale measures a different mass each time the object is weighed
 One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg}{Egon Willighagen} on 8 March 2014.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-8}
+\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-18}
 \end{figure}
 
 Note again that accuracy and precision are not necessarily the same.
@@ -1070,7 +1387,7 @@ Measurements include fig lengths, widths, and heights in centimeters from 4 diff
 \textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig\_fruits.csv}}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-9}
+\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-19}
 \end{figure}
 
 This lab will use the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
@@ -1083,14 +1400,14 @@ Download the \href{https://raw.githubusercontent.com/bradduthie/statistical_tech
 Once Jamovi is open, you can import the dataset by clicking on the three lines in the upper left corner of the tool bar, then selecting `Open' (Figure 8.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-11}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-21}
 \end{figure}
 
 You might need to click `Browse' in the upper right of Jamovi to find the file.
 Figure 8.3 below shows how this will look when you browse for a data file.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-12}
+\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-22}
 \end{figure}
 
 Once the data are imported, you should see two separate columns.
@@ -1102,7 +1419,7 @@ But you can also edit the directly in Jamovi by clicking on the `Data' tab in th
 The best way to reorganise the data in Jamovi is to double-click on the third column of data next to `subsoil' (see Figure 8.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-13}
+\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-23}
 \end{figure}
 
 After double-clicking on the location shown in Figure 8.4, there will be three buttons visible.
@@ -1111,7 +1428,7 @@ Keep the `Measure type' as `Nominal', but change the `Data type' to `text'.
 When you are done, click the \texttt{\textgreater{}} character to the right so that the variable is fixed (Figure 8.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-14}
+\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-24}
 \end{figure}
 
 After typing in the new variable `soil\_type', add another variable called `organic\_carbon'.
@@ -1134,7 +1451,7 @@ First, we can calculate the minimum, maximum, and mean of all of the organic car
 To do this, select the `Analyses' tab, then click on the left-most button called `Exploration' in the toolbar (Figure 8.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-15}
+\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-25}
 \end{figure}
 
 After clicking on `Exploration', a pull-down box will appear with an option for `Descriptives'.
@@ -1251,7 +1568,7 @@ To do this, click on the `Data' tab at the top of the toolbar again, then click 
 Your screen should look like the image in Figure 8.7.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-17}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-27}
 \end{figure}
 
 With the `Length\_cm' column highlighted, click on the `Transform' button in the toolbar.
@@ -1269,7 +1586,7 @@ Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multi
 We can do this by appending a \texttt{*\ 10} to the lower box of the transform window, so that it reads \texttt{=\ \$source\ *\ 10} (Figure 8.8).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-18}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-28}
 \end{figure}
 
 When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
@@ -1335,7 +1652,7 @@ Double click on this to put it into the formula, then divide it by 2.
 You can repeat this two more times to complete the computed variable as shown in Figure 8.9.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-19}
+\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-29}
 \end{figure}
 
 Note that we can get the cube of `Width\_mm' more concisely by using the carrot character (\texttt{\^{}}).
@@ -1511,7 +1828,7 @@ They are especially useful visualisation tools because it is often important to 
 The histogram shown in Figure 10.1 provides an example from the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-20-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-20}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-30-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-30}
 \end{figure}
 
 The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}}).
@@ -1534,7 +1851,7 @@ For example, in the \href{https://raw.githubusercontent.com/bradduthie/statistic
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-21-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-21}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-31-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-31}
 \end{figure}
 
 In Figure 10.2, each tree is represented by a separate bar on the x-axis.
@@ -1549,7 +1866,7 @@ For example, in the case of the fig fruits, it might be useful to visualise what
 A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-22-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-22}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-32}
 \end{figure}
 
 Pie charts can be useful in some situations, but in the biological and environmental they are not used as often as barplots.
@@ -1567,7 +1884,7 @@ Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histo
 In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-23-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-23}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-33}
 \end{figure}
 
 To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5A) are located in the histogram (Figure 10.5B).
@@ -1575,7 +1892,7 @@ These summary statistics include the median (black circles of Figure 10.5), quar
 Note that in boxplots, if outliers exist, they are presented as separate points.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-24-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-24}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-34-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-34}
 \end{figure}
 
 One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
@@ -1583,7 +1900,7 @@ For example, the distribution of fig fruit width can be shown for each of the fo
 While it is possible to show histograms side by side, it will quickly take up a lot of space.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-25-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-25}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-35}
 \end{figure}
 
 The boxplot in Figure 10.6 can be used to quickly compare the distribution of Trees A-D.
@@ -1610,7 +1927,7 @@ The mean is a measure of central tendency, so it is located somewhere in the cen
 Figure 10.7 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-26-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-26}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-36}
 \end{figure}
 
 The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data \citep{Sokal1995}.
@@ -1716,7 +2033,7 @@ Also, somewhat confusingly, distributions that have more than one peak are often
 For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-27-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-27}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-37-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-37}
 \end{figure}
 
 In very rare cases, data might have a U-shape.
@@ -2076,72 +2393,465 @@ In Table 12.1, we simulate the process of going out and collecting 10 water samp
 This collecting of 10 water samples is repeated 20 different times.
 Each row is a different sampling effort, and columns report the 10 samples from each effort.
 
-\begin{table}
+\label{tab:unnamed-chunk-39}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.
 
-\caption{\label{tab:unnamed-chunk-29}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}
-\centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
-\hline
-Sample\_1 & 0.53 & 0.72 & 0.76 & 0.62 & 0.65 & 0.75 & 0.72 & 0.83 & 0.71 & 0.68\\
-\hline
-Sample\_2 & 0.60 & 0.69 & 0.74 & 0.62 & 0.55 & 0.96 & 0.64 & 0.68 & 0.51 & 0.75\\
-\hline
-Sample\_3 & 0.72 & 0.89 & 0.56 & 0.72 & 0.86 & 0.50 & 0.85 & 0.68 & 0.75 & 0.55\\
-\hline
-Sample\_4 & 0.69 & 0.66 & 0.71 & 0.75 & 0.65 & 0.69 & 0.74 & 0.87 & 0.63 & 0.66\\
-\hline
-Sample\_5 & 0.84 & 0.58 & 0.87 & 0.91 & 0.63 & 0.67 & 0.67 & 0.56 & 0.81 & 0.71\\
-\hline
-Sample\_6 & 0.56 & 0.81 & 0.53 & 0.73 & 0.64 & 0.60 & 0.48 & 0.59 & 0.66 & 0.84\\
-\hline
-Sample\_7 & 0.68 & 0.60 & 0.84 & 0.70 & 0.67 & 0.78 & 0.84 & 0.75 & 0.70 & 0.54\\
-\hline
-Sample\_8 & 0.74 & 0.49 & 0.81 & 0.67 & 0.70 & 0.57 & 0.62 & 0.63 & 0.80 & 0.56\\
-\hline
-Sample\_9 & 0.88 & 0.70 & 0.81 & 0.63 & 0.62 & 0.78 & 0.83 & 0.76 & 0.57 & 0.63\\
-\hline
-Sample\_10 & 0.63 & 0.56 & 0.79 & 0.70 & 0.65 & 0.66 & 0.71 & 0.75 & 0.68 & 0.86\\
-\hline
-Sample\_11 & 0.72 & 0.71 & 0.78 & 0.75 & 0.60 & 0.64 & 0.77 & 0.88 & 0.89 & 0.66\\
-\hline
-Sample\_12 & 0.77 & 0.63 & 0.64 & 0.78 & 0.78 & 0.81 & 0.62 & 0.73 & 0.70 & 0.77\\
-\hline
-Sample\_13 & 0.56 & 0.69 & 0.78 & 0.66 & 0.64 & 0.67 & 0.66 & 0.57 & 0.80 & 0.58\\
-\hline
-Sample\_14 & 0.68 & 0.70 & 0.68 & 0.69 & 0.43 & 0.65 & 0.70 & 0.65 & 0.77 & 0.77\\
-\hline
-Sample\_15 & 0.59 & 0.65 & 0.72 & 0.88 & 0.62 & 0.62 & 0.84 & 0.57 & 0.90 & 0.89\\
-\hline
-Sample\_16 & 0.77 & 0.64 & 0.54 & 0.77 & 0.72 & 0.78 & 0.82 & 0.47 & 0.68 & 0.54\\
-\hline
-Sample\_17 & 0.82 & 0.58 & 0.71 & 0.67 & 0.74 & 0.87 & 0.75 & 0.58 & 0.52 & 0.76\\
-\hline
-Sample\_18 & 0.72 & 0.82 & 0.71 & 0.68 & 0.78 & 0.81 & 0.64 & 0.62 & 0.73 & 0.80\\
-\hline
-Sample\_19 & 0.70 & 0.75 & 0.69 & 0.70 & 0.74 & 0.49 & 0.77 & 0.62 & 0.86 & 0.83\\
-\hline
-Sample\_20 & 0.72 & 0.84 & 0.78 & 0.56 & 0.67 & 0.48 & 0.68 & 0.60 & 0.70 & 0.84\\
-\hline
-\end{tabular}
-\end{table}
+Sample\_1
+
+0.76
+
+0.85
+
+0.62
+
+0.87
+
+0.63
+
+0.70
+
+0.65
+
+0.74
+
+0.74
+
+0.56
+
+Sample\_2
+
+0.76
+
+0.75
+
+0.70
+
+0.65
+
+0.66
+
+0.77
+
+0.64
+
+0.79
+
+0.66
+
+0.70
+
+Sample\_3
+
+0.75
+
+0.81
+
+0.66
+
+0.68
+
+0.75
+
+0.62
+
+0.63
+
+0.68
+
+0.67
+
+1.04
+
+Sample\_4
+
+0.76
+
+0.81
+
+0.82
+
+0.73
+
+0.90
+
+0.75
+
+0.53
+
+0.66
+
+0.72
+
+0.74
+
+Sample\_5
+
+0.77
+
+0.69
+
+0.77
+
+0.87
+
+0.76
+
+0.80
+
+0.71
+
+0.59
+
+0.64
+
+0.59
+
+Sample\_6
+
+0.62
+
+0.60
+
+0.60
+
+0.62
+
+0.64
+
+0.48
+
+0.72
+
+0.72
+
+0.66
+
+0.65
+
+Sample\_7
+
+0.78
+
+0.78
+
+0.71
+
+0.69
+
+0.74
+
+0.71
+
+0.71
+
+0.77
+
+0.67
+
+0.75
+
+Sample\_8
+
+0.76
+
+0.89
+
+0.65
+
+0.60
+
+0.69
+
+0.76
+
+0.62
+
+0.71
+
+0.89
+
+0.75
+
+Sample\_9
+
+1.00
+
+0.76
+
+0.66
+
+0.75
+
+0.56
+
+0.80
+
+0.64
+
+0.55
+
+0.78
+
+0.79
+
+Sample\_10
+
+0.65
+
+0.75
+
+0.63
+
+0.60
+
+0.63
+
+0.74
+
+0.84
+
+0.74
+
+0.61
+
+0.70
+
+Sample\_11
+
+0.74
+
+0.76
+
+0.76
+
+0.64
+
+0.73
+
+0.84
+
+0.65
+
+0.59
+
+0.81
+
+0.50
+
+Sample\_12
+
+0.70
+
+0.55
+
+0.89
+
+0.65
+
+0.54
+
+0.66
+
+0.56
+
+0.71
+
+0.76
+
+0.56
+
+Sample\_13
+
+0.48
+
+0.84
+
+0.63
+
+0.74
+
+0.94
+
+0.73
+
+0.50
+
+0.52
+
+0.64
+
+0.70
+
+Sample\_14
+
+0.89
+
+0.88
+
+0.71
+
+0.77
+
+0.81
+
+0.79
+
+0.58
+
+0.72
+
+0.77
+
+0.89
+
+Sample\_15
+
+0.54
+
+0.70
+
+0.61
+
+0.82
+
+0.79
+
+0.73
+
+0.72
+
+0.80
+
+0.76
+
+0.59
+
+Sample\_16
+
+0.63
+
+0.52
+
+0.72
+
+0.72
+
+0.68
+
+0.75
+
+0.77
+
+0.83
+
+0.53
+
+0.77
+
+Sample\_17
+
+0.57
+
+0.71
+
+0.69
+
+0.73
+
+0.78
+
+0.64
+
+0.68
+
+0.56
+
+0.65
+
+0.71
+
+Sample\_18
+
+0.74
+
+0.68
+
+0.69
+
+0.81
+
+0.63
+
+0.73
+
+0.83
+
+0.55
+
+0.70
+
+0.69
+
+Sample\_19
+
+0.67
+
+0.66
+
+0.68
+
+0.67
+
+0.61
+
+0.71
+
+0.66
+
+0.72
+
+0.71
+
+0.61
+
+Sample\_20
+
+0.73
+
+0.76
+
+0.69
+
+0.75
+
+0.76
+
+0.74
+
+0.68
+
+0.66
+
+0.87
+
+0.66
 
 We can calculate the mean of each sample by calculating the mean of each row.
 These means are reported below.
 
 \begin{verbatim}
-##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6] [,7]  [,8]  [,9] [,10]
-## [1,] 0.697 0.674 0.708 0.705 0.725 0.644 0.71 0.659 0.721 0.699
-## [2,] 0.740 0.723 0.661 0.672 0.728 0.673 0.70 0.731 0.715 0.687
+##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
+## [1,] 0.712 0.708 0.729 0.742 0.719 0.631 0.731 0.732 0.729 0.689
+## [2,] 0.702 0.658 0.672 0.781 0.706 0.692 0.672 0.705 0.670 0.730
 \end{verbatim}
 
-The standard deviation of the sample means reported above is 0.027165.
+The standard deviation of the sample means reported above is 0.0341043.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.083006.
+The standard deviation of Sample 1 is \(s =\) 0.1000888.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.083006}{\sqrt{10}} = 0.0262488.\]
+\[s = \frac{0.1000888}{\sqrt{10}} = 0.0316509.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.027165, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0262488.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0341043, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0316509.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -2152,7 +2862,7 @@ The data that we will work with in this practical were collected from a research
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, \emph{Nymphaea alba}, which beavers regularly consume (Figure 13.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Nymphaea_alba._Reader.jpg}{Аlexej Potupin} on 8 June 2018.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-31}
+\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-41}
 \end{figure}
 
 As an instructive example, this lab will use the data from \citet{Law2014} on the petiole diameter (mm) from \emph{N. alba} collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
@@ -2202,7 +2912,7 @@ This is a bit tedious, and we will not ask you to do it for every dataset, but i
 See Figure 13.2 for how this would look in Jamovi.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-33}
+\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-43}
 \end{figure}
 
 Note that to insert a new column, we need to right click on an existing column and select `Add Variable' \(\to\) `Insert'.
@@ -2230,7 +2940,7 @@ We will start by making a histogram of the full dataset of petiole diameter.
 To do this, we need to go to `Analyses' tab of the Jamovi toolbar, then select the `Exploration' button.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-35}
+\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-45}
 \end{figure}
 
 Next, select the `Descriptives' option (Figure 13.3).
@@ -2243,7 +2953,7 @@ Choose the `Histogram' option by clicking the checkbox.
 A histogram will open up in the window on the right (you might need to scroll down).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-36}
+\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-46}
 \end{figure}
 
 Take a look at the histogram to the right (Figure 13.4).
@@ -2353,7 +3063,7 @@ To calculate all of the variables explained in \protect\hyperlink{Chapter_11}{Ch
 When you do this, the Statistics option in Jamovi should like like it does in Figure 13.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-37}
+\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 Once you check these boxes, you will see a `Descriptives' table open on the right hand side of Jamovi.
@@ -2583,7 +3293,7 @@ The project works with people affected, and sometimes displaced, by dam construc
 Part of this project involves the use of mobile games to investigate how people make decisions about sustainable development.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-38}
+\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-48}
 \end{figure}
 
 The game ``Power Up!'' is freely available as an \href{https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame}{Android} and \href{https://apps.apple.com/gb/app/power-up/id1585634888}{iPhone} app (Figure 16.1).
@@ -2610,7 +3320,7 @@ Next, find the check box called `Frequency tables' just under the `Split by' box
 Check this box to get a table of frequencies for Android versus iPhone users.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-39}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-49}
 \end{figure}
 
 The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
@@ -2679,7 +3389,7 @@ Figure 16.3 shows the output of Jamovi.
 A new frequency table breaks down dam choice for each OS.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-40}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-50}
 \end{figure}
 
 To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).
@@ -2715,7 +3425,7 @@ Because of how the game was designed, Score can potentially be any real number, 
 We can use a histogram to see the distribution of player scores (Figure 16.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-41-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-41}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-51-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-51}
 \end{figure}
 
 In this case, it does not really make sense to ask what the probability is of a particular score.
@@ -2755,7 +3465,7 @@ We will assume that the \emph{sample} of scores shown in Figure 16.4 came from a
 We can overlay his distribution on the histogram above using a curved line (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-42-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-42}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-52-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-52}
 \end{figure}
 
 We can interpret the area under the curve in the same way that we interpret the area in the grey bars.
@@ -2775,7 +3485,7 @@ Traditionally, we would need to do some maths to get other player score probabil
 To get Jamovi to calculate probabilities from a normal distribution, we need to go to the Modules option and download a new module (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-43}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-53}
 \end{figure}
 
 Click on the `Modules' button, and select the first option called `jamovi library' from the pull-down menu.
@@ -2784,7 +3494,7 @@ Click the `Install' button to install it into Jamovi.
 A new button in the toolbar called `distrACTION' should become visible (Figure 16.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-44}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-54}
 \end{figure}
 
 If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
@@ -2799,7 +3509,7 @@ Notice in the panel on the right that the probability is given as \(P =\) 0.237.
 This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (\(P =\) 0.237, i.e., ca 23.7 per cent).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-45}
+\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-55}
 \end{figure}
 
 To find the probability that a value is greater than 80, we could subtract our answer of 0.237 from 1, \(1 - 0.237 = 0.763\) (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
@@ -2921,7 +3631,7 @@ The \texttt{hist} function plots a histogram of the first variable.
 To run the code, find the green triangle in the upper right (Figure 16.9).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-47}
+\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-57}
 \end{figure}
 
 When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
@@ -3033,7 +3743,7 @@ Go to `Modules', and from the `Available' tab, download the `clt - Demonstration
 Once it is downloaded, go to the `Demonstrations' button in the Jamovi toolbar and select `Central Limit Theorem' from the pulldown menu.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-50}
+\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-60}
 \end{figure}
 
 To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 16.10).
@@ -3114,25 +3824,16 @@ What this is and how it relates to the normal distribution, and why it is import
 \hypertarget{another-confidence-interval-example}{%
 \section{Another confidence interval example?}\label{another-confidence-interval-example}}
 
-\hypertarget{part-review-of-parts-i-v}{%
-\part{Review of parts I-V}\label{part-review-of-parts-i-v}}
-
-\hypertarget{week-6-overview-reading-week}{%
-\chapter*{Week 6 Overview (Reading week)}\label{week-6-overview-reading-week}}
-\addcontentsline{toc}{chapter}{Week 6 Overview (Reading week)}
-
-This is a special chapter for week 6, which is a reading week, and it will function as a very brief pause for review. It will also ensure that the numbers of chapters will correspond to weeks.
-
 \hypertarget{part-hypothesis-testing}{%
 \part{Hypothesis testing}\label{part-hypothesis-testing}}
 
-\hypertarget{week-7-overview}{%
-\chapter*{Week 7 Overview}\label{week-7-overview}}
-\addcontentsline{toc}{chapter}{Week 7 Overview}
+\hypertarget{week-6-overview}{%
+\chapter*{Week 6 Overview}\label{week-6-overview}}
+\addcontentsline{toc}{chapter}{Week 6 Overview}
 
 General overview of what will be the focus of this week.
 
-Week: 7
+Week: 6
 Dates:
 Suggested Readings: Textbook
 Assessments: Practice quiz
@@ -3205,6 +3906,15 @@ Explanation of how to do them in Jamovi.
 
 \hypertarget{another-exercise-with-non-parametric}{%
 \section{Another exercise with non-parametric}\label{another-exercise-with-non-parametric}}
+
+\hypertarget{part-review-of-parts-i-v}{%
+\part{Review of parts I-V}\label{part-review-of-parts-i-v}}
+
+\hypertarget{week-7-overview-reading-week}{%
+\chapter*{Week 7 Overview (Reading week)}\label{week-7-overview-reading-week}}
+\addcontentsline{toc}{chapter}{Week 7 Overview (Reading week)}
+
+This is a special chapter for week 6, which is a reading week, and it will function as a very brief pause for review. It will also ensure that the numbers of chapters will correspond to weeks.
 
 \hypertarget{part-analysis-of-variance-anova}{%
 \part{Analysis of Variance (ANOVA)}\label{part-analysis-of-variance-anova}}
