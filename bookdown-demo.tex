@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2022-12-28}
+\date{2022-12-29}
 
 \begin{document}
 \maketitle
@@ -146,67 +146,80 @@
 Welcome to the module. This workbook will be used throughout the semester and contain all of the information that you need for the statistical techniques (SCIU4T4) module.
 
 \hypertarget{what-is-statistics}{%
-\section{What is statistics?}\label{what-is-statistics}}
+\section*{What is statistics?}\label{what-is-statistics}}
+\addcontentsline{toc}{section}{What is statistics?}
 
 An explanation of the material, and what will be taught.
 
 \hypertarget{why-this-module-is-important}{%
-\section{Why this module is important}\label{why-this-module-is-important}}
+\section*{Why this module is important}\label{why-this-module-is-important}}
+\addcontentsline{toc}{section}{Why this module is important}
 
 Some discussion of module importance
 
 \hypertarget{teaching-overview}{%
-\section{Teaching overview}\label{teaching-overview}}
+\section*{Teaching overview}\label{teaching-overview}}
+\addcontentsline{toc}{section}{Teaching overview}
 
 Here is how you will be taught, with online lectures, reading assignments, and face-to-face practicals.
 
 \hypertarget{assessment-overview}{%
-\section{Assessment overview}\label{assessment-overview}}
+\section*{Assessment overview}\label{assessment-overview}}
+\addcontentsline{toc}{section}{Assessment overview}
 
 You will have one formative test and two summatitive tests. You will also have one mock exam and one exam exam.
 
 \hypertarget{test-1f}{%
-\subsection{Test 1F}\label{test-1f}}
+\subsection*{Test 1F}\label{test-1f}}
+\addcontentsline{toc}{subsection}{Test 1F}
 
 Information about Test 1F
 
 \hypertarget{test-1s}{%
-\subsection{Test 1S}\label{test-1s}}
+\subsection*{Test 1S}\label{test-1s}}
+\addcontentsline{toc}{subsection}{Test 1S}
 
 Information about Test 1S
 
 \hypertarget{test-2s}{%
-\subsection{Test 2S}\label{test-2s}}
+\subsection*{Test 2S}\label{test-2s}}
+\addcontentsline{toc}{subsection}{Test 2S}
 
 Information about Test 1S
 
 \hypertarget{mock-exam}{%
-\subsection{Mock Exam}\label{mock-exam}}
+\subsection*{Mock Exam}\label{mock-exam}}
+\addcontentsline{toc}{subsection}{Mock Exam}
 
 Information about the mock exam
 
 \hypertarget{exam}{%
-\subsection{Exam}\label{exam}}
+\subsection*{Exam}\label{exam}}
+\addcontentsline{toc}{subsection}{Exam}
 
 Information about the exam
 
-\hypertarget{intro_jamovi}{%
-\section{Jamovi statistical software}\label{intro_jamovi}}
+\hypertarget{jamovi-statistical-software}{%
+\section*{Jamovi statistical software}\label{jamovi-statistical-software}}
+\addcontentsline{toc}{section}{Jamovi statistical software}
 
 Introduction to \href{https://www.jamovi.org/}{Jamovi}, and why we are using it instead of other software.
 
 \hypertarget{textbooks}{%
-\section{Textbooks}\label{textbooks}}
+\section*{Textbooks}\label{textbooks}}
+\addcontentsline{toc}{section}{Textbooks}
 
 Introduction to the primary textbook \href{https://www.learnstatswithjamovi.com/}{Learning statistics with jamovi}, and a mention of other sources.
 
 \hypertarget{canvas}{%
-\section{Canvas}\label{canvas}}
+\section*{Canvas}\label{canvas}}
+\addcontentsline{toc}{section}{Canvas}
 
 How we will use Canvas, and how this book relates to it (Learning and Teaching content, where lectures, assessments, and discussions can be found).
 
 \hypertarget{timetable}{%
-\section{Timetable}\label{timetable}}
+\section*{Timetable}\label{timetable}}
+\addcontentsline{toc}{section}{Timetable}
 
 \begin{longtable}[]{@{}rllllll@{}}
 \caption{\label{tab:unnamed-chunk-1}Table caption.}\tabularnewline
@@ -277,7 +290,7 @@ Week & Date & Day & Time & Room & Lead & Session \\
 \textbf{Lectures} & 1.0: Introduction to Module (20 min.) \\
 & 1.1: Numbers and operations (18 min.) \\
 & 1.2: Orders of operations (7 min.) \\
-\textbf{Practical} & Preparing real datasets \\
+\textbf{Practical} & Preparing data (\protect\hyperlink{Chapter_3}{Chapter 3}) \\
 & Room: Cottrell 2A17 \\
 & Group A: 25 JAN 2023 (WED) 13:05-15:55 \\
 & Group B: 26 JAN 2023 (THU) 09:05-11:55 \\
@@ -285,6 +298,7 @@ Week & Date & Day & Time & Room & Lead & Session \\
 & Room: Cottrell 1A13 \\
 & 27 JAN 2023 (FRI) 15:05-17:55 \\
 \textbf{Assessments} & Week 1 Practice quiz on Canvas \\
+& \\
 \bottomrule
 \end{longtable}
 
@@ -647,7 +661,48 @@ We can refer to the a specific cell by its letter and number combination.
 For example, the active cell in Figure 2.3 is F3, which has a value of `3' indicating the value recorded in that specific sample (in this case, foundress pollinators in the fig fruit).
 We will look more at how to interact with the spreadsheet in the \protect\hyperlink{Chapter_3}{Chapter 3} lab practical, but for now we will focus on how the data are organised.
 
-{[}EXPLAIN TIDY DATA HERE{]}
+There are a lot of potential ways that data can be organised in a spreadsheet.
+For good statistical analysis, there are a few principles that are helpful to follow.
+When collecting data, we record observations on different units.
+For example, we might make measurements on different trees, or different patches of land, or different samples of soil.
+In this case, our trees, land patches, or soil samples are our units of \textbf{observation}.
+Each attribute of a unit that we are measuring is a \textbf{variable}.
+These variables might include tree heights and leaf lengths, forest cover in a patch of land, or carbon and nitrogen content of a soil sample.
+Tidy datasets that can be used in statistical analysis are defined by three characteristics \citep{Wickham2014}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Each variable gets its own column.
+\item
+  Each observation gets its own row.
+\item
+  Different units of observation require different data files.
+\end{enumerate}
+
+If, for example, we were to measure the heights and seed numbers for 4 trees, we might organise the data as in Table 2.1.
+
+\begin{longtable}[]{@{}llll@{}}
+\caption{Hypothetical tidy data set in which each column of data is a variable and each row of data is an observational unit (tree).}\tabularnewline
+\toprule
+Tree & Species & Height (m) & Leaf length (cm) \\
+\midrule
+\endfirsthead
+\toprule
+Tree & Species & Height (m) & Leaf length (cm) \\
+\midrule
+\endhead
+1 & Oak & 20.3 & 8.1 \\
+2 & Oak & 25.4 & 9.4 \\
+3 & Maple & 18.2 & 12.5 \\
+4 & Maple & 16.7 & 11.3 \\
+\bottomrule
+\end{longtable}
+
+By convention \citep{Wickham2014}, variables tend to be in the left-most columns if they are known in advance or fixed in some way by the data collection or experiment (e.g., tree number or species in Table 2.1).
+In contrast, variables that are actually measured tend to be in the right-most columns (e.g., tree height or seed number).
+This is more for readability of the data; statistical software such as Jamovi will not care about the order of data columns.
 
 \hypertarget{data-files}{%
 \section{Data files}\label{data-files}}
@@ -688,7 +743,7 @@ Some file types such as DOCX are not technically binary files, but a collection 
 Overall, the important point is that saving data in a text file format such as CSV is generally more secure.
 
 \hypertarget{Chapter_3}{%
-\chapter{\texorpdfstring{\emph{Practical}: Preparing real datasets}{Practical: Preparing real datasets}}\label{Chapter_3}}
+\chapter{\texorpdfstring{\emph{Practical}: Preparing data}{Practical: Preparing data}}\label{Chapter_3}}
 
 In this practical, we will use a spreadsheet to organise datasets following the tidy approach explained in \protect\hyperlink{Chapter_2}{Chapter 2}, then save these datasets as CSV files to be opened in Jamovi statistical software.
 The data organisation in this lab can be completed using \href{https://www.libreoffice.org/discover/calc/}{LibreOffice Calc}, MS Excel, or \href{https://docs.google.com/spreadsheets/}{Google Sheets}.
@@ -703,7 +758,8 @@ These data include information recorded in the field and shown in Figure 2.2, pl
 The goal is to get all of this information into a tidy format and save it as a CSV file.
 Exercise 2 presents some data on the number of eggs produced by five different fig wasp species (more on these in \protect\hyperlink{Chapter_8}{Chapter 8}).
 The data are in an untidy format, so the goal is to reorganise them and save them as a tidy CSV file.
-Exercise 3 presents data that are even more messy.
+Exercise 3 presents counts of the same five fig wasp species as in Exercise 2, which need to be reorganised in a tidy format.
+Exercise 4 presents data that are even more messy.
 These are morphological measurements of the same five species of wasps, including lengths and widths of wasp heads, thoraxes, and abdomens.
 The goal in this exercise is to tidy the data, then estimate total wasp volume from the morphological measurements using mathematical formulas.
 
@@ -716,7 +772,7 @@ The first location was the field, where data were collected identifying tree loc
 Baja is hot and sunny; fruit measurements were made with a ruler and recorded in a field notebook.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Ficus_petiolaris} \caption{A fully grown Sonoran Desert Rock Fig (*Ficus petiolaris*) in the desert of Baja, Mexico.}\label{fig:unnamed-chunk-8}
+\includegraphics[width=1\linewidth]{img/Ficus_petiolaris} \caption{A fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.}\label{fig:unnamed-chunk-8}
 \end{figure}
 
 These measurements are shown in Figure 2.2, which is reproduced again in Figure 3.1.
@@ -730,8 +786,8 @@ The goal of Exercise 1 is to get all of this information into a single tidy spre
 \end{figure}
 
 The best place to start is with an empty spreadsheet, so open a new one in LibreOffice Calc, MS Excel, or Google Sheets.
-Remember that each row will be a unique sample; in this case, a unique fig fruit from which observations were recorded.
-Each column will be a characteristic of that sample.
+Remember that each row will be a unique observation; in this case, a unique fig fruit from which observations were recorded.
+Each column will be a variable of that observation.
 Fortunately, the data in Figure 3.2 are already looking quite tidy.
 The information here can be put into the spreadsheet mostly as written in the notebook.
 But there are a few points to keep in mind:
@@ -778,12 +834,11 @@ Fill in 1 and 3 below with potential causes of error.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
-  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 \item
   Tallies are not counted correctly in the lab notebook
 \item
-  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 \end{enumerate}
 
 Next, create a new column in the spreadsheet and call it ``Seeds'' (use column K).
@@ -827,7 +882,39 @@ It might be a good idea to check with classmates and an instructor to confirm th
 \hypertarget{exercise-3}{%
 \section{Exercise 3}\label{exercise-3}}
 
-Exercise 3 requires some restructuring and calculations.
+Exercise 3 is, like Exercise 2, self-guided.
+The data are presented in a fairly common, but untidy, format, and the challenge is to reorganise them into a tidy dataset that is ready for statistical analysis.
+Table 3.1 shows the number of different species of wasps counted in 5 different fig fruits.
+Rows list all of the species and columns list the fruits, with the counts in the middle, which is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.
+
+\begin{longtable}[]{@{}lrrrrr@{}}
+\caption{\label{tab:unnamed-chunk-14}An efficienty but untidy way to present count data. Counts of different species of fig wasps (rows) in 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.}\tabularnewline
+\toprule
+Species & Fruit\_1 & Fruit\_2 & Fruit\_3 & Fruit\_4 & Fruit\_5 \\
+\midrule
+\endfirsthead
+\toprule
+Species & Fruit\_1 & Fruit\_2 & Fruit\_3 & Fruit\_4 & Fruit\_5 \\
+\midrule
+\endhead
+Het1 & 0 & 0 & 0 & 1 & 0 \\
+Het2 & 0 & 2 & 3 & 0 & 0 \\
+LO1 & 4 & 37 & 0 & 0 & 3 \\
+SO1 & 0 & 1 & 0 & 3 & 2 \\
+SO2 & 1 & 12 & 2 & 0 & 0 \\
+\bottomrule
+\end{longtable}
+
+This problem might be a bit more challenging than Exercise 2.
+The goal is to use the above information to create a tidy dataset.
+Remember that each observation (wasp counts, in this case) should get its own row, and each variable should get its own column.
+Try creating a tidy dataset from the information in Table 3.1, then save the dataset to a CSV file.
+As with Exercise 2, it might be good to confer with classmates and an instructor to confirm that the dataset is in the correct format and will work for statistical analysis.
+
+\hypertarget{exercise-4}{%
+\section{Exercise 4}\label{exercise-4}}
+
+Exercise 4 requires some restructuring and calculations.
 The dataset that will be used in this exercise includes morphological measurements from five species of fig wasps, the same species used in Exercise 2.
 \textbf{Download this dataset from the file \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_morphology_untidy.xlsx}{wasp\_morphology\_untidy.xlsx} (XLSX file) or \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_morphology_untidy.ods}{wasp\_morphology\_untidy.ods} (ODS open-source file).}
 Both files contain identical information, so which one you use is a matter of personal preference.
@@ -836,7 +923,7 @@ First note that there are multiple sheets in the spreadsheet, which is not allow
 You can see these sheets by looking at the very bottom of the spreadsheet, which will have separating tabs called Het1, Het2, LO1, SO1, and SO2 (Figure 3.7).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/spreadsheet_tabs} \caption{Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.}\label{fig:unnamed-chunk-14}
+\includegraphics[width=1\linewidth]{img/spreadsheet_tabs} \caption{Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.}\label{fig:unnamed-chunk-15}
 \end{figure}
 
 You can click on all of the different tabs to see the measurements of head length, head width, thorax length, thorax width, abdomen length, and abdomen width for wasps of each of the 5 species.
@@ -862,7 +949,7 @@ Your dataset should have all of the relevant information about wasp head, thorax
 It should look something like Figure 3.8.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Ch1_Ex3_tidy} \caption{A tidy dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010.}\label{fig:unnamed-chunk-15}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex3_tidy} \caption{A tidy dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010.}\label{fig:unnamed-chunk-16}
 \end{figure}
 
 Next comes a slightly more tricky part, which will make use of some of the background mathematics reviewed in \protect\hyperlink{Chapter_1}{Chapter 1}.
@@ -892,7 +979,7 @@ If the values of \texttt{B2} or \texttt{C2} were to change, then so would the ca
 Also notice that we are using parentheses to make sure that the order of operations is correct.
 We want to add head length and width before dividing by two, so we type \texttt{((B2+C2)/2)} to ensure with the innermost parentheses that head length and width are added before dividing.
 Once all of this is completed, we raise everything in parentheses to the third power using the \texttt{\^{}3}, so \texttt{((B2+C2)/2)\^{}3}.
-In general, the different mathematical operations can be carried out using the the symbols in Table 3.1.
+In general, the different mathematical operations can be carried out using the the symbols in Table 3.2.
 
 \begin{longtable}[]{@{}ll@{}}
 \caption{List of mathematical operations available in a spreadsheet.}\tabularnewline
@@ -913,7 +1000,7 @@ Symbol & Operation \\
 \bottomrule
 \end{longtable}
 
-The last operation in Table 3.1 is a function that takes the square-root of anything within the parentheses.
+The last operation in Table 3.2 is a function that takes the square-root of anything within the parentheses.
 Other functions are also available that can make calculations across cells (e.g., \texttt{SUM} or \texttt{AVERAGE}), but we will ignore these for now.
 
 Once head volume is calculated for the first wasp in cell H2, it is very easy to do the rest.
@@ -922,7 +1009,7 @@ To get the rest of the head volumes, we just need to select the bottom right of 
 There will be a very small square in this bottom right (see Figure 3.9), and if we drag it down, the spreadsheet will do the same calculation for each row (e.g., in H3, it will use B3 and C3 in the formula rather than B2 and C2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Ch1_Ex3_copy_formula} \caption{A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.}\label{fig:unnamed-chunk-16}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex3_copy_formula} \caption{A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.}\label{fig:unnamed-chunk-17}
 \end{figure}
 
 Another way to achieve the same result is to copy (Ctrl + C) the contents of cell H2, highlight cells H3-H27, then paste (Ctrl + V).
@@ -995,7 +1082,7 @@ If you have time at the end of the lab, we recommend exploring the spreadsheet i
 \toprule
 \endhead
 \textbf{Dates} & 30 January 2023 - 3 February 2023 \\
-\textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 4-8 \\
+\textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 4-7 \\
 & \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#the-spreadsheet}{Section 3.3}-\href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#summary-1}{3.9} \\
 & \textbf{Optional:} \citet{Rowntree2018} Chapter 2 \\
 & \textbf{Advanced:} \citet{Spiegelhalter2019} Chapters 1-3 \\
@@ -1005,7 +1092,7 @@ If you have time at the end of the lab, we recommend exploring the spreadsheet i
 & 2.3: Types of variables (11 min.) \\
 & 2.4: Units, precision, and accuracy (9 min.) \\
 & 2.5. Uncertainty propagation (11 min.) \\
-\textbf{Practical} & Introduction to Jamovi \\
+\textbf{Practical} & Introduction to Jamovi (\protect\hyperlink{Chapter_8}{Chapter 8}) \\
 & Room: Cottrell 2A17 \\
 & Group A: 01 FEB 2023 (WED) 13:05-15:55 \\
 & Group B: 02 FEB 2023 (THU) 09:05-11:55 \\
@@ -1016,10 +1103,10 @@ If you have time at the end of the lab, we recommend exploring the spreadsheet i
 \bottomrule
 \end{longtable}
 
-In \protect\hyperlink{Chapter_4}{Chapter 4}, we focus on key concepts that will be used throughout this module.
+\protect\hyperlink{Chapter_4}{Chapter 4} focuses on key concepts that will be used throughout this module.
 In particular, it is important to understand the difference between a \textbf{population} and a \textbf{sample}, and to recognise that there are many types of variables in statistics.
 
-In \protect\hyperlink{Chapter_5}{Chapter 5}, we look at different variable types. Different types of variables have different characteristics, which will affect how these variables are best visualised in figures and analysed with statistical hypothesis tests introduced later in the semester.
+\protect\hyperlink{Chapter_5}{Chapter 5} introduces different variable types. Different types of variables have different characteristics, which will affect how these variables are best visualised in figures and analysed with statistical hypothesis tests introduced later in the semester.
 Identifying variable types will therefore be important, both for module assessments and when working with new datasets.
 A variable's type will rarely be stated explicitly when doing scientific research, and will not always be provided in assessments for this module.
 Being able to infer variable type is therefore an important skill.
@@ -1031,7 +1118,7 @@ We are not expecting you to memorise all scientific units, so a \protect\hyperli
 \protect\hyperlink{Chapter_7}{Chapter 7} will introduce the propogation of measurement errors.
 This is important to understand because no measurement is perfectly accurate, and predicting how errors in measurement combine is fundamental to understanding measurement accuracy.
 
-Finally, \protect\hyperlink{Chapter_8}{Chapter 8} guides you through the Week 2 practical, which is an introduction to Jamovi.
+\protect\hyperlink{Chapter_8}{Chapter 8} guides you through the Week 2 practical, which is an introduction to Jamovi.
 This aim of this practical is to become familiar with the Jamovi interface and comfortable importing data into Jamovi to collect some descriptive statistics.
 
 \hypertarget{Chapter_4}{%
@@ -1088,7 +1175,7 @@ For our purposes, it is not necessary to be able to recite the technical definit
 When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-17}
+\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-18}
 \end{figure}
 
 \hypertarget{Chapter_5}{%
@@ -1167,7 +1254,7 @@ If, however, the scale measures a different mass each time the object is weighed
 One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg}{Egon Willighagen} on 8 March 2014.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-18}
+\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-19}
 \end{figure}
 
 Note again that accuracy and precision are not necessarily the same.
@@ -1387,7 +1474,7 @@ Measurements include fig lengths, widths, and heights in centimeters from 4 diff
 \textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig\_fruits.csv}}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-19}
+\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-20}
 \end{figure}
 
 This lab will use the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
@@ -1400,14 +1487,14 @@ Download the \href{https://raw.githubusercontent.com/bradduthie/statistical_tech
 Once Jamovi is open, you can import the dataset by clicking on the three lines in the upper left corner of the tool bar, then selecting `Open' (Figure 8.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-21}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-22}
 \end{figure}
 
 You might need to click `Browse' in the upper right of Jamovi to find the file.
 Figure 8.3 below shows how this will look when you browse for a data file.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-22}
+\includegraphics[width=1\linewidth]{img/open_soil_organic_carbon} \caption{The Jamovi interface for opening a file with the 'Import' tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.}\label{fig:unnamed-chunk-23}
 \end{figure}
 
 Once the data are imported, you should see two separate columns.
@@ -1419,7 +1506,7 @@ But you can also edit the directly in Jamovi by clicking on the `Data' tab in th
 The best way to reorganise the data in Jamovi is to double-click on the third column of data next to `subsoil' (see Figure 8.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-23}
+\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-24}
 \end{figure}
 
 After double-clicking on the location shown in Figure 8.4, there will be three buttons visible.
@@ -1428,7 +1515,7 @@ Keep the `Measure type' as `Nominal', but change the `Data type' to `text'.
 When you are done, click the \texttt{\textgreater{}} character to the right so that the variable is fixed (Figure 8.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-24}
+\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-25}
 \end{figure}
 
 After typing in the new variable `soil\_type', add another variable called `organic\_carbon'.
@@ -1451,7 +1538,7 @@ First, we can calculate the minimum, maximum, and mean of all of the organic car
 To do this, select the `Analyses' tab, then click on the left-most button called `Exploration' in the toolbar (Figure 8.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-25}
+\includegraphics[width=1\linewidth]{img/jamovi_exploration} \caption{The Jamovi toolbar where the tab 'Analyses' can be selected at the very top. Below this tab, the button 'Exploration' can be clicked to calculate descriptive statistics.}\label{fig:unnamed-chunk-26}
 \end{figure}
 
 After clicking on `Exploration', a pull-down box will appear with an option for `Descriptives'.
@@ -1568,7 +1655,7 @@ To do this, click on the `Data' tab at the top of the toolbar again, then click 
 Your screen should look like the image in Figure 8.7.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-27}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The Jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-28}
 \end{figure}
 
 With the `Length\_cm' column highlighted, click on the `Transform' button in the toolbar.
@@ -1586,7 +1673,7 @@ Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multi
 We can do this by appending a \texttt{*\ 10} to the lower box of the transform window, so that it reads \texttt{=\ \$source\ *\ 10} (Figure 8.8).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-28}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-29}
 \end{figure}
 
 When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
@@ -1652,7 +1739,7 @@ Double click on this to put it into the formula, then divide it by 2.
 You can repeat this two more times to complete the computed variable as shown in Figure 8.9.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-29}
+\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The Jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-30}
 \end{figure}
 
 Note that we can get the cube of `Width\_mm' more concisely by using the carrot character (\texttt{\^{}}).
@@ -1716,10 +1803,33 @@ Draw a rough sketch of the histogram in the area below.
 & 3.5: The mode (7 min.) \\
 & 3.6: The median and quantiles (8 min.) \\
 & 3.7: Mean, mode, median, and resistance (9 min.) \\
-\textbf{Practical} & Plotting and statistical summaries \\
+\textbf{Practical} & Plotting and statistical summaries (\protect\hyperlink{Chapter_13}{Chapter 13}) \\
+& Room: Cottrell 2A17 \\
+& Group A: 08 FEB 2023 (WED) 13:05-15:55 \\
+& Group B: 09 FEB 2023 (THU) 09:05-11:55 \\
+\textbf{Help hours} & Ian Jones \\
+& Room: Cottrell 1A13 \\
+& 10 FEB 2023 (FRI) 15:05-17:55 \\
 \textbf{Assessments} & Week 3 Practice quiz on Canvas \\
 \bottomrule
 \end{longtable}
+
+\protect\hyperlink{Chapter_9}{Chapter 9} focuses on how to report numbers with accuracy and precision.
+In practice, this means reporting values with the correct number of digits (decimal places and significant figures), and rounding appropriately.
+
+\protect\hyperlink{Chapter_10}{Chapter 10} introduces different types of graphs for communicating data visually.
+The chapter focuses specifically on histograms, pie charts, barplots, and box-whisker plots.
+
+\protect\hyperlink{Chapter_11}{Chapter 11} introduces measures of central tendency.
+These are measures that describe the centre of the data using a single number.
+Measures of central tendency in this chapter include the mean, the mode, the median, and quantiles.
+
+\protect\hyperlink{Chapter_12}{Chapter 12} introduces on measures of spread.
+In contrast to measures of central tendency, which focus on the centre of a dataset, measures of spread focus on how much the data are spread out.
+Measures of spread in this chapter in clude the range, the inter-quartile range, the variance, the standard deviation, the coefficient of variation, and the standard error.
+
+\protect\hyperlink{Chapter_13}{Chapter 13} guides you through the week 3 practical.
+The aim of this practical is to learn how to use Jamovi to generate plots introduced in \protect\hyperlink{Chapter_10}{Chapter 10}, and to find measures of central tendency and spread introduced in \protect\hyperlink{Chapter_11}{Chapter 11} and \protect\hyperlink{Chapter_12}{Chapter 12}, respectively, and report them accurately using the knowledge from \protect\hyperlink{Chapter_9}{Chapter 9}.
 
 \hypertarget{Chapter_9}{%
 \chapter{Decimal places, significant figures, and rounding}\label{Chapter_9}}
@@ -1828,7 +1938,7 @@ They are especially useful visualisation tools because it is often important to 
 The histogram shown in Figure 10.1 provides an example from the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-30-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-30}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-31-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-31}
 \end{figure}
 
 The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}}).
@@ -1851,7 +1961,7 @@ For example, in the \href{https://raw.githubusercontent.com/bradduthie/statistic
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-31-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-31}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-32}
 \end{figure}
 
 In Figure 10.2, each tree is represented by a separate bar on the x-axis.
@@ -1866,7 +1976,7 @@ For example, in the case of the fig fruits, it might be useful to visualise what
 A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-32}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-33}
 \end{figure}
 
 Pie charts can be useful in some situations, but in the biological and environmental they are not used as often as barplots.
@@ -1884,7 +1994,7 @@ Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histo
 In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-33}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-34-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-34}
 \end{figure}
 
 To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5A) are located in the histogram (Figure 10.5B).
@@ -1892,7 +2002,7 @@ These summary statistics include the median (black circles of Figure 10.5), quar
 Note that in boxplots, if outliers exist, they are presented as separate points.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-34-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-34}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-35}
 \end{figure}
 
 One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
@@ -1900,7 +2010,7 @@ For example, the distribution of fig fruit width can be shown for each of the fo
 While it is possible to show histograms side by side, it will quickly take up a lot of space.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-35}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-36}
 \end{figure}
 
 The boxplot in Figure 10.6 can be used to quickly compare the distribution of Trees A-D.
@@ -1927,7 +2037,7 @@ The mean is a measure of central tendency, so it is located somewhere in the cen
 Figure 10.7 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-36}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-37-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-37}
 \end{figure}
 
 The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data \citep{Sokal1995}.
@@ -2033,7 +2143,7 @@ Also, somewhat confusingly, distributions that have more than one peak are often
 For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-37-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-37}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-38-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-38}
 \end{figure}
 
 In very rare cases, data might have a U-shape.
@@ -2393,465 +2503,50 @@ In Table 12.1, we simulate the process of going out and collecting 10 water samp
 This collecting of 10 water samples is repeated 20 different times.
 Each row is a different sampling effort, and columns report the 10 samples from each effort.
 
-\label{tab:unnamed-chunk-39}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.
-
-Sample\_1
-
-0.76
-
-0.85
-
-0.62
-
-0.87
-
-0.63
-
-0.70
-
-0.65
-
-0.74
-
-0.74
-
-0.56
-
-Sample\_2
-
-0.76
-
-0.75
-
-0.70
-
-0.65
-
-0.66
-
-0.77
-
-0.64
-
-0.79
-
-0.66
-
-0.70
-
-Sample\_3
-
-0.75
-
-0.81
-
-0.66
-
-0.68
-
-0.75
-
-0.62
-
-0.63
-
-0.68
-
-0.67
-
-1.04
-
-Sample\_4
-
-0.76
-
-0.81
-
-0.82
-
-0.73
-
-0.90
-
-0.75
-
-0.53
-
-0.66
-
-0.72
-
-0.74
-
-Sample\_5
-
-0.77
-
-0.69
-
-0.77
-
-0.87
-
-0.76
-
-0.80
-
-0.71
-
-0.59
-
-0.64
-
-0.59
-
-Sample\_6
-
-0.62
-
-0.60
-
-0.60
-
-0.62
-
-0.64
-
-0.48
-
-0.72
-
-0.72
-
-0.66
-
-0.65
-
-Sample\_7
-
-0.78
-
-0.78
-
-0.71
-
-0.69
-
-0.74
-
-0.71
-
-0.71
-
-0.77
-
-0.67
-
-0.75
-
-Sample\_8
-
-0.76
-
-0.89
-
-0.65
-
-0.60
-
-0.69
-
-0.76
-
-0.62
-
-0.71
-
-0.89
-
-0.75
-
-Sample\_9
-
-1.00
-
-0.76
-
-0.66
-
-0.75
-
-0.56
-
-0.80
-
-0.64
-
-0.55
-
-0.78
-
-0.79
-
-Sample\_10
-
-0.65
-
-0.75
-
-0.63
-
-0.60
-
-0.63
-
-0.74
-
-0.84
-
-0.74
-
-0.61
-
-0.70
-
-Sample\_11
-
-0.74
-
-0.76
-
-0.76
-
-0.64
-
-0.73
-
-0.84
-
-0.65
-
-0.59
-
-0.81
-
-0.50
-
-Sample\_12
-
-0.70
-
-0.55
-
-0.89
-
-0.65
-
-0.54
-
-0.66
-
-0.56
-
-0.71
-
-0.76
-
-0.56
-
-Sample\_13
-
-0.48
-
-0.84
-
-0.63
-
-0.74
-
-0.94
-
-0.73
-
-0.50
-
-0.52
-
-0.64
-
-0.70
-
-Sample\_14
-
-0.89
-
-0.88
-
-0.71
-
-0.77
-
-0.81
-
-0.79
-
-0.58
-
-0.72
-
-0.77
-
-0.89
-
-Sample\_15
-
-0.54
-
-0.70
-
-0.61
-
-0.82
-
-0.79
-
-0.73
-
-0.72
-
-0.80
-
-0.76
-
-0.59
-
-Sample\_16
-
-0.63
-
-0.52
-
-0.72
-
-0.72
-
-0.68
-
-0.75
-
-0.77
-
-0.83
-
-0.53
-
-0.77
-
-Sample\_17
-
-0.57
-
-0.71
-
-0.69
-
-0.73
-
-0.78
-
-0.64
-
-0.68
-
-0.56
-
-0.65
-
-0.71
-
-Sample\_18
-
-0.74
-
-0.68
-
-0.69
-
-0.81
-
-0.63
-
-0.73
-
-0.83
-
-0.55
-
-0.70
-
-0.69
-
-Sample\_19
-
-0.67
-
-0.66
-
-0.68
-
-0.67
-
-0.61
-
-0.71
-
-0.66
-
-0.72
-
-0.71
-
-0.61
-
-Sample\_20
-
-0.73
-
-0.76
-
-0.69
-
-0.75
-
-0.76
-
-0.74
-
-0.68
-
-0.66
-
-0.87
-
-0.66
+\begin{longtable}[]{@{}lrrrrrrrrrr@{}}
+\caption{\label{tab:unnamed-chunk-40}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
+\toprule
+\endhead
+Sample\_1 & 0.73 & 0.61 & 0.65 & 0.73 & 0.50 & 0.75 & 0.72 & 0.76 & 0.78 & 0.63 \\
+Sample\_2 & 0.93 & 0.48 & 0.82 & 0.74 & 0.76 & 0.64 & 0.72 & 0.81 & 0.51 & 0.66 \\
+Sample\_3 & 0.57 & 0.93 & 0.62 & 0.89 & 0.50 & 0.67 & 0.74 & 0.70 & 0.70 & 0.88 \\
+Sample\_4 & 0.74 & 0.63 & 0.81 & 0.49 & 0.54 & 0.88 & 0.70 & 0.76 & 0.62 & 0.96 \\
+Sample\_5 & 0.75 & 0.91 & 0.73 & 0.78 & 0.69 & 0.71 & 0.72 & 0.83 & 0.63 & 0.78 \\
+Sample\_6 & 0.48 & 0.71 & 0.84 & 0.58 & 0.55 & 0.77 & 0.80 & 0.70 & 0.72 & 0.72 \\
+Sample\_7 & 0.61 & 0.86 & 0.67 & 0.64 & 0.71 & 0.74 & 0.70 & 0.63 & 0.66 & 0.87 \\
+Sample\_8 & 0.74 & 0.48 & 0.67 & 0.77 & 0.57 & 0.66 & 0.84 & 0.65 & 0.74 & 0.64 \\
+Sample\_9 & 0.75 & 0.61 & 0.81 & 0.81 & 0.75 & 0.76 & 0.79 & 0.70 & 0.76 & 0.85 \\
+Sample\_10 & 0.63 & 0.63 & 0.77 & 0.71 & 0.57 & 0.66 & 0.78 & 0.81 & 0.62 & 0.62 \\
+Sample\_11 & 0.64 & 0.66 & 0.80 & 0.47 & 0.80 & 0.60 & 0.62 & 0.94 & 0.68 & 0.59 \\
+Sample\_12 & 0.71 & 0.73 & 0.66 & 0.77 & 0.75 & 0.67 & 0.78 & 0.75 & 0.59 & 0.73 \\
+Sample\_13 & 0.76 & 0.66 & 0.76 & 0.61 & 0.79 & 0.65 & 0.61 & 0.72 & 0.73 & 0.54 \\
+Sample\_14 & 0.77 & 0.76 & 0.78 & 0.83 & 0.68 & 0.76 & 0.57 & 0.63 & 0.77 & 0.68 \\
+Sample\_15 & 0.88 & 0.80 & 0.69 & 0.50 & 0.43 & 0.78 & 0.65 & 0.63 & 0.79 & 0.65 \\
+Sample\_16 & 0.83 & 0.76 & 0.54 & 0.62 & 0.73 & 0.61 & 0.77 & 0.78 & 0.76 & 0.78 \\
+Sample\_17 & 0.84 & 0.72 & 0.71 & 0.73 & 0.88 & 0.68 & 0.61 & 0.67 & 0.79 & 0.81 \\
+Sample\_18 & 0.54 & 0.70 & 0.84 & 0.76 & 0.70 & 0.75 & 0.69 & 0.74 & 0.74 & 0.61 \\
+Sample\_19 & 0.69 & 0.53 & 0.73 & 0.64 & 0.80 & 0.62 & 0.53 & 0.86 & 0.73 & 0.76 \\
+Sample\_20 & 0.59 & 0.73 & 0.59 & 0.59 & 0.67 & 0.61 & 0.62 & 0.69 & 0.63 & 0.75 \\
+\bottomrule
+\end{longtable}
 
 We can calculate the mean of each sample by calculating the mean of each row.
 These means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.712 0.708 0.729 0.742 0.719 0.631 0.731 0.732 0.729 0.689
-## [2,] 0.702 0.658 0.672 0.781 0.706 0.692 0.672 0.705 0.670 0.730
+## [1,] 0.686 0.707 0.720 0.713 0.753 0.687 0.709 0.676 0.759 0.680
+## [2,] 0.680 0.714 0.683 0.723 0.680 0.718 0.744 0.707 0.689 0.647
 \end{verbatim}
 
-The standard deviation of the sample means reported above is 0.0341043.
+The standard deviation of the sample means reported above is 0.0281927.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.1000888.
+The standard deviation of Sample 1 is \(s =\) 0.087076.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.1000888}{\sqrt{10}} = 0.0316509.\]
+\[s = \frac{0.087076}{\sqrt{10}} = 0.0275358.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0341043, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0316509.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0281927, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0275358.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -2862,7 +2557,7 @@ The data that we will work with in this practical were collected from a research
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, \emph{Nymphaea alba}, which beavers regularly consume (Figure 13.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Nymphaea_alba._Reader.jpg}{Аlexej Potupin} on 8 June 2018.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-41}
+\includegraphics[width=1\linewidth]{img/Nymphaea_alba_pads} \caption{Photo of white water lillies on the water.}\label{fig:unnamed-chunk-42}
 \end{figure}
 
 As an instructive example, this lab will use the data from \citet{Law2014} on the petiole diameter (mm) from \emph{N. alba} collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
@@ -2912,7 +2607,7 @@ This is a bit tedious, and we will not ask you to do it for every dataset, but i
 See Figure 13.2 for how this would look in Jamovi.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-43}
+\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-44}
 \end{figure}
 
 Note that to insert a new column, we need to right click on an existing column and select `Add Variable' \(\to\) `Insert'.
@@ -2940,7 +2635,7 @@ We will start by making a histogram of the full dataset of petiole diameter.
 To do this, we need to go to `Analyses' tab of the Jamovi toolbar, then select the `Exploration' button.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-45}
+\includegraphics[width=1\linewidth]{img/lilypad_descriptives} \caption{Jamovi toolbar after having selected on the Analyses tab followed by the Exploration button.}\label{fig:unnamed-chunk-46}
 \end{figure}
 
 Next, select the `Descriptives' option (Figure 13.3).
@@ -2953,7 +2648,7 @@ Choose the `Histogram' option by clicking the checkbox.
 A histogram will open up in the window on the right (you might need to scroll down).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-46}
+\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 Take a look at the histogram to the right (Figure 13.4).
@@ -3063,7 +2758,7 @@ To calculate all of the variables explained in \protect\hyperlink{Chapter_11}{Ch
 When you do this, the Statistics option in Jamovi should like like it does in Figure 13.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-47}
+\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-48}
 \end{figure}
 
 Once you check these boxes, you will see a `Descriptives' table open on the right hand side of Jamovi.
@@ -3211,38 +2906,243 @@ If so, then what does this say about our ability to make conclusions about the d
 \chapter*{Week 4 Overview}\label{week-4-overview}}
 \addcontentsline{toc}{chapter}{Week 4 Overview}
 
-General overview of what will be the focus of this week.
-
-Week: 4
-Dates:
-Suggested Readings: Textbook intro to probability
-Assessments: Practice quiz
-Practical:
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3269}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6731}}@{}}
+\toprule
+\endhead
+\textbf{Dates} & 13 February 2023 - 17 February 2023 \\
+\textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 14-15 \\
+& \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/07-Introduction-to-probability.html}{Chapter 7} \\
+& \textbf{Optional:} \citet{Rowntree2018} Chapter 4 \\
+\textbf{Lectures} & 4.1: Probability models (17 min.) \\
+& 4.2: Probabilities to make predictions (12 min.) \\
+& 4.3: Probability distributions (11 min.) \\
+& 4.4: Predictions using sample statistics (16 min.) \\
+& 4.5: Jamovi procedures \\
+\textbf{Practical} & Probability and simulation (\protect\hyperlink{Chapter_16}{Chapter 16}) \\
+& Room: Cottrell 2A17 \\
+& Group A: 15 FEB 2023 (WED) 13:05-15:55 \\
+& Group B: 16 FEB 2023 (THU) 09:05-11:55 \\
+\textbf{Help hours} & Ian Jones \\
+& Room: Cottrell 1A13 \\
+& 17 FEB 2023 (FRI) 15:05-17:55 \\
+\textbf{Assessments} & Week 4 Practice quiz on Canvas \\
+\bottomrule
+\end{longtable}
 
 \hypertarget{introduction-to-probability-models}{%
 \chapter{Introduction to probability models}\label{introduction-to-probability-models}}
 
-Some background
+Suppose that we flip a fair coin over a flat surface.
+There are two possibilities for how the coin lands on the surface.
+Either the coin lands on one side (heads) or the other side (tails), but we do not know the outcome in advance.
+If these two events (heads or tails) are equally likely, then we could reason that there is a 50\% chance that a flipped coin will land heads up and a 50\% chance that it will land heads down.
+What do we actually mean when we say this?
+For example, when we say that there is a 50\% chance of the coin landing heads up, are we making a claim about our own knowledge, how coins work, or how the world works?
+We might mean that we simply do not know whether or not the coin will land heads up, so a 50-50 chance just reflects our best guess about what will actually happen when the coin is flipped.
+Alternatively, we might reason that if a fair coin were to be flipped many times, all else being equal, then about half of flips should end heads up, so a 50\% chance is a reasonable prediction of what will happen in any given flip.
+Or, perhaps we reason that events such as coin flips really are guided by chance on some deeper fundamental level, such that our 50\% chance reflects some real causal metaphysical process in the world.
+These are questions concerning the philosophy of probability.
+The philosophy of probability is an interesting sub-discipline in its own right, with implications that can and do affect how researchers do statistics \citep{Edwards1972, Mayo1996, Gelman2013, Suarez2020, Mayo2021, Navarro2022}.
 
-\hypertarget{a-practical-example}{%
-\section{A practical example}\label{a-practical-example}}
+In this chapter, we will not worry about the philosophy of probability\footnote{In the interest of transparency, this book presents a \emph{frequentist} interpretation of probability \citep{Mayo1996}. While this approach does reflect the philosophical inclinations of the author, the reason for working from this interpretation has more to do with the statistical tests that are most appropriate for an introductory statistics module, which are also the tests most widely used in the biological and environmental sciences.} and instead focus on the mathematical rules of probability as applied to statistics.
+These rules are important for predicting real-world events in the biological and environmental sciences.
+For example, we might need to make predictions concerning the risk of disease spreading in a population, or the risk of extreme events such as droughts occurring given increasing global temperatures.
+Probability is also important for testing scientific hypotheses.
+For example, if we sample two different groups and calculate that they have different means (e.g., two different fields have different mean soil nitrogen concentrations), we might want to know the probability that this difference between means could have arisen by chance.
+Here we will introduce practicals example of probability, then introduce some common probability distributions.
 
-How to think about probability
+\hypertarget{an-instructive-example}{%
+\section{An instructive example}\label{an-instructive-example}}
+
+Probability focuses on the outcomes of trials, such as the \textbf{outcome} (heads or tails) of the \textbf{trial} of a coin flip.
+The probability of an specific outcome is the relative number of times it is expected to happen given a large number of trials,
+
+\[P(outcome) = \frac{Number\:of\:times\:outcome\:occurs}{Total\:number\:of\:trials}.\]
+
+For the outcome of a flipped coin landing on heads,
+
+\[P(heads) = \frac{Flips\:landing\:on\:heads}{Total\:number\:of\:flips}.\]
+
+As the total number of flips becomes very large, the number of flips that land on heads should get closer and closer to half the total, \(1/2\) or \(0.5\) (more on this later).
+The above equations use the notation \(P(X)\) to define the probability (\(P\)) of some event (\(X\)) happening.
+Note that the number of times an outcome occurs cannot be less than 0, so \(P(X) \geq 0\) must always be true.
+Similarly, the number of times an outcome occurs cannot be greater than the number of trials; the most frequently it can happen is in \emph{every} trial, in which case the top and bottom of the fraction has the same value.
+Hence, \(P(X) \leq 1\) must also always be true.
+Probabilities therefore range from 0 (an outcome \emph{never} happens) to 1 (an outcome \emph{always} happens).
+
+It might be more familiar and intuitive at first to think in terms of percentages (i.e., from 0-100\% chance of an outcome, rather than from 0-1), but there are good mathematical reasons for thinking about probability on a 0-1 scale (it makes calculations easier).
+For example, suppose we have two coins, and we want to calculate the probability that they will both land on heads if we flip them at the same time.
+That is, we want to know the probability that coin 1 lands on heads \textbf{and} coin 2 lands on heads.
+We can assume that the coins do not affect each other in any way, so each coin flip is \textbf{independent} of the other (i.e., the outcome of coin 1 does not affect the outcome of coin 2, and \emph{vice versa} -- this kind of assumption is often very important in statistics).
+Each coin, by itself, is expected to to land on heads with a probability of 0.5, \(P(heads) = 0.5\).
+When we want to know the probability that two or more independent events will happen, we \emph{multiply} their probabilities.
+In the case of both coins landing on heads, the probability is therefore,
+
+\[P(Coin_{1} = heads\:\cap Coin_{2} = heads) = 0.5 \times 0.5 = 0.25.\]
+
+Note that the symbol \(\cap\) is basically just a fancy way of writing `and' (technically, the intersection between sets; see set theory for details).
+Verbally, all this is saying is that the probability of coin 1 landing on heads \emph{and} the probability of coin 2 landing on heads equals 0.5 times 0.5, which equals 0.25.
+
+But why are we multiplying to get the joint probability of both coins landing on heads?
+Why not add, for example?
+Well, we could take it as a given that multiplication is the correct operation to use when calculating the probability that multiple events will occur.
+We could also do a simple experiment to confirm that 0.25 really is about right (e.g., by flipping 2 coins 100 times and recording how many times both coins land on heads).
+But neither of these would likely be particularly satisfying.
+Let us first recognise that adding the probabilities cannot be the correct answer.
+If the probability of each coin landing on heads is 0.5, the adding probabilities would imply that the probability of both landing on heads is 0.5 + 0.5 = 1.
+This does not make any sense because we know that there are other possibilities, such as both coins landing on tails, or one coin landing on heads and the other landing on tails.
+Adding probabilities cannot be the answer, but why multiply?
+
+We can think about probabilities visually, as a kind of probability space.
+When we have only one trial, then we can express the probability of an event along a line (Figure 14.1).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/coin1_probability} \caption{Total probability space for flipping a single coin and observing its outcome (heads or tails). Given a fair coin, the probability of heads equals a proportion 0.5 of the total probability space, while the probability of tails equals the remaining 0.5 proportion.}\label{fig:unnamed-chunk-49}
+\end{figure}
+
+The total probability space is 1, and `heads' occupies a density of 0.5 of the total space.
+The remaining space, also 0.5, is allocated to `tails'.
+If we add a second independent trial, we now need 2 dimensions of probability space (Figure 14.2).
+The probability of heads or tails for coin 1 (the horizontal axis of Figure 14.2) remains unchanged, but we add another axis (vertical this time) to think about the equivalent probability space of coin 2.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/coin2_probability} \caption{Total probability space for flipping two coins and observing their different possible outcomes (heads-heads, heads-tails, tails-heads, and tails-tails). Given two fair coins, the probability of flipping each equals 0.25, which corresponds to the lower left square of the probability space.}\label{fig:unnamed-chunk-50}
+\end{figure}
+
+Now we can see that that the area in which both coin 1 and coin 2 land on heads has a proportion of 0.25 of the total area.
+This is a geometric representation of what we did when calculating \(P(Coin_{1} = heads\:\cap Coin_{2} = heads) = 0.5 \times 0.5 = 0.25.\)
+The multiplication works because multiplying probabilities carves out more specific regions of probability space.
+Note that the same pattern would apply if we flipped a third coin.
+In this case, the probability of all 3 coins landing on heads would be \(0.5 \times 0.5 \times 0.5 = 0.125\), or \(0.5^{3} = 0.125\).
+
+What about when we want to know the probability of one outcome \textbf{or} another outcome happening?
+Here is where we add.
+Note that the probability of a coin flip landing on heads or tails must be 1 (there are only 2 possibilities!).
+What about the probability of both coins landing on the same outcome; that is, either both coins landing on heads or both landing on tails?
+We know that the probability of both coins landing on heads is \(0.25\).
+The probability of both coins landing on tails is also \(0.25\), so the probability that both coins land on either heads \textbf{or} tails is \(0.25 + 0.25 = 0.5\).
+The visual representation in Figure 14.2 works for this example too.
+Note that heads-heads and tails-tails outcomes are represented by the lower left and upper right areas of probability space, respectively.
+This is 0.5 (i.e., 50\%) of the total probability space.
+
+\hypertarget{biological-applications}{%
+\section{Biological applications}\label{biological-applications}}
+
+Coin flips are instructive, but the relevance for biological and environmental sciences might not be immediately clear.
+In fact, probability is extremely relevant in nearly all areas of the natural sciences.
+The following are just 2 hypothetical examples where the calculations in the previous section might be usefully applied:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  From a recent report online, you learn that 1 in 40 people in your local area are testing positive for Covid-19. You find yourself in a small shop with 6 other people. What is the probability that at least 1 of these 6 other people would test positive for Covid-19? To calculate this, note that the probability that any given person has Covid-19 is \(1/40 = 0.025\), which means that the probability that they do \textbf{not} must be \(1 - 0.025 = 0.975\) (they either do or do not, and the probabilities must sum to 1). The probability that \textbf{all} 6 people \emph{do not} have Covid-19 is therefore \((0.975)^6 = 0.859\). Consequently, the probability that at least 1 of the 6 people \textbf{does} have Covid-19 is \(1 - 0.859 = 0.141\), or \(14.1\%\).
+\item
+  Imagine you are studying a population of sexually reproducing, diploid, animals, and you find that a particular genetic locus has 3 alleles with frequencies \(P(A_{1}) = 0.40\), \(P(A_{2}) = 0.45\), and \(P(A_{3}) = 0.15\). What is the probability that a randomly sampled animal will be heterozygous with 1 copy of the \(A_{1}\) allele and 1 copy of the \(A_{3}\) allele? Note that there are two ways for \(A_{1}\) and \(A_{3}\) to be arise in an individual, just like there were two ways to get a heads and tails coin in the section 14.1 example (see Figure 14.2). The individual could either get an \(A_{1}\) in the first position and \(A_{3}\) in the second position, or an \(A_{3}\) in the first position and \(A_{1}\) in the second position. We can therefore calculate the probability as, \(P(A_{1}) \times P(A_{3}) + P(A_{3}) \times P(A_{1})\), which is \((0.40 \times 0.15) + (0.15 \times 0.4) = 0.12\), or 12\% (in population genetics, we might use the notation \(p = P(A_{1})\) and \(r = P(A_{3})\), then note that \(2pr = 0.12\)).
+\end{enumerate}
+
+In both of these examples, we made some assumptions, which might or might not be problematic.
+In the first example, we assumed that the 6 people in our shop were a random and independent sample from the local area (i.e., people with Covid-19 are not more or less likely to be in the shop, and the 6 people in the shop were not associated in a way that would affect their individual probabilities of having Covid-19).
+In the second example, we assumed that individuals mate randomly, and that there is no mutation, migration, or selection on genotypes \citep{Hardy1908}.
+It is important to recognise these assumptions when we are making them, as violations of assumptions could affect the probabilities of events!
+
+\hypertarget{sampling-with-and-without-replacement}{%
+\section{Sampling with and without replacement}\label{sampling-with-and-without-replacement}}
+
+It is often important to make a distinction between sampling with or without replacement.
+Sampling with replacement just means that whatever has been sampled once gets put back into the population before sampling again.
+Sampling without replacement means that the whatever has been sampled does not get put back into the population.
+An example makes the distinction between sampling with and without replacement clearer.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/cards} \caption{Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 clubs (right).}\label{fig:unnamed-chunk-51}
+\end{figure}
+
+Figure 14.3 shows 10 playing cards, 5 hearts and 5 clubs.
+If we shuffle these cards thoroughly and randomly select 1 card, what is the probability of selecting a heart?
+This is simply,
+
+\[P(heart) = \frac{5\:hearts}{10\:total\:cards} = 0.5.\]
+
+What is the probability randomly selecting two hearts?
+This depends if we are sampling with or without replacement.
+If we sample 1 card, then put it back into the deck before sampling the second card, then the probability of sampling a heart does not change (in both samples, we have 5 hearts and 10 cards).
+Hence, the probability of sampling two hearts with replacement is \(P(heart) \times P(heart) = 0.5 \times 0.5 = 0.25\).
+We do not put the first card back into the deck before sampling again, then we have changed the total number of cards.
+After sampling the first heart, we have one fewer hearts in the deck and one fewer cards, so the new probability for sampling a heart becomes,
+
+\[P(heart) = \frac{4\:hearts}{9\:total\:cards} = 0.444.\]
+
+Since the probability has changed after the first heart is sampled, we need to use this adjusted probability when sampling without replacement.
+In this case, the probability of sampling two hearts is \(0.5 \times 0.444 = 0.222\).
+This is a bit lower than the probability of sampling with replacement because we have decreased the number of hearts that can be sampled.
+When sampling from a set, it is important to consider whether the sampling is done with or without replacement (in assessments, we will always make this clear).
 
 \hypertarget{probability-distributions}{%
 \section{Probability distributions}\label{probability-distributions}}
 
-Some more useful examples
+Up until this point, we have been considering the probabilities of specific outcomes.
+That is, we have considered the probability that a coin flip will be heads, that an animal will have a particular combination of alleles, or that we will randomly select a particular suit of card from a deck.
+Here we will move from specific outcomes and consider the \emph{distribution} of outcomes.
+For example, instead of finding the probability that a flipped coin lands on heads, we might want to consider the distribution of the number of times that it does (in this case, 0 times or 1 time).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-52-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 1 trial.}\label{fig:unnamed-chunk-52}
+\end{figure}
+
+This is an extremely simple distribution.
+There are only two discrete possibilities for the number of times the coin will land on heads, 0 or 1.
+And the probability of both outcomes is 0.5, so the bars in Figure 14.4 are the same height.
+Next, we will consider some more interesting distributions.
 
 \hypertarget{binomial-distribution}{%
 \subsection{Binomial distribution}\label{binomial-distribution}}
 
-Explanation, fairly straightforward
+The simple distribution with a single trial of a coin flip was actually an example of a binomial distribution.
+More generally, a binomial distribution describes the number of successes in some number of trials \citep{Miller2004}.
+The word `success' should not be taken too literally here; it does not necessarily indicate a good outcome, or an accomplishment of some kind.
+A success in the context of a binomial distribution just means that an outcome \emph{did} happen as opposed to it \emph{not} happening.
+If we define a coin flip landing on heads as a success, we could consider the probability distribution of the number of success over 10 trials (Figure 14.5)
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-53-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 10 trials.}\label{fig:unnamed-chunk-53}
+\end{figure}
+
+Figure 14.5 shows that the most probable outcome is that 5 of the 10 coins flipped will land on heads.
+This makes some sense because the probability that any 1 flip lands on heads is 0.5, and 5 is 1/2 of 10.
+But 5 out 10 heads happens only with a probability of about 0.25.
+There is also about a 0.2 probability that the outcome is 4 heads, and the same probability that the outcome is 6 heads.
+Hence, the probability that we get an outcome of between 4-6 heads is about \(0.25 + 0.2 + 0.2 = 0.65\).
+In contrast, the probability of getting all heads is very low (about 0.00098).
+
+More generally, we can define the number of successes using the random variable \(X\).
+We can then use the notation \(P(X = 5) = 0.25\) to indicate the probability of 5 successes, or \(P(4 \leq X \leq 6) = 0.65\) as the probability that the number of success being greater than or equal to 4 and less than or equal to 6.
+
+Imagine that you were told a coin was fair, then flipped it 10 times.
+Imagine that 9 flips out of the 10 came up heads.
+Given the probability distribution shown in Figure 14.5, the probability of getting 9 or more heads in 10 flips given a fair coin is very low (\(P(X \geq 9) \approx 0.011\)).
+Would you still believe that the coin is fair after these 10 trials?
+How many, or how few, heads would it take to convince you that the coin was not fair?
+This question gets to the heart of a lot of hypothesis-testing in statistics, and we will discuss it more in Week 6.
+
+Note that a binomial distribution does not need to involve a fair coin with equal probability of success and failure.
+We can consider again the first example in Section 14.2, in which 1 in 40 people in an area are testing positive for Covid-19, then ask what the probability is that 0-6 people in a small shop would test positive (Figure 14.6).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-54-1} \caption{Probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025.}\label{fig:unnamed-chunk-54}
+\end{figure}
+
+Note that the shape of this binomial distribution is different from the coin flipping trials in Figure 14.7.
+The distribution is skewed, with a high probability of 0 success and a diminishing probability of 1 or more success.\footnote{Testing an equation \[y = mx + b.\] Does this get produced inline or not?}
 
 \hypertarget{poisson-distribution}{%
 \subsection{Poisson distribution}\label{poisson-distribution}}
 
 Another example
+
+\hypertarget{uniform-distribution}{%
+\subsection{Uniform distribution}\label{uniform-distribution}}
 
 \hypertarget{normal-distribution}{%
 \subsection{Normal distribution}\label{normal-distribution}}
@@ -3293,7 +3193,7 @@ The project works with people affected, and sometimes displaced, by dam construc
 Part of this project involves the use of mobile games to investigate how people make decisions about sustainable development.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-48}
+\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-55}
 \end{figure}
 
 The game ``Power Up!'' is freely available as an \href{https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame}{Android} and \href{https://apps.apple.com/gb/app/power-up/id1585634888}{iPhone} app (Figure 16.1).
@@ -3320,7 +3220,7 @@ Next, find the check box called `Frequency tables' just under the `Split by' box
 Check this box to get a table of frequencies for Android versus iPhone users.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-49}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-56}
 \end{figure}
 
 The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
@@ -3389,7 +3289,7 @@ Figure 16.3 shows the output of Jamovi.
 A new frequency table breaks down dam choice for each OS.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-50}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-57}
 \end{figure}
 
 To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).
@@ -3425,7 +3325,7 @@ Because of how the game was designed, Score can potentially be any real number, 
 We can use a histogram to see the distribution of player scores (Figure 16.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-51-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-51}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-58-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-58}
 \end{figure}
 
 In this case, it does not really make sense to ask what the probability is of a particular score.
@@ -3465,7 +3365,7 @@ We will assume that the \emph{sample} of scores shown in Figure 16.4 came from a
 We can overlay his distribution on the histogram above using a curved line (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-52-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-52}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-59-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-59}
 \end{figure}
 
 We can interpret the area under the curve in the same way that we interpret the area in the grey bars.
@@ -3485,7 +3385,7 @@ Traditionally, we would need to do some maths to get other player score probabil
 To get Jamovi to calculate probabilities from a normal distribution, we need to go to the Modules option and download a new module (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-53}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-60}
 \end{figure}
 
 Click on the `Modules' button, and select the first option called `jamovi library' from the pull-down menu.
@@ -3494,7 +3394,7 @@ Click the `Install' button to install it into Jamovi.
 A new button in the toolbar called `distrACTION' should become visible (Figure 16.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-54}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-61}
 \end{figure}
 
 If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
@@ -3509,7 +3409,7 @@ Notice in the panel on the right that the probability is given as \(P =\) 0.237.
 This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (\(P =\) 0.237, i.e., ca 23.7 per cent).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-55}
+\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-62}
 \end{figure}
 
 To find the probability that a value is greater than 80, we could subtract our answer of 0.237 from 1, \(1 - 0.237 = 0.763\) (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
@@ -3631,7 +3531,7 @@ The \texttt{hist} function plots a histogram of the first variable.
 To run the code, find the green triangle in the upper right (Figure 16.9).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-57}
+\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-64}
 \end{figure}
 
 When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
@@ -3743,7 +3643,7 @@ Go to `Modules', and from the `Available' tab, download the `clt - Demonstration
 Once it is downloaded, go to the `Demonstrations' button in the Jamovi toolbar and select `Central Limit Theorem' from the pulldown menu.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-60}
+\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-67}
 \end{figure}
 
 To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 16.10).
