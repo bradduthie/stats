@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 14 Introduction to probability models | Statistical Techniques for Biological and Environmental Sciences</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 14 Introduction to probability models | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="bradduthie/statistical_techniques" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 14 Introduction to probability models | Statistical Techniques for Biological and Environmental Sciences" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Brad Duthie" />
+
+
+<meta name="date" content="2022-12-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="week-4-overview.html"/>
+<link rel="next" href="Chapter_15.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Techniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-is-statistics"><i class="fa fa-check"></i>What is statistics?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-module-is-important"><i class="fa fa-check"></i>Why this module is important</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching-overview"><i class="fa fa-check"></i>Teaching overview</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assessment-overview"><i class="fa fa-check"></i>Assessment overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#test-1f"><i class="fa fa-check"></i>Test 1F</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#test-1s"><i class="fa fa-check"></i>Test 1S</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#test-2s"><i class="fa fa-check"></i>Test 2S</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#mock-exam"><i class="fa fa-check"></i>Mock Exam</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi-statistical-software"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#textbooks"><i class="fa fa-check"></i>Textbooks</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#canvas"><i class="fa fa-check"></i>Canvas</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#timetable"><i class="fa fa-check"></i>Timetable</a></li>
+</ul></li>
+<li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
+<li class="chapter" data-level="" data-path="week-1-overview.html"><a href="week-1-overview.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_1.html"><a href="Chapter_1.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter_1.html"><a href="Chapter_1.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter_1.html"><a href="Chapter_1.html#logarithms"><i class="fa fa-check"></i><b>1.2</b> Logarithms</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter_1.html"><a href="Chapter_1.html#order-of-operations"><i class="fa fa-check"></i><b>1.3</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_2.html"><a href="Chapter_2.html"><i class="fa fa-check"></i><b>2</b> Data organisation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>: Preparing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1"><i class="fa fa-check"></i><b>3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2"><i class="fa fa-check"></i><b>3.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3"><i class="fa fa-check"></i><b>3.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4"><i class="fa fa-check"></i><b>3.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Statistical concepts</b></span></li>
+<li class="chapter" data-level="" data-path="week-2-overview.html"><a href="week-2-overview.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propogation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> <em>Practical</em>. Introduction to Jamovi</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
+</ul></li>
+<li class="part"><span><b>III Summary statistics</b></span></li>
+<li class="chapter" data-level="" data-path="week-3-overview.html"><a href="week-3-overview.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="Chapter_9.html"><a href="Chapter_9.html"><i class="fa fa-check"></i><b>9</b> Decimal places, significant figures, and rounding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter_9.html"><a href="Chapter_9.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>9.1</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter_9.html"><a href="Chapter_9.html#rounding"><i class="fa fa-check"></i><b>9.2</b> Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Chapter_10.html"><a href="Chapter_10.html"><i class="fa fa-check"></i><b>10</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter_10.html"><a href="Chapter_10.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="Chapter_10.html"><a href="Chapter_10.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>10.2</b> Barplots and pie charts</a></li>
+<li class="chapter" data-level="10.3" data-path="Chapter_10.html"><a href="Chapter_10.html#box-whisker-plots"><i class="fa fa-check"></i><b>10.3</b> Box-whisker plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Chapter_11.html"><a href="Chapter_11.html"><i class="fa fa-check"></i><b>11</b> Measures of central tendency</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mean"><i class="fa fa-check"></i><b>11.1</b> The mean</a></li>
+<li class="chapter" data-level="11.2" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mode"><i class="fa fa-check"></i><b>11.2</b> The mode</a></li>
+<li class="chapter" data-level="11.3" data-path="Chapter_11.html"><a href="Chapter_11.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>11.3</b> The median and quantiles</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Chapter_12.html"><a href="Chapter_12.html"><i class="fa fa-check"></i><b>12</b> Measures of spread</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Chapter_12.html"><a href="Chapter_12.html#the-range"><i class="fa fa-check"></i><b>12.1</b> The range</a></li>
+<li class="chapter" data-level="12.2" data-path="Chapter_12.html"><a href="Chapter_12.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>12.2</b> The inter-quartile range</a></li>
+<li class="chapter" data-level="12.3" data-path="Chapter_12.html"><a href="Chapter_12.html#the-variance"><i class="fa fa-check"></i><b>12.3</b> The variance</a></li>
+<li class="chapter" data-level="12.4" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-deviation"><i class="fa fa-check"></i><b>12.4</b> The standard deviation</a></li>
+<li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
+<li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>13.3</b> Calculate summary statistics</a></li>
+<li class="chapter" data-level="13.4" data-path="Chapter_13.html"><a href="Chapter_13.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>13.4</b> Reporting decimals and significant figures</a></li>
+<li class="chapter" data-level="13.5" data-path="Chapter_13.html"><a href="Chapter_13.html#comparing-across-sites"><i class="fa fa-check"></i><b>13.5</b> Comparing across sites</a></li>
+</ul></li>
+<li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
+<li class="chapter" data-level="" data-path="week-4-overview.html"><a href="week-4-overview.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> Introduction to probability models</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#an-instructive-example"><i class="fa fa-check"></i><b>14.1</b> An instructive example</a></li>
+<li class="chapter" data-level="14.2" data-path="Chapter_14.html"><a href="Chapter_14.html#biological-applications"><i class="fa fa-check"></i><b>14.2</b> Biological applications</a></li>
+<li class="chapter" data-level="14.3" data-path="Chapter_14.html"><a href="Chapter_14.html#sampling-with-and-without-replacement"><i class="fa fa-check"></i><b>14.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="14.4" data-path="Chapter_14.html"><a href="Chapter_14.html#probability-distributions"><i class="fa fa-check"></i><b>14.4</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="Chapter_14.html"><a href="Chapter_14.html#binomial-distribution"><i class="fa fa-check"></i><b>14.4.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="Chapter_14.html"><a href="Chapter_14.html#poisson-distribution"><i class="fa fa-check"></i><b>14.4.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="14.4.3" data-path="Chapter_14.html"><a href="Chapter_14.html#uniform-distribution"><i class="fa fa-check"></i><b>14.4.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="14.4.4" data-path="Chapter_14.html"><a href="Chapter_14.html#normal-distribution"><i class="fa fa-check"></i><b>14.4.4</b> Normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="Chapter_14.html"><a href="Chapter_14.html#summary-1"><i class="fa fa-check"></i><b>14.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#the-normal-distribution-and-probability"><i class="fa fa-check"></i><b>15.2</b> The normal distribution and probability</a></li>
+<li class="chapter" data-level="15.3" data-path="Chapter_15.html"><a href="Chapter_15.html#what-are-z-scores"><i class="fa fa-check"></i><b>15.3</b> What are z-scores?</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="Chapter_16.html"><a href="Chapter_16.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+</ul></li>
+<li class="part"><span><b>V Statistical inference</b></span></li>
+<li class="chapter" data-level="" data-path="week-5-overview.html"><a href="week-5-overview.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="17" data-path="sample-statistics-and-population-parameters.html"><a href="sample-statistics-and-population-parameters.html"><i class="fa fa-check"></i><b>17</b> Sample statistics and population parameters</a></li>
+<li class="chapter" data-level="18" data-path="standard-normal-distribution.html"><a href="standard-normal-distribution.html"><i class="fa fa-check"></i><b>18</b> Standard Normal Distribution</a></li>
+<li class="chapter" data-level="19" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i><b>19</b> Confidence intervals</a></li>
+<li class="chapter" data-level="20" data-path="the-t-interval.html"><a href="the-t-interval.html"><i class="fa fa-check"></i><b>20</b> The t-interval</a></li>
+<li class="chapter" data-level="21" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>21</b> <em>Practical</em>. z- and t- intervals</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals"><i class="fa fa-check"></i><b>21.1</b> Example constructing confidence intervals</a></li>
+<li class="chapter" data-level="21.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>21.2</b> Confidence interval for different levels (t- and z-)</a></li>
+<li class="chapter" data-level="21.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>21.3</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="21.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>21.4</b> Another confidence interval example?</a></li>
+</ul></li>
+<li class="part"><span><b>VI Hypothesis testing</b></span></li>
+<li class="chapter" data-level="" data-path="week-6-overview.html"><a href="week-6-overview.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
+<li class="chapter" data-level="22" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>22</b> What is hypothesis testing?</a></li>
+<li class="chapter" data-level="23" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>23</b> Making and using hypotheses and types of tests</a></li>
+<li class="chapter" data-level="24" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>24</b> An example of hypothesis testing</a></li>
+<li class="chapter" data-level="25" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>25</b> Hypothesis testing and confidence intervals</a></li>
+<li class="chapter" data-level="26" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>26</b> Student t-distribution and one sample t-test</a></li>
+<li class="chapter" data-level="27" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>27</b> Another example of a one sample t-test</a></li>
+<li class="chapter" data-level="28" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>28</b> Independent t-test</a></li>
+<li class="chapter" data-level="29" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>29</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="30" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>30</b> Violations of assumptions</a></li>
+<li class="chapter" data-level="31" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>31</b> Non-parametric tests, and what these are.</a></li>
+<li class="chapter" data-level="32" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>32</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>32.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="32.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>32.2</b> Exercise on an independent sample t-test</a></li>
+<li class="chapter" data-level="32.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>32.3</b> Exercise involving multiple comparisons</a></li>
+<li class="chapter" data-level="32.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>32.4</b> Exercise with non-parametric</a></li>
+<li class="chapter" data-level="32.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>32.5</b> Another exercise with non-parametric</a></li>
+</ul></li>
+<li class="part"><span><b>VII Review of parts I-V</b></span></li>
+<li class="chapter" data-level="" data-path="week-7-overview-reading-week.html"><a href="week-7-overview-reading-week.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
+<li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
+<li class="chapter" data-level="" data-path="week-8-overview.html"><a href="week-8-overview.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="33" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>33</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="34" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>34</b> One-way ANOVA</a></li>
+<li class="chapter" data-level="35" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>35</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="36" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>36</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="37" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>37</b> <em>Practical</em>. ANOVA and associated tests</a>
+<ul>
+<li class="chapter" data-level="37.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>37.1</b> ANOVA Exercise 1</a></li>
+<li class="chapter" data-level="37.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>37.2</b> ANOVA Exercise 2</a></li>
+<li class="chapter" data-level="37.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>37.3</b> ANOVA Exercise 3</a></li>
+<li class="chapter" data-level="37.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>37.4</b> ANOVA Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>IX Counts and Correlation</b></span></li>
+<li class="chapter" data-level="" data-path="week-9-overview.html"><a href="week-9-overview.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="38" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>38</b> Frequency and count data</a></li>
+<li class="chapter" data-level="39" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>39</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="40" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>40</b> Chi-squared test of association</a></li>
+<li class="chapter" data-level="41" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>41</b> Correlation key concepts</a></li>
+<li class="chapter" data-level="42" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>42</b> Correlation mathematics</a></li>
+<li class="chapter" data-level="43" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>43</b> Correlation hypothesis testing</a></li>
+<li class="chapter" data-level="44" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>44</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<ul>
+<li class="chapter" data-level="44.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>44.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="44.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>44.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="44.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>44.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="44.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>44.4</b> Correlation Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>X Linear Regression</b></span></li>
+<li class="chapter" data-level="" data-path="week-10-overview.html"><a href="week-10-overview.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="45" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>45</b> Regression key concepts</a></li>
+<li class="chapter" data-level="46" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>46</b> Regression validity</a></li>
+<li class="chapter" data-level="47" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>47</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="48" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>48</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="49" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>49</b> <em>Practical</em>. Using regression</a>
+<ul>
+<li class="chapter" data-level="49.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>49.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="49.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>49.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="49.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>49.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="49.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>49.4</b> Regression Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>XI Randomisation approaches</b></span></li>
+<li class="chapter" data-level="" data-path="week-11-overview.html"><a href="week-11-overview.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="50" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>50</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="51" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>51</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="52" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>52</b> Bootstrapping</a></li>
+<li class="chapter" data-level="53" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>53</b> Monte Carlo</a></li>
+<li class="chapter" data-level="54" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>54</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="54.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>54.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="54.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>54.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="54.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>54.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XII Statistical Reporting</b></span></li>
+<li class="chapter" data-level="" data-path="week-12-overview.html"><a href="week-12-overview.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="55" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>55</b> Reporting statistics</a></li>
+<li class="chapter" data-level="56" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>56</b> More introduction to R</a></li>
+<li class="chapter" data-level="57" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>57</b> More getting started with R</a></li>
+<li class="chapter" data-level="58" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>58</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="58.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>58.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="58.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>58.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="58.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>58.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
+<li class="chapter" data-level="" data-path="module-summary.html"><a href="module-summary.html"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendixA_units.html"><a href="appendixA_units.html"><i class="fa fa-check"></i><b>A</b> Statistical units</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Techniques for Biological and Environmental Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter_14" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapter 14</span> Introduction to probability models<a href="Chapter_14.html#Chapter_14" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Suppose that we flip a fair coin over a flat surface.
+There are two possibilities for how the coin lands on the surface.
+Either the coin lands on one side (heads) or the other side (tails), but we do not know the outcome in advance.
+If these two events (heads or tails) are equally likely, then we could reason that there is a 50% chance that a flipped coin will land heads up and a 50% chance that it will land heads down.
+What do we actually mean when we say this?
+For example, when we say that there is a 50% chance of the coin landing heads up, are we making a claim about our own knowledge, how coins work, or how the world works?
+We might mean that we simply do not know whether or not the coin will land heads up, so a 50-50 chance just reflects our best guess about what will actually happen when the coin is flipped.
+Alternatively, we might reason that if a fair coin were to be flipped many times, all else being equal, then about half of flips should end heads up, so a 50% chance is a reasonable prediction of what will happen in any given flip.
+Or, perhaps we reason that events such as coin flips really are guided by chance on some deeper fundamental level, such that our 50% chance reflects some real causal metaphysical process in the world.
+These are questions concerning the philosophy of probability.
+The philosophy of probability is an interesting sub-discipline in its own right, with implications that can and do affect how researchers do statistics <span class="citation">(<a href="#ref-Edwards1972" role="doc-biblioref">Edwards 1972</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>; <a href="#ref-Gelman2013" role="doc-biblioref">Gelman and Shalizi 2013</a>; <a href="#ref-Suarez2020" role="doc-biblioref">Suárez 2020</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.</p>
+<p>In this chapter, we will not worry about the philosophy of probability<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> and instead focus on the mathematical rules of probability as applied to statistics.
+These rules are important for predicting real-world events in the biological and environmental sciences.
+For example, we might need to make predictions concerning the risk of disease spreading in a population, or the risk of extreme events such as droughts occurring given increasing global temperatures.
+Probability is also important for testing scientific hypotheses.
+For example, if we sample two different groups and calculate that they have different means (e.g., two different fields have different mean soil nitrogen concentrations), we might want to know the probability that this difference between means could have arisen by chance.
+Here we will introduce practicals example of probability, then introduce some common probability distributions.</p>
+<div id="an-instructive-example" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> An instructive example<a href="Chapter_14.html#an-instructive-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Probability focuses on the outcomes of trials, such as the <strong>outcome</strong> (heads or tails) of the <strong>trial</strong> of a coin flip.
+The probability of an specific outcome is the relative number of times it is expected to happen given a large number of trials,</p>
+<p><span class="math display">\[P(outcome) = \frac{Number\:of\:times\:outcome\:occurs}{Total\:number\:of\:trials}.\]</span></p>
+<p>For the outcome of a flipped coin landing on heads,</p>
+<p><span class="math display">\[P(heads) = \frac{Flips\:landing\:on\:heads}{Total\:number\:of\:flips}.\]</span></p>
+<p>As the total number of flips becomes very large, the number of flips that land on heads should get closer and closer to half the total, <span class="math inline">\(1/2\)</span> or <span class="math inline">\(0.5\)</span> (more on this later).
+The above equations use the notation <span class="math inline">\(P(X)\)</span> to define the probability (<span class="math inline">\(P\)</span>) of some event (<span class="math inline">\(X\)</span>) happening.
+Note that the number of times an outcome occurs cannot be less than 0, so <span class="math inline">\(P(X) \geq 0\)</span> must always be true.
+Similarly, the number of times an outcome occurs cannot be greater than the number of trials; the most frequently it can happen is in <em>every</em> trial, in which case the top and bottom of the fraction has the same value.
+Hence, <span class="math inline">\(P(X) \leq 1\)</span> must also always be true.
+Probabilities therefore range from 0 (an outcome <em>never</em> happens) to 1 (an outcome <em>always</em> happens).</p>
+<p>It might be more familiar and intuitive at first to think in terms of percentages (i.e., from 0-100% chance of an outcome, rather than from 0-1), but there are good mathematical reasons for thinking about probability on a 0-1 scale (it makes calculations easier).
+For example, suppose we have two coins, and we want to calculate the probability that they will both land on heads if we flip them at the same time.
+That is, we want to know the probability that coin 1 lands on heads <strong>and</strong> coin 2 lands on heads.
+We can assume that the coins do not affect each other in any way, so each coin flip is <strong>independent</strong> of the other (i.e., the outcome of coin 1 does not affect the outcome of coin 2, and <em>vice versa</em> – this kind of assumption is often very important in statistics).
+Each coin, by itself, is expected to to land on heads with a probability of 0.5, <span class="math inline">\(P(heads) = 0.5\)</span>.
+When we want to know the probability that two or more independent events will happen, we <em>multiply</em> their probabilities.
+In the case of both coins landing on heads, the probability is therefore,</p>
+<p><span class="math display">\[P(Coin_{1} = heads\:\cap Coin_{2} = heads) = 0.5 \times 0.5 = 0.25.\]</span></p>
+<p>Note that the symbol <span class="math inline">\(\cap\)</span> is basically just a fancy way of writing ‘and’ (technically, the intersection between sets; see set theory for details).
+Verbally, all this is saying is that the probability of coin 1 landing on heads <em>and</em> the probability of coin 2 landing on heads equals 0.5 times 0.5, which equals 0.25.</p>
+<p>But why are we multiplying to get the joint probability of both coins landing on heads?
+Why not add, for example?
+Well, we could take it as a given that multiplication is the correct operation to use when calculating the probability that multiple events will occur.
+We could also do a simple experiment to confirm that 0.25 really is about right (e.g., by flipping 2 coins 100 times and recording how many times both coins land on heads).
+But neither of these would likely be particularly satisfying.
+Let us first recognise that adding the probabilities cannot be the correct answer.
+If the probability of each coin landing on heads is 0.5, the adding probabilities would imply that the probability of both landing on heads is 0.5 + 0.5 = 1.
+This does not make any sense because we know that there are other possibilities, such as both coins landing on tails, or one coin landing on heads and the other landing on tails.
+Adding probabilities cannot be the answer, but why multiply?</p>
+<p>We can think about probabilities visually, as a kind of probability space.
+When we have only one trial, then we can express the probability of an event along a line (Figure 14.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-49"></span>
+<img src="img/coin1_probability.png" alt="A drawing of a line from 0 to 1 with heads indicated below 0.5 and tails indicated above 0.5." width="100%" />
+<p class="caption">
+Figure 14.1: Total probability space for flipping a single coin and observing its outcome (heads or tails). Given a fair coin, the probability of heads equals a proportion 0.5 of the total probability space, while the probability of tails equals the remaining 0.5 proportion.
+</p>
+</div>
+<p>The total probability space is 1, and ‘heads’ occupies a density of 0.5 of the total space.
+The remaining space, also 0.5, is allocated to ‘tails’.
+If we add a second independent trial, we now need 2 dimensions of probability space (Figure 14.2).
+The probability of heads or tails for coin 1 (the horizontal axis of Figure 14.2) remains unchanged, but we add another axis (vertical this time) to think about the equivalent probability space of coin 2.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-50"></span>
+<img src="img/coin2_probability.png" alt="A square is shown with coin 1 probability on the bottom and coin 2 probability on the left side, with a cross in the centre of the square indicating a division between outcomes of coin flips (heads-heads, heads-tails, etc.)." width="100%" />
+<p class="caption">
+Figure 14.2: Total probability space for flipping two coins and observing their different possible outcomes (heads-heads, heads-tails, tails-heads, and tails-tails). Given two fair coins, the probability of flipping each equals 0.25, which corresponds to the lower left square of the probability space.
+</p>
+</div>
+<p>Now we can see that that the area in which both coin 1 and coin 2 land on heads has a proportion of 0.25 of the total area.
+This is a geometric representation of what we did when calculating <span class="math inline">\(P(Coin_{1} = heads\:\cap Coin_{2} = heads) = 0.5 \times 0.5 = 0.25.\)</span>
+The multiplication works because multiplying probabilities carves out more specific regions of probability space.
+Note that the same pattern would apply if we flipped a third coin.
+In this case, the probability of all 3 coins landing on heads would be <span class="math inline">\(0.5 \times 0.5 \times 0.5 = 0.125\)</span>, or <span class="math inline">\(0.5^{3} = 0.125\)</span>.</p>
+<p>What about when we want to know the probability of one outcome <strong>or</strong> another outcome happening?
+Here is where we add.
+Note that the probability of a coin flip landing on heads or tails must be 1 (there are only 2 possibilities!).
+What about the probability of both coins landing on the same outcome; that is, either both coins landing on heads or both landing on tails?
+We know that the probability of both coins landing on heads is <span class="math inline">\(0.25\)</span>.
+The probability of both coins landing on tails is also <span class="math inline">\(0.25\)</span>, so the probability that both coins land on either heads <strong>or</strong> tails is <span class="math inline">\(0.25 + 0.25 = 0.5\)</span>.
+The visual representation in Figure 14.2 works for this example too.
+Note that heads-heads and tails-tails outcomes are represented by the lower left and upper right areas of probability space, respectively.
+This is 0.5 (i.e., 50%) of the total probability space.</p>
+</div>
+<div id="biological-applications" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Biological applications<a href="Chapter_14.html#biological-applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Coin flips are instructive, but the relevance for biological and environmental sciences might not be immediately clear.
+In fact, probability is extremely relevant in nearly all areas of the natural sciences.
+The following are just 2 hypothetical examples where the calculations in the previous section might be usefully applied:</p>
+<ol style="list-style-type: decimal">
+<li><p>From a recent report online, you learn that 1 in 40 people in your local area are testing positive for Covid-19. You find yourself in a small shop with 6 other people. What is the probability that at least 1 of these 6 other people would test positive for Covid-19? To calculate this, note that the probability that any given person has Covid-19 is <span class="math inline">\(1/40 = 0.025\)</span>, which means that the probability that they do <strong>not</strong> must be <span class="math inline">\(1 - 0.025 = 0.975\)</span> (they either do or do not, and the probabilities must sum to 1). The probability that <strong>all</strong> 6 people <em>do not</em> have Covid-19 is therefore <span class="math inline">\((0.975)^6 = 0.859\)</span>. Consequently, the probability that at least 1 of the 6 people <strong>does</strong> have Covid-19 is <span class="math inline">\(1 - 0.859 = 0.141\)</span>, or <span class="math inline">\(14.1\%\)</span>.</p></li>
+<li><p>Imagine you are studying a population of sexually reproducing, diploid, animals, and you find that a particular genetic locus has 3 alleles with frequencies <span class="math inline">\(P(A_{1}) = 0.40\)</span>, <span class="math inline">\(P(A_{2}) = 0.45\)</span>, and <span class="math inline">\(P(A_{3}) = 0.15\)</span>. What is the probability that a randomly sampled animal will be heterozygous with 1 copy of the <span class="math inline">\(A_{1}\)</span> allele and 1 copy of the <span class="math inline">\(A_{3}\)</span> allele? Note that there are two ways for <span class="math inline">\(A_{1}\)</span> and <span class="math inline">\(A_{3}\)</span> to be arise in an individual, just like there were two ways to get a heads and tails coin in the section 14.1 example (see Figure 14.2). The individual could either get an <span class="math inline">\(A_{1}\)</span> in the first position and <span class="math inline">\(A_{3}\)</span> in the second position, or an <span class="math inline">\(A_{3}\)</span> in the first position and <span class="math inline">\(A_{1}\)</span> in the second position. We can therefore calculate the probability as, <span class="math inline">\(P(A_{1}) \times P(A_{3}) + P(A_{3}) \times P(A_{1})\)</span>, which is <span class="math inline">\((0.40 \times 0.15) + (0.15 \times 0.4) = 0.12\)</span>, or 12% (in population genetics, we might use the notation <span class="math inline">\(p = P(A_{1})\)</span> and <span class="math inline">\(r = P(A_{3})\)</span>, then note that <span class="math inline">\(2pr = 0.12\)</span>).</p></li>
+</ol>
+<p>In both of these examples, we made some assumptions, which might or might not be problematic.
+In the first example, we assumed that the 6 people in our shop were a random and independent sample from the local area (i.e., people with Covid-19 are not more or less likely to be in the shop, and the 6 people in the shop were not associated in a way that would affect their individual probabilities of having Covid-19).
+In the second example, we assumed that individuals mate randomly, and that there is no mutation, migration, or selection on genotypes <span class="citation">(<a href="#ref-Hardy1908" role="doc-biblioref">Hardy 1908</a>)</span>.
+It is important to recognise these assumptions when we are making them, as violations of assumptions could affect the probabilities of events!</p>
+</div>
+<div id="sampling-with-and-without-replacement" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Sampling with and without replacement<a href="Chapter_14.html#sampling-with-and-without-replacement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is often important to make a distinction between sampling with or without replacement.
+Sampling with replacement just means that whatever has been sampled once gets put back into the population before sampling again.
+Sampling without replacement means that the whatever has been sampled does not get put back into the population.
+An example makes the distinction between sampling with and without replacement clearer.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-51"></span>
+<img src="img/cards.jpg" alt="Close up of 10 playing cards are shown, 5 hearts (left) and 5 clubs (right). Cards decrease from 5 to ace left to right for both suits." width="100%" />
+<p class="caption">
+Figure 14.3: Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 clubs (right).
+</p>
+</div>
+<p>Figure 14.3 shows 10 playing cards, 5 hearts and 5 clubs.
+If we shuffle these cards thoroughly and randomly select 1 card, what is the probability of selecting a heart?
+This is simply,</p>
+<p><span class="math display">\[P(heart) = \frac{5\:hearts}{10\:total\:cards} = 0.5.\]</span></p>
+<p>What is the probability randomly selecting two hearts?
+This depends if we are sampling with or without replacement.
+If we sample 1 card, then put it back into the deck before sampling the second card, then the probability of sampling a heart does not change (in both samples, we have 5 hearts and 10 cards).
+Hence, the probability of sampling two hearts with replacement is <span class="math inline">\(P(heart) \times P(heart) = 0.5 \times 0.5 = 0.25\)</span>.
+We do not put the first card back into the deck before sampling again, then we have changed the total number of cards.
+After sampling the first heart, we have one fewer hearts in the deck and one fewer cards, so the new probability for sampling a heart becomes,</p>
+<p><span class="math display">\[P(heart) = \frac{4\:hearts}{9\:total\:cards} = 0.444.\]</span></p>
+<p>Since the probability has changed after the first heart is sampled, we need to use this adjusted probability when sampling without replacement.
+In this case, the probability of sampling two hearts is <span class="math inline">\(0.5 \times 0.444 = 0.222\)</span>.
+This is a bit lower than the probability of sampling with replacement because we have decreased the number of hearts that can be sampled.
+When sampling from a set, it is important to consider whether the sampling is done with or without replacement (in assessments, we will always make this clear).</p>
+</div>
+<div id="probability-distributions" class="section level2 hasAnchor" number="14.4">
+<h2><span class="header-section-number">14.4</span> Probability distributions<a href="Chapter_14.html#probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Up until this point, we have been considering the probabilities of specific outcomes.
+That is, we have considered the probability that a coin flip will be heads, that an animal will have a particular combination of alleles, or that we will randomly select a particular suit of card from a deck.
+Here we will move from specific outcomes and consider the <em>distribution</em> of outcomes.
+For example, instead of finding the probability that a flipped coin lands on heads, we might want to consider the distribution of the number of times that it does (in this case, 0 times or 1 time).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-52-1.png" alt="A barplot is shown with 2 bars, one labelled 0 and one labelled 1, both of which are the same height (0.5). The x-axis is labelled 'Times coin flip is heads'." width="672" />
+<p class="caption">
+Figure 14.4: Probability distribution for the number of times that a flipped coin lands on heads in 1 trial.
+</p>
+</div>
+<p>This is an extremely simple distribution.
+There are only two discrete possibilities for the number of times the coin will land on heads, 0 or 1.
+And the probability of both outcomes is 0.5, so the bars in Figure 14.4 are the same height.
+Next, we will consider some more interesting distributions.</p>
+<div id="binomial-distribution" class="section level3 hasAnchor" number="14.4.1">
+<h3><span class="header-section-number">14.4.1</span> Binomial distribution<a href="Chapter_14.html#binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The simple distribution with a single trial of a coin flip was actually an example of a binomial distribution.
+More generally, a binomial distribution describes the number of successes in some number of trials <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.
+The word ‘success’ should not be taken too literally here; it does not necessarily indicate a good outcome, or an accomplishment of some kind.
+A success in the context of a binomial distribution just means that an outcome <em>did</em> happen as opposed to it <em>not</em> happening.
+If we define a coin flip landing on heads as a success, we could consider the probability distribution of the number of success over 10 trials (Figure 14.5)</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-53"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-53-1.png" alt="A barplot is shown with 11 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape" width="672" />
+<p class="caption">
+Figure 14.5: Probability distribution for the number of times that a flipped coin lands on heads in 10 trials.
+</p>
+</div>
+<p>Figure 14.5 shows that the most probable outcome is that 5 of the 10 coins flipped will land on heads.
+This makes some sense because the probability that any 1 flip lands on heads is 0.5, and 5 is 1/2 of 10.
+But 5 out 10 heads happens only with a probability of about 0.25.
+There is also about a 0.2 probability that the outcome is 4 heads, and the same probability that the outcome is 6 heads.
+Hence, the probability that we get an outcome of between 4-6 heads is about <span class="math inline">\(0.25 + 0.2 + 0.2 = 0.65\)</span>.
+In contrast, the probability of getting all heads is very low (about 0.00098).</p>
+<p>More generally, we can define the number of successes using the random variable <span class="math inline">\(X\)</span>.
+We can then use the notation <span class="math inline">\(P(X = 5) = 0.25\)</span> to indicate the probability of 5 successes, or <span class="math inline">\(P(4 \leq X \leq 6) = 0.65\)</span> as the probability that the number of success being greater than or equal to 4 and less than or equal to 6.</p>
+<p>Imagine that you were told a coin was fair, then flipped it 10 times.
+Imagine that 9 flips out of the 10 came up heads.
+Given the probability distribution shown in Figure 14.5, the probability of getting 9 or more heads in 10 flips given a fair coin is very low (<span class="math inline">\(P(X \geq 9) \approx 0.011\)</span>).
+Would you still believe that the coin is fair after these 10 trials?
+How many, or how few, heads would it take to convince you that the coin was not fair?
+This question gets to the heart of a lot of hypothesis-testing in statistics, and we will discuss it more in Week 6.</p>
+<p>Note that a binomial distribution does not need to involve a fair coin with equal probability of success and failure.
+We can consider again the first example in Section 14.2, in which 1 in 40 people in an area are testing positive for Covid-19, then ask what the probability is that 0-6 people in a small shop would test positive (Figure 14.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-54"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-54-1.png" alt="A barplot is shown with 7 bars, which correspond to the probability that a given number of people have covid in a shop of 6 when the probability of infection is 0.025." width="672" />
+<p class="caption">
+Figure 14.6: Probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025.
+</p>
+</div>
+<p>Note that the shape of this binomial distribution is different from the coin flipping trials in Figure 14.5.
+The distribution is skewed, with a high probability of 0 success and a diminishing probability of 1 or more success.</p>
+<p>The shape of a statistical probability distribution can be defined mathematically.
+Depending on the details (more on this later), we call the equation defining the distribution either a probability mass function or a probability density function.
+This book is about statistical techniques, not statistical theory, so we will relegate these equations to footnotes.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>
+What is important to know is that the shape of a distribution is modulated by <strong>parameters</strong>.
+The shape of a binomial distribution is determined by 2 parameters, the number of trials (<span class="math inline">\(n\)</span>) and the probability of success (<span class="math inline">\(\theta\)</span>).
+In Figure 14.5, there were 10 trials each with a success probability of 0.5 (i.e., <span class="math inline">\(n = 10\)</span> and <span class="math inline">\(\theta = 0.5\)</span>).
+In Figure 14.6, there were 6 trials each with a success probability of 0.025 (i.e., <span class="math inline">\(n = 6\)</span> and <span class="math inline">\(\theta = 0.025\)</span>).
+This difference in parameter values is why the two probability distributions have a different shape.</p>
+</div>
+<div id="poisson-distribution" class="section level3 hasAnchor" number="14.4.2">
+<h3><span class="header-section-number">14.4.2</span> Poisson distribution<a href="Chapter_14.html#poisson-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Imagine sitting outside on a park bench along a path that is a popular route for joggers.
+On this particular day, runners pass by the bench at a steady rate of about 4 per minute, on average.
+We might then want to know the <em>distribution</em> of the number of runners passing by per minute.
+That is, given that we see 4 runners per minute on average, what is the probability that we will see just 2 runners pass in any given minute.
+What is the probability that we will see 8 runners pass in a minute?
+This hypothetical example is modelled with a poisson distribution.
+A poisson distribution describes events happening over some interval (e.g., happening over time or space).
+There are a lot of situations where a poisson distribution is relevant in biological and environmental sciences:</p>
+<ul>
+<li>Number of times a particular species will be encountered while walking a given distance.</li>
+<li>Number of animals a camera trap will record during a day.</li>
+<li>Number of floods or earthquakes that will occur in a given year.</li>
+</ul>
+<p>The shape of a poisson distribution is described by just 1 parameter, <span class="math inline">\(\lambda\)</span>.
+This parameter is both the mean and the variance of the poisson distribution.
+We can therefore get the probability that some number of events (<span class="math inline">\(x\)</span>) will occur just by knowing <span class="math inline">\(\lambda\)</span> (Figure 14.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-55"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-55-1.png" alt="Four panels are shown, each with a poisson distribution of a different rate paramter (0.5, 1.0, 2.5, and 5.0)." width="672" />
+<p class="caption">
+Figure 14.7: Poisson probability distributions given different rate parameter values.
+</p>
+</div>
+<p>Like the binomial distribution, the poisson distribution can also be defined mathematically<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.
+Also like the binomial distribution, probabilities in the poisson distribution focus on <strong>discrete</strong> observations.
+This is, probabilities are assigned to a specific number of successes in a set of trials (binomial distribution) or the number of events over time (poisson distribution).
+In both cases, the probability distribution focuses on countable numbers.
+In other words, it does not make any sense to talk about the probability of a coin landing on heads 3.75 times after 10 flips, nor the probability of 2.21 runners passing by a park bench in a given minute.
+The probability of either of these events happening is zero, which is why the Figures 14.5-14.7 all have spaces between the vertical bars.
+These spaces indicate that values between the integers are impossible.
+When observations are discrete like this, they are defined by a <em>probability mass function</em>.
+In the next section, we consider distributions with a continuous range of possible sample values; these distributions are defined by a <em>probability density function</em>.</p>
+</div>
+<div id="uniform-distribution" class="section level3 hasAnchor" number="14.4.3">
+<h3><span class="header-section-number">14.4.3</span> Uniform distribution<a href="Chapter_14.html#uniform-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We now move on to continuous distributions, starting with the continuous uniform distribution.
+We introduce this distribution mainly to clarify the difference between a discrete and continues distribution.
+While the uniform distribution is very important in a lot of statistical tools (notably, simulating pseudorandom numbers), it is not something that we come across much in biological or environmental science data.
+The continuous uniform distribution has two parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>
+Values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be any real number (not just integers).
+For example, suppose that <span class="math inline">\(\alpha = 1\)</span> and <span class="math inline">\(\beta = 2.5\)</span>.
+In this case, Figure 14.7 shows the probability distribution for sampling some value <span class="math inline">\(x\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-56"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-56-1.png" alt="A uniform distribution is shown, which appears as a grey rectangle in the middle of a plot with 'x' on the x-axis and 'Probability' on the y-axis" width="672" />
+<p class="caption">
+Figure 14.8: A continuous uniform distribution in which a random variable X takes a value between 1 and 2.5.
+</p>
+</div>
+<p>The height of the distribution in Figure 14.7 is <span class="math inline">\(1/(\beta - \alpha) = 1/(2.5 - 1) \approx 0.667\)</span>.
+All values between 1 and 2.5 have equal probability of being sampled.</p>
+<p>Here is a good place to point out the difference between the continuous distribution versus the discrete binomial and poisson distributions.
+From the uniform distribution of Figure 14.7, we can, theoretically, sample <em>any</em> real value between 1 and 2.5 (e.g., 1.34532 or 2.21194; the sampled value can have as many decimals as our measuring device allows).
+There are uncountably infinite real numbers, so it no longer makes sense to ask what the probability is of sampling a specific number.
+For example, what is the probability of sampling a value of <em>exactly</em> 2, rather than, say, 1.999999 or 2.000001, or something else arbitrarily close to 2?
+The probability of sampling a specific number exactly is negligible.
+Instead, we need to think about the probability of sampling within intervals.
+For example, what is the probability of sampling a value between 1.9 and 2.1, or any value greater than 2.2?
+This is the nature of probability when we consider continuous distributions.</p>
+</div>
+<div id="normal-distribution" class="section level3 hasAnchor" number="14.4.4">
+<h3><span class="header-section-number">14.4.4</span> Normal distribution<a href="Chapter_14.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The last distribution, the normal distribution (also known as the “Gaussian distribution” or the “bell curve”), has a special place in statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.
+It appears in many places in the biological and environmental sciences and, partly due to the central limit theorem (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>), is fundamental to many statistical tools.
+The normal distribution is continuous, just like the continuous uniform distribution from the previous section.
+Unlike the uniform distribution, with the normal distribution, it is possible (at least in theory) to sample <em>any</em> real value, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>.
+The distribution has a symmetrical, smooth bell shape (Figure 14.8), in which probability density peaks at the mean, which is also the median and mode of the distribution.
+The normal distribution has two parameters, the mean (<span class="math inline">\(\mu\)</span>) and the standard deviation (<span class="math inline">\(\sigma\)</span>).<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>
+The mean determines where the peak of the distribution is, and the standard deviation determines the width or narrowness of the distribution.
+Note that we are using <span class="math inline">\(\mu\)</span> for the mean here instead of <span class="math inline">\(\bar{x}\)</span>, and <span class="math inline">\(\sigma\)</span> for the standard deviation instead of <span class="math inline">\(s\)</span>, to differentiate between the sample estimates of <a href="Chapter_11.html#Chapter_11">Chapter 11</a> and <a href="Chapter_12.html#Chapter_12">Chapter 12</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-57"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-57-1.png" alt="A plot of a bell curve, shaded in grey and centered at the x-axis on a value of zero is shown." width="672" />
+<p class="caption">
+Figure 14.9: A standard normal probability distribution, which is defined by a mean value of 0 and a standard deviation of 1.
+</p>
+</div>
+<p>The normal distribution shown in Figure 14.9 is called the <strong>standard normal distribution</strong>, which means that it has a mean of 0 (<span class="math inline">\(\mu = 0\)</span>) and a standard deviation of 1 (<span class="math inline">\(\sigma = 1\)</span>).
+Note that because the standard deviation of a distribution is the square-root of the variance (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a>), and <span class="math inline">\(\sqrt{1} = 1\)</span>, the variance of the standard normal distribution is also 1.
+We will look at the standard normal distribution more closely in <a href="Chapter_15.html#Chapter_15">Chapter 15</a>.</p>
+</div>
+</div>
+<div id="summary-1" class="section level2 hasAnchor" number="14.5">
+<h2><span class="header-section-number">14.5</span> Summary<a href="Chapter_14.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This chapter has introduced probability models and different types of distributions.
+It has focused on the key that are especially important for understanding and implementing statistical techniques.
+As such, a lot of details have been left out.
+For example, the probability distributions considered in Section 14.4 comprise only a small number of example distributions that are relevant for biological and environmental sciences.
+In <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, we will get an even closer look at the normal distribution and why it is especially useful.</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Edwards1972" class="csl-entry">
+Edwards, A W F. 1972. <em><span class="nocase">Likelihood: An account of the statistical concept of likelihood and its application to scientific inference</span></em>. Cambridge: Cambridge University Press.
+</div>
+<div id="ref-Gelman2013" class="csl-entry">
+Gelman, Andrew, and Cosma Rohilla Shalizi. 2013. <span>“<span class="nocase">Philosophy and the practice of Bayesian statistics</span>.”</span> <em>British Journal of Mathematical and Statistical Psychology</em> 66 (1): 8–38. <a href="https://doi.org/10.1111/j.2044-8317.2011.02037.x">https://doi.org/10.1111/j.2044-8317.2011.02037.x</a>.
+</div>
+<div id="ref-Hardy1908" class="csl-entry">
+Hardy, G H. 1908. <span>“<span class="nocase">Mendelian proportions in a mixed population</span>.”</span> <em>Science</em> 28 (706): 49–50. <a href="https://doi.org/10.1126/science.28.706.49">https://doi.org/10.1126/science.28.706.49</a>.
+</div>
+<div id="ref-Mayo1996" class="csl-entry">
+Mayo, Deborah G. 1996. <em><span class="nocase">Error and the Growth of Experimental Knowledge</span></em>. Chicago: University of Chicago Press.
+</div>
+<div id="ref-Mayo2021" class="csl-entry">
+Mayo, Deborah G. 2021. <span>“<span class="nocase">Significance Tests: Vitiated or Vindicated by the Replication Crisis in Psychology?</span>”</span> <em>Review of Philosophy and Psychology</em> 12 (1): 101–20. <a href="https://doi.org/10.1007/s13164-020-00501-w">https://doi.org/10.1007/s13164-020-00501-w</a>.
+</div>
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Navarro2022" class="csl-entry">
+Navarro, Danielle J, and David R Foxcroft. 2022. <em><span class="nocase">Learning Statistics with Jamovi</span></em>. (Version 0.75). <a href="https://doi.org/10.24384/hgc3-7p15">https://doi.org/10.24384/hgc3-7p15</a>.
+</div>
+<div id="ref-Suarez2020" class="csl-entry">
+Suárez, Mauricio. 2020. <em><span class="nocase">Philosophy of Probability and Statistical Modelling</span></em>. Edited by Robert Northcott and Jacob Stegenga. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/9781108985826">https://doi.org/10.1017/9781108985826</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="12">
+<li id="fn12"><p>In the interest of transparency, this book presents a <em>frequentist</em> interpretation of probability <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>)</span>. While this approach does reflect the philosophical inclinations of the author, the reason for working from this interpretation has more to do with the statistical tests that are most appropriate for an introductory statistics module, which are also the tests most widely used in the biological and environmental sciences.<a href="Chapter_14.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>For those interested, more technically, we can say that a random variable <span class="math inline">\(X\)</span> has binomial distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[b \left(x; n, \theta \right) = {n \choose x} \theta^{x} \left(1 - \theta\right)^{n-x}.\]</span> In this binomial probability mass function, <span class="math inline">\(x = 0, 1, 2, ..., n\)</span> (i.e., <span class="math inline">\(x\)</span> can take any integer value from 0 to n). Note that the <span class="math inline">\(n\)</span> over the <span class="math inline">\(x\)</span> in the first parentheses on the right hand side of the equation is a binomial coefficient, which can be read “n choose x”. This can be written out as, <span class="math display">\[{n \choose x} = \frac{n!}{x!(n - x)!}.\]</span> Note that the exclamation mark indicates a factorial, such that <span class="math inline">\(n! = n \times (n-1) \times (n - 2) \times ... \times 2 \times 1\)</span>. That is, the factorial multiplies every decreasing integer down to 1. For example, <span class="math inline">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>. None of this is critical to know for applying statistical techniques to biological and environmental science data, but it demonstrates just a bit of the theory underlying statistical tools.<a href="Chapter_14.html#fnref13" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>A random variable <span class="math inline">\(X\)</span> has a poisson distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[p \left(x; \lambda \right) = \frac{\lambda^{x}e^{x}}{x!}.\]</span> Recall from <a href="Chapter_1.html#Chapter_1">Chapter 1</a> Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, and from footnote 13 that the exclamation mark indicates a factorial. In the poisson probability mass function, <span class="math inline">\(x\)</span> can take any integer value greater than or equal to 0.<a href="Chapter_14.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>A random variable <span class="math inline">\(X\)</span> has a continuous uniform distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[u\left(x; \alpha, \beta\right) = \frac{1}{\beta - \alpha},\]</span> where <span class="math inline">\(\alpha &lt; x &lt; \beta\)</span>, and <span class="math inline">\(u\left(x; \alpha, \beta\right) = 0\)</span> everywhere else. The value <span class="math inline">\(x\)</span> can take any real number.<a href="Chapter_14.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>A random variable <span class="math inline">\(X\)</span> has a normal distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[n\left(x; \mu, \sigma\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}}.\]</span> In the normal distribution, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>. Note the appearance of two irrational numbers introduced back in <a href="Chapter_1.html#Chapter_1">Chapter 1</a>, <span class="math inline">\(\pi\)</span> and <span class="math inline">\(e\)</span>.<a href="Chapter_14.html#fnref16" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="week-4-overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_15.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-Probability_and_CLT.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
