@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2022-12-30}
+\date{2022-12-31}
 
 \begin{document}
 \maketitle
@@ -1947,6 +1947,10 @@ For example, there are 6 fruits with a width between 1.0 and 1.2, so for this in
 In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
 The bars of the histogram touch each other, which reinforces that the data are \protect\hyperlink{Chapter_5}{continuous} \citep{Dytham2011, Sokal1995}.
 
+\begin{quote}
+\href{https://bradduthie.shinyapps.io/build_histogram/}{Click here} for an interactive application showing how histograms are built.
+\end{quote}
+
 It is especially important to be able to read and understand information from a histogram because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
 For example, the \emph{shape} of the distribution of fig fruit widths might be important for performing a particular test.
 For the purposes of this module, the \emph{shape} of the distribution just means what the data look like when plotted like this in a histogram.
@@ -2422,6 +2426,14 @@ To help with the interpretation, here is \href{https://bradduthie.shinyapps.io/f
 Here is another \href{https://bradduthie.shinyapps.io/normal_pos_neg/}{interactive tool} showing how the shape of a histogram changes when the standard deviation of a distribution is changed\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/normal_pos_neg/}}.
 The practical in \protect\hyperlink{Chapter_13}{Chapter 13} explains how to calculate the standard deviation in Jamovi.
 
+\begin{quote}
+\href{https://bradduthie.shinyapps.io/forest/}{Click here} for an interactive application to illustrate the standard deviation.
+\end{quote}
+
+\begin{quote}
+\href{https://bradduthie.shinyapps.io/normal_pos_neg/}{Click here} for an interactive application to visualise how a histogram changes given a changing standard deviation.
+\end{quote}
+
 \hypertarget{the-coefficient-of-variation}{%
 \section{The coefficient of variation}\label{the-coefficient-of-variation}}
 
@@ -2507,26 +2519,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-40}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.65 & 0.54 & 0.65 & 0.65 & 0.89 & 0.59 & 0.69 & 0.79 & 0.66 & 0.62 \\
-Sample\_2 & 0.80 & 1.07 & 0.69 & 0.60 & 0.73 & 0.58 & 0.83 & 0.84 & 0.67 & 0.64 \\
-Sample\_3 & 0.67 & 0.80 & 0.83 & 0.70 & 0.64 & 0.65 & 0.70 & 0.68 & 0.65 & 0.74 \\
-Sample\_4 & 0.76 & 0.74 & 0.65 & 0.58 & 0.72 & 0.62 & 0.56 & 0.74 & 0.68 & 0.67 \\
-Sample\_5 & 0.69 & 0.73 & 0.87 & 0.77 & 0.66 & 0.62 & 0.64 & 0.57 & 0.84 & 0.63 \\
-Sample\_6 & 0.70 & 0.67 & 0.68 & 0.60 & 0.60 & 0.87 & 0.79 & 0.54 & 0.62 & 0.71 \\
-Sample\_7 & 0.66 & 0.80 & 0.53 & 0.88 & 0.62 & 0.57 & 0.65 & 0.73 & 0.62 & 0.58 \\
-Sample\_8 & 0.67 & 0.77 & 0.77 & 0.63 & 0.66 & 0.85 & 0.56 & 0.72 & 0.74 & 0.89 \\
-Sample\_9 & 0.68 & 0.63 & 0.66 & 0.65 & 0.61 & 0.70 & 0.82 & 0.80 & 0.84 & 0.77 \\
-Sample\_10 & 0.72 & 0.85 & 0.65 & 0.83 & 0.93 & 0.86 & 0.85 & 0.52 & 0.61 & 0.67 \\
-Sample\_11 & 0.85 & 0.74 & 0.74 & 0.60 & 0.70 & 0.54 & 0.61 & 0.65 & 0.78 & 0.47 \\
-Sample\_12 & 0.78 & 0.60 & 0.73 & 0.65 & 0.62 & 0.88 & 0.55 & 0.59 & 0.68 & 0.89 \\
-Sample\_13 & 0.86 & 0.74 & 0.87 & 0.73 & 0.66 & 0.50 & 0.76 & 0.78 & 0.74 & 0.76 \\
-Sample\_14 & 0.48 & 0.55 & 0.74 & 0.71 & 0.83 & 0.73 & 0.95 & 0.70 & 0.63 & 0.70 \\
-Sample\_15 & 0.72 & 0.69 & 0.74 & 0.80 & 0.69 & 0.69 & 0.84 & 0.66 & 0.61 & 0.63 \\
-Sample\_16 & 0.67 & 0.90 & 0.66 & 0.74 & 0.87 & 0.63 & 0.63 & 0.49 & 0.95 & 0.59 \\
-Sample\_17 & 0.82 & 0.70 & 0.58 & 0.63 & 0.47 & 0.58 & 0.73 & 0.64 & 0.67 & 0.62 \\
-Sample\_18 & 0.77 & 0.64 & 0.85 & 0.78 & 0.51 & 0.69 & 0.60 & 0.60 & 0.59 & 0.67 \\
-Sample\_19 & 0.79 & 0.65 & 0.75 & 0.71 & 0.76 & 0.72 & 0.75 & 0.81 & 0.57 & 0.85 \\
-Sample\_20 & 0.69 & 0.78 & 0.74 & 0.65 & 0.85 & 0.61 & 0.90 & 0.83 & 0.78 & 0.80 \\
+Sample\_1 & 0.68 & 0.92 & 0.61 & 0.69 & 0.75 & 0.75 & 0.76 & 0.55 & 0.80 & 0.70 \\
+Sample\_2 & 0.72 & 0.90 & 0.78 & 0.80 & 0.69 & 0.84 & 0.82 & 0.63 & 0.65 & 0.80 \\
+Sample\_3 & 0.64 & 0.76 & 0.69 & 0.63 & 0.76 & 0.58 & 0.66 & 0.57 & 0.65 & 0.55 \\
+Sample\_4 & 0.83 & 0.65 & 0.75 & 0.65 & 0.67 & 0.73 & 0.70 & 0.62 & 0.75 & 0.63 \\
+Sample\_5 & 0.74 & 0.47 & 0.75 & 0.62 & 0.68 & 0.61 & 0.71 & 0.73 & 0.92 & 0.56 \\
+Sample\_6 & 0.75 & 0.70 & 0.74 & 0.54 & 0.58 & 0.71 & 0.64 & 0.66 & 0.63 & 0.89 \\
+Sample\_7 & 0.67 & 0.76 & 0.64 & 0.82 & 0.76 & 0.93 & 0.71 & 0.68 & 0.77 & 0.62 \\
+Sample\_8 & 0.52 & 0.86 & 0.85 & 0.85 & 0.75 & 0.77 & 0.69 & 0.71 & 0.90 & 0.85 \\
+Sample\_9 & 0.73 & 0.68 & 0.69 & 0.61 & 0.86 & 0.61 & 0.69 & 0.69 & 0.66 & 0.77 \\
+Sample\_10 & 0.82 & 0.73 & 0.59 & 0.60 & 0.70 & 0.79 & 0.56 & 0.69 & 0.74 & 0.70 \\
+Sample\_11 & 0.85 & 0.66 & 0.68 & 0.69 & 0.74 & 0.67 & 0.66 & 0.59 & 0.78 & 0.65 \\
+Sample\_12 & 0.97 & 0.60 & 0.65 & 0.70 & 0.75 & 0.60 & 0.84 & 0.73 & 0.61 & 0.75 \\
+Sample\_13 & 0.86 & 0.72 & 0.61 & 0.73 & 0.69 & 0.71 & 0.76 & 0.74 & 0.59 & 0.61 \\
+Sample\_14 & 0.65 & 0.76 & 0.90 & 0.69 & 0.89 & 0.65 & 0.59 & 0.91 & 0.83 & 0.83 \\
+Sample\_15 & 0.89 & 0.67 & 0.72 & 0.69 & 0.67 & 0.87 & 0.89 & 0.84 & 0.71 & 0.78 \\
+Sample\_16 & 0.61 & 0.65 & 0.75 & 0.80 & 0.70 & 0.70 & 0.79 & 0.65 & 0.67 & 0.66 \\
+Sample\_17 & 0.83 & 0.71 & 0.79 & 0.59 & 0.68 & 0.80 & 0.66 & 0.74 & 0.75 & 0.83 \\
+Sample\_18 & 0.65 & 0.70 & 0.79 & 0.75 & 0.72 & 0.66 & 0.50 & 0.77 & 0.68 & 0.64 \\
+Sample\_19 & 0.64 & 0.70 & 0.61 & 0.72 & 0.84 & 0.55 & 0.71 & 0.81 & 0.69 & 0.72 \\
+Sample\_20 & 0.70 & 0.83 & 0.69 & 0.79 & 0.63 & 0.58 & 0.72 & 0.74 & 0.92 & 0.50 \\
 \bottomrule
 \end{longtable}
 
@@ -2535,18 +2547,18 @@ These means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.673 0.745 0.706 0.672 0.702 0.678 0.664 0.726 0.716 0.749
-## [2,] 0.668 0.697 0.740 0.702 0.707 0.713 0.644 0.670 0.736 0.763
+## [1,] 0.721 0.763 0.649 0.698 0.679 0.684 0.736 0.775 0.699 0.692
+## [2,] 0.697 0.720 0.702 0.770 0.773 0.698 0.738 0.686 0.699 0.710
 \end{verbatim}
 
-The standard deviation of the sample means reported above is 0.0329233.
+The standard deviation of the sample means reported above is 0.0347237.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.1001166.
+The standard deviation of Sample 1 is \(s =\) 0.1020294.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.1001166}{\sqrt{10}} = 0.0316596.\]
+\[s = \frac{0.1020294}{\sqrt{10}} = 0.0322645.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0329233, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0316596.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0347237, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0322645.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -3314,11 +3326,76 @@ This normal distribution of sample means has important implications for statisti
 The CLT allows us to make inferences about the means of non-normally distributed distributions \citep{Sokal1995}, to create confidence intervals around estimates sample means, and to apply statistical hypothesis tests that would otherwise not be possible.
 We will look at these statistical tools in future chapters.
 
-\hypertarget{the-normal-distribution-and-probability}{%
-\section{The normal distribution and probability}\label{the-normal-distribution-and-probability}}
+\hypertarget{probability-and-z-scores}{%
+\section{Probability and z-scores}\label{probability-and-z-scores}}
 
-\hypertarget{what-are-z-scores}{%
-\section{What are z-scores?}\label{what-are-z-scores}}
+We can calculate the probability of sampling some range of values from the normal distribution if we know the distribution's mean (\(\mu\)) and standard deviation (\(\sigma\)).
+For example, because the normal distribution is symmetric around the mean (Figure 15.4), the probability of sampling a value greater than the mean will be 0.5 (i.e., \(P(x > \mu) = 0.5\)), and so will the probability of sampling a value less than the mean (i.e., \(P(x < \mu) = 0.5\)).
+Similarly, about 68.2\% of the normal distribution's probability density lies within 1 standard deviation of the mean (shaded region of Figure 15.4), which means that the probability of randomly sampling a value \(x\) that is greater than \(\mu - \sigma\) but less than \(\mu + \sigma\) is \(P(\mu - \sigma < x < \mu + \sigma) = 0.682\).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-61-1} \caption{A normal distribution in which the shaded region shows the area within one standard deviation of the mean (dotted line); that is, the shaded region starts on the left at the mean minus one standard deviation, then ends at the right at the mean plus one standard deviation. This shaded area encompases 68.2 per cent of the total area under the curve.}\label{fig:unnamed-chunk-61}
+\end{figure}
+
+Remember that total probability always needs to equal 1.
+This remains true whether it is the binomial distribution that we saw with the coin flipping example in \protect\hyperlink{Chapter_14}{Chapter 14}, or any other distribution.
+Consequently, the area under curve of the normal distribution (i.e., under the curved line of Figure 15.4) must equal 1.
+When we say that the probability of sampling a value within 1 standard deviation of the mean is 0.682, this also means that the \emph{area} of this region under the curve equals 0.682 (i.e., the shaded area in Figure 15.4).
+And, again, because the whole area under the curve sums to 1, that must mean that the unshaded area of Figure 15.4 (where \(x < \mu -\sigma\) or \(x > \mu + \sigma\)) has an area equal to \(1 - 0.682 = 0.318\).
+That is, the probability of randomly sampling a value \(x\) in this region is \(P(x < \mu - \sigma \: | \: x > \mu + \sigma) = 0.318\), or 31.8\% (note that the vertical bar, \(|\), is just a fancy way of saying `or', in this case).
+
+We can calculate other percentages using standard deviations too {[}\citet{Sokal1995}; {]}.
+For example, about 95.4\% of the probability density in a normal distribution lies between 2 standard deviations of the mean, i.e., \(P(\mu - 2\sigma < x < \mu + 2\sigma) = 0.954\).
+And about 99.6\% of the probability density in a normal distribution lies between 3 standard deviations of the mean, i.e., \(P(\mu - 3\sigma < x < \mu + 3\sigma) = 0.996\).
+We could go on mapping percentages to standard deviations like this; for example, about 93.3\% of the probability density in a normal distribution is less than \(\mu + 1.5\sigma\) (i.e., less than 1.5 standard deviations greater than the mean; see Figure 15.5).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-62-1} \caption{A normal distribution in which the shaded region shows the area under 1.5 standard deviations of the mean (dotted line). This shaded area encompases about 93.3 per cent of the total area under the curve.}\label{fig:unnamed-chunk-62}
+\end{figure}
+
+Notice that there are no numbers on the x-axes of Figure 15.4 or 15.5.
+This is deliberate; the relationship between standard deviations and percentage of probability density applies regardless of the scale.
+We could have a mean of \(\mu = 100\) and standard deviation of \(\sigma = 4\), or \(\mu = -12\) and \(\sigma = 0.34\).
+It does not matter.
+Nevertheless, it would be very useful if we could work with some standard values of \(x\) when working out probabilities.
+This is where the standard normal distribution, first introduced in \protect\hyperlink{Chapter_14}{Chapter 14}, becomes relevant.
+Recall that the standard normal distribution has a mean of \(\mu = 0\) and a standard deviation (and variance) of \(\sigma = 1\).
+With these standard values of \(\mu\) and \(\sigma\), we can start actually putting numbers on the x-axis and relating them to probabilities.
+We call these numbers \textbf{standard normal deviates}, or \textbf{z-scores} (Figure 15.6).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-63-1} \caption{A standard normal probability distribution with z-scores shown on the x-axis.}\label{fig:unnamed-chunk-63}
+\end{figure}
+
+What z-scores allow us to do is map probabilities to deviations from the mean of a standard normal distribution (hence `standard normal deviates').
+We can say, e.g., that about 95\% of the probability density lies between \(z = -1.96\) and \(z = 1.96\), or that about 99\% lies between \(z = -2.58\) and \(z = 2.58\) (this will become relevant later).
+It is important to get a good sense of what this means, so we have written an interactive application (\href{https://bradduthie.shinyapps.io/zandp/}{click here}) that visually shows how probability density changes with changing z-score.
+
+\begin{quote}
+\href{https://bradduthie.shinyapps.io/zandp/}{Click here} for an interactive application to visualise z-scores
+\end{quote}
+
+Of course, most variables that we measure in the biological and environmental sciences will not fit the standard normal distribution.
+Almost all variables will have a different mean and standard deviation, even if they are normally distributed.
+Nevertheless, we can translate any normally distributed variable into a standard normal distribution by subtracting its mean and dividing by its standard deviation.
+We can see what this looks like visually in Figure 15.7.
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-64-1} \caption{A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (a) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (b) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (a).}\label{fig:unnamed-chunk-64}
+\end{figure}
+
+In Figure 15.7a, we see the standard normal distribution curve represented by the dotted line, centered at \(\mu = 0\) and with a standard deviation of \(\sigma = 1\).
+To the right of this normal distribution we have 10000 values randomly sampled from a normal distribution with a mean of 5 and a standard deviation of 2 (note that the histogram peaks around 5 and is wider than the standard normal distribution because the standard deviation is higher).
+After subtracting 5 from all of the values in the histogram of Figure 15.7a, then dividing by 2, the data fit nicely within the standard normal curve, as shown in Figure 15.7b.
+By doing this transformation on the original dataset, z-scores can now be used with the data.
+Mathematically, here is how the calculation is made,
+
+\[z = \frac{x - \mu}{\sigma}.\]
+
+For example, if we had a value of \(x = 9.1\) in our simulated dataset, in which \(\mu = 5\) and \(\sigma = 2\), then we could calculate \(z = (9.1 - 5) / 2 = 2.05\).
+We could then use a statistical program such as Jamovi, our \href{https://bradduthie.shinyapps.io/zandp/}{interactive application}, or an old-fashioned z-table\footnote{Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map \(z\) scores to probabilities was using a \href{https://www.z-table.com/}{z table}. The table would have rows and columns mapping to different \(z\) values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The text \citet{Sokal1995} comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.} to find that only about 2\% of values are expected to be higher than \(x = 9.1\) in our normally distributed data.
+These z scores will become especially useful for calculating confidence intervals in \protect\hyperlink{Chapter_17}{Chapter 17}.
+They can also be useful for comparing values from variables or statistics measured on different scales \citep{Sokal1995, Cheadle2003, Adams2016}.
 
 \hypertarget{Chapter_16}{%
 \chapter{\texorpdfstring{\emph{Practical}. Probability and simulation}{Practical. Probability and simulation}}\label{Chapter_16}}
@@ -3350,7 +3427,7 @@ The project works with people affected, and sometimes displaced, by dam construc
 Part of this project involves the use of mobile games to investigate how people make decisions about sustainable development.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-61}
+\includegraphics[width=0.8\linewidth]{img/power_up} \caption{Welcome screen of the mobile game Power Up!}\label{fig:unnamed-chunk-65}
 \end{figure}
 
 The game ``Power Up!'' is freely available as an \href{https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame}{Android} and \href{https://apps.apple.com/gb/app/power-up/id1585634888}{iPhone} app (Figure 16.1).
@@ -3377,7 +3454,7 @@ Next, find the check box called `Frequency tables' just under the `Split by' box
 Check this box to get a table of frequencies for Android versus iPhone users.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-62}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-66}
 \end{figure}
 
 The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
@@ -3446,7 +3523,7 @@ Figure 16.3 shows the output of Jamovi.
 A new frequency table breaks down dam choice for each OS.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-63}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-67}
 \end{figure}
 
 To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).
@@ -3482,7 +3559,7 @@ Because of how the game was designed, Score can potentially be any real number, 
 We can use a histogram to see the distribution of player scores (Figure 16.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-64-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-64}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-68-1} \caption{Distribution of player scores in the game Power Up!}\label{fig:unnamed-chunk-68}
 \end{figure}
 
 In this case, it does not really make sense to ask what the probability is of a particular score.
@@ -3522,7 +3599,7 @@ We will assume that the \emph{sample} of scores shown in Figure 16.4 came from a
 We can overlay his distribution on the histogram above using a curved line (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-65-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-65}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-69-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-69}
 \end{figure}
 
 We can interpret the area under the curve in the same way that we interpret the area in the grey bars.
@@ -3542,7 +3619,7 @@ Traditionally, we would need to do some maths to get other player score probabil
 To get Jamovi to calculate probabilities from a normal distribution, we need to go to the Modules option and download a new module (Figure 16.5).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-66}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules} \caption{Jamovi tool bar, which includes an option for downloading new Modules (right hand side)}\label{fig:unnamed-chunk-70}
 \end{figure}
 
 Click on the `Modules' button, and select the first option called `jamovi library' from the pull-down menu.
@@ -3551,7 +3628,7 @@ Click the `Install' button to install it into Jamovi.
 A new button in the toolbar called `distrACTION' should become visible (Figure 16.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-67}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-71}
 \end{figure}
 
 If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
@@ -3566,7 +3643,7 @@ Notice in the panel on the right that the probability is given as \(P =\) 0.237.
 This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (\(P =\) 0.237, i.e., ca 23.7 per cent).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-68}
+\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-72}
 \end{figure}
 
 To find the probability that a value is greater than 80, we could subtract our answer of 0.237 from 1, \(1 - 0.237 = 0.763\) (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
@@ -3688,7 +3765,7 @@ The \texttt{hist} function plots a histogram of the first variable.
 To run the code, find the green triangle in the upper right (Figure 16.9).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-70}
+\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.}\label{fig:unnamed-chunk-74}
 \end{figure}
 
 When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
@@ -3800,7 +3877,7 @@ Go to `Modules', and from the `Available' tab, download the `clt - Demonstration
 Once it is downloaded, go to the `Demonstrations' button in the Jamovi toolbar and select `Central Limit Theorem' from the pulldown menu.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-73}
+\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-77}
 \end{figure}
 
 To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 16.10).

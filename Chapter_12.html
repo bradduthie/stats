@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2022-12-30" />
+<meta name="date" content="2022-12-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -262,8 +262,7 @@ div.csl-indent {
 <li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
 <ul>
 <li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
-<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#the-normal-distribution-and-probability"><i class="fa fa-check"></i><b>15.2</b> The normal distribution and probability</a></li>
-<li class="chapter" data-level="15.3" data-path="Chapter_15.html"><a href="Chapter_15.html#what-are-z-scores"><i class="fa fa-check"></i><b>15.3</b> What are z-scores?</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#probability-and-z-scores"><i class="fa fa-check"></i><b>15.2</b> Probability and z-scores</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
 <ul>
@@ -549,6 +548,12 @@ Because we are reporting <span class="math inline">\(s\)</span> in the original 
 To help with the interpretation, here is <a href="https://bradduthie.shinyapps.io/forest/">an interactive tool</a> showing how the heights of trees in a forest change across different standard deviation values<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.
 Here is another <a href="https://bradduthie.shinyapps.io/normal_pos_neg/">interactive tool</a> showing how the shape of a histogram changes when the standard deviation of a distribution is changed<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.
 The practical in <a href="Chapter_13.html#Chapter_13">Chapter 13</a> explains how to calculate the standard deviation in Jamovi.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/forest/">Click here</a> for an interactive application to illustrate the standard deviation.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/normal_pos_neg/">Click here</a> for an interactive application to visualise how a histogram changes given a changing standard deviation.</p>
+</blockquote>
 </div>
 <div id="the-coefficient-of-variation" class="section level2 hasAnchor" number="12.5">
 <h2><span class="header-section-number">12.5</span> The coefficient of variation<a href="Chapter_12.html#the-coefficient-of-variation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -614,277 +619,277 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 <tbody>
 <tr class="odd">
 <td align="left">Sample_1</td>
-<td align="right">0.74</td>
-<td align="right">0.76</td>
-<td align="right">0.71</td>
-<td align="right">0.67</td>
-<td align="right">0.54</td>
-<td align="right">0.72</td>
-<td align="right">0.61</td>
-<td align="right">0.86</td>
+<td align="right">0.56</td>
+<td align="right">0.82</td>
+<td align="right">0.56</td>
+<td align="right">0.79</td>
+<td align="right">0.60</td>
+<td align="right">0.80</td>
 <td align="right">0.59</td>
-<td align="right">0.62</td>
+<td align="right">0.58</td>
+<td align="right">0.63</td>
+<td align="right">0.79</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_2</td>
-<td align="right">0.77</td>
-<td align="right">0.78</td>
-<td align="right">0.70</td>
+<td align="right">0.69</td>
 <td align="right">0.65</td>
-<td align="right">0.67</td>
-<td align="right">0.86</td>
+<td align="right">0.50</td>
+<td align="right">0.81</td>
+<td align="right">0.54</td>
+<td align="right">0.59</td>
+<td align="right">0.55</td>
 <td align="right">0.72</td>
-<td align="right">0.75</td>
-<td align="right">0.76</td>
-<td align="right">0.79</td>
+<td align="right">0.85</td>
+<td align="right">0.59</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_3</td>
-<td align="right">0.62</td>
+<td align="right">0.82</td>
+<td align="right">0.75</td>
 <td align="right">0.77</td>
+<td align="right">0.77</td>
+<td align="right">0.72</td>
 <td align="right">0.68</td>
-<td align="right">0.78</td>
-<td align="right">0.67</td>
-<td align="right">0.90</td>
-<td align="right">0.73</td>
+<td align="right">0.60</td>
 <td align="right">0.53</td>
-<td align="right">0.74</td>
-<td align="right">0.73</td>
+<td align="right">0.71</td>
+<td align="right">0.77</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_4</td>
-<td align="right">0.82</td>
+<td align="right">0.70</td>
+<td align="right">0.69</td>
+<td align="right">0.67</td>
+<td align="right">0.64</td>
 <td align="right">0.77</td>
-<td align="right">0.62</td>
-<td align="right">0.60</td>
+<td align="right">0.82</td>
+<td align="right">0.85</td>
+<td align="right">0.66</td>
 <td align="right">0.59</td>
-<td align="right">0.74</td>
-<td align="right">0.59</td>
-<td align="right">0.81</td>
-<td align="right">0.73</td>
-<td align="right">0.80</td>
+<td align="right">0.89</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_5</td>
-<td align="right">0.69</td>
-<td align="right">0.77</td>
-<td align="right">0.56</td>
+<td align="right">0.57</td>
+<td align="right">0.57</td>
+<td align="right">0.60</td>
+<td align="right">0.80</td>
+<td align="right">0.81</td>
+<td align="right">0.75</td>
 <td align="right">0.63</td>
 <td align="right">0.72</td>
-<td align="right">0.84</td>
-<td align="right">0.60</td>
-<td align="right">0.54</td>
-<td align="right">0.77</td>
-<td align="right">0.81</td>
+<td align="right">0.65</td>
+<td align="right">0.70</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_6</td>
-<td align="right">0.54</td>
-<td align="right">0.73</td>
-<td align="right">0.78</td>
-<td align="right">0.78</td>
-<td align="right">0.72</td>
-<td align="right">0.71</td>
-<td align="right">0.79</td>
-<td align="right">0.53</td>
-<td align="right">0.70</td>
 <td align="right">0.65</td>
+<td align="right">0.73</td>
+<td align="right">0.62</td>
+<td align="right">0.60</td>
+<td align="right">0.68</td>
+<td align="right">0.82</td>
+<td align="right">0.69</td>
+<td align="right">0.77</td>
+<td align="right">0.68</td>
+<td align="right">0.69</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_7</td>
-<td align="right">0.79</td>
-<td align="right">0.80</td>
-<td align="right">0.59</td>
-<td align="right">0.65</td>
-<td align="right">0.68</td>
-<td align="right">0.71</td>
-<td align="right">0.80</td>
+<td align="right">0.96</td>
 <td align="right">0.88</td>
 <td align="right">0.73</td>
-<td align="right">0.88</td>
+<td align="right">0.67</td>
+<td align="right">0.55</td>
+<td align="right">0.67</td>
+<td align="right">0.68</td>
+<td align="right">0.66</td>
+<td align="right">0.75</td>
+<td align="right">0.69</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_8</td>
-<td align="right">0.75</td>
-<td align="right">0.76</td>
-<td align="right">0.60</td>
-<td align="right">0.50</td>
-<td align="right">0.52</td>
-<td align="right">0.67</td>
-<td align="right">0.60</td>
-<td align="right">0.72</td>
-<td align="right">0.86</td>
+<td align="right">0.71</td>
+<td align="right">0.77</td>
 <td align="right">0.68</td>
+<td align="right">0.65</td>
+<td align="right">0.57</td>
+<td align="right">0.81</td>
+<td align="right">0.65</td>
+<td align="right">0.66</td>
+<td align="right">0.56</td>
+<td align="right">0.77</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_9</td>
-<td align="right">0.52</td>
-<td align="right">0.63</td>
-<td align="right">0.69</td>
-<td align="right">0.65</td>
-<td align="right">0.60</td>
-<td align="right">0.64</td>
-<td align="right">0.59</td>
+<td align="right">0.74</td>
+<td align="right">0.92</td>
+<td align="right">0.42</td>
+<td align="right">0.88</td>
+<td align="right">0.84</td>
+<td align="right">0.81</td>
+<td align="right">0.74</td>
 <td align="right">0.77</td>
 <td align="right">0.78</td>
-<td align="right">0.80</td>
+<td align="right">0.70</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_10</td>
-<td align="right">0.73</td>
-<td align="right">0.87</td>
-<td align="right">0.63</td>
-<td align="right">0.88</td>
+<td align="right">0.71</td>
 <td align="right">0.52</td>
+<td align="right">0.88</td>
 <td align="right">0.69</td>
-<td align="right">0.57</td>
-<td align="right">0.74</td>
-<td align="right">0.67</td>
-<td align="right">0.58</td>
+<td align="right">0.48</td>
+<td align="right">0.60</td>
+<td align="right">0.62</td>
+<td align="right">0.69</td>
+<td align="right">0.82</td>
+<td align="right">0.78</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_11</td>
-<td align="right">0.60</td>
-<td align="right">0.76</td>
-<td align="right">0.58</td>
-<td align="right">0.69</td>
-<td align="right">0.74</td>
-<td align="right">0.63</td>
-<td align="right">0.62</td>
-<td align="right">0.82</td>
-<td align="right">0.71</td>
+<td align="right">0.54</td>
 <td align="right">0.65</td>
+<td align="right">0.73</td>
+<td align="right">0.75</td>
+<td align="right">0.67</td>
+<td align="right">0.69</td>
+<td align="right">0.80</td>
+<td align="right">0.89</td>
+<td align="right">0.56</td>
+<td align="right">0.61</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_12</td>
-<td align="right">0.72</td>
+<td align="right">0.85</td>
+<td align="right">0.60</td>
 <td align="right">0.67</td>
-<td align="right">0.74</td>
-<td align="right">0.49</td>
-<td align="right">0.54</td>
+<td align="right">0.70</td>
+<td align="right">0.69</td>
 <td align="right">0.61</td>
-<td align="right">0.66</td>
+<td align="right">0.89</td>
 <td align="right">0.65</td>
-<td align="right">0.76</td>
-<td align="right">0.65</td>
+<td align="right">0.70</td>
+<td align="right">0.60</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_13</td>
-<td align="right">0.59</td>
-<td align="right">0.57</td>
+<td align="right">0.54</td>
+<td align="right">0.81</td>
 <td align="right">0.71</td>
-<td align="right">0.71</td>
-<td align="right">0.80</td>
-<td align="right">0.77</td>
-<td align="right">0.70</td>
-<td align="right">0.76</td>
-<td align="right">0.76</td>
+<td align="right">0.81</td>
+<td align="right">0.69</td>
+<td align="right">0.64</td>
+<td align="right">0.66</td>
+<td align="right">0.69</td>
+<td align="right">0.50</td>
 <td align="right">0.77</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_14</td>
+<td align="right">0.61</td>
+<td align="right">0.82</td>
+<td align="right">0.68</td>
+<td align="right">0.73</td>
+<td align="right">0.74</td>
+<td align="right">0.82</td>
+<td align="right">0.66</td>
+<td align="right">0.90</td>
 <td align="right">0.69</td>
-<td align="right">0.89</td>
-<td align="right">0.71</td>
-<td align="right">0.69</td>
-<td align="right">0.92</td>
-<td align="right">0.83</td>
-<td align="right">0.88</td>
-<td align="right">0.56</td>
-<td align="right">0.59</td>
-<td align="right">0.67</td>
+<td align="right">0.55</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_15</td>
-<td align="right">0.48</td>
-<td align="right">0.67</td>
-<td align="right">0.67</td>
-<td align="right">0.77</td>
-<td align="right">0.65</td>
-<td align="right">0.72</td>
-<td align="right">0.72</td>
-<td align="right">0.75</td>
-<td align="right">0.67</td>
-<td align="right">0.72</td>
+<td align="right">0.79</td>
+<td align="right">0.61</td>
+<td align="right">0.79</td>
+<td align="right">0.74</td>
+<td align="right">0.92</td>
+<td align="right">0.80</td>
+<td align="right">0.59</td>
+<td align="right">0.73</td>
+<td align="right">0.92</td>
+<td align="right">0.68</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_16</td>
+<td align="right">0.49</td>
+<td align="right">0.65</td>
 <td align="right">0.67</td>
-<td align="right">0.80</td>
-<td align="right">0.76</td>
-<td align="right">0.70</td>
-<td align="right">0.63</td>
-<td align="right">0.63</td>
-<td align="right">0.68</td>
+<td align="right">0.72</td>
+<td align="right">0.42</td>
 <td align="right">0.71</td>
-<td align="right">0.62</td>
-<td align="right">0.81</td>
+<td align="right">0.51</td>
+<td align="right">0.69</td>
+<td align="right">0.77</td>
+<td align="right">0.76</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_17</td>
-<td align="right">0.83</td>
-<td align="right">0.51</td>
-<td align="right">0.61</td>
-<td align="right">0.79</td>
-<td align="right">0.65</td>
-<td align="right">0.77</td>
-<td align="right">0.57</td>
-<td align="right">0.87</td>
-<td align="right">0.76</td>
+<td align="right">0.71</td>
+<td align="right">0.81</td>
+<td align="right">0.66</td>
 <td align="right">0.80</td>
+<td align="right">0.66</td>
+<td align="right">0.69</td>
+<td align="right">0.74</td>
+<td align="right">0.80</td>
+<td align="right">0.70</td>
+<td align="right">0.68</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_18</td>
-<td align="right">0.83</td>
+<td align="right">0.78</td>
 <td align="right">0.75</td>
-<td align="right">0.72</td>
-<td align="right">0.62</td>
-<td align="right">0.70</td>
-<td align="right">0.78</td>
-<td align="right">0.73</td>
-<td align="right">0.78</td>
-<td align="right">0.61</td>
-<td align="right">0.60</td>
+<td align="right">0.63</td>
+<td align="right">0.88</td>
+<td align="right">0.75</td>
+<td align="right">0.86</td>
+<td align="right">0.64</td>
+<td align="right">0.66</td>
+<td align="right">0.76</td>
+<td align="right">0.83</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_19</td>
-<td align="right">0.70</td>
-<td align="right">0.85</td>
+<td align="right">0.69</td>
+<td align="right">0.78</td>
 <td align="right">0.66</td>
 <td align="right">0.63</td>
-<td align="right">0.79</td>
 <td align="right">0.73</td>
-<td align="right">0.67</td>
-<td align="right">0.68</td>
-<td align="right">0.89</td>
-<td align="right">0.78</td>
+<td align="right">0.62</td>
+<td align="right">0.81</td>
+<td align="right">0.69</td>
+<td align="right">0.59</td>
+<td align="right">0.65</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_20</td>
-<td align="right">0.74</td>
-<td align="right">0.68</td>
-<td align="right">0.75</td>
-<td align="right">0.63</td>
-<td align="right">0.69</td>
-<td align="right">0.81</td>
-<td align="right">0.51</td>
+<td align="right">0.52</td>
+<td align="right">0.62</td>
+<td align="right">0.67</td>
 <td align="right">0.64</td>
-<td align="right">0.85</td>
-<td align="right">0.70</td>
+<td align="right">0.78</td>
+<td align="right">0.78</td>
+<td align="right">0.89</td>
+<td align="right">0.82</td>
+<td align="right">0.57</td>
+<td align="right">0.72</td>
 </tr>
 </tbody>
 </table>
 <p>We can calculate the mean of each sample by calculating the mean of each row.
 These means are reported below.</p>
 <pre><code>##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.682 0.745 0.715 0.707 0.693 0.693 0.751 0.666 0.667 0.688
-## [2,] 0.680 0.649 0.714 0.743 0.682 0.701 0.716 0.712 0.738 0.700</code></pre>
-<p>The standard deviation of the sample means reported above is 0.0279452.
+## [1,] 0.672 0.649 0.712 0.728 0.680 0.693 0.724 0.683 0.760 0.679
+## [2,] 0.689 0.696 0.682 0.720 0.757 0.639 0.725 0.754 0.685 0.701</code></pre>
+<p>The standard deviation of the sample means reported above is 0.0334245.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.094962.
+The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.1122299.
 We can calculate the standard error from these sample values below,</p>
-<p><span class="math display">\[s = \frac{0.094962}{\sqrt{10}} = 0.0300296.\]</span></p>
-<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0279452, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0300296.
+<p><span class="math display">\[s = \frac{0.1122299}{\sqrt{10}} = 0.0354902.\]</span></p>
+<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0334245, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0354902.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher <span class="math inline">\(N\)</span>) or a larger number of samples.</p>
 </div>
 </div>

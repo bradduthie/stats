@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2022-12-30" />
+<meta name="date" content="2022-12-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -262,8 +262,7 @@ div.csl-indent {
 <li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
 <ul>
 <li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
-<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#the-normal-distribution-and-probability"><i class="fa fa-check"></i><b>15.2</b> The normal distribution and probability</a></li>
-<li class="chapter" data-level="15.3" data-path="Chapter_15.html"><a href="Chapter_15.html#what-are-z-scores"><i class="fa fa-check"></i><b>15.3</b> What are z-scores?</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#probability-and-z-scores"><i class="fa fa-check"></i><b>15.2</b> Probability and z-scores</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
 <ul>
@@ -459,15 +458,84 @@ This normal distribution of sample means has important implications for statisti
 The CLT allows us to make inferences about the means of non-normally distributed distributions <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, to create confidence intervals around estimates sample means, and to apply statistical hypothesis tests that would otherwise not be possible.
 We will look at these statistical tools in future chapters.</p>
 </div>
-<div id="the-normal-distribution-and-probability" class="section level2 hasAnchor" number="15.2">
-<h2><span class="header-section-number">15.2</span> The normal distribution and probability<a href="Chapter_15.html#the-normal-distribution-and-probability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="probability-and-z-scores" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Probability and z-scores<a href="Chapter_15.html#probability-and-z-scores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can calculate the probability of sampling some range of values from the normal distribution if we know the distribution’s mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>).
+For example, because the normal distribution is symmetric around the mean (Figure 15.4), the probability of sampling a value greater than the mean will be 0.5 (i.e., <span class="math inline">\(P(x &gt; \mu) = 0.5\)</span>), and so will the probability of sampling a value less than the mean (i.e., <span class="math inline">\(P(x &lt; \mu) = 0.5\)</span>).
+Similarly, about 68.2% of the normal distribution’s probability density lies within 1 standard deviation of the mean (shaded region of Figure 15.4), which means that the probability of randomly sampling a value <span class="math inline">\(x\)</span> that is greater than <span class="math inline">\(\mu - \sigma\)</span> but less than <span class="math inline">\(\mu + \sigma\)</span> is <span class="math inline">\(P(\mu - \sigma &lt; x &lt; \mu + \sigma) = 0.682\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-61"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-61-1.png" alt="A plot of a bell curve, with a range of the curve shaded in grey between negative sigma and positive sigma, symmetrical around the peak of the curve" width="672" />
+<p class="caption">
+Figure 15.4: A normal distribution in which the shaded region shows the area within one standard deviation of the mean (dotted line); that is, the shaded region starts on the left at the mean minus one standard deviation, then ends at the right at the mean plus one standard deviation. This shaded area encompases 68.2 per cent of the total area under the curve.
+</p>
 </div>
-<div id="what-are-z-scores" class="section level2 hasAnchor" number="15.3">
-<h2><span class="header-section-number">15.3</span> What are z-scores?<a href="Chapter_15.html#what-are-z-scores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Remember that total probability always needs to equal 1.
+This remains true whether it is the binomial distribution that we saw with the coin flipping example in <a href="Chapter_14.html#Chapter_14">Chapter 14</a>, or any other distribution.
+Consequently, the area under curve of the normal distribution (i.e., under the curved line of Figure 15.4) must equal 1.
+When we say that the probability of sampling a value within 1 standard deviation of the mean is 0.682, this also means that the <em>area</em> of this region under the curve equals 0.682 (i.e., the shaded area in Figure 15.4).
+And, again, because the whole area under the curve sums to 1, that must mean that the unshaded area of Figure 15.4 (where <span class="math inline">\(x &lt; \mu -\sigma\)</span> or <span class="math inline">\(x &gt; \mu + \sigma\)</span>) has an area equal to <span class="math inline">\(1 - 0.682 = 0.318\)</span>.
+That is, the probability of randomly sampling a value <span class="math inline">\(x\)</span> in this region is <span class="math inline">\(P(x &lt; \mu - \sigma \: | \: x &gt; \mu + \sigma) = 0.318\)</span>, or 31.8% (note that the vertical bar, <span class="math inline">\(|\)</span>, is just a fancy way of saying ‘or’, in this case).</p>
+<p>We can calculate other percentages using standard deviations too [<span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span>; ].
+For example, about 95.4% of the probability density in a normal distribution lies between 2 standard deviations of the mean, i.e., <span class="math inline">\(P(\mu - 2\sigma &lt; x &lt; \mu + 2\sigma) = 0.954\)</span>.
+And about 99.6% of the probability density in a normal distribution lies between 3 standard deviations of the mean, i.e., <span class="math inline">\(P(\mu - 3\sigma &lt; x &lt; \mu + 3\sigma) = 0.996\)</span>.
+We could go on mapping percentages to standard deviations like this; for example, about 93.3% of the probability density in a normal distribution is less than <span class="math inline">\(\mu + 1.5\sigma\)</span> (i.e., less than 1.5 standard deviations greater than the mean; see Figure 15.5).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-62"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-62-1.png" alt="A plot of a bell curve, with a range of the curve shaded in grey below an indicated value of 1.5 times sigma" width="672" />
+<p class="caption">
+Figure 15.5: A normal distribution in which the shaded region shows the area under 1.5 standard deviations of the mean (dotted line). This shaded area encompases about 93.3 per cent of the total area under the curve.
+</p>
+</div>
+<p>Notice that there are no numbers on the x-axes of Figure 15.4 or 15.5.
+This is deliberate; the relationship between standard deviations and percentage of probability density applies regardless of the scale.
+We could have a mean of <span class="math inline">\(\mu = 100\)</span> and standard deviation of <span class="math inline">\(\sigma = 4\)</span>, or <span class="math inline">\(\mu = -12\)</span> and <span class="math inline">\(\sigma = 0.34\)</span>.
+It does not matter.
+Nevertheless, it would be very useful if we could work with some standard values of <span class="math inline">\(x\)</span> when working out probabilities.
+This is where the standard normal distribution, first introduced in <a href="Chapter_14.html#Chapter_14">Chapter 14</a>, becomes relevant.
+Recall that the standard normal distribution has a mean of <span class="math inline">\(\mu = 0\)</span> and a standard deviation (and variance) of <span class="math inline">\(\sigma = 1\)</span>.
+With these standard values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>, we can start actually putting numbers on the x-axis and relating them to probabilities.
+We call these numbers <strong>standard normal deviates</strong>, or <strong>z-scores</strong> (Figure 15.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-63"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-63-1.png" alt="A plot of a bell curve, shaded in grey and centered at the x-axis on a value of zero is shown. The x axis is labelled 'z-score'." width="672" />
+<p class="caption">
+Figure 15.6: A standard normal probability distribution with z-scores shown on the x-axis.
+</p>
+</div>
+<p>What z-scores allow us to do is map probabilities to deviations from the mean of a standard normal distribution (hence ‘standard normal deviates’).
+We can say, e.g., that about 95% of the probability density lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span>, or that about 99% lies between <span class="math inline">\(z = -2.58\)</span> and <span class="math inline">\(z = 2.58\)</span> (this will become relevant later).
+It is important to get a good sense of what this means, so we have written an interactive application (<a href="https://bradduthie.shinyapps.io/zandp/">click here</a>) that visually shows how probability density changes with changing z-score.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/zandp/">Click here</a> for an interactive application to visualise z-scores</p>
+</blockquote>
+<p>Of course, most variables that we measure in the biological and environmental sciences will not fit the standard normal distribution.
+Almost all variables will have a different mean and standard deviation, even if they are normally distributed.
+Nevertheless, we can translate any normally distributed variable into a standard normal distribution by subtracting its mean and dividing by its standard deviation.
+We can see what this looks like visually in Figure 15.7.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-64"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-64-1.png" alt="A two panel figure, the first shows a curve of the standard normal distribution, to the right of which there is a histogram of data centred at a mean of 5 with a relatively high standard deviation. In the second figure, the histogram data fit nicely within the normal distribution" width="672" />
+<p class="caption">
+Figure 15.7: A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (a) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (b) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (a).
+</p>
+</div>
+<p>In Figure 15.7a, we see the standard normal distribution curve represented by the dotted line, centered at <span class="math inline">\(\mu = 0\)</span> and with a standard deviation of <span class="math inline">\(\sigma = 1\)</span>.
+To the right of this normal distribution we have 10000 values randomly sampled from a normal distribution with a mean of 5 and a standard deviation of 2 (note that the histogram peaks around 5 and is wider than the standard normal distribution because the standard deviation is higher).
+After subtracting 5 from all of the values in the histogram of Figure 15.7a, then dividing by 2, the data fit nicely within the standard normal curve, as shown in Figure 15.7b.
+By doing this transformation on the original dataset, z-scores can now be used with the data.
+Mathematically, here is how the calculation is made,</p>
+<p><span class="math display">\[z = \frac{x - \mu}{\sigma}.\]</span></p>
+<p>For example, if we had a value of <span class="math inline">\(x = 9.1\)</span> in our simulated dataset, in which <span class="math inline">\(\mu = 5\)</span> and <span class="math inline">\(\sigma = 2\)</span>, then we could calculate <span class="math inline">\(z = (9.1 - 5) / 2 = 2.05\)</span>.
+We could then use a statistical program such as Jamovi, our <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, or an old-fashioned z-table<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our normally distributed data.
+These z scores will become especially useful for calculating confidence intervals in <a href="#Chapter_17">Chapter 17</a>.
+They can also be useful for comparing values from variables or statistics measured on different scales <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Cheadle2003" role="doc-biblioref">Cheadle et al. 2003</a>; <a href="#ref-Adams2016" role="doc-biblioref">Adams and Collyer 2016</a>)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Adams2016" class="csl-entry">
+Adams, Dean C, and Michael L Collyer. 2016. <span>“<span class="nocase">On the comparison of the strength of morphological integration across morphometric datasets</span>.”</span> <em>Evolution</em> 70 (11): 2623–31. <a href="https://doi.org/10.1111/evo.13045">https://doi.org/10.1111/evo.13045</a>.
+</div>
+<div id="ref-Cheadle2003" class="csl-entry">
+Cheadle, Chris, Marquis P Vawter, William J Freed, and Kevin G Becker. 2003. <span>“<span class="nocase">Analysis of microarray data using Z score transformation</span>.”</span> <em>Journal of Molecular Diagnostics</em> 5 (2): 73–81. <a href="https://doi.org/10.1016/S1525-1578(10)60455-2">https://doi.org/10.1016/S1525-1578(10)60455-2</a>.
+</div>
 <div id="ref-Miller2004" class="csl-entry">
 Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
 </div>
@@ -482,6 +550,7 @@ Spiegelhalter, David. 2019. <em><span class="nocase">The Art of Statistics Learn
 <hr />
 <ol start="17">
 <li id="fn17"><p>For those interested, a mathematical proof of the CLT can be found in <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>. Here we will demonstrate the CLT by simulation. As an aside, the CLT also applies the the sum of sample values, which will also have a distribution that approaches normality as <span class="math inline">\(N \to \infty\)</span>.<a href="Chapter_15.html#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map <span class="math inline">\(z\)</span> scores to probabilities was using a <a href="https://www.z-table.com/">z table</a>. The table would have rows and columns mapping to different <span class="math inline">\(z\)</span> values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The text <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.<a href="Chapter_15.html#fnref18" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
