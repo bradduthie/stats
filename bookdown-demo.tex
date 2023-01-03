@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-01-01}
+\date{2023-01-03}
 
 \begin{document}
 \maketitle
@@ -143,79 +143,430 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-Welcome to the module. This workbook will be used throughout the semester and contain all of the information that you need for the statistical techniques (SCIU4T4) module.
+Welcome to SCIU4T4, Statistical Techniques!
+Statistical techniques are tools that allow us to make inferences about the world using data.
+These tools are indispensable in the sciences, and their importance in research continues to grow.
+Developing a statistical understanding will help you become better able to critically evaluate the scientific literature and conduct your own scientific research.
+In this module, you will learn important skills for working with biological and environmental data sets.
+Many of these skills will be directly applied in subsequent modules.
 
-\hypertarget{what-is-statistics}{%
-\section*{What is statistics?}\label{what-is-statistics}}
-\addcontentsline{toc}{section}{What is statistics?}
-
-An explanation of the material, and what will be taught.
+This preface introduces how the module will be structured.
+We recognise that this can be a daunting module, especially for students who are not confident with mathematics or computer skills.
+Our hope this semester is to build your confidence, knowledge, interest, and appreciation for statistics.
+We will do this by presenting the learning material in an interesting and accessible way, and by assessing your learning fairly and transparently, and with plenty of detailed feedback.
+If you stick with it, then by the end of this semester you should have all of the tools that you need to conduct your own statistical analysis, or to interpret the analysis of other researchers.
+We are looking forward to helping you learn!
 
 \hypertarget{why-this-module-is-important}{%
 \section*{Why this module is important}\label{why-this-module-is-important}}
 \addcontentsline{toc}{section}{Why this module is important}
 
-Some discussion of module importance
+Nearly all research in the biological and environmental sciences relies on data analysis of some kind.
+Statistical literacy is therefore important, not just for \emph{doing} research, but also for \emph{understanding} and \emph{evaluating} the research of other scientists.
+Throughout this book, we will illustrate the importance of statistics using examples inspired by, or directly sourced from, real-world projects in the biological and environmental sciences.
+Many of these examples, including those used in lab practicals, will draw from research projects conducted at the University of Stirling.
+Several examples will focus on research that is important for addressing major global challenges in sustainability, food security, conservation, or the spread of disease.
+Other examples will focus more on research that addresses fundamental scientific questions about ecology and evolution.
+We hope that you will find topics that interest you, and that this module will inspire you to learn more about statistics.
 
-\hypertarget{teaching-overview}{%
-\section*{Teaching overview}\label{teaching-overview}}
+\hypertarget{ILOs}{%
+\section*{Intended learning outcomes (ILOs)}\label{ILOs}}
+\addcontentsline{toc}{section}{Intended learning outcomes (ILOs)}
+
+Modules at the University of Stirling all include a set of Intended Learning Outcomes (ILOs).
+As the name implies, these ILOs define the core learning outcomes for a module.
+In statistical techniques, there are 4 ILOs around which the rest of the module is based.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Manipulate datasets and characterise their statistical properties.
+\item
+  Demonstrate an understanding of null hypothesis testing.
+\item
+  Choose and apply the correct statistical test to unseen data using statistical software.
+\item
+  Interpret the results of statistical tests in order to generate conclusive statements on scientific problems.
+\end{enumerate}
+
+The methods you learn in this module will be applied in future modules, including your fourth year honours dissertation project.
+It will also provide you with key data analysis skills that might be useful to you in the future, both in your personal and professional life.
+During the semester, we will highlight the relevance of these skills using real examples from biological and environmental sciences and use readings and software that are free and open access (and therefore accessible to you even after the module and your degree have completed).
+
+\hypertarget{accessibility}{%
+\section*{Accessibility}\label{accessibility}}
+\addcontentsline{toc}{section}{Accessibility}
+
+We are committed to making this module accessible, which is why the material in this book is available in multiple formats (online, PDF, audio).
+Figures in this book should have accessible contrast and colour, and informative alt images.
+The font size, type, and colour scheme should also be adjustable in the online version.
+Links should make it easy to navigate to different parts of the book.
+Lectures are provided in manageable chunks and with the option for captions.
+We have tried to be as clear as possible about the timetable, learning content, and assessments.
+If some aspect of the module is inaccessible or unclear to you, then please let us know, and we will address it!
+
+\hypertarget{teaching_overview}{%
+\section*{Teaching overview}\label{teaching_overview}}
 \addcontentsline{toc}{section}{Teaching overview}
 
-Here is how you will be taught, with online lectures, reading assignments, and face-to-face practicals.
+The learning content of this module will be delivered both online and face-to-face.
+Each week, there will be new chapters to read in this book, new lectures to watch on \href{https://canvas.stir.ac.uk}{Canvas}, and a new practice quiz.
+These can all be completed online at any time during the week.
+If possible, it is probably best to read and watch lectures before the weekly practical, then take the quiz after the practical.
+Weekly practicals are on Wednesday afternoon (Group A) or Thursday morning (Group B), depending on which group you sign up for (you only need to attend one).
+Weekly face-to-face optional help sessions are on Friday afternoons.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Practical Group A}: WED 13:05-15:55 in Cottrell 2A17
+\item
+  \textbf{Practical Group B}: THU 09:05-11:55 in Cottrell 2A17
+\item
+  \textbf{Optional Help}: FRI 15:05-17:55 in Cottrell 1A13
+\end{itemize}
+
+These are all of the scheduled face-to-face sessions, with the exception of one help session at the very end of the semester.
+See the \protect\hyperlink{schedule}{full schedule} for all of the specific dates, times, and locations of sessions.
+
+\begin{longtable}[]{@{}ll@{}}
+\caption{Summary of online and face-to-face teaching.}\tabularnewline
+\toprule
+Online material & Face-to-face sessions \\
+\midrule
+\endfirsthead
+\toprule
+Online material & Face-to-face sessions \\
+\midrule
+\endhead
+Book chapters & Weekly practicals \\
+Lecture videos & Option help sessions \\
+Practice quizzes & \\
+\bottomrule
+\end{longtable}
+
+For each weak, links to all chapters, lectures, and quizzes are available in this book (e.g., the \protect\hyperlink{Week1}{Week 1 Overview}), and on the \href{https://canvas.stir.ac.uk/courses/13075/pages/learning-and-teaching}{Learning and Teaching} page on Canvas.
+
+\hypertarget{book_chapters}{%
+\subsection*{Book chapters}\label{book_chapters}}
+\addcontentsline{toc}{subsection}{Book chapters}
+
+The book chapters that you need to read for each week are all listed at the start of each section in this book (e.g., \protect\hyperlink{Week1}{Week 1}), and in each week's \href{https://canvas.stir.ac.uk/courses/13075/pages/learning-and-teaching}{Learning and teaching content} on Canvas.
+On Canvas, this includes links to the book chapters online, PDF copies of the chapters, and audio recordings of the module coordinator reading them.
+Reading the \href{bradduthie.github.io/SCIU4T4/}{book online} gives you the option of adjusting the text size (small or large), font (serif or sans serif), and background (white, sepia, or night).
+It should be quite readable on a mobile phone, or on a computer screen.
+The PDF of the book is identical, but organised more in the form of a traditional textbook.
+An eBook is in development, but the equations do not render well.
+
+Book chapters are generally quite short, and longer chapters are broken down into manageable subsections.
+Wherever relevant, links are provided to other chapters and references, and to interactive applications that make concepts easier to visualise.
+These applications will also be embedded into Canvas.
+
+\begin{quote}
+\href{https://bradduthie.shinyapps.io/forest/}{Click here} for an example interactive application.
+\end{quote}
+
+Information that is interesting but not critical to know is generally relegated to footnotes.
+
+\hypertarget{additional_readings}{%
+\subsection*{Additional readings}\label{additional_readings}}
+\addcontentsline{toc}{subsection}{Additional readings}
+
+This book is the only one that you \textbf{need} to read to do well in this module, but each week also includes some readings that are recommend, suggested, or advanced.
+Recommended readings provide similar information to what is in this book, but more in-depth or from a slightly different perspective.
+All recommended readings will be free to view or download, so you will never need to pay for this material.
+Suggested readings provide a bit more context for the taught material, but might not always be directly relevant to the learning material of the module.
+Advanced readings go beyond the taught material and are sometimes quite technical or mathematically dense.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1842}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1842}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.6316}}@{}}
+\caption{How to interpret different reading recommendations for each week.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Reading
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Purpose
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Reading
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Category
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Purpose
+\end{minipage} \\
+\midrule
+\endhead
+Required & \textbf{Required} & Important to read (material will be assessed) \\
+Recommended & \textbf{Optional} & Useful to better understand required reading \\
+Suggested & \textbf{Optional} & Provides helpful context; not critical reading \\
+Advanced & \textbf{Optional} & Additional concepts and primary literature \\
+\bottomrule
+\end{longtable}
+
+Wherever possible, readings are free and open access (always the case for required and recommended readings), or are from inexpensive books.
+References cited in this book are also useful sources of information, but a lot of these references are from expensive statistics textbooks.
+Some of these textbooks are available in the library, and all of them are owned by the module coordinator (happily shared upon request).
+
+\hypertarget{Canvas}{%
+\section*{Canvas}\label{Canvas}}
+\addcontentsline{toc}{section}{Canvas}
+
+This module will be taught using \href{https://canvas.stir.ac.uk/}{Canvas}.
+You should be enrolled in the University of Stirling Canvas module ``SCIU4T4 - Statistical Techniques (2022/3)''.
+If for some reason you cannot access the module on Canvas, then please email the module coordinator as soon as possible (\href{mailto:alexander.duthie@stir.ac.uk}{\nolinkurl{alexander.duthie@stir.ac.uk}}).
+
+In Canvas, you will find links to all learning content, including chapters to this book, video lectures, practice quizzes, tests, and exams.
+For your benefit, there is some redundancy between the information on Canvas and the information in this book.
+All of the information in this preface is also available on Canvas.
+Similarly, weekly links to readings, lectures, practicals, and assessments are posted at the start of the sections of this book and in the \href{https://canvas.stir.ac.uk/courses/13075/pages/learning-and-teaching}{Learning and Teaching} content on Canvas.
+You will also receive weekly announcements at 08:00 on Mondays summarising what needs to be done each week (again, with relevant links).
+Our objective here is to provide a clear structure for the module and regular reminders so that you always know what is happening and when.
+
+Some aspects of the module must be completed on Canvas.
+All of the links below are also on the main Canvas page.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\href{https://canvas.stir.ac.uk/courses/13075/discussion_topics}{Discussions}} are a place where you can ask questions about the module. Each week, a new topic will be introduced so that you can ask questions pertaining to that week (we are not strict about which week you post in; this is more just to help keep everything organised). You can also ask questions anonymously on the \textbf{\href{https://padlet.com/alexanderduthie/ox0i6vbgakpvb47b}{SCIU4T4 Padlet}}. It is completely fine to ask for practice problems in the discussion boards, but please try to be as specific as possible about what you want to practice (this helps us come up with good questions).
+\item
+  \textbf{\href{https://canvas.stir.ac.uk/courses/13075/quizzes}{Quizzes}} are where all practice quizzes and assessments will be located. You must take these on Canvas, and you will need a laptop or desktop computer to complete them.
+\item
+  \textbf{\href{https://canvas.stir.ac.uk/courses/13075/users}{People}} is where you can sign up for a practical group (A or B).
+\end{itemize}
+
+In general, it is probably also easiest to watch lecture videos from within Canvas, although this should also be possible outside of Canvas using links in this book.
 
 \hypertarget{assessment-overview}{%
 \section*{Assessment overview}\label{assessment-overview}}
 \addcontentsline{toc}{section}{Assessment overview}
 
-You will have one formative test and two summatitive tests. You will also have one mock exam and one exam exam.
+This module includes 2 formative (i.e., ungraded) assessments and 3 summative (i.e., graded) assessments.
 
-\hypertarget{test-1f}{%
-\subsection*{Test 1F}\label{test-1f}}
-\addcontentsline{toc}{subsection}{Test 1F}
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0972}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3194}}@{}}
+\caption{Summary of module assessments, whether they are for practice (formative) or for a grade (summative), how much they count for the final grade, the weeks of material that the test includes, and the time of the test.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Assessment
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Weighting
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Weeks
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Time
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Assessment
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Type
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Weighting
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Weeks
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Time
+\end{minipage} \\
+\midrule
+\endhead
+Test 1F & Formative & 0\% & 1-4 & 22 FEB at 10:05-11:55 \\
+Test 1S & Summative & 25\% & 1-6 & 15 MAR at 10:05-11:55 \\
+Test 2S & Summative & 25\% & 7-10 & 05 APR at 10:05-11:55 \\
+Mock Exam & Formative & 0\% & All & To be determined \\
+Exam & Summative & 50\% & All & To be determined \\
+\bottomrule
+\end{longtable}
 
-Information about Test 1F
+All tests and exams are taken online on Canvas.
+You can access the assessments in the table above using the `\href{https://canvas.stir.ac.uk/courses/13075/quizzes}{Quizzes}' link on canvas, or access an assessment directly with the above links.
 
-\hypertarget{test-1s}{%
-\subsection*{Test 1S}\label{test-1s}}
-\addcontentsline{toc}{subsection}{Test 1S}
+Tests and exams are completed online.
+Tests and exams are open book and open note.
+You are free to use any learning materials from the module, but you \textbf{must complete your test independently}.
+In other words, you cannot confer with anyone else about the test or exam material during the test or exam (except for module instructors if you have question).
+During all tests and exams, the module coordinator will be available by email and MS Teams chat.
 
-Information about Test 1S
+\textbf{It is important to have access to a computer for all tests and exams}.
+To complete tests and exams, you will need to run statistical analyses on a laptop or desktop computer (a mobile phone will not work, or will at least be extremely inconvenient to the extent that you might not be able to complete the assessment on time).
+If you do not have access to a laptop, you can \href{https://www.stir.ac.uk/about/professional-services/information-services-and-library/current-students-and-staff/it-support-and-resources/borrowing-laptops/}{borrow one} from the library.
+If you believe that you might not have access to a computer during a test or exam, for whatever reason, please let the module coordinator know as soon as possible.
+We will work something out!
 
-\hypertarget{test-2s}{%
-\subsection*{Test 2S}\label{test-2s}}
-\addcontentsline{toc}{subsection}{Test 2S}
+\textbf{The goal of all assessments is to evaluate your learning}.
+Assessment questions will never be written to deliberately trick you, nor will they be intentionally written to be confusing.
+We want to evaluate your understanding of the learning content, not your ability to decipher test questions.
+Most questions will therefore be asked in the same way as questions in lab practicals and practice quizzes, or explained in this book.
+If you practice the skills introduced in these practicals, do the required readings, and complete weekly practice quizzes, then you should be well-prepared for tests and exams.
 
-Information about Test 1S
+University policy requires all module assessments to align with the University of Stirling \href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/academic-policy-and-practice/quality-handbook/assessment-policy-and-procedure/appendix-1-undergraduate-common-marking-scheme/}{Common Marking Scheme}.
+This means that the numeric mark (0-100) awarded needs to match up with the descriptor attainment of learning outcomes.
+If you attain most of the intended learning outcomes (\protect\hyperlink{ILOs}{ILOs}) of the module, then you should receive passing grade (40+):
 
-\hypertarget{mock-exam}{%
-\subsection*{Mock Exam}\label{mock-exam}}
-\addcontentsline{toc}{subsection}{Mock Exam}
+\begin{quote}
+``Acceptable attainment of most intended learning outcomes, displaying a qualified familiarity with a minimally sufficient range of relevant materials, and a grasp of the analytical issues and concepts which are generally reasonable, albeit insecure'' (\href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/academic-policy-and-practice/quality-handbook/assessment-policy-and-procedure/appendix-1-undergraduate-common-marking-scheme/}{University of Stirling Common Marking Scheme}).
+\end{quote}
 
-Information about the mock exam
+However, extremely high grades (80+) are intended to indicate truly exceptional work that goes above and beyond what is required to pass the module:
 
-\hypertarget{exam}{%
-\subsection*{Exam}\label{exam}}
-\addcontentsline{toc}{subsection}{Exam}
+\begin{quote}
+``{[}D{]}emonstrates outstanding quality evidenced by an ability to engage critically and analytically with source material, exhibits independent lines of argument, is highly original and uses an extremely wide range of relevant sources where appropriate'' (\href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/academic-policy-and-practice/quality-handbook/assessment-policy-and-procedure/appendix-1-undergraduate-common-marking-scheme/}{University of Stirling Common Marking Scheme}).
+\end{quote}
 
-Information about the exam
+The full \href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/academic-policy-and-practice/quality-handbook/assessment-policy-and-procedure/appendix-1-undergraduate-common-marking-scheme/}{University of Stirling Common Marking Scheme} is replicated in \protect\hyperlink{appendexA_CMS}{Appendix A} of this book.
+To align SCIU4T4 assessments to this scheme, all tests and exams will be set with 3 different types of questions:
 
-\hypertarget{jamovi-statistical-software}{%
-\section*{Jamovi statistical software}\label{jamovi-statistical-software}}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Fundamental questions: (at least 50\%).} These questions will assess the most fundamental skills of the module. Questions will focus on specific protocols that have been introduced in lectures and this book, and they will test your ability to complete these protocols and correctly report or interpret what you have done. For example, you might be asked to answer a specific question about a dataset, correctly calculate a statistic from a dataset in \protect\hyperlink{jamovi}{Jamovi} (e.g., the mean, or confidence intervals), or interpret statistical output (e.g., output from a particular statistical test). These are the kinds of questions that you can prepare for with practice and repetition. And we are happy to provide practice questions in the \href{https://canvas.stir.ac.uk/courses/13075/discussion_topics}{Canvas Discussion} upon request.
+\item
+  \textbf{Conceptual questions: (at least 30\%).} These questions will assess more advanced learning content in the lectures and this book, and they might therefore require a greater depth of understanding of the relevant statistical concepts that you have learned. Instead of simply repeating a statistical calculation or procedure, these questions might require you to demonstrate an appreciable understanding of the underlying statistical concepts. For example, instead of simply asking you to report the answer for a specific calculation, a question might leave it up to you to use your understanding of statistics to decide what calculation needs to be performed. Or, rather than asking you to run a particular statistical test and provide a result, a conceptual question might require you to choose and then correctly apply the appropriate test based on properties of a dataset.
+\item
+  \textbf{Advanced questions: (no more than 20\%).} These questions are intended to provide you with the opportunity to demonstrate an exceptional degree of understanding, problem-solving, and analytical skills. Advanced questions might require you to apply knowledge gained from independent learning outside the lectures and this book. The topics of these questions will be relevant for the range of weeks that the assessment includes (e.g., for Test 1S, you will only be asked material that is relevant to topics from weeks 1-6), but they will not be questions that have been previously introduced or explored. Again, the point of these questions is to allow you to demonstrate exceptional understanding of the material and independence in your statistical learning (not to shake your confidence).
+\end{enumerate}
+
+Question types will be clearly separated into different sections on all assessments, and will be presented in order 1-3.
+We strongly recommend that you attempt these questions in this order, and that you do not attempt advanced (3) questions until you are first feeling confident about your answers to fundamental (1) and conceptual questions (2).
+Separating questions into these categories is intended to ensure alignment with the university \href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/academic-policy-and-practice/quality-handbook/assessment-policy-and-procedure/appendix-1-undergraduate-common-marking-scheme/}{Common Marking Scheme}, and to give you a clearer idea of what to expect.
+
+\hypertarget{tests}{%
+\subsection*{Tests}\label{tests}}
+\addcontentsline{toc}{subsection}{Tests}
+
+Tests are written so that they can be completed in 1 hour, but you will have 2 hours to complete them.
+At the time of writing, this is the university recommended approach for accommodating any technical difficulties that might arise during online assessments, and for accommodating students with an Agreed Record of University Access Adjustments (ARUUA).
+If you have any concerns, then please get in touch with the module coordinator.
+We will listen, and do our best to help!
+
+All tests will consist of 25 questions in total.
+Questions will be a combination of multiple choice, multiple answer, and fill in the blank.
+Practice quizzes, and especially the first formative test (Test 1F), will match the format of summative tests (Test 1S and Test 2S) as closely as possible.
+
+About 1 hour before each test, you will receive an email at your University of Stirling email address that includes any datasets needed to complete the test.
+The email will contain `SCIU4T4' in the subject line.
+If you have not received this email 30 minutes before the test starts, then please let the module coordinator know as soon as possible.
+It is entirely fine to have a look at the datasets before the test starts.
+Be sure to get comfortable in your test environment!
+
+\hypertarget{exams}{%
+\subsection*{Exams}\label{exams}}
+\addcontentsline{toc}{subsection}{Exams}
+
+Exams are basically long tests.
+Exams are written so that they can be completed in 2 hours, but you will have 4 hours to complete them (see the \protect\hyperlink{tests}{Tests} section above for an explanation of the timing).
+Exams will consist of 50 questions in total.
+Questions will be multiple choice, multiple answer, and fill in the blank.
+As with tests, you will receive an email at your University of Stirling email address about 1 hour before an exam that includes any datasets needed to complete the exam.
+
+The formative mock exam will match the format and content of the summative exam as closely as possible.
+
+\hypertarget{feedback}{%
+\subsection*{Feedback}\label{feedback}}
+\addcontentsline{toc}{subsection}{Feedback}
+
+After all tests and the mock exam, you will receive a detailed feedback report.
+This report will walk you through the assessment questions, explain how to answer them correctly, and, where possible, explain why you might have answered questions incorrectly.
+This report will be made available to you on Canvas within 21 working days of the assessment (in practice, we will try to get assessments graded as quickly as possible).
+
+\hypertarget{extenuating_circumstances}{%
+\subsection*{Extenuating circumstances}\label{extenuating_circumstances}}
+\addcontentsline{toc}{subsection}{Extenuating circumstances}
+
+If you encounter personal difficulties that make it impossible to sit a test or exam, then you will need to file for Extenuating Circumstances.
+For more information, or to submit a request, you can go to the \href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/student-information/exams/extenuating-circumstances/}{Extenuating Circumstances} webpage.
+If you need help, or want some guidance, then please feel free to get in touch with the module coordinator.
+Discussions surrounding extenuating circumstances will be kept strictly confidential.
+Note that because all assessments are tests or exams, it is not possible to apply for an extension request as you would for an assignment in other modules (i.e., tests and exams cannot be taken late except under extenuating circumstances).
+
+\hypertarget{practicals}{%
+\section*{Practicals}\label{practicals}}
+\addcontentsline{toc}{section}{Practicals}
+
+Each week, there will be a practical session to learn and practice using statistical tools.
+Practical instructions are located in the last chapter of each book section (e.g., \protect\hyperlink{Chapter_3}{Chapter 3} for week 1, or \protect\hyperlink{Chapter_8}{Chapter 8} for week 2).
+Practical sessions are held in room Cottrell 2A17 on either Wednesdays from 13:05-15:55 (Group A) or Thursdays from 09:05-11:55 (Group B).
+When you get to the practical, there will be quick introduction, then you will work through the practical in a mostly self-guided way (feel free to converse with your classmates and help one another too).
+Instructors will be walking around the room to answer any questions that you have and help you if you get stuck.
+These instructors will include the lecturer leading the week's content, the module coordinator, and module demonstrators.
+Module demonstrators include postgraduate researchers who have experience in data analysis from their own ongoing PhD work.
+
+Some practicals will take the full 2 hours and 50 minutes, while others might be completed in less time.
+Before you complete the practical, it is a good idea to check in with one of the instructors to make sure that you have not missed anything.
+While practicals are not assessed, the skills that you learn during module practicals are absolutely critical for being able to correctly answer questions on the tests and exams.
+Practicals exist to provide a low-pressure environment for learning these skills, so we hope that you can take your time on these, relax, and focus on completing them with the support of your instructors and classmates.
+If you finish early, then you are welcome to continue exploring the practical topic and ask questions, but you are not required to stay the full 2 hours and 50 minutes.
+If for some reason you find that the practical environment is not conducive to learning for you, then please let the module coordinator know.
+
+\hypertarget{help}{%
+\section*{Optional help hours}\label{help}}
+\addcontentsline{toc}{section}{Optional help hours}
+
+Face-to-face help is available to you every Friday in room Cottrell 1A113 from 15:05-17:55.
+You are very welcome to come in during this time to ask questions about the learning content of the week, and to get some extra help with the practical if you were unable to finish it.
+Learning statistics requires a lot practice and repetition, so it is entirely okay to ask the same question multiple times if you think that it will help you better understand something.
+This is not at all an inconvenience to the teaching team; we know that this material is challenging, and we want to help you understand it!
+
+Note that the scheduled help hours are probably the easiest way to get in touch with the teaching team for some one-on-one help.
+Nevertheless, you are also free to contact the module coordinator by email, MS Teams, or some other means if you have a question.
+Ad hoc meetings can also be set up during the week if necessary.
+
+\hypertarget{jamovi}{%
+\section*{Jamovi statistical software}\label{jamovi}}
 \addcontentsline{toc}{section}{Jamovi statistical software}
 
-Introduction to \href{https://www.jamovi.org/}{Jamovi}, and why we are using it instead of other software.
+There are a lot of different software packages for running statistical analyses.
+Previous versions of this module have been taught using \href{https://www.minitab.com/en-us/}{Minitab} or \href{https://www.ibm.com/uk-en/products/spss-statistics}{SPSS}.
+This year, and for the foreseeable future, we are using \href{https://www.jamovi.org/}{Jamovi}.
+There are a lot of tangible benefits to using \href{https://www.jamovi.org/}{Jamovi}:
 
-\hypertarget{textbooks}{%
-\section*{Textbooks}\label{textbooks}}
-\addcontentsline{toc}{section}{Textbooks}
+\begin{itemize}
+\tightlist
+\item
+  It is user-friendly, with a point and click interface that is more intuitive than other software.
+\item
+  It is free and open source, which means that you will be able to use it even after you have finished this module and your degree.
+\item
+  It is written by a community of statisticians and scientists with a focus on teaching.
+\item
+  It works on Windows, Mac, Linux, or Chrome, and can even be operated \href{https://www.jamovi.org/cloud.html}{in a browser}.
+\item
+  It is lightweight, and less prone to crashing than other statistical software.
+\item
+  It is built on top of the \href{https://www.r-project.org/about.html}{R statistical programming language}, which makes it easier to transition to learning R.
+\end{itemize}
 
-Introduction to the primary textbook \href{https://www.learnstatswithjamovi.com/}{Learning statistics with jamovi}, and a mention of other sources.
+In short, Jamovi has a lot of advantages that make it the best option for you to learn statistics, apply your learning in future projects, and build on the skills in this module in future course work.
 
-\hypertarget{canvas}{%
-\section*{Canvas}\label{canvas}}
-\addcontentsline{toc}{section}{Canvas}
+In the computer labs on campus, you can access Jamovi using \href{https://appsanywhere.stir.ac.uk/}{AppsAnywhere}.
+For your personal devices, you can \href{https://www.jamovi.org/download.html}{download Jamovi here} (recommended).
+You can also run Jamovi \href{https://www.jamovi.org/cloud.html}{from a browser}, but there are currently some time limitations for doing this (sessions are limited to 45 minutes).
 
-How we will use Canvas, and how this book relates to it (Learning and Teaching content, where lectures, assessments, and discussions can be found).
+This module will also introduce R, although we will not really use R by itself until \protect\hyperlink{Week_11}{Week 11}.
+Prior to \protect\hyperlink{Week_11}{Week 11}, there will be a few R commands scattered throughout lab practicals to ease you into it and accomplish some very specific tasks (e.g., generating random numbers).
+Because Jamovi is built on top of R, R can be run directly from within Jamovi to do these tasks.
+Anyone who is especially interested in learning about R and what it can do is welcome to attend fortnightly sessions of \href{https://stirlingcodingclub.github.io/studyGroup/}{Stirling Coding Club}, which is run by the module coordinator.
+Sessions are run online using MS Teams and do not require any active participation (i.e., you can just watch; contact the module coordinator if you want to be included in the group).
+
+The R programming language has become by far the most popular software for doing statistics in biology and environmental sciences (we will see why in \protect\hyperlink{Week_11}{Week 11}).
+It is highly flexible and can be used for all kinds of projects.
+This book was entirely written in R using software called ``Rmarkdown'' and ``\href{https://pandoc.org/}{Pandoc}''.
 
 \hypertarget{timetable}{%
 \section*{Timetable}\label{timetable}}
@@ -271,11 +622,19 @@ Week & Date & Day & Time & Room & Lead & Session \\
 \bottomrule
 \end{longtable}
 
+\hypertarget{license}{%
+\section*{License}\label{license}}
+\addcontentsline{toc}{section}{License}
+
+This book is licensed under \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{CC BY-NC-ND 4.0}.
+You can copy and redistribute this material however you want as long as you give credit to the authors, a copyright notice, a link to the original book, and an indication if the material has been modified.
+You may not use this material for commercial purposes.
+
 \hypertarget{part-background-mathematics-and-data-organisation}{%
 \part{Background mathematics and data organisation}\label{part-background-mathematics-and-data-organisation}}
 
-\hypertarget{week-1-overview}{%
-\chapter*{Week 1 Overview}\label{week-1-overview}}
+\hypertarget{Week1}{%
+\chapter*{Week 1 Overview}\label{Week1}}
 \addcontentsline{toc}{chapter}{Week 1 Overview}
 
 \begin{longtable}[]{@{}
@@ -285,8 +644,9 @@ Week & Date & Day & Time & Room & Lead & Session \\
 \endhead
 \textbf{Dates} & 23 January 2023 - 27 January 2023 \\
 \textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 1-2 \\
-& \textbf{Recommended:} \citet{Wickham2014} (\href{https://www.jstatsoft.org/index.php/jss/article/view/v059i10/772}{Download}) \\
-& \textbf{Optional:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/02-A-brief-introduction-to-research-design.html}{Section 2.1} \\
+& \textbf{Recommended:} None \\
+& \textbf{Suggested:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/02-A-brief-introduction-to-research-design.html}{Section 2.1} \\
+& \textbf{Advanced:} \citet{Wickham2014} (\href{https://www.jstatsoft.org/index.php/jss/article/view/v059i10/772}{Download}) \\
 \textbf{Lectures} & 1.0: Introduction to Module (20 min.) \\
 & 1.1: Numbers and operations (18 min.) \\
 & 1.2: Orders of operations (7 min.) \\
@@ -1063,8 +1423,8 @@ If you have time at the end of the lab, we recommend exploring the spreadsheet i
 \hypertarget{part-statistical-concepts}{%
 \part{Statistical concepts}\label{part-statistical-concepts}}
 
-\hypertarget{week-2-overview}{%
-\chapter*{Week 2 Overview}\label{week-2-overview}}
+\hypertarget{Week2}{%
+\chapter*{Week 2 Overview}\label{Week2}}
 \addcontentsline{toc}{chapter}{Week 2 Overview}
 
 \begin{longtable}[]{@{}
@@ -1075,8 +1435,8 @@ If you have time at the end of the lab, we recommend exploring the spreadsheet i
 \textbf{Dates} & 30 January 2023 - 3 February 2023 \\
 \textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 4-7 \\
 & \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#the-spreadsheet}{Section 3.3}-\href{https://davidfoxcroft.github.io/lsj-book/getting-started-with-jamovi.html\#summary-1}{3.9} \\
-& \textbf{Optional:} \citet{Rowntree2018} Chapter 2 \\
-& \textbf{Advanced:} \citet{Spiegelhalter2019} Chapters 1-3 \\
+& \textbf{Suggested:} \citet{Rowntree2018} Chapter 2 \\
+& \textbf{Advanced:} None \\
 \textbf{Lectures} & 2.0: Introduction to Week 2 (2 min.) \\
 & 2.1: Why study statistics? (18 min.) \\
 & 2.2: Populations and samples (7 min.) \\
@@ -1804,8 +2164,8 @@ If you still have time at the end of the lab practical, it might be a good idea 
 \hypertarget{part-summary-statistics}{%
 \part{Summary statistics}\label{part-summary-statistics}}
 
-\hypertarget{week-3-overview}{%
-\chapter*{Week 3 Overview}\label{week-3-overview}}
+\hypertarget{Week3}{%
+\chapter*{Week 3 Overview}\label{Week3}}
 \addcontentsline{toc}{chapter}{Week 3 Overview}
 
 \begin{longtable}[]{@{}
@@ -1816,7 +2176,8 @@ If you still have time at the end of the lab practical, it might be a good idea 
 \textbf{Dates} & 6 February 2023 - 10 February 2023 \\
 \textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 9-12 \\
 & \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/05-Drawing-graphs.html}{Chapter 5} and \href{https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html\#measures-of-central-tendency}{Chapter 4.1} \\
-& \textbf{Optional:} \citet{Rowntree2018} Chapter 3 \\
+& \textbf{Suggested:} \citet{Rowntree2018} Chapter 3 \\
+& \textbf{Advanced:} None \\
 \textbf{Lectures} & 3.0: Decimal places and significant figures part 1 (8 min.) \\
 & 3.1: Decimal places and significant figures part 2 (7 min.) \\
 & 3.2: Graphs (11 min.) \\
@@ -1866,17 +2227,22 @@ In your assessments, you will frequently be asked to report an answer to a speci
 \hypertarget{decimal-places-and-significant-figures}{%
 \section{Decimal places and significant figures}\label{decimal-places-and-significant-figures}}
 
-A higher number of digits communicates a greater level of accuracy
+A higher number of digits communicates a greater level of accuracy.
 For example, the number 2.718 expresses a higher precision than 2.7 does.
 Reporting 2.718 implies that we know the value is somewhere between 2.7175 and 2.1785, but reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 \citep{Sokal1995}.
-These numbers therefore have a different number of \emph{decimal places} and a different number \emph{significant figures}.
+These numbers therefore have a different number of \emph{decimal places} and a different number of \emph{significant figures}.
 Decimal places and significant figures are related, but not the same.
 
-\textbf{Decimal places} are conceptually easier to understand. These are just the number of digits to the right of the decimal point. For example, 2.718 has 3 decimal places and 2.7 has 1 decimal place.
+\textbf{Decimal places} are conceptually easier to understand. These are just the number of digits to the right of the decimal point. For example, 2.718 has 3 decimal places, and 2.7 has 1 decimal place.
 
-\textbf{Significant figures} are a bit more challenging. These are the number of digits that you need to infer the accuracy of a value. For example, the number 2.718 has 4 significant figures and 2.7 has 2 significant figures. This sounds straightforward, but it can get confusing when numbers start or end with zeros. For example, the number 0.045 has only two significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy). In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.44995 and 0.45005, not just 0.0445 and 0.0455). Lastly, the measurement 4500 has only 2 significant figures because the last 2 zeros are only serving as a placeholder to indicate magnitude, not accuracy (if we wanted to represent 4500 with 4 significant figures, we could use scientific notation and express it as \(4.500 \times 10^3\)).
+\textbf{Significant figures} are a bit more challenging.
+These are the number of digits that you need to infer the accuracy of a value.
+For example, the number 2.718 has 4 significant figures and 2.7 has 2 significant figures. This sounds straightforward, but it can get confusing when numbers start or end with zeros.
+For example, the number 0.045 has only 2 significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy).
+In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.44995 and 0.45005, not just 0.0445 and 0.0455).
+Lastly, the measurement 4500 has only 2 significant figures because the last 2 zeros are only serving as a placeholder to indicate magnitude, not accuracy (if we wanted to represent 4500 with 4 significant figures, we could use scientific notation and express it as \(4.500 \times 10^3\)).
 
-Here is a table with some examples of some numbers, their decimal places, and their significant figures.
+Here is a table with some examples of numbers, their decimal places, and their significant figures.
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{Numbers are presented in rows of the first column. Decimal places and significant figures for each row number are presented in the second and third column, respectively.}\tabularnewline
@@ -1903,15 +2269,15 @@ For assessments, make sure that you are confident that you can report your answe
 \hypertarget{rounding}{%
 \section{Rounding}\label{rounding}}
 
-Often if you are asked to report a number to a specific number of decimals or significant figures, you will need to round the number.\\
+Often if you are asked to report a number to a specific number of decimals or significant figures, you will need to round the number.
 Rounding reduces the number of significant digits in a number, which might be necessary if a number that we calculate has more significant digits than we are justified in expressing.
 There are different rules for rounding numbers, but in this module, we will follow \citet{Sokal1995}.
 When rounding to the nearest decimal, the last decimal written should not be changed if the number that immediately follows is 0, 1, 2, 3, or 4.
 If the number that immediately follows is 5, 6, 7, 8, or 9, then the last decimal written should be increased by 1.
 
 For example, if we wanted to round the number 3.141593 to 2 significant digits, then we would write it as 3.1 because the digit that immediately follows (i.e., the third digit) is 4.
-If we wanted to round the number to 5 significant digits, then we would write it as 3.1415 because the digit that immediately follows is 9.
-And if we wanted to round 3.141593 to 4 significant digits, then we would write it as 3.146 because the digit that immediately follows is 5.
+If we wanted to round the number to 5 significant digits, then we would write it as 3.1416 because the digit that immediately follows is 9.
+And if we wanted to round 3.141593 to 4 significant digits, then we would write it as 3.142 because the digit that immediately follows is 5.
 Note that this does not just apply for decimals.
 If we wanted to round 1253 to 3 significant figures, then we would round by writing it as 1250.
 
@@ -1936,7 +2302,7 @@ Original number & Significant figures & Rounded number \\
 \bottomrule
 \end{longtable}
 
-In this module, it will be necessary to round calculated values to specified decimal or significant figure.
+In this module, it will be necessary to round calculated values to a specified decimal or significant figure.
 It is therefore important to understand the rules for rounding and why the values in the table above are rounded correctly.
 
 \hypertarget{Chapter_10}{%
@@ -1944,12 +2310,12 @@ It is therefore important to understand the rules for rounding and why the value
 
 Graphs are useful tools for visualising and communicating data.
 Graphs come in many different types, and different types of graphs are effective for different types of data.
-This chapter focuses on four types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.
+This chapter focuses on 4 types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.
 
 After collecting or obtaining a new dataset, it is almost always a good idea to plot the data in some way.
-Visualising a dataset can often highlight important and obvious properties of a dataset more efficiently that inspecting raw data, calculating summary statistics, or running statistical tests.
-When making graphs to communicate data visually, it is important to ensure the person reading the graph has a clear understanding what is being presented.
-In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descripting caption, and indicating what any graph symbols mean.
+Visualisation can often highlight important and obvious properties of a dataset more efficiently that inspecting raw data, calculating summary statistics, or running statistical tests.
+When making graphs to communicate data visually, it is important to ensure that the person reading the graph has a clear understanding of what is being presented.
+In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descriptive caption, and indicating what any graph symbols mean.
 In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or unnecessary distractions from the information being conveyed \citep{Dytham2011, Kelleher2011}.
 It is also important to ensure that graphs are as accessible as possible, e.g., by providing strong colour contrast and appropriate colour combinations \citep{Elavsky2022}, and alternative text for images where possible.
 As a guide, the histogram, pie chart, barplot, and box-whisker plot below illustrate good practice when making graphs.
@@ -1959,17 +2325,16 @@ As a guide, the histogram, pie chart, barplot, and box-whisker plot below illust
 
 Histograms illustrate the distribution of \protect\hyperlink{Chapter_5}{continuous data}.
 They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
-The histogram shown in Figure 10.1 provides an example from the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8}.
+The histogram shown in Figure 10.1 provides an example using the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8} (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}})..
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-32}
 \end{figure}
 
-The histogram in Figure 10.1 shows how many fruits there are for different intervals of width (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}}).
-That is, the frequency with which fruits within some width interval occur in the data.
+The histogram in Figure 10.1 shows how many fruits there are for different intervals of width, i.e., the frequency with which fruits within some width interval occur in the data.
 For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
 In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
-The bars of the histogram touch each other, which reinforces that the data are \protect\hyperlink{Chapter_5}{continuous} \citep{Dytham2011, Sokal1995}.
+The bars of the histogram touch each other, which reinforces the idea that the data are \protect\hyperlink{Chapter_5}{continuous} \citep{Dytham2011, Sokal1995}.
 
 \begin{quote}
 \href{https://bradduthie.shinyapps.io/build_histogram/}{Click here} for an interactive application showing how histograms are built.
@@ -1977,15 +2342,15 @@ The bars of the histogram touch each other, which reinforces that the data are \
 
 It is especially important to be able to read and understand information from a histogram because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
 For example, the \emph{shape} of the distribution of fig fruit widths might be important for performing a particular test.
-For the purposes of this module, the \emph{shape} of the distribution just means what the data look like when plotted like this in a histogram.
+For the purposes of this chapter, the \emph{shape} of the distribution just means what the data look like when plotted like this in a histogram.
 In this case, there is a peak toward the centre of the distribution, with fewer low and high values (this kind of distribution is quite common).
-Different distribution shapes will be discussed more in Part IV (next week).
+Different distribution shapes will be discussed more in \protect\hyperlink{Week4}{Week 4}.
 
 \hypertarget{barplots-and-pie-charts}{%
 \section{Barplots and pie charts}\label{barplots-and-pie-charts}}
 
 While histograms are an effective way of visualising \protect\hyperlink{Chapter_5}{continuous data}, barplots (also known as `bar charts' or `bar graphs') and pie charts can be used to visualise \protect\hyperlink{Chapter_5}{categorical data}.
-For example, in the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set \protect\hyperlink{Chapter_8}{Chapter 8}, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
+For example, in the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from \protect\hyperlink{Chapter_8}{Chapter 8}, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).
 
 \begin{figure}
@@ -1993,8 +2358,8 @@ A barplot could be used to show how many samples were collected from each tree (
 \end{figure}
 
 In Figure 10.2, each tree is represented by a separate bar on the x-axis.
-Unlike a histogram, the bars do not touch each other, which reinforces that different categories of data are being shown (in this case, different trees).
-The height of bar indicates how many fruits were sampled for each tree.
+Unlike a histogram, the bars do not touch each other, which reinforces the idea that different categories of data are being shown (in this case, different trees).
+The height of a bar indicates how many fruits were sampled for each tree.
 For example, 14 fruits were sampled from tree A, and 22 fruits were sampled from tree B.
 At a glance, it is therefore possible to compare different trees and make inferences about how they differ in sampled fruits.
 
@@ -2007,30 +2372,30 @@ A pie chart could be used to evaluate this, with pie slices corresponding to dif
 \includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-34-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-34}
 \end{figure}
 
-Pie charts can be useful in some situations, but in the biological and environmental they are not used as often as barplots.
+Pie charts can be useful in some situations, but in the biological and environmental sciences, they are not used as often as barplots.
 In contrast to pie charts, barplots present the absolute quantities (in Figure 10.2, e.g., the actual number of fruits sampled per tree), and it is still possible with barplots to infer the percentage each category contributes to the total from the relative sizes of the bars.
 Pie charts, in contrast, only illustrate relative percentages unless numbers are used to indicate absolute quantities.
-Unless only percentage is important, barplots are often the preferred way to communicate count data.
+Unless percentage alone is important, barplots are often the preferred way to communicate count data.
 
 \hypertarget{box-whisker-plots}{%
 \section{Box-whisker plots}\label{box-whisker-plots}}
 
 Box-whisker plots (also called boxplots) can be used to visualise distributions in a different way than histograms.
-Instead of presenting the full distribution, as in a histogram, a box-whisker plot shows where summary statistics are located (summary statistics are explained below).
+Instead of presenting the full distribution, as in a histogram, a box-whisker plot shows where summary statistics are located (summary statistics are explained in \protect\hyperlink{Chapter_11}{Chapter 11} and \protect\hyperlink{Chapter_12}{Chapter 12}).
 This allows the distribution of data to be represented in a more compact way, but does not show the full shape of a distribution.
-Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histogram of fig fruit widths (10.4B).
-In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).
+Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4a) with a histogram of fig fruit widths (10.4b).
+In other words, both of the panels (`a' and `b') in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram.}\label{fig:unnamed-chunk-35}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Boxplot (a) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (b) presents the same data as a histogram.}\label{fig:unnamed-chunk-35}
 \end{figure}
 
-To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5A) are located in the histogram (Figure 10.5B).
+To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5a) are located in the histogram (Figure 10.5b).
 These summary statistics include the median (black circles of Figure 10.5), quartiles (red squares of Figure 10.5), and the limits of the distribution (i.e., the minimum and maximum values; blue triangles of Figure 10.5).
 Note that in boxplots, if outliers exist, they are presented as separate points.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-36}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Boxplot (a) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (b) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (b).}\label{fig:unnamed-chunk-36}
 \end{figure}
 
 One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
@@ -2055,17 +2420,17 @@ Throughout this section, verbal and mathematical explanations of summary statist
 The point of doing this is to help connect the two ways of summarising the data.
 All of the summary statistics that follow describe calculations for a \emph{sample} and are therefore estimates of the true values in a \emph{population}.
 Recall from \protect\hyperlink{Chapter_4}{Chapter 4} the difference between a population and a sample.
-This module focuses on statistical techniques, not statistical theory, so summary statistics will just focus on how to estimate statistics from sampled data instead of how statistics are defined mathematically\footnote{If interested, a good textbook for learning about theoretical statistics and the mathematics underlying what we do in this module is \citet{Miller2004}. Note, \citet{Miller2004} will not be useful for this module.}.
+This module focuses on statistical techniques, not statistical theory, so summary statistics will just focus on how to estimate statistics from sampled data instead of how statistics are defined mathematically\footnote{If interested, a good textbook for learning about theoretical statistics and the mathematics underlying what we do in this module is \citet{Miller2004}.}.
 
 \hypertarget{the-mean}{%
 \section{The mean}\label{the-mean}}
 
 The arithmetic mean (hereafter just \emph{the mean}\footnote{There are other types of means, such as the geometric mean or the harmonic mean, but we will not use these at all in this module.}) of a sample is one of the most commonly reported statistics when communicating information about a dataset.
-The mean is a measure of central tendency, so it is located somewhere in the centre of a distribution.
-Figure 10.7 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located
+The mean is a measure of central tendency, so it is located somewhere in the middle of a distribution.
+Figure 11.1 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-38-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-38}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-38-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico. The mean of the distribution is indicated with an arrow.}\label{fig:unnamed-chunk-38}
 \end{figure}
 
 The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data \citep{Sokal1995}.
@@ -2083,10 +2448,10 @@ To calculate the mean of a sample, we just need to add up all of the values and 
 
 \[\bar{x} = \frac{4.2 + 5.0 + 3.1 + 4.2 + 3.8 + 4.6 + 4.0 + 3.5}{8}.\]
 
-Note that I have used the symbol \(\bar{x}\) to represent the mean of \(x\), which is a common notation \citep{Sokal1995}.
+Note that we have used the symbol \(\bar{x}\) to represent the mean of \(x\), which is a common notation \citep{Sokal1995}.
 In the example above, \(\bar{x} = 4.05\).
 
-Writing the calculation above is not a problem because we only have 8 points of data.
+Writing the full calculation above is not a problem because we only have 8 points of data.
 But sample sizes are often much larger than 8.
 If we had a sample size of 80 or 800, then there is no way that we could write down every number to show how the mean is calculated.
 One way to get around this is to use ellipses and just show the first and last couple of numbers,
@@ -2128,7 +2493,7 @@ Next, we can rewrite the top of the equation in a different form using a summati
 \[\sum_{i = 1}^{8}x_{i} = x_{1} + x_{2} + x_{3} + x_{4} + x_{5} + x_{6} + x_{7} + x_{8}.\]
 Like the use of \(x_{i}\), the summation sign \(\sum\) takes some getting used to, but here it just means ``sum up all of the \(x_{i}\) values''.
 You can think of it as a big `S' that just says ``sum up''.
-The bottom of the S is the starting point and the top of it is the ending point for adding numbers.
+The bottom of the S tells you the starting point, and the top of it tells you the ending point, for adding numbers.
 Verbally, we can read this as saying, ``starting with \(i = 1\), add up all of the \(x_{i}\) values until \(i = 8\)''.
 We can then replace the long list of \(x\) values with a summation,
 
@@ -2164,7 +2529,7 @@ As a simple example, we can again consider the sample dataset of 8 values.
 
 In this dataset, the values 5.0, 3.1, 3.8, 4.6, 4.0, and 3.5 are all represented once.
 But the value 4.2 appears twice, once in the first position and once in the fourth position.
-Because 4.2 therefore appears most frequently in the dataset, it is the mode of the dataset.
+Because 4.2 appears most frequently in the dataset, it is the mode of the dataset.
 
 Note that it is possible for a dataset to have more than one mode.
 Also, somewhat confusingly, distributions that have more than one peak are often described as multimodal, even if the peaks are not of the same height \citep{Sokal1995}.
@@ -2206,14 +2571,14 @@ The median is a type of quantile.
 A quantile divides a sorted dataset into different percentages that are lower or higher than it.
 Hence, the median could also be called the 50\% quantile because 50\% of values are lower than the median and 50\% of values are higher than it.
 Two other quantiles besides the median are also noteworthy.
-The first quartile (also called the ``lower quartile'') defines the value for which 25\% of values of lower and 75\% of values are higher.
+The first quartile (also called the ``lower quartile'') defines the value for which 25\% of values are lower and 75\% of values are higher.
 The third quartile (also called the ``upper quartile'') defines the value for which 75\% of values are lower and 25\% of values are higher.
 Sometimes this is easy to calculate.
 For example, if there are only five values in a dataset, then the lower quartile is the number in the second position when the data are sorted because 1 value (25\%) is below it and 3 values (75\%) are above it.
 For example, for the values \{1, 3, 4, 8, 9\}, the value 3 is the first quartile and 8 is the third quartile.
 
 In some cases, it is not always this clear.
-We can show how quantiles get more complicated using the same 8 values as above where the first quartiles is somewhere between 3.5 and 3.8.
+We can show how quantiles get more complicated using the same 8 values as above where the first quartile is somewhere between 3.5 and 3.8.
 
 \begin{verbatim}
 3.1, 3.5, 3.8, 4.0, 4.2, 4.2, 4.6, 5.0
@@ -2236,13 +2601,13 @@ But it is important to recognise that different statistical tools might give dif
 
 It is often important to know how much a set of numbers is spread out.
 That is, do all of the data cluster close to the mean, or are most values distant from the mean.
-For example, all of the numbers below are quite close to the mean of 5.0 (three numbers are exactly 5.0).
+For example, all of the numbers below are quite close to the mean of 5.0 (3 numbers are exactly 5.0).
 
 \begin{verbatim}
 4.9, 5.3, 5.0, 4.7, 5.1, 5.0, 5.0
 \end{verbatim}
 
-In contrast, all of the numbers that follow are relatively distant to the same mean of 5.0.
+In contrast, all of the numbers that follow are relatively distant from the same mean of 5.0.
 
 \begin{verbatim}
 3.0, 5.6, 7.8, 1.2, 4.3, 8.2, 4.9
@@ -2261,13 +2626,13 @@ The best approach to learning them is to see them and practice using them in dif
 The range of a set of numbers is probably the most intuitive measure of spread.
 It is simply the difference between the highest and the lowest value of a dataset \citep{Sokal1995}.
 To calculate it, we just need to take the highest value minus the lowest value.
-If we want to be fancy, then we can write a general equation for the range of a variable \(X\),
+If we want to be fancy, then we can write a general equation for the range of a random variable \(X\),
 
 \[Range(X) = \max(X) - \min(X).\]
 
 But really, all that we need to worry about is finding the highest and lowest values, then subtracting.
 Consider again the two sets of numbers introduced at the beginning of the chapter.
-In examples, it is often helpful to imagine numbers as something concrete that has been measured, so suppose that these numbers are the measured masses (in grams) of leaves from two different plants.
+In examples, it is often helpful to imagine numbers as representing something concrete that has been measured, so suppose that these numbers are the measured masses (in grams) of leaves from two different plants.
 Below are the masses of plant A, in which leaf masses are very similar and close to the mean of 5.
 
 \begin{verbatim}
@@ -2294,7 +2659,7 @@ Plant B therefore has a much higher range than plant A.
 It is important to mention that the range is highly sensitive to outliers \citep{Navarro2022}.
 Just adding a single number to either plant A or plant B could dramatically change the range.
 For example, imagine if we measured a leaf in plant A to have a mass of 19.7 g (i.e., we found a huge leaf!).
-The range of plant A would then be \(19.7 - 4.7 = 14\).
+The range of plant A would then be \(19.7 - 4.7 = 14\) instead of 0.6!
 Just this one massive leaf would then make the range of plant A double the range of plant B.
 This lack of robustness can really limit how useful the range is as a statistical measure of spread.
 
@@ -2345,10 +2710,12 @@ The one outlier therefore has a huge effect on the range, but only a modest effe
 \section{The variance}\label{the-variance}}
 
 The range and inter-quartile range were reasonably intuitive, in the sense that it is not too difficult to think about what a range of 10, e.g., actually means in terms of the data.
-We now move into measures of spread that are less intuitive.
+We now move to measures of spread that are less intuitive.
 These measures of spread are the variance, standard deviation, coefficient of variation, and standard error.
 These can be confusing and unintuitive at first, but they are extremely useful.
-The variance of a dataset (is a measure of the expected distance of data from the mean.
+We will start with the variance; this section is long because we want to break the variance down carefully, step by step.
+
+The sample variance of a dataset is a measure of the expected distance of data from the mean.
 To calculate the variance of a sample, we need to know the sample size (\(N\), i.e., how many measurements in total), and the mean of the sample (\(\bar{x}\)).
 We can calculate the variance of a sample (\(s^{2}\)) as follows,
 
@@ -2362,8 +2729,8 @@ This part of the equation is called the \textbf{sum of squares} (\(SS\)),
 
 \[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}\]
 
-That is, we need to subtract the mean of each value \(x_{i}\), square the result, and add everything up.
-Once we have this sum \(SS\), then we just need to multiply by \(1 / (N - 1)\) to get the variance.
+That is, we need to subtract the mean from each value \(x_{i}\), square the result, and add everything up.
+Once we have this sum, \(SS\), then we just need to multiply by \(1 / (N - 1)\) to get the variance.
 
 An example of how to do the actual calculation should help make it easier to understand what is going on.
 We can use the same values from plant A earlier.
@@ -2373,8 +2740,8 @@ We can use the same values from plant A earlier.
 \end{verbatim}
 
 To calculate the variance of plant A leaf masses, we start with the sum of squares.
-That is, take 4.7, subtract the sample mean of 5.0 (\(4.7 - 5.0 = -0.3\)), then square the result (\((-0.3)^{2} = 0.09\)).
-We do the same for 4.9, \((4.9 - 5.0)^{2} = 0.1\), and add it to the 0.09, then continue down the list of numbers finishing with 5.3.
+That is, take 4.9, subtract the sample mean of 5.0 (\(4.9 - 5.0 = -0.1\)), then square the result (\((-0.1)^{2} = 0.01\)).
+We do the same for 5.3, \((5.3 - 5.0)^{2} = 0.09\), and add it to the 0.01, then continue down the list of numbers finishing with 5.0.
 This is what the sum of squares calculation looks like all written out,
 
 \[SS = (4.9 - 5)^{2} + (5.3 - 5)^{2} + (5 - 5)^{2} + (4.7 - 5)^{2} + (5.1 - 5)^{2} + (5 - 5)^{2} + (5 - 5)^{2}.\]
@@ -2388,14 +2755,14 @@ Next, we need to square all of the values,
 \[SS = 0.01 + 0.09 + 0 + 0.09 + 0.01 + 0 + 0.\]
 
 If we sum the above, we get \(SS = 0.2\).
-We now just need to multiply this by \(1 / N( - 1)\), where \(N = 7\) because this is the total number of measurements in the plant A dataset,
+We now just need to multiply this by \(1 / (N - 1)\), where \(N = 7\) because this is the total number of measurements in the plant A dataset,
 
 \[s^{2} = \frac{1}{7 - 1}\left(0.2\right).\]
 
 From the above, we get a variance of approximately \(s^{2} = 0.0333\).
 
 Fortunately, it will almost never be necessary to calculate a variance manually in this way.
-Any statistical software will do all of these steps and calculate the variance for us (the \protect\hyperlink{Chapter_13}{Chapter 13} explains how in Jamovi).
+Any statistical software will do all of these steps and calculate the variance for us (\protect\hyperlink{Chapter_13}{Chapter 13} explains how in Jamovi).
 The only reason that we present the step-by-step calculation here is to help explain the equation for \(s^{2}\).
 The details can be helpful for understanding how the variance works as a measure of spread.
 For example, note that what we are really doing here is getting the distance of each value from the mean, \(x_{i} - \bar{x}\).
@@ -2403,11 +2770,11 @@ If these distances tend to be large, then it means that most data points (\(x_{i
 The differences \(x_{i} - \bar{x}\) are squared because we need all of the values to be positive, so that variance increases regardless of whether a value \(x_{i}\) is higher or lower than the mean.
 It does not matter if \(x_{i}\) is 0.1 lower than \(\bar{x}\) (i.e., \(x_{i} - \bar{x} = -0.1\)), or 0.1 higher (i.e., \(x_{i} - \bar{x} = 0.1\)).
 In both cases, the deviation from the mean is the same.
-Moreover, if we did not square the values, then the sum of \(x_{i} - \bar{x}\) values would always be 0 (you can try this yourself)\footnote{If you are wondering why we square the difference \(x_{i} - \bar{x}\) instead of just taking its absolute value, this is an excellent question! You have just invented something called the mean absolute deviation. There are some reasons why the mean absolute deviation is not as good of a measure of spread as the variance. \citet{Navarro2022} explain the mean absolute deviation, and how it relates to the variance, very well in section 4.2.3 of their textbook. We will not get into these points here, but it would be good to check out \citet{Navarro2022} for more explanation.}.
-Lastly, it turns out that the variance is actually a special case of a more general concept called the \emph{covariance}, which we will look at later in \protect\hyperlink{Chapter_41}{Chapter 41} and makes the squaring of differences make a bit more sense.
+Moreover, if we did not square the values, then the sum of \(x_{i} - \bar{x}\) values would always be 0 (you can try this yourself)\footnote{If you are wondering why we square the difference \(x_{i} - \bar{x}\) instead of just taking its absolute value, this is an excellent question! You have just invented something called the mean absolute deviation. There are some reasons why the mean absolute deviation is not as good of a measure of spread as the variance. \citet{Navarro2022} explain the mean absolute deviation, and how it relates to the variance, very well in \href{https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html\#mean-absolute-deviation}{section 4.2.3} of their textbook. We will not get into these points here, but it would be good to check out \citet{Navarro2022} for more explanation.}.
+Lastly, it turns out that the variance is actually a special case of a more general concept called the \emph{covariance}, which we will look at later in \protect\hyperlink{Week9}{Week 9} and makes the squaring of differences make a bit more sense.
 
-We sum up all of the squared deviations to get \(SS\), then divide by the sample size minus 1, to get the mean squared deviation from the mean.
-That is, the whole process gives us the average squared deviation from the mean.
+We sum up all of the squared deviations to get the \(SS\), then divide by the sample size minus 1, to get the mean squared deviation from the mean.
+That is, the whole process gives us the \emph{average} squared deviation from the mean.
 But wait, why is it the sample size minus 1, \(N - 1\)?
 Why would we subtract 1 here?
 The short answer is that in calculating a \emph{sample} variance, \(s^{2}\), we are almost always trying to estimate the corresponding \emph{population} variance (\(\sigma^{2}\)).
@@ -2423,15 +2790,17 @@ In addition to being a challenge to calculate, the calculation of a variance lea
 That is, for the example of plant leaf mass in grams, the variance is measured in grams squared, \(g^{2}\), which is not particularly easy to interpret.
 For more on this, \citet{Navarro2022} have a really good \href{https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html\#variance}{section} on the variance.
 Despite its challenges as a descriptive statistic, the variance has some mathematical properties that are very useful \citep{Navarro2022}, especially in the biological and environmental sciences.
+
 For example, variances are additive, meaning that if we are measuring two separate characteristics of a sample, A and B, then the variance of A+B equals the variance of A plus the variance of B; i.e., \(Var(A + B) = Var(A) + Var(B)\) \footnote{This has one caveat, which is not important for now. Values of A and B must be uncorrelated. That is, A and B cannot covary. If A and B covary, i.e., \(Cov(A, B) \neq 0\), then \(Var(A+B) = Var(A) + Var(B) + Cov(A, B)\). That is, we need to account for the covariance when calculating \(Var(A+B)\).}.
-This is relevant to Evolution and Genetics when measuring heritability in quantitative genetics.
+This is relevant to genetics when measuring heritability.
 Here, the total variance in the phenotype of a population (e.g., body mass of animals) can be partitioned into variance attributable to genetics plus variance attributable to the environment,
 
 \[Var(Phenotype) = Var(Genotype) + Var(Environment).\]
+
 This is also sometimes written as \(V_{P} = V_{G} + V_{E}\).
 Applying this equation to calculate heritability (\(H^{2} = V_{G} / V_{P}\)) can be used to predict how a population will respond to natural selection.
 This is just one place where variance reveals itself to be a highly useful statistic in practice.
-As a descriptive statistic to communicate the spread of a variable, it usually makes more sense to calculate the standard deviation of the mean.
+Nevertheless, as a descriptive statistic to communicate the spread of a variable, it usually makes more sense to calculate the standard deviation of the mean.
 
 \hypertarget{the-standard-deviation}{%
 \section{The standard deviation}\label{the-standard-deviation}}
@@ -2444,19 +2813,21 @@ This is a simple step, mathematically, but it also is easier to understand conce
 By taking the square root of the variance, our units are no longer squared, so we can interpret the standard deviation in the same terms as our original data.
 For example, the leaf masses of plant A and plant B in the example above were measured in grams.
 While the variance of these masses were in \(g^{2}\), the standard deviation is in \(g\), just like the original measurements.
-For plant A, we calculated a leaf mass variance of \(s^{2} = 0.0333\:g^{2}\), which means that the standard deviation of leaf masses is \(s = \sqrt{0.0333}\:g^{2} = 0.1825\:g\).
+For plant A, we calculated a leaf mass variance of \(s^{2} = 0.0333\:g^{2}\), which means that the standard deviation of leaf masses is \(s = \sqrt{0.0333\:g^{2}} = 0.1825\:g\).
 Because we are reporting \(s\) in the original units, it is a very useful measure of spread to report, and it is an important one to be able to interpret.
 To help with the interpretation, here is \href{https://bradduthie.shinyapps.io/forest/}{an interactive tool} showing how the heights of trees in a forest change across different standard deviation values\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/forest/}}.
-Here is another \href{https://bradduthie.shinyapps.io/normal_pos_neg/}{interactive tool} showing how the shape of a histogram changes when the standard deviation of a distribution is changed\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/normal_pos_neg/}}.
-The practical in \protect\hyperlink{Chapter_13}{Chapter 13} explains how to calculate the standard deviation in Jamovi.
 
 \begin{quote}
 \href{https://bradduthie.shinyapps.io/forest/}{Click here} for an interactive application to illustrate the standard deviation.
 \end{quote}
 
+Here is another \href{https://bradduthie.shinyapps.io/normal_pos_neg/}{interactive tool} showing how the shape of a histogram changes when the standard deviation of a distribution is changed\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/normal_pos_neg/}}.
+
 \begin{quote}
 \href{https://bradduthie.shinyapps.io/normal_pos_neg/}{Click here} for an interactive application to visualise how a histogram changes given a changing standard deviation.
 \end{quote}
+
+The practical in \protect\hyperlink{Chapter_13}{Chapter 13} explains how to calculate the standard deviation in Jamovi.
 
 \hypertarget{the-coefficient-of-variation}{%
 \section{The coefficient of variation}\label{the-coefficient-of-variation}}
@@ -2492,7 +2863,7 @@ Technically, the standard error of the mean is the standard deviation \emph{of s
 What does that even mean?
 It is easier to explain with a concrete example.
 
-Imagine that we want to measure nitrogen levels in the water of Airthrey Loch (the loch at the centre of campus at the University of Stirling)
+Imagine that we want to measure nitrogen levels in the water of Airthrey Loch (the loch at the centre of campus at the University of Stirling).
 We collect 12 water samples and record the nitrate levels in milligrams per litre (mg/l).
 The measurements are reported below.
 
@@ -2502,8 +2873,8 @@ The measurements are reported below.
 
 We can calculate the mean of the above sample to be \(\bar{x} = 0.615\), and we can calculate the standard deviation of the sample to be \(s = 0.111\).
 We do not know what the \emph{true} mean \(\mu\) is, but our best guess is the sample mean \(\bar{x}\).
-Suppose, however, that we then went back to the loch to collect another 8 measurements (assume that the nitrogen level of the lake has not changed in the meantime).
-We would expect to get similar values as our first 8 measurements, but certainly not the \emph{exact} same measurements, right?
+Suppose, however, that we then went back to the loch to collect another 12 measurements (assume that the nitrogen level of the lake has not changed in the meantime).
+We would expect to get values similar to our first 12 measurements, but certainly not the \emph{exact} same measurements, right?
 The sample mean of these new measurements would also be a bit different.
 Maybe we actually go out and do this and get the following new sample.
 
@@ -2513,10 +2884,10 @@ Maybe we actually go out and do this and get the following new sample.
 
 The mean of our new sample is 0.603, which is a bit different from our first.
 In other words, the sample means vary.
-We can therefore ask what the variance and standard deviation is \emph{of the sample means}.
-In other words, suppose that we kept going back out to the loch, collecting 8 new samples, and recording the sample mean each time?
+We can therefore ask what is the variance and standard deviation \emph{of the sample means}.
+In other words, suppose that we kept going back out to the loch, collecting 12 new samples, and recording the sample mean each time?
 The standard deviation of those sample means would be the standard error.
-It is the standard deviation of \(\bar{x}\) values around the true mean \(\mu\).
+\textbf{The standard error is the standard deviation of \(\bar{x}\) values around the true mean \(\mu\).}
 But we do not actually need to go through the repetitive resampling process to estimate the standard error.
 We can estimate it with just the standard deviation and the sample size.
 To do this, we just need to take the standard deviation of the sample (\(s\)) and divide by the square root of the sample size (\(\sqrt{N}\)),
@@ -2529,7 +2900,7 @@ In the case of the first 12 samples from the loch in the example above,
 
 The standard error is important because it can be used to evaluate the uncertainty of the sample mean in comparison with the true mean.
 We can use the standard error to place confidence intervals around our sample mean to express this uncertainty.
-We will calculate confidence intervals in \protect\hyperlink{Chapter_19}{Chapter 19}, so it is important to understand what the standard error is measuring.
+We will calculate confidence intervals in \protect\hyperlink{Week5}{Week 5}, so it is important to understand what the standard error is measuring.
 
 If the concept of standard error is still a but unclear, we can work through one more hypothetical example.
 Suppose again that we want to measure the nitrogen concentration of a loch.
@@ -2543,46 +2914,46 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-41}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.87 & 0.60 & 0.69 & 0.60 & 0.70 & 0.72 & 0.78 & 0.56 & 0.77 & 0.61 \\
-Sample\_2 & 0.78 & 0.75 & 0.72 & 0.82 & 0.81 & 0.69 & 0.70 & 0.84 & 0.72 & 0.61 \\
-Sample\_3 & 0.84 & 0.72 & 0.65 & 0.72 & 0.81 & 0.71 & 0.80 & 0.66 & 0.68 & 0.75 \\
-Sample\_4 & 0.91 & 0.61 & 0.64 & 0.59 & 0.73 & 0.69 & 0.61 & 0.69 & 0.54 & 0.93 \\
-Sample\_5 & 0.82 & 0.74 & 0.77 & 0.72 & 0.59 & 0.80 & 0.72 & 0.79 & 0.66 & 0.78 \\
-Sample\_6 & 0.75 & 0.62 & 0.60 & 0.71 & 0.78 & 0.63 & 0.55 & 0.74 & 0.56 & 0.73 \\
-Sample\_7 & 0.49 & 0.79 & 0.73 & 0.63 & 0.65 & 0.66 & 0.72 & 0.66 & 0.63 & 0.76 \\
-Sample\_8 & 0.83 & 0.88 & 0.82 & 0.71 & 0.62 & 0.85 & 0.71 & 0.65 & 0.82 & 0.82 \\
-Sample\_9 & 0.79 & 0.62 & 0.70 & 0.90 & 0.86 & 0.50 & 0.83 & 0.78 & 0.68 & 0.69 \\
-Sample\_10 & 0.50 & 0.67 & 0.86 & 0.54 & 0.63 & 0.72 & 0.77 & 0.90 & 0.87 & 0.65 \\
-Sample\_11 & 0.58 & 0.63 & 0.79 & 0.69 & 0.57 & 0.58 & 0.64 & 0.52 & 0.63 & 0.69 \\
-Sample\_12 & 0.62 & 0.68 & 0.73 & 0.67 & 0.81 & 0.67 & 0.70 & 0.60 & 0.79 & 0.79 \\
-Sample\_13 & 0.60 & 0.59 & 0.66 & 0.74 & 0.64 & 0.71 & 0.78 & 0.63 & 0.76 & 0.66 \\
-Sample\_14 & 0.76 & 0.77 & 0.67 & 0.74 & 0.88 & 0.66 & 0.57 & 0.73 & 0.53 & 0.87 \\
-Sample\_15 & 0.80 & 0.67 & 0.71 & 0.73 & 0.76 & 0.65 & 0.84 & 0.74 & 0.68 & 0.68 \\
-Sample\_16 & 0.71 & 0.67 & 0.66 & 0.54 & 0.83 & 0.60 & 0.63 & 0.64 & 0.75 & 0.75 \\
-Sample\_17 & 0.62 & 0.65 & 0.77 & 0.85 & 0.72 & 0.50 & 0.85 & 0.62 & 0.80 & 0.73 \\
-Sample\_18 & 0.65 & 0.65 & 0.82 & 0.62 & 0.73 & 0.67 & 0.82 & 0.67 & 0.72 & 0.66 \\
-Sample\_19 & 0.70 & 0.76 & 0.70 & 0.77 & 0.73 & 0.71 & 0.77 & 0.74 & 0.63 & 0.67 \\
-Sample\_20 & 0.78 & 0.70 & 0.70 & 0.66 & 0.58 & 0.47 & 0.63 & 0.75 & 0.66 & 0.70 \\
+Sample\_1 & 0.82 & 0.68 & 0.81 & 0.78 & 0.76 & 0.75 & 0.52 & 0.88 & 0.73 & 0.63 \\
+Sample\_2 & 0.77 & 0.90 & 0.69 & 0.61 & 0.67 & 0.68 & 0.67 & 0.75 & 0.56 & 0.49 \\
+Sample\_3 & 0.62 & 0.64 & 0.53 & 0.78 & 0.68 & 0.85 & 0.71 & 0.72 & 0.91 & 0.80 \\
+Sample\_4 & 0.67 & 0.73 & 0.70 & 0.70 & 0.51 & 0.72 & 0.77 & 0.55 & 0.79 & 0.55 \\
+Sample\_5 & 0.91 & 0.78 & 0.91 & 0.44 & 0.88 & 0.79 & 0.83 & 0.68 & 0.64 & 0.60 \\
+Sample\_6 & 0.80 & 0.62 & 0.70 & 0.54 & 0.73 & 0.81 & 0.67 & 0.69 & 0.66 & 0.67 \\
+Sample\_7 & 0.74 & 0.76 & 0.84 & 0.69 & 0.66 & 0.81 & 0.75 & 0.71 & 0.54 & 0.56 \\
+Sample\_8 & 0.56 & 0.77 & 0.64 & 0.61 & 0.73 & 0.83 & 0.66 & 0.61 & 0.65 & 0.68 \\
+Sample\_9 & 0.64 & 0.64 & 0.77 & 0.83 & 0.84 & 0.81 & 0.73 & 0.60 & 0.80 & 0.56 \\
+Sample\_10 & 0.45 & 0.58 & 0.65 & 0.65 & 0.64 & 0.62 & 0.58 & 0.50 & 0.77 & 0.80 \\
+Sample\_11 & 0.74 & 0.58 & 0.70 & 0.66 & 0.78 & 0.60 & 0.84 & 0.65 & 0.65 & 0.65 \\
+Sample\_12 & 0.65 & 0.58 & 0.66 & 0.64 & 0.70 & 0.83 & 0.76 & 0.61 & 0.64 & 0.63 \\
+Sample\_13 & 0.55 & 0.70 & 0.72 & 0.76 & 0.78 & 0.60 & 0.61 & 0.85 & 0.69 & 0.75 \\
+Sample\_14 & 0.68 & 0.59 & 0.50 & 0.79 & 0.66 & 0.87 & 0.56 & 0.51 & 0.41 & 0.63 \\
+Sample\_15 & 0.69 & 0.87 & 0.78 & 0.77 & 0.38 & 0.75 & 0.50 & 0.70 & 0.78 & 0.63 \\
+Sample\_16 & 0.62 & 0.79 & 0.57 & 0.73 & 0.60 & 0.69 & 0.58 & 0.78 & 0.68 & 0.49 \\
+Sample\_17 & 0.68 & 0.60 & 0.62 & 0.50 & 0.46 & 0.69 & 0.74 & 0.88 & 0.76 & 0.65 \\
+Sample\_18 & 0.50 & 0.72 & 0.89 & 0.94 & 0.64 & 0.81 & 0.62 & 0.53 & 0.67 & 0.85 \\
+Sample\_19 & 0.64 & 0.85 & 0.75 & 0.66 & 0.68 & 0.65 & 0.56 & 0.65 & 0.94 & 0.72 \\
+Sample\_20 & 0.67 & 0.54 & 0.84 & 0.48 & 0.74 & 0.69 & 0.61 & 0.78 & 0.61 & 0.57 \\
 \bottomrule
 \end{longtable}
 
 We can calculate the mean of each sample by calculating the mean of each row.
-These means are reported below.
+These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.690 0.744 0.734 0.694 0.739 0.667 0.672 0.771 0.735 0.711
-## [2,] 0.632 0.706 0.677 0.718 0.726 0.678 0.711 0.701 0.718 0.663
+## [1,] 0.736 0.679 0.724 0.669 0.746 0.689 0.706 0.674 0.722 0.624
+## [2,] 0.685 0.670 0.701 0.620 0.685 0.653 0.658 0.717 0.710 0.653
 \end{verbatim}
 
-The standard deviation of the sample means reported above is 0.0333392.
+The standard deviation of the 20 sample means reported above is 0.0347267.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.098545.
+The standard deviation of Sample 1 is \(s =\) 0.1038375.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.098545}{\sqrt{10}} = 0.0311627.\]
+\[s = \frac{0.1038375}{\sqrt{10}} = 0.0328363.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0333392, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0311627.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0347267, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0328363.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -2938,8 +3309,8 @@ If so, then what does this say about our ability to make conclusions about the d
 \hypertarget{part-probability-models-and-the-central-limit-theorem}{%
 \part{Probability models and the Central Limit Theorem}\label{part-probability-models-and-the-central-limit-theorem}}
 
-\hypertarget{week-4-overview}{%
-\chapter*{Week 4 Overview}\label{week-4-overview}}
+\hypertarget{Week4}{%
+\chapter*{Week 4 Overview}\label{Week4}}
 \addcontentsline{toc}{chapter}{Week 4 Overview}
 
 \begin{longtable}[]{@{}
@@ -2950,7 +3321,8 @@ If so, then what does this say about our ability to make conclusions about the d
 \textbf{Dates} & 13 February 2023 - 17 February 2023 \\
 \textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 14-15 \\
 & \textbf{Recommended:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/07-Introduction-to-probability.html}{Chapter 7} \\
-& \textbf{Optional:} \citet{Rowntree2018} Chapter 4 \\
+& \textbf{Suggested:} \citet{Rowntree2018} Chapter 4 \\
+& \textbf{Advanced:} None \\
 \textbf{Lectures} & 4.1: Probability models (17 min.) \\
 & 4.2: Probabilities to make predictions (12 min.) \\
 & 4.3: Probability distributions (11 min.) \\
@@ -3935,8 +4307,8 @@ What general conclusion can you make about the distribution of sample means from
 \hypertarget{part-statistical-inference}{%
 \part{Statistical inference}\label{part-statistical-inference}}
 
-\hypertarget{week-5-overview}{%
-\chapter*{Week 5 Overview}\label{week-5-overview}}
+\hypertarget{Week5}{%
+\chapter*{Week 5 Overview}\label{Week5}}
 \addcontentsline{toc}{chapter}{Week 5 Overview}
 
 General overview of what will be the focus of this week.
@@ -3985,8 +4357,8 @@ What this is and how it relates to the normal distribution, and why it is import
 \hypertarget{part-hypothesis-testing}{%
 \part{Hypothesis testing}\label{part-hypothesis-testing}}
 
-\hypertarget{week-6-overview}{%
-\chapter*{Week 6 Overview}\label{week-6-overview}}
+\hypertarget{Week6}{%
+\chapter*{Week 6 Overview}\label{Week6}}
 \addcontentsline{toc}{chapter}{Week 6 Overview}
 
 General overview of what will be the focus of this week.
@@ -4068,8 +4440,8 @@ Explanation of how to do them in Jamovi.
 \hypertarget{part-review-of-parts-i-v}{%
 \part{Review of parts I-V}\label{part-review-of-parts-i-v}}
 
-\hypertarget{week-7-overview-reading-week}{%
-\chapter*{Week 7 Overview (Reading week)}\label{week-7-overview-reading-week}}
+\hypertarget{Week7}{%
+\chapter*{Week 7 Overview (Reading week)}\label{Week7}}
 \addcontentsline{toc}{chapter}{Week 7 Overview (Reading week)}
 
 This is a special chapter for week 6, which is a reading week, and it will function as a very brief pause for review. It will also ensure that the numbers of chapters will correspond to weeks.
@@ -4077,8 +4449,8 @@ This is a special chapter for week 6, which is a reading week, and it will funct
 \hypertarget{part-analysis-of-variance-anova}{%
 \part{Analysis of Variance (ANOVA)}\label{part-analysis-of-variance-anova}}
 
-\hypertarget{week-8-overview}{%
-\chapter*{Week 8 Overview}\label{week-8-overview}}
+\hypertarget{Week8}{%
+\chapter*{Week 8 Overview}\label{Week8}}
 \addcontentsline{toc}{chapter}{Week 8 Overview}
 
 General overview of what will be the focus of this week.
@@ -4127,8 +4499,8 @@ Non-parametric explanation
 \hypertarget{part-counts-and-correlation}{%
 \part{Counts and Correlation}\label{part-counts-and-correlation}}
 
-\hypertarget{week-9-overview}{%
-\chapter*{Week 9 Overview}\label{week-9-overview}}
+\hypertarget{Week9}{%
+\chapter*{Week 9 Overview}\label{Week9}}
 \addcontentsline{toc}{chapter}{Week 9 Overview}
 
 General overview of what will be the focus of this week.
@@ -4181,8 +4553,8 @@ More explanation
 \hypertarget{part-linear-regression}{%
 \part{Linear Regression}\label{part-linear-regression}}
 
-\hypertarget{week-10-overview}{%
-\chapter*{Week 10 Overview}\label{week-10-overview}}
+\hypertarget{Week10}{%
+\chapter*{Week 10 Overview}\label{Week10}}
 \addcontentsline{toc}{chapter}{Week 10 Overview}
 
 Week: 10
@@ -4225,8 +4597,8 @@ Seriously consider moving the regression into this week. and ease the amount of 
 \hypertarget{part-randomisation-approaches}{%
 \part{Randomisation approaches}\label{part-randomisation-approaches}}
 
-\hypertarget{week-11-overview}{%
-\chapter*{Week 11 Overview}\label{week-11-overview}}
+\hypertarget{Week11}{%
+\chapter*{Week 11 Overview}\label{Week11}}
 \addcontentsline{toc}{chapter}{Week 11 Overview}
 
 The aim of this lecture is to introduce the randomisation approach to statistical hypothesis testing. We will first introduce the general idea of what randomisation is and how it relates to the hypothesis testing that we have been doing since week five. We will then consider an instructive example in which a randomisation approach is used in place of a traditional t-test to test whether or not the mean values of two different groups are identical. We will then compare the assumptions underlying randomisation and how they differ slightly from the assumptions of traditional hypothesis testing. We will then look at how randomisation can be used to build confidence intervals and test hypotheses that would difficult to test with other approaches. In learning about randomisation approaches, we will also review some key concepts from earlier in the module. The aim is not to understand all of the nuances of randomisation, but to understand, conceptually, what is going on in the methods described below.
@@ -4270,8 +4642,8 @@ What this is and why we use it.
 \hypertarget{part-statistical-reporting}{%
 \part{Statistical Reporting}\label{part-statistical-reporting}}
 
-\hypertarget{week-12-overview}{%
-\chapter*{Week 12 Overview}\label{week-12-overview}}
+\hypertarget{Week12}{%
+\chapter*{Week 12 Overview}\label{Week12}}
 \addcontentsline{toc}{chapter}{Week 12 Overview}
 
 Week: 12
@@ -4310,8 +4682,8 @@ Just more to do.
 \hypertarget{part-review-of-parts-vii-xii}{%
 \part{Review of parts (VII-XII)}\label{part-review-of-parts-vii-xii}}
 
-\hypertarget{module-summary}{%
-\chapter*{Module summary}\label{module-summary}}
+\hypertarget{Week13}{%
+\chapter*{Module summary}\label{Week13}}
 \addcontentsline{toc}{chapter}{Module summary}
 
 This chapter will be specifically to prepare for exam.
@@ -4320,8 +4692,52 @@ This chapter will be specifically to prepare for exam.
 \appendix}
 
 
-\hypertarget{appendixA_units}{%
-\chapter{Statistical units}\label{appendixA_units}}
+\hypertarget{appendexA_CMS}{%
+\chapter{Common Marking Scheme}\label{appendexA_CMS}}
+
+This appendix is a recreation of \href{https://www.stir.ac.uk/about/professional-services/student-academic-and-corporate-services/academic-registry/academic-policy-and-practice/quality-handbook/assessment-policy-and-procedure/appendix-1-undergraduate-common-marking-scheme/}{Appendix 1: Undergraduate Common Marking Scheme} on the University of Stirling website.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0875}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2250}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5875}}@{}}
+\caption{\textbf{Undergraduate Common Marking Scheme Information}: Column one lists the mark out of 100, column two lists the equivalent grade, column three describes the result as pass or fail, and column four describes the attainment of the learning outcome.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Mark
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Equivalent Grade
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Result
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Descriptor of Attainment of Learning Outcomes
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\raggedright
+Mark
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Equivalent Grade
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Result
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Descriptor of Attainment of Learning Outcomes
+\end{minipage} \\
+\midrule
+\endhead
+90+ & 1st & Pass & Meets all the requirements to attain 80-89 but in addition demonstrates an exceptional degree of originality and exceptional analytical, problem-solving and/or creative skills. \\
+80-89 & & & Meets all the requirements to attain 70-79 but in addition demonstrates outstanding quality evidenced by an ability to engage critically and analytically with source material, exhibits independent lines of argument, is highly original and uses an extremely wide range of relevant sources where appropriate. \\
+70-79 & & & Excellent range and depth of attainment of intended learning outcomes, secured by discriminating command of a comprehensive range of relevant materials and analyses, and by deployment of considered judgement relating to key issues, concepts or procedures. \\
+60-69 & 2:1 & Pass & Attainment of virtually all intended learning outcomes, clearly grounded on a close familiarity with a wide range of supporting evidence, constructively utilised to reveal an appreciable depth of understanding. \\
+50-59 & 2:2 & Pass & Attainment of most of the intended learning outcomes, some more securely grasped than others, resting on a circumscribed range of evidence and displaying a variable depth of understanding. \\
+40-49 & 3rd & Pass & Acceptable attainment of most intended learning outcomes, displaying a qualified familiarity with a minimally sufficient range of relevant materials, and a grasp of the analytical issues and concepts which are generally reasonable, albeit insecure. \\
+30-39 & Fail - Marginal & Fail & Appreciable deficiencies in the attainment of intended learning outcomes, perhaps lacking a secure basis in relevant factual or analytical dimensions. \\
+0-29 & Fail - Clear & Fail & No convincing evidence of attainment of intended learning outcomes, such treatment of the subject as is in evidence being directionless and fragmentary. \\
+X & Fail & Fail & Failure to comply with Compulsory Module Requirements or engage with the module, leading to no automatic right to reassessment. \\
+\bottomrule
+\end{longtable}
 
 \hypertarget{uncertainty_derivation}{%
 \chapter{Uncertainty derivation}\label{uncertainty_derivation}}
