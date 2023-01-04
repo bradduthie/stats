@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-03" />
+<meta name="date" content="2023-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -444,7 +444,7 @@ The full dataset is shown below.</p>
 ## 18      2.77          5.16        9.93   7.19 7.04  6.12 6.12
 ## 19      1.91          8.64        8.28   7.29 6.35  7.26 5.11
 ## 20      2.62          7.01        7.24   8.18 6.30  9.14 8.18</code></pre>
-<p>Remember that to make these data tidy and usable in Jamovi, we need each row to be an independent sample.
+<p>Remember that to make these data tidy and usable in Jamovi, we need each row to be a unique observation.
 What we really want then is a dataset with two columns of data.
 The first column should indicate the site, and the second column should indicate the petiole diameter.
 This can be done in two ways.
@@ -459,7 +459,7 @@ See Figure 13.2 for how this would look in Jamovi.</p>
 Figure 13.2: Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing ‘Add Variable’.
 </p>
 </div>
-<p>Note that to insert a new column, we need to right click on an existing column and select ‘Add Variable’ <span class="math inline">\(\to\)</span> ‘Insert’.
+<p>Note that to insert a new column in Jamovi, we need to right click on an existing column and select ‘Add Variable’ <span class="math inline">\(\to\)</span> ‘Insert’.
 A new column will then pop up in Jamovi, and we can give this an informative name.
 Make sure to specify that the ‘Site’ column should be a nominal measure type, and the ‘petiole_diameter_mm’ column should be a continuous measure type.
 The first 6 rows of the dataset should look like the below.</p>
@@ -476,7 +476,7 @@ We will start with some plotting.</p>
 <div id="histograms-and-box-whisker-plots" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> Histograms and box-whisker plots<a href="Chapter_13.html#histograms-and-box-whisker-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will start by making a histogram of the full dataset of petiole diameter.
-To do this, we need to go to ‘Analyses’ tab of the Jamovi toolbar, then select the ‘Exploration’ button.</p>
+To do this, we need to go to the ‘Analyses’ tab of the Jamovi toolbar, then select the ‘Exploration’ button.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-47"></span>
 <img src="img/lilypad_descriptives.png" alt="Jamovi interface is shown with an Exploration and Descriptive option being selected." width="100%" />
 <p class="caption">
@@ -486,7 +486,7 @@ Figure 13.3: Jamovi toolbar after having selected on the Analyses tab followed b
 <p>Next, select the ‘Descriptives’ option (Figure 13.3).
 This will open a new window where it is possible to create plots and calculate summary statistics.
 The white box on the left of the Descriptive interface lists all of the variables in the dataset.
-Below this box, there are options for selecting different summary statistics ‘Statistics’ and building different graphs ‘Plots’.
+Below this box, there are options for selecting different summary statistics (‘Statistics’) and building different graphs (‘Plots’).
 To get started, select the petiole diameter variable in the box to the left, then move it to the ‘Variables’ box (top right) using the <span class="math inline">\(\to\)</span> arrow.
 Next, open the Plots option at the bottom of the interface.
 Choose the ‘Histogram’ option by clicking the checkbox.
@@ -635,7 +635,7 @@ Write your reflections in the space below.</p>
 
 
 </code></pre>
-<p>Next, we will produce barplots to show the mean petiol diameter for each site.</p>
+<p>Next, we will produce barplots to show the mean petiole diameter for each site.</p>
 </div>
 <div id="comparing-across-sites" class="section level2 hasAnchor" number="13.5">
 <h2><span class="header-section-number">13.5</span> Comparing across sites<a href="Chapter_13.html#comparing-across-sites" class="anchor-section" aria-label="Anchor link to header"></a></h2>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-03" />
+<meta name="date" content="2023-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -405,7 +405,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_16" class="section level1 hasAnchor" number="16">
 <h1><span class="header-section-number">Chapter 16</span> <em>Practical</em>. Probability and simulation<a href="Chapter_16.html#Chapter_16" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This practical focuses on applying the concepts from chapter 14 and 15 in Jamovi.
+<p>This practical focuses on applying the concepts from <a href="Chapter_14.html#Chapter_14">Chapter 14</a> and <a href="Chapter_15.html#Chapter_15">Chapter 15</a> in Jamovi.
 There will be 3 exercises.</p>
 <ol style="list-style-type: decimal">
 <li>Calculating probabilities from a dataset.</li>
@@ -413,7 +413,7 @@ There will be 3 exercises.</p>
 <li>Demonstrating the central limit theorem (CLT).</li>
 </ol>
 <p>To complete exercises 2 and 3, we will need to download and install two new Jamovi modules.
-Jamovi Modules are add-ons that make it possible to run specialised statistical tools inside Jamovi.
+Jamovi modules are add-ons that make it possible to run specialised statistical tools inside Jamovi.
 These tools are written by a community of statisticians, scientists, and educators and listed in the <a href="https://www.jamovi.org/library.html">Jamovi library</a>.
 Like Jamovi, these tools are open source and free to use.</p>
 <p>The dataset for this practical is something a bit different.
@@ -431,7 +431,7 @@ Figure 16.1: Welcome screen of the mobile game Power Up!
 <p>The game “Power Up!” is freely available as an <a href="https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame">Android</a> and <a href="https://apps.apple.com/gb/app/power-up/id1585634888">iPhone</a> app (Figure 16.1).
 Data are collected from players’ decisions and used to investigate social-ecological questions.
 We will use the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv">power_up</a> dataset in exercises 1 and 2.
-To get started, first download the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv">power_up</a> dataset and open them in Jamovi.
+To get started, first download the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv">power_up</a> dataset and open it in Jamovi.
 Note that these data are already in a tidy format, so we do not need to do any reorganising.
 The dataset includes columns for each player’s ID, the OS that they use, the dam size that they decided to build in the game, their in-game investment in Biodiversity, Community, and Energy, and their final Score.</p>
 <div id="probabilities-from-a-dataset" class="section level2 hasAnchor" number="16.1">
@@ -454,12 +454,12 @@ Figure 16.2: Jamovi Descriptives toolbar showing the OS column from the Power Up
 </div>
 <p>The table of frequencies shown in Figure 16.2 includes counts of Android versus iPhone users.
 We can see that 56 of the 74 total game players use Android, while 18 players use iPhone.
-To get the proportion of Android users we could divide 56 by 74 to get 0.7567568.
-Similarly, the proportion of iPhone users, we could calculate 18 / 74 = 0.2432432.
-But Jamovi already does that for us, with a bit of rounding.
+To get the proportion of Android users, we could divide 56 by 74 to get 0.7567568.
+Similarly, for the proportion of iPhone users, we could calculate 18 / 74 = 0.2432432.
+But Jamovi already does this for us, with a bit of rounding.
 The second column of the Frequencies table gives us these proportions, but expressed as a percentage.
 The percentage of Android users is 75.7%, and the percentage of iPhone users is 24.3%.
-Percentages are out of a total of 100, so to get back to the proportions, we can just divide by 100, 75.7 / 100 = 0.757 for Android and 24.3 / 100 = 0.243 for iPhone.
+Percentages are out of a total of 100, so to get back to the proportions, we can just divide by 100%, 75.7 / 100 = 0.757 for Android and 24.3 / 100 = 0.243 for iPhone.
 To answer the original question, our best estimate of the probability that a new Power Up! game player will be an Android user is therefore 0.757.</p>
 <p>Next, use the same procedure to find the probability that a game player will make a small, medium, and large size dam.
 Now, fill in Table 16.1 with counts, percentage, and the estimated probability of a player selecting a small, medium, or large dam.</p>
@@ -497,21 +497,21 @@ Now, fill in Table 16.1 with counts, percentage, and the estimated probability o
 <p>We can use these estimated probabilities of small, medium, and large dam size selection to predict what will happen in future games.
 Suppose that a new player decides to play the game.
 What is the probability that this player chooses a small <strong>or</strong> a large dam?</p>
-<p><span class="math inline">\(P(small\:or\:large) =\)</span> : __________________________</p>
+<p><span class="math inline">\(P(small\:or\:large) =\)</span> __________________________</p>
 <p>Now suppose that 3 new players arrive and decide to play the game.
 What is the probability that all 3 of these new players choose a large dam?</p>
-<p><span class="math inline">\(Pr_{(3\:large)} =\)</span> : __________________________</p>
+<p><span class="math inline">\(Pr(3\:large) =\)</span> __________________________</p>
 <p>What is the probability that all 3 of these new players choose <em>different</em> dam sizes?</p>
-<p><span class="math inline">\(P(small,\:medium,\:large) =\)</span> : __________________________</p>
+<p><span class="math inline">\(P(small,\:medium,\:large) =\)</span> __________________________</p>
 <p>Now consider a slightly different type of question.
 Instead of trying to predict the probability of new player decisions, we will focus on sampling from the existing power up dataset.
 Imagine that you randomly choose one of the 74 players with equal probability (i.e., every player is equally likely to be chosen).
 What is the probability that you choose player 20?</p>
-<p><span class="math inline">\(P(Player\:20) =\)</span> : __________________________</p>
+<p><span class="math inline">\(P(Player\:20) =\)</span> __________________________</p>
 <p>What is the probability that you choose player 20, <em>then</em> choose a different player with a large dam?
 As a hint, remember that you are now sampling <em>without replacement</em>.
 The second choice cannot be player 20 again, so the probability of choosing a player with a large dam has changed from the estimated probability in Table 16.1.</p>
-<p><span class="math inline">\(P(Player\:20,\:Large) =\)</span> : __________________________</p>
+<p><span class="math inline">\(P(Player\:20,\:Large) =\)</span> __________________________</p>
 <p>Now we can use the Descriptives tool in Jamovi to ask a slightly different question with the data.
 Suppose that we wanted to estimate the probability that an Android user will choose a large dam.
 We could multiply the proportion of Android users times the proportion of players who choose a large dam (i.e., find the probability of Android <em>and</em> large dam).
@@ -525,10 +525,11 @@ A new frequency table breaks down dam choice for each OS.</p>
 Figure 16.3: Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The ‘Frequency tables’ checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.
 </p>
 </div>
-<p>To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).</p>
+<p>To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 16.3).
+Note that the vertical bar, <span class="math inline">\(|\)</span>, in the equation below just means ‘given’ (or, rather, ‘conditional up’, so the number of players that chose a large dam <em>given</em> that they are Android users),</p>
 <p><span class="math display">\[P(Large | Android) = \frac{Number\:of\:Android\:users\:choosing\:large\:dam}{Number\:of\:Android\:users}.\]</span></p>
 <p>Now, recreate the table in Figure 16.3 and estimate the probability that an Android user will choose to build a large dam,</p>
-<p><span class="math inline">\(P(Large | Android) =\)</span> : __________________________</p>
+<p><span class="math inline">\(P(Large | Android) =\)</span> __________________________</p>
 <p>Is <span class="math inline">\(P(Large | Android)\)</span> much different from the probability that <em>any</em> player chooses a large dam, as calculated in Table 16.1? Do you think that the difference is significant?</p>
 <pre><code>
 
@@ -562,14 +563,14 @@ Consequently, we are not really interested in the probabilities of specific valu
 Instead, we want to focus on intervals.
 For example, what is the probability that a player scores higher than 120?
 What is the probability that a player scores lower than 100?
-What is the probability that a player scores between 120 and 100?</p>
-<p>Take another look at Figure 16.4 above, then take a guess at each of these probabilities.
+What is the probability that a player scores between 100 and 120?</p>
+<p>Take another look at Figure 16.4, then take a guess at each of these probabilities.
 As a hint, the y-axis of this histogram is showing density instead of frequency.
 What this means is that the total grey area (i.e., the histogram bars) sums to 1.
 Guessing the probability that a player scores higher than 120 is the same as guessing the proportion of grey space in the highest 4 bars of Figure 16.4 (i.e., grey space &gt;120).</p>
-<p><span class="math inline">\(P(Score&gt;120) =\)</span> : __________________________</p>
-<p><span class="math inline">\(P(Score&lt;100) =\)</span> : __________________________</p>
-<p><span class="math inline">\(P(100&lt;Score&lt;120) =\)</span> : __________________________</p>
+<p><span class="math inline">\(P(Score&gt;120) =\)</span> __________________________</p>
+<p><span class="math inline">\(P(Score&lt;100) =\)</span> __________________________</p>
+<p><span class="math inline">\(P(100&lt;Score&lt;120) =\)</span> __________________________</p>
 <p>Trying to do this by looking at a histogram is not easy, and it is really not the best way to get the above probabilities.
 We can get much better estimates using Jamovi, but we need to make an assumption about the distribution of Player Score.
 Specifically, we need to assume that the distribution of Player Score has a specific shape.
@@ -580,8 +581,8 @@ If we are willing to assume this, then we can calculate probabilities using its 
 Use Jamovi to find the mean and the standard deviation of player score (note, we can just say that score is unitless, so no need to include units).</p>
 <p>Mean score: __________________________</p>
 <p>Standard deviation score: __________________________</p>
-<p>We will assume that the <em>sample</em> of scores shown in Figure 16.4 came from a <em>population</em> that is normally distributed with the mean and standard deviation above that you wrote above (recall sample versus population from <a href="Chapter_4.html#Chapter_4">Chapter 4</a>).
-We can overlay his distribution on the histogram above using a curved line (Figure 16.5).</p>
+<p>We will assume that the <em>sample</em> of scores shown in Figure 16.4 came from a <em>population</em> that is normally distributed with the mean and standard deviation that you wrote above (recall sample versus population from <a href="Chapter_4.html#Chapter_4">Chapter 4</a>).
+We can overlay this distribution on the histogram above using a curved line (Figure 16.5).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-70"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-70-1.png" alt="A histogram is shown with a normal shape. The x-axis is labelled 'Player Score', and there is a line indicating the probability density function of a normal distribution overlaid." width="100%" />
 <p class="caption">
@@ -617,7 +618,7 @@ A new button in the toolbar called ‘distrACTION’ should become visible (Figu
 Figure 16.7: Jamovi tool bar, which includes an added module called distrACTION.
 </p>
 </div>
-<p>If the module is not there, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
+<p>If the module is not there after installation, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
 Click on the module and choose ‘Normal Distribution’ from the pulldown menu.
 Next, we can see a box for the mean and standard deviation (SD) under the ‘Parameters’ subtitle in bold.
 Put the mean and the standard deviation calculated from above into these boxes.
@@ -625,7 +626,7 @@ In the panel on the right, Jamovi will produce the same normal distribution that
 <p>Given this normal distribution, we can compute the probability that a player scores less than x1 = 80 by checking the box ‘Compute probability’, which is located just under ‘Function’ (Figure 16.8).
 We can then select the first radio button to find the probability that a randomly sampled value X from this distribution is less than x1, <span class="math inline">\(P(X \leq x1)\)</span>.
 Notice in the panel on the right that the probability is given as <span class="math inline">\(P =\)</span> 0.237.
-This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (<span class="math inline">\(P =\)</span> 0.237, i.e., ca 23.7 per cent).</p>
+This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (<span class="math inline">\(P =\)</span> 0.237, i.e., about 23.7 per cent).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-73"></span>
 <img src="img/jamovi_normal_distribution.png" alt="Jamovi options for a module that calculates probabilities associated with a normal distribution, with computing probability checkboxes and radio buttons selected" width="80%" />
 <p class="caption">
@@ -636,17 +637,17 @@ Figure 16.8: Jamovi options for the distrACTION module for computing probability
 We could also just select the second radio button for <span class="math inline">\(P(X \geq x1)\)</span>.
 Give this a try, and notice that the shaded and unshaded regions have flipped in the plot, and we get our answer in the table of <span class="math inline">\(P =\)</span> 0.763.</p>
 <p>Finally, to compute the probability of an interval, we can check the third radio button and set x2 in the bottom box (Figure 16.8).
-For example, to see the probability of a score between 80 and 120, we can choose select <span class="math inline">\(P(x1 \leq X \leq x2)\)</span>, then setting x2 = 120 in the bottom box.
+For example, to see the probability of a score between 80 and 120, we can choose select <span class="math inline">\(P(x1 \leq X \leq x2)\)</span>, then set <span class="math inline">\(x2 = 120\)</span> in the bottom box.
 Notice where the shaded area is in the newly drawn plot.
 What is the probability of a player getting a score between 80 and 120?</p>
-<p><span class="math inline">\(P(80 \leq X \leq 120)\)</span> = : __________________________</p>
+<p><span class="math inline">\(P(80 \leq X \leq 120)\)</span> = __________________________</p>
 <p>What is the probability of a player getting a score greater than 130?</p>
-<p><span class="math inline">\(P(X \geq 130)\)</span> = : __________________________</p>
+<p><span class="math inline">\(P(X \geq 130)\)</span> = __________________________</p>
 <p>Now try the following probabilities for different scores.</p>
-<p><span class="math inline">\(P(X \geq 120)\)</span> = : __________________________</p>
-<p><span class="math inline">\(P(X \leq 100)\)</span> = : __________________________</p>
-<p><span class="math inline">\(P(100 \leq X \leq 120)\)</span> = : __________________________</p>
-<p>Note, these last three were the same intervals that you guessed using the histogram.
+<p><span class="math inline">\(P(X \geq 120)\)</span> = __________________________</p>
+<p><span class="math inline">\(P(X \leq 100)\)</span> = __________________________</p>
+<p><span class="math inline">\(P(100 \leq X \leq 120)\)</span> = __________________________</p>
+<p>Note, these last 3 were the same intervals that you guessed using the histogram.
 How close was your original guess to the calculations above?</p>
 <pre><code>
 
@@ -658,7 +659,7 @@ How close was your original guess to the calculations above?</p>
 </code></pre>
 <p>One last one.
 What is the probability of a player getting a score lower than 70 or higher than 130?</p>
-<p><span class="math inline">\(P(X \leq 70 \: | \: X \geq 130)\)</span> = : __________________________</p>
+<p><span class="math inline">\(P(X \leq 70 \: \cup \: X \geq 130)\)</span> = __________________________</p>
 <p>There is more than one way to figure this last one out.
 How did you do it, and what was your reasoning?</p>
 <pre><code>
@@ -677,7 +678,7 @@ How did you do it, and what was your reasoning?</p>
 This time, go to ‘Modules’, and from the ‘Available’ tab, scroll down until you find ‘Rj’ in the Jamovi library.
 Install ‘Rj’, then a new button ‘R’ should become available in the toolbar.
 This will allow us to run a bit of script using the coding language R.
-We will work with R a bit more in future practicals, but for now you will not need to do anymore than copying and pasting code.
+We will work with R a bit more in future practicals, but for now you will not need to do anymore than copying and pasting.
 For now, click on the new ‘R’ button in the toolbar and select ‘Rj Editor’ from the pulldown menu.
 You will see an open editor; this is where the code will go.
 If it has some code in it already (e.g., <code># summary(data[1:3])</code>), just delete it so that we can start with a clean slate.
@@ -730,7 +731,7 @@ To run the code, find the green triangle in the upper right (Figure 16.9).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-75"></span>
 <img src="img/jamovi_RjEditor.png" alt="Jamovi window with an R editor open and several lines of code for generating uniform numbers." width="80%" />
 <p class="caption">
-Figure 16.9: Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper left.
+Figure 16.9: Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper right.
 </p>
 </div>
 <p>When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.

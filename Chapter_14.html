@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-03" />
+<meta name="date" content="2023-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -410,8 +410,8 @@ There are two possibilities for how the coin lands on the surface.
 Either the coin lands on one side (heads) or the other side (tails), but we do not know the outcome in advance.
 If these two events (heads or tails) are equally likely, then we could reason that there is a 50% chance that a flipped coin will land heads up and a 50% chance that it will land heads down.
 What do we actually mean when we say this?
-For example, when we say that there is a 50% chance of the coin landing heads up, are we making a claim about our own knowledge, how coins work, or how the world works?
-We might mean that we simply do not know whether or not the coin will land heads up, so a 50-50 chance just reflects our best guess about what will actually happen when the coin is flipped.
+For example, when we say that there is a 50% chance of the coin landing heads up, are we making a claim about our own uncertainty, how coins work, or how the world works?
+We might mean that we simply do not know whether or not the coin will land heads up, so a 50-50 chance just reflects our own ignorance about what will actually happen when the coin is flipped.
 Alternatively, we might reason that if a fair coin were to be flipped many times, all else being equal, then about half of flips should end heads up, so a 50% chance is a reasonable prediction of what will happen in any given flip.
 Or, perhaps we reason that events such as coin flips really are guided by chance on some deeper fundamental level, such that our 50% chance reflects some real causal metaphysical process in the world.
 These are questions concerning the philosophy of probability.
@@ -421,37 +421,37 @@ These rules are important for predicting real-world events in the biological and
 For example, we might need to make predictions concerning the risk of disease spreading in a population, or the risk of extreme events such as droughts occurring given increasing global temperatures.
 Probability is also important for testing scientific hypotheses.
 For example, if we sample two different groups and calculate that they have different means (e.g., two different fields have different mean soil nitrogen concentrations), we might want to know the probability that this difference between means could have arisen by chance.
-Here we will introduce practicals example of probability, then introduce some common probability distributions.</p>
+Here we will introduce practical examples of probability, then introduce some common probability distributions.</p>
 <div id="an-instructive-example" class="section level2 hasAnchor" number="14.1">
 <h2><span class="header-section-number">14.1</span> An instructive example<a href="Chapter_14.html#an-instructive-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Probability focuses on the outcomes of trials, such as the <strong>outcome</strong> (heads or tails) of the <strong>trial</strong> of a coin flip.
-The probability of an specific outcome is the relative number of times it is expected to happen given a large number of trials,</p>
+The probability of a specific outcome is the relative number of times it is expected to happen given a large number of trials,</p>
 <p><span class="math display">\[P(outcome) = \frac{Number\:of\:times\:outcome\:occurs}{Total\:number\:of\:trials}.\]</span></p>
 <p>For the outcome of a flipped coin landing on heads,</p>
 <p><span class="math display">\[P(heads) = \frac{Flips\:landing\:on\:heads}{Total\:number\:of\:flips}.\]</span></p>
 <p>As the total number of flips becomes very large, the number of flips that land on heads should get closer and closer to half the total, <span class="math inline">\(1/2\)</span> or <span class="math inline">\(0.5\)</span> (more on this later).
-The above equations use the notation <span class="math inline">\(P(X)\)</span> to define the probability (<span class="math inline">\(P\)</span>) of some event (<span class="math inline">\(X\)</span>) happening.
-Note that the number of times an outcome occurs cannot be less than 0, so <span class="math inline">\(P(X) \geq 0\)</span> must always be true.
+The above equations use the notation <span class="math inline">\(P(E)\)</span> to define the probability (<span class="math inline">\(P\)</span>) of some event (<span class="math inline">\(E\)</span>) happening.
+Note that the number of times an outcome occurs cannot be less than 0, so <span class="math inline">\(P(E) \geq 0\)</span> must always be true.
 Similarly, the number of times an outcome occurs cannot be greater than the number of trials; the most frequently it can happen is in <em>every</em> trial, in which case the top and bottom of the fraction has the same value.
-Hence, <span class="math inline">\(P(X) \leq 1\)</span> must also always be true.
+Hence, <span class="math inline">\(P(E) \leq 1\)</span> must also always be true.
 Probabilities therefore range from 0 (an outcome <em>never</em> happens) to 1 (an outcome <em>always</em> happens).</p>
 <p>It might be more familiar and intuitive at first to think in terms of percentages (i.e., from 0-100% chance of an outcome, rather than from 0-1), but there are good mathematical reasons for thinking about probability on a 0-1 scale (it makes calculations easier).
 For example, suppose we have two coins, and we want to calculate the probability that they will both land on heads if we flip them at the same time.
 That is, we want to know the probability that coin 1 lands on heads <strong>and</strong> coin 2 lands on heads.
 We can assume that the coins do not affect each other in any way, so each coin flip is <strong>independent</strong> of the other (i.e., the outcome of coin 1 does not affect the outcome of coin 2, and <em>vice versa</em> – this kind of assumption is often very important in statistics).
-Each coin, by itself, is expected to to land on heads with a probability of 0.5, <span class="math inline">\(P(heads) = 0.5\)</span>.
+Each coin, by itself, is expected to land on heads with a probability of 0.5, <span class="math inline">\(P(heads) = 0.5\)</span>.
 When we want to know the probability that two or more independent events will happen, we <em>multiply</em> their probabilities.
 In the case of both coins landing on heads, the probability is therefore,</p>
 <p><span class="math display">\[P(Coin_{1} = heads\:\cap Coin_{2} = heads) = 0.5 \times 0.5 = 0.25.\]</span></p>
 <p>Note that the symbol <span class="math inline">\(\cap\)</span> is basically just a fancy way of writing ‘and’ (technically, the intersection between sets; see set theory for details).
-Verbally, all this is saying is that the probability of coin 1 landing on heads <em>and</em> the probability of coin 2 landing on heads equals 0.5 times 0.5, which equals 0.25.</p>
-<p>But why are we multiplying to get the joint probability of both coins landing on heads?
+Verbally, all this is saying is that the probability of coin 1 landing on heads <em>and</em> the probability of coin 2 landing on heads equals 0.5 times 0.5, which is 0.25.</p>
+<p>But why are we <em>multiplying</em> to get the joint probability of both coins landing on heads?
 Why not add, for example?
-Well, we could take it as a given that multiplication is the correct operation to use when calculating the probability that multiple events will occur.
-We could also do a simple experiment to confirm that 0.25 really is about right (e.g., by flipping 2 coins 100 times and recording how many times both coins land on heads).
-But neither of these would likely be particularly satisfying.
+We could just take it as a given that multiplication is the correct operation to use when calculating the probability that multiple events will occur.
+Or we could do a simple experiment to confirm that 0.25 really is about right (e.g., by flipping 2 coins 100 times and recording how many times both coins land on heads).
+But neither of these options would likely be particularly satisfying.
 Let us first recognise that adding the probabilities cannot be the correct answer.
-If the probability of each coin landing on heads is 0.5, the adding probabilities would imply that the probability of both landing on heads is 0.5 + 0.5 = 1.
+If the probability of each coin landing on heads is 0.5, then adding probabilities would imply that the probability of both landing on heads is 0.5 + 0.5 = 1.
 This does not make any sense because we know that there are other possibilities, such as both coins landing on tails, or one coin landing on heads and the other landing on tails.
 Adding probabilities cannot be the answer, but why multiply?</p>
 <p>We can think about probabilities visually, as a kind of probability space.
@@ -464,7 +464,7 @@ Figure 14.1: Total probability space for flipping a single coin and observing it
 </div>
 <p>The total probability space is 1, and ‘heads’ occupies a density of 0.5 of the total space.
 The remaining space, also 0.5, is allocated to ‘tails’.
-If we add a second independent trial, we now need 2 dimensions of probability space (Figure 14.2).
+When we add a second independent trial, we now need 2 dimensions of probability space (Figure 14.2).
 The probability of heads or tails for coin 1 (the horizontal axis of Figure 14.2) remains unchanged, but we add another axis (vertical this time) to think about the equivalent probability space of coin 2.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-51"></span>
 <img src="img/coin2_probability.png" alt="A square is shown with coin 1 probability on the bottom and coin 2 probability on the left side, with a cross in the centre of the square indicating a division between outcomes of coin flips (heads-heads, heads-tails, etc.)." width="100%" />
@@ -493,35 +493,35 @@ This is 0.5 (i.e., 50%) of the total probability space.</p>
 In fact, probability is extremely relevant in nearly all areas of the natural sciences.
 The following are just 2 hypothetical examples where the calculations in the previous section might be usefully applied:</p>
 <ol style="list-style-type: decimal">
-<li><p>From a recent report online, you learn that 1 in 40 people in your local area are testing positive for Covid-19. You find yourself in a small shop with 6 other people. What is the probability that at least 1 of these 6 other people would test positive for Covid-19? To calculate this, note that the probability that any given person has Covid-19 is <span class="math inline">\(1/40 = 0.025\)</span>, which means that the probability that they do <strong>not</strong> must be <span class="math inline">\(1 - 0.025 = 0.975\)</span> (they either do or do not, and the probabilities must sum to 1). The probability that <strong>all</strong> 6 people <em>do not</em> have Covid-19 is therefore <span class="math inline">\((0.975)^6 = 0.859\)</span>. Consequently, the probability that at least 1 of the 6 people <strong>does</strong> have Covid-19 is <span class="math inline">\(1 - 0.859 = 0.141\)</span>, or <span class="math inline">\(14.1\%\)</span>.</p></li>
-<li><p>Imagine you are studying a population of sexually reproducing, diploid, animals, and you find that a particular genetic locus has 3 alleles with frequencies <span class="math inline">\(P(A_{1}) = 0.40\)</span>, <span class="math inline">\(P(A_{2}) = 0.45\)</span>, and <span class="math inline">\(P(A_{3}) = 0.15\)</span>. What is the probability that a randomly sampled animal will be heterozygous with 1 copy of the <span class="math inline">\(A_{1}\)</span> allele and 1 copy of the <span class="math inline">\(A_{3}\)</span> allele? Note that there are two ways for <span class="math inline">\(A_{1}\)</span> and <span class="math inline">\(A_{3}\)</span> to be arise in an individual, just like there were two ways to get a heads and tails coin in the section 14.1 example (see Figure 14.2). The individual could either get an <span class="math inline">\(A_{1}\)</span> in the first position and <span class="math inline">\(A_{3}\)</span> in the second position, or an <span class="math inline">\(A_{3}\)</span> in the first position and <span class="math inline">\(A_{1}\)</span> in the second position. We can therefore calculate the probability as, <span class="math inline">\(P(A_{1}) \times P(A_{3}) + P(A_{3}) \times P(A_{1})\)</span>, which is <span class="math inline">\((0.40 \times 0.15) + (0.15 \times 0.4) = 0.12\)</span>, or 12% (in population genetics, we might use the notation <span class="math inline">\(p = P(A_{1})\)</span> and <span class="math inline">\(r = P(A_{3})\)</span>, then note that <span class="math inline">\(2pr = 0.12\)</span>).</p></li>
+<li><p>From a recent report online, suppose you learn that 1 in 40 people in your local area are testing positive for Covid-19. You find yourself in a small shop with 6 other people. What is the probability that at least 1 of these 6 other people would test positive for Covid-19? To calculate this, note that the probability that any given person has Covid-19 is <span class="math inline">\(1/40 = 0.025\)</span>, which means that the probability that a person does <strong>not</strong> must be <span class="math inline">\(1 - 0.025 = 0.975\)</span> (they either do or do not, and the probabilities must sum to 1). The probability that <strong>all</strong> 6 people <em>do not</em> have Covid-19 is therefore <span class="math inline">\((0.975)^6 = 0.859\)</span>. Consequently, the probability that at least 1 of the 6 people <strong>does</strong> have Covid-19 is <span class="math inline">\(1 - 0.859 = 0.141\)</span>, or <span class="math inline">\(14.1\%\)</span>.</p></li>
+<li><p>Imagine you are studying a population of sexually reproducing, diploid (i.e., 2 sets of chromosomes), animals, and you find that a particular genetic locus has 3 alleles with frequencies <span class="math inline">\(P(A_{1}) = 0.40\)</span>, <span class="math inline">\(P(A_{2}) = 0.45\)</span>, and <span class="math inline">\(P(A_{3}) = 0.15\)</span>. What is the probability that a randomly sampled animal will be heterozygous with 1 copy of the <span class="math inline">\(A_{1}\)</span> allele and 1 copy of the <span class="math inline">\(A_{3}\)</span> allele? Note that there are 2 ways for <span class="math inline">\(A_{1}\)</span> and <span class="math inline">\(A_{3}\)</span> to arise in an individual, just like there were 2 ways to get a heads and tails coin in the section 14.1 example (see Figure 14.2). The individual could either get an <span class="math inline">\(A_{1}\)</span> in the first position and <span class="math inline">\(A_{3}\)</span> in the second position, or an <span class="math inline">\(A_{3}\)</span> in the first position and <span class="math inline">\(A_{1}\)</span> in the second position. We can therefore calculate the probability as, <span class="math inline">\(P(A_{1}) \times P(A_{3}) + P(A_{3}) \times P(A_{1})\)</span>, which is <span class="math inline">\((0.40 \times 0.15) + (0.15 \times 0.4) = 0.12\)</span>, or 12% (in population genetics, we might use the notation <span class="math inline">\(p = P(A_{1})\)</span> and <span class="math inline">\(r = P(A_{3})\)</span>, then note that <span class="math inline">\(2pr = 0.12\)</span>).</p></li>
 </ol>
 <p>In both of these examples, we made some assumptions, which might or might not be problematic.
 In the first example, we assumed that the 6 people in our shop were a random and independent sample from the local area (i.e., people with Covid-19 are not more or less likely to be in the shop, and the 6 people in the shop were not associated in a way that would affect their individual probabilities of having Covid-19).
 In the second example, we assumed that individuals mate randomly, and that there is no mutation, migration, or selection on genotypes <span class="citation">(<a href="#ref-Hardy1908" role="doc-biblioref">Hardy 1908</a>)</span>.
-It is important to recognise these assumptions when we are making them, as violations of assumptions could affect the probabilities of events!</p>
+It is important to recognise these assumptions when we are making them because violations of assumptions could affect the probabilities of events!</p>
 </div>
 <div id="sampling-with-and-without-replacement" class="section level2 hasAnchor" number="14.3">
 <h2><span class="header-section-number">14.3</span> Sampling with and without replacement<a href="Chapter_14.html#sampling-with-and-without-replacement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is often important to make a distinction between sampling with or without replacement.
 Sampling with replacement just means that whatever has been sampled once gets put back into the population before sampling again.
-Sampling without replacement means that the whatever has been sampled does not get put back into the population.
+Sampling without replacement means that whatever has been sampled does not get put back into the population before sampling again.
 An example makes the distinction between sampling with and without replacement clearer.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
 <img src="img/cards.jpg" alt="Close up of 10 playing cards are shown, 5 hearts (left) and 5 clubs (right). Cards decrease from 5 to ace left to right for both suits." width="100%" />
 <p class="caption">
-Figure 14.3: Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 clubs (right).
+Figure 14.3: Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 spades (right).
 </p>
 </div>
-<p>Figure 14.3 shows 10 playing cards, 5 hearts and 5 clubs.
+<p>Figure 14.3 shows 10 playing cards, 5 hearts and 5 spades.
 If we shuffle these cards thoroughly and randomly select 1 card, what is the probability of selecting a heart?
 This is simply,</p>
 <p><span class="math display">\[P(heart) = \frac{5\:hearts}{10\:total\:cards} = 0.5.\]</span></p>
-<p>What is the probability randomly selecting two hearts?
+<p>What is the probability of randomly selecting 2 hearts?
 This depends if we are sampling with or without replacement.
 If we sample 1 card, then put it back into the deck before sampling the second card, then the probability of sampling a heart does not change (in both samples, we have 5 hearts and 10 cards).
 Hence, the probability of sampling two hearts with replacement is <span class="math inline">\(P(heart) \times P(heart) = 0.5 \times 0.5 = 0.25\)</span>.
-We do not put the first card back into the deck before sampling again, then we have changed the total number of cards.
+If we do not put the first card back into the deck before sampling again, then we have changed the total number of cards.
 After sampling the first heart, we have one fewer hearts in the deck and one fewer cards, so the new probability for sampling a heart becomes,</p>
 <p><span class="math display">\[P(heart) = \frac{4\:hearts}{9\:total\:cards} = 0.444.\]</span></p>
 <p>Since the probability has changed after the first heart is sampled, we need to use this adjusted probability when sampling without replacement.
@@ -551,7 +551,7 @@ Next, we will consider some more interesting distributions.</p>
 More generally, a binomial distribution describes the number of successes in some number of trials <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.
 The word ‘success’ should not be taken too literally here; it does not necessarily indicate a good outcome, or an accomplishment of some kind.
 A success in the context of a binomial distribution just means that an outcome <em>did</em> happen as opposed to it <em>not</em> happening.
-If we define a coin flip landing on heads as a success, we could consider the probability distribution of the number of success over 10 trials (Figure 14.5)</p>
+If we define a coin flip landing on heads as a success, we could consider the probability distribution of the number of successes over 10 trials (Figure 14.5)</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-54"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-54-1.png" alt="A barplot is shown with 11 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape" width="672" />
 <p class="caption">
@@ -565,7 +565,7 @@ There is also about a 0.2 probability that the outcome is 4 heads, and the same 
 Hence, the probability that we get an outcome of between 4-6 heads is about <span class="math inline">\(0.25 + 0.2 + 0.2 = 0.65\)</span>.
 In contrast, the probability of getting all heads is very low (about 0.00098).</p>
 <p>More generally, we can define the number of successes using the random variable <span class="math inline">\(X\)</span>.
-We can then use the notation <span class="math inline">\(P(X = 5) = 0.25\)</span> to indicate the probability of 5 successes, or <span class="math inline">\(P(4 \leq X \leq 6) = 0.65\)</span> as the probability that the number of success being greater than or equal to 4 and less than or equal to 6.</p>
+We can then use the notation <span class="math inline">\(P(X = 5) = 0.25\)</span> to indicate the probability of 5 successes, or <span class="math inline">\(P(4 \leq X \leq 6) = 0.65\)</span> as the probability that the number of success is greater than or equal to 4 and less than or equal to 6.</p>
 <p>Imagine that you were told a coin was fair, then flipped it 10 times.
 Imagine that 9 flips out of the 10 came up heads.
 Given the probability distribution shown in Figure 14.5, the probability of getting 9 or more heads in 10 flips given a fair coin is very low (<span class="math inline">\(P(X \geq 9) \approx 0.011\)</span>).
@@ -581,7 +581,7 @@ Figure 14.6: Probability distribution for the number of people who have Covid-19
 </p>
 </div>
 <p>Note that the shape of this binomial distribution is different from the coin flipping trials in Figure 14.5.
-The distribution is skewed, with a high probability of 0 success and a diminishing probability of 1 or more success.</p>
+The distribution is skewed, with a high probability of 0 successes and a diminishing probability of 1 or more successes.</p>
 <p>The shape of a statistical probability distribution can be defined mathematically.
 Depending on the details (more on this later), we call the equation defining the distribution either a probability mass function or a probability density function.
 This book is about statistical techniques, not statistical theory, so we will relegate these equations to footnotes.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>
@@ -598,26 +598,26 @@ On this particular day, runners pass by the bench at a steady rate of about 4 pe
 We might then want to know the <em>distribution</em> of the number of runners passing by per minute.
 That is, given that we see 4 runners per minute on average, what is the probability that we will see just 2 runners pass in any given minute.
 What is the probability that we will see 8 runners pass in a minute?
-This hypothetical example is modelled with a poisson distribution.
-A poisson distribution describes events happening over some interval (e.g., happening over time or space).
-There are a lot of situations where a poisson distribution is relevant in biological and environmental sciences:</p>
+This hypothetical example is modelled with a Poisson distribution.
+A Poisson distribution describes events happening over some interval (e.g., happening over time or space).
+There are a lot of situations where a Poisson distribution is relevant in biological and environmental sciences:</p>
 <ul>
 <li>Number of times a particular species will be encountered while walking a given distance.</li>
 <li>Number of animals a camera trap will record during a day.</li>
 <li>Number of floods or earthquakes that will occur in a given year.</li>
 </ul>
-<p>The shape of a poisson distribution is described by just 1 parameter, <span class="math inline">\(\lambda\)</span>.
-This parameter is both the mean and the variance of the poisson distribution.
+<p>The shape of a Poisson distribution is described by just 1 parameter, <span class="math inline">\(\lambda\)</span>.
+This parameter is both the mean and the variance of the Poisson distribution.
 We can therefore get the probability that some number of events (<span class="math inline">\(x\)</span>) will occur just by knowing <span class="math inline">\(\lambda\)</span> (Figure 14.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-56"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-56-1.png" alt="Four panels are shown, each with a poisson distribution of a different rate paramter (0.5, 1.0, 2.5, and 5.0)." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-56-1.png" alt="Four panels are shown, each with a Poisson distribution of a different rate paramter (0.5, 1.0, 2.5, and 5.0)." width="672" />
 <p class="caption">
 Figure 14.7: Poisson probability distributions given different rate parameter values.
 </p>
 </div>
-<p>Like the binomial distribution, the poisson distribution can also be defined mathematically<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.
-Also like the binomial distribution, probabilities in the poisson distribution focus on <strong>discrete</strong> observations.
-This is, probabilities are assigned to a specific number of successes in a set of trials (binomial distribution) or the number of events over time (poisson distribution).
+<p>Like the binomial distribution, the Poisson distribution can also be defined mathematically<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.
+Also like the binomial distribution, probabilities in the Poisson distribution focus on <strong>discrete</strong> observations.
+This is, probabilities are assigned to a specific number of successes in a set of trials (binomial distribution) or the number of events over time (Poisson distribution).
 In both cases, the probability distribution focuses on countable numbers.
 In other words, it does not make any sense to talk about the probability of a coin landing on heads 3.75 times after 10 flips, nor the probability of 2.21 runners passing by a park bench in a given minute.
 The probability of either of these events happening is zero, which is why the Figures 14.5-14.7 all have spaces between the vertical bars.
@@ -628,7 +628,7 @@ In the next section, we consider distributions with a continuous range of possib
 <div id="uniform-distribution" class="section level3 hasAnchor" number="14.4.3">
 <h3><span class="header-section-number">14.4.3</span> Uniform distribution<a href="Chapter_14.html#uniform-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We now move on to continuous distributions, starting with the continuous uniform distribution.
-We introduce this distribution mainly to clarify the difference between a discrete and continues distribution.
+We introduce this distribution mainly to clarify the difference between a discrete and continuous distribution.
 While the uniform distribution is very important in a lot of statistical tools (notably, simulating pseudorandom numbers), it is not something that we come across much in biological or environmental science data.
 The continuous uniform distribution has two parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>
 Values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be any real number (not just integers).
@@ -642,9 +642,9 @@ Figure 14.8: A continuous uniform distribution in which a random variable X take
 </div>
 <p>The height of the distribution in Figure 14.7 is <span class="math inline">\(1/(\beta - \alpha) = 1/(2.5 - 1) \approx 0.667\)</span>.
 All values between 1 and 2.5 have equal probability of being sampled.</p>
-<p>Here is a good place to point out the difference between the continuous distribution versus the discrete binomial and poisson distributions.
+<p>Here is a good place to point out the difference between the continuous distribution versus the discrete binomial and Poisson distributions.
 From the uniform distribution of Figure 14.7, we can, theoretically, sample <em>any</em> real value between 1 and 2.5 (e.g., 1.34532 or 2.21194; the sampled value can have as many decimals as our measuring device allows).
-There are uncountably infinite real numbers, so it no longer makes sense to ask what the probability is of sampling a specific number.
+There are uncountably infinite real numbers, so it no longer makes sense to ask what is the probability of sampling a specific number.
 For example, what is the probability of sampling a value of <em>exactly</em> 2, rather than, say, 1.999999 or 2.000001, or something else arbitrarily close to 2?
 The probability of sampling a specific number exactly is negligible.
 Instead, we need to think about the probability of sampling within intervals.
@@ -653,14 +653,14 @@ This is the nature of probability when we consider continuous distributions.</p>
 </div>
 <div id="normal-distribution" class="section level3 hasAnchor" number="14.4.4">
 <h3><span class="header-section-number">14.4.4</span> Normal distribution<a href="Chapter_14.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The last distribution, the normal distribution (also known as the “Gaussian distribution” or the “bell curve”), has a special place in statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.
+<p>The last distribution, the normal distribution (also known as the “Gaussian distribution” or the “bell curve”) has a special place in statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.
 It appears in many places in the biological and environmental sciences and, partly due to the central limit theorem (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>), is fundamental to many statistical tools.
 The normal distribution is continuous, just like the continuous uniform distribution from the previous section.
 Unlike the uniform distribution, with the normal distribution, it is possible (at least in theory) to sample <em>any</em> real value, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>.
 The distribution has a symmetrical, smooth bell shape (Figure 14.8), in which probability density peaks at the mean, which is also the median and mode of the distribution.
 The normal distribution has two parameters, the mean (<span class="math inline">\(\mu\)</span>) and the standard deviation (<span class="math inline">\(\sigma\)</span>).<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>
 The mean determines where the peak of the distribution is, and the standard deviation determines the width or narrowness of the distribution.
-Note that we are using <span class="math inline">\(\mu\)</span> for the mean here instead of <span class="math inline">\(\bar{x}\)</span>, and <span class="math inline">\(\sigma\)</span> for the standard deviation instead of <span class="math inline">\(s\)</span>, to differentiate between the sample estimates of <a href="Chapter_11.html#Chapter_11">Chapter 11</a> and <a href="Chapter_12.html#Chapter_12">Chapter 12</a>.</p>
+Note that we are using <span class="math inline">\(\mu\)</span> for the mean here instead of <span class="math inline">\(\bar{x}\)</span>, and <span class="math inline">\(\sigma\)</span> for the standard deviation instead of <span class="math inline">\(s\)</span>, to differentiate between the <em>population</em> parameters from the <em>sample</em> estimates of <a href="Chapter_11.html#Chapter_11">Chapter 11</a> and <a href="Chapter_12.html#Chapter_12">Chapter 12</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-58"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-58-1.png" alt="A plot of a bell curve, shaded in grey and centered at the x-axis on a value of zero is shown." width="672" />
 <p class="caption">
@@ -675,10 +675,10 @@ We will look at the standard normal distribution more closely in <a href="Chapte
 <div id="summary-2" class="section level2 hasAnchor" number="14.5">
 <h2><span class="header-section-number">14.5</span> Summary<a href="Chapter_14.html#summary-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This chapter has introduced probability models and different types of distributions.
-It has focused on the key that are especially important for understanding and implementing statistical techniques.
+It has focused on the key points that are especially important for understanding and implementing statistical techniques.
 As such, a lot of details have been left out.
 For example, the probability distributions considered in Section 14.4 comprise only a small number of example distributions that are relevant for biological and environmental sciences.
-In <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, we will get an even closer look at the normal distribution and why it is especially useful.</p>
+In <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, we will get an even closer look at the normal distribution and why it is especially important.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -713,7 +713,7 @@ Suárez, Mauricio. 2020. <em><span class="nocase">Philosophy of Probability and 
 <ol start="12">
 <li id="fn12"><p>In the interest of transparency, this book presents a <em>frequentist</em> interpretation of probability <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>)</span>. While this approach does reflect the philosophical inclinations of the author, the reason for working from this interpretation has more to do with the statistical tests that are most appropriate for an introductory statistics module, which are also the tests most widely used in the biological and environmental sciences.<a href="Chapter_14.html#fnref12" class="footnote-back">↩︎</a></p></li>
 <li id="fn13"><p>For those interested, more technically, we can say that a random variable <span class="math inline">\(X\)</span> has binomial distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[b \left(x; n, \theta \right) = {n \choose x} \theta^{x} \left(1 - \theta\right)^{n-x}.\]</span> In this binomial probability mass function, <span class="math inline">\(x = 0, 1, 2, ..., n\)</span> (i.e., <span class="math inline">\(x\)</span> can take any integer value from 0 to n). Note that the <span class="math inline">\(n\)</span> over the <span class="math inline">\(x\)</span> in the first parentheses on the right hand side of the equation is a binomial coefficient, which can be read “n choose x”. This can be written out as, <span class="math display">\[{n \choose x} = \frac{n!}{x!(n - x)!}.\]</span> Note that the exclamation mark indicates a factorial, such that <span class="math inline">\(n! = n \times (n-1) \times (n - 2) \times ... \times 2 \times 1\)</span>. That is, the factorial multiplies every decreasing integer down to 1. For example, <span class="math inline">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>. None of this is critical to know for applying statistical techniques to biological and environmental science data, but it demonstrates just a bit of the theory underlying statistical tools.<a href="Chapter_14.html#fnref13" class="footnote-back">↩︎</a></p></li>
-<li id="fn14"><p>A random variable <span class="math inline">\(X\)</span> has a poisson distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[p \left(x; \lambda \right) = \frac{\lambda^{x}e^{x}}{x!}.\]</span> Recall from <a href="Chapter_1.html#Chapter_1">Chapter 1</a> Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, and from footnote 13 that the exclamation mark indicates a factorial. In the poisson probability mass function, <span class="math inline">\(x\)</span> can take any integer value greater than or equal to 0.<a href="Chapter_14.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn14"><p>A random variable <span class="math inline">\(X\)</span> has a Poisson distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[p \left(x; \lambda \right) = \frac{\lambda^{x}e^{x}}{x!}.\]</span> Recall from <a href="Chapter_1.html#Chapter_1">Chapter 1</a> Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, and from footnote 13 that the exclamation mark indicates a factorial. In the Poisson probability mass function, <span class="math inline">\(x\)</span> can take any integer value greater than or equal to 0.<a href="Chapter_14.html#fnref14" class="footnote-back">↩︎</a></p></li>
 <li id="fn15"><p>A random variable <span class="math inline">\(X\)</span> has a continuous uniform distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[u\left(x; \alpha, \beta\right) = \frac{1}{\beta - \alpha},\]</span> where <span class="math inline">\(\alpha &lt; x &lt; \beta\)</span>, and <span class="math inline">\(u\left(x; \alpha, \beta\right) = 0\)</span> everywhere else. The value <span class="math inline">\(x\)</span> can take any real number.<a href="Chapter_14.html#fnref15" class="footnote-back">↩︎</a></p></li>
 <li id="fn16"><p>A random variable <span class="math inline">\(X\)</span> has a normal distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[n\left(x; \mu, \sigma\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}}.\]</span> In the normal distribution, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>. Note the appearance of two irrational numbers introduced back in <a href="Chapter_1.html#Chapter_1">Chapter 1</a>, <span class="math inline">\(\pi\)</span> and <span class="math inline">\(e\)</span>.<a href="Chapter_14.html#fnref16" class="footnote-back">↩︎</a></p></li>
 </ol>

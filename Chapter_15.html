@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-03" />
+<meta name="date" content="2023-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -413,21 +413,21 @@ This chapter focuses on the normal distribution in more detail and explains why 
 It states that if we sample values from <strong>any</strong> distribution and calculate the mean, as we increase our sample size <span class="math inline">\(N\)</span>, the distribution <em>of the mean</em> gets closer and closer to a normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>; <a href="#ref-Spiegelhalter2019" role="doc-biblioref">Spiegelhalter 2019</a>)</span>.<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>
 This statement is busy and potentially confusing at first, partly because it refers to two separate distributions, the sampling distribution and the distribution of the sample mean.
 We can take this step by step, starting with the sampling distribution.</p>
-<p>The sampling distribution could be any of the four distributions introduced in <a href="Chapter_15.html#Chapter_15">Chapter 15</a> (binomial, poisson, uniform, or normal).
-Suppose that we sample the binomial distribution from Figure 14.6, the one describing the probability distribution of the number of people out of 6 who would test positive for Covid-19 if the probability of testing positive was 0.025.
+<p>The sampling distribution could be any of the 4 distributions introduced in <a href="Chapter_14.html#Chapter_14">Chapter 14</a> (binomial, Poisson, uniform, or normal).
+Suppose that we sample the binomial distribution from Figure 14.6, the one showing the number of people out of 6 who would test positive for Covid-19 if the probability of testing positive was 0.025.
 Assume that we sample a value from this distribution (i.e., a number from 0 to 6) 100 times (i.e., <span class="math inline">\(N = 100\)</span>).
 If it helps, we can imagine going to 100 different shops, all of which are occupied by 6 people.
-From these 100 samples, we can get calculate the sample mean <span class="math inline">\(\bar{x}\)</span>.
+From these 100 samples, we can calculate the sample mean <span class="math inline">\(\bar{x}\)</span>.
 This would be the mean number of people in a shop who would test positive for Covid-19.
 If we were just collecting data to try to estimate the mean number of people with Covid-19 in shops of 6, this is where our calculations might stop.
 But here is where the second distribution becomes relevant.</p>
-<p>Suppose that we could somehow go back out to collect another 100 samples from a completely different set of 100 shops.
+<p>Suppose that we could somehow go back out to collect <em>another</em> 100 samples from 100 completely different shops.
 We could then get the mean of this new sample of <span class="math inline">\(N = 100\)</span> shops.
 To differentiate, we can call the first sample mean <span class="math inline">\(\bar{x}_{1}\)</span> and this new sample mean <span class="math inline">\(\bar{x}_{2}\)</span>.
 Will <span class="math inline">\(\bar{x}_{1}\)</span> and <span class="math inline">\(\bar{x}_{2}\)</span> be the exact same value?
 Probably not!
-Since our samples are independent and random from the binomial distribution (Figure 14.6), it is almost certain that the two sample means will be at least bit different.
-We can therefore ask about the <em>distribution</em> of these sample means.
+Since our samples are independent and random from the binomial distribution (Figure 14.6), it is almost certain that the two sample means will be at least a bit different.
+We can therefore ask about the <em>distribution</em> of sample means.
 That is, what if we kept going back out to get more samples of 100, calculating additional sample means <span class="math inline">\(\bar{x}_{3}\)</span>, <span class="math inline">\(\bar{x}_{4}\)</span>, <span class="math inline">\(\bar{x}_{5}\)</span>, and so forth?
 What would this distribution look like?
 It turns out, it would be a normal distribution!</p>
@@ -439,16 +439,16 @@ Figure 15.1: A simulated demonstration of the central limit theorem. (a) Recreat
 </div>
 <p>To demonstrate the CLT in action, Figure 15.1 shows the two distributions side-by-side.
 The first (Figure 15.1a) shows the original distribution from Figure 14.6, from which samples are collected and sample means are calculated.
-The second (Figure 151b) shows the distribution of 1000 sample means (i.e., <span class="math inline">\(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)</span>).
+The second (Figure 15.1b) shows the distribution of 1000 sample means (i.e., <span class="math inline">\(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)</span>).
 Each mean <span class="math inline">\(\bar{x}_{i}\)</span> is calculated from a sample of <span class="math inline">\(N = 100\)</span> from the distribution in Figure 15.1a.
 Sampling is simulated using a random number generator on the computer (the lab practical in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> shows an example of how to do this in Jamovi).</p>
 <p>The distribution of sample means shown in Figure 15.1b is not perfectly normal.
-We can try again with an even bigger sample size of <span class="math inline">\(N = 1000\)</span>, this time with a poisson distribution where <span class="math inline">\(\lambda = 1\)</span> in Figure 14.7.
-Figure 15.2 shows this result, with the original poisson distribution shown in Figure 15.2a, and the corresponding distribution built from 1000 sample means shown in Figure 15.2b.</p>
+We can try again with an even bigger sample size of <span class="math inline">\(N = 1000\)</span>, this time with a Poisson distribution where <span class="math inline">\(\lambda = 1\)</span> in Figure 14.7.
+Figure 15.2 shows this result, with the original Poisson distribution shown in Figure 15.2a, and the corresponding distribution built from 1000 sample means shown in Figure 15.2b.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-60"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-60-1.png" alt="A two panel figure, the first shows a barplot is shown with 11 bars corresponding to the probability of sampling 0-10 from a poisson distribution with a rate parameter of 1. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-60-1.png" alt="A two panel figure, the first shows a barplot is shown with 11 bars corresponding to the probability of sampling 0-10 from a Poisson distribution with a rate parameter of 1. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
 <p class="caption">
-Figure 15.2: A simulated demonstration of the central limit theorem. (a) Recreation of Figure 14.7 showing the probability distribution for the number of events occurring in a poisson distribution with a rate parameter of 1. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 1000.
+Figure 15.2: A simulated demonstration of the central limit theorem. (a) Recreation of Figure 14.7 showing the probability distribution for the number of events occurring in a Poisson distribution with a rate parameter of 1. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 1000.
 </p>
 </div>
 <p>Finally, we can try the same approach with the continuous uniform distribution shown in Figure 14.8.
@@ -460,15 +460,15 @@ The simulated result is shown in Figure 14.9.</p>
 Figure 15.3: A simulated demonstration of the central limit theorem. (a) Recreation of Figure 14.8 showing a continuous uniform distribution with a minimum of 1 and a maximum of 2.5. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 10000.
 </p>
 </div>
-<p>In all cases, regardless of the original sampling distribution (binomial, poisson, or uniform), the distribution of sample <em>means</em> has the shape of a normal distribution.
+<p>In all cases, regardless of the original sampling distribution (binomial, Poisson, or uniform), the distribution of sample <em>means</em> has the shape of a normal distribution.
 This normal distribution of sample means has important implications for statistical hypothesis testing.
-The CLT allows us to make inferences about the means of non-normally distributed distributions <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, to create confidence intervals around estimates sample means, and to apply statistical hypothesis tests that would otherwise not be possible.
+The CLT allows us to make inferences about the means of non-normally distributed distributions <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, to create confidence intervals around sample means, and to apply statistical hypothesis tests that would otherwise not be possible.
 We will look at these statistical tools in future chapters.</p>
 </div>
 <div id="probability-and-z-scores" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Probability and z-scores<a href="Chapter_15.html#probability-and-z-scores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can calculate the probability of sampling some range of values from the normal distribution if we know the distribution’s mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>).
-For example, because the normal distribution is symmetric around the mean (Figure 15.4), the probability of sampling a value greater than the mean will be 0.5 (i.e., <span class="math inline">\(P(x &gt; \mu) = 0.5\)</span>), and so will the probability of sampling a value less than the mean (i.e., <span class="math inline">\(P(x &lt; \mu) = 0.5\)</span>).
+For example, because the normal distribution is symmetric around the mean, the probability of sampling a value greater than the mean will be 0.5 (i.e., <span class="math inline">\(P(x &gt; \mu) = 0.5\)</span>), and so will the probability of sampling a value less than the mean (i.e., <span class="math inline">\(P(x &lt; \mu) = 0.5\)</span>).
 Similarly, about 68.2% of the normal distribution’s probability density lies within 1 standard deviation of the mean (shaded region of Figure 15.4), which means that the probability of randomly sampling a value <span class="math inline">\(x\)</span> that is greater than <span class="math inline">\(\mu - \sigma\)</span> but less than <span class="math inline">\(\mu + \sigma\)</span> is <span class="math inline">\(P(\mu - \sigma &lt; x &lt; \mu + \sigma) = 0.682\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-62"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-62-1.png" alt="A plot of a bell curve, with a range of the curve shaded in grey between negative sigma and positive sigma, symmetrical around the peak of the curve" width="672" />
@@ -481,8 +481,8 @@ This remains true whether it is the binomial distribution that we saw with the c
 Consequently, the area under curve of the normal distribution (i.e., under the curved line of Figure 15.4) must equal 1.
 When we say that the probability of sampling a value within 1 standard deviation of the mean is 0.682, this also means that the <em>area</em> of this region under the curve equals 0.682 (i.e., the shaded area in Figure 15.4).
 And, again, because the whole area under the curve sums to 1, that must mean that the unshaded area of Figure 15.4 (where <span class="math inline">\(x &lt; \mu -\sigma\)</span> or <span class="math inline">\(x &gt; \mu + \sigma\)</span>) has an area equal to <span class="math inline">\(1 - 0.682 = 0.318\)</span>.
-That is, the probability of randomly sampling a value <span class="math inline">\(x\)</span> in this region is <span class="math inline">\(P(x &lt; \mu - \sigma \: | \: x &gt; \mu + \sigma) = 0.318\)</span>, or 31.8% (note that the vertical bar, <span class="math inline">\(|\)</span>, is just a fancy way of saying ‘or’, in this case).</p>
-<p>We can calculate other percentages using standard deviations too [<span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span>; ].
+That is, the probability of randomly sampling a value <span class="math inline">\(x\)</span> in this region is <span class="math inline">\(P(x &lt; \mu - \sigma \: \cup \: x &gt; \mu + \sigma) = 0.318\)</span>, or 31.8% (note that the <span class="math inline">\(\cup\)</span>, is just a fancy way of saying ‘or’, in this case; technically, the <em>union</em> of two sets).</p>
+<p>We can calculate other percentages using standard deviations too <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 For example, about 95.4% of the probability density in a normal distribution lies between 2 standard deviations of the mean, i.e., <span class="math inline">\(P(\mu - 2\sigma &lt; x &lt; \mu + 2\sigma) = 0.954\)</span>.
 And about 99.6% of the probability density in a normal distribution lies between 3 standard deviations of the mean, i.e., <span class="math inline">\(P(\mu - 3\sigma &lt; x &lt; \mu + 3\sigma) = 0.996\)</span>.
 We could go on mapping percentages to standard deviations like this; for example, about 93.3% of the probability density in a normal distribution is less than <span class="math inline">\(\mu + 1.5\sigma\)</span> (i.e., less than 1.5 standard deviations greater than the mean; see Figure 15.5).</p>
@@ -493,7 +493,7 @@ Figure 15.5: A normal distribution in which the shaded region shows the area und
 </p>
 </div>
 <p>Notice that there are no numbers on the x-axes of Figure 15.4 or 15.5.
-This is deliberate; the relationship between standard deviations and percentage of probability density applies regardless of the scale.
+This is deliberate; the relationship between standard deviations and probability density applies regardless of the scale.
 We could have a mean of <span class="math inline">\(\mu = 100\)</span> and standard deviation of <span class="math inline">\(\sigma = 4\)</span>, or <span class="math inline">\(\mu = -12\)</span> and <span class="math inline">\(\sigma = 0.34\)</span>.
 It does not matter.
 Nevertheless, it would be very useful if we could work with some standard values of <span class="math inline">\(x\)</span> when working out probabilities.
@@ -530,7 +530,7 @@ By doing this transformation on the original dataset, z-scores can now be used w
 Mathematically, here is how the calculation is made,</p>
 <p><span class="math display">\[z = \frac{x - \mu}{\sigma}.\]</span></p>
 <p>For example, if we had a value of <span class="math inline">\(x = 9.1\)</span> in our simulated dataset, in which <span class="math inline">\(\mu = 5\)</span> and <span class="math inline">\(\sigma = 2\)</span>, then we could calculate <span class="math inline">\(z = (9.1 - 5) / 2 = 2.05\)</span>.
-We could then use a statistical program such as Jamovi, our <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, or an old-fashioned z-table<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our normally distributed data.
+We could then use a statistical program such as Jamovi, our <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, or an old-fashioned z-table<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
 These z scores will become especially useful for calculating confidence intervals in <a href="#Chapter_17">Chapter 17</a>.
 They can also be useful for comparing values from variables or statistics measured on different scales <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Cheadle2003" role="doc-biblioref">Cheadle et al. 2003</a>; <a href="#ref-Adams2016" role="doc-biblioref">Adams and Collyer 2016</a>)</span>.</p>
 </div>
