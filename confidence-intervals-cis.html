@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 17 Confidence intervals (CIs) | Statistical Techniques for Biological and Environmental Sciences</title>
+  <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 17 Confidence intervals (CIs) | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  <meta name="github-repo" content="bradduthie/statistical_techniques" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 17 Confidence intervals (CIs) | Statistical Techniques for Biological and Environmental Sciences" />
+  
+  <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  
+
+<meta name="author" content="Brad Duthie" />
+
+
+<meta name="date" content="2023-01-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Week5.html"/>
+<link rel="next" href="the-t-interval.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Techniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-module-is-important"><i class="fa fa-check"></i>Why this module is important</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ILOs"><i class="fa fa-check"></i>Intended learning outcomes (ILOs)</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#accessibility"><i class="fa fa-check"></i>Accessibility</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching_overview"><i class="fa fa-check"></i>Teaching overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#book_chapters"><i class="fa fa-check"></i>Book chapters</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional_readings"><i class="fa fa-check"></i>Additional readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#Canvas"><i class="fa fa-check"></i>Canvas</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assessment-overview"><i class="fa fa-check"></i>Assessment overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tests"><i class="fa fa-check"></i>Tests</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exams"><i class="fa fa-check"></i>Exams</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#extenuating_circumstances"><i class="fa fa-check"></i>Extenuating circumstances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practicals"><i class="fa fa-check"></i>Practicals</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#help"><i class="fa fa-check"></i>Optional help hours</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#timetable"><i class="fa fa-check"></i>Timetable</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
+<li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_1.html"><a href="Chapter_1.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter_1.html"><a href="Chapter_1.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter_1.html"><a href="Chapter_1.html#logarithms"><i class="fa fa-check"></i><b>1.2</b> Logarithms</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter_1.html"><a href="Chapter_1.html#order-of-operations"><i class="fa fa-check"></i><b>1.3</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_2.html"><a href="Chapter_2.html"><i class="fa fa-check"></i><b>2</b> Data organisation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Statistical concepts</b></span></li>
+<li class="chapter" data-level="" data-path="Week2.html"><a href="Week2.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propogation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
+<li class="chapter" data-level="8.4" data-path="Chapter_8.html"><a href="Chapter_8.html#summary-1"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Summary statistics</b></span></li>
+<li class="chapter" data-level="" data-path="Week3.html"><a href="Week3.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="Chapter_9.html"><a href="Chapter_9.html"><i class="fa fa-check"></i><b>9</b> Decimal places, significant figures, and rounding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter_9.html"><a href="Chapter_9.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>9.1</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter_9.html"><a href="Chapter_9.html#rounding"><i class="fa fa-check"></i><b>9.2</b> Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Chapter_10.html"><a href="Chapter_10.html"><i class="fa fa-check"></i><b>10</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter_10.html"><a href="Chapter_10.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="Chapter_10.html"><a href="Chapter_10.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>10.2</b> Barplots and pie charts</a></li>
+<li class="chapter" data-level="10.3" data-path="Chapter_10.html"><a href="Chapter_10.html#box-whisker-plots"><i class="fa fa-check"></i><b>10.3</b> Box-whisker plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Chapter_11.html"><a href="Chapter_11.html"><i class="fa fa-check"></i><b>11</b> Measures of central tendency</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mean"><i class="fa fa-check"></i><b>11.1</b> The mean</a></li>
+<li class="chapter" data-level="11.2" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mode"><i class="fa fa-check"></i><b>11.2</b> The mode</a></li>
+<li class="chapter" data-level="11.3" data-path="Chapter_11.html"><a href="Chapter_11.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>11.3</b> The median and quantiles</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Chapter_12.html"><a href="Chapter_12.html"><i class="fa fa-check"></i><b>12</b> Measures of spread</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Chapter_12.html"><a href="Chapter_12.html#the-range"><i class="fa fa-check"></i><b>12.1</b> The range</a></li>
+<li class="chapter" data-level="12.2" data-path="Chapter_12.html"><a href="Chapter_12.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>12.2</b> The inter-quartile range</a></li>
+<li class="chapter" data-level="12.3" data-path="Chapter_12.html"><a href="Chapter_12.html#the-variance"><i class="fa fa-check"></i><b>12.3</b> The variance</a></li>
+<li class="chapter" data-level="12.4" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-deviation"><i class="fa fa-check"></i><b>12.4</b> The standard deviation</a></li>
+<li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
+<li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>13.3</b> Calculate summary statistics</a></li>
+<li class="chapter" data-level="13.4" data-path="Chapter_13.html"><a href="Chapter_13.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>13.4</b> Reporting decimals and significant figures</a></li>
+<li class="chapter" data-level="13.5" data-path="Chapter_13.html"><a href="Chapter_13.html#comparing-across-sites"><i class="fa fa-check"></i><b>13.5</b> Comparing across sites</a></li>
+</ul></li>
+<li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
+<li class="chapter" data-level="" data-path="Week4.html"><a href="Week4.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> Introduction to probability models</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#an-instructive-example"><i class="fa fa-check"></i><b>14.1</b> An instructive example</a></li>
+<li class="chapter" data-level="14.2" data-path="Chapter_14.html"><a href="Chapter_14.html#biological-applications"><i class="fa fa-check"></i><b>14.2</b> Biological applications</a></li>
+<li class="chapter" data-level="14.3" data-path="Chapter_14.html"><a href="Chapter_14.html#sampling-with-and-without-replacement"><i class="fa fa-check"></i><b>14.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="14.4" data-path="Chapter_14.html"><a href="Chapter_14.html#probability-distributions"><i class="fa fa-check"></i><b>14.4</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="Chapter_14.html"><a href="Chapter_14.html#binomial-distribution"><i class="fa fa-check"></i><b>14.4.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="Chapter_14.html"><a href="Chapter_14.html#poisson-distribution"><i class="fa fa-check"></i><b>14.4.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="14.4.3" data-path="Chapter_14.html"><a href="Chapter_14.html#uniform-distribution"><i class="fa fa-check"></i><b>14.4.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="14.4.4" data-path="Chapter_14.html"><a href="Chapter_14.html#normal-distribution"><i class="fa fa-check"></i><b>14.4.4</b> Normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="Chapter_14.html"><a href="Chapter_14.html#summary-2"><i class="fa fa-check"></i><b>14.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#probability-and-z-scores"><i class="fa fa-check"></i><b>15.2</b> Probability and z-scores</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="Chapter_16.html"><a href="Chapter_16.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+</ul></li>
+<li class="part"><span><b>V Statistical inference</b></span></li>
+<li class="chapter" data-level="" data-path="Week5.html"><a href="Week5.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="17" data-path="confidence-intervals-cis.html"><a href="confidence-intervals-cis.html"><i class="fa fa-check"></i><b>17</b> Confidence intervals (CIs)</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="confidence-intervals-cis.html"><a href="confidence-intervals-cis.html#normal-distribution-cis"><i class="fa fa-check"></i><b>17.1</b> Normal distribution CIs</a></li>
+<li class="chapter" data-level="17.2" data-path="confidence-intervals-cis.html"><a href="confidence-intervals-cis.html#binomial-distribution-cis"><i class="fa fa-check"></i><b>17.2</b> Binomial distribution CIs</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="the-t-interval.html"><a href="the-t-interval.html"><i class="fa fa-check"></i><b>18</b> The t-interval</a></li>
+<li class="chapter" data-level="19" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>19</b> <em>Practical</em>. z- and t- intervals</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals"><i class="fa fa-check"></i><b>19.1</b> Example constructing confidence intervals</a></li>
+<li class="chapter" data-level="19.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>19.2</b> Confidence interval for different levels (t- and z-)</a></li>
+<li class="chapter" data-level="19.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.3</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="19.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>19.4</b> Another confidence interval example?</a></li>
+</ul></li>
+<li class="part"><span><b>VI Hypothesis testing</b></span></li>
+<li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
+<li class="chapter" data-level="20" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>20</b> What is hypothesis testing?</a></li>
+<li class="chapter" data-level="21" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>21</b> Making and using hypotheses and types of tests</a></li>
+<li class="chapter" data-level="22" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>22</b> An example of hypothesis testing</a></li>
+<li class="chapter" data-level="23" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>23</b> Hypothesis testing and confidence intervals</a></li>
+<li class="chapter" data-level="24" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>24</b> Student t-distribution and one sample t-test</a></li>
+<li class="chapter" data-level="25" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>25</b> Another example of a one sample t-test</a></li>
+<li class="chapter" data-level="26" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>26</b> Independent t-test</a></li>
+<li class="chapter" data-level="27" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>27</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="28" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>28</b> Violations of assumptions</a></li>
+<li class="chapter" data-level="29" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>29</b> Non-parametric tests, and what these are.</a></li>
+<li class="chapter" data-level="30" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>30</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>30.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="30.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>30.2</b> Exercise on an independent sample t-test</a></li>
+<li class="chapter" data-level="30.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>30.3</b> Exercise involving multiple comparisons</a></li>
+<li class="chapter" data-level="30.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>30.4</b> Exercise with non-parametric</a></li>
+<li class="chapter" data-level="30.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>30.5</b> Another exercise with non-parametric</a></li>
+</ul></li>
+<li class="part"><span><b>VII Review of parts I-V</b></span></li>
+<li class="chapter" data-level="" data-path="Week7.html"><a href="Week7.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
+<li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
+<li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="31" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>31</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="32" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>32</b> One-way ANOVA</a></li>
+<li class="chapter" data-level="33" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>33</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="34" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>34</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="35" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>35</b> <em>Practical</em>. ANOVA and associated tests</a>
+<ul>
+<li class="chapter" data-level="35.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>35.1</b> ANOVA Exercise 1</a></li>
+<li class="chapter" data-level="35.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>35.2</b> ANOVA Exercise 2</a></li>
+<li class="chapter" data-level="35.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>35.3</b> ANOVA Exercise 3</a></li>
+<li class="chapter" data-level="35.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>35.4</b> ANOVA Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>IX Counts and Correlation</b></span></li>
+<li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="36" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>36</b> Frequency and count data</a></li>
+<li class="chapter" data-level="37" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>37</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="38" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>38</b> Chi-squared test of association</a></li>
+<li class="chapter" data-level="39" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>39</b> Correlation key concepts</a></li>
+<li class="chapter" data-level="40" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>40</b> Correlation mathematics</a></li>
+<li class="chapter" data-level="41" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>41</b> Correlation hypothesis testing</a></li>
+<li class="chapter" data-level="42" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>42</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<ul>
+<li class="chapter" data-level="42.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>42.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="42.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>42.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="42.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>42.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="42.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>42.4</b> Correlation Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>X Linear Regression</b></span></li>
+<li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="43" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>43</b> Regression key concepts</a></li>
+<li class="chapter" data-level="44" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>44</b> Regression validity</a></li>
+<li class="chapter" data-level="45" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>45</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="46" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>46</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="47" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>47</b> <em>Practical</em>. Using regression</a>
+<ul>
+<li class="chapter" data-level="47.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>47.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="47.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>47.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="47.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>47.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="47.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>47.4</b> Regression Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>XI Randomisation approaches</b></span></li>
+<li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="48" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>48</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="49" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>49</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="50" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>50</b> Bootstrapping</a></li>
+<li class="chapter" data-level="51" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>51</b> Monte Carlo</a></li>
+<li class="chapter" data-level="52" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>52</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="52.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>52.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="52.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>52.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="52.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>52.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XII Statistical Reporting</b></span></li>
+<li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="53" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>53</b> Reporting statistics</a></li>
+<li class="chapter" data-level="54" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>54</b> More introduction to R</a></li>
+<li class="chapter" data-level="55" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>55</b> More getting started with R</a></li>
+<li class="chapter" data-level="56" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>56</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="56.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>56.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="56.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>56.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="56.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>56.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
+<li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Techniques for Biological and Environmental Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="confidence-intervals-cis" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Confidence intervals (CIs)<a href="confidence-intervals-cis.html#confidence-intervals-cis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, we saw how it is possible to calculate the probability of sampling values from a specific interval of the normal distribution (e.g., the probability of sampling a value within 1 standard deviation of the mean).
+In this chapter, we will see how to apply this knowledge to calculating intervals that express confidence in the mean value of a population.</p>
+<p>Remember that that we almost never really know the true mean value of a <em>population</em>, <span class="math inline">\(\mu\)</span>.
+Our best estimate of <span class="math inline">\(\mu\)</span> is the mean that we have calculated from a <em>sample</em>, <span class="math inline">\(\bar{x}\)</span> (see [Chapter 4] for a review of the difference between populations and samples).
+But how good of an estimate is <span class="math inline">\(\bar{x}\)</span> of <span class="math inline">\(\mu\)</span>, really?
+Since we cannot know <span class="math inline">\(\mu\)</span>, one way of answering this question is to find an interval that expresses a degree of confidence about the value of <span class="math inline">\(\mu\)</span>.
+The idea is to calculate 2 numbers that we can say with some degree confidence that <span class="math inline">\(\mu\)</span> is between (i.e., a lower confidence interval and an upper confidence interval).
+The wider this interval is, the more confident that we can be that the true mean <span class="math inline">\(\mu\)</span> is somewhere within it.
+The narrower the interval is, the less confident we can be that our confidence intervals (CIs) contain <span class="math inline">\(\mu\)</span>.</p>
+<p>Confidence intervals are notoriously easy to misunderstand.
+We will explain this verbally first, focusing on the general ideas rather than the technical details.
+Then we will present the calculations before coming back to their interpretation again.
+The idea follows a similar logic to the standard error from <a href="Chapter_12.html#Chapter_12">Chapter 12</a>.</p>
+<p>Suppose that we want to know the mean body mass of all domestic cats (Figure 16.1).
+We cannot weigh every living cat in the world, but maybe we can find enough to get a sample of 20
+From these 20 cats, we want to find some interval of weights (e.g., 3.9-4.3 kg) within which the <em>true</em> mean weight of the population is contained.
+The only way to be 100% certain that our proposed interval <em>definitely</em> contains the true mean would be to make the interval absurdly large.
+Instead, we might more sensibly ask what the interval would need to be to contain the mean with 95% confidence.
+What does “with 95% confidence” actually mean?
+It means when we do the calculation to get the interval, the true mean should be somewhere within the interval 95% of the time that a sample is collected.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-79"></span>
+<img src="img/housecats.png" alt="Two cats sitting close together, a large orange one in the back and small black one in the front." width="100%" />
+<p class="caption">
+Figure 17.1: Two domestic cats sitting side by side with much different body masses.
+</p>
+</div>
+<p>In other words, if we were to go back out and collect another sample of 20 cats, and then another, and another (and so forth), calculating 95% CIs each time, then in 95% of our samples the true mean will be within our CIs (meaning that 5% of the time it will be outside the CIs).
+Note that this is slightly different than saying that there is a 95% probability that the true mean is between our CIs.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
+Instead, the idea is that if we were to repeatedly resample from a population and calculate CIs each time, then 95% of the time the true mean would be within our CIs <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+If this idea does not make sense at first, that is okay.
+The calculation is actually relatively straightforward, and we will come back to the statistical concept again afterwards to interpret it.
+First we will look at CIs assuming a normal distribution, then the special case of a binomial distribution.</p>
+<div id="normal-distribution-cis" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Normal distribution CIs<a href="confidence-intervals-cis.html#normal-distribution-cis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Remember from the Central Limit Theorem in <a href="Chapter_15.html#Chapter_15">Chapter 15</a> that as our sample size <span class="math inline">\(N\)</span> increases, the distribution of our sample mean <span class="math inline">\(\bar{x}\)</span> will start looking more and more like a normal distribution.
+Also from <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, we know that we can calculate the probability associated with any interval of values in a normal distribution.
+For example, we saw that about 68.2% of the probability density of a normal distribution is contained within a standard deviation of the mean.
+We can use this knowledge from <a href="Chapter_15.html#Chapter_15">Chapter 15</a> to set confidence intervals for any percentage of values around the sample mean (<span class="math inline">\(\bar{x}\)</span>) using a standard error (SE) and z-score (z).
+Confidence intervals include 2 numbers.
+The <strong>lower confidence interval</strong> (LCI) is below the mean, and the <strong>upper confidence interval</strong> (UCI) is above the mean.
+Here is how they are calculated,</p>
+<p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
+<p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
+<p>Note that the equations are the same, except that for the LCI, we are subtracting <span class="math inline">\(z \times SE\)</span>, and for the UCI we are adding it.
+The specific value of z determines the confidence interval that we are calculating.
+For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 16.2).
+Hence, if we use <span class="math inline">\(z = 1.96\)</span> to calculate LCI and UCI, we would be getting 95% confidence intervals around our mean.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-80-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. A value of zero centres the x-axis, which is labelled 'z-score'." width="672" />
+<p class="caption">
+Figure 17.2: A standard normal probability distribution showing 95 per cent of probability density surrounding the mean.
+</p>
+</div>
+<p>An <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a> helps visualise the relationship between probability intervals and z-scores more generally (make sure to set ‘Tailed’ to ‘Two-tailed’ using the pulldown menu).</p>
+<p>Now suppose that we want to calculate 95% CIs around the sample mean of our <span class="math inline">\(N = 20\)</span> domestic cats from earlier.
+We find that the mean body mass of cats in our sample is <span class="math inline">\(\bar{x} = 4.1\)</span> kg, and that the standard deviation is <span class="math inline">\(s = 0.6\)</span> kg (suppose that we are willing to assume, for now, that <span class="math inline">\(s = \sigma\)</span>; that is, we know the true standard deviation of the population).
+Remember from <a href="Chapter_12.html#Chapter_12">Chapter 12</a> that the sample standard error can be calculated as <span class="math inline">\(s / \sqrt{N}\)</span>.
+Our lower 95% confidence interval is therefore,</p>
+<p><span class="math display">\[LCI_{95\%} = 4.1 - \left(1.96 \times \frac{0.6}{20}\right) = 4.04\]</span></p>
+<p>Our upper 95% confidence interval is,</p>
+<p><span class="math display">\[UCI_{95\%} = 4.1 + \left(1.96 \times \frac{0.6}{20}\right) = 4.16\]</span></p>
+<p>Our 95% CIs are therefore <span class="math inline">\(LCI = 4.04\)</span> and <span class="math inline">\(UCI = 4.16\)</span>.
+We can now come back to the statistical concept of what this actually means.
+If we were to go out and repeatedly collect new samples of 20 cats, and do the above calculations each time, then 95% of the time our true mean cat body mass would be somewhere between the LCI and UCI.</p>
+<p>Ninety-five per cent confidence intervals are the most commonly used in biological and environmental sciences.
+In other words, we accept that about 5% of the time (1 in 20 times), our confidence intervals will not contain the true mean that we are trying to estimate.
+Suppose, however, that we wanted to be a bit more cautious.
+We could calculate 99% CIs; that is, CIs that contain the true mean in 99% of samples.
+To do this, we just need to find the z-score that corresponds with 99% of the probability density of the standard normal distribution.
+This value is about <span class="math inline">\(z = 2.58\)</span>, which we could find with the <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, a <a href="https://www.z-table.com/">z table</a>, some maths, or a quick online search<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
+Consequently, the upper 99% confidence interval for our example of cat body masses would be,</p>
+<p><span class="math display">\[LCI_{99\%} = 4.1 - \left(2.58 \times \frac{0.6}{20}\right) = 4.02\]</span></p>
+<p>Our upper 99% confidence interval is,</p>
+<p><span class="math display">\[UCI_{99\%} = 4.1 + \left(2.58 \times \frac{0.6}{20}\right) = 4.18\]</span></p>
+<p>Notice that the confidence intervals became wider around the sample mean.
+The 99% CI is now 4.02-4.18, while the 95% CI was 4.04-4.16.
+This is because if we want to be more confident about our interval containing the true mean, we need to make a bigger interval.</p>
+<p>We could make CIs using any percentage that we want, but in practice it is very rare to see anything other than 90% (<span class="math inline">\(z = 1.65\)</span>), 95% (<span class="math inline">\(z = 1.96\)</span>), or 99% (<span class="math inline">\(z = 2.58\)</span>).
+It is useful to see what these different intervals actually look like when calculated from actual data, so this <a href="https://bradduthie.shinyapps.io/CI_hist_app/">interactive application</a> illustrates CIs on a histogram with red dotted lines next to the LCI and UCI equations.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/CI_hist_app/">Click here</a> for an interactive application demonstrating confidence intervals.</p>
+</blockquote>
+<p>Unfortunately, the CI calculations from the this section are a bit of an idealised situation.
+We assumed that the sample means are normally distributed around the population mean.
+While we know that this <em>should</em> be the case as our sample size increases, it is not quite true when our sample is small.
+In practice, what this means is that our z-scores are usually not going to be the best values to use when calculating CIs, although they are often good enough when a sample size is large<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
+We will see what to do about this in <a href="#Chapter_18">Chapter 18</a>, but first we turn to the special case of how to calculate CIs from binomial proportions.</p>
+</div>
+<div id="binomial-distribution-cis" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Binomial distribution CIs<a href="confidence-intervals-cis.html#binomial-distribution-cis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a binomial distribution, our data are counts of successes and failures (see <a href="Chapter_14.html#Chapter_14">Chapter 14</a>).
+For example, we might flip a coin 40 times and observe 22 heads and 18 tails.
+Suppose that we do not know in advance the coin is fair, so we cannot be sure that the probability of it landing on heads is <span class="math inline">\(p = 0.5\)</span>.
+From our collected data, our estimated probability of landing on heads is, <span class="math inline">\(\hat{p} = 22/40 = 0.55\)</span>.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>
+But how would we calculate the CIs around this estimate?
+In this case, the formula is similar to ones for LCI and UCI from the normal distribution shown earlier.
+We just need to note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>
+This means that the standard deviation of <span class="math inline">\(p\)</span> is <span class="math inline">\(\sigma = \sqrt{p\left(1 - p\right)}\)</span>, and <span class="math inline">\(p\)</span> has a standard error,</p>
+<p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
+<p>We can use this standard error in the same equation from earlier for calculating confidence intervals.
+For example, if we wanted to calculate the lower 95% CI for <span class="math inline">\(\hat{p} = 0.55\)</span>,</p>
+<p><span class="math display">\[LCI_{95\%} = 0.55 - 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.40\]</span></p>
+<p>Similarly, to calculate the upper 95% CI,</p>
+<p><span class="math display">\[UCI_{95\%} = 0.55 + 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.70.\]</span></p>
+<p>Our conclusion is that, based on our sample, 95% of the time we flip a coin 40 times, the true mean <span class="math inline">\(p\)</span> will be somewhere between 0.4 and 0.7.
+These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></p>
+<p>We can do another example, this time with our example of the probability of testing positive for Covid-19 at <span class="math inline">\(\hat{p} = 0.025\)</span>.
+Suppose this value of <span class="math inline">\(\hat{p}\)</span> was calculated from a survey of 400 people (<span class="math inline">\(N = 400\)</span>).
+We might want to be especially cautious about estimating CIs around such an important probability, so perhaps we prefer to use 99% CIs instead of 95% CIs.
+In this case, we use <span class="math inline">\(z = 2.58\)</span> as with the normal distribution example from earlier.
+But we apply this z score using the binomial standard error to get the LCI,</p>
+<p><span class="math display">\[LCI_{99\%} = 0.025 - 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.0049\]</span></p>
+<p>Similarly, we get the UCI,</p>
+<p><span class="math display">\[UCI_{99\%} = 0.025 + 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.045.\]</span></p>
+<p>Notice that the LCI and UCI differ here by about an order of magnitude (i.e., the UCI is about 10 times higher than the LCI).</p>
+<p>In summary, this chapter has focused on what confidence intervals are and how to calculate them.
+<a href="#Chapter_18">Chapter 18</a> will turn to the t-interval, what it is and why it is used.</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Box1978" class="csl-entry">
+Box, G E P, W G Hunter, and Hunter J S. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+</div>
+<div id="ref-Ellison2004" class="csl-entry">
+Ellison, Aaron M. 2004. <span>“<span class="nocase">Bayesian inference in ecology</span>.”</span> <em>Ecology Letters</em> 7 (6): 509–20. <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">https://doi.org/10.1111/j.1461-0248.2004.00603.x</a>.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="19">
+<li id="fn19"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_14.html#Chapter_14">Chapter 14</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called “credible intervals” rather than “confidence intervals” <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective; i.e., based in some way on the subjective opinion of the individual researcher.<a href="confidence-intervals-cis.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>While it is always important to be careful when searching, typing “z score 99 percent confidence interval” will almost always get the intended result.<a href="confidence-intervals-cis.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in Jamovi because Jamovi applies a correction for you, which we will look at in <a href="#Chapter_18">Chapter 18</a>.<a href="confidence-intervals-cis.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn22"><p>The hat over the P, (<span class="math inline">\(\hat{P}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="confidence-intervals-cis.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>; i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="confidence-intervals-cis.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z score to probability density. For this reason, it is best to stick with <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N}\)</span>. There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.<a href="confidence-intervals-cis.html#fnref24" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Week5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-t-interval.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Statistical_Inference.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
