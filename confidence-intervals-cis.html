@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-06" />
+<meta name="date" content="2023-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -428,7 +428,7 @@ Instead, we might more sensibly ask what the interval would need to be to contai
 What does “with 95% confidence” actually mean?
 It means when we do the calculation to get the interval, the true mean should be somewhere within the interval 95% of the time that a sample is collected.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-79"></span>
-<img src="img/housecats.png" alt="Two cats sitting close together, a large orange one in the back and small black one in the front." width="100%" />
+<img src="img/housecats.png" alt="Two cats sitting close together on a windowsill, a large orange one in the front and small black and brown one in the back" width="100%" />
 <p class="caption">
 Figure 17.1: Two domestic cats sitting side by side with much different body masses.
 </p>
@@ -465,10 +465,10 @@ Figure 17.2: A standard normal probability distribution showing 95 per cent of p
 We find that the mean body mass of cats in our sample is <span class="math inline">\(\bar{x} = 4.1\)</span> kg, and that the standard deviation is <span class="math inline">\(s = 0.6\)</span> kg (suppose that we are willing to assume, for now, that <span class="math inline">\(s = \sigma\)</span>; that is, we know the true standard deviation of the population).
 Remember from <a href="Chapter_12.html#Chapter_12">Chapter 12</a> that the sample standard error can be calculated as <span class="math inline">\(s / \sqrt{N}\)</span>.
 Our lower 95% confidence interval is therefore,</p>
-<p><span class="math display">\[LCI_{95\%} = 4.1 - \left(1.96 \times \frac{0.6}{20}\right) = 4.04\]</span></p>
+<p><span class="math display">\[LCI_{95\%} = 4.1 - \left(1.96 \times \frac{0.6}{20}\right) = 4.041\]</span></p>
 <p>Our upper 95% confidence interval is,</p>
-<p><span class="math display">\[UCI_{95\%} = 4.1 + \left(1.96 \times \frac{0.6}{20}\right) = 4.16\]</span></p>
-<p>Our 95% CIs are therefore <span class="math inline">\(LCI = 4.04\)</span> and <span class="math inline">\(UCI = 4.16\)</span>.
+<p><span class="math display">\[UCI_{95\%} = 4.1 + \left(1.96 \times \frac{0.6}{20}\right) = 4.159\]</span></p>
+<p>Our 95% CIs are therefore <span class="math inline">\(LCI = 4.041\)</span> and <span class="math inline">\(UCI = 4.159\)</span>.
 We can now come back to the statistical concept of what this actually means.
 If we were to go out and repeatedly collect new samples of 20 cats, and do the above calculations each time, then 95% of the time our true mean cat body mass would be somewhere between the LCI and UCI.</p>
 <p>Ninety-five per cent confidence intervals are the most commonly used in biological and environmental sciences.
@@ -478,11 +478,11 @@ We could calculate 99% CIs; that is, CIs that contain the true mean in 99% of sa
 To do this, we just need to find the z-score that corresponds with 99% of the probability density of the standard normal distribution.
 This value is about <span class="math inline">\(z = 2.58\)</span>, which we could find with the <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, a <a href="https://www.z-table.com/">z table</a>, some maths, or a quick online search<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
 Consequently, the upper 99% confidence interval for our example of cat body masses would be,</p>
-<p><span class="math display">\[LCI_{99\%} = 4.1 - \left(2.58 \times \frac{0.6}{20}\right) = 4.02\]</span></p>
+<p><span class="math display">\[LCI_{99\%} = 4.1 - \left(2.58 \times \frac{0.6}{20}\right) = 4.023\]</span></p>
 <p>Our upper 99% confidence interval is,</p>
-<p><span class="math display">\[UCI_{99\%} = 4.1 + \left(2.58 \times \frac{0.6}{20}\right) = 4.18\]</span></p>
+<p><span class="math display">\[UCI_{99\%} = 4.1 + \left(2.58 \times \frac{0.6}{20}\right) = 4.177\]</span></p>
 <p>Notice that the confidence intervals became wider around the sample mean.
-The 99% CI is now 4.02-4.18, while the 95% CI was 4.04-4.16.
+The 99% CI is now 4.023-4.177, while the 95% CI was 4.041-4.159.
 This is because if we want to be more confident about our interval containing the true mean, we need to make a bigger interval.</p>
 <p>We could make CIs using any percentage that we want, but in practice it is very rare to see anything other than 90% (<span class="math inline">\(z = 1.65\)</span>), 95% (<span class="math inline">\(z = 1.96\)</span>), or 99% (<span class="math inline">\(z = 2.58\)</span>).
 It is useful to see what these different intervals actually look like when calculated from actual data, so this <a href="https://bradduthie.shinyapps.io/CI_hist_app/">interactive application</a> illustrates CIs on a histogram with red dotted lines next to the LCI and UCI equations.</p>
@@ -508,19 +508,19 @@ This means that the standard deviation of <span class="math inline">\(p\)</span>
 <p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
 <p>We can use this standard error in the same equation from earlier for calculating confidence intervals.
 For example, if we wanted to calculate the lower 95% CI for <span class="math inline">\(\hat{p} = 0.55\)</span>,</p>
-<p><span class="math display">\[LCI_{95\%} = 0.55 - 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.40\]</span></p>
+<p><span class="math display">\[LCI_{95\%} = 0.55 - 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.396\]</span></p>
 <p>Similarly, to calculate the upper 95% CI,</p>
-<p><span class="math display">\[UCI_{95\%} = 0.55 + 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.70.\]</span></p>
-<p>Our conclusion is that, based on our sample, 95% of the time we flip a coin 40 times, the true mean <span class="math inline">\(p\)</span> will be somewhere between 0.4 and 0.7.
+<p><span class="math display">\[UCI_{95\%} = 0.55 + 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.704.\]</span></p>
+<p>Our conclusion is that, based on our sample, 95% of the time we flip a coin 40 times, the true mean <span class="math inline">\(p\)</span> will be somewhere between 0.396 and 0.704.
 These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></p>
 <p>We can do another example, this time with our example of the probability of testing positive for Covid-19 at <span class="math inline">\(\hat{p} = 0.025\)</span>.
 Suppose this value of <span class="math inline">\(\hat{p}\)</span> was calculated from a survey of 400 people (<span class="math inline">\(N = 400\)</span>).
 We might want to be especially cautious about estimating CIs around such an important probability, so perhaps we prefer to use 99% CIs instead of 95% CIs.
 In this case, we use <span class="math inline">\(z = 2.58\)</span> as with the normal distribution example from earlier.
 But we apply this z score using the binomial standard error to get the LCI,</p>
-<p><span class="math display">\[LCI_{99\%} = 0.025 - 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.0049\]</span></p>
+<p><span class="math display">\[LCI_{99\%} = 0.025 - 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.00486\]</span></p>
 <p>Similarly, we get the UCI,</p>
-<p><span class="math display">\[UCI_{99\%} = 0.025 + 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.045.\]</span></p>
+<p><span class="math display">\[UCI_{99\%} = 0.025 + 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.0451.\]</span></p>
 <p>Notice that the LCI and UCI differ here by about an order of magnitude (i.e., the UCI is about 10 times higher than the LCI).</p>
 <p>In summary, this chapter has focused on what confidence intervals are and how to calculate them.
 <a href="#Chapter_18">Chapter 18</a> will turn to the t-interval, what it is and why it is used.</p>
@@ -543,7 +543,7 @@ Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed
 <ol start="19">
 <li id="fn19"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_14.html#Chapter_14">Chapter 14</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called “credible intervals” rather than “confidence intervals” <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective; i.e., based in some way on the subjective opinion of the individual researcher.<a href="confidence-intervals-cis.html#fnref19" class="footnote-back">↩︎</a></p></li>
 <li id="fn20"><p>While it is always important to be careful when searching, typing “z score 99 percent confidence interval” will almost always get the intended result.<a href="confidence-intervals-cis.html#fnref20" class="footnote-back">↩︎</a></p></li>
-<li id="fn21"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in Jamovi because Jamovi applies a correction for you, which we will look at in <a href="#Chapter_18">Chapter 18</a>.<a href="confidence-intervals-cis.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in Jamovi because Jamovi applies a correction for you, which we will look at in <a href="#Chapter_18">Chapter 18</a>.<a href="confidence-intervals-cis.html#fnref21" class="footnote-back">↩︎</a></p></li>
 <li id="fn22"><p>The hat over the P, (<span class="math inline">\(\hat{P}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="confidence-intervals-cis.html#fnref22" class="footnote-back">↩︎</a></p></li>
 <li id="fn23"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>; i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="confidence-intervals-cis.html#fnref23" class="footnote-back">↩︎</a></p></li>
 <li id="fn24"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z score to probability density. For this reason, it is best to stick with <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N}\)</span>. There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.<a href="confidence-intervals-cis.html#fnref24" class="footnote-back">↩︎</a></p></li>

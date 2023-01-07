@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-06" />
+<meta name="date" content="2023-01-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -407,7 +407,88 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="the-t-interval" class="section level1 hasAnchor" number="18">
 <h1><span class="header-section-number">Chapter 18</span> The t-interval<a href="the-t-interval.html#the-t-interval" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>What this is and how it relates to the normal distribution, and why it is important.</p>
+<p><a href="Chapter_14.html#Chapter_14">Chapter 14</a> introduced the binomial, Poisson, uniform, and normal distributions.
+In this chapter, we introduce another distribution, the t-distribution.
+Unlike the the distributions of <a href="Chapter_14.html#Chapter_14">Chapter 14</a>, the t-distribution arises from the need to make accurate statistical inferences, not from any particular kind of data (e.g., successes or failures in a binomial distribution, or events happening over time in a Poisson distribution).
+In <a href="#Chapter_17">Chapter 17</a>, we calculated confidence intervals (CIs) using the normal distribution and z-scores.
+In doing so, we made the assumption that the sample standard deviation (<span class="math inline">\(s\)</span>) was the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), <span class="math inline">\(s = \sigma\)</span>.
+In other words, we assumed that we knew what <span class="math inline">\(\sigma\)</span> was, which is almost never true.
+For large enough sample sizes (i.e., high <span class="math inline">\(N\)</span>), this is not generally a problem, but for lower sample we need to be careful.</p>
+<p>If there is a difference between <span class="math inline">\(s\)</span> and <span class="math inline">\(\sigma\)</span>, then our CIs will also be wrong.
+More specifically, the uncertainty between our sample estimate (<span class="math inline">\(s\)</span>) and the true standard deviation (<span class="math inline">\(\sigma\)</span>) is expected to increase the deviation of our sample mean (<span class="math inline">\(\bar{x}\)</span>) from the true mean (<span class="math inline">\(\mu\)</span>).
+This means that if we are using the <em>sample</em> standard deviation instead of the <em>population</em> standard deviation (which is pretty much always), then the shape of the standard normal distribution from <a href="#Chapter_17">Chapter 17</a> (Figure 17.2) will be wrong.
+The correct shape will be “wider and flatter” <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, with more probability density at the extremes and less in the middle of the distribution <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>)</span>.
+What this means is that if we use z-scores when calculating CIs using <span class="math inline">\(s\)</span>, our CIS will not be wide enough, and we will think that we have more confidence in the mean than we really do.
+Instead of using the standard normal distribution, we need to use a t-distribution<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
+<p>The difference between the standard normal distribution and t-distribution depends on our sample size, <span class="math inline">\(N\)</span>.
+As <span class="math inline">\(N\)</span> increases, we become more confident that the sample variance will be close to the true population variance (i.e., the deviation of <span class="math inline">\(s^{2}\)</span> from <span class="math inline">\(\sigma^{2}\)</span> decreases).
+At low <span class="math inline">\(N\)</span>, our t-distribution is much wider and flatter than the standard normal distribution.
+As <span class="math inline">\(N\)</span> becomes large<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>, the t-distribution becomes basically indistinguishable from the standard normal distribution.
+For calculating CIs from a sample, especially for small sample sizes, it is therefore best to use t-scores instead of z-scores.
+The idea is the same; we are just multiplying the standard errors by a different constant to get our CIs.
+For example, in <a href="#Chapter_17">Chapter 17</a>, we multiplied the standard error of 20 cat masses by <span class="math inline">\(z = 1.96\)</span> because 95% of the probability density lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> in the standard normal distribution.
+In truth, we should have multiplied by -2.093 because we only had a sample size of <span class="math inline">\(N = 20\)</span>.
+Figure 18.1 shows the difference between the standard normal distribution and the more appropriate t-distribution<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-81-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. Overlaid on the grey distribution is another distribution shown in red that is just a bit wider." width="672" />
+<p class="caption">
+Figure 18.1: A standard normal probability distribution showing 95 per cent of probability density surrounding the mean (grey). On top of the standard normal distribution in grey, red dotted lines show a t-distribution with 19 degrees of freedom. Red shading shows 95 per cent of the probability density of the t-distribution.
+</p>
+</div>
+<p>Note that in Figure 18.1, a t-distribution with 19 degrees of freedom (df) is shown.
+The t-distribution is parameterised using df, and we lose a degree of freedom when calculating <span class="math inline">\(s^{2}\)</span> from a sample size of <span class="math inline">\(N = 20\)</span>, so <span class="math inline">\(df = 20 - 1 = 19\)</span> is the correct value (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a> for a brief explanation).
+For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in statistical programs such as Jamovi and R<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<p>Recall from <a href="#Chapter_17">Chapter 17</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 4.041\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.159\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
+Our corrected lower 95% CI is,</p>
+<p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{20}\right) = 4.037\]</span></p>
+<p>Our upper 95% confidence interval is,</p>
+<p><span class="math display">\[UCI_{95\%} = 4.1 + \left(2.093 \times \frac{0.6}{20}\right) = 4.163.\]</span></p>
+<p>The confidence intervals have not changed too much.
+By using the t-distribution, the LCI changed from 4.041 to 4.037, and the UCI changed from 4.159 to 4.163.
+In other words, we only needed our CIs to be a bit wider (<span class="math inline">\(4.163 - 4.037 = 0.126\)</span> for the using t-scores versus <span class="math inline">\(4.159-4.041 = 0.118\)</span> using z-scores).
+This is because a sample size of 20 is already large enough for the t-distribution and standard normal distribution to be very similar (Figure 18.1).
+But for lower sample sizes (<span class="math inline">\(N\)</span>) and therefore fewer degrees of freedom (<span class="math inline">\(df = N - 1\)</span>), the difference between the shapes of these distributions gets more obvious (Figure 18.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-82"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-82-1.png" alt="A plot of a bell curve showing the standard normal distribution. Overlaid are lines showing t-distributions with degrees of freedom equaling 20, 10, 5, and 2." width="672" />
+<p class="caption">
+Figure 18.2: A t-distribution with infinite degrees of freedom (df) is shown in black; this distribution is identical to the standard normal distribution. Other t-distributions with the same mean and standard deviation, but different degrees of freedom, are indicated by curves of different colours and line types.
+</p>
+</div>
+<p>The main point of Figure 18.2 is that as degrees of freedom decreases, the t-distribution becomes wider, with more probability density in the tails.
+Figure 18.2 is quite busy, so we have made an <a href="https://bradduthie.shinyapps.io/t_score/">interactive application</a> to make visualising the t-distribution easier.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/t_score/">Click here</a> for an interactive application to visualise t-scores</p>
+</blockquote>
+<p>Note that t-scores do not need to be used when making binomial confidence intervals.
+Using z-scores is fine.</p>
+<p>The t-distribution is important throughout most of the rest of this module.
+It is not just used for calculating confidence intervals.
+The t-distribution also plays a critical role in hypothesis-testing, which is the subject of <a href="#Week_6">Week 6</a> and applied throughout the rest of the book.
+The t-distribution is therefore very important for understanding most of the statistical techniques presented in this book.</p>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Borowski2005" class="csl-entry">
+Borowski, E J, and J M Borwein. 2005. <em><span class="nocase">Collins Dictionary of Mathematics</span></em>. 2nd ed. London: HarperCollins Publishers.
+</div>
+<div id="ref-Box1978" class="csl-entry">
+Box, G E P, W G Hunter, and Hunter J S. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+</div>
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="25">
+<li id="fn25"><p>This is also called the “Student’s t-distribution”. It was originally discovered by the head brewer of Guinness in Dublin in the early 20th century <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>)</span>. The brewer, W. S. Gosset, published under the pseudonym “A. Student” because Guinness had a policy of not allowing employees to publish <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="the-t-interval.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as <span class="math inline">\(N \to \infty\)</span>, but <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that they are indistinguishable for all intents and purposes once <span class="math inline">\(N &gt; 30\)</span>. It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as Jamovi or R will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.<a href="the-t-interval.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn27"><p>We can define the t-distribution mathematically <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, but it is an absolute beast, <span class="math display">\[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom. The <span class="math inline">\(\Gamma\left(\right)\)</span> is called a “gamma function”, which is basically the equivalent of a factorial function, but for any number z (not just integers), such that <span class="math inline">\(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\)</span> (where <span class="math inline">\(z &gt; -1\)</span>, or, even more technically, the real part of <span class="math inline">\(z &gt; -1\)</span>). If z is an integer n, then <span class="math inline">\(\Gamma\left({n + 1}\right) = n!\)</span> <span class="citation">(<a href="#ref-Borowski2005" role="doc-biblioref">Borowski and Borwein 2005</a>)</span>. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of 2 different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square in <a href="#Week_9">Week 9</a>. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.<a href="the-t-interval.html#fnref27" class="footnote-back">↩︎</a></p></li>
+<li id="fn28"><p>Another interesting caveat, which Jamovi and R will take care of automatically (so we do not actually have to worry about it), is that when we calculate <span class="math inline">\(s^{2}\)</span> to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by <span class="math inline">\(1/N\)</span> instead of <span class="math inline">\(1/(N-1)\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. In other words, we no longer need to correct the sample variance <span class="math inline">\(s^{2}\)</span> to account for bias in estimating <span class="math inline">\(\sigma^{2}\)</span> because the t-distribution takes care of this for us.<a href="the-t-interval.html#fnref28" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
