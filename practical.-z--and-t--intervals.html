@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-07" />
+<meta name="date" content="2023-01-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -287,10 +287,11 @@ div.csl-indent {
 <li class="chapter" data-level="18" data-path="Chapter_18.html"><a href="Chapter_18.html"><i class="fa fa-check"></i><b>18</b> The t-interval</a></li>
 <li class="chapter" data-level="19" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>19</b> <em>Practical</em>. z- and t- intervals</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals"><i class="fa fa-check"></i><b>19.1</b> Example constructing confidence intervals</a></li>
+<li class="chapter" data-level="19.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-intervals-with-distraction"><i class="fa fa-check"></i><b>19.1</b> Confidence intervals with distrACTION</a></li>
 <li class="chapter" data-level="19.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>19.2</b> Confidence interval for different levels (t- and z-)</a></li>
-<li class="chapter" data-level="19.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.3</b> Proportion confidence intervals</a></li>
-<li class="chapter" data-level="19.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>19.4</b> Another confidence interval example?</a></li>
+<li class="chapter" data-level="19.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-in-descriptives"><i class="fa fa-check"></i><b>19.3</b> Confidence interval in Descriptives</a></li>
+<li class="chapter" data-level="19.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.4</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="19.5" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>19.5</b> Another confidence interval example?</a></li>
 </ul></li>
 <li class="part"><span><b>VI Hypothesis testing</b></span></li>
 <li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
@@ -407,23 +408,80 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="practical.-z--and-t--intervals" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> <em>Practical</em>. z- and t- intervals<a href="practical.-z--and-t--intervals.html#practical.-z--and-t--intervals" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="example-constructing-confidence-intervals" class="section level2 hasAnchor" number="19.1">
-<h2><span class="header-section-number">19.1</span> Example constructing confidence intervals<a href="practical.-z--and-t--intervals.html#example-constructing-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This lab focuses on applying the concepts from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> and <a href="Chapter_18.html#Chapter_18">Chapter 18</a> in Jamovi.
+Specifically, we will practice calculating confidence intervals (CIs).
+There will be 4 exercises focusing on calculating confidence intervals in Jamovi.
+To complete the first 2 exercises, you will need the distrACTION module in Jamovi.
+We downloaded the distrACTION module in the <a href="#Week_4">Week 4</a> practical.
+If you need to download it again, the instructions are in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> Exercise 16.2.</p>
+<p>The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
+The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Dr Robbie Whytock, Dr Kevin Watts, and Prof Kirsty Park (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-83"></span>
+<img src="img/wren_project.png" alt="Decorative image showing various pictures from a forest, including a woman doing field work, field equipment, a flower, and a tree." width="100%" />
+<p class="caption">
+Figure 19.1: Images from the WrEN project led by the University of Stirling
+</p>
+</div>
+<p>We will use observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.</p>
+<div id="confidence-intervals-with-distraction" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Confidence intervals with distrACTION<a href="practical.-z--and-t--intervals.html#confidence-intervals-with-distraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Download distrACTION module if not already downloaded</li>
+<li>Download the WrEN Trees <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_trees.xlsx">wren_trees.xlsx</a> dataset and open in a spreadsheet</li>
+<li>Put the WrEN Trees dataset into a tidy format</li>
+<li>Calculate the grand mean and standard deviation (for all trees)</li>
+<li>Use distrACTION ‘Normal Distribution’ and Compute quantiles to get 95% z-scores</li>
+<li>Use distrACTION ‘t-distribution’ and compute quantiles to get 95% t-scores</li>
+<li>Are these different?</li>
+<li>Calculate CIs from the mean, standard error, and z- or t-score.</li>
+<li>Reflect on what this means</li>
+</ol>
 </div>
 <div id="confidence-interval-for-different-levels-t--and-z-" class="section level2 hasAnchor" number="19.2">
 <h2><span class="header-section-number">19.2</span> Confidence interval for different levels (t- and z-)<a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Now do steps 4-6 for each individual site</li>
+<li>Fill in table comparing 95% CIs using z- and t- for 4 sites</li>
+<li>Do the same comparing 99% CIs</li>
+<li>Reflect on the difference in the 4 sites, why?</li>
+</ol>
 </div>
-<div id="proportion-confidence-intervals" class="section level2 hasAnchor" number="19.3">
-<h2><span class="header-section-number">19.3</span> Proportion confidence intervals<a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="confidence-interval-in-descriptives" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Confidence interval in Descriptives<a href="practical.-z--and-t--intervals.html#confidence-interval-in-descriptives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Now get the CIs using Descriptives -&gt; CI for mean</li>
+<li>Is Jamovi using z- or t- scores?</li>
+</ol>
 </div>
-<div id="another-confidence-interval-example" class="section level2 hasAnchor" number="19.4">
-<h2><span class="header-section-number">19.4</span> Another confidence interval example?<a href="practical.-z--and-t--intervals.html#another-confidence-interval-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="proportion-confidence-intervals" class="section level2 hasAnchor" number="19.4">
+<h2><span class="header-section-number">19.4</span> Proportion confidence intervals<a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Download the WrEN Sites <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_sites.csv">wren_sites.csv</a> dataset</li>
+<li>Find the number of sites grazed and not grazed</li>
+<li>Get the proportional confidence interval (Frequency tables)</li>
+<li>Calculate 95% and 99% CIs</li>
+</ol>
+</div>
+<div id="another-confidence-interval-example" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Another confidence interval example?<a href="practical.-z--and-t--intervals.html#another-confidence-interval-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Do the same, but split by Woodland</li>
+</ol>
 
 </div>
 </div>
 
 
 
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Fuentes-Montemayor2022" class="csl-entry">
+Fuentes-Montemayor, Elisa, Kirsty J Park, Kypfer Cordts, and Kevin Watts. 2022. <span>“<span class="nocase">The long-term development of temperate woodland creation sites: from tree saplings to mature woodlands</span>.”</span> <em>Forestry</em> 95 (June 2021): 28–37. <a href="https://doi.org/10.1093/forestry/cpab027">https://doi.org/10.1093/forestry/cpab027</a>.
+</div>
+<div id="ref-Fuentes-Montemayor2022a" class="csl-entry">
+Fuentes-Montemayor, Elisa, Kevin Watts, Philip Sansum, Will Scott, and Kirsty J Park. 2022. <span>“<span class="nocase">Moth community responses to woodland creation: The influence of woodland age, patch characteristics and landscape attributes</span>.”</span> <em>Diversity and Distributions</em> 28 (9): 1993–2007. <a href="https://doi.org/10.1111/ddi.13599">https://doi.org/10.1111/ddi.13599</a>.
+</div>
+</div>
             </section>
 
           </div>
