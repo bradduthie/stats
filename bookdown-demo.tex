@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-01-07}
+\date{2023-01-14}
 
 \begin{document}
 \maketitle
@@ -647,9 +647,10 @@ You may not use this material for commercial purposes.
 & \textbf{Recommended:} None \\
 & \textbf{Suggested:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/02-A-brief-introduction-to-research-design.html}{Section 2.1} \\
 & \textbf{Advanced:} \citet{Wickham2014} (\href{https://www.jstatsoft.org/index.php/jss/article/view/v059i10/772}{Download}) \\
-\textbf{Lectures} & 1.0: Introduction to Module (20 min.) \\
-& 1.1: Numbers and operations (18 min.) \\
-& 1.2: Orders of operations (7 min.) \\
+\textbf{Lectures} & 1.0: Numbers and operations \\
+& 1.1: Orders of operations \\
+& 1.2: Logarithms \\
+& 1.3: Data organisation \\
 \textbf{Practical} & Preparing data (\protect\hyperlink{Chapter_3}{Chapter 3}) \\
 & Room: Cottrell 2A17 \\
 & Group A: 25 JAN 2023 (WED) 13:05-15:55 \\
@@ -2915,26 +2916,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-41}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.66 & 0.52 & 0.66 & 0.61 & 0.55 & 0.60 & 0.77 & 0.84 & 0.64 & 0.78 \\
-Sample\_2 & 0.62 & 0.64 & 0.74 & 0.97 & 0.56 & 0.63 & 0.80 & 0.81 & 0.66 & 0.75 \\
-Sample\_3 & 0.57 & 0.73 & 0.67 & 0.65 & 0.78 & 0.72 & 0.82 & 0.86 & 0.66 & 0.79 \\
-Sample\_4 & 0.66 & 0.76 & 0.64 & 0.71 & 0.67 & 0.69 & 0.76 & 0.66 & 0.65 & 0.77 \\
-Sample\_5 & 0.68 & 0.67 & 0.67 & 0.72 & 0.82 & 0.68 & 0.56 & 0.73 & 0.64 & 0.78 \\
-Sample\_6 & 0.60 & 0.76 & 0.81 & 0.80 & 0.82 & 0.87 & 0.76 & 0.51 & 0.52 & 0.65 \\
-Sample\_7 & 0.53 & 0.58 & 0.87 & 0.70 & 0.53 & 0.77 & 0.78 & 0.75 & 0.54 & 0.69 \\
-Sample\_8 & 0.60 & 0.72 & 0.87 & 0.71 & 0.67 & 0.67 & 0.66 & 0.66 & 0.58 & 0.76 \\
-Sample\_9 & 0.81 & 0.92 & 0.58 & 0.64 & 0.76 & 0.63 & 0.66 & 0.77 & 0.80 & 0.73 \\
-Sample\_10 & 0.77 & 0.74 & 0.70 & 0.51 & 0.78 & 0.75 & 0.72 & 0.61 & 0.59 & 0.56 \\
-Sample\_11 & 0.77 & 0.71 & 0.84 & 0.70 & 0.79 & 0.58 & 0.83 & 0.62 & 0.70 & 0.85 \\
-Sample\_12 & 0.71 & 0.68 & 0.63 & 0.69 & 0.74 & 0.74 & 0.84 & 0.80 & 0.61 & 0.60 \\
-Sample\_13 & 0.58 & 0.60 & 0.71 & 0.76 & 0.75 & 0.90 & 0.79 & 0.78 & 0.75 & 0.51 \\
-Sample\_14 & 0.72 & 0.69 & 0.71 & 0.75 & 0.65 & 0.98 & 0.75 & 0.70 & 0.81 & 0.57 \\
-Sample\_15 & 0.59 & 0.58 & 0.75 & 0.60 & 0.75 & 0.50 & 0.83 & 0.71 & 0.55 & 0.68 \\
-Sample\_16 & 0.69 & 0.72 & 0.72 & 0.64 & 0.74 & 0.76 & 0.70 & 0.59 & 0.79 & 0.82 \\
-Sample\_17 & 0.74 & 0.61 & 0.64 & 0.67 & 0.76 & 0.55 & 0.77 & 0.66 & 0.80 & 0.84 \\
-Sample\_18 & 0.69 & 0.77 & 0.75 & 0.70 & 0.66 & 0.75 & 0.66 & 0.66 & 0.87 & 0.92 \\
-Sample\_19 & 0.68 & 0.67 & 0.86 & 0.59 & 0.75 & 0.74 & 0.75 & 0.66 & 0.64 & 0.73 \\
-Sample\_20 & 0.89 & 0.83 & 0.82 & 0.87 & 0.84 & 0.66 & 0.78 & 0.80 & 0.76 & 0.75 \\
+Sample\_1 & 0.61 & 0.63 & 0.76 & 0.72 & 0.70 & 0.81 & 0.60 & 0.57 & 0.76 & 0.68 \\
+Sample\_2 & 0.67 & 0.70 & 0.66 & 0.68 & 0.74 & 0.77 & 0.55 & 0.60 & 0.93 & 0.74 \\
+Sample\_3 & 0.68 & 0.67 & 0.69 & 0.72 & 0.86 & 0.66 & 0.66 & 0.59 & 0.72 & 0.63 \\
+Sample\_4 & 0.75 & 0.58 & 0.87 & 0.57 & 0.70 & 0.82 & 0.61 & 0.57 & 0.64 & 0.57 \\
+Sample\_5 & 0.76 & 0.83 & 0.76 & 0.76 & 0.55 & 0.72 & 0.64 & 0.85 & 0.85 & 0.68 \\
+Sample\_6 & 0.64 & 1.00 & 0.72 & 0.68 & 0.62 & 0.57 & 0.96 & 0.79 & 0.76 & 0.65 \\
+Sample\_7 & 0.64 & 0.69 & 0.94 & 0.72 & 0.64 & 0.57 & 0.82 & 0.77 & 0.59 & 0.56 \\
+Sample\_8 & 0.78 & 0.64 & 0.90 & 0.64 & 0.59 & 0.72 & 0.62 & 0.73 & 0.61 & 0.70 \\
+Sample\_9 & 0.85 & 0.67 & 0.67 & 0.65 & 0.68 & 0.79 & 0.88 & 0.63 & 0.65 & 0.81 \\
+Sample\_10 & 0.68 & 0.83 & 0.54 & 0.60 & 0.76 & 0.67 & 0.72 & 0.70 & 0.83 & 0.69 \\
+Sample\_11 & 0.55 & 0.69 & 0.66 & 0.75 & 0.81 & 0.72 & 0.75 & 0.79 & 0.87 & 0.62 \\
+Sample\_12 & 0.65 & 0.71 & 0.71 & 0.61 & 0.69 & 0.86 & 0.56 & 0.63 & 0.61 & 0.74 \\
+Sample\_13 & 0.76 & 0.56 & 0.78 & 0.71 & 0.88 & 0.76 & 0.73 & 0.76 & 0.79 & 0.67 \\
+Sample\_14 & 0.69 & 0.81 & 0.87 & 0.53 & 0.76 & 0.44 & 0.73 & 0.73 & 0.64 & 0.64 \\
+Sample\_15 & 0.65 & 0.89 & 0.72 & 0.67 & 0.53 & 0.60 & 0.69 & 0.70 & 0.71 & 0.85 \\
+Sample\_16 & 0.92 & 0.92 & 0.72 & 0.91 & 0.70 & 0.83 & 0.68 & 0.71 & 0.62 & 0.57 \\
+Sample\_17 & 0.48 & 0.61 & 0.70 & 0.89 & 0.62 & 0.60 & 0.74 & 0.66 & 0.76 & 0.89 \\
+Sample\_18 & 0.77 & 0.68 & 0.74 & 0.65 & 0.62 & 0.70 & 0.66 & 0.74 & 0.70 & 0.66 \\
+Sample\_19 & 0.72 & 0.76 & 0.62 & 0.65 & 0.77 & 0.73 & 0.68 & 0.62 & 0.65 & 0.74 \\
+Sample\_20 & 0.58 & 0.68 & 0.77 & 0.80 & 0.61 & 0.51 & 0.75 & 0.76 & 0.81 & 0.74 \\
 \bottomrule
 \end{longtable}
 
@@ -2943,18 +2944,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.663 0.718 0.725 0.697 0.695 0.710 0.674 0.690 0.730 0.673
-## [2,] 0.739 0.704 0.713 0.733 0.654 0.717 0.704 0.743 0.707 0.800
+## [1,] 0.684 0.704 0.688 0.668 0.740 0.739 0.694 0.693 0.728 0.702
+## [2,] 0.721 0.677 0.740 0.684 0.701 0.758 0.695 0.692 0.694 0.701
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.032594.
+The standard deviation of the 20 sample means reported above is 0.0243013.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.1038214.
+The standard deviation of Sample 1 is \(s =\) 0.0798888.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.1038214}{\sqrt{10}} = 0.0328312.\]
+\[s = \frac{0.0798888}{\sqrt{10}} = 0.0252631.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.032594, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0328312.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0243013, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0252631.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -4577,17 +4578,101 @@ The t-distribution is therefore very important for understanding most of the sta
 \hypertarget{practical.-z--and-t--intervals}{%
 \chapter{\texorpdfstring{\emph{Practical}. z- and t- intervals}{Practical. z- and t- intervals}}\label{practical.-z--and-t--intervals}}
 
-\hypertarget{example-constructing-confidence-intervals}{%
-\section{Example constructing confidence intervals}\label{example-constructing-confidence-intervals}}
+This lab focuses on applying the concepts from \protect\hyperlink{Chapter_17}{Chapter 17} and \protect\hyperlink{Chapter_18}{Chapter 18} in Jamovi.
+Specifically, we will practice calculating confidence intervals (CIs).
+There will be 4 exercises focusing on calculating confidence intervals in Jamovi.
+To complete the first 2 exercises, you will need the distrACTION module in Jamovi.
+We downloaded the distrACTION module in the \protect\hyperlink{Week_4}{Week 4} practical.
+If you need to download it again, the instructions are in \protect\hyperlink{Chapter_16}{Chapter 16} Exercise 16.2.
+
+The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project \citep{Fuentes-Montemayor2022, Fuentes-Montemayor2022a}.
+The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Dr Robbie Whytock, Dr Kevin Watts, and Prof Kirsty Park (\url{https://www.wren-project.com/}).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/wren_project} \caption{Images from the WrEN project led by the University of Stirling}\label{fig:unnamed-chunk-83}
+\end{figure}
+
+We will use observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.
+
+\hypertarget{confidence-intervals-with-distraction}{%
+\section{Confidence intervals with distrACTION}\label{confidence-intervals-with-distraction}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Download distrACTION module if not already downloaded
+\item
+  Download the WrEN Trees \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_trees.xlsx}{wren\_trees.xlsx} dataset and open in a spreadsheet
+\item
+  Put the WrEN Trees dataset into a tidy format
+\item
+  Calculate the grand mean and standard deviation (for all trees)
+\item
+  Use distrACTION `Normal Distribution' and Compute quantiles to get 95\% z-scores
+\item
+  Use distrACTION `t-distribution' and compute quantiles to get 95\% t-scores
+\item
+  Are these different?
+\item
+  Calculate CIs from the mean, standard error, and z- or t-score.
+\item
+  Reflect on what this means
+\end{enumerate}
 
 \hypertarget{confidence-interval-for-different-levels-t--and-z-}{%
 \section{Confidence interval for different levels (t- and z-)}\label{confidence-interval-for-different-levels-t--and-z-}}
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Now do steps 4-6 for each individual site
+\item
+  Fill in table comparing 95\% CIs using z- and t- for 4 sites
+\item
+  Do the same comparing 99\% CIs
+\item
+  Reflect on the difference in the 4 sites, why?
+\end{enumerate}
+
+\hypertarget{confidence-interval-in-descriptives}{%
+\section{Confidence interval in Descriptives}\label{confidence-interval-in-descriptives}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Now get the CIs using Descriptives -\textgreater{} CI for mean
+\item
+  Is Jamovi using z- or t- scores?
+\end{enumerate}
+
 \hypertarget{proportion-confidence-intervals}{%
 \section{Proportion confidence intervals}\label{proportion-confidence-intervals}}
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Download the WrEN Sites \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_sites.csv}{wren\_sites.csv} dataset
+\item
+  Find the number of sites grazed and not grazed
+\item
+  Get the proportional confidence interval (Frequency tables)
+\item
+  Calculate 95\% and 99\% CIs
+\end{enumerate}
+
 \hypertarget{another-confidence-interval-example}{%
 \section{Another confidence interval example?}\label{another-confidence-interval-example}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Do the same, but split by Woodland
+\end{enumerate}
 
 \hypertarget{part-hypothesis-testing}{%
 \part{Hypothesis testing}\label{part-hypothesis-testing}}
