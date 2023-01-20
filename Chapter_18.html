@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-14" />
+<meta name="date" content="2023-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,6 +176,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
 <li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
 <ul>
@@ -430,8 +431,8 @@ The idea is the same; we are just multiplying the standard errors by a different
 For example, in <a href="Chapter_17.html#Chapter_17">Chapter 17</a>, we multiplied the standard error of 20 cat masses by <span class="math inline">\(z = 1.96\)</span> because 95% of the probability density lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> in the standard normal distribution.
 In truth, we should have multiplied by -2.093 because we only had a sample size of <span class="math inline">\(N = 20\)</span>.
 Figure 18.1 shows the difference between the standard normal distribution and the more appropriate t-distribution<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-81-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. Overlaid on the grey distribution is another distribution shown in red that is just a bit wider." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-84"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-84-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. Overlaid on the grey distribution is another distribution shown in red that is just a bit wider." width="672" />
 <p class="caption">
 Figure 18.1: A standard normal probability distribution showing 95 per cent of probability density surrounding the mean (grey). On top of the standard normal distribution in grey, red dotted lines show a t-distribution with 19 degrees of freedom. Red shading shows 95 per cent of the probability density of the t-distribution.
 </p>
@@ -449,8 +450,8 @@ By using the t-distribution, the LCI changed from 4.041 to 4.037, and the UCI ch
 In other words, we only needed our CIs to be a bit wider (<span class="math inline">\(4.163 - 4.037 = 0.126\)</span> for the using t-scores versus <span class="math inline">\(4.159-4.041 = 0.118\)</span> using z-scores).
 This is because a sample size of 20 is already large enough for the t-distribution and standard normal distribution to be very similar (Figure 18.1).
 But for lower sample sizes (<span class="math inline">\(N\)</span>) and therefore fewer degrees of freedom (<span class="math inline">\(df = N - 1\)</span>), the difference between the shapes of these distributions gets more obvious (Figure 18.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-82"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-82-1.png" alt="A plot of a bell curve showing the standard normal distribution. Overlaid are lines showing t-distributions with degrees of freedom equaling 20, 10, 5, and 2." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-85"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-85-1.png" alt="A plot of a bell curve showing the standard normal distribution. Overlaid are lines showing t-distributions with degrees of freedom equaling 20, 10, 5, and 2." width="672" />
 <p class="caption">
 Figure 18.2: A t-distribution with infinite degrees of freedom (df) is shown in black; this distribution is identical to the standard normal distribution. Other t-distributions with the same mean and standard deviation, but different degrees of freedom, are indicated by curves of different colours and line types.
 </p>

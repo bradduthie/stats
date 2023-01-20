@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-14" />
+<meta name="date" content="2023-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,6 +176,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
 <li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
 <ul>
@@ -432,7 +433,7 @@ Due to the nature of the work, the data needed to be recorded in notebooks and c
 The first location was the field, where data were collected identifying tree locations and fruit dimensions.
 Baja is hot and sunny; fruit measurements were made with a ruler and recorded in a field notebook.
 These measurements are shown in Figure 2.2, which is reproduced again in Figure 3.1.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="img/Ficus_petiolaris.jpg" alt="A large tree is shown in the desert with a person dressed in tan clothes in the foreground" width="100%" />
 <p class="caption">
 Figure 3.1: A fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.
@@ -442,7 +443,7 @@ Figure 3.1: A fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.
 Fruits were dried and shipped to Iowa State University so that seeds could be counted under a microscope.
 Counts were originally recorded as tallies in a lab notebook (Figure 3.2).
 The goal of Exercise 1 is to get all of this information into a single tidy spreadsheet.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
 <img src="img/handwritten_data.jpg" alt="A zoomed-in portion of a lab notebook is shown, which includes handwritten data in pencil observations of mature fig fruits, including date, species, site, tree, and fruit dimensions." width="100%" />
 <p class="caption">
 Figure 3.2: A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.
@@ -463,7 +464,7 @@ But there are a few points to keep in mind:</p>
 <p>The column names in Figure 3.2 are (1) Date, (2) Species, (3) Site number, (4) Tree number, (5) Fruit length in mm, (6) Fruit width in mm, and (7) Fruit height in mm.
 All of the species are <em>Ficus petiolaris</em>, which is abbreviated to “F-pet” in the field notebook.
 How you choose to write some of this information down is up to you (e.g., the date format, capitalisation of column names), but when finished, the spreadsheet should be organised like the one in Figure 3.3.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="img/Ch1_Ex1a.png" alt="A screenshot of a spreadsheet with 7 columns and 6 rows of data on fig fruit dimensions." width="100%" />
 <p class="caption">
 Figure 3.3: A spreadsheet with data organised in a tidy format and nearly ready for analysis.
@@ -472,13 +473,13 @@ Figure 3.3: A spreadsheet with data organised in a tidy format and nearly ready 
 <p>This leaves us with the data that had to be collected later in the lab.
 Small seeds needed to be meticulously separated from other material in the fig fruit, then tallied under a microscope.
 Tallies from this notebook are shown in Figures 3.4 and 3.5.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="img/Ch1_Ex1_seeds1.jpg" alt="A screenshot of a lab notebook with dates and tallies of seed counts from fig fruits 1-4." width="100%" />
 <p class="caption">
 Figure 3.4: Tallies of seed counts collected from 4 fig fruits in Baja, Mexico in 2010.
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="img/Ch1_Ex1_seeds2.jpg" alt="A screenshot of a lab notebook with dates and tallies of seed counts from fig fruits 5-6." width="100%" />
 <p class="caption">
 Figure 3.5: Tallies of seed counts collected from 2 fig fruits in Baja, Mexico in 2010.
@@ -514,7 +515,7 @@ This will ensure that you always know where your data files are located and can 
 After reading <a href="Chapter_2.html#Chapter_2">Chapter 2</a> and completing Exercise 1, you should have a bit more confidence in organising data in a tidy format.
 Here we will work with a dataset that includes counts of the number of eggs collected from fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers <span class="citation">(<a href="#ref-Weiblen2002" role="doc-biblioref">Weiblen 2002</a>)</span>.
 You can <strong>download the dataset <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_egg_loads_untidy.csv">here</a></strong>, or recreate it from Figure 3.6.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
 <img src="img/wasp_egg_loads_untidy.png" alt="A screenshot of a spreadsheet that includes 5 columns of labels, below which there are integer numbers. Some text specifies that these numbers are wasp species egg loads." width="100%" />
 <p class="caption">
 Figure 3.6: An untidy dataset of egg loads from fig wasps of five different species, including two unnamed species of the genus <em>Heterandrium</em> (Het1 and Het2) and three unnamed species of the genus <em>Idarnes</em> (LO1, SO1, and SO2).
@@ -535,7 +536,7 @@ Table 3.1 shows the number of different species of wasps counted in 5 different 
 Rows list all of the species and columns list the fruits, with the counts in the middle
 This is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-14">Table 3.1: </span>An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
+<caption><span id="tab:unnamed-chunk-17">Table 3.1: </span>An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
 <thead>
 <tr class="header">
 <th align="left">Species</th>
@@ -604,7 +605,7 @@ Both files contain identical information, so which one you use is a matter of pe
 This dataset is about as untidy as it gets.
 First note that there are multiple sheets in the spreadsheet, which is not allowed in a tidy CSV file.
 You can see these sheets by looking at the very bottom of the spreadsheet, which will have separating tabs called Het1, Het2, LO1, SO1, and SO2 (Figure 3.7).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
 <img src="img/spreadsheet_tabs.png" alt="A screenshot the tabs found at the bottom of a spreadsheet." width="100%" />
 <p class="caption">
 Figure 3.7: Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.
@@ -628,7 +629,7 @@ What columns should this new dataset include? Write your answer below.</p>
 <p>When you are ready, create the new dataset.
 Your dataset should have all of the relevant information about wasp head, thorax, and abdomen measurements.
 It should look something like Figure 3.8.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
 <img src="img/Ch1_Ex3_tidy.png" alt="A screenshot of a spreadsheet with wasp morphological measurements for 5 species." width="100%" />
 <p class="caption">
 Figure 3.8: A tidy dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010.
@@ -695,7 +696,7 @@ Other functions are also available that can make calculations across cells (e.g.
 One nice feature of a spreadsheet is that it can usually recognise when the cells need to change (B2 and C2, in this case).
 To get the rest of the head volumes, we just need to select the bottom right of the H2 cell.
 There will be a very small square in this bottom right (see Figure 3.9), and if we drag it down, the spreadsheet will do the same calculation for each row (e.g., in H3, it will use B3 and C3 in the formula rather than B2 and C2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
 <img src="img/Ch1_Ex3_copy_formula.png" alt="A screenshot of a spreadsheet with the H2 cell selected." width="100%" />
 <p class="caption">
 Figure 3.9: A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.

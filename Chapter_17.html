@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-14" />
+<meta name="date" content="2023-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,6 +176,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
 <li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
 <ul>
@@ -428,7 +429,7 @@ The only way to be 100% certain that our proposed interval <em>definitely</em> c
 Instead, we might more sensibly ask what the interval would need to be to contain the mean with 95% confidence.
 What does “with 95% confidence” actually mean?
 It means when we do the calculation to get the interval, the true mean should be somewhere within the interval 95% of the time that a sample is collected.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-79"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-82"></span>
 <img src="img/housecats.png" alt="Two cats sitting close together on a windowsill, a large orange one in the front and small black and brown one in the back" width="100%" />
 <p class="caption">
 Figure 17.1: Two domestic cats sitting side by side with much different body masses.
@@ -455,8 +456,8 @@ Here is how they are calculated,</p>
 The specific value of z determines the confidence interval that we are calculating.
 For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 16.2).
 Hence, if we use <span class="math inline">\(z = 1.96\)</span> to calculate LCI and UCI, we would be getting 95% confidence intervals around our mean.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-80-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. A value of zero centres the x-axis, which is labelled 'z-score'." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-83"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-83-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. A value of zero centres the x-axis, which is labelled 'z-score'." width="672" />
 <p class="caption">
 Figure 17.2: A standard normal probability distribution showing 95 per cent of probability density surrounding the mean.
 </p>
