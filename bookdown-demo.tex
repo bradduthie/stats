@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-01-20}
+\date{2023-01-21}
 
 \begin{document}
 \maketitle
@@ -647,10 +647,11 @@ You may not use this material for commercial purposes.
 & \textbf{Recommended:} None \\
 & \textbf{Suggested:} \citet{Navarro2022} \href{https://davidfoxcroft.github.io/lsj-book/02-A-brief-introduction-to-research-design.html}{Section 2.1} \\
 & \textbf{Advanced:} \citet{Wickham2014} (\href{https://www.jstatsoft.org/index.php/jss/article/view/v059i10/772}{Download}) \\
-\textbf{Lectures} & 1.0: Numbers and operations \\
-& 1.1: Orders of operations \\
-& 1.2: Logarithms \\
-& 1.3: Data organisation \\
+\textbf{Lectures} & 1.0: Numbers and operations (17:48 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=868c8cbe-3735-4fbd-a968-af900112ffbb}{Video}) \\
+& 1.1: Logarithms (6:06 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8c2e24c2-6328-40f3-b097-af90011ba761}{Video}) \\
+& 1.2: Order of Operations (7:41 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ac11ac83-e3e9-4b0f-80fa-af9001338d85}{Video}) \\
+& 1.3: Tidy data (13:39 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e002e6d2-abe4-4b57-93b5-af900147c301}{Video}) \\
+& 1.4: Data files (12:15 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=088b9c36-435e-469d-8f95-af9100c9188c}{Video}) \\
 \textbf{Practical} & Preparing data (\protect\hyperlink{Chapter_3}{Chapter 3}) \\
 & Room: Cottrell 2A17 \\
 & Group A: 25 JAN 2023 (WED) 13:05-15:55 \\
@@ -1978,11 +1979,11 @@ Topsoil Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Next, do the same for the mean, minimum, and maximum subsoil values.
 
-Topsoil Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Subsoil Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Topsoil Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Subsoil Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Topsoil Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Subsoil Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 From the values above, the mean of organic carbon sampled from the topsoil appears to be greater than the mean of organic carbon sampled from the subsoil.
 Assuming that Jamovi has calculated the means correctly, we can be confident that the topsoil \emph{sample} mean is higher.
@@ -2129,7 +2130,7 @@ We could therefore rewrite the equation above,
 \[V = \frac{4}{3} \times 3.14 \times r \times r \times r.\]
 
 This is the formula that we can use to create our new column of data for fig volume.
-To do this, click on the first empty column of the dataset, just to the right of the `Seeds' column header.
+To do this, double-click on the first empty column of the dataset, just to the right of the `Seeds' column header.
 You will see a pull down option in Jamovi with 3 options, one of which is `NEW COMPUTED VARIABLE'.
 This is the option that we want.
 We need to name this new variable, so we can call it `fig\_volume'.
@@ -2965,26 +2966,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-44}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.75 & 0.79 & 0.42 & 0.59 & 0.67 & 0.73 & 0.68 & 0.68 & 0.71 & 0.45 \\
-Sample\_2 & 0.70 & 0.65 & 0.71 & 0.68 & 0.78 & 0.53 & 0.72 & 0.72 & 0.76 & 0.58 \\
-Sample\_3 & 0.75 & 0.62 & 0.76 & 0.58 & 0.83 & 0.54 & 0.78 & 0.73 & 0.60 & 0.68 \\
-Sample\_4 & 0.69 & 0.61 & 0.68 & 0.80 & 0.68 & 0.95 & 0.82 & 0.96 & 0.75 & 0.48 \\
-Sample\_5 & 0.64 & 0.72 & 0.64 & 0.82 & 0.85 & 0.68 & 0.57 & 0.81 & 0.68 & 0.90 \\
-Sample\_6 & 0.67 & 0.60 & 0.68 & 0.68 & 0.75 & 0.61 & 0.56 & 0.55 & 0.60 & 0.67 \\
-Sample\_7 & 0.64 & 0.63 & 0.71 & 0.73 & 0.77 & 0.67 & 0.55 & 0.68 & 0.81 & 0.75 \\
-Sample\_8 & 0.90 & 0.84 & 0.75 & 0.62 & 0.51 & 0.76 & 0.84 & 0.73 & 0.68 & 0.52 \\
-Sample\_9 & 0.78 & 0.66 & 0.65 & 0.84 & 0.58 & 0.75 & 0.67 & 0.59 & 0.70 & 0.66 \\
-Sample\_10 & 0.46 & 0.59 & 0.79 & 0.80 & 0.72 & 0.73 & 0.68 & 0.74 & 0.73 & 0.76 \\
-Sample\_11 & 0.65 & 0.62 & 0.56 & 0.66 & 0.60 & 0.76 & 0.54 & 0.58 & 0.46 & 0.63 \\
-Sample\_12 & 0.67 & 0.84 & 0.70 & 0.53 & 0.70 & 0.65 & 0.45 & 0.60 & 0.70 & 0.86 \\
-Sample\_13 & 0.71 & 0.80 & 0.53 & 0.58 & 0.75 & 0.77 & 0.76 & 0.69 & 0.92 & 0.70 \\
-Sample\_14 & 0.71 & 0.75 & 0.65 & 0.63 & 0.65 & 0.79 & 0.64 & 0.68 & 0.63 & 0.80 \\
-Sample\_15 & 0.67 & 0.59 & 0.55 & 0.65 & 0.79 & 0.71 & 0.56 & 0.61 & 0.53 & 0.78 \\
-Sample\_16 & 0.50 & 0.80 & 0.65 & 0.71 & 0.76 & 0.65 & 0.74 & 0.67 & 0.83 & 0.71 \\
-Sample\_17 & 0.78 & 0.80 & 0.72 & 0.63 & 0.81 & 0.65 & 0.81 & 0.78 & 0.75 & 0.74 \\
-Sample\_18 & 0.45 & 0.75 & 0.60 & 0.68 & 0.60 & 0.65 & 0.73 & 0.68 & 0.72 & 0.60 \\
-Sample\_19 & 0.59 & 0.63 & 0.73 & 0.71 & 0.65 & 0.75 & 0.81 & 0.85 & 0.65 & 0.82 \\
-Sample\_20 & 0.71 & 0.75 & 0.69 & 0.68 & 0.44 & 0.67 & 0.70 & 0.75 & 0.71 & 0.65 \\
+Sample\_1 & 0.78 & 0.83 & 0.73 & 0.61 & 0.63 & 0.76 & 0.70 & 0.62 & 0.61 & 0.61 \\
+Sample\_2 & 0.75 & 0.76 & 0.64 & 0.66 & 0.57 & 0.73 & 0.76 & 0.63 & 0.69 & 0.76 \\
+Sample\_3 & 0.59 & 0.81 & 0.82 & 0.75 & 0.73 & 0.76 & 0.84 & 0.60 & 0.64 & 0.87 \\
+Sample\_4 & 0.73 & 0.62 & 0.78 & 0.61 & 0.84 & 0.87 & 0.87 & 0.43 & 0.66 & 0.74 \\
+Sample\_5 & 0.72 & 0.59 & 0.65 & 0.68 & 0.75 & 0.87 & 0.71 & 0.67 & 0.70 & 0.97 \\
+Sample\_6 & 0.67 & 0.67 & 0.65 & 0.57 & 0.69 & 0.92 & 0.59 & 0.65 & 0.53 & 0.80 \\
+Sample\_7 & 0.80 & 0.71 & 0.74 & 0.83 & 0.75 & 0.49 & 0.78 & 0.60 & 0.38 & 0.57 \\
+Sample\_8 & 0.66 & 0.61 & 0.69 & 0.86 & 0.83 & 0.62 & 0.71 & 0.66 & 0.74 & 0.71 \\
+Sample\_9 & 0.73 & 0.72 & 0.63 & 0.73 & 0.69 & 0.70 & 0.66 & 0.72 & 0.79 & 0.91 \\
+Sample\_10 & 0.59 & 0.78 & 0.72 & 0.73 & 0.88 & 0.54 & 0.65 & 0.77 & 0.70 & 0.51 \\
+Sample\_11 & 0.60 & 0.63 & 0.64 & 0.76 & 0.65 & 0.63 & 0.55 & 0.67 & 0.77 & 0.60 \\
+Sample\_12 & 0.79 & 0.82 & 0.77 & 0.70 & 0.60 & 0.62 & 0.97 & 0.60 & 0.57 & 0.92 \\
+Sample\_13 & 0.68 & 0.76 & 0.70 & 0.77 & 0.68 & 0.72 & 0.69 & 0.68 & 0.76 & 0.66 \\
+Sample\_14 & 0.59 & 0.72 & 0.87 & 0.80 & 0.70 & 0.68 & 0.82 & 0.74 & 0.48 & 0.61 \\
+Sample\_15 & 0.75 & 0.72 & 0.56 & 0.79 & 0.81 & 0.60 & 0.71 & 0.80 & 0.68 & 0.84 \\
+Sample\_16 & 0.71 & 0.63 & 0.67 & 0.69 & 0.72 & 0.78 & 0.90 & 0.70 & 0.82 & 0.66 \\
+Sample\_17 & 0.67 & 0.66 & 0.62 & 0.64 & 0.63 & 0.77 & 0.79 & 0.61 & 0.70 & 0.74 \\
+Sample\_18 & 0.97 & 0.69 & 0.94 & 0.59 & 0.68 & 0.71 & 0.72 & 0.67 & 0.76 & 0.65 \\
+Sample\_19 & 0.65 & 0.85 & 0.73 & 0.50 & 0.75 & 0.68 & 0.61 & 0.73 & 0.64 & 0.87 \\
+Sample\_20 & 0.77 & 0.54 & 0.70 & 0.85 & 0.70 & 0.69 & 0.73 & 0.84 & 0.78 & 0.77 \\
 \bottomrule
 \end{longtable}
 
@@ -2993,18 +2994,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.647 0.683 0.687 0.742 0.731 0.637 0.694 0.715 0.688 0.700
-## [2,] 0.606 0.670 0.721 0.693 0.644 0.702 0.747 0.646 0.719 0.675
+## [1,] 0.688 0.695 0.741 0.715 0.731 0.674 0.665 0.709 0.728 0.687
+## [2,] 0.650 0.736 0.710 0.701 0.726 0.728 0.683 0.738 0.701 0.737
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0374465.
+The standard deviation of the 20 sample means reported above is 0.0265653.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.123922.
+The standard deviation of Sample 1 is \(s =\) 0.0829726.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.123922}{\sqrt{10}} = 0.0391876.\]
+\[s = \frac{0.0829726}{\sqrt{10}} = 0.0262382.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0374465, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0391876.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0265653, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0262382.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -3194,8 +3195,6 @@ To calculate all of the variables explained in \protect\hyperlink{Chapter_11}{Ch
 \item
   Variance: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \item
-  Range: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\item
   Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \item
   Maximum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
@@ -3231,11 +3230,11 @@ Site: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Mean: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Which of the 7 sites has the lowest variation in petiole diameter, and what is its variation?
+Which of the 7 sites has the lowest variance in petiole diameter, and what is its variance?
 
 Site: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Variation: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Variance: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Make sure that you are able to find and interpret these summary statistics in Jamovi.
 Explore different options to get more comfortable using Jamovi for building plots and reporting summary statistics.
@@ -3273,8 +3272,6 @@ In assessments, you will often be asked to report a particular answer to a speci
   Std. deviation: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \item
   Variance: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-\item
-  Range: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \item
   Minimum: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 \item
