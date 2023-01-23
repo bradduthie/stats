@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-01-22}
+\date{2023-01-23}
 
 \begin{document}
 \maketitle
@@ -1278,7 +1278,7 @@ This will ensure that you always know where your data files are located and can 
 Exercise 2 is more self-guided than Exercise 1.
 After reading \protect\hyperlink{Chapter_2}{Chapter 2} and completing Exercise 1, you should have a bit more confidence in organising data in a tidy format.
 Here we will work with a dataset that includes counts of the number of eggs collected from fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers \citep{Weiblen2002}.
-You can \textbf{download the dataset \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_egg_loads_untidy.csv}{here}}, or recreate it from Figure 3.6.
+You can \textbf{download the dataset \href{https://github.com/bradduthie/SCIU4T4/blob/main/data/wasp_egg_loads_untidy.xlsx?raw=true}{here}}, or recreate it from Figure 3.6.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{img/wasp_egg_loads_untidy} \caption{An untidy dataset of egg loads from fig wasps of five different species, including two unnamed species of the genus *Heterandrium* (Het1 and Het2) and three unnamed species of the genus *Idarnes* (LO1, SO1, and SO2).}\label{fig:unnamed-chunk-16}
@@ -1332,7 +1332,7 @@ As with Exercise 2, it might be good to confer with classmates and an instructor
 
 Exercise 4 requires some restructuring and calculations.
 The dataset that will be used in this exercise includes morphological measurements from five species of fig wasps, the same species used in Exercise 2.
-\textbf{Download this dataset from the file \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_morphology_untidy.xlsx}{wasp\_morphology\_untidy.xlsx} (XLSX file) or \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wasp_morphology_untidy.ods}{wasp\_morphology\_untidy.ods} (ODS open-source file).}
+\textbf{Download this dataset from the file \href{https://github.com/bradduthie/SCIU4T4/blob/main/data/wasp_morphology_untidy.xlsx?raw=true}{wasp\_morphology\_untidy.xlsx} (XLSX file) or \href{https://github.com/bradduthie/SCIU4T4/blob/main/data/wasp_morphology_untidy.ods?raw=true}{wasp\_morphology\_untidy.ods} (ODS open-source file).}
 Both files contain identical information, so which one you use is a matter of personal preference.
 This dataset is about as untidy as it gets.
 First note that there are multiple sheets in the spreadsheet, which is not allowed in a tidy CSV file.
@@ -1874,12 +1874,12 @@ In this practical, we will work with two datasets, both of which are based on re
 
 The first dataset includes measurements of soil organic carbon (grams of Carbon per kg of soil) from the topsoil and subsoil collected in a national park in Gabon.
 These data were collected by Dr Carmen Rosa Medina-Carmona in an effort to understand how \href{https://bg.copernicus.org/articles/3/397/2006/bg-3-397-2006.pdf}{pyrogenic carbon} (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas \citep{Santin2016, Preston2006}.
-\textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil\_organic\_carbon.csv}}
+\textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv}{soil\_organic\_carbon.csv}} (right click and ``Save Link As\ldots{}'').
 
 The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) in Baja, Mexico.
 These data were collected by Dr Brad Duthie in an effort to understand coexistence in a fig wasp community \citep{Duthie2015b, Duthie2016}.
 Measurements include fig lengths, widths, and heights in centimeters from 4 different fig trees, and the number of seeds in each fruit.
-\textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig\_fruits.csv}}
+\textbf{Download these data here: \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv}{fig\_fruits.csv}} (right click and ``Save Link As\ldots{}'').
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-23}
@@ -1892,7 +1892,7 @@ Some of these exercises will be similar to what we did in the week 1 practical f
 \hypertarget{summary_statistics_02}{%
 \section{Exercise for summary statistics}\label{summary_statistics_02}}
 
-Download the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset if you have not already done so, and save it in a location where you know you will be able to find it again, then open Jamovi.
+Download the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv}{soil organic carbon} dataset if you have not already done so (right click and ``Save Link As\ldots{}''), and save it in a location where you know you will be able to find it again, then open Jamovi.
 Once Jamovi is open, you can import the dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting `Open' (Figure 8.2).
 
 \begin{figure}
@@ -2016,7 +2016,7 @@ Doing this will make the statistical hypothesis testing that comes later in the 
 \hypertarget{transforming_variables_02}{%
 \section{Exercise on transforming variables}\label{transforming_variables_02}}
 
-In this next exercise, we will work with the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} dataset.
+In this next exercise, we will work with the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv}{fig fruits} dataset (right click and ``Save Link As\ldots{}'').
 Open this dataset into Jamovi.
 Note that there are 5 columns of data, and all of the data appear to be in a tidy format.
 Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
@@ -2377,7 +2377,7 @@ As a guide, the histogram, pie chart, barplot, and box-whisker plot below illust
 
 Histograms illustrate the distribution of \protect\hyperlink{Chapter_5}{continuous data}.
 They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
-The histogram shown in Figure 10.1 provides an example using the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8} (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}})..
+The histogram shown in Figure 10.1 provides an example using the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv}{fig fruits} data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8} (for a step-by-step demonstration of how a histogram is built, see \href{https://bradduthie.shinyapps.io/build_histogram/}{this interactive application}\footnote{Here is the full URL: \url{https://bradduthie.shinyapps.io/build_histogram/}}).
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-35}
@@ -2402,7 +2402,7 @@ Different distribution shapes will be discussed more in \protect\hyperlink{Week4
 \section{Barplots and pie charts}\label{barplots-and-pie-charts}}
 
 While histograms are an effective way of visualising \protect\hyperlink{Chapter_5}{continuous data}, barplots (also known as `bar charts' or `bar graphs') and pie charts can be used to visualise \protect\hyperlink{Chapter_5}{categorical data}.
-For example, in the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv}{fig fruits} data set from \protect\hyperlink{Chapter_8}{Chapter 8}, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
+For example, in the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv}{fig fruits} data set from \protect\hyperlink{Chapter_8}{Chapter 8} (right click and ``Save Link As\ldots{}''), 78 fig fruits were collected from 4 different trees (A, B, C, and D).
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).
 
 \begin{figure}
@@ -2966,26 +2966,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-44}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.64 & 0.67 & 0.71 & 0.54 & 0.63 & 0.75 & 0.78 & 0.57 & 0.83 & 0.80 \\
-Sample\_2 & 0.76 & 0.45 & 0.67 & 0.73 & 0.82 & 0.65 & 0.79 & 0.71 & 0.67 & 0.60 \\
-Sample\_3 & 0.62 & 0.72 & 0.80 & 0.63 & 0.85 & 0.66 & 0.71 & 0.77 & 0.93 & 0.89 \\
-Sample\_4 & 0.55 & 0.45 & 0.86 & 0.64 & 0.67 & 0.47 & 0.74 & 0.58 & 0.71 & 0.59 \\
-Sample\_5 & 0.66 & 0.62 & 0.67 & 0.76 & 0.79 & 0.63 & 0.64 & 0.82 & 0.62 & 0.78 \\
-Sample\_6 & 0.75 & 0.77 & 0.76 & 0.62 & 0.78 & 0.65 & 0.69 & 0.75 & 0.59 & 0.71 \\
-Sample\_7 & 0.80 & 0.83 & 0.67 & 0.83 & 0.48 & 0.56 & 0.56 & 0.56 & 0.77 & 0.65 \\
-Sample\_8 & 0.62 & 0.52 & 0.65 & 0.80 & 0.80 & 0.81 & 0.59 & 0.48 & 0.73 & 0.77 \\
-Sample\_9 & 0.71 & 0.75 & 0.76 & 0.78 & 0.72 & 0.89 & 0.62 & 0.62 & 0.61 & 0.68 \\
-Sample\_10 & 0.76 & 0.73 & 0.82 & 0.85 & 0.66 & 0.76 & 0.62 & 0.77 & 0.47 & 0.80 \\
-Sample\_11 & 0.63 & 0.82 & 0.55 & 0.70 & 0.63 & 0.47 & 0.76 & 0.66 & 0.58 & 0.62 \\
-Sample\_12 & 0.63 & 0.85 & 0.72 & 0.70 & 0.87 & 0.64 & 0.71 & 0.73 & 0.68 & 0.68 \\
-Sample\_13 & 0.60 & 0.71 & 0.99 & 0.65 & 0.69 & 0.72 & 0.71 & 0.67 & 0.86 & 0.48 \\
-Sample\_14 & 0.53 & 0.66 & 0.71 & 0.79 & 0.75 & 0.84 & 0.62 & 0.79 & 0.77 & 0.59 \\
-Sample\_15 & 0.65 & 0.70 & 0.65 & 0.61 & 0.73 & 0.70 & 0.81 & 0.84 & 0.69 & 0.67 \\
-Sample\_16 & 0.76 & 0.69 & 0.66 & 0.67 & 0.80 & 0.75 & 0.82 & 0.76 & 0.70 & 0.64 \\
-Sample\_17 & 0.76 & 0.75 & 0.80 & 0.74 & 0.62 & 0.65 & 0.72 & 0.52 & 0.76 & 0.92 \\
-Sample\_18 & 0.66 & 0.77 & 0.74 & 0.70 & 0.63 & 0.74 & 0.77 & 0.66 & 0.66 & 0.55 \\
-Sample\_19 & 0.74 & 0.61 & 0.87 & 0.53 & 0.70 & 0.91 & 0.77 & 0.68 & 0.68 & 0.60 \\
-Sample\_20 & 0.64 & 0.59 & 0.66 & 0.76 & 0.55 & 0.66 & 0.85 & 0.76 & 0.59 & 0.69 \\
+Sample\_1 & 0.61 & 0.45 & 0.75 & 0.73 & 0.53 & 0.67 & 0.67 & 0.67 & 0.58 & 0.80 \\
+Sample\_2 & 0.58 & 0.87 & 0.77 & 0.67 & 0.52 & 0.46 & 0.63 & 0.69 & 0.72 & 0.55 \\
+Sample\_3 & 0.58 & 0.62 & 0.77 & 0.57 & 0.56 & 0.62 & 0.67 & 0.69 & 0.86 & 0.61 \\
+Sample\_4 & 0.55 & 0.60 & 0.90 & 0.61 & 0.63 & 0.74 & 0.77 & 0.74 & 0.71 & 0.60 \\
+Sample\_5 & 0.77 & 0.73 & 0.66 & 0.69 & 0.49 & 0.61 & 0.54 & 0.66 & 0.78 & 0.69 \\
+Sample\_6 & 0.83 & 0.65 & 0.64 & 0.74 & 0.78 & 0.76 & 0.66 & 0.61 & 0.89 & 0.74 \\
+Sample\_7 & 0.72 & 0.53 & 0.78 & 0.94 & 0.71 & 0.70 & 0.65 & 0.80 & 0.67 & 0.84 \\
+Sample\_8 & 0.77 & 0.70 & 0.78 & 0.73 & 0.74 & 0.74 & 0.73 & 0.77 & 0.68 & 0.50 \\
+Sample\_9 & 0.61 & 0.56 & 0.66 & 0.64 & 0.64 & 0.58 & 0.76 & 0.67 & 0.84 & 0.60 \\
+Sample\_10 & 0.65 & 0.64 & 0.72 & 0.87 & 0.83 & 0.64 & 0.77 & 0.67 & 0.74 & 0.64 \\
+Sample\_11 & 0.74 & 0.64 & 0.66 & 0.65 & 0.83 & 0.66 & 0.75 & 0.57 & 0.68 & 0.79 \\
+Sample\_12 & 0.63 & 0.66 & 0.71 & 0.62 & 0.75 & 0.75 & 0.92 & 0.72 & 0.72 & 0.80 \\
+Sample\_13 & 0.76 & 0.65 & 0.59 & 0.56 & 0.58 & 0.66 & 0.81 & 0.64 & 0.76 & 0.72 \\
+Sample\_14 & 0.65 & 0.95 & 0.57 & 0.74 & 0.75 & 0.84 & 0.83 & 0.61 & 0.65 & 0.64 \\
+Sample\_15 & 0.63 & 0.66 & 0.76 & 0.68 & 0.75 & 0.80 & 0.67 & 0.67 & 0.70 & 0.72 \\
+Sample\_16 & 0.56 & 0.64 & 0.85 & 0.70 & 0.70 & 0.73 & 0.73 & 0.69 & 0.62 & 0.62 \\
+Sample\_17 & 0.68 & 0.62 & 0.54 & 0.60 & 0.64 & 0.52 & 0.56 & 0.89 & 0.67 & 0.86 \\
+Sample\_18 & 0.66 & 0.78 & 0.69 & 0.91 & 0.78 & 0.65 & 0.71 & 0.86 & 0.66 & 0.78 \\
+Sample\_19 & 0.58 & 0.60 & 0.76 & 0.68 & 0.62 & 0.76 & 0.61 & 0.73 & 0.64 & 0.80 \\
+Sample\_20 & 0.78 & 0.78 & 0.82 & 0.64 & 0.71 & 0.62 & 0.52 & 0.76 & 0.74 & 0.66 \\
 \bottomrule
 \end{longtable}
 
@@ -2994,18 +2994,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.692 0.685 0.758 0.626 0.699 0.707 0.671 0.677 0.714 0.724
-## [2,] 0.642 0.721 0.708 0.705 0.705 0.725 0.724 0.688 0.709 0.675
+## [1,] 0.646 0.646 0.655 0.685 0.662 0.730 0.734 0.714 0.656 0.717
+## [2,] 0.697 0.728 0.673 0.723 0.704 0.684 0.658 0.748 0.678 0.703
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0300786.
+The standard deviation of the 20 sample means reported above is 0.032137.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.0984096.
+The standard deviation of Sample 1 is \(s =\) 0.105851.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.0984096}{\sqrt{10}} = 0.0311198.\]
+\[s = \frac{0.105851}{\sqrt{10}} = 0.033473.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0300786, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0311198.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.032137, and the estimate from just using the standard error formula and data from only Sample 1 is 0.033473.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -3020,7 +3020,7 @@ The project focused on beaver reintroduction in Scottish habitats and its conseq
 \end{figure}
 
 As an instructive example, this lab will use the data from \citet{Law2014} on the petiole diameter (mm) from \emph{N. alba} collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
-The \emph{N. alba} dataset is available to download \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/Nymphaea_alba.csv}{here}.
+The \emph{N. alba} dataset is available to download \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/Nymphaea_alba.csv}{here} (right click and ``Save Link As\ldots{}'')..
 Note that the data are not in a tidy format, so it is important to first reorganise the data so that they can be analysed in Jamovi (13.1).
 Once the data are properly organised, we will use Jamovi to plot them (13.2), calculate summary statistics (13.3), apply appropriate decimals, significant figures, and rounding (13.4), and compare petiole diameters across sites (13.5).
 
@@ -3882,8 +3882,8 @@ Part of this project involves the use of mobile games to investigate how people 
 
 The game ``Power Up!'' is freely available as an \href{https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame}{Android} and \href{https://apps.apple.com/gb/app/power-up/id1585634888}{iPhone} app (Figure 16.1).
 Data are collected from players' decisions and used to investigate social-ecological questions.
-We will use the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv}{power\_up} dataset in exercises 1 and 2.
-To get started, first download the \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/power_up.csv}{power\_up} dataset and open it in Jamovi.
+We will use the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/power_up.csv}{power\_up} dataset in exercises 1 and 2 (right click and ``Save Link As\ldots{}'').
+To get started, first download the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/power_up.csv}{power\_up} dataset and open it in Jamovi.
 Note that these data are already in a tidy format, so we do not need to do any reorganising.
 The dataset includes columns for each player's ID, the OS that they use, the dam size that they decided to build in the game, their in-game investment in Biodiversity, Community, and Energy, and their final Score.
 
@@ -4701,7 +4701,7 @@ We will use observations of tree diameter at breast height (DBH) and grazing to 
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Download the WrEN Sites \href{https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_sites.csv}{wren\_sites.csv} dataset
+  Download the WrEN Sites \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/wren_sites.csv}{wren\_sites.csv} dataset (right click and ``Save Link As\ldots{}'')
 \item
   Find the number of sites grazed and not grazed
 \item
