@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-01-24}
+\date{2023-01-28}
 
 \begin{document}
 \maketitle
@@ -1826,7 +1826,7 @@ In general, if the variable \(Z\) is calculated by adding (or subtracting) 2 or 
 
 Hence, for the egg masses, the error of the combined masses (\(E^{2}_{Z}\)) equals the square root of the error associated with the mass of egg 1 squared (\(E^{2}_{X}\)) plus the error associated with the mass of egg 2 squared (\(E^{2}_{Y}\)).
 It often helps to provide a concrete example.
-If the error associated with the measurement of egg 1 is \(E^{2}_{X} = 2\), and the error associated with the measurement of egg 2 is \(E^{2}_{X} = 3\), then we can calculate,
+If the error associated with the measurement of egg 1 is \(E^{2}_{X} = 2\), and the error associated with the measurement of egg 2 is \(E^{2}_{Y} = 3\), then we can calculate,
 
 \[E_{Z} = \sqrt{2^{2} + 3^{2}} \approx 3.61.\]
 
@@ -1845,7 +1845,7 @@ How the error of the total area (\(E_{A}\)) is propagated by \(E_{L}\) and \(E_{
 Notice that just knowing the error of each measurement (\(E_{L}\) and \(E_{W}\)) is no longer sufficient to calculate the error associated with the measurement of the total area.
 We also need to know \(L\), \(W\), and \(A\).
 If our field has a length of \(L = 20\) m and width of \(W = 10\) m, then \(A = 20 \times 10 = 200\:m^{2}\).
-If length and width measurements have associated errors of \(E_{L} = 2\) m \(E_{W} = 1\) m, then,
+If length and width measurements have associated errors of \(E_{L} = 2\) m and \(E_{W} = 1\) m, then,
 
 \[E_{A} = 200 \sqrt{\left(\frac{2}{20} \right)^{2} + \left(\frac{1}{10} \right)^{2}} \approx 28.3\:m^{2}.\]
 
@@ -2965,26 +2965,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-44}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.64 & 0.66 & 0.66 & 0.56 & 0.71 & 0.82 & 0.64 & 0.85 & 0.75 & 0.72 \\
-Sample\_2 & 0.83 & 0.72 & 0.68 & 0.66 & 0.62 & 0.89 & 0.75 & 0.68 & 0.74 & 0.70 \\
-Sample\_3 & 0.65 & 0.68 & 0.62 & 0.84 & 0.69 & 0.59 & 0.77 & 0.70 & 0.87 & 0.65 \\
-Sample\_4 & 0.71 & 0.82 & 0.71 & 0.60 & 0.58 & 0.66 & 0.68 & 0.65 & 0.64 & 0.64 \\
-Sample\_5 & 0.77 & 0.68 & 0.55 & 0.43 & 0.60 & 0.52 & 0.85 & 0.67 & 0.68 & 0.72 \\
-Sample\_6 & 0.58 & 0.74 & 0.59 & 0.67 & 0.71 & 0.65 & 0.74 & 0.68 & 0.84 & 0.81 \\
-Sample\_7 & 0.59 & 0.63 & 0.65 & 0.67 & 0.73 & 0.61 & 0.63 & 0.48 & 0.71 & 0.80 \\
-Sample\_8 & 0.86 & 0.63 & 0.84 & 0.96 & 0.67 & 0.92 & 0.47 & 0.54 & 0.78 & 0.87 \\
-Sample\_9 & 0.89 & 0.79 & 0.62 & 0.58 & 0.90 & 0.53 & 0.58 & 0.68 & 0.79 & 0.71 \\
-Sample\_10 & 0.82 & 0.70 & 0.85 & 0.61 & 0.74 & 0.77 & 0.56 & 0.72 & 0.61 & 0.79 \\
-Sample\_11 & 0.79 & 0.68 & 0.65 & 0.68 & 0.73 & 0.82 & 0.73 & 0.67 & 0.78 & 0.85 \\
-Sample\_12 & 0.88 & 0.67 & 0.72 & 0.77 & 0.50 & 0.68 & 0.60 & 0.90 & 0.62 & 0.63 \\
-Sample\_13 & 0.69 & 0.68 & 0.58 & 0.61 & 0.77 & 0.77 & 0.74 & 0.87 & 0.79 & 0.68 \\
-Sample\_14 & 0.76 & 0.67 & 0.77 & 0.69 & 0.41 & 0.78 & 0.87 & 0.45 & 0.91 & 0.69 \\
-Sample\_15 & 0.69 & 0.52 & 0.61 & 0.67 & 0.66 & 0.72 & 0.76 & 0.60 & 0.87 & 0.65 \\
-Sample\_16 & 0.55 & 0.65 & 0.89 & 0.79 & 0.89 & 0.67 & 0.62 & 0.66 & 0.75 & 0.51 \\
-Sample\_17 & 0.80 & 0.72 & 0.62 & 0.70 & 0.70 & 0.79 & 0.44 & 0.53 & 0.69 & 0.68 \\
-Sample\_18 & 0.87 & 0.80 & 0.72 & 0.72 & 0.69 & 0.54 & 0.76 & 0.70 & 0.67 & 0.69 \\
-Sample\_19 & 0.70 & 0.79 & 0.61 & 0.71 & 0.84 & 0.50 & 0.70 & 0.80 & 0.59 & 0.64 \\
-Sample\_20 & 0.63 & 0.61 & 0.48 & 0.73 & 0.57 & 0.72 & 0.84 & 0.85 & 0.54 & 0.60 \\
+Sample\_1 & 0.74 & 0.66 & 0.80 & 0.74 & 0.58 & 0.74 & 0.76 & 0.48 & 0.60 & 0.68 \\
+Sample\_2 & 0.71 & 0.65 & 0.62 & 0.55 & 0.53 & 0.69 & 0.62 & 0.69 & 0.87 & 0.78 \\
+Sample\_3 & 0.59 & 0.84 & 0.56 & 0.82 & 0.73 & 0.73 & 0.80 & 0.73 & 0.65 & 0.66 \\
+Sample\_4 & 0.71 & 0.70 & 0.63 & 0.69 & 0.70 & 0.54 & 0.71 & 0.79 & 0.81 & 0.89 \\
+Sample\_5 & 0.78 & 0.90 & 0.74 & 0.80 & 0.75 & 0.59 & 0.77 & 0.64 & 0.77 & 0.89 \\
+Sample\_6 & 0.63 & 0.73 & 0.60 & 0.80 & 0.61 & 0.60 & 0.80 & 0.74 & 0.81 & 0.76 \\
+Sample\_7 & 0.60 & 0.78 & 0.60 & 0.77 & 0.89 & 0.66 & 0.74 & 0.61 & 0.73 & 0.63 \\
+Sample\_8 & 0.69 & 0.64 & 0.63 & 0.80 & 0.66 & 0.65 & 0.75 & 0.82 & 0.56 & 0.52 \\
+Sample\_9 & 0.81 & 0.91 & 0.73 & 0.59 & 0.70 & 0.66 & 0.60 & 0.64 & 0.57 & 0.78 \\
+Sample\_10 & 0.57 & 0.75 & 0.72 & 0.49 & 0.67 & 0.69 & 0.70 & 0.65 & 0.53 & 0.69 \\
+Sample\_11 & 0.86 & 0.77 & 0.74 & 0.74 & 0.76 & 0.86 & 0.74 & 0.74 & 0.87 & 0.61 \\
+Sample\_12 & 0.71 & 0.81 & 0.83 & 0.67 & 0.75 & 0.67 & 0.60 & 0.78 & 0.74 & 0.79 \\
+Sample\_13 & 0.68 & 0.64 & 0.54 & 0.77 & 0.64 & 0.77 & 0.83 & 0.74 & 0.60 & 0.64 \\
+Sample\_14 & 0.56 & 0.84 & 0.57 & 0.81 & 0.73 & 0.71 & 0.65 & 0.66 & 0.80 & 0.64 \\
+Sample\_15 & 0.70 & 0.47 & 0.71 & 0.68 & 0.63 & 0.66 & 0.59 & 0.67 & 0.58 & 0.75 \\
+Sample\_16 & 0.68 & 0.66 & 0.79 & 0.77 & 0.71 & 0.71 & 0.78 & 0.73 & 0.54 & 0.83 \\
+Sample\_17 & 0.60 & 0.84 & 0.65 & 0.78 & 0.70 & 0.65 & 0.72 & 0.70 & 0.67 & 0.52 \\
+Sample\_18 & 0.89 & 0.63 & 0.73 & 0.97 & 0.84 & 0.60 & 0.70 & 0.46 & 0.41 & 0.65 \\
+Sample\_19 & 0.67 & 0.72 & 0.75 & 0.68 & 0.69 & 0.51 & 0.69 & 0.98 & 0.49 & 0.64 \\
+Sample\_20 & 0.92 & 0.58 & 0.69 & 0.61 & 0.69 & 0.77 & 0.58 & 0.60 & 0.78 & 0.81 \\
 \bottomrule
 \end{longtable}
 
@@ -2993,18 +2993,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.701 0.727 0.706 0.669 0.647 0.701 0.650 0.754 0.707 0.717
-## [2,] 0.738 0.697 0.718 0.700 0.675 0.698 0.667 0.716 0.688 0.657
+## [1,] 0.678 0.671 0.711 0.717 0.763 0.708 0.701 0.672 0.699 0.646
+## [2,] 0.769 0.735 0.685 0.697 0.644 0.720 0.683 0.688 0.682 0.703
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0288467.
+The standard deviation of the 20 sample means reported above is 0.032406.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.0881224.
+The standard deviation of Sample 1 is \(s =\) 0.0990847.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.0881224}{\sqrt{10}} = 0.0278667.\]
+\[s = \frac{0.0990847}{\sqrt{10}} = 0.0313333.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0288467, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0278667.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.032406, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0313333.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
