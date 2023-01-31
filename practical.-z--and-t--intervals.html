@@ -414,23 +414,41 @@ Specifically, we will practice calculating confidence intervals (CIs).
 There will be 4 exercises focusing on calculating confidence intervals in Jamovi.
 To complete the first 2 exercises, you will need the distrACTION module in Jamovi.
 We downloaded the distrACTION module in the <a href="#Week_4">Week 4</a> practical.
-If you need to download it again, the instructions are in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> Exercise 16.2.</p>
+If you need to download it again, the instructions to do this are in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> <a href="https://bradduthie.github.io/SCIU4T4/Chapter_16.html#probabilities-from-a-normal-distribution">Exercise 16.2</a> (briefly, go to the Modules option and select ‘jamovi library’, then scroll down until you find the ‘distraACTION’ module).</p>
 <p>The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
-The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Dr Robbie Whytock, Dr Kevin Watts, and Prof Kirsty Park (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).</p>
+The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Dr Robbie Whytock, Dr Kevin Watts, and Prof Kirsty Park (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).
+It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-86"></span>
 <img src="img/wren_project.png" alt="Decorative image showing various pictures from a forest, including a woman doing field work, field equipment, a flower, and a tree." width="100%" />
 <p class="caption">
 Figure 19.1: Images from the WrEN project led by the University of Stirling
 </p>
 </div>
-<p>We will use observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.</p>
+<p>The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
+Here we will focus on observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.</p>
 <div id="confidence-intervals-with-distraction" class="section level2 hasAnchor" number="19.1">
 <h2><span class="header-section-number">19.1</span> Confidence intervals with distrACTION<a href="practical.-z--and-t--intervals.html#confidence-intervals-with-distraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Download distrACTION module if not already downloaded</li>
-<li>Download the WrEN Trees <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_trees.xlsx">wren_trees.xlsx</a> dataset and open in a spreadsheet</li>
-<li>Put the WrEN Trees dataset into a tidy format</li>
-<li>Calculate the grand mean and standard deviation (for all trees)</li>
+<p>First, it is important to downlaod the disrACTION module if it has not been downloaded already.
+If the distrACTION module has already been downloaded, it should appear in the toolbar of Jamovi (Figure 19.2)
+If it has not been downloaded, then see the instructions for downloading it with the ‘Modules’ option (see Figure 19.2) in <a href="https://bradduthie.github.io/SCIU4T4/Chapter_16.html#probabilities-from-a-normal-distribution">Exercise 16.2</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-87"></span>
+<img src="img/jamovi_toolbar_modules_distrACTION.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules' and a button called distrACTION." width="100%" />
+<p class="caption">
+Figure 19.2: Jamovi tool bar, which includes an added module called distrACTION.
+</p>
+</div>
+<p>Once the distrACTION module has been made available, download the WrEN trees dataset <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_trees.xlsx">wren_trees.xlsx</a> dataset and open in a spreadsheet.
+Notice that the dataset is not in a tidy format.
+There are 4 different sites represented by different columns in the dataset.
+The numbers under each column are measurements of tree diameter at breast height (DBH) in centimeteres.
+Before doing anything else, it is therefore necessary to put the WrEN dataset into a tidy format.
+The tidy dataset should include two columns, one for site and the other for DBH.</p>
+<p>Once the WrEN trees dataset has been reorganised into a tidy format, save it as a CSV file and open it in Jamovi.
+In Jamovi, calculate the grand mean and standard deviation of trees (i.e., the mean and standard deviatio of trees across all sites).</p>
+<p>Grand Mean: ____________________________________</p>
+<p>Grand Standard Deviation: _____________________</p>
+<p>We will use this mean and standard deviation to compute quantiles and obtain 95% z-scores.</p>
+<ol start="5" style="list-style-type: decimal">
 <li>Use distrACTION ‘Normal Distribution’ and Compute quantiles to get 95% z-scores</li>
 <li>Use distrACTION ‘t-distribution’ and compute quantiles to get 95% t-scores</li>
 <li>Are these different?</li>
