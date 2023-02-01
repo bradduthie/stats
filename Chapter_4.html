@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Populations and samples | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 4 Populations and samples | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Populations and samples | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 4 Populations and samples | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Populations and samples | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 4 Populations and samples | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-01-31" />
+<meta name="date" content="2023-02-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,52 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -119,156 +165,227 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
 </ul></li>
 <li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
-<li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Week 1 Overview</a>
+<li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_1.html"><a href="Chapter_1.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
 <ul>
-<li class="chapter" data-level="0.1" data-path="Week1.html"><a href="Week1.html#numbers-and-operations"><i class="fa fa-check"></i><b>0.1</b> Numbers and operations</a></li>
-<li class="chapter" data-level="0.2" data-path="Week1.html"><a href="Week1.html#logarithms"><i class="fa fa-check"></i><b>0.2</b> Logarithms</a></li>
-<li class="chapter" data-level="0.3" data-path="Week1.html"><a href="Week1.html#order-of-operations"><i class="fa fa-check"></i><b>0.3</b> Order of operations</a></li>
-<li class="chapter" data-level="0.4" data-path="Week1.html"><a href="Week1.html#tidy-data"><i class="fa fa-check"></i><b>0.4</b> Tidy data</a></li>
-<li class="chapter" data-level="0.5" data-path="Week1.html"><a href="Week1.html#data-files"><i class="fa fa-check"></i><b>0.5</b> Data files</a></li>
-<li class="chapter" data-level="0.6" data-path="Week1.html"><a href="Week1.html#managing-data-files"><i class="fa fa-check"></i><b>0.6</b> Managing data files</a></li>
-<li class="chapter" data-level="0.7" data-path="Week1.html"><a href="Week1.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>0.7</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="0.8" data-path="Week1.html"><a href="Week1.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>0.8</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="0.9" data-path="Week1.html"><a href="Week1.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>0.9</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="0.10" data-path="Week1.html"><a href="Week1.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>0.10</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
-<li class="chapter" data-level="0.11" data-path="Week1.html"><a href="Week1.html#summary"><i class="fa fa-check"></i><b>0.11</b> Summary</a></li>
+<li class="chapter" data-level="1.1" data-path="Chapter_1.html"><a href="Chapter_1.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter_1.html"><a href="Chapter_1.html#logarithms"><i class="fa fa-check"></i><b>1.2</b> Logarithms</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter_1.html"><a href="Chapter_1.html#order-of-operations"><i class="fa fa-check"></i><b>1.3</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_2.html"><a href="Chapter_2.html"><i class="fa fa-check"></i><b>2</b> Data organisation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="part"><span><b>II Statistical concepts</b></span></li>
 <li class="chapter" data-level="" data-path="Week2.html"><a href="Week2.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
-<li class="chapter" data-level="1" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>1</b> Populations and samples</a></li>
-<li class="chapter" data-level="2" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>2</b> Types of variables</a></li>
-<li class="chapter" data-level="3" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>3</b> Accuracy, precision, and units</a>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>3.1</b> Accuracy</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>3.2</b> Precision</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>3.3</b> Systems of units</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>3.4</b> Other examples of units</a>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>3.4.1</b> Units of density</a></li>
-<li class="chapter" data-level="3.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>3.4.2</b> Mass of metal discharged from a catchment</a></li>
-<li class="chapter" data-level="3.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>3.4.3</b> Soil carbon inventories</a></li>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>4</b> Uncertainty propogation</a>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propogation</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>4.1</b> Adding or subtracting errors</a></li>
-<li class="chapter" data-level="4.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>4.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="4.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>4.3</b> Applying formulas for combining errors</a></li>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>5</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>5.1</b> Exercise for summary statistics</a></li>
-<li class="chapter" data-level="5.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>5.2</b> Exercise on transforming variables</a></li>
-<li class="chapter" data-level="5.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>5.3</b> Exercise on computing variables</a></li>
-<li class="chapter" data-level="5.4" data-path="Chapter_8.html"><a href="Chapter_8.html#summary-1"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
+<li class="chapter" data-level="8.4" data-path="Chapter_8.html"><a href="Chapter_8.html#summary-1"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
 </ul></li>
 <li class="part"><span><b>III Summary statistics</b></span></li>
-<li class="chapter" data-level="" data-path="Week3.html"><a href="Week3.html"><i class="fa fa-check"></i>Week 3 Overview</a>
+<li class="chapter" data-level="" data-path="Week3.html"><a href="Week3.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="Chapter_9.html"><a href="Chapter_9.html"><i class="fa fa-check"></i><b>9</b> Decimal places, significant figures, and rounding</a>
 <ul>
-<li class="chapter" data-level="5.5" data-path="Week3.html"><a href="Week3.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>5.5</b> Decimal places and significant figures</a></li>
-<li class="chapter" data-level="5.6" data-path="Week3.html"><a href="Week3.html#rounding"><i class="fa fa-check"></i><b>5.6</b> Rounding</a></li>
-<li class="chapter" data-level="5.7" data-path="Week3.html"><a href="Week3.html#histograms"><i class="fa fa-check"></i><b>5.7</b> Histograms</a></li>
-<li class="chapter" data-level="5.8" data-path="Week3.html"><a href="Week3.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>5.8</b> Barplots and pie charts</a></li>
-<li class="chapter" data-level="5.9" data-path="Week3.html"><a href="Week3.html#box-whisker-plots"><i class="fa fa-check"></i><b>5.9</b> Box-whisker plots</a></li>
-<li class="chapter" data-level="5.10" data-path="Week3.html"><a href="Week3.html#the-mean"><i class="fa fa-check"></i><b>5.10</b> The mean</a></li>
-<li class="chapter" data-level="5.11" data-path="Week3.html"><a href="Week3.html#the-mode"><i class="fa fa-check"></i><b>5.11</b> The mode</a></li>
-<li class="chapter" data-level="5.12" data-path="Week3.html"><a href="Week3.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>5.12</b> The median and quantiles</a></li>
-<li class="chapter" data-level="5.13" data-path="Week3.html"><a href="Week3.html#the-range"><i class="fa fa-check"></i><b>5.13</b> The range</a></li>
-<li class="chapter" data-level="5.14" data-path="Week3.html"><a href="Week3.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>5.14</b> The inter-quartile range</a></li>
-<li class="chapter" data-level="5.15" data-path="Week3.html"><a href="Week3.html#the-variance"><i class="fa fa-check"></i><b>5.15</b> The variance</a></li>
-<li class="chapter" data-level="5.16" data-path="Week3.html"><a href="Week3.html#the-standard-deviation"><i class="fa fa-check"></i><b>5.16</b> The standard deviation</a></li>
-<li class="chapter" data-level="5.17" data-path="Week3.html"><a href="Week3.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>5.17</b> The coefficient of variation</a></li>
-<li class="chapter" data-level="5.18" data-path="Week3.html"><a href="Week3.html#the-standard-error"><i class="fa fa-check"></i><b>5.18</b> The standard error</a></li>
-<li class="chapter" data-level="5.19" data-path="Week3.html"><a href="Week3.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>5.19</b> Reorganise the dataset into a tidy format</a></li>
-<li class="chapter" data-level="5.20" data-path="Week3.html"><a href="Week3.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>5.20</b> Histograms and box-whisker plots</a></li>
-<li class="chapter" data-level="5.21" data-path="Week3.html"><a href="Week3.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>5.21</b> Calculate summary statistics</a></li>
-<li class="chapter" data-level="5.22" data-path="Week3.html"><a href="Week3.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>5.22</b> Reporting decimals and significant figures</a></li>
-<li class="chapter" data-level="5.23" data-path="Week3.html"><a href="Week3.html#comparing-across-sites"><i class="fa fa-check"></i><b>5.23</b> Comparing across sites</a></li>
+<li class="chapter" data-level="9.1" data-path="Chapter_9.html"><a href="Chapter_9.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>9.1</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter_9.html"><a href="Chapter_9.html#rounding"><i class="fa fa-check"></i><b>9.2</b> Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Chapter_10.html"><a href="Chapter_10.html"><i class="fa fa-check"></i><b>10</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter_10.html"><a href="Chapter_10.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="Chapter_10.html"><a href="Chapter_10.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>10.2</b> Barplots and pie charts</a></li>
+<li class="chapter" data-level="10.3" data-path="Chapter_10.html"><a href="Chapter_10.html#box-whisker-plots"><i class="fa fa-check"></i><b>10.3</b> Box-whisker plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Chapter_11.html"><a href="Chapter_11.html"><i class="fa fa-check"></i><b>11</b> Measures of central tendency</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mean"><i class="fa fa-check"></i><b>11.1</b> The mean</a></li>
+<li class="chapter" data-level="11.2" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mode"><i class="fa fa-check"></i><b>11.2</b> The mode</a></li>
+<li class="chapter" data-level="11.3" data-path="Chapter_11.html"><a href="Chapter_11.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>11.3</b> The median and quantiles</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Chapter_12.html"><a href="Chapter_12.html"><i class="fa fa-check"></i><b>12</b> Measures of spread</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Chapter_12.html"><a href="Chapter_12.html#the-range"><i class="fa fa-check"></i><b>12.1</b> The range</a></li>
+<li class="chapter" data-level="12.2" data-path="Chapter_12.html"><a href="Chapter_12.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>12.2</b> The inter-quartile range</a></li>
+<li class="chapter" data-level="12.3" data-path="Chapter_12.html"><a href="Chapter_12.html#the-variance"><i class="fa fa-check"></i><b>12.3</b> The variance</a></li>
+<li class="chapter" data-level="12.4" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-deviation"><i class="fa fa-check"></i><b>12.4</b> The standard deviation</a></li>
+<li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
+<li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>13.3</b> Calculate summary statistics</a></li>
+<li class="chapter" data-level="13.4" data-path="Chapter_13.html"><a href="Chapter_13.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>13.4</b> Reporting decimals and significant figures</a></li>
+<li class="chapter" data-level="13.5" data-path="Chapter_13.html"><a href="Chapter_13.html#comparing-across-sites"><i class="fa fa-check"></i><b>13.5</b> Comparing across sites</a></li>
 </ul></li>
 <li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
-<li class="chapter" data-level="" data-path="Week4.html"><a href="Week4.html"><i class="fa fa-check"></i>Week 4 Overview</a>
+<li class="chapter" data-level="" data-path="Week4.html"><a href="Week4.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> Introduction to probability models</a>
 <ul>
-<li class="chapter" data-level="5.24" data-path="Week4.html"><a href="Week4.html#an-instructive-example"><i class="fa fa-check"></i><b>5.24</b> An instructive example</a></li>
-<li class="chapter" data-level="5.25" data-path="Week4.html"><a href="Week4.html#biological-applications"><i class="fa fa-check"></i><b>5.25</b> Biological applications</a></li>
-<li class="chapter" data-level="5.26" data-path="Week4.html"><a href="Week4.html#sampling-with-and-without-replacement"><i class="fa fa-check"></i><b>5.26</b> Sampling with and without replacement</a></li>
-<li class="chapter" data-level="5.27" data-path="Week4.html"><a href="Week4.html#probability-distributions"><i class="fa fa-check"></i><b>5.27</b> Probability distributions</a>
+<li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#an-instructive-example"><i class="fa fa-check"></i><b>14.1</b> An instructive example</a></li>
+<li class="chapter" data-level="14.2" data-path="Chapter_14.html"><a href="Chapter_14.html#biological-applications"><i class="fa fa-check"></i><b>14.2</b> Biological applications</a></li>
+<li class="chapter" data-level="14.3" data-path="Chapter_14.html"><a href="Chapter_14.html#sampling-with-and-without-replacement"><i class="fa fa-check"></i><b>14.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="14.4" data-path="Chapter_14.html"><a href="Chapter_14.html#probability-distributions"><i class="fa fa-check"></i><b>14.4</b> Probability distributions</a>
 <ul>
-<li class="chapter" data-level="5.27.1" data-path="Week4.html"><a href="Week4.html#binomial-distribution"><i class="fa fa-check"></i><b>5.27.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="5.27.2" data-path="Week4.html"><a href="Week4.html#poisson-distribution"><i class="fa fa-check"></i><b>5.27.2</b> Poisson distribution</a></li>
-<li class="chapter" data-level="5.27.3" data-path="Week4.html"><a href="Week4.html#uniform-distribution"><i class="fa fa-check"></i><b>5.27.3</b> Uniform distribution</a></li>
-<li class="chapter" data-level="5.27.4" data-path="Week4.html"><a href="Week4.html#normal-distribution"><i class="fa fa-check"></i><b>5.27.4</b> Normal distribution</a></li>
+<li class="chapter" data-level="14.4.1" data-path="Chapter_14.html"><a href="Chapter_14.html#binomial-distribution"><i class="fa fa-check"></i><b>14.4.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="Chapter_14.html"><a href="Chapter_14.html#poisson-distribution"><i class="fa fa-check"></i><b>14.4.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="14.4.3" data-path="Chapter_14.html"><a href="Chapter_14.html#uniform-distribution"><i class="fa fa-check"></i><b>14.4.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="14.4.4" data-path="Chapter_14.html"><a href="Chapter_14.html#normal-distribution"><i class="fa fa-check"></i><b>14.4.4</b> Normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="5.28" data-path="Week4.html"><a href="Week4.html#summary-2"><i class="fa fa-check"></i><b>5.28</b> Summary</a></li>
-<li class="chapter" data-level="5.29" data-path="Week4.html"><a href="Week4.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>5.29</b> The distribution of means is normal</a></li>
-<li class="chapter" data-level="5.30" data-path="Week4.html"><a href="Week4.html#probability-and-z-scores"><i class="fa fa-check"></i><b>5.30</b> Probability and z-scores</a></li>
-<li class="chapter" data-level="5.31" data-path="Week4.html"><a href="Week4.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>5.31</b> Probabilities from a dataset</a></li>
-<li class="chapter" data-level="5.32" data-path="Week4.html"><a href="Week4.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>5.32</b> Probabilities from a normal distribution</a></li>
-<li class="chapter" data-level="5.33" data-path="Week4.html"><a href="Week4.html#central-limit-theorem"><i class="fa fa-check"></i><b>5.33</b> Central limit theorem</a></li>
+<li class="chapter" data-level="14.5" data-path="Chapter_14.html"><a href="Chapter_14.html#summary-2"><i class="fa fa-check"></i><b>14.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#probability-and-z-scores"><i class="fa fa-check"></i><b>15.2</b> Probability and z-scores</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="Chapter_16.html"><a href="Chapter_16.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
 </ul></li>
 <li class="part"><span><b>V Statistical inference</b></span></li>
-<li class="chapter" data-level="" data-path="Week5.html"><a href="Week5.html"><i class="fa fa-check"></i>Week 5 Overview</a>
+<li class="chapter" data-level="" data-path="Week5.html"><a href="Week5.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="17" data-path="Chapter_17.html"><a href="Chapter_17.html"><i class="fa fa-check"></i><b>17</b> Confidence intervals (CIs)</a>
 <ul>
-<li class="chapter" data-level="5.34" data-path="Week5.html"><a href="Week5.html#normal-distribution-cis"><i class="fa fa-check"></i><b>5.34</b> Normal distribution CIs</a></li>
-<li class="chapter" data-level="5.35" data-path="Week5.html"><a href="Week5.html#binomial-distribution-cis"><i class="fa fa-check"></i><b>5.35</b> Binomial distribution CIs</a></li>
-<li class="chapter" data-level="5.36" data-path="Week5.html"><a href="Week5.html#confidence-intervals-with-distraction"><i class="fa fa-check"></i><b>5.36</b> Confidence intervals with distrACTION</a></li>
-<li class="chapter" data-level="5.37" data-path="Week5.html"><a href="Week5.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>5.37</b> Confidence interval for different levels (t- and z-)</a></li>
-<li class="chapter" data-level="5.38" data-path="Week5.html"><a href="Week5.html#confidence-interval-in-descriptives"><i class="fa fa-check"></i><b>5.38</b> Confidence interval in Descriptives</a></li>
-<li class="chapter" data-level="5.39" data-path="Week5.html"><a href="Week5.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>5.39</b> Proportion confidence intervals</a></li>
-<li class="chapter" data-level="5.40" data-path="Week5.html"><a href="Week5.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>5.40</b> Another confidence interval example?</a></li>
+<li class="chapter" data-level="17.1" data-path="Chapter_17.html"><a href="Chapter_17.html#normal-distribution-cis"><i class="fa fa-check"></i><b>17.1</b> Normal distribution CIs</a></li>
+<li class="chapter" data-level="17.2" data-path="Chapter_17.html"><a href="Chapter_17.html#binomial-distribution-cis"><i class="fa fa-check"></i><b>17.2</b> Binomial distribution CIs</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="Chapter_18.html"><a href="Chapter_18.html"><i class="fa fa-check"></i><b>18</b> The t-interval</a></li>
+<li class="chapter" data-level="19" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>19</b> <em>Practical</em>. z- and t- intervals</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-intervals-with-distraction"><i class="fa fa-check"></i><b>19.1</b> Confidence intervals with distrACTION</a></li>
+<li class="chapter" data-level="19.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>19.2</b> Confidence interval for different levels (t- and z-)</a></li>
+<li class="chapter" data-level="19.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-in-descriptives"><i class="fa fa-check"></i><b>19.3</b> Confidence interval in Descriptives</a></li>
+<li class="chapter" data-level="19.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.4</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="19.5" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>19.5</b> Another confidence interval example?</a></li>
 </ul></li>
 <li class="part"><span><b>VI Hypothesis testing</b></span></li>
-<li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a>
+<li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
+<li class="chapter" data-level="20" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>20</b> What is hypothesis testing?</a></li>
+<li class="chapter" data-level="21" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>21</b> Making and using hypotheses and types of tests</a></li>
+<li class="chapter" data-level="22" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>22</b> An example of hypothesis testing</a></li>
+<li class="chapter" data-level="23" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>23</b> Hypothesis testing and confidence intervals</a></li>
+<li class="chapter" data-level="24" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>24</b> Student t-distribution and one sample t-test</a></li>
+<li class="chapter" data-level="25" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>25</b> Another example of a one sample t-test</a></li>
+<li class="chapter" data-level="26" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>26</b> Independent t-test</a></li>
+<li class="chapter" data-level="27" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>27</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="28" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>28</b> Violations of assumptions</a></li>
+<li class="chapter" data-level="29" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>29</b> Non-parametric tests, and what these are.</a></li>
+<li class="chapter" data-level="30" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>30</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="5.41" data-path="Week6.html"><a href="Week6.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>5.41</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="5.42" data-path="Week6.html"><a href="Week6.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>5.42</b> Exercise on an independent sample t-test</a></li>
-<li class="chapter" data-level="5.43" data-path="Week6.html"><a href="Week6.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>5.43</b> Exercise involving multiple comparisons</a></li>
-<li class="chapter" data-level="5.44" data-path="Week6.html"><a href="Week6.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>5.44</b> Exercise with non-parametric</a></li>
-<li class="chapter" data-level="5.45" data-path="Week6.html"><a href="Week6.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>5.45</b> Another exercise with non-parametric</a></li>
+<li class="chapter" data-level="30.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>30.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="30.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>30.2</b> Exercise on an independent sample t-test</a></li>
+<li class="chapter" data-level="30.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>30.3</b> Exercise involving multiple comparisons</a></li>
+<li class="chapter" data-level="30.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>30.4</b> Exercise with non-parametric</a></li>
+<li class="chapter" data-level="30.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>30.5</b> Another exercise with non-parametric</a></li>
 </ul></li>
 <li class="part"><span><b>VII Review of parts I-V</b></span></li>
 <li class="chapter" data-level="" data-path="Week7.html"><a href="Week7.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
 <li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
-<li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a>
+<li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="31" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>31</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="32" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>32</b> One-way ANOVA</a></li>
+<li class="chapter" data-level="33" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>33</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="34" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>34</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="35" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>35</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
-<li class="chapter" data-level="5.46" data-path="Week8.html"><a href="Week8.html#anova-exercise-1"><i class="fa fa-check"></i><b>5.46</b> ANOVA Exercise 1</a></li>
-<li class="chapter" data-level="5.47" data-path="Week8.html"><a href="Week8.html#anova-exercise-2"><i class="fa fa-check"></i><b>5.47</b> ANOVA Exercise 2</a></li>
-<li class="chapter" data-level="5.48" data-path="Week8.html"><a href="Week8.html#anova-exercise-3"><i class="fa fa-check"></i><b>5.48</b> ANOVA Exercise 3</a></li>
-<li class="chapter" data-level="5.49" data-path="Week8.html"><a href="Week8.html#anova-exercise-4"><i class="fa fa-check"></i><b>5.49</b> ANOVA Exercise 4</a></li>
+<li class="chapter" data-level="35.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>35.1</b> ANOVA Exercise 1</a></li>
+<li class="chapter" data-level="35.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>35.2</b> ANOVA Exercise 2</a></li>
+<li class="chapter" data-level="35.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>35.3</b> ANOVA Exercise 3</a></li>
+<li class="chapter" data-level="35.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>35.4</b> ANOVA Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>IX Counts and Correlation</b></span></li>
-<li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a>
+<li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="36" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>36</b> Frequency and count data</a></li>
+<li class="chapter" data-level="37" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>37</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="38" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>38</b> Chi-squared test of association</a></li>
+<li class="chapter" data-level="39" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>39</b> Correlation key concepts</a></li>
+<li class="chapter" data-level="40" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>40</b> Correlation mathematics</a></li>
+<li class="chapter" data-level="41" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>41</b> Correlation hypothesis testing</a></li>
+<li class="chapter" data-level="42" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>42</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
 <ul>
-<li class="chapter" data-level="5.50" data-path="Week9.html"><a href="Week9.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>5.50</b> Chi-Square Exercise 1</a></li>
-<li class="chapter" data-level="5.51" data-path="Week9.html"><a href="Week9.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>5.51</b> Chi-Square association Exercise 2</a></li>
-<li class="chapter" data-level="5.52" data-path="Week9.html"><a href="Week9.html#correlation-exercise-3"><i class="fa fa-check"></i><b>5.52</b> Correlation Exercise 3</a></li>
-<li class="chapter" data-level="5.53" data-path="Week9.html"><a href="Week9.html#correlation-exercise-4"><i class="fa fa-check"></i><b>5.53</b> Correlation Exercise 4</a></li>
+<li class="chapter" data-level="42.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>42.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="42.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>42.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="42.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>42.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="42.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>42.4</b> Correlation Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>X Linear Regression</b></span></li>
-<li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a>
+<li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="43" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>43</b> Regression key concepts</a></li>
+<li class="chapter" data-level="44" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>44</b> Regression validity</a></li>
+<li class="chapter" data-level="45" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>45</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="46" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>46</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="47" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>47</b> <em>Practical</em>. Using regression</a>
 <ul>
-<li class="chapter" data-level="5.54" data-path="Week10.html"><a href="Week10.html#regression-exercise-1"><i class="fa fa-check"></i><b>5.54</b> Regression Exercise 1</a></li>
-<li class="chapter" data-level="5.55" data-path="Week10.html"><a href="Week10.html#regression-exercise-2"><i class="fa fa-check"></i><b>5.55</b> Regression Exercise 2</a></li>
-<li class="chapter" data-level="5.56" data-path="Week10.html"><a href="Week10.html#regression-exercise-3"><i class="fa fa-check"></i><b>5.56</b> Regression Exercise 3</a></li>
-<li class="chapter" data-level="5.57" data-path="Week10.html"><a href="Week10.html#regression-exercise-4"><i class="fa fa-check"></i><b>5.57</b> Regression Exercise 4</a></li>
+<li class="chapter" data-level="47.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>47.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="47.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>47.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="47.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>47.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="47.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>47.4</b> Regression Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
-<li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a>
+<li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="48" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>48</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="49" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>49</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="50" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>50</b> Bootstrapping</a></li>
+<li class="chapter" data-level="51" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>51</b> Monte Carlo</a></li>
+<li class="chapter" data-level="52" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>52</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="5.58" data-path="Week11.html"><a href="Week11.html#r-exercise-1"><i class="fa fa-check"></i><b>5.58</b> R Exercise 1</a></li>
-<li class="chapter" data-level="5.59" data-path="Week11.html"><a href="Week11.html#r-exercise-2"><i class="fa fa-check"></i><b>5.59</b> R Exercise 2</a></li>
-<li class="chapter" data-level="5.60" data-path="Week11.html"><a href="Week11.html#r-exercise-3"><i class="fa fa-check"></i><b>5.60</b> R Exercise 3</a></li>
+<li class="chapter" data-level="52.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>52.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="52.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>52.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="52.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>52.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XII Statistical Reporting</b></span></li>
-<li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a>
+<li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="53" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>53</b> Reporting statistics</a></li>
+<li class="chapter" data-level="54" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>54</b> More introduction to R</a></li>
+<li class="chapter" data-level="55" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>55</b> More getting started with R</a></li>
+<li class="chapter" data-level="56" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>56</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="5.61" data-path="Week12.html"><a href="Week12.html#r-exercise-1-1"><i class="fa fa-check"></i><b>5.61</b> R Exercise 1</a></li>
-<li class="chapter" data-level="5.62" data-path="Week12.html"><a href="Week12.html#r-exercise-2-1"><i class="fa fa-check"></i><b>5.62</b> R Exercise 2</a></li>
-<li class="chapter" data-level="5.63" data-path="Week12.html"><a href="Week12.html#r-exercise-3-1"><i class="fa fa-check"></i><b>5.63</b> R Exercise 3</a></li>
+<li class="chapter" data-level="56.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>56.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="56.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>56.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="56.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>56.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
 <li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -290,8 +407,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Chapter_4" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Populations and samples<a href="Chapter_4.html#Chapter_4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="Chapter_4" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Populations and samples<a href="Chapter_4.html#Chapter_4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>When we collect data, we are recording some kind of observation or measurement.
 If we are working in a forest, for example, we might want to measure the heights of different trees, or measure the concentration of carbon in the soil.
 The idea might be to use these measurements to make some kind of inference about the forest.
@@ -326,10 +443,10 @@ A statistical population, in contrast, refers to a set of observations (i.e., th
 <p>They define a sample to be “a collection of individual observations selected by a specified procedure” <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 For our purposes, it is not necessary to be able to recite the technical definitions, but it is important to understand the relationship between a population and a sample.
 When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
 <img src="img/population_vs_sample.png" alt="A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population." width="100%" />
 <p class="caption">
-Figure 1.1: A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.
+Figure 4.1: A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.
 </p>
 </div>
 </div>
