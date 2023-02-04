@@ -289,10 +289,10 @@ div.csl-indent {
 <li class="chapter" data-level="19" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html"><i class="fa fa-check"></i><b>19</b> <em>Practical</em>. z- and t- intervals</a>
 <ul>
 <li class="chapter" data-level="19.1" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-intervals-with-distraction"><i class="fa fa-check"></i><b>19.1</b> Confidence intervals with distrACTION</a></li>
-<li class="chapter" data-level="19.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-"><i class="fa fa-check"></i><b>19.2</b> Confidence interval for different levels (t- and z-)</a></li>
-<li class="chapter" data-level="19.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-interval-in-descriptives"><i class="fa fa-check"></i><b>19.3</b> Confidence interval in Descriptives</a></li>
+<li class="chapter" data-level="19.2" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-intervals-from-z--and-t-scores"><i class="fa fa-check"></i><b>19.2</b> Confidence intervals from z- and t-scores</a></li>
+<li class="chapter" data-level="19.3" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#confidence-intervals-for-different-sample-sizes-t--and-z-"><i class="fa fa-check"></i><b>19.3</b> Confidence intervals for different sample sizes (t- and z-)</a></li>
 <li class="chapter" data-level="19.4" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.4</b> Proportion confidence intervals</a></li>
-<li class="chapter" data-level="19.5" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-confidence-interval-example"><i class="fa fa-check"></i><b>19.5</b> Another confidence interval example?</a></li>
+<li class="chapter" data-level="19.5" data-path="practical.-z--and-t--intervals.html"><a href="practical.-z--and-t--intervals.html#another-proportion-confidence-interval"><i class="fa fa-check"></i><b>19.5</b> Another proportion confidence interval</a></li>
 </ul></li>
 <li class="part"><span><b>VI Hypothesis testing</b></span></li>
 <li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
@@ -471,50 +471,269 @@ We do not know the <em>true</em> mean (<span class="math inline">\(\mu\)</span>)
 Using the Mean and SD parameter input boxes in distrACTION, we can build a normal distribution with the same mean and standard deviation as our sample.
 Do this now by inputting the calculated Grand Mean and Grand Standard Deviation from above in the appropriate boxes.
 Note that the normal distribution on the right has the same shape, but the table of parameters has been updated to reflect the mean mean and standard deviation.</p>
+<p>In the previous practical from <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, we calculated the probability of sampling a value within a given interval of the normal distribution.
+If we wanted to do the same exercise here, we might find the probability of sampling a DBH &gt; 30 using the Compute probability function (the answer is P = 0.278).
+Instead, we are now going to do the opposite using the Compute quantile(s) function.
+We might want to know, for example, what 75% of DBH values will be less than (i.e., what is the cutoff DBH, below which DBH values will be lower than this cutoff with a probability of 0.75).
+To find this, uncheck the ‘Compute probability’ box and check the ‘Compute quantile(s)’ box.
+Make sure that the ‘cumulative quantile’ radio button is selected, then set p = 0.75 (Figure 19.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
-<img src="img/jamovi_distrACTION_demonstration.png" alt="Jamovi window with the central limit theorem (CLT) module open and boxes for changing the distribution, sample size, and trial number" width="100%" />
+<img src="img/jamovi_distrACTION_p75.png" alt="Jamovi window showing with parameters for a normal distribution with a mean of 27.7 and a standard deviatio of 12.4, and a normal distribution shows a vertical dotted line on an x-axis value of 36.1, below which 75 per cent of values fall." width="100%" />
 <p class="caption">
-Figure 19.3: Jamovi interface for the ‘Demonstrations’ module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)
+Figure 19.3: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 27.7 and standard deviation of 12.4. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
 </p>
 </div>
-<ol start="5" style="list-style-type: decimal">
-<li>Use distrACTION ‘Normal Distribution’ and Compute quantiles to get 95% z-scores</li>
-<li>Use distrACTION ‘t-distribution’ and compute quantiles to get 95% t-scores</li>
-<li>Are these different?</li>
-<li>Calculate CIs from the mean, standard error, and z- or t-score.</li>
-<li>Reflect on what this means</li>
-</ol>
+<p>From Figure 19.3, we can see that the cumulative 0.75 quantile is 36.1, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 36.1 cm.
+Using the same principles, what is the cumulative 0.4 quantile for the DBH data?</p>
+<p>Quantile: _____________________ cm</p>
+<p>We can also use the Compute quantile(s) option in Jamovi to compute interval quantiles.
+For example, if we want to know the DBH values within which 95% of the probability density is contained, we can set p = 0.95, then select the radio button ‘central interval quantiles’.
+Do this for the DBH data.
+From the Results table on the right, what interval of DBH values will contain 95% of the probability density around the mean?</p>
+<p>Interval: _____________________ cm</p>
+<p>Remember that we are looking at the full sample distribution of DBH.
+That is, getting intervals for the probability of sampling DBH values around the mean, <em>not</em> confidence intervals around the mean as introduced in <a href="Chapter_17.html#Chapter_17">Chapter 17</a>.
+How would we get confidence intervals around the mean?
+That is, what if we want to say that we have 95% confidence that the <em>mean</em> lies between 2 values?
+We would need to use the standard deviation <em>of sample mean</em> <span class="math inline">\(\bar{x}\)</span> around the true mean <span class="math inline">\(\mu\)</span>, rather than the sample standard deviation.
+Recall from <a href="Chapter_12.html#the-standard-error">Chapter 12.6</a> that the standard error is the standard deviation of <span class="math inline">\(\bar{x}\)</span> values around <span class="math inline">\(\mu\)</span>.
+We can therefore use the standard error to calculate confidence intervals around the mean value of DBH.
+From the Descriptives panel in Jamovi (recall that this is under the ‘Exploration’ button), find the standard error of DBH,</p>
+<p>Std. error of Mean: ___________________</p>
+<p>Now, go back to the distrACTION Normal Distribution and put the DBH mean into the parameters box as before.
+But this time, put the standard error calculated above into the box for SD.
+Next, choose the Compute quantile(s) option and set p = 0.95 to calculate a 95% confidence interval.
+Based on the Results table, what can you infer are the lower and upper 95% confidence intervals (CIs) around the mean?</p>
+<p>Lower 95% CI: ________________</p>
+<p>Upper 95% CI: ________________</p>
+<p>Remember that this assumed that the sample means (<span class="math inline">\(\bar{x}\)</span>) are normally distributed around the true mean (<span class="math inline">\(\mu\)</span>).
+But as we saw in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, when we assume that our sample standard deviation (<span class="math inline">\(s\)</span>) is the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), then the shape of the normal distribution will be at least a bit off.
+Instead, we can get a more accurate of CIs using a t-distribution.
+Jamovi does usually this automatically when calculating CIs outside of the distrACTION module.
+To get 95% CIs, go back to the Descriptives panel in Jamovi, then choose DBH (cm) as variable.
+Scroll down to the Statistics options and check ‘Confidence interval for Mean’ under the <strong>Mean Dispersion</strong> options, and make sure that the number in the box is 95 for 95% confidence.
+Confidence intervals will appear in the Descriptives table on the right.
+From this Descriptives table now, write the lower and upper 95% CIs below.</p>
+<p>Lower 95% CI: ________________</p>
+<p>Upper 95% CI: ________________</p>
+<p>You might have been expecting a bit more of a difference, but remember, for sufficiently large sample sizes (around N = 30), the normal and t-distributions a very similar (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>).
+We really do not expect much of a difference until sample sizes become small, which we will see in Exercise 19.3.</p>
 </div>
-<div id="confidence-interval-for-different-levels-t--and-z-" class="section level2 hasAnchor" number="19.2">
-<h2><span class="header-section-number">19.2</span> Confidence interval for different levels (t- and z-)<a href="practical.-z--and-t--intervals.html#confidence-interval-for-different-levels-t--and-z-" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Now do steps 4-6 for each individual site</li>
-<li>Fill in table comparing 95% CIs using z- and t- for 4 sites</li>
-<li>Do the same comparing 99% CIs</li>
-<li>Reflect on the difference in the 4 sites, why?</li>
-</ol>
+<div id="confidence-intervals-from-z--and-t-scores" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> Confidence intervals from z- and t-scores<a href="practical.-z--and-t--intervals.html#confidence-intervals-from-z--and-t-scores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While Jamovi can be very useful for calculating confidence intervals from a dataset, you might also need to calculate CIs from just a set of summary statistics (e.g., the mean, standard error, and sample size).
+This activity will demonstrate how to calculate CIs from z- and t-scores.
+Recall the formula for lower and upper confidence intervals from <a href="#Chapter_17.html#normal-distribution-cis">Chapter 17.1</a>,</p>
+<p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
+<p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
+<p>We could therefore calculate 95% confidence intervals for DBH with just the sample mean (<span class="math inline">\(\bar{x}\)</span>), z-score (z), and standard error (SE).
+We have already calculated <span class="math inline">\(\bar{x}\)</span> and SE for the DBH in Exercise 19.1 above, so we just need to figure out z.
+Recall that z-scores are <em>standard normal deviates</em>; that is, deviations from the mean given a standard normal distribution, in which the mean equals 0 and standard deviation equals 1.
+For example, <span class="math inline">\(z = -1\)</span> is 1 standard deviation below the mean of a standard normal distribution, and <span class="math inline">\(z = 2\)</span> is 2 standard deviations above the mean of a standard normal distribution.
+What values of z contain 95% of the probability density of a standard normal distribution?
+We can use the distrACTION module again to find this out.
+Select ‘Normal Distribution’ from the pulldown of the distrACTION module.
+Notice that by default, a standard normal distribution is already set (Mean = 0 and SD = 1).
+All that we need to do now is compute quantiles for p = 0.95.
+From these quantiles, what is the proper z-score to use in the equations for LCI and UCI above?</p>
+<p>z-score: ________________</p>
+<p>Now, use the values of <span class="math inline">\(\bar{x}\)</span>, z, and SE for DBH in the equations above to calculate lower and upper 95% confidence intervals again.</p>
+<p>Lower 95% CI: ________________</p>
+<p>Upper 95% CI: ________________</p>
+<p>Are these confidence intervals the same as what you calculated in Exercise 19.1?</p>
+<pre><code>
+
+</code></pre>
+<p>Lastly, instead of using the z-score, we can do the same with a t-score.
+We can find the appropriate t-score from the t-distribution in the distrACTION module.
+To get the t-score, click on the distrACTION module button and choose ‘T-Distribution’ from the pulldown.
+To get quantiles with the t-distribution, we need to know the degrees of freedom (df) of the sample.
+<a href="Chapter_18.html#Chapter_18">Chapter 18</a> explains how to calculate df from the sample size N.
+What are the appropriate df for DBH?</p>
+<p>df: _________________</p>
+<p>Put the df in the Parameters box.
+Ignore the box for lambda (<span class="math inline">\(\lambda\)</span>); this is not needed.
+Under the <strong>Function</strong> options, choose ‘Compute quantile(s)’ as before to calculate Quantiles.
+From the Results table, what is the proper t-score to use in the equations for LCI and UCI?</p>
+<p>t-score: _______________</p>
+<p>Again, use the values of <span class="math inline">\(\bar{x}\)</span>, t, and SE for DBH in the equations above to calculate lower and upper 95% confidence intervals.</p>
+<p>Lower 95% CI: ________________</p>
+<p>Upper 95% CI: ________________</p>
+<p>How similar are the estimates for lower and upper CIs when using z- versus t-scores.
+Reflect on any similarities or differences that you see in all of these different ways of calculating confidence intervals</p>
+<pre><code>
+
+
+
+
+</code></pre>
 </div>
-<div id="confidence-interval-in-descriptives" class="section level2 hasAnchor" number="19.3">
-<h2><span class="header-section-number">19.3</span> Confidence interval in Descriptives<a href="practical.-z--and-t--intervals.html#confidence-interval-in-descriptives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Now get the CIs using Descriptives -&gt; CI for mean</li>
-<li>Is Jamovi using z- or t- scores?</li>
-</ol>
+<div id="confidence-intervals-for-different-sample-sizes-t--and-z-" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Confidence intervals for different sample sizes (t- and z-)<a href="practical.-z--and-t--intervals.html#confidence-intervals-for-different-sample-sizes-t--and-z-" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Exercises 19.1 and 19.2, the sample size of DBH was fairly large (N = 122).
+Now, we will calculate confidence intervals for the mean DBH of each of the 4 different sites using both z- and t-scores.
+These sites have much different sample sizes.
+From the Descriptives tool in Jamovi, write the sample sizes for DBH split by site below.</p>
+<p>Site 1182: N = _________</p>
+<p>Site 1223: N = _________</p>
+<p>Site 3008: N = _________</p>
+<p>Site 10922: N = _________</p>
+<p>For which of these sites would you predict CIs calculated from z-scores versus t-scores to differ the most?</p>
+<p>Site: ______________</p>
+<p>The next part of this exercise is self-guided.
+In Exercises 19.1 and 19.2, you used different approaches for calculating 95% CIs from the normal and t-distributions.
+Now, fill in the table below reporting 95% CIs calculated using each distribution from the 4 sites using any method you prefer.</p>
+<table>
+<caption>95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>N</th>
+<th>95% CIs (Normal)</th>
+<th>95% CIs (t-distribution)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1182</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1223</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3008</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>10922</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Next, do the same, but now calculate 99% CIs instead of 95% CIs.</p>
+<table>
+<caption>95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<thead>
+<tr class="header">
+<th>Site</th>
+<th>N</th>
+<th>99% CIs (Normal)</th>
+<th>99% CIs (t-distribution)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1182</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1223</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3008</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>10922</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>What do you notice about the difference between CIs calculated from the normal distribution versus the t-distribution across the different sites?</p>
+<pre><code>
+
+
+
+
+</code></pre>
+<p>In your own words, based on this practical and what you have read from the lab workbook and any other material, what do these confidence intervals <em>actually mean</em>?</p>
+<pre><code>
+
+
+
+
+</code></pre>
+<p>We will now move on to calculating confidence intervals for proportions.</p>
 </div>
 <div id="proportion-confidence-intervals" class="section level2 hasAnchor" number="19.4">
 <h2><span class="header-section-number">19.4</span> Proportion confidence intervals<a href="practical.-z--and-t--intervals.html#proportion-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Download the WrEN Sites <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/wren_sites.csv">wren_sites.csv</a> dataset (right click and “Save Link As…”)</li>
-<li>Find the number of sites grazed and not grazed</li>
-<li>Get the proportional confidence interval (Frequency tables)</li>
-<li>Calculate 95% and 99% CIs</li>
-</ol>
+<p>We will now try calculating confidence intervals for proportional data using the WrEN Sites dataset, which you can <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/wren_sites.csv">download here</a> dataset (right click and “Save Link As…”).
+Notice that there are more sites included than there were in the dataset used in Exercises 19.1-19.3, and that some of these sites are grazed while others are not (column ‘Grazing’).
+From the Descriptives options, find the number of sites grazed versus not grazed (hint, remember from the lab practical in the previous week (<a href="Chapter_16.html#Chapter_16">Chapter 16</a> to put ‘Grazing’ in the variable box and click the ‘Frequency tables’ checkbox).</p>
+<p>Grazed: ____________</p>
+<p>Not Grazed: _____________</p>
+<p>From these counts above, what is the estimate (<span class="math inline">\(\hat{p}\)</span>) of the proportion of sites that are grazed?</p>
+<p><span class="math inline">\(\hat{p}\)</span>: __________</p>
+<p><a href="Chapter_17.html#binomial-distribution-cis">Chapter 17.2</a> explained how to calculate lower and upper CIs for binomial distributions (i.e., proportion data).
+To do this, we can use a for LCI and UCI from Exercise 19.2 above,</p>
+<p><span class="math display">\[LCI = \hat{p} - z \times SE(p),\]</span></p>
+<p><span class="math display">\[UCI = \hat{p} - z \times SE(p),\]</span></p>
+<p>We have already calculated <span class="math inline">\(\hat{p}\)</span>, and we can find z-scores for confidence intervals in the same way that we did in Exercise 19.2 (i.e., the z-scores associated with 95% confidence intervals do not change just because we are working with proportions).
+All that leaves for calculating LCI and UCI are the standard errors of the proportions.
+Remember from <a href="Chapter_17.html#binomial-distribution-cis">Chapter 17.2</a> that these are calculated differently from a standard deviation of continuous values such as diameter breast height.
+The formula for standard error of a proportion is,</p>
+<p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
+<p>We can estimate <span class="math inline">\(p\)</span> using <span class="math inline">\(\hat{p}\)</span>, and <span class="math inline">\(N\)</span> is the total sample size.
+Using the above equation, what is the standard error of p?</p>
+<p>SE(p): ____________</p>
+<p>Using this standard error, what are the lower and upper 95% confidence intervals around <span class="math inline">\(\hat{p}\)</span>?</p>
+<p><span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
+<p><span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
+<p>Next, find the lower and upper 99% CIs around <span class="math inline">\(\hat{p}\)</span> and report them below (hint: the only difference here from the calculation of the 95% CIs are the z-scores).</p>
+<p><span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
+<p><span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
+<p>What assumptions did we need to make when constructing confidence intervals for the proportion of sites that are grazing?</p>
+<pre><code>
+
+
+</code></pre>
 </div>
-<div id="another-confidence-interval-example" class="section level2 hasAnchor" number="19.5">
-<h2><span class="header-section-number">19.5</span> Another confidence interval example?<a href="practical.-z--and-t--intervals.html#another-confidence-interval-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>Do the same, but split by Woodland</li>
-</ol>
+<div id="another-proportion-confidence-interval" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Another proportion confidence interval<a href="practical.-z--and-t--intervals.html#another-proportion-confidence-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you have sufficient time during the lab practical, try one more proportional confidence interval.
+This time, find the 80%, 95%, and 99% CIs for the proportion of sites that are classified as Ancient woodland.
+First consider an 80% CI (hint, use the distrACTION module again to find the z-scores).</p>
+<p><span class="math inline">\(LCI_{80\%} =\)</span> ______________</p>
+<p><span class="math inline">\(UCI_{80\%} =\)</span> ______________</p>
+<p>Next, calculate 95% CIs for the proportion of sites classified as Ancient woodland.</p>
+<p><span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
+<p><span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
+<p>Finally, calculate 99% CIs for the proportion of sites classified as Ancient woodland.</p>
+<p><span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
+<p><span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
+<p>Reflect again on what these vales actually mean.
+For example, what does it mean to have 95% confidence that the proportion of sites classified as Ancient woodland are between two values?
+Are there any situations in which this might be useful, from a scientific or conservation standpoint?
+There is no right or wrong answer here, but confidence intervals are very challenging to understand conceptually, so having now done the calcualtions to get them, it is a good idea to think again about what they mean.</p>
+<pre><code>
+
+
+
+
+
+
+
+
+</code></pre>
 
 </div>
 </div>
