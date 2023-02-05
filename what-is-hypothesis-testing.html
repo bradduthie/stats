@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-04" />
+<meta name="date" content="2023-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="Week6.html"/>
-<link rel="next" href="making-and-using-hypotheses-and-types-of-tests.html"/>
+<link rel="next" href="the-t-test.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -296,89 +296,94 @@ div.csl-indent {
 </ul></li>
 <li class="part"><span><b>VI Hypothesis testing</b></span></li>
 <li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
-<li class="chapter" data-level="20" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>20</b> What is hypothesis testing?</a></li>
-<li class="chapter" data-level="21" data-path="making-and-using-hypotheses-and-types-of-tests.html"><a href="making-and-using-hypotheses-and-types-of-tests.html"><i class="fa fa-check"></i><b>21</b> Making and using hypotheses and types of tests</a></li>
-<li class="chapter" data-level="22" data-path="an-example-of-hypothesis-testing.html"><a href="an-example-of-hypothesis-testing.html"><i class="fa fa-check"></i><b>22</b> An example of hypothesis testing</a></li>
-<li class="chapter" data-level="23" data-path="hypothesis-testing-and-confidence-intervals.html"><a href="hypothesis-testing-and-confidence-intervals.html"><i class="fa fa-check"></i><b>23</b> Hypothesis testing and confidence intervals</a></li>
-<li class="chapter" data-level="24" data-path="student-t-distribution-and-one-sample-t-test.html"><a href="student-t-distribution-and-one-sample-t-test.html"><i class="fa fa-check"></i><b>24</b> Student t-distribution and one sample t-test</a></li>
-<li class="chapter" data-level="25" data-path="another-example-of-a-one-sample-t-test.html"><a href="another-example-of-a-one-sample-t-test.html"><i class="fa fa-check"></i><b>25</b> Another example of a one sample t-test</a></li>
-<li class="chapter" data-level="26" data-path="independent-t-test.html"><a href="independent-t-test.html"><i class="fa fa-check"></i><b>26</b> Independent t-test</a></li>
-<li class="chapter" data-level="27" data-path="paired-sample-t-test.html"><a href="paired-sample-t-test.html"><i class="fa fa-check"></i><b>27</b> Paired sample t-test</a></li>
-<li class="chapter" data-level="28" data-path="violations-of-assumptions.html"><a href="violations-of-assumptions.html"><i class="fa fa-check"></i><b>28</b> Violations of assumptions</a></li>
-<li class="chapter" data-level="29" data-path="non-parametric-tests-and-what-these-are..html"><a href="non-parametric-tests-and-what-these-are..html"><i class="fa fa-check"></i><b>29</b> Non-parametric tests, and what these are.</a></li>
-<li class="chapter" data-level="30" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>30</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<li class="chapter" data-level="20" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html"><i class="fa fa-check"></i><b>20</b> What is hypothesis testing?</a>
 <ul>
-<li class="chapter" data-level="30.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>30.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="30.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>30.2</b> Exercise on an independent sample t-test</a></li>
-<li class="chapter" data-level="30.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>30.3</b> Exercise involving multiple comparisons</a></li>
-<li class="chapter" data-level="30.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>30.4</b> Exercise with non-parametric</a></li>
-<li class="chapter" data-level="30.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>30.5</b> Another exercise with non-parametric</a></li>
+<li class="chapter" data-level="20.1" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html#how-ridiculous-is-our-hypothesis"><i class="fa fa-check"></i><b>20.1</b> How ridiculous is our hypothesis?</a></li>
+<li class="chapter" data-level="20.2" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html#statistical-hypothesis-testing"><i class="fa fa-check"></i><b>20.2</b> Statistical hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="what-is-hypothesis-testing.html"><a href="what-is-hypothesis-testing.html#p-values-false-positives-and-power"><i class="fa fa-check"></i><b>20.2.1</b> P-values, false positives, and power</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="the-t-test.html"><a href="the-t-test.html"><i class="fa fa-check"></i><b>21</b> The t-test</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="the-t-test.html"><a href="the-t-test.html#one-sample-t-test"><i class="fa fa-check"></i><b>21.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="21.2" data-path="the-t-test.html"><a href="the-t-test.html#independent-t-test"><i class="fa fa-check"></i><b>21.2</b> Independent t-test</a></li>
+<li class="chapter" data-level="21.3" data-path="the-t-test.html"><a href="the-t-test.html#paired-sample-t-test"><i class="fa fa-check"></i><b>21.3</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="21.4" data-path="the-t-test.html"><a href="the-t-test.html#non-parametric-alternative"><i class="fa fa-check"></i><b>21.4</b> Non-parametric alternative</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>22.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="22.2" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-on-an-independent-sample-t-test"><i class="fa fa-check"></i><b>22.2</b> Exercise on an independent sample t-test</a></li>
+<li class="chapter" data-level="22.3" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-involving-multiple-comparisons"><i class="fa fa-check"></i><b>22.3</b> Exercise involving multiple comparisons</a></li>
+<li class="chapter" data-level="22.4" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#exercise-with-non-parametric"><i class="fa fa-check"></i><b>22.4</b> Exercise with non-parametric</a></li>
+<li class="chapter" data-level="22.5" data-path="practical.-hypothesis-testing-and-t-tests.html"><a href="practical.-hypothesis-testing-and-t-tests.html#another-exercise-with-non-parametric"><i class="fa fa-check"></i><b>22.5</b> Another exercise with non-parametric</a></li>
 </ul></li>
 <li class="part"><span><b>VII Review of parts I-V</b></span></li>
 <li class="chapter" data-level="" data-path="Week7.html"><a href="Week7.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
 <li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
 <li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
-<li class="chapter" data-level="31" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>31</b> What is ANOVA?</a></li>
-<li class="chapter" data-level="32" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>32</b> One-way ANOVA</a></li>
-<li class="chapter" data-level="33" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>33</b> Two-way ANOVA</a></li>
-<li class="chapter" data-level="34" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>34</b> Kruskall-Wallis H test</a></li>
-<li class="chapter" data-level="35" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>35</b> <em>Practical</em>. ANOVA and associated tests</a>
+<li class="chapter" data-level="23" data-path="what-is-anova.html"><a href="what-is-anova.html"><i class="fa fa-check"></i><b>23</b> What is ANOVA?</a></li>
+<li class="chapter" data-level="24" data-path="one-way-anova.html"><a href="one-way-anova.html"><i class="fa fa-check"></i><b>24</b> One-way ANOVA</a></li>
+<li class="chapter" data-level="25" data-path="two-way-anova.html"><a href="two-way-anova.html"><i class="fa fa-check"></i><b>25</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="26" data-path="kruskall-wallis-h-test.html"><a href="kruskall-wallis-h-test.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="27" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html"><i class="fa fa-check"></i><b>27</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
-<li class="chapter" data-level="35.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>35.1</b> ANOVA Exercise 1</a></li>
-<li class="chapter" data-level="35.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>35.2</b> ANOVA Exercise 2</a></li>
-<li class="chapter" data-level="35.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>35.3</b> ANOVA Exercise 3</a></li>
-<li class="chapter" data-level="35.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>35.4</b> ANOVA Exercise 4</a></li>
+<li class="chapter" data-level="27.1" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-1"><i class="fa fa-check"></i><b>27.1</b> ANOVA Exercise 1</a></li>
+<li class="chapter" data-level="27.2" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-2"><i class="fa fa-check"></i><b>27.2</b> ANOVA Exercise 2</a></li>
+<li class="chapter" data-level="27.3" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-3"><i class="fa fa-check"></i><b>27.3</b> ANOVA Exercise 3</a></li>
+<li class="chapter" data-level="27.4" data-path="practical.-anova-and-associated-tests.html"><a href="practical.-anova-and-associated-tests.html#anova-exercise-4"><i class="fa fa-check"></i><b>27.4</b> ANOVA Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>IX Counts and Correlation</b></span></li>
 <li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
-<li class="chapter" data-level="36" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>36</b> Frequency and count data</a></li>
-<li class="chapter" data-level="37" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>37</b> Chi-squared goodness of fit</a></li>
-<li class="chapter" data-level="38" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>38</b> Chi-squared test of association</a></li>
-<li class="chapter" data-level="39" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>39</b> Correlation key concepts</a></li>
-<li class="chapter" data-level="40" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>40</b> Correlation mathematics</a></li>
-<li class="chapter" data-level="41" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>41</b> Correlation hypothesis testing</a></li>
-<li class="chapter" data-level="42" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>42</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<li class="chapter" data-level="28" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>28</b> Frequency and count data</a></li>
+<li class="chapter" data-level="29" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>29</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="30" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>30</b> Chi-squared test of association</a></li>
+<li class="chapter" data-level="31" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>31</b> Correlation key concepts</a></li>
+<li class="chapter" data-level="32" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>32</b> Correlation mathematics</a></li>
+<li class="chapter" data-level="33" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>33</b> Correlation hypothesis testing</a></li>
+<li class="chapter" data-level="34" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>34</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
 <ul>
-<li class="chapter" data-level="42.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>42.1</b> Chi-Square Exercise 1</a></li>
-<li class="chapter" data-level="42.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>42.2</b> Chi-Square association Exercise 2</a></li>
-<li class="chapter" data-level="42.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>42.3</b> Correlation Exercise 3</a></li>
-<li class="chapter" data-level="42.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>42.4</b> Correlation Exercise 4</a></li>
+<li class="chapter" data-level="34.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>34.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="34.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>34.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="34.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>34.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="34.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>34.4</b> Correlation Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>X Linear Regression</b></span></li>
 <li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
-<li class="chapter" data-level="43" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>43</b> Regression key concepts</a></li>
-<li class="chapter" data-level="44" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>44</b> Regression validity</a></li>
-<li class="chapter" data-level="45" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>45</b> Introduction to multiple regression</a></li>
-<li class="chapter" data-level="46" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>46</b> Model selection (maybe remove this?)</a></li>
-<li class="chapter" data-level="47" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>47</b> <em>Practical</em>. Using regression</a>
+<li class="chapter" data-level="35" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>35</b> Regression key concepts</a></li>
+<li class="chapter" data-level="36" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>36</b> Regression validity</a></li>
+<li class="chapter" data-level="37" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>37</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="38" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>38</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="39" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>39</b> <em>Practical</em>. Using regression</a>
 <ul>
-<li class="chapter" data-level="47.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>47.1</b> Regression Exercise 1</a></li>
-<li class="chapter" data-level="47.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>47.2</b> Regression Exercise 2</a></li>
-<li class="chapter" data-level="47.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>47.3</b> Regression Exercise 3</a></li>
-<li class="chapter" data-level="47.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>47.4</b> Regression Exercise 4</a></li>
+<li class="chapter" data-level="39.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>39.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="39.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>39.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="39.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>39.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="39.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>39.4</b> Regression Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
 <li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
-<li class="chapter" data-level="48" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>48</b> Introduction to randomisation</a></li>
-<li class="chapter" data-level="49" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>49</b> Assumptions of randomisation</a></li>
-<li class="chapter" data-level="50" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>50</b> Bootstrapping</a></li>
-<li class="chapter" data-level="51" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>51</b> Monte Carlo</a></li>
-<li class="chapter" data-level="52" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>52</b> <em>Practical</em>. Using R</a>
+<li class="chapter" data-level="40" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>40</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="41" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>41</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="42" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>42</b> Bootstrapping</a></li>
+<li class="chapter" data-level="43" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>43</b> Monte Carlo</a></li>
+<li class="chapter" data-level="44" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>44</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="52.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>52.1</b> R Exercise 1</a></li>
-<li class="chapter" data-level="52.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>52.2</b> R Exercise 2</a></li>
-<li class="chapter" data-level="52.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>52.3</b> R Exercise 3</a></li>
+<li class="chapter" data-level="44.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>44.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="44.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>44.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="44.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>44.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XII Statistical Reporting</b></span></li>
 <li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
-<li class="chapter" data-level="53" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>53</b> Reporting statistics</a></li>
-<li class="chapter" data-level="54" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>54</b> More introduction to R</a></li>
-<li class="chapter" data-level="55" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>55</b> More getting started with R</a></li>
-<li class="chapter" data-level="56" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>56</b> <em>Practical</em>. Using R</a>
+<li class="chapter" data-level="45" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>45</b> Reporting statistics</a></li>
+<li class="chapter" data-level="46" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>46</b> More introduction to R</a></li>
+<li class="chapter" data-level="47" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>47</b> More getting started with R</a></li>
+<li class="chapter" data-level="48" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>48</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="56.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>56.1</b> R Exercise 1</a></li>
-<li class="chapter" data-level="56.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>56.2</b> R Exercise 2</a></li>
-<li class="chapter" data-level="56.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>56.3</b> R Exercise 3</a></li>
+<li class="chapter" data-level="48.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>48.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="48.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>48.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="48.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>48.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
 <li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
@@ -409,7 +414,142 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="what-is-hypothesis-testing" class="section level1 hasAnchor" number="20">
 <h1><span class="header-section-number">Chapter 20</span> What is hypothesis testing?<a href="what-is-hypothesis-testing.html#what-is-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>An explanation of this, and that we are starting to get into some of the more interesting bits of inferential statistics.</p>
+<p>Statistical hypotheses are different from scientific hypotheses.
+In science, a hypothesis should make some kind of testable statement about the relationship between two or more different concepts or observations <span class="citation">(<a href="#ref-Bouma2000" role="doc-biblioref">Bouma 2000</a>)</span>.
+For example, we might hypothesise that in a particular population of sparrows, juveniles that have higher body mass will also have higher survival rates.
+In contrast, statistical hypotheses compare a sample outcome to the outcome predicted given a relevant statistical distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+That is, we start with a hypothesis that our data are sampled from some distribution, then work out whether or not we should reject this hypothesis.
+This concept is counter-intuitive, but it is <strong>absolutely fundamental for understanding the logic underlying most modern statistical techniques</strong> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>; <a href="#ref-Greenland2016" role="doc-biblioref">Greenland et al. 2016</a>)</span>, including all subsequent chapters of this workbook, so we will focus on it here in-depth.
+The most instructive way to explain the general idea is with the example of coin flips <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>)</span>, as we looked at in <a href="Chapter_14.html#Chapter_14">Chapter 14</a>.</p>
+<div id="how-ridiculous-is-our-hypothesis" class="section level2 hasAnchor" number="20.1">
+<h2><span class="header-section-number">20.1</span> How ridiculous is our hypothesis?<a href="what-is-hypothesis-testing.html#how-ridiculous-is-our-hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Imagine that a coin is flipped 100 times.
+We are told that the coin is fair, meaning that there is an equal probability of it landing on heads or tails (i.e., the probability is 0.5 for both heads and tails in any given flip).
+From <a href="#Chapter_14.html#binomial-distribution">Chapter 14.4.1</a>, recall that the number of times out of 100 that the coin flip comes up heads will be described by a binomial distribution.
+The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 20.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-89-1.png" alt="A barplot is shown with 101 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape" width="672" />
+<p class="caption">
+Figure 20.1: Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the pobabilities associated with this number of flips out of 100 being heads are so low.
+</p>
+</div>
+<p>The distribution in Figure 20.1 is what we expect to happen if the coin we are flipping 100 times is actually fair.
+In other words, it is the predicted distribution of outcomes <em>if our hypothesis that the coin is fair is true</em> (more on that later).
+Now, suppose that we actually run the experiment; we flip the coin in question 100 times.
+Perhaps we observe heads 30 times out of the 100 total flips.
+From the distribution in Figure 20.1, this result seems <em>very</em> unlikely if the coin is actually fair.
+If we do the maths, the probability of observing 30 heads or fewer (i.e., getting anywhere between 0 and 30 heads total) is only <span class="math inline">\(P = 0.0000392507\)</span>.
+And the probability of getting this much of a deviation from 50 heads (i.e., either 20 less than or 20 more than 50) is <span class="math inline">\(P = 0.0000785014\)</span> (two times 0.0000392507, since the binomial distribution is symmetrical around 50).
+This seems a bit ridiculous!
+Do we <em>really</em> believe that the coin is fair if the probability of getting a result this extreme is so low?</p>
+<p>Getting 30 head flips is maybe a bit extreme.
+What if we flip the coin 100 times and get 45 heads?
+In this case, if the coin is fair, then we would predict this number heads or fewer with a probability of about <span class="math inline">\(P = 0.0967\)</span> (i.e., about 9.67% of the time, we would expect to get 45 or fewer heads).
+And we would predict a deviation as extreme as 5 from the 50:50 ratio of heads to tails with a probability of about <span class="math inline">\(P = 0.193\)</span> (i.e., about 19.3% of the time, we would get 45 heads or fewer, or 55 heads or more).
+This does not sound nearly so unrealistic.
+If a fair coin will give us this much of a deviation from the expected 50 heads and 50 tails about 20% of the time, then perhaps our hypothesis is not so ridiculous, and we can conclude the coin is indeed fair.</p>
+<p>How improbable does our result need to be to cause us to reject our hypothesis that the coin is fair?
+There is no definitive answer to this question.
+In the biological and environmental sciences, we traditionally use a probability of 0.05, but this threshold is completely arbitrary<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.
+All it means is that we are willing to reject our hypothesis (e.g., declare the coin to be unfair) when it is actually true (i.e., the coin really <em>is</em> fair) about 5% of the time.
+Note that we do need to decide on some finite threshold for rejecting our hypothesis because even extremely rare events, by definition, can sometimes happen.
+In the case of 100 coin flips, there is always a small probability of getting <em>any</em> number of heads from a fair coin (although getting zero heads would be extraordinarily rare, <span class="math inline">\(P \approx 7.89 \times 10^{-31}\)</span>, i.e., a decimal followed by 30 zeros, then a 7).
+We can therefore never be <em>certain</em> about rejecting or not rejecting the hypothesis that we have a fair coin.</p>
+<p>This was a very concrete example intended to provide an intuitive way of thinking about hypothesis testing in statistics.
+In the next section, we will look more generally at what hypothesis testing means in statistics and the terminology associated with it.
+But everything that follows basically relies on the same general logic as the coin-flipping example here; <strong>if our hypothesis is true, then what is the probability of our result?</strong></p>
+</div>
+<div id="statistical-hypothesis-testing" class="section level2 hasAnchor" number="20.2">
+<h2><span class="header-section-number">20.2</span> Statistical hypothesis testing<a href="what-is-hypothesis-testing.html#statistical-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A statistical test is used to decide if we should reject the hypothesis that some observed value or calculated statistic was sampled from a particular distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In the case of the coin example in the previous section, the observed value was the number of heads, and the distribution was the binomial distribution.
+In other cases, we might, e.g., test the hypothesis that a value was sampled from a normal or t-distribution.
+In all of these cases, the hypothesis that we are testing is the <strong>null hypothesis</strong>, which we abbreviate as <span class="math inline">\(H_{0}\)</span> (e.g., the coin is fair).
+Typically, <span class="math inline">\(H_{0}\)</span> is associated with the lack of an interesting statistical pattern, such as when a coin is fair, when there is no difference between two groups of observations, or when two variables are not associated with each other.
+This null hypothesis contrasts an <strong>alternative hypothesis</strong>, which we abbreviate as <span class="math inline">\(H_{A}\)</span> (e.g., the coin is not fair).
+Alternative hypotheses are always defined by some relationship to <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Typically, <span class="math inline">\(H_{A}\)</span> is associated with something interesting happening, such as a biased coin, a difference between groups of observations, or an association between two variables.
+Table 20.1 below presents some null and alternative hypotheses that might relevant in the biological or environmental sciences.</p>
+<table>
+<caption>Hypothetical null and alternative hypotheses in the biological and environmental sciences.</caption>
+<colgroup>
+<col width="46%" />
+<col width="53%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Null hypothesis <span class="math inline">\(H_{0}\)</span></th>
+<th>Alternative hypothesis <span class="math inline">\(H_{A}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>There is no difference between juvenile and adult sparrow mortality</td>
+<td>Mortality differs between juvenile and adult sparrows</td>
+</tr>
+<tr class="even">
+<td>Amphibian body size does not change with increasing latitude</td>
+<td>Amphibian body size increases with latitude</td>
+</tr>
+<tr class="odd">
+<td>Soil nitrogen concentration does not differ between agricultural and non-agricultural fields</td>
+<td>Soil nitrogen concentration is lower in non-agricultural fields</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that alternative hypotheses can indicate direction (e.g., amphibian body size will increase, or nitrogen content will be lower in non-agricultural fields), or they can be non-directional (e.g., mortality will be different based on life-history stage).
+When our alternative hypothesis indicates direction, we say that the hypothesis is <strong>one-sided</strong>.
+This is because we are looking at one side of the null distribution.
+In the case of our coin example, a one-sided <span class="math inline">\(H_{A}\)</span> might be that the probability of flipping heads is less than 0.5, meaning that we reject <span class="math inline">\(H_{0}\)</span> only given numbers on the left side of the distribution in Figure 20.1 (where the number of flips heads are fewer than 50).
+A different one-sided <span class="math inline">\(H_{A}\)</span> would be that the probability of flipping heads is greater than 0.5, in which case we would reject <span class="math inline">\(H_{0}\)</span> only given numbers on the right side of the distribution.
+In contrast, when our alternative hypothesis does not indicate direction, we say that the hypothesis is <strong>two-sided</strong>.
+This is because we are looking at both sides of the null distribution.
+In the case of our coin example, we might not care in which direction the coin is biased (towards heads or tails), just that the probability of flipping heads does not equal 0.5.
+In this case, we reject <span class="math inline">\(H_{0}\)</span> at both extremes of the distribution of Figure 20.1.</p>
+<div id="p-values-false-positives-and-power" class="section level3 hasAnchor" number="20.2.1">
+<h3><span class="header-section-number">20.2.1</span> P-values, false positives, and power<a href="what-is-hypothesis-testing.html#p-values-false-positives-and-power" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In our hypothetical coin flipping example, we used <span class="math inline">\(P\)</span> to indicate the probability of getting a particular number of heads out of 100 total flips if our coin was fair.
+This <span class="math inline">\(P\)</span> (sometimes denoted with a lower-case <span class="math inline">\(p\)</span>) is what we call a ‘p-value’.</p>
+<blockquote>
+<p><strong>A p-value is the probability of getting a result as or more extreme than the one observed assuming <span class="math inline">\(H_{0}\)</span> is true.</strong></p>
+</blockquote>
+<p>This is separated and in bold because it is a very important concept in statistics, and it is one that is very, very easy to misinterpret<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.
+A p-value is <em>not</em> the probability that the null hypothesis is true (we actually have no way of knowing this probability).
+It is also not the probability that an alternative hypothesis is false (we have no way of knowing this probability either).
+A p-value specifically <em>assumes that the null hypothesis is true</em>, then asks what the probability of an observed result would be <em>conditional upon this assumption</em>.</p>
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bouma2000" class="csl-entry">
+Bouma, Gary D. 2000. <em><span>The Research Process</span></em>. 4th ed. Oxford, UK: Oxford University Press.
+</div>
+<div id="ref-Greenland2016" class="csl-entry">
+Greenland, Sander, Stephen J. Senn, Kenneth J. Rothman, John B. Carlin, Charles Poole, Steven N. Goodman, and Douglas G. Altman. 2016. <span>“<span class="nocase">Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations</span>.”</span> <em>European Journal of Epidemiology</em> 31 (4): 337–50. <a href="https://doi.org/10.1007/s10654-016-0149-3">https://doi.org/10.1007/s10654-016-0149-3</a>.
+</div>
+<div id="ref-Mayo1996" class="csl-entry">
+Mayo, Deborah G. 1996. <em><span class="nocase">Error and the Growth of Experimental Knowledge</span></em>. Chicago: University of Chicago Press.
+</div>
+<div id="ref-Mayo2019" class="csl-entry">
+Mayo, Deborah G. 2019. <span>“<span class="nocase">P-value thresholds: Forfeit at your peril</span>.”</span> <em>European Journal of Clinical Investigation</em> 49 (10): 1–4. <a href="https://doi.org/10.1111/eci.13170">https://doi.org/10.1111/eci.13170</a>.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Stanton-Geddes2014" class="csl-entry">
+Stanton-Geddes, John, Cintia Gomes De Freitas, and Cristian De Sales Dambros. 2014. <span>“<span class="nocase">In defense of P values: Comment on the statistical methods actually used by ecologists</span>.”</span> <em>Ecology</em> 95 (3): 637–42. <a href="https://doi.org/10.1890/13-1156.1">https://doi.org/10.1890/13-1156.1</a>.
+</div>
+<div id="ref-Wasserstein2016" class="csl-entry">
+Wasserstein, Ronald L., and Nicole A. Lazar. 2016. <span>“<span class="nocase">The ASA’s Statement on p-Values: Context, Process, and Purpose</span>.”</span> <em>American Statistician</em> 70 (2): 129–33. <a href="https://doi.org/10.1080/00031305.2016.1154108">https://doi.org/10.1080/00031305.2016.1154108</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="29">
+<li id="fn29"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="what-is-hypothesis-testing.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="what-is-hypothesis-testing.html#fnref30" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -417,7 +557,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="Week6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="making-and-using-hypotheses-and-types-of-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-t-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
