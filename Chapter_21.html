@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-05" />
+<meta name="date" content="2023-02-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -415,7 +415,7 @@ div.csl-indent {
 <p>A t-test is a simple and widely used statistical hypothesis test that relies on the t-distribution introduced in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.
 In this chapter, we will look at 3 types of t-tests, (1) the one sample t-test, (2) the independent samples t-test, and (3) the paired samples t-test.
 We will also look at non-parametric alternatives to t-tests (Wilcoxon and Mann-Whitney tests), which become relevant when the assumptions of t-tests are violated.
-The use of all of these tests in Jamovi will be demonstrated in the lab practical in <a href="Chapter_22.html#Chapter_22">Capter 22</a>.</p>
+The use of all of these tests in Jamovi will be demonstrated in the lab practical in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>.</p>
 <div id="one-sample-t-test" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> One sample t-test<a href="Chapter_21.html#one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose that a biology teacher has created a new approach to teaching and wants to test whether or not their new approach results in student test scores that are higher than the reported national average of 60.
@@ -432,14 +432,27 @@ Suppose the teacher has 10 students with the following test scores (out of 100).
 <p>The teacher can use a one sample t-test to test <span class="math inline">\(H_{0}\)</span>.
 The one sample t-test will test whether the sample mean of test scores (<span class="math inline">\(\bar{x} = 66.58\)</span>) is significantly greater than the reported national average, <span class="math inline">\(\mu_{0} = 60\)</span>.
 How does this work?
-The logic is to use the t-distribution from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> as the null distribution for <span class="math inline">\(\bar{x}\)</span>.
+Recall from <a href="Chapter_15.html#Chapter_15">Chapter 15</a> that, due to the central limit theorem, the distribution of sample means (<span class="math inline">\(\bar{x}\)</span>) will be normally distributed around the true mean <span class="math inline">\(\mu\)</span> as sample size N increases.
+At low N, when we need to estimate the true standard deviation (<span class="math inline">\(\sigma\)</span>) from the sample standard deviation (s), we need to correct for a bias and use the t-distribution (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>).
+The logic here is to use the t-distribution as the null distribution for <span class="math inline">\(\bar{x}\)</span>.
 If we subtract <span class="math inline">\(\mu_{0}\)</span> from <span class="math inline">\(\bar{x}\)</span>, then we can centre the mean of the null distribution at 0.
-We can then divide by the standard error of our scores so that we can compare the deviation of <span class="math inline">\(\bar{x}\)</span> from <span class="math inline">\(\mu_{0}\)</span> in terms of the t-distribution, and ultimately get a t score.
+We can then divide by the standard error of test scores so that we can compare the deviation of <span class="math inline">\(\bar{x}\)</span> from <span class="math inline">\(\mu_{0}\)</span> in terms of the t-distribution.
 This is the same idea as calculating a z-score from <a href="Chapter_15.html#probability-and-z-scores">Chapter 15.2</a>.
 In fact, the equations look almost the same,</p>
 <p><span class="math display">\[t_{\bar{x}} = \frac{\bar{x} - \mu_{0}}{SE(\bar{x})}\]</span></p>
 <p>In the above equation, <span class="math inline">\(SE(\bar{x})\)</span> is the standard error of <span class="math inline">\(\bar{x}\)</span>.</p>
-<p>If the sample mean of test scores is really the same as the population mean <span class="math inline">\(\mu_{0} = 60\)</span>, then <span class="math inline">\(\bar{x}\)</span> should have a t-distribution</p>
+<p>If the sample mean of test scores is really the same as the population mean <span class="math inline">\(\mu_{0} = 60\)</span>, then <span class="math inline">\(\bar{x}\)</span> should have a t-distribution.
+Consequently, very small or large values of <span class="math inline">\(t_{\bar{x}}\)</span> would suggest that the sample mean is improbable given the null distribution predicted if <span class="math inline">\(H_{0}: \mu_{0} = \bar{x}\)</span> is true.
+We can calculate <span class="math inline">\(t_{\bar{x}}\)</span> for our above sample (note, <span class="math inline">\(SE(\bar{x}) = s/\sqrt{N} = 8.334373 / \sqrt{10} = 2.63556\)</span>),</p>
+<p><span class="math display">\[t_{\bar{x}} = \frac{66.58 - 60}{2.63556} = 2.496623.\]</span></p>
+<p>Our t-score is therefore 2.496623.
+We can see where this value falls on the t-distribution in Figure 21.1.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-90-1.png" alt="ALT IMAGE" width="672" />
+<p class="caption">
+Figure 21.1: A t-distribution. Grey shade 95 CI
+</p>
+</div>
 </div>
 <div id="independent-t-test" class="section level2 hasAnchor" number="21.2">
 <h2><span class="header-section-number">21.2</span> Independent t-test<a href="Chapter_21.html#independent-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
