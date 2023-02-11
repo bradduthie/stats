@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-10" />
+<meta name="date" content="2023-02-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -515,7 +515,7 @@ Sampling with replacement just means that whatever has been sampled once gets pu
 Sampling without replacement means that whatever has been sampled does not get put back into the population before sampling again.
 An example makes the distinction between sampling with and without replacement clearer.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-55"></span>
-<img src="img/cards.jpg" alt="Close up of 10 playing cards are shown, 5 hearts (left) and 5 clubs (right). Cards decrease from 5 to ace left to right for both suits." width="100%" />
+<img src="img/cards.jpg" alt="Close up of 10 playing cards are shown, 5 hearts (left) and 5 spades (right). Cards decrease from 5 to ace left to right for both suits." width="100%" />
 <p class="caption">
 Figure 14.3: Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 spades (right).
 </p>
@@ -615,9 +615,9 @@ There are a lot of situations where a Poisson distribution is relevant in biolog
 </ul>
 <p>The shape of a Poisson distribution is described by just 1 parameter, <span class="math inline">\(\lambda\)</span>.
 This parameter is both the mean and the variance of the Poisson distribution.
-We can therefore get the probability that some number of events (<span class="math inline">\(x\)</span>) will occur just by knowing <span class="math inline">\(\lambda\)</span> (Figure 14.6).</p>
+We can therefore get the probability that some number of events (<span class="math inline">\(x\)</span>) will occur just by knowing <span class="math inline">\(\lambda\)</span> (Figure 14.7).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-59"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-59-1.png" alt="Four panels are shown, each with a Poisson distribution of a different rate paramter (0.5, 1.0, 2.5, and 5.0)." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-59-1.png" alt="Four panels are shown, each with a Poisson distribution of a different rate parameter (0.5, 1.0, 2.5, and 5.0)." width="672" />
 <p class="caption">
 Figure 14.7: Poisson probability distributions given different rate parameter values.
 </p>
@@ -640,17 +640,17 @@ While the uniform distribution is very important in a lot of statistical tools (
 The continuous uniform distribution has two parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>
 Values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be any real number (not just integers).
 For example, suppose that <span class="math inline">\(\alpha = 1\)</span> and <span class="math inline">\(\beta = 2.5\)</span>.
-In this case, Figure 14.7 shows the probability distribution for sampling some value <span class="math inline">\(x\)</span>.</p>
+In this case, Figure 14.8 shows the probability distribution for sampling some value <span class="math inline">\(x\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-60"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-60-1.png" alt="A uniform distribution is shown, which appears as a grey rectangle in the middle of a plot with 'x' on the x-axis and 'Probability' on the y-axis" width="672" />
 <p class="caption">
 Figure 14.8: A continuous uniform distribution in which a random variable X takes a value between 1 and 2.5.
 </p>
 </div>
-<p>The height of the distribution in Figure 14.7 is <span class="math inline">\(1/(\beta - \alpha) = 1/(2.5 - 1) \approx 0.667\)</span>.
+<p>The height of the distribution in Figure 14.8 is <span class="math inline">\(1/(\beta - \alpha) = 1/(2.5 - 1) \approx 0.667\)</span>.
 All values between 1 and 2.5 have equal probability of being sampled.</p>
 <p>Here is a good place to point out the difference between the continuous distribution versus the discrete binomial and Poisson distributions.
-From the uniform distribution of Figure 14.7, we can, theoretically, sample <em>any</em> real value between 1 and 2.5 (e.g., 1.34532 or 2.21194; the sampled value can have as many decimals as our measuring device allows).
+From the uniform distribution of Figure 14.8, we can, theoretically, sample <em>any</em> real value between 1 and 2.5 (e.g., 1.34532 or 2.21194; the sampled value can have as many decimals as our measuring device allows).
 There are uncountably infinite real numbers, so it no longer makes sense to ask what is the probability of sampling a specific number.
 For example, what is the probability of sampling a value of <em>exactly</em> 2, rather than, say, 1.999999 or 2.000001, or something else arbitrarily close to 2?
 The probability of sampling a specific number exactly is negligible.

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-10" />
+<meta name="date" content="2023-02-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -468,14 +468,14 @@ To the left, you should see boxes to input parameter values for the mean and sta
 Below the Parameters options, you should also see different functions for computing probability or quantiles.
 To the right, you should see a standard normal distribution (i.e., a normal distribution with a mean of 0 and a standard deviation of 1).</p>
 <p>For this exercise, we will assume that the population of DBH from which our sample came is normally distributed.
-In other words, if we somehow had access to <em>all possible</em> DBH measurements in the woodland sites (not just the 122 trees sampled), we assume that DBH would be normally distributed.
+In other words, if we somehow had access to <em>all possible</em> DBH measurements in the woodland sites (not just the 120 trees sampled), we assume that DBH would be normally distributed.
 To find the probability of sampling a tree within a given interval of DBH (e.g., greater than 30), we therefore need to build this distribution with the correct mean and standard deviation.
 We do not know the <em>true</em> mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) of the population, but our best estimate of these values are the mean (<span class="math inline">\(\bar{x}\)</span>) and standard deviation (<span class="math inline">\(s\)</span>) of the sample, as reported above (i.e., the grand mean and standard deviation).
 Using the Mean and SD parameter input boxes in distrACTION, we can build a normal distribution with the same mean and standard deviation as our sample.
 Do this now by inputting the calculated Grand Mean and Grand Standard Deviation from above in the appropriate boxes.
 Note that the normal distribution on the right has the same shape, but the table of parameters has been updated to reflect the mean mean and standard deviation.</p>
 <p>In the previous practical from <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, we calculated the probability of sampling a value within a given interval of the normal distribution.
-If we wanted to do the same exercise here, we might find the probability of sampling a DBH &gt; 30 using the Compute probability function (the answer is P = 0.278).
+If we wanted to do the same exercise here, we might find the probability of sampling a DBH &gt; 30 using the Compute probability function (the answer is P = 0.265).
 Instead, we are now going to do the opposite using the Compute quantile(s) function.
 We might want to know, for example, what 75% of DBH values will be less than (i.e., what is the cutoff DBH, below which DBH values will be lower than this cutoff with a probability of 0.75).
 To find this, uncheck the ‘Compute probability’ box and check the ‘Compute quantile(s)’ box.
@@ -625,7 +625,7 @@ Now, fill in the table below reporting 95% CIs calculated using each distributio
 </table>
 <p>Next, do the same, but now calculate 99% CIs instead of 95% CIs.</p>
 <table>
-<caption>95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<caption>99 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>
 <tr class="header">
 <th>Site</th>
@@ -718,7 +718,7 @@ First consider an 80% CI (hint, use the distrACTION module again to find the z-s
 <p>Finally, calculate 99% CIs for the proportion of sites classified as Ancient woodland.</p>
 <p><span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
 <p><span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
-<p>Reflect again on what these vales actually mean.
+<p>Reflect again on what these values actually mean.
 For example, what does it mean to have 95% confidence that the proportion of sites classified as Ancient woodland are between two values?
 Are there any situations in which this might be useful, from a scientific or conservation standpoint?
 There is no right or wrong answer here, but confidence intervals are very challenging to understand conceptually, so having now done the calcualtions to get them, it is a good idea to think again about what they mean.</p>
