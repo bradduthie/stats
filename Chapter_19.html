@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-08" />
+<meta name="date" content="2023-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -470,7 +470,7 @@ To the right, you should see a standard normal distribution (i.e., a normal dist
 <p>For this exercise, we will assume that the population of DBH from which our sample came is normally distributed.
 In other words, if we somehow had access to <em>all possible</em> DBH measurements in the woodland sites (not just the 122 trees sampled), we assume that DBH would be normally distributed.
 To find the probability of sampling a tree within a given interval of DBH (e.g., greater than 30), we therefore need to build this distribution with the correct mean and standard deviation.
-We do not know the <em>true</em> mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) of the population, but our best estimate of these values are the mean (<span class="math inline">\(\bar{x}\)</span>}) and standard deviation (<span class="math inline">\(s\)</span>) of the sample, as reported above (i.e., the grand mean and standard deviation).
+We do not know the <em>true</em> mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) of the population, but our best estimate of these values are the mean (<span class="math inline">\(\bar{x}\)</span>) and standard deviation (<span class="math inline">\(s\)</span>) of the sample, as reported above (i.e., the grand mean and standard deviation).
 Using the Mean and SD parameter input boxes in distrACTION, we can build a normal distribution with the same mean and standard deviation as our sample.
 Do this now by inputting the calculated Grand Mean and Grand Standard Deviation from above in the appropriate boxes.
 Note that the normal distribution on the right has the same shape, but the table of parameters has been updated to reflect the mean mean and standard deviation.</p>
@@ -481,9 +481,9 @@ We might want to know, for example, what 75% of DBH values will be less than (i.
 To find this, uncheck the ‘Compute probability’ box and check the ‘Compute quantile(s)’ box.
 Make sure that the ‘cumulative quantile’ radio button is selected, then set p = 0.75 (Figure 19.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
-<img src="img/jamovi_distrACTION_p75.png" alt="Jamovi window showing with parameters for a normal distribution with a mean of 27.7 and a standard deviatio of 12.4, and a normal distribution shows a vertical dotted line on an x-axis value of 36.1, below which 75 per cent of values fall." width="100%" />
+<img src="img/jamovi_distrACTION_p75.png" alt="Jamovi window showing with parameters for a normal distribution with a mean of 36.9 and a standard deviatio of 11, and a normal distribution shows a vertical dotted line on an x-axis value of 44.3, below which 75 per cent of values fall." width="100%" />
 <p class="caption">
-Figure 19.3: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 27.7 and standard deviation of 12.4. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
+Figure 19.3: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
 </p>
 </div>
 <p>From Figure 19.3, we can see that the cumulative 0.75 quantile is 36.1, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 36.1 cm.
@@ -573,7 +573,7 @@ Reflect on any similarities or differences that you see in all of these differen
 </div>
 <div id="confidence-intervals-for-different-sample-sizes-t--and-z-" class="section level2 hasAnchor" number="19.3">
 <h2><span class="header-section-number">19.3</span> Confidence intervals for different sample sizes (t- and z-)<a href="Chapter_19.html#confidence-intervals-for-different-sample-sizes-t--and-z-" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In Exercises 19.1 and 19.2, the sample size of DBH was fairly large (N = 122).
+<p>In Exercises 19.1 and 19.2, the sample size of DBH was fairly large (N = 120).
 Now, we will calculate confidence intervals for the mean DBH of each of the 4 different sites using both z- and t-scores.
 These sites have much different sample sizes.
 From the Descriptives tool in Jamovi, write the sample sizes for DBH split by site below.</p>
@@ -704,11 +704,6 @@ Using the above equation, what is the standard error of p?</p>
 <p>Next, find the lower and upper 99% CIs around <span class="math inline">\(\hat{p}\)</span> and report them below (hint: the only difference here from the calculation of the 95% CIs are the z-scores).</p>
 <p><span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
 <p><span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
-<p>What assumptions did we need to make when constructing confidence intervals for the proportion of sites that are grazing?</p>
-<pre><code>
-
-
-</code></pre>
 </div>
 <div id="another-proportion-confidence-interval" class="section level2 hasAnchor" number="19.5">
 <h2><span class="header-section-number">19.5</span> Another proportion confidence interval<a href="Chapter_19.html#another-proportion-confidence-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
