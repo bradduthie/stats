@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-11" />
+<meta name="date" content="2023-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -305,9 +305,13 @@ div.csl-indent {
 <li class="chapter" data-level="21" data-path="Chapter_21.html"><a href="Chapter_21.html"><i class="fa fa-check"></i><b>21</b> The t-test</a>
 <ul>
 <li class="chapter" data-level="21.1" data-path="Chapter_21.html"><a href="Chapter_21.html#one-sample-t-test"><i class="fa fa-check"></i><b>21.1</b> One sample t-test</a></li>
-<li class="chapter" data-level="21.2" data-path="Chapter_21.html"><a href="Chapter_21.html#independent-t-test"><i class="fa fa-check"></i><b>21.2</b> Independent t-test</a></li>
+<li class="chapter" data-level="21.2" data-path="Chapter_21.html"><a href="Chapter_21.html#independent-samples-t-test"><i class="fa fa-check"></i><b>21.2</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="21.3" data-path="Chapter_21.html"><a href="Chapter_21.html#paired-sample-t-test"><i class="fa fa-check"></i><b>21.3</b> Paired sample t-test</a></li>
-<li class="chapter" data-level="21.4" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternative"><i class="fa fa-check"></i><b>21.4</b> Non-parametric alternative</a></li>
+<li class="chapter" data-level="21.4" data-path="Chapter_21.html"><a href="Chapter_21.html#assumptions-of-t-tests"><i class="fa fa-check"></i><b>21.4</b> Assumptions of t-tests</a></li>
+<li class="chapter" data-level="21.5" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternatives"><i class="fa fa-check"></i><b>21.5</b> Non-parametric alternatives</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="Chapter_21.html"><a href="Chapter_21.html#wilcoxon-test"><i class="fa fa-check"></i><b>21.5.1</b> Wilcoxon test</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="Chapter_22.html"><a href="Chapter_22.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
@@ -430,42 +434,291 @@ They just want to find out if the mean test scores are greater than 60.
 Suppose the teacher has 10 students with the following test scores (out of 100).</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
 <p>The teacher can use a one sample t-test to test <span class="math inline">\(H_{0}\)</span>.
-The one sample t-test will test whether the sample mean of test scores (<span class="math inline">\(\bar{x} = 66.58\)</span>) is significantly greater than the reported national average, <span class="math inline">\(\mu_{0} = 60\)</span>.
+The one sample t-test will test whether the sample mean of test scores (<span class="math inline">\(\bar{y} = 66.58\)</span>) is significantly greater than the reported national average, <span class="math inline">\(\mu_{0} = 60\)</span>.
 How does this work?
-Recall from <a href="Chapter_15.html#Chapter_15">Chapter 15</a> that, due to the central limit theorem, the distribution of sample means (<span class="math inline">\(\bar{x}\)</span>) will be normally distributed around the true mean <span class="math inline">\(\mu\)</span> as sample size N increases.
+Recall from <a href="Chapter_15.html#Chapter_15">Chapter 15</a> that, due to the central limit theorem, the distribution of sample means (<span class="math inline">\(\bar{y}\)</span>) will be normally distributed around the true mean <span class="math inline">\(\mu\)</span> as sample size N increases.
 At low N, when we need to estimate the true standard deviation (<span class="math inline">\(\sigma\)</span>) from the sample standard deviation (s), we need to correct for a bias and use the t-distribution (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>).
-The logic here is to use the t-distribution as the null distribution for <span class="math inline">\(\bar{x}\)</span>.
-If we subtract <span class="math inline">\(\mu_{0}\)</span> from <span class="math inline">\(\bar{x}\)</span>, then we can centre the mean of the null distribution at 0.
-We can then divide by the standard error of test scores so that we can compare the deviation of <span class="math inline">\(\bar{x}\)</span> from <span class="math inline">\(\mu_{0}\)</span> in terms of the t-distribution.
+The logic here is to use the t-distribution as the null distribution for <span class="math inline">\(\bar{y}\)</span>.
+If we subtract <span class="math inline">\(\mu_{0}\)</span> from <span class="math inline">\(\bar{y}\)</span>, then we can centre the mean of the null distribution at 0.
+We can then divide by the standard error of test scores so that we can compare the deviation of <span class="math inline">\(\bar{y}\)</span> from <span class="math inline">\(\mu_{0}\)</span> in terms of the t-distribution.
 This is the same idea as calculating a z-score from <a href="Chapter_15.html#probability-and-z-scores">Chapter 15.2</a>.
 In fact, the equations look almost the same,</p>
-<p><span class="math display">\[t_{\bar{x}} = \frac{\bar{x} - \mu_{0}}{SE(\bar{x})}\]</span></p>
-<p>In the above equation, <span class="math inline">\(SE(\bar{x})\)</span> is the standard error of <span class="math inline">\(\bar{x}\)</span>.</p>
-<p>If the sample mean of test scores is really the same as the population mean <span class="math inline">\(\mu_{0} = 60\)</span>, then <span class="math inline">\(\bar{x}\)</span> should have a t-distribution.
-Consequently, very small or large values of <span class="math inline">\(t_{\bar{x}}\)</span> would suggest that the sample mean is improbable given the null distribution predicted if <span class="math inline">\(H_{0}: \mu_{0} = \bar{x}\)</span> is true.
-We can calculate <span class="math inline">\(t_{\bar{x}}\)</span> for our above sample (note, <span class="math inline">\(SE(\bar{x}) = s/\sqrt{N} = 8.334373 / \sqrt{10} = 2.63556\)</span>),</p>
-<p><span class="math display">\[t_{\bar{x}} = \frac{66.58 - 60}{2.63556} = 2.496623.\]</span></p>
-<p>Our t-score is therefore 2.496623.
+<p><span class="math display">\[t_{\bar{y}} = \frac{\bar{y} - \mu_{0}}{SE(\bar{y})}\]</span></p>
+<p>In the above equation, <span class="math inline">\(SE(\bar{y})\)</span> is the standard error of <span class="math inline">\(\bar{y}\)</span>.</p>
+<p>If the sample mean of test scores is really the same as the population mean <span class="math inline">\(\mu_{0} = 60\)</span>, then <span class="math inline">\(\bar{y}\)</span> should have a t-distribution.
+Consequently, very small or large values of <span class="math inline">\(t_{\bar{y}}\)</span> would suggest that the sample mean is improbable given the null distribution predicted if <span class="math inline">\(H_{0}: \mu_{0} = \bar{y}\)</span> is true.
+We can calculate <span class="math inline">\(t_{\bar{y}}\)</span> for our above sample (note, <span class="math inline">\(SE(\bar{y}) = s/\sqrt{N} = 8.334373 / \sqrt{10} = 2.63556\)</span>),</p>
+<p><span class="math display">\[t_{\bar{y}} = \frac{66.58 - 60}{2.63556} = 2.496623.\]</span></p>
+<p>Our t-statistic is therefore 2.496623 (note that a t-statistic can also be negative; this would just mean that our sample mean is less than <span class="math inline">\(\mu_{0}\)</span>, instead of greater than <span class="math inline">\(\mu_{0}\)</span>, but nothing about the t-test changes if this is the case).
 We can see where this value falls on the t-distribution with 9 degrees of freedom in Figure 21.1.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-90-1.png" alt="ALT IMAGE" width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-90-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value about halfway between 2 and 3." width="672" />
 <p class="caption">
-Figure 21.1: A t-distribution. Grey shade 95 CI
+Figure 21.1: A t-distribution is shown with a calculated t-statistic of 2.49556 indicated with a downard arrow.
 </p>
 </div>
+<p>The t-distribution in Figure 21.1 is the probability distribution if <span class="math inline">\(H_{0}\)</span> is true (i.e., the student test scores were sampled from a distribution with a mean of <span class="math inline">\(\mu_{0} = 60\)</span>).
+The arrow pointing to the calculated <span class="math inline">\(t_{\bar{y}} = 2.496623\)</span> indicates that if <span class="math inline">\(H_{0}\)</span> is true, then the sample mean of student test scores <span class="math inline">\(\bar{y} = 66.58\)</span> would be very unlikely.
+This is because only a small proportion of the probability distribution in Figure 21.1 is greater than or equal to our t-statistic, <span class="math inline">\(t_{\bar{y}} = 2.496623\)</span>.
+In fact, the proportion of t-statistics greater than 2.496623 is only about P = 0.017.
+Hence, if our null hypothesis is true, then the probability of getting a mean student test score of 66.58 or higher is P = 0.017 (this is our p-value).</p>
+<p>It is important to understand the relationship between the t-statistic and the p-value.
+An <a href="https://bradduthie.shinyapps.io/t_score/">interactive application</a> helps visualise the relationship between the t-statistic and p-values.</p>
 <blockquote>
-<p>Click here for the shiny app of the t-distribution</p>
+<p><a href="https://bradduthie.shinyapps.io/t_score/">Click here</a> for the shiny app of the t-distribution</p>
 </blockquote>
+<p>Typically, we set a threshold level of <span class="math inline">\(\alpha = 0.05\)</span>, below which we conclude that our p-value is statistically significant (see <a href="Chapter_20.html#Chapter_20">Chapter 20</a>).
+Consequently, because our p-value is less than 0.05, we reject our null hypothesis and conclude that student test scores are higher than the reported national average.</p>
 </div>
-<div id="independent-t-test" class="section level2 hasAnchor" number="21.2">
-<h2><span class="header-section-number">21.2</span> Independent t-test<a href="Chapter_21.html#independent-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="independent-samples-t-test" class="section level2 hasAnchor" number="21.2">
+<h2><span class="header-section-number">21.2</span> Independent samples t-test<a href="Chapter_21.html#independent-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Perhaps the biology teacher is not actually interested in comparing their students’ test results with those of the reported national average.
+After all, there might be many reasons for why their students score differently from the national average that have nothing to do with their new approach to teaching.
+To see if their new approach is working, the teacher might instead decide that a better hypothesis to test is whether or not the mean test score from the current year is higher than the mean test score from the class that they taught in the previous year.
+We can use <span class="math inline">\(\bar{y}_{1}\)</span> to denote the mean of test scores from the current year, and <span class="math inline">\(\bar{y}_{0}\)</span> to denote the mean of test scores from the previous year.
+The test scores of the current year (<span class="math inline">\(y_{1}\)</span>) therefore remain the same as in the example of the one sample t-test from the previous section.</p>
+<pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
+<p>Suppose that in the previous year, there were 9 students in the class (i.e., one fewer than the current year).
+These 9 students received the following test scores (<span class="math inline">\(y_{2}\)</span>).</p>
+<pre><code>57.4, 52.4, 70.5, 71.6, 46.1, 60.4, 70.0, 64.5, 58.8</code></pre>
+<p>The mean score from last year was <span class="math inline">\(\bar{y}_{2} = 61.30\)</span>, which does appear to be lower than the mean score of the current year, <span class="math inline">\(\bar{y}_{1} = 66.58\)</span>.
+But is the difference between these two means statistically significant?
+In other words, were the test scores from each year sampled from a population with the same mean, such that the population mean of the previous year (<span class="math inline">\(\mu_{2}\)</span>) and the current year (<span class="math inline">\(\mu_{1}\)</span>) are the same?
+This is the null hypothesis, <span class="math inline">\(H_{0}: \mu_{2} = \mu_{1}\)</span>.</p>
+<p>The general idea for testing this null hypothesis is the same as it was in the one sample t-test.
+In both cases, we want to calculate a t-statistic, then see where it falls along the t-distribution to decide whether or not to reject <span class="math inline">\(H_{0}\)</span>.
+In this case, our t-statistic (<span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}}\)</span>) is calculated slightly differently,</p>
+<p><span class="math display">\[t_{\bar{y}_{1} - \bar{y}_{2}} = \frac{\bar{y}_{1} - \bar{y}_{2}}{SE(\bar{y})}\]</span></p>
+<p>The logic is the same as the one sample t-test.
+If <span class="math inline">\(\mu_{2} = \mu_{1}\)</span>, then we also would expected <span class="math inline">\(\bar{y}_{1} = \bar{y}_{2}\)</span> (i.e., <span class="math inline">\(\bar{y}_{1} - \bar{y}_{2} = 0\)</span>).
+Differences between <span class="math inline">\(\bar{y}_{1}\)</span> and <span class="math inline">\(\bar{y}_{2}\)</span> cause the t-statistic to be either above or below 0, and we can map this deviation of <span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}}\)</span> from 0 to the probability density of the t-distribution after standardising by the standard error (<span class="math inline">\(SE(\bar{y})\)</span>).</p>
+<p>What is <span class="math inline">\(SE(\bar{y})\)</span> in this case?
+After all, there are two different samples <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>, so could the two samples not have <em>different</em> standard errors?
+This could indeed be the case, and how we actually conduct the independent samples t-test depends on whether or not we are willing to assume that the two samples came from populations with the same variance (i.e., <span class="math inline">\(\sigma_{1} = \sigma_{2}\)</span>).
+If we are willing to make this assumption, then we can pool the variances (<span class="math inline">\(s^{2}_{p}\)</span>) together to get a combined (more accurate) estimate of the standard error <span class="math inline">\(SE(\bar{y})\)</span> from both samples<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a><span class="math inline">\(^{,}\)</span><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
+<p>If we are unwilling to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance, then we need to use an alternative version of the independent samples t-test.
+This alternative version is called the Welch’s t-test <span class="citation">(<a href="#ref-Welch1938" role="doc-biblioref">Welch 1938</a>)</span>, also known as the unequal variances t-test <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>.
+In contrast to the standard independent t-test (also called the ‘Students independent t-test’), the Welch’s t-test does not pool the variances of the samples together<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.
+While there are some mathematical differences between the Student’s and Welch’s independent samples t-tests, the general concept is the same.</p>
+<p>This raises the question, when is it acceptable to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance?
+The sample variance of <span class="math inline">\(s^{2}_{1} = 69.46\)</span> and <span class="math inline">\(s^{2}_{2} = 76.15\)</span>.
+Is this close enough to treat them as the same?
+Like a lot of choices in statistics, there is no clear right or wrong answer.
+In theory, if both samples do come from a population with the same variance (<span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span>), then the pooled variance is better because it gives us a bit more statistical power; we can correctly reject the null hypothesis more often when it is actually false (i.e., it decreases the probability of a Type II error).
+Nevertheless, the increase in statistical power is quite low, and the risk of pooling the variances when they actually are not the same increases the risk that we reject the null hypothesis when it is actually true (i.e., it increases the probability of a Type I error, which we definitely do not want!).
+For this reason, some researchers advocate using the Welch’s t-test by default, unless there is a very good reason to believe <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are sampled from populations with the same variance <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>; <a href="#ref-Delacre2017" role="doc-biblioref">Delacre, Lakens, and Leys 2017</a>)</span>.</p>
+<p>Here we will adopt the traditional approach of first testing the null hypothesis that <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span> using a homogeneity of variances test.
+If we fail to reject this null hypothesis (i.e., <span class="math inline">\(P &gt; 0.05\)</span>), then we will use the Student’s t-test, and if we reject it (i.e., <span class="math inline">\(P \leq 0.05\)</span>), then we will use the Welch’s t-test.
+This approach is mostly used for pedagogical reasons; in practice, defaulting to the Welch’s t-test is fine <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>; <a href="#ref-Delacre2017" role="doc-biblioref">Delacre, Lakens, and Leys 2017</a>)</span>.
+Testing for homogeneity of variances is quite straightforward in most statistical programs, and we will save the conceptual and mathematical details of this for when we look at the F-distribution in <a href="#Chapter_23">Chapter 23</a>.
+But the general idea is that if <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span>, then the ratio of variances (<span class="math inline">\(\sigma^{2}_{1}/\sigma^{2}_{2}\)</span>) has its own null distribution (like the normal distribution, or the t-distribution), and we can see the probability of getting a deviation of <span class="math inline">\(\sigma^{2}_{1}/\sigma^{2}_{2}\)</span> from 1 if <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span> is true.</p>
+<p>In the case of the test scores from the two samples of students (<span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>), a homogeneity of variance test reveals that <span class="math inline">\(s^{2}_{1} = 69.46\)</span> and <span class="math inline">\(s^{2}_{2} = 76.15\)</span> are not significantly different (P = 0.834).
+We can therefore use the pooled variance and the Student’s independent samples t-test.
+We can calculate <span class="math inline">\(SE(\bar{y}) = 8.521033\)</span> using the formula for <span class="math inline">\(s_{p}\)</span> (again, this is not something that ever actually needs to be done by hand), then find <span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}}\)</span>,</p>
+<p><span class="math display">\[t_{\bar{y}_{1} - \bar{y}_{2}} = \frac{\bar{y}_{1} - \bar{y}_{2}}{SE(\bar{y})} = \frac{66.58 - 61.3}{3.915144} = 1.348609.\]</span></p>
+<p>As with the one-sample t-test, we can identify the position of <span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}}\)</span> on the t-distribution (Figure 21.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-91"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-91-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around 1.3." width="672" />
+<p class="caption">
+Figure 21.2: A t-distribution is shown with a calculated t-statistic of 1.348609 indicated with a downard arrow.
+</p>
+</div>
+<p>The proportion of t-scores that are higher than <span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}} = 1.348609\)</span> is about 0.098.
+In other words, given that the null hypothesis is true, the probability of getting a t-statistic this high is <span class="math inline">\(P = 0.098\)</span>.
+Because this p-value exceeds our critical value of <span class="math inline">\(\alpha = 0.05\)</span>, we do not reject the null hypothesis.
+We therefore should conclude that the mean of test scores from the current year (<span class="math inline">\(\bar{y}_{1}\)</span>) is not significantly different from the mean of test scores in the previous year (<span class="math inline">\(\bar{y}_{2}\)</span>).
+The biology teacher in our example might therefore conclude that mean test results have not improved from the previous year.</p>
 </div>
 <div id="paired-sample-t-test" class="section level2 hasAnchor" number="21.3">
 <h2><span class="header-section-number">21.3</span> Paired sample t-test<a href="Chapter_21.html#paired-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There is one more type of t-test to consider.
+The paired sample t-test is applied when the data points in one sample can be naturally paired with those in another sample.
+In this case, data points are not independent between samples are not independent.
+For example, we can consider the student test scores (<span class="math inline">\(y_{1}\)</span>) yet again.</p>
+<pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
+<p>Suppose that the teacher gave these same students (S1-S10) a second test and wanted to see if the mean student score changed from one test to the next (i.e., a two-sided hypothesis).</p>
+<table>
+<caption>Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+<th align="right">S4</th>
+<th align="right">S5</th>
+<th align="right">S6</th>
+<th align="right">S7</th>
+<th align="right">S8</th>
+<th align="right">S9</th>
+<th align="right">S10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Test 1</td>
+<td align="right">49.3</td>
+<td align="right">62.9</td>
+<td align="right">73.7</td>
+<td align="right">65.5</td>
+<td align="right">69.6</td>
+<td align="right">70.7</td>
+<td align="right">61.5</td>
+<td align="right">73.4</td>
+<td align="right">61.1</td>
+<td align="right">78.1</td>
+</tr>
+<tr class="even">
+<td align="left">Test 2</td>
+<td align="right">46.6</td>
+<td align="right">62.7</td>
+<td align="right">73.8</td>
+<td align="right">58.3</td>
+<td align="right">66.8</td>
+<td align="right">69.7</td>
+<td align="right">64.5</td>
+<td align="right">71.3</td>
+<td align="right">64.5</td>
+<td align="right">78.8</td>
+</tr>
+<tr class="odd">
+<td align="left">Change</td>
+<td align="right">-2.7</td>
+<td align="right">-0.2</td>
+<td align="right">0.1</td>
+<td align="right">-7.2</td>
+<td align="right">-2.8</td>
+<td align="right">-1.0</td>
+<td align="right">3.0</td>
+<td align="right">-2.1</td>
+<td align="right">3.4</td>
+<td align="right">0.7</td>
+</tr>
+</tbody>
+</table>
+<p>In this case, what we are really interested in is the <em>change</em> in scores from Test 1 to Test 2.
+We want to test the null hypothesis that this change is zero.
+This is actually the same test as the one-sample t-test.
+We are just substituting the mean difference in values (i.e., ‘Change’ in the table above) for <span class="math inline">\(\bar{y}\)</span> and setting <span class="math inline">\(\mu_{0} = 0\)</span>.
+We can calculate <span class="math inline">\(\bar{y} = -0.88\)</span> and <span class="math inline">\(SE(\bar{y})=0.9760237\)</span>, then set up the t-test as before,</p>
+<p><span class="math display">\[t_{\bar{y}} = \frac{-0.88 - 0}{0.9760237} = -0.9016175.\]</span></p>
+<p>Again, we can find the location of our t-statistic <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> on the t-distribution (Figure 21.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-93"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-93-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around -0.9." width="672" />
+<p class="caption">
+Figure 21.3: A t-distribution is shown with a calculated t-statistic of -0.9016175 indicated with a downard arrow.
+</p>
 </div>
-<div id="non-parametric-alternative" class="section level2 hasAnchor" number="21.4">
-<h2><span class="header-section-number">21.4</span> Non-parametric alternative<a href="Chapter_21.html#non-parametric-alternative" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Since this is a two-sided hypothesis, we want to know the probability of getting a t-statistic as extreme as -0.9016175 (i.e., either <span class="math inline">\(\pm 0.9016175\)</span>) given that the null distribution is true.
+In the above t-distribution, 95% of the probability density lies between <span class="math inline">\(t = -2.26\)</span> and <span class="math inline">\(t = 2.26\)</span>.
+Consequently, our calculated <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> is not sufficiently extreme to reject the null hypothesis.
+The p-value associated with <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> is <span class="math inline">\(P = 0.391\)</span>.
+We therefore fail to reject <span class="math inline">\(H_{0}\)</span> and conclude that there is no significant difference change in student test scores from Test 1 to Test 2.</p>
 </div>
+<div id="assumptions-of-t-tests" class="section level2 hasAnchor" number="21.4">
+<h2><span class="header-section-number">21.4</span> Assumptions of t-tests<a href="Chapter_21.html#assumptions-of-t-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We make some potentially important assumptions when using t-tests.
+A consequence of violating these assumptions is a potentially misleading Type I error rate.
+That is, if our data to not fit the assumptions of our statistical test, then we might not actually be rejecting our null hypothesis at the <span class="math inline">\(\alpha = 0.05\)</span> level.
+We might unknowingly be rejecting <span class="math inline">\(H_{0}\)</span> at a much higher <span class="math inline">\(\alpha\)</span> value, and therefore concluding that we have evidence supporting the alternative hypothesis <span class="math inline">\(H_{A}\)</span> when really do not.
+It is therefore important to recognise the assumptions that we are making when using any statistical test (including t-tests).
+If our assumptions are violated, we might need to use a different test, or perhaps apply some kind of transformation on the data.
+Assumptions that we make when conducting a t-test are as follows:</p>
+<ul>
+<li>Data are continuous (i.e., not count or categorical data)</li>
+<li>Sample observations are a random sample from the population</li>
+<li>Sample means are normally distributed around the true mean</li>
+</ul>
+<p>Note that if we are running a Student’s independent samples t-test that pools sample variances (rather than a Welch’s t-test), then we are also assuming that sample variances are the same (i.e., a homogeneity of variance).
+The last bullet point concerning normally distributed sample means is frequently misunderstood to mean that the <em>sample</em> data themselves need to be normally distributed.
+This is not the case <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>.
+Instead, what we are really concerned with is the distribution of sample means (<span class="math inline">\(\bar{y}\)</span>) around the true mean (<span class="math inline">\(\mu\)</span>).
+And given a sufficiently large sample size, a normal distribution is assured due to the central limit theorem (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>).</p>
+<p>Moreover, while a normally distributed variable is not <em>necessary</em> for satisfying the assumptions of a t-test (or many other tests we will introduce in this book), it is <em>sufficient</em>.
+In other words, if the variable being measured is normally distributed, then the sample means will also be normally distributed around the true mean (even at low sample size).
+So when is a sample size large enough, or close enough to being normally distributed, for the assumption of normality to be satisfied?
+There really is not a definitive answer to this question, and the truth is that most statisticians will prefer to use a histogram (or some other visualisation approach) and their best judgement to decide if the assumption of normality is likely to be violated.</p>
+<p>In this book, we will take the traditional approach of running a statistical test called the Shapiro-Wilk test to test the null hypothesis that data are normally distributed.
+If we reject the null hypothesis (when <span class="math inline">\(P &lt; 0.05\)</span>), then we will conclude that the assumption of normality is violated and the t-test is not appropriate.
+The details of how the Shaprio-Wilk test work are not important for now, but the test can be easily run using Jamovi or R.
+If we reject the null hypothesis that the data are normally distributed, then we can use one of two methods to run our statistical test.</p>
+<ol style="list-style-type: decimal">
+<li>Transform the data in some way (e.g., take the log of all values) to improve normality.</li>
+<li>Use a non-parameteric alternative test.</li>
+</ol>
+<p>The word ‘non-parameteric’ in this context just means that there are no assumptions (or very few) about the shape of the distribution <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
+We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent sample t-test (Mann Whitney test) in the next session.
+But first, we can show how transformations can be used to improve the fit of the data to model assumptions.</p>
+<p>Often data will have a skewed distribution; this just means that the distribution will be asymmetrical.
+For example, in Figure 21.4A below, we have a dataset (sample size <span class="math inline">\(N = 200\)</span>) with a large positive skew (i.e., it is right skewed).
+Most values are in the same general area, but with some values being especially high.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-94"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-94-1.png" alt="A two paneled figure in which a histogram with a skewed distribution is shown to the left and a histogram with a normal distribution is shown to the right." width="672" />
+<p class="caption">
+Figure 21.4: A set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution.
+</p>
+</div>
+<p>Using a t-test on the variable X shown in Figure 21.4A is probably not the good idea.
+But taking the natural log of all the values of X makes the dataset more normally distributed, thereby more convincingly satisfying the normality assumption required by the t-test.
+This might seem a bit suspicious at first.
+Is it really okay to just take the logarithm of all the data instead of the actual values that were measured?
+Actually, there is no real scientific or statistical reason that we need to use the original scale <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Using the log or the square-root of a set of numbers is perfectly fine if it helps better satisfy the assumptions of a statistical test.</p>
+</div>
+<div id="non-parametric-alternatives" class="section level2 hasAnchor" number="21.5">
+<h2><span class="header-section-number">21.5</span> Non-parametric alternatives<a href="Chapter_21.html#non-parametric-alternatives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If we find that the assumption of normality is not satisfied, and a transformation of the data cannot help, then we can consider using non-parametric alternatives to a t-test.
+These alternatives include the Wilcoxon test and the Mann Whitney test.</p>
+<div id="wilcoxon-test" class="section level3 hasAnchor" number="21.5.1">
+<h3><span class="header-section-number">21.5.1</span> Wilcoxon test<a href="Chapter_21.html#wilcoxon-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Wilcoxon test (also called the Wilcoxon signed-rank test) is the non-parametric alternative to a one sample t-test (or a paired t-test).
+Instead of using the actual data, the Wilcoxon test ranks all of the values in the dataset, then sums up their signs (either positive or negative).
+The general idea is that we can compare the sum of the <em>ranks</em> of the actual data with what would be predicted by the null hypothesis.
+An example will make it easier to see how it works.
+We can use the same hypothetical dataset on student test scores.</p>
+<pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
+<p>The first step is to subtract the sample mean <span class="math inline">\(\bar{y} = 66.58\)</span> from each value (<span class="math inline">\(49.3 - 66.58 = 17.28\)</span>, <span class="math inline">\(62.9 - 66.58 = -3.68\)</span>, etc.).</p>
+<pre><code>-17.28, -3.68, 7.12, -1.08, 3.02, 4.12, -5.08, 6.82, -5.48, 11.52</code></pre>
+<p>We need to note the sign of each value as negative (<span class="math inline">\(-\)</span>) or positive (<span class="math inline">\(+\)</span>).</p>
+<pre><code>-, -, +, -, +, +, -, +, -, +</code></pre>
+<p>Next, we need to compute the absolute values of the numbers (i.e., <span class="math inline">\(|-17.28| = 17.28\)</span>, <span class="math inline">\(|-3.68| = 3.68\)</span>, <span class="math inline">\(|7.12| = 7.12\)</span>, etc.).</p>
+<pre><code>17.28, 3.68, 7.12, 1.08, 3.02, 4.12, 5.08, 6.82, 5.48, 11.52</code></pre>
+<p>We then rank these values from lowest to highest and record the sign of each value.</p>
+<pre><code>10,  3,  8,  1,  2,  4,  5,  7,  6,  9</code></pre>
+</div>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Delacre2017" class="csl-entry">
+Delacre, Marie, Daniël Lakens, and Christophe Leys. 2017. <span>“<span class="nocase">Why psychologists should by default use welch’s t-Test instead of student’s t-Test</span>.”</span> <em>International Review of Social Psychology</em> 30 (1): 92–101. <a href="https://doi.org/10.5334/irsp.82">https://doi.org/10.5334/irsp.82</a>.
+</div>
+<div id="ref-Dytham2011" class="csl-entry">
+Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-Johnson1995" class="csl-entry">
+Johnson, Douglas H. 1995. <span>“<span class="nocase">Statistical sirens: The allure of nonparametrics</span>.”</span> <em>Ecology</em> 76 (6): 1998–2000.
+</div>
+<div id="ref-Lumley2002" class="csl-entry">
+Lumley, Thomas, Paula Diehr, Scott Emerson, and Lu Chen. 2002. <span>“<span class="nocase">The importance of the normality assumption in large public health data sets</span>.”</span> <em>Annual Review of Public Health</em> 23: 151–69. <a href="https://doi.org/10.1146/annurev.publheath.23.100901.140546">https://doi.org/10.1146/annurev.publheath.23.100901.140546</a>.
+</div>
+<div id="ref-Ruxton2006" class="csl-entry">
+Ruxton, Graeme D. 2006. <span>“<span class="nocase">The unequal variance t-test is an underused alternative to Student’s t-test and the Mann-Whitney U test</span>.”</span> <em>Behavioral Ecology</em> 17 (4): 688–90. <a href="https://doi.org/10.1093/beheco/ark016">https://doi.org/10.1093/beheco/ark016</a>.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Welch1938" class="csl-entry">
+Welch, B. L. 1938. <span>“<span class="nocase">The Significance of the Difference Between Two Means when the Population Variances are Unequal</span>.”</span> <em>Biometrika</em> 29 (3/4): 350. <a href="https://doi.org/10.2307/2332010">https://doi.org/10.2307/2332010</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="34">
+<li id="fn34"><p>This is not a calculation that needs to be done by hand anymore. Statistical software such as Jamovi or R will calculate <span class="math inline">\(s_{p}\)</span> automatically from a dataset. For those interested, the formula that it uses to make this calculation is, <span class="math display">\[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\]</span> This looks like a lot, but really all the equation is doing is add the two variances (<span class="math inline">\(s^{2}_{y_{1}}\)</span> and <span class="math inline">\(s^{2}_{y_{2}}\)</span>) together, but weighing them by their degrees of freedom (<span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span>), so that the one with a higher sample size has more influence on the pooled standard deviation. To get <span class="math inline">\(SE(\bar{y})\)</span>, we then need to multiply by the square root of <span class="math inline">\((n_{1} + n_{2})/(n_{1}n_{2})\)</span>, <span class="math display">\[SE(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\]</span> It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by Jamovi or R.<a href="Chapter_21.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Note that the degrees of freedom for the t-statistic is not straightforward when we pool variances. If the sample sizes <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> are the same, then <span class="math inline">\(df = 2(n - 1)\)</span>. If <span class="math inline">\(n_{1} \neq n_{2}\)</span>, then <span class="math inline">\(df = n_{1} + n_{2} - 2\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The rationale here is that we lose an extra degree of freedom if we need to estimate the variance of each sample separately, which is necessary if we need to weigh each variance by its own degree of freedom (see footnote 34). Statistical software such as Jamovi and R handles all of this automatically, so we will not dwell on it here.<a href="Chapter_21.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>The equation for calculating the Welch’s t-statistic is actually a bit simpler than the Student’s t-test that uses the pooled estimate <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>. Instead of using <span class="math inline">\(s_{p}\)</span> (defined in footnote 34), we define our t-statistic as, <span class="math display">\[t_{s} = \frac{\bar{y}_{1} - \bar{y}_{2}}{ \sqrt{ \frac{s^{2}_{1}}{n_{1}} + \frac{s^{2}_{2}}{n_{2}}} }.\]</span> The degrees of freedom, however, is quite a bit messier than it is for the independent samples Student’s t-test, <span class="math display">\[v = \frac{\left(\frac{1}{n_{1}} + \frac{(s^{2}_{2} / s^{2}_{1})}{n_{2}} \right)^{2}}{\frac{1}{n^{2}_{1}\left(n_{1} - 1 \right)} + \frac{(s^{2}_{2} / s^{2}_{1})^{2}}{n^{2}_{2}\left(n_{2} - 1 \right)}}.\]</span> Of course, Jamovi and R will make these calculations for us, so it is not necessary to do it by hand.<a href="Chapter_21.html#fnref36" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
