@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-12" />
+<meta name="date" content="2023-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -435,7 +435,7 @@ Figure 19.1: Images from the WrEN project led by the University of Stirling
 Here we will focus on observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.</p>
 <div id="confidence-intervals-with-distraction" class="section level2 hasAnchor" number="19.1">
 <h2><span class="header-section-number">19.1</span> Confidence intervals with distrACTION<a href="Chapter_19.html#confidence-intervals-with-distraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>First, it is important to downlaod the disrACTION module if it has not been downloaded already.
+<p>First, it is important to download the disrACTION module if it has not been downloaded already.
 If the distrACTION module has already been downloaded, it should appear in the toolbar of Jamovi (Figure 19.2)
 If it has not been downloaded, then see the instructions for downloading it with the ‘Modules’ option (see Figure 19.2) in <a href="https://bradduthie.github.io/SCIU4T4/Chapter_16.html#probabilities-from-a-normal-distribution">Exercise 16.2</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-87"></span>
@@ -444,7 +444,7 @@ If it has not been downloaded, then see the instructions for downloading it with
 Figure 19.2: Jamovi tool bar, which includes an added module called distrACTION.
 </p>
 </div>
-<p>Once the distrACTION module has been made available, download the WrEN trees dataset <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_trees.xlsx">wren_trees.xlsx</a> dataset and open in a spreadsheet.
+<p>Once the distrACTION module has been made available, download the WrEN trees dataset <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/wren_trees.xlsx">wren_trees.xlsx</a> dataset and open it in a spreadsheet.
 Notice that the dataset is not in a tidy format.
 There are 4 different sites represented by different columns in the dataset.
 The numbers under each column are measurements of tree diameter at breast height (DBH) in centimeteres.
@@ -502,7 +502,7 @@ From the Results table on the right, what interval of DBH values will contain 95
 That is, getting intervals for the probability of sampling DBH values around the mean, <em>not</em> confidence intervals around the mean as introduced in <a href="Chapter_17.html#Chapter_17">Chapter 17</a>.
 How would we get confidence intervals around the mean?
 That is, what if we want to say that we have 95% confidence that the <em>mean</em> lies between 2 values?
-We would need to use the standard deviation <em>of sample mean</em> <span class="math inline">\(\bar{x}\)</span> around the true mean <span class="math inline">\(\mu\)</span>, rather than the sample standard deviation.
+We would need to use the standard deviation <em>of the sample mean</em> <span class="math inline">\(\bar{x}\)</span> around the true mean <span class="math inline">\(\mu\)</span>, rather than the sample standard deviation.
 Recall from <a href="Chapter_12.html#the-standard-error">Chapter 12.6</a> that the standard error is the standard deviation of <span class="math inline">\(\bar{x}\)</span> values around <span class="math inline">\(\mu\)</span>.
 We can therefore use the standard error to calculate confidence intervals around the mean value of DBH.
 From the Descriptives panel in Jamovi (recall that this is under the ‘Exploration’ button), find the standard error of DBH,</p>
@@ -515,15 +515,15 @@ Based on the Results table, what can you infer are the lower and upper 95% confi
 <p>Upper 95% CI: ________________</p>
 <p>Remember that this assumed that the sample means (<span class="math inline">\(\bar{x}\)</span>) are normally distributed around the true mean (<span class="math inline">\(\mu\)</span>).
 But as we saw in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, when we assume that our sample standard deviation (<span class="math inline">\(s\)</span>) is the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), then the shape of the normal distribution will be at least a bit off.
-Instead, we can get a more accurate of CIs using a t-distribution.
-Jamovi does usually this automatically when calculating CIs outside of the distrACTION module.
+Instead, we can get a more accurate estimate of CIs using a t-distribution.
+Jamovi usually does this automatically when calculating CIs outside of the distrACTION module.
 To get 95% CIs, go back to the Descriptives panel in Jamovi, then choose DBH (cm) as variable.
 Scroll down to the Statistics options and check ‘Confidence interval for Mean’ under the <strong>Mean Dispersion</strong> options, and make sure that the number in the box is 95 for 95% confidence.
 Confidence intervals will appear in the Descriptives table on the right.
 From this Descriptives table now, write the lower and upper 95% CIs below.</p>
 <p>Lower 95% CI: ________________</p>
 <p>Upper 95% CI: ________________</p>
-<p>You might have been expecting a bit more of a difference, but remember, for sufficiently large sample sizes (around N = 30), the normal and t-distributions a very similar (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>).
+<p>You might have been expecting a bit more of a difference, but remember, for sufficiently large sample sizes (around N = 30), the normal and t-distributions are very similar (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>).
 We really do not expect much of a difference until sample sizes become small, which we will see in Exercise 19.3.</p>
 </div>
 <div id="confidence-intervals-from-z--and-t-scores" class="section level2 hasAnchor" number="19.2">

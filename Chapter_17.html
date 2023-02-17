@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-12" />
+<meta name="date" content="2023-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -418,20 +418,20 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 17</span> Confidence intervals (CIs)<a href="Chapter_17.html#Chapter_17" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, we saw how it is possible to calculate the probability of sampling values from a specific interval of the normal distribution (e.g., the probability of sampling a value within 1 standard deviation of the mean).
 In this chapter, we will see how to apply this knowledge to calculating intervals that express confidence in the mean value of a population.</p>
-<p>Remember that that we almost never really know the true mean value of a <em>population</em>, <span class="math inline">\(\mu\)</span>.
-Our best estimate of <span class="math inline">\(\mu\)</span> is the mean that we have calculated from a <em>sample</em>, <span class="math inline">\(\bar{x}\)</span> (see [Chapter 4] for a review of the difference between populations and samples).
+<p>Remember that we almost never really know the true mean value of a <em>population</em>, <span class="math inline">\(\mu\)</span>.
+Our best estimate of <span class="math inline">\(\mu\)</span> is the mean that we have calculated from a <em>sample</em>, <span class="math inline">\(\bar{x}\)</span> (see <a href="Chapter_4.html#Chapter_4">Chapter 4</a> for a review of the difference between populations and samples).
 But how good of an estimate is <span class="math inline">\(\bar{x}\)</span> of <span class="math inline">\(\mu\)</span>, really?
 Since we cannot know <span class="math inline">\(\mu\)</span>, one way of answering this question is to find an interval that expresses a degree of confidence about the value of <span class="math inline">\(\mu\)</span>.
-The idea is to calculate 2 numbers that we can say with some degree confidence that <span class="math inline">\(\mu\)</span> is between (i.e., a lower confidence interval and an upper confidence interval).
+The idea is to calculate 2 numbers that we can say with some degree of confidence that <span class="math inline">\(\mu\)</span> is between (i.e., a lower confidence interval and an upper confidence interval).
 The wider this interval is, the more confident that we can be that the true mean <span class="math inline">\(\mu\)</span> is somewhere within it.
 The narrower the interval is, the less confident we can be that our confidence intervals (CIs) contain <span class="math inline">\(\mu\)</span>.</p>
 <p>Confidence intervals are notoriously easy to misunderstand.
 We will explain this verbally first, focusing on the general ideas rather than the technical details.
 Then we will present the calculations before coming back to their interpretation again.
 The idea follows a similar logic to the standard error from <a href="Chapter_12.html#Chapter_12">Chapter 12</a>.</p>
-<p>Suppose that we want to know the mean body mass of all domestic cats (Figure 16.1).
-We cannot weigh every living cat in the world, but maybe we can find enough to get a sample of 20
-From these 20 cats, we want to find some interval of weights (e.g., 3.9-4.3 kg) within which the <em>true</em> mean weight of the population is contained.
+<p>Suppose that we want to know the mean body mass of all domestic cats (Figure 17.1).
+We cannot weigh every living cat in the world, but maybe we can find enough to get a sample of 20.
+From these 20 cats, we want to find some interval of masses (e.g., 3.9-4.3 kg) within which the <em>true</em> mean mass of the population is contained.
 The only way to be 100% certain that our proposed interval <em>definitely</em> contains the true mean would be to make the interval absurdly large.
 Instead, we might more sensibly ask what the interval would need to be to contain the mean with 95% confidence.
 What does “with 95% confidence” actually mean?
@@ -461,7 +461,7 @@ Here is how they are calculated,</p>
 <p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
 <p>Note that the equations are the same, except that for the LCI, we are subtracting <span class="math inline">\(z \times SE\)</span>, and for the UCI we are adding it.
 The specific value of z determines the confidence interval that we are calculating.
-For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 16.2).
+For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 17.2).
 Hence, if we use <span class="math inline">\(z = 1.96\)</span> to calculate LCI and UCI, we would be getting 95% confidence intervals around our mean.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-83"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-83-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. A value of zero centres the x-axis, which is labelled 'z-score'." width="672" />

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-12" />
+<meta name="date" content="2023-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -418,16 +418,16 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 18</span> The t-interval<a href="Chapter_18.html#Chapter_18" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><a href="Chapter_14.html#Chapter_14">Chapter 14</a> introduced the binomial, Poisson, uniform, and normal distributions.
 In this chapter, we introduce another distribution, the t-distribution.
-Unlike the the distributions of <a href="Chapter_14.html#Chapter_14">Chapter 14</a>, the t-distribution arises from the need to make accurate statistical inferences, not from any particular kind of data (e.g., successes or failures in a binomial distribution, or events happening over time in a Poisson distribution).
+Unlike the distributions of <a href="Chapter_14.html#Chapter_14">Chapter 14</a>, the t-distribution arises from the need to make accurate statistical inferences, not from any particular kind of data (e.g., successes or failures in a binomial distribution, or events happening over time in a Poisson distribution).
 In <a href="Chapter_17.html#Chapter_17">Chapter 17</a>, we calculated confidence intervals (CIs) using the normal distribution and z-scores.
 In doing so, we made the assumption that the sample standard deviation (<span class="math inline">\(s\)</span>) was the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), <span class="math inline">\(s = \sigma\)</span>.
 In other words, we assumed that we knew what <span class="math inline">\(\sigma\)</span> was, which is almost never true.
-For large enough sample sizes (i.e., high <span class="math inline">\(N\)</span>), this is not generally a problem, but for lower sample we need to be careful.</p>
+For large enough sample sizes (i.e., high <span class="math inline">\(N\)</span>), this is not generally a problem, but for lower sample sizes we need to be careful.</p>
 <p>If there is a difference between <span class="math inline">\(s\)</span> and <span class="math inline">\(\sigma\)</span>, then our CIs will also be wrong.
 More specifically, the uncertainty between our sample estimate (<span class="math inline">\(s\)</span>) and the true standard deviation (<span class="math inline">\(\sigma\)</span>) is expected to increase the deviation of our sample mean (<span class="math inline">\(\bar{x}\)</span>) from the true mean (<span class="math inline">\(\mu\)</span>).
 This means that if we are using the <em>sample</em> standard deviation instead of the <em>population</em> standard deviation (which is pretty much always), then the shape of the standard normal distribution from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> (Figure 17.2) will be wrong.
 The correct shape will be “wider and flatter” <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, with more probability density at the extremes and less in the middle of the distribution <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>)</span>.
-What this means is that if we use z-scores when calculating CIs using <span class="math inline">\(s\)</span>, our CIS will not be wide enough, and we will think that we have more confidence in the mean than we really do.
+What this means is that if we use z-scores when calculating CIs using <span class="math inline">\(s\)</span>, our CIs will not be wide enough, and we will think that we have more confidence in the mean than we really do.
 Instead of using the standard normal distribution, we need to use a t-distribution<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
 <p>The difference between the standard normal distribution and t-distribution depends on our sample size, <span class="math inline">\(N\)</span>.
 As <span class="math inline">\(N\)</span> increases, we become more confident that the sample variance will be close to the true population variance (i.e., the deviation of <span class="math inline">\(s^{2}\)</span> from <span class="math inline">\(\sigma^{2}\)</span> decreases).
