@@ -422,11 +422,284 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_22" class="section level1 hasAnchor" number="22">
 <h1><span class="header-section-number">Chapter 22</span> <em>Practical</em>. Hypothesis testing and t-tests<a href="Chapter_22.html#Chapter_22" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This lab focuses on applying the concepts about hypothesis testing from <a href="Chapter_20.html#Chapter_20">Chapter 20</a> and the statistical tests from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> in Jamovi.
+There will be 6 exercises in total, which will focus on using t-tests and their non-parametric equivalents.
+The data for this lab focus on an example of biology and environmental sciences education (Figure 22.1<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>).
+Similar to the example in <a href="Chapter_21.html#Chapter_21">Chapter 21</a>, it uses datasets of student test scores (note that these data are entirely fictional; we have not used scores from real students).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-97"></span>
+<img src="img/teaching.jpg" alt="Decorative image showing the word 'TEACH' spelled out in dried pine needles" width="100%" />
+<p class="caption">
+Figure 22.1: The practical this week focuses on an example relevant to education. This image is in the public domain.
+</p>
+</div>
+<p>We will use test data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>) and 2023 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a>).
+To download these files, right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’.
+Variables in these datasets include student IDs and scores from 3 different tests.</p>
 <div id="exercise-on-a-simple-one-sample-t-test" class="section level2 hasAnchor" number="22.1">
 <h2><span class="header-section-number">22.1</span> Exercise on a simple one sample t-test<a href="Chapter_22.html#exercise-on-a-simple-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First we will consider test data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>).
+These data are shown below, but you should be able to download the file in the link above.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-99">Table 22.1: </span>Student test scores from 2022.</caption>
+<thead>
+<tr class="header">
+<th align="left">ID</th>
+<th align="left">Test_1</th>
+<th align="left">Test_2</th>
+<th align="left">Test_3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">202201</td>
+<td align="left">46.9</td>
+<td align="left">58.1</td>
+<td align="left">56.2</td>
+</tr>
+<tr class="even">
+<td align="left">202202</td>
+<td align="left">65.0</td>
+<td align="left">72.4</td>
+<td align="left">77.1</td>
+</tr>
+<tr class="odd">
+<td align="left">202203</td>
+<td align="left">41.1</td>
+<td align="left">53.0</td>
+<td align="left">56.0</td>
+</tr>
+<tr class="even">
+<td align="left">202204</td>
+<td align="left">59.1</td>
+<td align="left">62.5</td>
+<td align="left">63.1</td>
+</tr>
+<tr class="odd">
+<td align="left">202205</td>
+<td align="left">47.6</td>
+<td align="left">63.0</td>
+<td align="left">56.3</td>
+</tr>
+<tr class="even">
+<td align="left">202206</td>
+<td align="left">38.0</td>
+<td align="left">41.5</td>
+<td align="left">56.3</td>
+</tr>
+<tr class="odd">
+<td align="left">202207</td>
+<td align="left">52.9</td>
+<td align="left">66.4</td>
+<td align="left">56.1</td>
+</tr>
+<tr class="even">
+<td align="left">202208</td>
+<td align="left">73.1</td>
+<td align="left">79.9</td>
+<td align="left">56.9</td>
+</tr>
+<tr class="odd">
+<td align="left">202209</td>
+<td align="left">67.9</td>
+<td align="left">78.1</td>
+<td align="left">57.6</td>
+</tr>
+<tr class="even">
+<td align="left">202210</td>
+<td align="left">38.6</td>
+<td align="left">41.8</td>
+<td align="left">58.2</td>
+</tr>
+<tr class="odd">
+<td align="left">202211</td>
+<td align="left">58.9</td>
+<td align="left">67.3</td>
+<td align="left">59.8</td>
+</tr>
+<tr class="even">
+<td align="left">202212</td>
+<td align="left">69.0</td>
+<td align="left">70.9</td>
+<td align="left">57.9</td>
+</tr>
+<tr class="odd">
+<td align="left">202213</td>
+<td align="left">73.5</td>
+<td align="left">84.6</td>
+<td align="left">58.5</td>
+</tr>
+<tr class="even">
+<td align="left">202214</td>
+<td align="left">58.7</td>
+<td align="left">67.2</td>
+<td align="left">79.4</td>
+</tr>
+<tr class="odd">
+<td align="left">202215</td>
+<td align="left">41.1</td>
+<td align="left">41.2</td>
+<td align="left">56.4</td>
+</tr>
+<tr class="even">
+<td align="left">202216</td>
+<td align="left">50.8</td>
+<td align="left">63.3</td>
+<td align="left">57.3</td>
+</tr>
+<tr class="odd">
+<td align="left">202217</td>
+<td align="left">62.3</td>
+<td align="left">69.0</td>
+<td align="left">57.6</td>
+</tr>
+<tr class="even">
+<td align="left">202218</td>
+<td align="left">52.2</td>
+<td align="left">55.7</td>
+<td align="left">59.2</td>
+</tr>
+<tr class="odd">
+<td align="left">202219</td>
+<td align="left">54.3</td>
+<td align="left">63.9</td>
+<td align="left">56.7</td>
+</tr>
+<tr class="even">
+<td align="left">202220</td>
+<td align="left">54.3</td>
+<td align="left">63.4</td>
+<td align="left">56.5</td>
+</tr>
+<tr class="odd">
+<td align="left">202221</td>
+<td align="left">32.1</td>
+<td align="left">50.5</td>
+<td align="left">57.8</td>
+</tr>
+</tbody>
+</table>
+<p>Open this dataset in Jamovi.
+Before doing any analysis, compute a new column of data called ‘Overall’ that is each student’s mean test score.
+To do this, double click on the fifth column of data, then when a new panel opens up, choose ‘NEW COMPUTED VARIABLE’ from the list of available options.
+Your input should like Figure 22.2.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-100"></span>
+<img src="img/jamovi_students_overall.png" alt="Jamovi interface is shown with a new computed variable and the formula for calculating the mean of test scores in the function box." width="100%" />
+<p class="caption">
+Figure 22.2: The Jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
+</p>
+</div>
+<p>After calculating the overall grade for each student, find the sample size (N), overall sample mean (<span class="math inline">\(\bar{x}\)</span>), and sample standard deviation (<span class="math inline">\(s\)</span>).
+Report these below.</p>
+<p>N: __________________</p>
+<p><span class="math inline">\(\bar{x}\)</span>: _______________</p>
+<p><span class="math inline">\(s\)</span>: ___________________</p>
+<p>Suppose that you have been told that the national average of overall student test scores in classes like yours is <span class="math inline">\(\mu = 60.1\)</span>.
+A concerned colleague approaches you and expresses concern that your test scores are lower than the national average.
+You decide to test whether or not your students’ scores are lower than the national average.
+What kind(s) of statistical test would be most appropriate to use in this case, and what is the null hypothesis (<span class="math inline">\(H_{0}\)</span>) of the test?</p>
+<p>Test to use: ___________________________</p>
+<p><span class="math inline">\(H_{0}\)</span>: _______________________</p>
+<p>What is the alternative hypothesis (<span class="math inline">\(H_{A}\)</span>), and should you use a one or two-tailed test?</p>
+<p><span class="math inline">\(H_{A}\)</span>: _______________________</p>
+<p>One or two tailed? __________________________</p>
+<p>To test if the mean of student scores in your class is significantly different from <span class="math inline">\(\mu = 60.1\)</span> (technically, that your student’s scores were sampled from a population with a lower mean than 60.1), we might use a one-tailed, one sample t-test.
+Recall from <a href="Chapter_21.html#assumptions-of-t-tests">Chapter 21.4</a> the assumptions underlying a t-test:</p>
+<ul>
+<li>Data are continuous (i.e., not count or categorical data)</li>
+<li>Sample observations are a random sample from the population</li>
+<li>Sample means are normally distributed around the true mean</li>
+</ul>
+<p>We will first focus on the first and third assumption.
+First, the sample data are indeed continuous.
+Are the sample means normally distriubted around the true mean?
+A sufficient condition to fulfil this assumption is if the sample data are normally distributed <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>.
+We can test whether or not the overall mean student scores are normally distributed.
+In the Jamovi toolbar, find the button that says ‘T-Tests’ (second from the left), then choose ‘One Sample T-test’ from the pulldown menu.
+A new window will open up.
+In a one sample t-test, there is only 1 dependent variable, which in this case is ‘Overall’.
+Move the variable ‘Overall’ to the Dependent Variables box with the right arrow.
+Below the boxes, find the checkbox options under ‘<strong>Asumption Checks</strong>’.
+Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-101"></span>
+<img src="img/jamovi_one_sample_t-test.png" alt="Jamovi interface is shown with a panel of 4 columns of data to the left and the interface for a One Sample T-Test to the right." width="100%" />
+<p class="caption">
+Figure 22.3: The Jamovi interface for running a one sample t-test (right hand side). The variable ‘Overall’ has been brought in the Dependent Variables box, and two different options have been selected to check the assumption of normality (a normality hypothesis test and a Q-Q plot).
+</p>
+</div>
+<p>After checking the box for ‘Normality test’ and ‘Q-Q Plot’, new output will appear in the panel on the right hand side.
+The first output is a table showing the results a Shapiro-Wilk test.
+The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk to see if the assumptions of the t-test are violated nor not).
+If we reject the null hypothesis, then we will conclude that the data are normally distributed.
+If we do not reject the null hypothesis, then we will will assume that the data are normally distributed.
+From the Normality Test table, what is the p-value if the Shapiro-Wilk test?</p>
+<p>P = _____________________</p>
+<p>Based on this p-value, should we reject the null hypothesis? ______________</p>
+<p>Now have a look at the Q-Q plot.
+We will learn about the details of this plot later in the semester, but for now, you just need to know that this plot can be used to assess whether or not the data are normally distributed.
+If the data are normally distributed, then the points in the Q-Q plot should fall roughly along the diagonal black line.
+These plots take some practice to read and interpret, but for now, just have a look at the Q-Q plot and think about how it relates to the results of the Shapiro-Wilk test of normality.
+It might be useful to plot a histogram of the overall scores too in order to judge whether or not they are normally distributed (most researchers will use both a visual inspection of the data and a normality test to evaluate whether or not the assumption of normality is satisfied)</p>
+<p>Assuming that we have not rejected our null hypothesis, we can proceed with our one sample t-test.
+To do this, make sure the variable ‘Overall’ is still in the Dependent Variables box, then make sure the check box ‘Student’s’ is checked below <strong>Tests</strong>.
+Underneath <strong>Hypothesis</strong>, change the test value to 60.1 (because <span class="math inline">\(\mu = 60.1\)</span>) and put the radio button to ‘&lt; Test value’ to test the null hypothesis that the mean overall score of students is the same as <span class="math inline">\(\mu\)</span> against the alternative hypothesis that it is less than <span class="math inline">\(\mu\)</span>.
+On the right panel of Jamovi, you will see a table with the t-statistic, degrees of freedom, and p-value of the one sample t-test.
+Write these values down below.</p>
+<p>t-statistic: _________________</p>
+<p>degrees of freedom: __________________</p>
+<p>p-value: ____________________</p>
+<p>Based on the p-value, should you reject the null hypothesis that your students mean overall grade is the same as the national average? Why or why not?</p>
+<pre><code>
+
+
+</code></pre>
+<p>Based on this test, how would you respond to your colleague who is concerned that your students are performing below the national average?</p>
+<pre><code>
+
+
+
+
+
+</code></pre>
+<p>Consider again the three assumptions of the t-test listed above.
+Is there an assumption that might be particularly suspect when comparing the scores of students in a single classroom with a national average? Why or why not?</p>
+<pre><code>
+
+
+
+
+
+</code></pre>
+<p>We will now test whether students in this dataset improved their test scores from Test 1 to Test 2.</p>
 </div>
 <div id="exercise-on-an-independent-sample-t-test" class="section level2 hasAnchor" number="22.2">
 <h2><span class="header-section-number">22.2</span> Exercise on an independent sample t-test<a href="Chapter_22.html#exercise-on-an-independent-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose we want to test whether or not students in this dataset improved their grades from Test 1 to Test 2.
+In this case, we are interested in the variables ‘Test_1’ and ‘Test_2’, but we are not just interested in whether or not the means of the two test scores are the same.
+Instead, we want to know if the scores of individual students increased or not.
+The data are therefore naturally paired.
+Each test score belongs to a unique student, and each student has a score for Test 1 and Test 2.
+To test whether or not there has been an increase in test scores, go to the ‘T-Tests’ button in the Jamovi toolbar and select ‘Paired Samples T-Test’ from the pulldown menu.
+Place ‘Test_1’ in the Paired Variables box first, followed by ‘Test_2’.
+Jamovi will interpret the first variable placed in the box as ‘Measure 1’, and the second variable placed in the box as ‘Measure 2’.
+Before looking at any test results, first check to see if the difference between Test 1 and Test 2 scores is normally distributed using the same <strong>Assumption Checks</strong> as in the previous exercise.
+Is there any reason to believe that the data are not normally distributed?</p>
+<pre><code>
+</code></pre>
+<p>We want to know if student grades have improved.
+What is the null hypothesis (<span class="math inline">\(H_{0}\)</span>) and alternative hypothesis (<span class="math inline">\(H_{A}\)</span>) in this case?</p>
+<p><span class="math inline">\(H_{0}\)</span>: _____________________</p>
+<p><span class="math inline">\(H_{A}\)</span>: _____________________</p>
+<p>To test the null hypothesis against the appropriate alternative hypothesis, select the radio button ‘Measure 1 &lt; Measure 2’.
+As with the one sample t-test, on the right panel of Jamovi, you will see a table with the t-statistic, degrees of freedom, and p-value of the one sample t-test.
+Write these values down below.</p>
+<p>t-statistic: _________________</p>
+<p>degrees of freedom: __________________</p>
+<p>p-value: ____________________</p>
+<p>Based on this p-value, should you reject or fail to reject your null hypothesis?
+What can you then conclude about student test scores?</p>
+<pre><code>
+</code></pre>
+<p>Next, we will consider a case in which the assumption of normality is violated.</p>
 </div>
 <div id="exercise-involving-multiple-comparisons" class="section level2 hasAnchor" number="22.3">
 <h2><span class="header-section-number">22.3</span> Exercise involving multiple comparisons<a href="Chapter_22.html#exercise-involving-multiple-comparisons" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -442,6 +715,21 @@ div.csl-indent {
 
 
 
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Johnson1995" class="csl-entry">
+Johnson, Douglas H. 1995. <span>“<span class="nocase">Statistical sirens: The allure of nonparametrics</span>.”</span> <em>Ecology</em> 76 (6): 1998–2000.
+</div>
+<div id="ref-Lumley2002" class="csl-entry">
+Lumley, Thomas, Paula Diehr, Scott Emerson, and Lu Chen. 2002. <span>“<span class="nocase">The importance of the normality assumption in large public health data sets</span>.”</span> <em>Annual Review of Public Health</em> 23: 151–69. <a href="https://doi.org/10.1146/annurev.publheath.23.100901.140546">https://doi.org/10.1146/annurev.publheath.23.100901.140546</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="40">
+<li id="fn40"><p>This figure has been released into the <a href="https://commons.wikimedia.org/wiki/File:Teach_in_pine_needles.jpg">Public Domain</a>.<a href="Chapter_22.html#fnref40" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
