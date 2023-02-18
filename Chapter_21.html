@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-17" />
+<meta name="date" content="2023-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -311,7 +311,9 @@ div.csl-indent {
 <li class="chapter" data-level="21.5" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternatives"><i class="fa fa-check"></i><b>21.5</b> Non-parametric alternatives</a>
 <ul>
 <li class="chapter" data-level="21.5.1" data-path="Chapter_21.html"><a href="Chapter_21.html#wilcoxon-test"><i class="fa fa-check"></i><b>21.5.1</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="21.5.2" data-path="Chapter_21.html"><a href="Chapter_21.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>21.5.2</b> Mann-Whitney U test</a></li>
 </ul></li>
+<li class="chapter" data-level="21.6" data-path="Chapter_21.html"><a href="Chapter_21.html#summary-3"><i class="fa fa-check"></i><b>21.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="Chapter_22.html"><a href="Chapter_22.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
@@ -392,7 +394,11 @@ div.csl-indent {
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
 <li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
-<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="appendixC_tables.html"><a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values"><i class="fa fa-check"></i><b>C.1</b> Wilcoxon signed rank critical values</a></li>
+<li class="chapter" data-level="C.2" data-path="appendixC_tables.html"><a href="appendixC_tables.html#mann-whitney-u-critical-values"><i class="fa fa-check"></i><b>C.2</b> Mann-Whitney U critical values</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -668,24 +674,271 @@ Using the log or the square-root of a set of numbers is perfectly fine if it hel
 <div id="non-parametric-alternatives" class="section level2 hasAnchor" number="21.5">
 <h2><span class="header-section-number">21.5</span> Non-parametric alternatives<a href="Chapter_21.html#non-parametric-alternatives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If we find that the assumption of normality is not satisfied, and a transformation of the data cannot help, then we can consider using non-parametric alternatives to a t-test.
-These alternatives include the Wilcoxon test and the Mann Whitney test.</p>
+These alternatives include the Wilcoxon test and the Mann-Whitney U test.</p>
 <div id="wilcoxon-test" class="section level3 hasAnchor" number="21.5.1">
 <h3><span class="header-section-number">21.5.1</span> Wilcoxon test<a href="Chapter_21.html#wilcoxon-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Wilcoxon test (also called the Wilcoxon signed-rank test) is the non-parametric alternative to a one sample t-test (or a paired t-test).
 Instead of using the actual data, the Wilcoxon test ranks all of the values in the dataset, then sums up their signs (either positive or negative).
 The general idea is that we can compare the sum of the <em>ranks</em> of the actual data with what would be predicted by the null hypothesis.
+It tests the null hypothesis that the <em>median</em> (<span class="math inline">\(M\)</span>) is significantly different from some given value<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.
 An example will make it easier to see how it works.
 We can use the same hypothetical dataset on student test scores.</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
-<p>The first step is to subtract the sample mean <span class="math inline">\(\bar{y} = 66.58\)</span> from each value (<span class="math inline">\(49.3 - 66.58 = 17.28\)</span>, <span class="math inline">\(62.9 - 66.58 = -3.68\)</span>, etc.).</p>
-<pre><code>-17.28, -3.68, 7.12, -1.08, 3.02, 4.12, -5.08, 6.82, -5.48, 11.52</code></pre>
+<p>The first step is to subtract the null hypothesis value (<span class="math inline">\(M = 60\)</span>, if we again set <span class="math inline">\(H_{0}\)</span> to be that student test scores equal 60) from each value (<span class="math inline">\(49.3 - 60 = -10.7\)</span>, <span class="math inline">\(62.9 - 60 = 2.9\)</span>, etc.).</p>
+<pre><code>-10.7, 2.9, 13.7, 5.5, 9.6, 10.7, 1.5, 13.4, 1.1, 18.1</code></pre>
 <p>We need to note the sign of each value as negative (<span class="math inline">\(-\)</span>) or positive (<span class="math inline">\(+\)</span>).</p>
-<pre><code>-, -, +, -, +, +, -, +, -, +</code></pre>
-<p>Next, we need to compute the absolute values of the numbers (i.e., <span class="math inline">\(|-17.28| = 17.28\)</span>, <span class="math inline">\(|-3.68| = 3.68\)</span>, <span class="math inline">\(|7.12| = 7.12\)</span>, etc.).</p>
-<pre><code>17.28, 3.68, 7.12, 1.08, 3.02, 4.12, 5.08, 6.82, 5.48, 11.52</code></pre>
+<pre><code>-, +, +, +, +, +, +, +, +, +</code></pre>
+<p>Next, we need to compute the absolute values of the numbers (i.e., <span class="math inline">\(|-10.7| = 10.7\)</span>, <span class="math inline">\(|2.9| = 2.9\)</span>, <span class="math inline">\(|13.7| = 13.7\)</span>, etc.).</p>
+<pre><code>10.7, 2.9, 13.7, 5.5, 9.6, 10.7, 1.5, 13.4, 1.1, 18.1</code></pre>
 <p>We then rank these values from lowest to highest and record the sign of each value.</p>
-<pre><code>10,  3,  8,  1,  2,  4,  5,  7,  6,  9</code></pre>
+<pre><code>6.5, 3.0, 9.0, 4.0, 5.0, 6.5, 2.0, 8.0, 1.0, 10.0</code></pre>
+<p>Note that both the first and sixth position had the same value (10.7), so instead of ranking them as 6 and 7, we split the difference and rank both as 6.5.
+Now, we can calculate the sum of the negative ranks (<span class="math inline">\(W^{-}\)</span>), and the positive ranks <span class="math inline">\(W^{+}\)</span>.
+In this case, the negative ranks are easy; there is only one value (the first one), so the sum is just 6.5,</p>
+<p><span class="math display">\[W^{-} = 6.5\]</span></p>
+<p>The positive values are 2-10, so we need to sum these ranks now,</p>
+<p>The positive ranks are in positions , and the rank values in these positions are 8, 2, 4, 7, and 9.
+The sum of our positive ranks is therefore,</p>
+<p><span class="math display">\[W^{+} = 3.0 + 9.0 + 4.0 + 5.0 + 6.5 + 2.0 + 8.0 + 1.0 + 10.0 = 48.5\]</span></p>
+<p>Note that the sum of <span class="math inline">\(W^{-}\)</span> and <span class="math inline">\(W^{+}\)</span> (i.e., 6.5 + 48.5 = 55 in the example here) must always equal for a given sample size <span class="math inline">\(N\)</span> (in this case, <span class="math inline">\(N = 10\)</span>),</p>
+<p><span class="math display">\[W = \frac{N \left(N + 1 \right)}{2}.\]</span></p>
+<p>What the Wilcoxon test is doing is calculating the probability of getting a value of <span class="math inline">\(W^{+}\)</span> as or more extreme than would be the case if the null hypothesis is true.
+Note that if, e.g., if there are an equal number of values above and below the median, then both <span class="math inline">\(W^{-}\)</span> and <span class="math inline">\(W^{+}\)</span> will be relatively low and about the same value.
+This is because the ranks of the values below 0 (which we times by -1) and above 0 (which we times by 1) will be about the same.
+But if there are a lot more values above the median than expected (as with the example above), then <span class="math inline">\(W^{+}\)</span> will be relatively high.
+And if there are a lot more values below the median than expected, then <span class="math inline">\(W^{+}\)</span> will be relatively low.</p>
+<p>To find the probability of <span class="math inline">\(W^{+}\)</span> being as low or high as it is given that the null hypothesis is true (i.e., a p-value), we need to compare the test statistic <span class="math inline">\(W^{+}\)</span> to its distribution under the null hypothesis (note that we can also conduct a one-tailed hypothesis, in which case we are testing if <span class="math inline">\(W^{+}\)</span> is either higher or lower than expected given <span class="math inline">\(H_{0}\)</span>).
+The old way of doing this is to compare the calculated <span class="math inline">\(W^{+}\)</span> threshold values from a <a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values">Wilcoxon Signed-Ranks Table</a>.
+The critical value table is no longer necessary, and statistical software such as Jamovi and R will calculate a p-value for us.
+For the example above, the p-value associated with <span class="math inline">\(W^{+} = 48.6\)</span> and <span class="math inline">\(N = 10\)</span> is <span class="math inline">\(P = 0.037\)</span>.
+Since this p-value is less than our threshold of <span class="math inline">\(\alpha = 0.05\)</span>, we can reject the null hypothesis and conclude that the median of our dataset is significantly different from 60.</p>
+<p>Note that we can also use a Wilcoxon signed rank test as a non-parametric equivalent to a paired t-test.
+In this case, instead of subtracting out the null hypothesis of our median value (e.g., <span class="math inline">\(H_{0}: M = 60\)</span> in the example above), we just need to subtract the paired values.
+Consider again the example of the 2 different tests introduced for the <a href="Chapter_21.html#paired-sample-t-test">paired sample t-test</a> above.</p>
+<table>
+<caption>Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">S1</th>
+<th align="right">S2</th>
+<th align="right">S3</th>
+<th align="right">S4</th>
+<th align="right">S5</th>
+<th align="right">S6</th>
+<th align="right">S7</th>
+<th align="right">S8</th>
+<th align="right">S9</th>
+<th align="right">S10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Test 1</td>
+<td align="right">49.3</td>
+<td align="right">62.9</td>
+<td align="right">73.7</td>
+<td align="right">65.5</td>
+<td align="right">69.6</td>
+<td align="right">70.7</td>
+<td align="right">61.5</td>
+<td align="right">73.4</td>
+<td align="right">61.1</td>
+<td align="right">78.1</td>
+</tr>
+<tr class="even">
+<td align="left">Test 2</td>
+<td align="right">46.6</td>
+<td align="right">62.7</td>
+<td align="right">73.8</td>
+<td align="right">58.3</td>
+<td align="right">66.8</td>
+<td align="right">69.7</td>
+<td align="right">64.5</td>
+<td align="right">71.3</td>
+<td align="right">64.5</td>
+<td align="right">78.8</td>
+</tr>
+<tr class="odd">
+<td align="left">Change</td>
+<td align="right">-2.7</td>
+<td align="right">-0.2</td>
+<td align="right">0.1</td>
+<td align="right">-7.2</td>
+<td align="right">-2.8</td>
+<td align="right">-1.0</td>
+<td align="right">3.0</td>
+<td align="right">-2.1</td>
+<td align="right">3.4</td>
+<td align="right">0.7</td>
+</tr>
+</tbody>
+</table>
+<p>If the ‘Change’ values were not normally distributed, then we could apply a Wilcoxon test to test the null hypothesis that the median value of <span class="math inline">\(Test\:2 - Test\:1 = 0\)</span> (note that a Shapiro-Wilk normality does not reject the null hypothesis that the difference between test scores is normally distributed, so the paired t-test would be preferred in this case).
+To do this, we would first note the sign of each value as negative or positive.</p>
+<pre><code>-, -, +, -, -, -, +, -, +, +</code></pre>
+<p>Next, we would rank the absolute values of the changes.</p>
+<pre><code>6, 2, 1, 10, 7, 4, 8, 5, 9, 3</code></pre>
+<p>If we then sum the ranks, we get <span class="math inline">\(W^{-} = 6 + 2 + 4 + 5 + 6 + 8 = 31\)</span> and <span class="math inline">\(W^{+} = 1 + 8 + 9 + 3 = 21\)</span>.
+The p-value associated with <span class="math inline">\(W^{+} = 21\)</span> and <span class="math inline">\(N = 10\)</span> is <span class="math inline">\(P = 0.55\)</span>, so we do not reject the null hypothesis that Test 1 and Test 2 have the same median.</p>
 </div>
+<div id="mann-whitney-u-test" class="section level3 hasAnchor" number="21.5.2">
+<h3><span class="header-section-number">21.5.2</span> Mann-Whitney U test<a href="Chapter_21.html#mann-whitney-u-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A non-parametric alternative of the independent samples t-test is the Mann-Whitney U test.
+That is, a Mann-Whitney test can be used if we want to know whether the median of two independent groups is significantly different.
+Like the Wilcoxon test, the Mann-Whitney U test uses the ranks of values, rather than the values themselves.
+In the Mann-Whitney U test, the general idea is rank all of the data across both groups, then see if the sum of the ranks is significantly different <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+To demonstrate this, we can again consider the same hypothetical dataset used when demonstrating the <a href="Chapter_21.html#independent-samples-t-test">independent samples t-test</a> above.
+Test scores from the current year (<span class="math inline">\(y_{1}\)</span>) are below.</p>
+<pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
+<p>We want to know if the median of the above scores is significantly different from the median scores in the previous year (<span class="math inline">\(y_{2}\)</span>) shown below.</p>
+<pre><code>57.4, 52.4, 70.5, 71.6, 46.1, 60.4, 70.0, 64.5, 58.8</code></pre>
+<p>There are 19 values in total, 10 values for <span class="math inline">\(y_{1}\)</span> and 9 values for <span class="math inline">\(y_{2}\)</span>.
+We therefore rank <em>all</em> of the above values from 1 to 19.
+For <span class="math inline">\(y_{1}\)</span>, the ranks are below.</p>
+<pre><code>2, 9, 18, 11, 12, 15, 8, 17, 7, 19</code></pre>
+<p>For <span class="math inline">\(y_{2}\)</span>, the ranks are below.</p>
+<pre><code>4, 3, 14, 16, 1, 6, 13, 10, 5</code></pre>
+<p>This might be easier to see if we present it as a table showing the test Year (<span class="math inline">\(y_{1}\)</span> versus <span class="math inline">\(y_{2}\)</span>), test Score, and test Rank.</p>
+<table>
+<caption>Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.</caption>
+<thead>
+<tr class="header">
+<th align="right">Year</th>
+<th align="right">Score</th>
+<th align="right">Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">49.3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">62.9</td>
+<td align="right">9</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">73.7</td>
+<td align="right">18</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">65.5</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">69.6</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">70.7</td>
+<td align="right">15</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">61.5</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">73.4</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">61.1</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">78.1</td>
+<td align="right">19</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">57.4</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">52.4</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">70.5</td>
+<td align="right">14</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">71.6</td>
+<td align="right">16</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">46.1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">60.4</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">70.0</td>
+<td align="right">13</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">64.5</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">58.8</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p>What we need to now is sum the ranks for <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>.
+If we add up the <span class="math inline">\(y_{1}\)</span> ranks, then we get a value of <span class="math inline">\(R_{1}=\)</span> 118.
+If we add up the <span class="math inline">\(y_{2}\)</span> ranks, then we get a value of <span class="math inline">\(R_{2}=\)</span> 72.
+We can then calculate a value <span class="math inline">\(U_{1}\)</span> from <span class="math inline">\(R_{1}\)</span> and the sample size of <span class="math inline">\(y_{1}\)</span> (<span class="math inline">\(N_{1}\)</span>),</p>
+<p><span class="math display">\[U_{1} = R_{1} - \frac{N_{1}\left(N_{1} + 1 \right)}{2}.\]</span></p>
+<p>In the case of our example, <span class="math inline">\(R_{1}=\)</span> 118 and <span class="math inline">\(N_{1} = 10\)</span>,
+We therefore calculate <span class="math inline">\(U_{1}\)</span>,</p>
+<p><span class="math display">\[U_{1} = 118 - \frac{10\left(10 + 1 \right)}{2} = 63.\]</span></p>
+<p>We then calculate <span class="math inline">\(U_{2}\)</span> using the same general formula,</p>
+<p><span class="math display">\[U_{2} = R_{2} - \frac{N_{2}\left(N_{2} + 1 \right)}{2}.\]</span></p>
+<p>From the above example of test scores,</p>
+<p><span class="math display">\[U_{2} = 72 - \frac{9\left(9 + 1 \right)}{2} = 27.\]</span></p>
+<p>Whichever of <span class="math inline">\(U_{1}\)</span> or <span class="math inline">\(U_{2}\)</span> is lower<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a> is set to <span class="math inline">\(U\)</span>, so for our example, <span class="math inline">\(U = 27\)</span>.
+Note that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have similar medians, then <span class="math inline">\(U\)</span> will be relatively low.
+But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have much different medians, then <span class="math inline">\(U\)</span> will be relatively high.
+One way to think about this is that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very different, then one of the two samples should have very low ranks, and the other should have very high ranks <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very similar, then their summed ranks should be nearly the same.
+Hence, if the deviation of <span class="math inline">\(U\)</span> is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are identical, the we can reject <span class="math inline">\(H_{0}\)</span>.</p>
+<p>As with the <a href="Chapter_21.html#wilcoxon-test">Wilcoxon test</a>, we could compare our <span class="math inline">\(U\)</span> test statistic to a critical value from a <a href="appendixC_tables.html#mann-whitney-u-critical-values">table</a>, but statistical software such as Jamovi or R will also just give us the test statistic <span class="math inline">\(U\)</span> and associated p-value.
+In our example above, <span class="math inline">\(U = 27\)</span>, <span class="math inline">\(N_{1} = 10\)</span>, and <span class="math inline">\(N_{2} = 9\)</span> has a p-value of <span class="math inline">\(P = 0.156\)</span>, so we do not reject the null hypothesis.
+We therefore conclude that there is no evidence that there is a difference in the median test scores of the two years.</p>
+</div>
+</div>
+<div id="summary-3" class="section level2 hasAnchor" number="21.6">
+<h2><span class="header-section-number">21.6</span> Summary<a href="Chapter_21.html#summary-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The main focus of this chapter was to provide a conceptual explanation of different statistical tests.
+In practice, running these tests is relatively straightforward in statistical software such as Jamovi or R (this is good, as long as the tests are understood and interpreted correctly).
+In general, the first step in approaching these tests is to determine if the data call for a one sample test, an independent samples test, or a paired samples test.
+In a one sample test, the objective is to test the null hypothesis that the mean (or median) equals a specific value.
+In an independent samples test, there are two different groups, and the objective is to test the null hypothesis that the groups have the same mean (or median).
+In a paired samples test, there are two groups, but individual values are naturally paired between each group, and the objective is to test the null hypothesis that the difference between paired values is zero<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.
+If assumptions of the t-test are violated, then it might be necessary to use a data transformation or a non-parametric test such as the Wilcoxon test (in place of a one sample or paired sample t-test) or a Mann-Whitney U test (in place of an independent samples t-test).</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -718,6 +971,9 @@ Welch, B. L. 1938. <span>“<span class="nocase">The Significance of the Differe
 <li id="fn34"><p>This is not a calculation that needs to be done by hand anymore. Statistical software such as Jamovi or R will calculate <span class="math inline">\(s_{p}\)</span> automatically from a dataset. For those interested, the formula that it uses to make this calculation is, <span class="math display">\[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\]</span> This looks like a lot, but really all the equation is doing is add the two variances (<span class="math inline">\(s^{2}_{y_{1}}\)</span> and <span class="math inline">\(s^{2}_{y_{2}}\)</span>) together, but weighing them by their degrees of freedom (<span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span>), so that the one with a higher sample size has more influence on the pooled standard deviation. To get <span class="math inline">\(SE(\bar{y})\)</span>, we then need to multiply by the square root of <span class="math inline">\((n_{1} + n_{2})/(n_{1}n_{2})\)</span>, <span class="math display">\[SE(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\]</span> It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by Jamovi or R.<a href="Chapter_21.html#fnref34" class="footnote-back">↩︎</a></p></li>
 <li id="fn35"><p>Note that the degrees of freedom for the t-statistic is not straightforward when we pool variances. If the sample sizes <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> are the same, then <span class="math inline">\(df = 2(n - 1)\)</span>. If <span class="math inline">\(n_{1} \neq n_{2}\)</span>, then <span class="math inline">\(df = n_{1} + n_{2} - 2\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The rationale here is that we lose an extra degree of freedom if we need to estimate the variance of each sample separately, which is necessary if we need to weigh each variance by its own degree of freedom (see footnote 34). Statistical software such as Jamovi and R handles all of this automatically, so we will not dwell on it here.<a href="Chapter_21.html#fnref35" class="footnote-back">↩︎</a></p></li>
 <li id="fn36"><p>The equation for calculating the Welch’s t-statistic is actually a bit simpler than the Student’s t-test that uses the pooled estimate <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>. Instead of using <span class="math inline">\(s_{p}\)</span> (defined in footnote 34), we define our t-statistic as, <span class="math display">\[t_{s} = \frac{\bar{y}_{1} - \bar{y}_{2}}{ \sqrt{ \frac{s^{2}_{1}}{n_{1}} + \frac{s^{2}_{2}}{n_{2}}} }.\]</span> The degrees of freedom, however, is quite a bit messier than it is for the independent samples Student’s t-test, <span class="math display">\[v = \frac{\left(\frac{1}{n_{1}} + \frac{(s^{2}_{2} / s^{2}_{1})}{n_{2}} \right)^{2}}{\frac{1}{n^{2}_{1}\left(n_{1} - 1 \right)} + \frac{(s^{2}_{2} / s^{2}_{1})^{2}}{n^{2}_{2}\left(n_{2} - 1 \right)}}.\]</span> Of course, Jamovi and R will make these calculations for us, so it is not necessary to do it by hand.<a href="Chapter_21.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>Actually, the Wilcoxon signed-rank test technically tests the null hypothesis that two distributions are identical, not just that the medians are identical <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>. Note that if one distribution has a higher variance than another, or is differently skewed, it will also affect the ranks. In other words, if we want to compare medians, then we need to assume that the distributions have the same shape <span class="citation">(<a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>. Because of this, and because the central limit theorem ensures that means will be normally distributed given a sufficiently high sample size (in which case, t-test assumptions are more likely to be satisfied), some researchers suggest that nonparametric statistics such as the Wilcoxon signed rank test should be used with caution <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>)</span>.<a href="Chapter_21.html#fnref37" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>Note that you could also take the higher of the two values <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, which is what R uses (Jamovi uses the lower of the two). The null distribution from which the p-value would be calculate would just be different in this case.<a href="Chapter_21.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn39"><p>Note, you could also test the null hypothesis that the difference between paired values is some value other than zero, but this is quite rare in practice.<a href="Chapter_21.html#fnref39" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

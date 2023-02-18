@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-17" />
+<meta name="date" content="2023-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -311,7 +311,9 @@ div.csl-indent {
 <li class="chapter" data-level="21.5" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternatives"><i class="fa fa-check"></i><b>21.5</b> Non-parametric alternatives</a>
 <ul>
 <li class="chapter" data-level="21.5.1" data-path="Chapter_21.html"><a href="Chapter_21.html#wilcoxon-test"><i class="fa fa-check"></i><b>21.5.1</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="21.5.2" data-path="Chapter_21.html"><a href="Chapter_21.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>21.5.2</b> Mann-Whitney U test</a></li>
 </ul></li>
+<li class="chapter" data-level="21.6" data-path="Chapter_21.html"><a href="Chapter_21.html#summary-3"><i class="fa fa-check"></i><b>21.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="Chapter_22.html"><a href="Chapter_22.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
@@ -392,7 +394,11 @@ div.csl-indent {
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
 <li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
-<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="appendixC_tables.html"><a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values"><i class="fa fa-check"></i><b>C.1</b> Wilcoxon signed rank critical values</a></li>
+<li class="chapter" data-level="C.2" data-path="appendixC_tables.html"><a href="appendixC_tables.html#mann-whitney-u-critical-values"><i class="fa fa-check"></i><b>C.2</b> Mann-Whitney U critical values</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -444,43 +450,55 @@ div.csl-indent {
 </tr>
 <tr class="even">
 <td><strong>Lectures</strong></td>
-<td>5.1: CIs</td>
+<td>5.1: Some background for confidence intervals (6:36 min; <a href="https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f56a623e-1d54-4aea-b310-af9e00c2e8c5">Video</a>)</td>
 </tr>
 <tr class="odd">
 <td></td>
-<td>5.2: The t-interval</td>
+<td>5.2: Recap of z-scores (10:47 min; <a href="https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b1e79c1d-e0ad-4048-930b-af9e00c44b35">Video</a>)</td>
 </tr>
 <tr class="even">
+<td></td>
+<td>5.3: Confidence interval for the population mean (14:08 min <a href="https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ea812a85-4a03-4d15-9812-af9e00c6a55e">Video</a>)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>5.4: The t-interval (10:24 min; <a href="https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1972834b-3c22-4ab1-aea4-af9e00c8995f">Video</a>)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>5.5: Confidence interval for the population proportion (6:37 min; <a href="https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f3fcb762-1002-42ea-b949-afa5011f98a1">Video</a>)</td>
+</tr>
+<tr class="odd">
 <td><strong>Practical</strong></td>
 <td>z- and t- intervals (<a href="Chapter_19.html#Chapter_19">Chapter 19</a>)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>Room: Cottrell 2A17</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>Group A: 22 FEB 2023 (WED) 13:05-15:55</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>Group B: 23 FEB 2023 (THU) 09:05-11:55</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Help hours</strong></td>
 <td>Ian Jones</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>Room: Cottrell 1A13</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>24 FEB 2023 (FRI) 15:05-17:55</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Assessments</strong></td>
-<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/29675">Week 4 Practice quiz</a> on Canvas</td>
+<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/30519">Week 6 Practice quiz</a> on Canvas</td>
 </tr>
 </tbody>
 </table>

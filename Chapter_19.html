@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-17" />
+<meta name="date" content="2023-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -311,7 +311,9 @@ div.csl-indent {
 <li class="chapter" data-level="21.5" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternatives"><i class="fa fa-check"></i><b>21.5</b> Non-parametric alternatives</a>
 <ul>
 <li class="chapter" data-level="21.5.1" data-path="Chapter_21.html"><a href="Chapter_21.html#wilcoxon-test"><i class="fa fa-check"></i><b>21.5.1</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="21.5.2" data-path="Chapter_21.html"><a href="Chapter_21.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>21.5.2</b> Mann-Whitney U test</a></li>
 </ul></li>
+<li class="chapter" data-level="21.6" data-path="Chapter_21.html"><a href="Chapter_21.html#summary-3"><i class="fa fa-check"></i><b>21.6</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="Chapter_22.html"><a href="Chapter_22.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
@@ -392,7 +394,11 @@ div.csl-indent {
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
 <li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
-<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="appendixC_tables.html"><a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values"><i class="fa fa-check"></i><b>C.1</b> Wilcoxon signed rank critical values</a></li>
+<li class="chapter" data-level="C.2" data-path="appendixC_tables.html"><a href="appendixC_tables.html#mann-whitney-u-critical-values"><i class="fa fa-check"></i><b>C.2</b> Mann-Whitney U critical values</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -591,7 +597,7 @@ From the Descriptives tool in Jamovi, write the sample sizes for DBH split by si
 In Exercises 19.1 and 19.2, you used different approaches for calculating 95% CIs from the normal and t-distributions.
 Now, fill in the table below reporting 95% CIs calculated using each distribution from the 4 sites using any method you prefer.</p>
 <table>
-<caption>95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<caption>95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>
 <tr class="header">
 <th>Site</th>
@@ -629,7 +635,7 @@ Now, fill in the table below reporting 95% CIs calculated using each distributio
 </table>
 <p>Next, do the same, but now calculate 99% CIs instead of 95% CIs.</p>
 <table>
-<caption>99 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<caption>99 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>
 <tr class="header">
 <th>Site</th>
@@ -683,15 +689,15 @@ Now, fill in the table below reporting 95% CIs calculated using each distributio
 </div>
 <div id="proportion-confidence-intervals" class="section level2 hasAnchor" number="19.4">
 <h2><span class="header-section-number">19.4</span> Proportion confidence intervals<a href="Chapter_19.html#proportion-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We will now try calculating confidence intervals for proportional data using the WrEN Sites dataset, which you can <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/wren_sites.csv">download here</a> dataset (right click and “Save Link As…”).
+<p>We will now try calculating confidence intervals for proportional data using the WrEN Sites dataset, which you can <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/wren_sites.csv">download here</a> (right click and “Save Link As…”).
 Notice that there are more sites included than there were in the dataset used in Exercises 19.1-19.3, and that some of these sites are grazed while others are not (column ‘Grazing’).
-From the Descriptives options, find the number of sites grazed versus not grazed (hint, remember from the lab practical in the previous week (<a href="Chapter_16.html#Chapter_16">Chapter 16</a> to put ‘Grazing’ in the variable box and click the ‘Frequency tables’ checkbox).</p>
+From the Descriptives options, find the number of sites grazed versus not grazed (hint, remember from the lab practical in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> to put ‘Grazing’ in the variable box and click the ‘Frequency tables’ checkbox).</p>
 <p>Grazed: ____________</p>
 <p>Not Grazed: _____________</p>
 <p>From these counts above, what is the estimate (<span class="math inline">\(\hat{p}\)</span>) of the proportion of sites that are grazed?</p>
 <p><span class="math inline">\(\hat{p}\)</span>: __________</p>
 <p><a href="Chapter_17.html#binomial-distribution-cis">Chapter 17.2</a> explained how to calculate lower and upper CIs for binomial distributions (i.e., proportion data).
-To do this, we can use a for LCI and UCI from Exercise 19.2 above,</p>
+To do this, we can use equations similar to the ones used for LCI and UCI from Exercise 19.2 above,</p>
 <p><span class="math display">\[LCI = \hat{p} - z \times SE(p),\]</span></p>
 <p><span class="math display">\[UCI = \hat{p} - z \times SE(p),\]</span></p>
 <p>We have already calculated <span class="math inline">\(\hat{p}\)</span>, and we can find z-scores for confidence intervals in the same way that we did in Exercise 19.2 (i.e., the z-scores associated with 95% confidence intervals do not change just because we are working with proportions).
@@ -725,7 +731,7 @@ First consider an 80% CI (hint, use the distrACTION module again to find the z-s
 <p>Reflect again on what these values actually mean.
 For example, what does it mean to have 95% confidence that the proportion of sites classified as Ancient woodland are between two values?
 Are there any situations in which this might be useful, from a scientific or conservation standpoint?
-There is no right or wrong answer here, but confidence intervals are very challenging to understand conceptually, so having now done the calcualtions to get them, it is a good idea to think again about what they mean.</p>
+There is no right or wrong answer here, but confidence intervals are very challenging to understand conceptually, so having now done the calculations to get them, it is a good idea to think again about what they mean.</p>
 <pre><code>
 
 
