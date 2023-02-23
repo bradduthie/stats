@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-22" />
+<meta name="date" content="2023-02-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -455,12 +455,12 @@ The t-distribution is parameterised using df, and we lose a degree of freedom wh
 For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in statistical programs such as Jamovi and R<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
 <p>Recall from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 4.041\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.159\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
 Our corrected lower 95% CI is,</p>
-<p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{20}\right) = 4.037\]</span></p>
+<p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{\sqrt{20}}\right) = 3.819\]</span></p>
 <p>Our upper 95% confidence interval is,</p>
-<p><span class="math display">\[UCI_{95\%} = 4.1 + \left(2.093 \times \frac{0.6}{20}\right) = 4.163.\]</span></p>
+<p><span class="math display">\[UCI_{95\%} = 4.1 + \left(2.093 \times \frac{0.6}{\sqrt{20}}\right) = 4.381\]</span></p>
 <p>The confidence intervals have not changed too much.
-By using the t-distribution, the LCI changed from 4.041 to 4.037, and the UCI changed from 4.159 to 4.163.
-In other words, we only needed our CIs to be a bit wider (<span class="math inline">\(4.163 - 4.037 = 0.126\)</span> for the using t-scores versus <span class="math inline">\(4.159-4.041 = 0.118\)</span> using z-scores).
+By using the t-distribution, the LCI changed from 3.837 to 3.819, and the UCI changed from 4.363 to 4.381
+In other words, we only needed our CIs to be a bit wider (<span class="math inline">\(4.381 - 3.819 = 0.562\)</span> for the using t-scores versus <span class="math inline">\(4.363 - 3.837 = 0.526\)</span> using z-scores).
 This is because a sample size of 20 is already large enough for the t-distribution and standard normal distribution to be very similar (Figure 18.1).
 But for lower sample sizes (<span class="math inline">\(N\)</span>) and therefore fewer degrees of freedom (<span class="math inline">\(df = N - 1\)</span>), the difference between the shapes of these distributions gets more obvious (Figure 18.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-85"></span>
