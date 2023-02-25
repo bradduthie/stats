@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-23" />
+<meta name="date" content="2023-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -619,7 +619,7 @@ A new window will open up.
 In a one sample t-test, there is only 1 dependent variable, which in this case is ‘Overall’.
 Move the variable ‘Overall’ to the Dependent Variables box with the right arrow.
 Below the boxes, find the checkbox options under ‘<strong>Assumption Checks</strong>’.
-Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’.</p>
+Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’ (Figure 22.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-101"></span>
 <img src="img/jamovi_one_sample_t-test.png" alt="Jamovi interface is shown with a panel of 4 columns of data to the left and the interface for a One Sample T-Test to the right." width="100%" />
 <p class="caption">
@@ -631,7 +631,7 @@ The first output is a table showing the results a Shapiro-Wilk test.
 The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk to see if the assumptions of the t-test are violated or not).
 If we reject the null hypothesis, then we will conclude that the data are <strong>not</strong> normally distributed.
 If we do not reject the null hypothesis, then we will will assume that the data <strong>are</strong> normally distributed.
-From the Normality Test table, what is the p-value if the Shapiro-Wilk test?</p>
+From the Normality Test table, what is the p-value of the Shapiro-Wilk test?</p>
 <p>P = _____________________</p>
 <p>Based on this p-value, should we reject the null hypothesis? ______________</p>
 <p>Now have a look at the Q-Q plot.
@@ -641,7 +641,7 @@ These plots take some practice to read and interpret, but for now, just have a l
 It might be useful to plot a histogram of the overall scores too in order to judge whether or not they are normally distributed (most researchers will use both a visual inspection of the data and a normality test to evaluate whether or not the assumption of normality is satisfied)</p>
 <p>Assuming that we have not rejected our null hypothesis, we can proceed with our one sample t-test.
 To do this, make sure the variable ‘Overall’ is still in the Dependent Variables box, then make sure the check box ‘Student’s’ is checked below <strong>Tests</strong>.
-Underneath <strong>Hypothesis</strong>, change the test value to 60.1 (because <span class="math inline">\(\mu = 60.1\)</span>) and put the radio button to ‘&lt; Test value’ to test the null hypothesis that the mean overall score of students is the same as <span class="math inline">\(\mu_{0}\)</span> against the alternative hypothesis that it is less than <span class="math inline">\(\mu_{0}\)</span>.
+Underneath <strong>Hypothesis</strong>, change the test value to 60.1 (because <span class="math inline">\(\mu_{0} = 60.1\)</span>) and put the radio button to ‘&lt; Test value’ to test the null hypothesis that the mean overall score of students is the same as <span class="math inline">\(\mu_{0}\)</span> against the alternative hypothesis that it is less than <span class="math inline">\(\mu_{0}\)</span>.
 On the right panel of Jamovi, you will see a table with the t-statistic, degrees of freedom, and p-value of the one sample t-test.
 Write these values down below.</p>
 <p>t-statistic: _________________</p>
@@ -651,7 +651,7 @@ Write these values down below.</p>
 For a reminder, use this <a href="https://bradduthie.shinyapps.io/t_score/">interactive application</a>.
 Slide the value for ‘t’ until it matches the t-statistic that your reported above, then input the correct degrees of freedom in the box to the lower right.
 Look at the probability density in blue to confirm that it is approximately the same as your p-value (there might be a slight rounding error here).
-Based on the p-value, should you reject the null hypothesis that your students mean overall grade is the same as the national average? Why or why not?</p>
+Based on the p-value, should you reject the null hypothesis that your students’ mean overall grade is the same as the national average? Why or why not?</p>
 <pre><code>
 
 
@@ -1022,7 +1022,7 @@ What can you infer from this plot about the normality of the data, and why?</p>
 To do such a transformation, you could create a new computed variable in Jamovi and calculate it as the natural log (LN) of a variable (e.g., Test 3).
 Figure 22.6 illustrates what this should look like.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-105"></span>
-<img src="img/jamovi_LN_transform.png" alt="Jamovi interface is shown a new computed variable being made and the natural log of Test 3 scores being inserted into the funciton box." width="100%" />
+<img src="img/jamovi_LN_transform.png" alt="Jamovi interface is shown with a new computed variable being made and the natural log of Test 3 scores being inserted into the function box." width="100%" />
 <p class="caption">
 Figure 22.6: The Jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
 </p>

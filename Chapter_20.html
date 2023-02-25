@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-23" />
+<meta name="date" content="2023-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -436,7 +436,7 @@ We are told that the coin is fair, meaning that there is an equal probability of
 From <a href="#Chapter_14.html#binomial-distribution">Chapter 14.4.1</a>, recall that the number of times out of 100 that the coin flip comes up heads will be described by a binomial distribution.
 The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 20.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-89-1.png" alt="A barplot is shown with 101 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape" width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-89-1.png" alt="A barplot is shown with 101 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape." width="672" />
 <p class="caption">
 Figure 20.1: Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the pobabilities associated with this number of flips out of 100 being heads are so low.
 </p>
@@ -459,7 +459,7 @@ If a fair coin will give us this much of a deviation from the expected 50 heads 
 <p>How improbable does our result need to be to cause us to reject our hypothesis that the coin is fair?
 There is no definitive answer to this question.
 In the biological and environmental sciences, we traditionally use a probability of 0.05, but this threshold is completely arbitrary<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.
-All it means is that we are willing to reject our hypothesis (e.g., declare the coin to be unfair) when it is actually true (i.e., the coin really <em>is</em> fair) about 5% of the time.
+All it means is that we are willing to reject our hypothesis (i.e., declare the coin to be unfair) when it is actually true (i.e., the coin really <em>is</em> fair) about 5% of the time.
 Note that we do need to decide on some finite threshold for rejecting our hypothesis because even extremely rare events, by definition, can sometimes happen.
 In the case of 100 coin flips, there is always a small probability of getting <em>any</em> number of heads from a fair coin (although getting zero heads would be extraordinarily rare, <span class="math inline">\(P \approx 7.89 \times 10^{-31}\)</span>, i.e., a decimal followed by 30 zeros, then a 7).
 We can therefore never be <em>certain</em> about rejecting or not rejecting the hypothesis that we have a fair coin.</p>
@@ -477,7 +477,7 @@ Typically, <span class="math inline">\(H_{0}\)</span> is associated with the lac
 This null hypothesis contrasts an <strong>alternative hypothesis</strong>, which we abbreviate as <span class="math inline">\(H_{A}\)</span> (e.g., the coin is not fair).
 Alternative hypotheses are always defined by some relationship to <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 Typically, <span class="math inline">\(H_{A}\)</span> is associated with something interesting happening, such as a biased coin, a difference between groups of observations, or an association between two variables.
-Table 20.1 below presents some null and alternative hypotheses that might relevant in the biological or environmental sciences.</p>
+Table 20.1 below presents some null and alternative hypotheses that might be relevant in the biological or environmental sciences.</p>
 <table>
 <caption>Hypothetical null and alternative hypotheses in the biological and environmental sciences.</caption>
 <colgroup>
@@ -544,7 +544,7 @@ Note that <span class="math inline">\(\alpha\)</span> and <span class="math inli
 Our <span class="math inline">\(\alpha\)</span> is whatever we set it to be (e.g., <span class="math inline">\(\alpha = 0.05\)</span>).
 But statistical power will depend on the size of the effect that we are measuring (e.g., how much bias their is in a coin if we are testing whether or not it is fair), and on the size of our sample.
 Increasing our sample size will always increase our statistical power, i.e., our ability to reject the null hypothesis when it is really false.
-Table 20.1 below illustrates the relationship between whether or not <span class="math inline">\(H_{0}\)</span>, and whether or not we reject it.</p>
+Table 20.2 below illustrates the relationship between whether or not <span class="math inline">\(H_{0}\)</span> is true, and whether or not we reject it.</p>
 <table>
 <caption>Summary of Type I and Type II errors in relation to a null hypothesis (<span class="math inline">\(H_{0}\)</span>).</caption>
 <thead>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-02-23" />
+<meta name="date" content="2023-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -481,7 +481,7 @@ Consequently, because our p-value is less than 0.05, we reject our null hypothes
 <p>Perhaps the biology teacher is not actually interested in comparing their students’ test results with those of the reported national average.
 After all, there might be many reasons for why their students score differently from the national average that have nothing to do with their new approach to teaching.
 To see if their new approach is working, the teacher might instead decide that a better hypothesis to test is whether or not the mean test score from the current year is higher than the mean test score from the class that they taught in the previous year.
-We can use <span class="math inline">\(\bar{y}_{1}\)</span> to denote the mean of test scores from the current year, and <span class="math inline">\(\bar{y}_{0}\)</span> to denote the mean of test scores from the previous year.
+We can use <span class="math inline">\(\bar{y}_{1}\)</span> to denote the mean of test scores from the current year, and <span class="math inline">\(\bar{y}_{2}\)</span> to denote the mean of test scores from the previous year.
 The test scores of the current year (<span class="math inline">\(y_{1}\)</span>) therefore remain the same as in the example of the one sample t-test from the previous section.</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
 <p>Suppose that in the previous year, there were 9 students in the class (i.e., one fewer than the current year).
@@ -539,11 +539,12 @@ The biology teacher in our example might therefore conclude that mean test resul
 <h2><span class="header-section-number">21.3</span> Paired sample t-test<a href="Chapter_21.html#paired-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There is one more type of t-test to consider.
 The paired sample t-test is applied when the data points in one sample can be naturally paired with those in another sample.
-In this case, data points are not independent between samples are not independent.
+In this case, data points between samples are not independent.
 For example, we can consider the student test scores (<span class="math inline">\(y_{1}\)</span>) yet again.</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
 <p>Suppose that the teacher gave these same students (S1-S10) a second test and wanted to see if the mean student score changed from one test to the next (i.e., a two-sided hypothesis).</p>
 <table>
+<caption><span id="tab:unnamed-chunk-92">Table 21.1: </span>Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -611,20 +612,20 @@ We can calculate <span class="math inline">\(\bar{y} = -0.88\)</span> and <span 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-93"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-93-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around -0.9." width="672" />
 <p class="caption">
-Figure 21.3: A t-distribution is shown with a calculated t-statistic of -0.9016175 indicated with a downard arrow.
+Figure 21.3: A t-distribution is shown with a calculated t-statistic of -0.9016175 indicated with a downward arrow.
 </p>
 </div>
 <p>Since this is a two-sided hypothesis, we want to know the probability of getting a t-statistic as extreme as -0.9016175 (i.e., either <span class="math inline">\(\pm 0.9016175\)</span>) given that the null distribution is true.
 In the above t-distribution, 95% of the probability density lies between <span class="math inline">\(t = -2.26\)</span> and <span class="math inline">\(t = 2.26\)</span>.
 Consequently, our calculated <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> is not sufficiently extreme to reject the null hypothesis.
 The p-value associated with <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> is <span class="math inline">\(P = 0.391\)</span>.
-We therefore fail to reject <span class="math inline">\(H_{0}\)</span> and conclude that there is no significant difference change in student test scores from Test 1 to Test 2.</p>
+We therefore fail to reject <span class="math inline">\(H_{0}\)</span> and conclude that there is no significant difference in student test scores from Test 1 to Test 2.</p>
 </div>
 <div id="assumptions-of-t-tests" class="section level2 hasAnchor" number="21.4">
 <h2><span class="header-section-number">21.4</span> Assumptions of t-tests<a href="Chapter_21.html#assumptions-of-t-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We make some potentially important assumptions when using t-tests.
 A consequence of violating these assumptions is a potentially misleading Type I error rate.
-That is, if our data to not fit the assumptions of our statistical test, then we might not actually be rejecting our null hypothesis at the <span class="math inline">\(\alpha = 0.05\)</span> level.
+That is, if our data do not fit the assumptions of our statistical test, then we might not actually be rejecting our null hypothesis at the <span class="math inline">\(\alpha = 0.05\)</span> level.
 We might unknowingly be rejecting <span class="math inline">\(H_{0}\)</span> at a much higher <span class="math inline">\(\alpha\)</span> value, and therefore concluding that we have evidence supporting the alternative hypothesis <span class="math inline">\(H_{A}\)</span> when really do not.
 It is therefore important to recognise the assumptions that we are making when using any statistical test (including t-tests).
 If our assumptions are violated, we might need to use a different test, or perhaps apply some kind of transformation on the data.
@@ -652,7 +653,7 @@ If we reject the null hypothesis that the data are normally distributed, then we
 <li>Use a non-parameteric alternative test.</li>
 </ol>
 <p>The word ‘non-parameteric’ in this context just means that there are no assumptions (or very few) about the shape of the distribution <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
-We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent sample t-test (Mann Whitney test) in the next session.
+We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent sample t-test (Mann-Whitney U test) in the next section.
 But first, we can show how transformations can be used to improve the fit of the data to model assumptions.</p>
 <p>Often data will have a skewed distribution; this just means that the distribution will be asymmetrical.
 For example, in Figure 21.4A below, we have a dataset (sample size <span class="math inline">\(N = 200\)</span>) with a large positive skew (i.e., it is right skewed).
@@ -660,7 +661,7 @@ Most values are in the same general area, but with some values being especially 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-94"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-94-1.png" alt="A two paneled figure in which a histogram with a skewed distribution is shown to the left and a histogram with a normal distribution is shown to the right." width="672" />
 <p class="caption">
-Figure 21.4: A set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution.
+Figure 21.4: A set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution (A).
 </p>
 </div>
 <p>Using a t-test on the variable X shown in Figure 21.4A is probably not the good idea.
@@ -668,7 +669,7 @@ But taking the natural log of all the values of X makes the dataset more normall
 This might seem a bit suspicious at first.
 Is it really okay to just take the logarithm of all the data instead of the actual values that were measured?
 Actually, there is no real scientific or statistical reason that we need to use the original scale <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-Using the log or the square-root of a set of numbers is perfectly fine if it helps better satisfy the assumptions of a statistical test.</p>
+Using the log or the square-root of a set of numbers is perfectly fine if it helps satisfy the assumptions of a statistical test.</p>
 </div>
 <div id="non-parametric-alternatives" class="section level2 hasAnchor" number="21.5">
 <h2><span class="header-section-number">21.5</span> Non-parametric alternatives<a href="Chapter_21.html#non-parametric-alternatives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -695,11 +696,10 @@ We can use the same hypothetical dataset on student test scores.</p>
 Now, we can calculate the sum of the negative ranks (<span class="math inline">\(W^{-}\)</span>), and the positive ranks <span class="math inline">\(W^{+}\)</span>.
 In this case, the negative ranks are easy; there is only one value (the first one), so the sum is just 6.5,</p>
 <p><span class="math display">\[W^{-} = 6.5\]</span></p>
-<p>The positive values are 2-10, so we need to sum these ranks now,</p>
-<p>The positive ranks are in positions , and the rank values in these positions are 8, 2, 4, 7, and 9.
+<p>The positive ranks are in positions 2-10, and the rank values in these positions are 3, 9, 4, 5, 6.5, 2, 8, 1, and 10.
 The sum of our positive ranks is therefore,</p>
 <p><span class="math display">\[W^{+} = 3.0 + 9.0 + 4.0 + 5.0 + 6.5 + 2.0 + 8.0 + 1.0 + 10.0 = 48.5\]</span></p>
-<p>Note that the sum of <span class="math inline">\(W^{-}\)</span> and <span class="math inline">\(W^{+}\)</span> (i.e., 6.5 + 48.5 = 55 in the example here) must always equal for a given sample size <span class="math inline">\(N\)</span> (in this case, <span class="math inline">\(N = 10\)</span>),</p>
+<p>Note that the sum of <span class="math inline">\(W^{-}\)</span> and <span class="math inline">\(W^{+}\)</span> (i.e., 6.5 + 48.5 = 55 in the example here) must always be equal for a given sample size <span class="math inline">\(N\)</span> (in this case, <span class="math inline">\(N = 10\)</span>),</p>
 <p><span class="math display">\[W = \frac{N \left(N + 1 \right)}{2}.\]</span></p>
 <p>What the Wilcoxon test is doing is calculating the probability of getting a value of <span class="math inline">\(W^{+}\)</span> as or more extreme than would be the case if the null hypothesis is true.
 Note that if, e.g., if there are an equal number of values above and below the median, then both <span class="math inline">\(W^{-}\)</span> and <span class="math inline">\(W^{+}\)</span> will be relatively low and about the same value.
@@ -707,7 +707,7 @@ This is because the ranks of the values below 0 (which we times by -1) and above
 But if there are a lot more values above the median than expected (as with the example above), then <span class="math inline">\(W^{+}\)</span> will be relatively high.
 And if there are a lot more values below the median than expected, then <span class="math inline">\(W^{+}\)</span> will be relatively low.</p>
 <p>To find the probability of <span class="math inline">\(W^{+}\)</span> being as low or high as it is given that the null hypothesis is true (i.e., a p-value), we need to compare the test statistic <span class="math inline">\(W^{+}\)</span> to its distribution under the null hypothesis (note that we can also conduct a one-tailed hypothesis, in which case we are testing if <span class="math inline">\(W^{+}\)</span> is either higher or lower than expected given <span class="math inline">\(H_{0}\)</span>).
-The old way of doing this is to compare the calculated <span class="math inline">\(W^{+}\)</span> threshold values from a <a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values">Wilcoxon Signed-Ranks Table</a>.
+The old way of doing this is to compare the calculated <span class="math inline">\(W^{+}\)</span> threshold values to those from a <a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values">Wilcoxon Signed-Ranks Table</a>.
 The critical value table is no longer necessary, and statistical software such as Jamovi and R will calculate a p-value for us.
 For the example above, the p-value associated with <span class="math inline">\(W^{+} = 48.6\)</span> and <span class="math inline">\(N = 10\)</span> is <span class="math inline">\(P = 0.037\)</span>.
 Since this p-value is less than our threshold of <span class="math inline">\(\alpha = 0.05\)</span>, we can reject the null hypothesis and conclude that the median of our dataset is significantly different from 60.</p>
@@ -715,6 +715,7 @@ Since this p-value is less than our threshold of <span class="math inline">\(\al
 In this case, instead of subtracting out the null hypothesis of our median value (e.g., <span class="math inline">\(H_{0}: M = 60\)</span> in the example above), we just need to subtract the paired values.
 Consider again the example of the 2 different tests introduced for the <a href="Chapter_21.html#paired-sample-t-test">paired sample t-test</a> above.</p>
 <table>
+<caption><span id="tab:unnamed-chunk-95">Table 21.2: </span>Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
 <thead>
 <tr class="header">
 <th align="left"></th>
@@ -799,6 +800,7 @@ For <span class="math inline">\(y_{1}\)</span>, the ranks are below.</p>
 <pre><code>4, 3, 14, 16, 1, 6, 13, 10, 5</code></pre>
 <p>This might be easier to see if we present it as a table showing the test Year (<span class="math inline">\(y_{1}\)</span> versus <span class="math inline">\(y_{2}\)</span>), test Score, and test Rank.</p>
 <table>
+<caption><span id="tab:unnamed-chunk-96">Table 21.3: </span>Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.</caption>
 <thead>
 <tr class="header">
 <th align="right">Year</th>
@@ -904,7 +906,7 @@ For <span class="math inline">\(y_{1}\)</span>, the ranks are below.</p>
 </tr>
 </tbody>
 </table>
-<p>What we need to now is sum the ranks for <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>.
+<p>What we need to do now is sum the ranks for <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>.
 If we add up the <span class="math inline">\(y_{1}\)</span> ranks, then we get a value of <span class="math inline">\(R_{1}=\)</span> 118.
 If we add up the <span class="math inline">\(y_{2}\)</span> ranks, then we get a value of <span class="math inline">\(R_{2}=\)</span> 72.
 We can then calculate a value <span class="math inline">\(U_{1}\)</span> from <span class="math inline">\(R_{1}\)</span> and the sample size of <span class="math inline">\(y_{1}\)</span> (<span class="math inline">\(N_{1}\)</span>),</p>
