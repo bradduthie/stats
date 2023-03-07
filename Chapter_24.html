@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-05" />
+<meta name="date" content="2023-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -432,18 +432,18 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_24" class="section level1 hasAnchor" number="24">
 <h1><span class="header-section-number">Chapter 24</span> Multiple comparisons<a href="Chapter_24.html#Chapter_24" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In <a href="Chapter_23.html#one-way-anova">Chapter 23.2</a>, we rejected the null hypothesis that all fig wasp species have the same mean wing length.
-We can therefore conclude that at least one species has a different mean wing length than the rest; can we determine which one?
+<p>In the <a href="Chapter_23.html#one-way-anova">Chapter 23.2</a> ANOVA example, we rejected the null hypothesis that all fig wasp species have the same mean wing length.
+We can therefore conclude that at least one species has a different mean wing length than the rest; can we determine which one(s)?
 We can try to find this out using a post hoc comparison (<em>post hoc</em> is Latin for ‘after the event’).
-That is, after we have reject the null hypothesis in the one-way ANOVA, then we can start comparing individual groups (Het1 vs Het2, Het1 vs LO1, etc.).
-Nevertheless, we need some way to correct for the Type I error problem explained at the beginning of this chapter.
+That is, after we have reject the null hypothesis in the one-way ANOVA, we can start comparing individual groups (Het1 vs Het2, Het1 vs LO1, etc.).
+Nevertheless, we need some way to correct for the Type I error problem explained at the beginning of <a href="Chapter_23.html#Chapter_23">Chapter 23</a>.
 That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (P &lt; 0.05) where none really exists.
-A way of avoiding this inflated Type I error rate is to set our significance value to be lower than the usual <span class="math inline">\(\alpha = 0.05\)</span>.
+A way to avoid this inflated Type I error rate is to set our significance threshold to be lower than the usual <span class="math inline">\(\alpha = 0.05\)</span>.
 We can, for example, divide our <span class="math inline">\(\alpha\)</span> value by the total number of pair-wise t-tests tests that we run.
 This is called a Bonferonni correction <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006" role="doc-biblioref">Narum 2006</a>)</span>.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the 5 species.
 This means that if we were to apply a Bonferonni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when <span class="math inline">\(P &lt; 0.005\)</span> instead of <span class="math inline">\(P &lt; 0.05\)</span>.</p>
-<p>Another approach to correcting for multiple comparisons is a Tukey’s honest significance test (Tukey’s HSD, or just a ‘Tukey’s test’).
+<p>Another approach to correcting for multiple comparisons is a Tukey’s honestly significant difference test (Tukey’s HSD, or just a ‘Tukey’s test’).
 The general idea of a Tukey’s test is the same as the Bonferonni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
 The Tukey’s test does this by using a modified t-test, with a t-distribution called the “studentised range distribution” that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>)</span>.</p>
@@ -457,8 +457,8 @@ Figure 24.1: Jamovi output showing a table of 10 post hoc comparisons between sp
 </div>
 <p>The column ‘p’ in Figure 24.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
 The columns <span class="math inline">\(p_{tukey}\)</span> and <span class="math inline">\(p_{bonferonni}\)</span> show corrected p-values for the Tukey’s test and Bonferroni corrected t-test, respectively.
-We can interpret these p-values as normal, concluding that two species have a different mean if <span class="math inline">\(P &lt; 0.05\)</span> (i.e., Jamovi does the correction for us; we do not need to divide <span class="math inline">\(\alpha = 0.05\)</span> to figure out what the significance threshold should be given the Bonferonni correction).</p>
-<p>Note that from Figure 24.1, it appears that both the Tukey test and the Bonferonni correction fail to find that any pair of species have significantly different means.
+We can interpret these p-values as usual, concluding that two species have different means if <span class="math inline">\(P &lt; 0.05\)</span> (i.e., Jamovi does the correction for us; we do not need to divide <span class="math inline">\(\alpha = 0.05\)</span> to figure out what the significance threshold should be given the Bonferonni correction).</p>
+<p>Note that from Figure 24.1, it appears that both the Tukey’s test and the Bonferonni correction fail to find that any pair of species have significantly different means.
 This does not mean that we have done the test incorrectly.
 The multiple comparisons tests are asking a slightly different question than the one-way ANOVA.
 The multiple comparisons tests are testing the null hypothesis that two <em>particular</em> species have the same mean wing lengths.

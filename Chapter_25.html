@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-05" />
+<meta name="date" content="2023-03-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -437,7 +437,7 @@ The Kruskall-Wallis test is essentially an extension of the Mann-Whitney U test 
 Like the Mann-Whitney U test, it uses the <em>ranks</em> of values instead of the actual values in the dataset.
 The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (H) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_23.html#Chapter_23">Chapter 23</a>.
-For convenience, Table 23.1 is reproduced here as Table 24.1.</p>
+For convenience, Table 23.1 is reproduced here as Table 25.1.</p>
 <table>
 <caption><span id="tab:unnamed-chunk-116">Table 25.1: </span>Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
 <thead>
@@ -482,11 +482,11 @@ For convenience, Table 23.1 is reproduced here as Table 24.1.</p>
 </table>
 <p>Recall that in the one-way ANOVA from <a href="Chapter_23.html#one-way-anova">Chapter 23.2</a>, we reject the null hypothesis that all species had the same mean wing length (P = 0.042).
 But we had not actually tested the assumptions of the one-way ANOVA before running the test!
-If we had tested the ANOVA assumptions, we would find that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
+If we had tested the ANOVA assumptions, we would not reject the null hypothesis that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
 But a Levene’s test of homogeneity of variances convincingly rejects the null hypothesis that the group variances are equal (P = 0.008).
 Consequently, we should probably have used the non-parametric Kruskall-Wallis H test instead.
-To do this, we first need to rank all of the values in Table 23.1.
-There are 20 total values, so we rank them from 1 to 20 (Table 23.2).</p>
+To do this, we first need to rank all of the values in Table 25.1.
+There are 20 total values, so we rank them from 1 to 20 (Table 25.2).</p>
 <table>
 <caption><span id="tab:unnamed-chunk-117">Table 25.2: </span>Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
 <thead>
@@ -534,12 +534,12 @@ Of course, we do not need to do this by hand.
 But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a" role="doc-biblioref">William H. Kruskal 1952</a>)</span>,</p>
 <p><span class="math display">\[H = (N - 1) \frac{\sum_{i=1}^{g}N_{i}\left(\bar{R}_{i} - \bar{\bar R} \right)^2}{\sum_{i=1}^{g}\sum_{j=1}^{N_{i}} \left(R_{ij} - \bar{\bar R} \right)^{2}}.\]</span></p>
 <p>For our purposes, the mathematical details are not important.
-The equation is included here only to show the similarity between the calculation of H and the calculating of F in <a href="Chapter_23.html#one-way-anova">Chapter 23.2</a>.
+The equation is included here only to show the similarity between the calculation of H versus F from <a href="Chapter_23.html#one-way-anova">Chapter 23.2</a>.
 In the numerator of the equation for H, we are calculating the squared deviation of mean group ranks from the overall mean rank <span class="math inline">\((\bar{R}_{i} - \bar{\bar R})^2\)</span>, as weighted by the group sample size <span class="math inline">\(N_{i}\)</span>.
 We are then dividing by the sum of squared deviations of all ranks (<span class="math inline">\(R_{ij}\)</span>) from the overall mean rank <span class="math inline">\(\bar{\bar R}\)</span>.
 All of this gets multiplied by <span class="math inline">\(N - 1\)</span> to give the test statistic H.
-We can then compare H to a suitable null distribution, which might be calculated using an appropriate algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al. 2003</a>)</span>.
-Some statistical programs such as Jamovi and R compare H to a Chi-square distribution (see <a href="Week9.html#Week9">Week 9</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.</p>
+We can then compare H to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al. 2003</a>)</span>.
+But most statistical programs such as Jamovi and R compare H to a Chi-square distribution (see <a href="Week9.html#Week9">Week 9</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.</p>
 <p>The output of a Kruskall-Wallis H test is quite minimal and easy to read.
 Jamovi and R report a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value.
 Figure 25.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing lengths data.</p>
@@ -552,7 +552,7 @@ Figure 25.1: Jamovi output table for a non-parametric Kruskall-Wallis H test, wh
 <p>Given Kruskall-Wallis H test output (Figure 25.1), we should not reject the null hypothesis that species have different wing lengths because P &gt; 0.05.
 This is in contrast to our one-way ANOVA result, for which we did reject the same null hypothesis.
 The Kruskall-Wallis H test does not assume that group variances are the same, unlike the one-way ANOVA.
-Since we know that the homogeneity of variances assumption is violated for the ANOVA, it is probably best to be cautious and conclude that mean wing length does not differ among species.</p>
+Since we know that the homogeneity of variances assumption is violated for the fig wasp data, it is probably best to be cautious and conclude that mean wing length does not differ among species.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
