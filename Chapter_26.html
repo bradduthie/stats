@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-07" />
+<meta name="date" content="2023-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -531,27 +531,126 @@ This is equivalent to the variation within groups in the one-way ANOVA.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-120"></span>
 <img src="img/jamovi_two-way_ANOVA_no_interaction.png" alt="Jamovi output is shown with a small table that includes 4 rows and 5 two-way ANOVA." width="100%" />
 <p class="caption">
-Figure 26.1: Jamovi output table for a two-way ANOVA, which tests for the effects of species, tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+Figure 26.1: Jamovi output table for a two-way ANOVA, which tests for the effects of species (Het1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
 <p>This is a lot more information than the one-way ANOVA, but it helps to think of each row separately as a test of a different null hypothesis.
 From the first row, given the high F = 45.75 and the low P = 0.002, we can reject the null hypothesis that species mean wing lengths are the same.
 Similarly, from the second row, we can reject the null hypothesis that wing lengths are the same in both trees (F = 30.39; P = 0.005).
 In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and trees (F = 0.05, P = 0.839).
-Figure 26.2 shows the these results visually.</p>
+Figure 26.2 shows the these results visually <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-121"></span>
 <img src="img/two-way_ANOVA_no_interaction.png" alt="A plot is shown in Jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines run in parallel at a downward angle." width="100%" />
 <p class="caption">
 Figure 26.2: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Note that we <em>do not</em> need to apply any kind of correction for multiple comparisons (see <a href="Chapter_24.html#Chapter_24">Chapter 24</a>) when testing these 3 different hypotheses.
-This is because</p>
+<p>In Figure 26.2, there is no interaction between species and tree.
+How can we infer this from Figure 26.2?
+Wing length is always significantly higher in Tree A than it is in Tree B, regardless of the species of wasp.
+Similarly, wing length is always higher for Het1 than it is for SO2, regardless of tree.
+Consequently, while wasp species is important for predicting wing length, as is the tree from which the wasp was collected, we do not need to consider one variable to know the effect of the other.
+This is reflected in the orange and blue lines having a similar slope, or, more technically, slopes that are not significantly different from one another.
+If the slopes of the two lines were significantly different, then this would be evidence for an interaction between species and tree.</p>
+<p>What would Figure 26.2 look like if there was an interaction effect between species and tree?
+We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
+Table 26.2 shows the data.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-122">Table 26.2: </span>Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<thead>
+<tr class="header">
+<th align="left">Species</th>
+<th align="left">Tree</th>
+<th align="right">wing_length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">A</td>
+<td align="right">1.557</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">A</td>
+<td align="right">1.493</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">B</td>
+<td align="right">1.470</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">B</td>
+<td align="right">1.541</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">A</td>
+<td align="right">1.635</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">A</td>
+<td align="right">1.700</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">B</td>
+<td align="right">1.407</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">B</td>
+<td align="right">1.378</td>
+</tr>
+</tbody>
+</table>
+<p>If we run the two-way ANOVA in Jamovi, then we can see the ANOVA output table (Figure 26.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-123"></span>
+<img src="img/jamovi_two-way_ANOVA_with_interaction.png" alt="Jamovi output is shown with a small table that includes 4 rows and 5 two-way ANOVA." width="100%" />
+<p class="caption">
+Figure 26.3: Jamovi output table for a two-way ANOVA, which tests for the effects of species (SO1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+</p>
+</div>
+<p>Figure 26.3 shows that the effect of species is not significant (P &gt; 0.05), but the effect of tree is significant (P &lt; 0.05).
+Consequently, in terms of the main effects, it appears that species does not affect wing length, but tree does affect wing length.
+Unlike the example test between Het1 and SO2, the interaction between species and tree is significant in Figure 26.3.
+This means that we cannot interpret the main effects in isolation because the effect of each on wing length will change in the presence of the other.
+In other words, the effect of tree on wing length will depend on the species.
+Figure 26.4 shows this interaction visually.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-124"></span>
+<img src="img/two-way_ANOVA_with_interaction.png" alt="A plot is shown in Jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines run in parallel at a downward angle." width="100%" />
+<p class="caption">
+Figure 26.4: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., SO2 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+</p>
+</div>
+<p>Note that for SO1, wing length is basically the same for Tree A and B (the 2 left points in Figure 26.4).
+In contrast, for SO2, tree has a very noticeable effect on wing length!
+Fig wasps in species SO2 clearly have higher wing lengths on Tree A than they do on Tree B.
+<em>Overall</em>, however, the mean wing length for SO2 appears to be about the same as it is for SO1 (i.e., the mid-way point between the blue and orange points for SO2 is at about the same wing length as it is for SO1, around 1.5 mm).
+Species therefore does not really have an effect on wing length, at least not by itself.
+But species <em>does</em> have a clear effect if you also take tree into account.
+In other words, to predict how tree will affect wing length (not at all for SO1, or a lot for SO2), it is necessary to know what species of fig wasp is being considered.
+This is how interactions work in ANOVA, and more generally in statistics.</p>
+<p>There is one last point that is relevant to make for the two-way ANOVA.
+Recall that we tested 3 null hypotheses simultaneously.
+Should we not then apply some kind of correction for multiple comparisons, as we did in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>?
+This is actually not necessary.
+The reason is subtle.
+With the multiple t-tests, we wanted to know if <em>any</em> of the pair-wise differences between groups were significant.
+Each t-test was not really a separate question in this case.
+We just tried all possible combinations in search of a pair of species with significantly different wing lengths.
+With the two-way ANOVA, we are asking 3 separate questions, and accepting a Type I error rate of 0.05 for each of them, individually.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Sokal1995" class="csl-entry">
 Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Jamovi2022" class="csl-entry">
+The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
 </div>
 <div class="footnotes">

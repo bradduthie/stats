@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-03-05}
+\date{2023-03-08}
 
 \begin{document}
 \maketitle
@@ -533,7 +533,7 @@ Ad hoc meetings can also be set up during the week if necessary.
 
 There are a lot of different software packages for running statistical analyses.
 Previous versions of this module have been taught using \href{https://www.minitab.com/en-us/}{Minitab} or \href{https://www.ibm.com/uk-en/products/spss-statistics}{SPSS}.
-This year, and for the foreseeable future, we are using \href{https://www.jamovi.org/}{Jamovi}.
+This year, and for the foreseeable future, we are using \href{https://www.jamovi.org/}{Jamovi} \citep{Jamovi2022}.
 There are a lot of tangible benefits to using \href{https://www.jamovi.org/}{Jamovi}:
 
 \begin{itemize}
@@ -995,7 +995,7 @@ Consequently, we often need to reorganise data from a lab or field book to a spr
 
 Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
 This chapter introduces the tidy format \citep{Wickham2014}, which can be used for structuring data files for statistical software.
-This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in statistical software such as Jamovi or R.
+This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in statistical software such as Jamovi or R \citep{Jamovi2022, Rproject}.
 
 \hypertarget{tidy-data}{%
 \section{Tidy data}\label{tidy-data}}
@@ -1160,7 +1160,7 @@ It takes some time to organise files this way, and to get used to saving files i
 \hypertarget{Chapter_3}{%
 \chapter{Practical: Preparing data}\label{Chapter_3}}
 
-In this practical, we will use a spreadsheet to organise datasets following the tidy approach explained in \protect\hyperlink{Chapter_2}{Chapter 2}, then save these datasets as CSV files to be opened in Jamovi statistical software.
+In this practical, we will use a spreadsheet to organise datasets following the tidy approach explained in \protect\hyperlink{Chapter_2}{Chapter 2}, then save these datasets as CSV files to be opened in Jamovi statistical software \citep{Jamovi2022}.
 The data organisation in this lab can be completed using \href{https://www.libreoffice.org/discover/calc/}{LibreOffice Calc}, MS Excel, or \href{https://docs.google.com/spreadsheets/}{Google Sheets}.
 In the computer lab, MS Excel is probably the easiest program to use, either through AppsAnywhere or within a browser.
 The screenshots below will mostly be of LibreOffice Calc, but the instructions provided will work on any of the three aforementioned spreadsheet programs.
@@ -1865,7 +1865,7 @@ It is not necessary to understand why the equations for propagating different ty
 \hypertarget{Chapter_8}{%
 \chapter{Practical. Introduction to Jamovi}\label{Chapter_8}}
 
-This practical focuses on learning how to work with datasets in Jamovi.
+This practical focuses on learning how to work with datasets in Jamovi \citep{Jamovi2022}.
 Jamovi is available in the university laboratory computers through AppsAnywhere.
 You can also \href{https://www.jamovi.org/download.html}{download it} on your own computer for free or run it directly \href{https://www.jamovi.org/cloud.html}{from a browser}.
 For an introduction to what Jamovi is and why we are using it in this module, see the introduction of this workbook and \href{https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html\#the-spreadsheet}{Sections 3.3}-\href{https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html\#summary}{3.9} of \citet{Navarro2022}.
@@ -2641,7 +2641,7 @@ We can show how quantiles get more complicated using the same 8 values as above 
 
 There are at least 9 different ways to calculate the first quartile in this case, and different statistical software package will sometimes use different default methods \citep{Hyndman1996}.
 One logical way is to calculate the mean between the second (3.5) and third (3.8) position as you would do for the median \citep{Rowntree2018}, \((3.5 + 3.8) / 2 = 3.65\).
-Jamovi uses a slightly more complex method, which will give a value of \(3.725\).
+Jamovi uses a slightly more complex method, which will give a value of \(3.725\) \citep{Jamovi2022}.
 
 It is important to emphasise that no one way of calculating quantiles is the one and only correct way.
 Statisticians have just proposed different approaches to calculating quantiles from data, and these different approaches sometimes give slightly different results.
@@ -2782,7 +2782,7 @@ Here we are taking an individual measurement \(x_{i}\), subtracting the mean \(\
 We do this for each \(x_{i}\), summing up all of the values from \(i = 1\) to \(i = N\).
 This part of the equation is called the \textbf{sum of squares} (\(SS\)),
 
-\[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}\]
+\[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]
 
 That is, we need to subtract the mean from each value \(x_{i}\), square the result, and add everything up.
 Once we have this sum, \(SS\), then we just need to multiply by \(1 / (N - 1)\) to get the variance.
@@ -2835,7 +2835,7 @@ Why would we subtract 1 here?
 The short answer is that in calculating a \emph{sample} variance, \(s^{2}\), we are almost always trying to estimate the corresponding \emph{population} variance (\(\sigma^{2}\)).
 And if we were to just use \(N\) instead of \(N - 1\), then our \(s^{2}\) would be a biased estimate of \(\sigma^{2}\) (see \protect\hyperlink{Chapter_4}{Chapter 4} for a reminder on the difference between samples and populations).
 By subtracting 1, we are correcting for this bias to get a more accurate estimate of the population variance.
-It is not necessary to do this ourselves; statistical software like Jamovi and R will do it automatically.
+It is not necessary to do this ourselves; statistical software like Jamovi and R will do it automatically \citep{Jamovi2022, Rproject}.
 This is really all that it is necessary to know for now, but see this footnote\footnote{To get the true population variance \(\sigma^{2}\), we would also need to know the true mean \(\mu\). But we can only estimate \(\mu\) from the sample, \(\bar{x}\). That is, what we would really want to calculate is \(x_{i} - \mu\), but the best we can do is \(x_{i} - \bar{x}\). The consequence of this is that there will be some error that underestimates the true distance of \(x_{i}\) values from the population mean, \(\mu\). Here is the really cool part; to determine the extent to which our estimate of the variance is biased by using \(\bar{x}\) instead of \(\mu\), we just need to know the expected squared difference between the two values, \((\bar{x} - \mu)^{2}\). It turns out that this difference (i.e., the bias of our estimate \(s^{2}\)) is just \(\sigma^{2} / N\); that is, the true variance of the population divided by the sample size. If we subtract this value from \(\sigma^{2}\), so \(\sigma^{2} - \sigma^{2}/N\), then we can get the expected difference between the true variance and the estimate from the sample size. We can rearrange \(\sigma^{2} - \sigma^{2}/N\) to get \(\sigma^{2} \times (N - 1)/N\), which means that we need to correct our sample variance by \(N / (N-1)\) to get an unbiased estimate of \(\sigma^{2}\). If all of this is confusing, that is okay! This is really only relevant for those interested in statistical theory, which is not the focus of this module.} for a bit more detailed explanation to try to make this intuitive (it is actually quite cool!).
 Later, we will explore the broader concept of \emph{degrees of freedom}, which explains why we need to take into account the number of parameters in a statistic that are free to vary when calculating a statistic\footnote{Briefly, in the case of sample variance, note that we needed to use all the values \(x_{i}\) in the dataset and the sample mean \(\bar{x}\). But if we know what all of the \(x_{i}\) values are, then we also know \(\bar{x}\). And if we know all but one value of \(x_{i}\) and \(\bar{x}\), then we could figure out the last \(x_{i}\). Hence, while we are using \(N\) values in the calculation of \(s^{2}\), the use of \(\bar{x}\) reduces the degree to which these values are free to vary. We have lost 1 degree of freedom in the calculation of \(\bar{x}\), so we need to account for this in our calculation of \(s^{2}\) by dividing by \(N - 1\). This is another way to think about the \(N - 1\) correction factor \citep{Sokal1995} explained in the previous footnote.}.
 
@@ -2969,26 +2969,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-44}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.78 & 0.89 & 0.69 & 0.85 & 0.67 & 0.68 & 0.62 & 0.67 & 0.63 & 0.70 \\
-Sample\_2 & 0.64 & 0.56 & 0.72 & 0.79 & 0.63 & 0.65 & 0.55 & 0.74 & 0.84 & 0.73 \\
-Sample\_3 & 0.87 & 0.54 & 0.60 & 0.80 & 0.63 & 0.74 & 0.59 & 0.84 & 0.82 & 0.86 \\
-Sample\_4 & 0.49 & 0.76 & 0.81 & 0.65 & 0.76 & 0.72 & 0.69 & 0.54 & 0.71 & 0.62 \\
-Sample\_5 & 0.70 & 0.70 & 0.60 & 0.67 & 0.67 & 0.81 & 0.72 & 0.66 & 0.71 & 0.62 \\
-Sample\_6 & 0.68 & 0.81 & 0.58 & 0.69 & 0.69 & 0.84 & 0.60 & 0.62 & 0.61 & 0.68 \\
-Sample\_7 & 0.76 & 0.75 & 0.62 & 0.73 & 0.67 & 0.84 & 0.76 & 0.70 & 0.65 & 0.65 \\
-Sample\_8 & 0.91 & 0.57 & 0.84 & 0.67 & 0.59 & 0.69 & 0.71 & 0.71 & 0.57 & 0.69 \\
-Sample\_9 & 0.65 & 0.71 & 0.90 & 0.85 & 0.66 & 0.71 & 0.68 & 0.88 & 0.76 & 0.79 \\
-Sample\_10 & 0.82 & 0.86 & 0.80 & 0.57 & 0.71 & 0.68 & 0.66 & 0.60 & 0.74 & 0.76 \\
-Sample\_11 & 0.74 & 0.64 & 0.92 & 0.80 & 0.71 & 0.58 & 0.69 & 0.77 & 0.73 & 0.57 \\
-Sample\_12 & 0.66 & 0.75 & 0.73 & 0.74 & 0.88 & 0.76 & 0.71 & 0.69 & 0.58 & 0.75 \\
-Sample\_13 & 0.60 & 0.63 & 0.57 & 0.53 & 0.63 & 0.63 & 0.81 & 0.88 & 0.58 & 0.72 \\
-Sample\_14 & 0.61 & 0.67 & 0.68 & 0.65 & 0.80 & 0.69 & 0.57 & 0.88 & 0.78 & 0.69 \\
-Sample\_15 & 0.71 & 0.66 & 0.73 & 0.54 & 0.81 & 0.71 & 0.81 & 0.73 & 0.64 & 0.93 \\
-Sample\_16 & 0.65 & 0.75 & 0.94 & 0.86 & 0.68 & 0.56 & 0.68 & 0.74 & 0.60 & 0.86 \\
-Sample\_17 & 0.76 & 0.69 & 0.55 & 0.61 & 0.72 & 0.75 & 0.71 & 0.80 & 0.74 & 0.51 \\
-Sample\_18 & 0.80 & 0.59 & 0.76 & 0.62 & 0.51 & 0.71 & 0.75 & 0.60 & 0.67 & 0.69 \\
-Sample\_19 & 0.64 & 0.79 & 0.83 & 0.63 & 0.86 & 0.81 & 0.71 & 0.79 & 0.86 & 0.82 \\
-Sample\_20 & 0.74 & 0.69 & 0.91 & 0.80 & 0.51 & 0.60 & 0.60 & 0.86 & 0.56 & 0.78 \\
+Sample\_1 & 0.52 & 0.72 & 0.88 & 0.68 & 0.56 & 0.59 & 0.70 & 0.87 & 0.75 & 0.80 \\
+Sample\_2 & 0.56 & 0.84 & 0.77 & 0.73 & 0.60 & 0.77 & 0.70 & 0.85 & 0.79 & 0.75 \\
+Sample\_3 & 0.56 & 0.64 & 0.50 & 0.74 & 0.61 & 0.67 & 0.76 & 0.64 & 0.96 & 0.67 \\
+Sample\_4 & 0.71 & 0.73 & 0.59 & 0.56 & 0.73 & 0.91 & 0.61 & 0.82 & 0.67 & 0.70 \\
+Sample\_5 & 0.60 & 0.59 & 0.66 & 0.64 & 0.68 & 0.71 & 0.58 & 0.66 & 0.66 & 0.71 \\
+Sample\_6 & 0.78 & 0.72 & 0.72 & 0.56 & 0.52 & 0.50 & 0.76 & 0.78 & 0.75 & 0.80 \\
+Sample\_7 & 0.63 & 0.52 & 0.74 & 0.68 & 0.77 & 0.66 & 0.72 & 0.83 & 0.74 & 0.69 \\
+Sample\_8 & 0.62 & 0.62 & 0.64 & 0.74 & 0.62 & 0.80 & 0.58 & 0.84 & 0.58 & 0.72 \\
+Sample\_9 & 0.67 & 0.77 & 0.65 & 0.51 & 0.64 & 0.64 & 0.60 & 0.52 & 0.76 & 0.64 \\
+Sample\_10 & 0.70 & 0.48 & 0.88 & 0.61 & 0.63 & 0.80 & 0.67 & 0.60 & 0.80 & 0.69 \\
+Sample\_11 & 0.78 & 0.66 & 0.58 & 0.62 & 0.60 & 0.63 & 0.87 & 0.93 & 0.57 & 0.67 \\
+Sample\_12 & 0.65 & 0.60 & 0.94 & 0.77 & 0.77 & 0.86 & 0.87 & 0.71 & 0.64 & 0.84 \\
+Sample\_13 & 0.72 & 0.68 & 0.71 & 0.74 & 0.74 & 0.45 & 0.43 & 0.70 & 0.69 & 0.60 \\
+Sample\_14 & 0.75 & 0.70 & 0.90 & 0.44 & 0.61 & 0.74 & 0.53 & 0.52 & 0.61 & 0.71 \\
+Sample\_15 & 1.07 & 0.65 & 0.87 & 0.73 & 0.68 & 0.80 & 0.87 & 0.74 & 0.58 & 0.76 \\
+Sample\_16 & 0.72 & 0.79 & 0.79 & 0.56 & 0.59 & 0.66 & 0.88 & 0.89 & 0.71 & 0.63 \\
+Sample\_17 & 0.61 & 0.65 & 0.75 & 0.63 & 0.81 & 0.57 & 0.78 & 0.70 & 0.69 & 0.68 \\
+Sample\_18 & 0.65 & 0.88 & 0.46 & 0.73 & 0.77 & 0.82 & 0.56 & 0.77 & 0.71 & 0.76 \\
+Sample\_19 & 0.61 & 0.57 & 0.56 & 0.63 & 0.74 & 0.55 & 0.50 & 0.65 & 0.62 & 0.69 \\
+Sample\_20 & 0.64 & 0.82 & 0.66 & 0.75 & 0.57 & 0.72 & 0.71 & 0.66 & 0.78 & 0.71 \\
 \bottomrule
 \end{longtable}
 
@@ -2997,24 +2997,24 @@ These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.718 0.685 0.729 0.675 0.686 0.680 0.713 0.695 0.759 0.720
-## [2,] 0.715 0.725 0.658 0.702 0.727 0.732 0.684 0.670 0.774 0.705
+## [1,] 0.707 0.736 0.675 0.703 0.649 0.689 0.698 0.676 0.640 0.686
+## [2,] 0.691 0.765 0.646 0.651 0.775 0.722 0.687 0.711 0.612 0.702
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0295214.
+The standard deviation of the 20 sample means reported above is 0.0405521.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.0915059.
+The standard deviation of Sample 1 is \(s =\) 0.123922.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.0915059}{\sqrt{10}} = 0.0289367.\]
+\[s = \frac{0.123922}{\sqrt{10}} = 0.0391876.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0295214, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0289367.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0405521, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0391876.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
 \chapter{\texorpdfstring{\emph{Practical}. Plotting and statistical summaries in Jamovi}{Practical. Plotting and statistical summaries in Jamovi}}\label{Chapter_13}}
 
-This practical focuses on applying the concepts from Chapters 9-12 in Jamovi.
+This practical focuses on applying the concepts from Chapters 9-12 in Jamovi \citep{Jamovi2022}.
 The data that we will work with in this practical were collected from a research project conducted by Dr Alan Law, Prof Nils Bunnefeld, and Prof Nigel Willby at the University of Stirling \citep{Law2014}.
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, \emph{Nymphaea alba}, which beavers regularly consume (Figure 13.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Nymphaea_alba._Reader.jpg}{Аlexej Potupin} on 8 June 2018.}.
 
@@ -3852,14 +3852,14 @@ Since we almost never know what the true population mean (\(\mu\)) and standard 
 
 \[z = \frac{x - \bar{x}}{s}.\]
 
-We could then use a statistical program such as Jamovi, our \href{https://bradduthie.shinyapps.io/zandp/}{interactive application}, or an old-fashioned z-table\footnote{Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map \(z\) scores to probabilities was using a \href{https://www.z-table.com/}{z table}. The table would have rows and columns mapping to different \(z\) values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The text \citet{Sokal1995} comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.} to find that only about 2\% of values are expected to be higher than \(x = 9.1\) in our original dataset.
+We could then use a statistical program such as Jamovi \citep{Jamovi2022}, our \href{https://bradduthie.shinyapps.io/zandp/}{interactive application}, or an old-fashioned z-table\footnote{Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map \(z\) scores to probabilities was using a \href{https://www.z-table.com/}{z table}. The table would have rows and columns mapping to different \(z\) values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The text \citet{Sokal1995} comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.} to find that only about 2\% of values are expected to be higher than \(x = 9.1\) in our original dataset.
 These z scores will become especially useful for calculating confidence intervals in \protect\hyperlink{Chapter_17}{Chapter 17}.
 They can also be useful for comparing values from variables or statistics measured on different scales \citep{Sokal1995, Cheadle2003, Adams2016}.
 
 \hypertarget{Chapter_16}{%
 \chapter{\texorpdfstring{\emph{Practical}. Probability and simulation}{Practical. Probability and simulation}}\label{Chapter_16}}
 
-This practical focuses on applying the concepts from \protect\hyperlink{Chapter_14}{Chapter 14} and \protect\hyperlink{Chapter_15}{Chapter 15} in Jamovi.
+This practical focuses on applying the concepts from \protect\hyperlink{Chapter_14}{Chapter 14} and \protect\hyperlink{Chapter_15}{Chapter 15} in Jamovi \citep{Jamovi2022}.
 There will be 3 exercises.
 
 \begin{enumerate}
@@ -4601,7 +4601,7 @@ Figure 18.1 shows the difference between the standard normal distribution and th
 
 Note that in Figure 18.1, a t-distribution with 19 degrees of freedom (df) is shown.
 The t-distribution is parameterised using df, and we lose a degree of freedom when calculating \(s^{2}\) from a sample size of \(N = 20\), so \(df = 20 - 1 = 19\) is the correct value (see \protect\hyperlink{Chapter_12}{Chapter 12} for a brief explanation).
-For calculating CIs, df will always be \(N - 1\), and this will be taken care of automatically in statistical programs such as Jamovi and R\footnote{Another interesting caveat, which Jamovi and R will take care of automatically (so we do not actually have to worry about it), is that when we calculate \(s^{2}\) to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by \(1/N\) instead of \(1/(N-1)\) \citep{Sokal1995}. In other words, we no longer need to correct the sample variance \(s^{2}\) to account for bias in estimating \(\sigma^{2}\) because the t-distribution takes care of this for us.}.
+For calculating CIs, df will always be \(N - 1\), and this will be taken care of automatically in statistical programs such as Jamovi and R\footnote{Another interesting caveat, which Jamovi and R will take care of automatically (so we do not actually have to worry about it), is that when we calculate \(s^{2}\) to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by \(1/N\) instead of \(1/(N-1)\) \citep{Sokal1995}. In other words, we no longer need to correct the sample variance \(s^{2}\) to account for bias in estimating \(\sigma^{2}\) because the t-distribution takes care of this for us.} \citep{Jamovi2022, Rproject}.
 
 Recall from \protect\hyperlink{Chapter_17}{Chapter 17} that our body mass measurements of 20 cats had a sample mean of \(\bar{x} = 4.1\) kg and sample standard deviation of \(s = 0.6\) kg. We calculated the lower 95\% CI to be \(LCI_{95\%} = 4.041\) and the upper 95\% CI to be \(UCI_{95\%} = 4.159\). We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
 Our corrected lower 95\% CI is,
@@ -4640,7 +4640,7 @@ The t-distribution is therefore very important for understanding most of the sta
 \hypertarget{Chapter_19}{%
 \chapter{\texorpdfstring{\emph{Practical}. z- and t- intervals}{Practical. z- and t- intervals}}\label{Chapter_19}}
 
-This lab focuses on applying the concepts from \protect\hyperlink{Chapter_17}{Chapter 17} and \protect\hyperlink{Chapter_18}{Chapter 18} in Jamovi.
+This lab focuses on applying the concepts from \protect\hyperlink{Chapter_17}{Chapter 17} and \protect\hyperlink{Chapter_18}{Chapter 18} in Jamovi \citep{Jamovi2022}.
 Specifically, we will practice calculating confidence intervals (CIs).
 There will be 4 exercises focusing on calculating confidence intervals in Jamovi.
 To complete the first 2 exercises, you will need the distrACTION module in Jamovi.
@@ -5323,7 +5323,7 @@ Differences between \(\bar{y}_{1}\) and \(\bar{y}_{2}\) cause the t-statistic to
 What is \(SE(\bar{y})\) in this case?
 After all, there are two different samples \(y_{1}\) and \(y_{2}\), so could the two samples not have \emph{different} standard errors?
 This could indeed be the case, and how we actually conduct the independent samples t-test depends on whether or not we are willing to assume that the two samples came from populations with the same variance (i.e., \(\sigma_{1} = \sigma_{2}\)).
-If we are willing to make this assumption, then we can pool the variances (\(s^{2}_{p}\)) together to get a combined (more accurate) estimate of the standard error \(SE(\bar{y})\) from both samples\footnote{This is not a calculation that needs to be done by hand anymore. Statistical software such as Jamovi or R will calculate \(s_{p}\) automatically from a dataset. For those interested, the formula that it uses to make this calculation is, \[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\] This looks like a lot, but really all the equation is doing is add the two variances (\(s^{2}_{y_{1}}\) and \(s^{2}_{y_{2}}\)) together, but weighing them by their degrees of freedom (\(n_{1} - 1\) and \(n_{2} - 1\)), so that the one with a higher sample size has more influence on the pooled standard deviation. To get \(SE(\bar{y})\), we then need to multiply by the square root of \((n_{1} + n_{2})/(n_{1}n_{2})\), \[SE(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\] It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by Jamovi or R.}\(^{,}\)\footnote{Note that the degrees of freedom for the t-statistic is not straightforward when we pool variances. If the sample sizes \(n_{1}\) and \(n_{2}\) are the same, then \(df = 2(n - 1)\). If \(n_{1} \neq n_{2}\), then \(df = n_{1} + n_{2} - 2\) \citep{Sokal1995}. The rationale here is that we lose an extra degree of freedom if we need to estimate the variance of each sample separately, which is necessary if we need to weigh each variance by its own degree of freedom (see footnote 34). Statistical software such as Jamovi and R handles all of this automatically, so we will not dwell on it here.}.
+If we are willing to make this assumption, then we can pool the variances (\(s^{2}_{p}\)) together to get a combined (more accurate) estimate of the standard error \(SE(\bar{y})\) from both samples\footnote{This is not a calculation that needs to be done by hand anymore. Statistical software such as Jamovi or R will calculate \(s_{p}\) automatically from a dataset \citep{Jamovi2022, Rproject}. For those interested, the formula that it uses to make this calculation is, \[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\] This looks like a lot, but really all the equation is doing is add the two variances (\(s^{2}_{y_{1}}\) and \(s^{2}_{y_{2}}\)) together, but weighing them by their degrees of freedom (\(n_{1} - 1\) and \(n_{2} - 1\)), so that the one with a higher sample size has more influence on the pooled standard deviation. To get \(SE(\bar{y})\), we then need to multiply by the square root of \((n_{1} + n_{2})/(n_{1}n_{2})\), \[SE(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\] It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by Jamovi or R.}\(^{,}\)\footnote{Note that the degrees of freedom for the t-statistic is not straightforward when we pool variances. If the sample sizes \(n_{1}\) and \(n_{2}\) are the same, then \(df = 2(n - 1)\). If \(n_{1} \neq n_{2}\), then \(df = n_{1} + n_{2} - 2\) \citep{Sokal1995}. The rationale here is that we lose an extra degree of freedom if we need to estimate the variance of each sample separately, which is necessary if we need to weigh each variance by its own degree of freedom (see footnote 34). Statistical software such as Jamovi and R handles all of this automatically \citep{Jamovi2022, Rproject}, so we will not dwell on it here.}.
 
 If we are unwilling to assume that \(y_{1}\) and \(y_{2}\) have the same variance, then we need to use an alternative version of the independent samples t-test.
 This alternative version is called the Welch's t-test \citep{Welch1938}, also known as the unequal variances t-test \citep{Dytham2011, Ruxton2006}.
@@ -5447,7 +5447,7 @@ There really is not a definitive answer to this question, and the truth is that 
 
 In this book, we will take the traditional approach of running a statistical test called the Shapiro-Wilk test to test the null hypothesis that data are normally distributed.
 If we reject the null hypothesis (when \(P < 0.05\)), then we will conclude that the assumption of normality is violated and the t-test is not appropriate.
-The details of how the Shaprio-Wilk test work are not important for now, but the test can be easily run using Jamovi or R.
+The details of how the Shaprio-Wilk test work are not important for now, but the test can be easily run using Jamovi or R \citep{Jamovi2022, Rproject}.
 If we reject the null hypothesis that the data are normally distributed, then we can use one of two methods to run our statistical test.
 
 \begin{enumerate}
@@ -5698,7 +5698,7 @@ One way to think about this is that if \(y_{1}\) and \(y_{2}\) are very differen
 But if \(y_{1}\) and \(y_{2}\) are very similar, then their summed ranks should be nearly the same.
 Hence, if the deviation of \(U\) is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of \(y_{1}\) and \(y_{2}\) are identical, the we can reject \(H_{0}\).
 
-As with the \protect\hyperlink{wilcoxon-test}{Wilcoxon test}, we could compare our \(U\) test statistic to a critical value from a \protect\hyperlink{mann-whitney-u-critical-values}{table}, but statistical software such as Jamovi or R will also just give us the test statistic \(U\) and associated p-value.
+As with the \protect\hyperlink{wilcoxon-test}{Wilcoxon test}, we could compare our \(U\) test statistic to a critical value from a \protect\hyperlink{mann-whitney-u-critical-values}{table}, but statistical software such as Jamovi or R will also just give us the test statistic \(U\) and associated p-value \citep{Jamovi2022, Rproject}.
 In our example above, \(U = 27\), \(N_{1} = 10\), and \(N_{2} = 9\) has a p-value of \(P = 0.156\), so we do not reject the null hypothesis.
 We therefore conclude that there is no evidence that there is a difference in the median test scores of the two years.
 
@@ -5716,7 +5716,7 @@ If assumptions of the t-test are violated, then it might be necessary to use a d
 \hypertarget{Chapter_22}{%
 \chapter{\texorpdfstring{\emph{Practical}. Hypothesis testing and t-tests}{Practical. Hypothesis testing and t-tests}}\label{Chapter_22}}
 
-This lab focuses on applying the concepts about hypothesis testing from \protect\hyperlink{Chapter_20}{Chapter 20} and the statistical tests from \protect\hyperlink{Chapter_21}{Chapter 21} in Jamovi.
+This lab focuses on applying the concepts about hypothesis testing from \protect\hyperlink{Chapter_20}{Chapter 20} and the statistical tests from \protect\hyperlink{Chapter_21}{Chapter 21} in Jamovi \citep{Jamovi2022}.
 There will be 5 exercises in total, which will focus on using t-tests and their non-parametric equivalents.
 The data for this lab focus on an example of biology and environmental sciences education (Figure 22.1\footnote{This figure has been released into the \href{https://commons.wikimedia.org/wiki/File:Teach_in_pine_needles.jpg}{Public Domain}.}).
 Similar to the example in \protect\hyperlink{Chapter_21}{Chapter 21}, it uses datasets of student test scores (note that these data are entirely fictional; we have not used scores from real students).
@@ -6294,6 +6294,8 @@ The t-test works fine when we have only 2 groups, but it does not work when ther
 An ANOVA can be used to test the null hypothesis that \emph{all} groups in a dataset are sampled from a population with the same mean.
 For example, we might want to know if mean wing length is the same for 5 species of fig wasps sampled from the same area \citep{Duthie2015b}.
 What follows is an explanation of why this can be done by looking at the variance within and between groups (note, `groups' are also sometimes called `factors' or `levels').
+Groups are categorical data (see \protect\hyperlink{Chapter_5}{Chapter 5}).
+In the case of the fig wasp example, the groups are the different species (Table 23.1).
 
 \begin{longtable}[]{@{}rrrrr@{}}
 \caption{\label{tab:unnamed-chunk-106}Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
@@ -6313,11 +6315,11 @@ Het1 & Het2 & LO1 & SO1 & SO2 \\
 \end{longtable}
 
 Why is any of this necessary?
-If we want to know if the 5 species of fig wasps in Table 21.2 have the same mean, can we not just use t-tests to compare the means between each species?
+If we want to know if the 5 species of fig wasps in Table 23.1 have the same mean wing length, can we not just use t-tests to compare the means between each species?
 There are a couple problems with this approach.
 First, there are a lot of group combinations to compare (Het1 vs Het2, Het1 vs LO1, Het1 vs SO1, etc.).
-For the 5 fig wasp species in Table 21.2, there are 10 combinations that would need to be tested.
-And the number of combinations groups exponentially\footnote{Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, \[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\] The number of combinations therefore increases with increasing group number (g).} with each new group added to the dataset (Table 21.2)
+For the 5 fig wasp species in Table 21.2, there are 10 pair-wise combinations that would need to be tested.
+And the number of combinations grows exponentially\footnote{Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, \[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\] The number of combinations therefore increases with increasing group number (g).} with each new group added to the dataset (Table 23.2)
 
 \begin{longtable}[]{@{}lrrrrrrrrr@{}}
 \caption{\label{tab:unnamed-chunk-107}The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)}\tabularnewline
@@ -6328,12 +6330,12 @@ Tests & 1 & 3 & 6 & 10 & 15 & 21 & 28 & 36 & 45 \\
 \bottomrule
 \end{longtable}
 
-Aside from the tedium of testing every possible combination of group means, there is more serious a problem having to do with the Type I error.
+Aside from the tedium of testing every possible combination of group means, there is a more serious problem having to do with the Type I error.
 Recall from \protect\hyperlink{p-values-false-positives-and-power}{Chapter 20.3} that a Type I error occurs when we reject the null hypothesis (\(H_{0}\)) and erroneously conclude that \(H_{0}\) is false when it is actually true (i.e., a false positive).
-If we reject \(H_{0}\) at a threshold level of \(\alpha = 0.05\) (i.e., reject \(H_{0}\) when \(P < 0.05\), as usual), then we will erroneously reject the null hypothesis about 5\% of the time that we run a statistical test.
-But if we run 10 separate t-tests to see if the fig wasp species in Table 23.1 have different mean wing lengths, then this percentage increases considerably.
+If we reject \(H_{0}\) at a threshold level of \(\alpha = 0.05\) (i.e., reject \(H_{0}\) when \(P < 0.05\), as usual), then we will erroneously reject the null hypothesis about 5\% of the time that we run a statistical test and \(H_{0}\) is true.
+But if we run 10 separate t-tests to see if the fig wasp species in Table 23.1 have different mean wing lengths, then the probability of making an error increases considerably.
 The probability of erroneously rejecting \textbf{at least 1} of the 10 null hypotheses increases from 0.05 to about 0.40.
-In other words, about 40\% of the time, we will conclude that at least 2 species differ in their mean wing lengths\footnote{To get the 0.4, we can first calculate the probability that we (correctly) do not reject \(H_{0}\) for all 10 pair-wise species combinations \((1 - 0.05)^{10} \approx 0.60\), then subtract from 1, \(P(Do\:not\:reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\). That is, we find the probability of there not being a Type I error in the first test (1 - 0.05), \textbf{and} the second test (1 - 0.05), and so forth, thereby multiplying (1 - 0.05) by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least 1 Type I error is 1 minus this probability.}, even when all species \emph{really do} have the same wing length.
+In other words, about 40\% of the time, we would conclude that at least 2 species differ in their mean wing lengths\footnote{To get the 0.4, we can first calculate the probability that we (correctly) do not reject \(H_{0}\) for all 10 pair-wise species combinations \((1 - 0.05)^{10} \approx 0.60\), then subtract from 1, \(P(Do\:not\:reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\). That is, we find the probability of there not being a Type I error in the first test (1 - 0.05), \textbf{and} the second test (1 - 0.05), and so forth, thereby multiplying (1 - 0.05) by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least 1 Type I error is 1 minus this probability.}, even when all species \emph{really do} have the same wing length.
 This is not a mistake that we want to make, which is why we should first test if all of the means are equal:
 
 \begin{itemize}
@@ -6345,7 +6347,7 @@ This is not a mistake that we want to make, which is why we should first test if
 \end{itemize}
 
 We can use an ANOVA to test the null hypothesis above against the alternative hypothesis.
-If we reject \(H_{0}\), then we can start comparing group means (more on this in \protect\hyperlink{Chapter_25}{Chapter 25}).
+If we reject \(H_{0}\), then we can start comparing pairs of group means (more on this in \protect\hyperlink{Chapter_25}{Chapter 25}).
 
 How do we test the above \(H_{0}\) by looking at \emph{variances} instead of \emph{means}?
 Before getting into the details of how an ANOVA works, we will first look at the F-distribution.
@@ -6356,9 +6358,9 @@ This is relevant because the test statistic calculated in an ANOVA is called an 
 
 If we want to test whether or not 2 variances are the same, then we need to know what the null distribution should be if 2 different samples came from a population with the same variance.
 The general idea is the same as it was for the distributions introduced in \protect\hyperlink{probability-distributions}{Chapter 14.4}.
-For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities of the binomial distribution given \(P(Heads) = 0.5\) and \(N = 10\) (see \protect\hyperlink{binomial-distribution}{Chapter 14.4.1} Figure 14.5).
-To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function\footnote{The F-distribution was originally discovered in the context of the ratio of random variables with chi-square distributions, with each variable being divided by its own degree of freedom \citep{Miller2004}. We will look at the Chi-squar distribution in \protect\hyperlink{Week9}{Week 9}.}.
-The ratio of the variances for samples 1 and 2 is \citep{Sokal1995},
+For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when \(P(Heads) = 0.5\) and \(N = 10\) (see \protect\hyperlink{binomial-distribution}{Chapter 14.4.1} Figure 14.5).
+To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function\footnote{The F-distribution was originally discovered in the context of the ratio of random variables with chi-square distributions, with each variable being divided by its own degree of freedom \citep{Miller2004}. We will look at the Chi-square distribution in \protect\hyperlink{Week9}{Week 9}.}.
+For example, the ratio of the variances for samples 1 and 2 is \citep{Sokal1995},
 
 \[F = \frac{Variance\:1}{Variance\:2}.\]
 
@@ -6367,7 +6369,7 @@ If the variances are very different, then F is either very low (if Variance 1 \t
 To test the null hypothesis that samples 1 and 2 have the same variance, we therefore need to map the calculated F to the probability density of the F distribution.
 Again, the general idea is the same as comparing a t-score to the t-distribution in \protect\hyperlink{one-sample-t-test}{Chapter 21.1}.
 Recall that the shape of the t-distribution is slightly different for different degrees of freedom (df).
-As df increased, the t-distribution starts to resemble the normal distribution.
+As df increases, the t-distribution starts to resemble the normal distribution.
 For the F-distribution, there are actually 2 degrees of freedom to consider.
 One degree of freedom is needed for Variance 1, and a second degree of freedom is needed for Variance 2.
 Together, these 2 degrees of freedom will determine the shape of the F-distribution (Figure 23.1).
@@ -6378,36 +6380,36 @@ Together, these 2 degrees of freedom will determine the shape of the F-distribut
 
 Figure 23.1 shows an F distribution for 3 different combinations of degrees of freedom.
 The F distribution changes its shape considerably given different df values.
-Visualising this is much much easier using an \href{https://bradduthie.shinyapps.io/f_distribution/}{interactive application}.
+Visualising this is much, much easier using an \href{https://bradduthie.shinyapps.io/f_distribution/}{interactive application}.
 
 \begin{quote}
 \href{https://bradduthie.shinyapps.io/f_distribution/}{Click here} for an interactive application demonstrating how the F distribution changes with different degrees of freedom.
 \end{quote}
 
 It is not necessary to memorise how the F distribution changes with different degrees of freedom.
-The point is that the probability distribution changes given different degrees of freedom, and that it works like other distributions such as the normal or t-distribution.
+The point is that the probability distribution changes given different degrees of freedom, and that the relationship between probability and the value on the x-axis (F) works like other distributions such as the normal or t-distribution.
 The entire area under the curve must sum to 1, and we can calculate the area above and below any F value (rather, we can get statistical programs such as Jamovi and R to do this for us).
 Consequently, we can use the F-distribution as the null distribution for the ratio of two variances.
-If the null hypothesis that the 2 variances are the same is true (i.e., F = 1), then the F-distribution gives us the probability of the ratio of 2 variances being as or more extreme than a specific value.
+If the null hypothesis that the 2 variances are the same is true (i.e., F = 1), then the F-distribution gives us the probability of the ratio of 2 variances being as or more extreme (i.e., further from 1) than a specific value.
 
 \hypertarget{one-way-anova}{%
 \section{One-way ANOVA}\label{one-way-anova}}
 
-We can use the F-distribution to test the null hypothesis mentioned at the beginning of the chapter.
+We can use the F-distribution to test the null hypothesis mentioned at the beginning of the chapter (that fig wasp species have the same mean wing length).
 The general idea is to compare the mean variance among groups to the mean variance within groups, so our F value (i.e., ``F statistic'') is calculated,
 
 \[F = \frac{Mean\:variance\:among\:\:groups}{Mean\:variance\:within\:\:groups}.\]
 
 The rest of this section works through the details of how to calculate this F statistic.
 It is easy to get lost in these details, but the calculations that follow do not need to be done by hand.
-As usual, Jamovi or R will do all of this work for us.
-The reason for going through the ANOVA step by step is to show how the total variation in the dataset is being partitioned into the variance among and within groups, and to provide some conceptual understanding of what the numbers in ANOVA output actually mean.
+As usual, Jamovi or R will do all of this work for us \citep{Jamovi2022, Rproject}.
+The reason for going through the ANOVA step-by-step is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in ANOVA output actually mean.
 
 \hypertarget{anova-mean-variance-among-groups}{%
 \subsection{ANOVA mean variance among groups}\label{anova-mean-variance-among-groups}}
 
-To get the mean variance among groups (\(MS_{among}\)), we need to use the sum of squares (SS).
-The SS was introduced when showing how the variance is calculated in \protect\hyperlink{the-variance}{Chapter 12.3},
+To get the mean variance among groups (i.e., mean squares; \(MS_{among}\)), we need to use the sum of squares (SS).
+The SS was introduced to show how the variance is calculated in \protect\hyperlink{the-variance}{Chapter 12.3},
 
 \[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]
 
@@ -6437,16 +6439,16 @@ Het1 & Het2 & LO1 & SO1 & SO2 \\
 \bottomrule
 \end{longtable}
 
-To get the mean variance among groups, we need to calculate the sum of the squared deviations of each species wing length (e.g., \(\bar{x}_{Het1}\)) from the grand mean (\(\bar{\bar{x}}\)).
+To get the mean variance among groups, we need to calculate the sum of the squared deviations of each species wing length (\(\bar{x}_{Het1} =\) 1.88125, \(\bar{x}_{Het2} =\) 1.70775, etc.) from the grand mean (\(\bar{\bar{x}} =\) 1.6691).
 We also need to weigh the squared deviation of each species by the number of samples for each species\footnote{In this case, weighing by sample size is not so important because each species has the same number of samples. But when different groups have different numbers of samples, we need to multiply by sample number so that each group contributes proportionally to the SS.}.
-For example, for Het1, the squared deviation would be \(4(1.88125 - 1.6691)^{2}\) because there are 4 flies, we multiply the squared deviation from the mean by 4.
+For example, for Het1, the squared deviation would be \(4(1.88125 - 1.6691)^{2}\) because there are 4 fig wasps, so we multiply the squared deviation from the mean by 4.
 We can then calculate the sum of squared deviations of the species means from the grand mean,
 
 \[SS_{among} = 4(1.88125 - 1.6691)^{2} + 
-               4(1.70775 - 1.6691)^{2} +  ...
-               + 4(1.53 - 1.6691)^{2}\]
+               4(1.70775 - 1.6691)^{2}\:+\: ... \:
+               +\:4(1.53 - 1.6691)^{2}.\]
 
-Calculating the above across the 5 species of wasps gives a value of 0.3651868.
+Calculating the above across the 5 species of wasps gives a value of \(SS_{among} =\) 0.3651868.
 To get our mean variance among groups, we now just need to divide by the appropriate degrees of freedom (\(df_{among}\)).
 Because there are 5 total species (\(N_{species} = 5\)), \(df_{among} = 5 - 1 = 4\).
 The mean variance among groups is therefore \(MS_{among} =\) 0.3651868/4 = 0.0912967.
@@ -6505,19 +6507,19 @@ Het1 & Het2 & LO1 & SO1 & SO2 \\
 \bottomrule
 \end{longtable}
 
-If we sum up the sum of squared deviations in Table 23.5, we get a \(SS_{within} =\) 0.422097.
+If we sum the squared deviations in Table 23.5, we get a \(SS_{within} =\) 0.422097.
 Note that each species included 4 wing lengths.
-We lose a degree of freedom for each of the 5 species, so our total df is 3 for each species, and \(5 \times 3 = 15\) degrees of freedom within groups (\(df_{within}\)).
+We lose a degree of freedom for each of the 5 species (because we had to calculate the species mean), so our total df is 3 for each species, and \(5 \times 3 = 15\) degrees of freedom within groups (\(df_{within}\)).
 To get the mean variance within groups (denominator of F), we calculate \(MS_{within} = SS_{within} / df_{within} =\) 0.0281398.
 
 \hypertarget{anova-f-statistic-calculation}{%
 \subsection{ANOVA F statistic calculation}\label{anova-f-statistic-calculation}}
 
-From \protect\hyperlink{anova-mean-variance-among-groups}{Chapter 23.2.1}, we now have our mean variance among groups,
+From \protect\hyperlink{anova-mean-variance-among-groups}{Chapter 23.2.1}, we have the mean variance among groups,
 
 \[MS_{among} = 0.0912967.\]
 
-From \protect\hyperlink{anova-mean-variance-among-groups}{Chapter 23.2.2}, we now have our mean variance within groups,
+From \protect\hyperlink{anova-mean-variance-among-groups}{Chapter 23.2.2}, we have the mean variance within groups,
 
 \[MS_{within} = 0.0281398\]
 
@@ -6535,20 +6537,20 @@ We can use the \href{https://bradduthie.shinyapps.io/f_distribution/}{interactiv
 \includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-112-1} \caption{F distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.}\label{fig:unnamed-chunk-112}
 \end{figure}
 
-The area shaded in grey in Figure 23.2, where F \textgreater{} 3.2443976, is approximately \(P =\) 0.041762, NA.
+The area shaded in grey in Figure 23.2, where F \textgreater{} 3.2443976, is approximately \(P =\) 0.041762.
 This is our p-value.
 Since \(P < 0.05\), we can reject the null hypothesis that all mean species wing lengths are the same because the variance among species wing lengths is significantly higher than the variance within species wing lengths.
-Note that the critical value of F (i.e., for which \(P = 0.05\)) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19) we would reject \(H_{0}\).
+Note that the critical value of F (i.e., for which \(P = 0.05\)) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19), we would reject \(H_{0}\).
 
-When running an ANOVA in a statistical program, output will usually include the calculated F statistic, degrees of freedom, and the p-value.
+When running an ANOVA in a statistical program, output include (at least) the calculated F statistic, degrees of freedom, and the p-value.
 Figure 23.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.
 
 \begin{figure}
 \includegraphics[width=0.6\linewidth]{img/jamovi_ANOVA_output} \caption{Jamovi output for a one-way ANOVA of wing length measurements in 5 species of fig wasps collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-113}
 \end{figure}
 
-Jamovi is quite minimalist, but these 4 statistics (F, df1, df2, and p) are all that is really needed.
-Most statistical programs will show ANOVA output that includes the SS and mean variances among (\(MS_{among}\)) and within (\(MS_{within}\)) groups.
+Jamovi is quite minimalist for a one-way ANOVA \citep{Jamovi2022}, but these 4 statistics (F, df1, df2, and p) are all that is really needed.
+Most statistical programs will show ANOVA output that includes the SS and mean squares among (\(MS_{among}\)) and within (\(MS_{within}\)) groups.
 
 \begin{verbatim}
 ## Analysis of Variance Table
@@ -6590,20 +6592,20 @@ For example, if the fig wasps introduced at the start of this chapter were used 
 Assumption 2 means that observations are not related to one another in some confounding way.
 For example, if all of the Het1 wasps came from one fig tree, and all of the Het2 wasps came from a different fig tree, then wing length measurements are not really independent within species.
 In this case, we could not attribute differences in mean wing length to species.
-The difference could instead be attributable to wasps being sampled from different trees (more on this in \protect\hyperlink{Chapter_26}{Chapter 26}).
+The differences could instead be attributable to wasps being sampled from different trees (more on this in \protect\hyperlink{Chapter_26}{Chapter 26}).
 
 Assumption 3 is fairly self-explanatory.
 The ANOVA assumes that all of the groups in the dataset (e.g., species in the case of the fig wasp wing measurements) have the same variance.
 That is, we assume homogeneity of variances (as opposed to heterogeneity of variances).
 In general, ANOVA is reasonably robust to deviations from homogeneity, especially if groups have similar sample sizes \citep{Blanca2018}.
-This means that the Type I error rate is about what we want it to be (usually \(\alpha = 0.05\)), even if an assumption is violated.
+This means that the Type I error rate is about what we want it to be (usually \(\alpha = 0.05\)), even when the assumption of homogeneity of variances is violated.
 In other words, we are not rejecting the null hypothesis when it is true more frequently than we intend!
-We can test this assumption using a Levene's test in the same way that we did for the independent samples t-test in \protect\hyperlink{independent-samples-t-test-1}{Chapter 22}.
-If we reject the null hypothesis that groups have the same mean, then we should potentially consider a non-parametric alternative test such as the Kruskall-Wallis H test (see \protect\hyperlink{Chapter_25}{Chapter 25}).
+We can test the assumption that group variances are the same using a Levene's test in the same way that we did for the independent samples t-test in \protect\hyperlink{independent-samples-t-test-1}{Chapter 22}.
+If we reject the null hypothesis that groups have the same variance, then we should potentially consider a non-parametric alternative test such as the Kruskall-Wallis H test (see \protect\hyperlink{Chapter_25}{Chapter 25}).
 
 Assumption 4 is the equivalent of the t-test assumption from \protect\hyperlink{assumptions-of-t-tests}{Chapter 21.4} that sample means are normally distributed around the true mean.
 What the assumption means is that if we were to repeatedly resample data from a population, the sample means that we calculate would be normally distributed.
-For the fig wasp wing measurements, this means that if we were to go back out and repeatedly collect 4 fig wasps from each of 5 species, then sample means of species wing length and overall wing length would be normally distributed around the true means.
+For the fig wasp wing measurements, this means that if we were to go back out and repeatedly collect 4 fig wasps from each of the 5 species, then sample means of species wing length and overall wing length would be normally distributed around the true means.
 Due to the central limit theorem (see \protect\hyperlink{Chapter_15}{Chapter 15}), this becomes less problematic with increasing sample size.
 We can test if the sample data are normally distributed using a Q-Q plot or Shapiro-Wilk test (the same procedure used for the t-test).
 Fortunately, the ANOVA is quite robust to deviations from normality \citep{Schmider2010}, but if data are not normally distributed, we should again consider a non-parametric alternative test such as the Kruskall-Wallis H test (see \protect\hyperlink{Chapter_25}{Chapter 25}).
@@ -6611,19 +6613,19 @@ Fortunately, the ANOVA is quite robust to deviations from normality \citep{Schmi
 \hypertarget{Chapter_24}{%
 \chapter{Multiple comparisons}\label{Chapter_24}}
 
-In \protect\hyperlink{one-way-anova}{Chapter 23.2}, we rejected the null hypothesis that all fig wasp species have the same mean wing length.
-We can therefore conclude that at least one species has a different mean wing length than the rest; can we determine which one?
+In the \protect\hyperlink{one-way-anova}{Chapter 23.2} ANOVA example, we rejected the null hypothesis that all fig wasp species have the same mean wing length.
+We can therefore conclude that at least one species has a different mean wing length than the rest; can we determine which one(s)?
 We can try to find this out using a post hoc comparison (\emph{post hoc} is Latin for `after the event').
-That is, after we have reject the null hypothesis in the one-way ANOVA, then we can start comparing individual groups (Het1 vs Het2, Het1 vs LO1, etc.).
-Nevertheless, we need some way to correct for the Type I error problem explained at the beginning of this chapter.
+That is, after we have reject the null hypothesis in the one-way ANOVA, we can start comparing individual groups (Het1 vs Het2, Het1 vs LO1, etc.).
+Nevertheless, we need some way to correct for the Type I error problem explained at the beginning of \protect\hyperlink{Chapter_23}{Chapter 23}.
 That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (P \textless{} 0.05) where none really exists.
-A way of avoiding this inflated Type I error rate is to set our significance value to be lower than the usual \(\alpha = 0.05\).
+A way to avoid this inflated Type I error rate is to set our significance threshold to be lower than the usual \(\alpha = 0.05\).
 We can, for example, divide our \(\alpha\) value by the total number of pair-wise t-tests tests that we run.
 This is called a Bonferonni correction \citep{Dytham2011}, and it is an especially cautious approach to post hoc comparisons between groups \citep{Narum2006}.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the 5 species.
 This means that if we were to apply a Bonferonni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when \(P < 0.005\) instead of \(P < 0.05\).
 
-Another approach to correcting for multiple comparisons is a Tukey's honest significance test (Tukey's HSD, or just a `Tukey's test').
+Another approach to correcting for multiple comparisons is a Tukey's honestly significant difference test (Tukey's HSD, or just a `Tukey's test').
 The general idea of a Tukey's test is the same as the Bonferonni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at \(\alpha = 0.05\)).
 The Tukey's test does this by using a modified t-test, with a t-distribution called the ``studentised range distribution'' that applies the range of mean group values (i.e., \(max(\bar{x}) - min(\bar{x})\)) and uses the sample variance across the groups with the highest and lowest sample means \citep{Tukey1949, Box1978}.
@@ -6637,9 +6639,9 @@ Figure 24.1 shows a post-hoc comparisons table for all pair-wise combinations of
 
 The column `p' in Figure 24.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
 The columns \(p_{tukey}\) and \(p_{bonferonni}\) show corrected p-values for the Tukey's test and Bonferroni corrected t-test, respectively.
-We can interpret these p-values as normal, concluding that two species have a different mean if \(P < 0.05\) (i.e., Jamovi does the correction for us; we do not need to divide \(\alpha = 0.05\) to figure out what the significance threshold should be given the Bonferonni correction).
+We can interpret these p-values as usual, concluding that two species have different means if \(P < 0.05\) (i.e., Jamovi does the correction for us; we do not need to divide \(\alpha = 0.05\) to figure out what the significance threshold should be given the Bonferonni correction).
 
-Note that from Figure 24.1, it appears that both the Tukey test and the Bonferonni correction fail to find that any pair of species have significantly different means.
+Note that from Figure 24.1, it appears that both the Tukey's test and the Bonferonni correction fail to find that any pair of species have significantly different means.
 This does not mean that we have done the test incorrectly.
 The multiple comparisons tests are asking a slightly different question than the one-way ANOVA.
 The multiple comparisons tests are testing the null hypothesis that two \emph{particular} species have the same mean wing lengths.
@@ -6655,7 +6657,7 @@ The Kruskall-Wallis test is essentially an extension of the Mann-Whitney U test 
 Like the Mann-Whitney U test, it uses the \emph{ranks} of values instead of the actual values in the dataset.
 The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (H) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in \protect\hyperlink{Chapter_23}{Chapter 23}.
-For convenience, Table 23.1 is reproduced here as Table 24.1.
+For convenience, Table 23.1 is reproduced here as Table 25.1.
 
 \begin{longtable}[]{@{}rrrrr@{}}
 \caption{\label{tab:unnamed-chunk-116}Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
@@ -6676,11 +6678,11 @@ Het1 & Het2 & LO1 & SO1 & SO2 \\
 
 Recall that in the one-way ANOVA from \protect\hyperlink{one-way-anova}{Chapter 23.2}, we reject the null hypothesis that all species had the same mean wing length (P = 0.042).
 But we had not actually tested the assumptions of the one-way ANOVA before running the test!
-If we had tested the ANOVA assumptions, we would find that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
+If we had tested the ANOVA assumptions, we would not reject the null hypothesis that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
 But a Levene's test of homogeneity of variances convincingly rejects the null hypothesis that the group variances are equal (P = 0.008).
 Consequently, we should probably have used the non-parametric Kruskall-Wallis H test instead.
-To do this, we first need to rank all of the values in Table 23.1.
-There are 20 total values, so we rank them from 1 to 20 (Table 23.2).
+To do this, we first need to rank all of the values in Table 25.1.
+There are 20 total values, so we rank them from 1 to 20 (Table 25.2).
 
 \begin{longtable}[]{@{}rrrrr@{}}
 \caption{\label{tab:unnamed-chunk-117}Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
@@ -6706,15 +6708,15 @@ But the formula shows how a statistical program will do the calculation \citep{K
 \[H = (N - 1) \frac{\sum_{i=1}^{g}N_{i}\left(\bar{R}_{i} - \bar{\bar R} \right)^2}{\sum_{i=1}^{g}\sum_{j=1}^{N_{i}} \left(R_{ij} - \bar{\bar R} \right)^{2}}.\]
 
 For our purposes, the mathematical details are not important.
-The equation is included here only to show the similarity between the calculation of H and the calculating of F in \protect\hyperlink{one-way-anova}{Chapter 23.2}.
+The equation is included here only to show the similarity between the calculation of H versus F from \protect\hyperlink{one-way-anova}{Chapter 23.2}.
 In the numerator of the equation for H, we are calculating the squared deviation of mean group ranks from the overall mean rank \((\bar{R}_{i} - \bar{\bar R})^2\), as weighted by the group sample size \(N_{i}\).
 We are then dividing by the sum of squared deviations of all ranks (\(R_{ij}\)) from the overall mean rank \(\bar{\bar R}\).
 All of this gets multiplied by \(N - 1\) to give the test statistic H.
-We can then compare H to a suitable null distribution, which might be calculated using an appropriate algorithm \citep[e.g.,][]{Choi2003}.
-Some statistical programs such as Jamovi and R compare H to a Chi-square distribution (see \protect\hyperlink{Week9}{Week 9}), which is an effective approximation \citep{Miller2004}.
+We can then compare H to a suitable null distribution, which might be calculated precisely using a specific algorithm \citep[e.g.,][]{Choi2003}.
+But most statistical programs such as Jamovi and R compare H to a Chi-square distribution (see \protect\hyperlink{Week9}{Week 9}), which is an effective approximation \citep{Miller2004}.
 
 The output of a Kruskall-Wallis H test is quite minimal and easy to read.
-Jamovi and R report a Chi-square (\(\chi^{2}\)) test statistic, degrees of freedom, and p-value.
+Jamovi and R report a Chi-square (\(\chi^{2}\)) test statistic, degrees of freedom, and p-value \citep{Jamovi2022, Rproject}.
 Figure 25.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing lengths data.
 
 \begin{figure}
@@ -6724,20 +6726,22 @@ Figure 25.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing le
 Given Kruskall-Wallis H test output (Figure 25.1), we should not reject the null hypothesis that species have different wing lengths because P \textgreater{} 0.05.
 This is in contrast to our one-way ANOVA result, for which we did reject the same null hypothesis.
 The Kruskall-Wallis H test does not assume that group variances are the same, unlike the one-way ANOVA.
-Since we know that the homogeneity of variances assumption is violated for the ANOVA, it is probably best to be cautious and conclude that mean wing length does not differ among species.
+Since we know that the homogeneity of variances assumption is violated for the fig wasp data, it is probably best to be cautious and conclude that mean wing length does not differ among species.
 
 \hypertarget{Chapter_26}{%
 \chapter{Two-way ANOVA}\label{Chapter_26}}
 
 The one-way ANOVA tested the null hypothesis that all group means are the same.
-But we might also have a dataset in which there is more than one group.
-For example, suppose that we know that the fig wasps used in Chapters 23-25 actually came from 2 different trees (Tree A or Tree B).
+But we might also have a dataset in which there is more than 1 type of group.
+For example, suppose we know that the fig wasps used in Chapters 23-25 actually came from 2 different trees (Tree A and Tree B).
 This would mean that there could be a confounding variable affecting wing length, violating assumption 2 from \protect\hyperlink{assumptions-of-anova}{Chapter 23.3}.
 If, for whatever reason, fig wasps on different trees have different wing lengths, then we should include tree as an explanatory variable in the ANOVA.
-Table 23.6 shows the fig wasp wing length dataset in a tidy format, which includes columns for two groups, species and tree.
+Because we would then have 2 group types (species and tree), we would need a two-way ANOVA\footnote{Yes, it is possible to have a three-way or a four-way ANOVA, but having so many group types can get very messy very quickly, especially if we want to look at interactions between group types.}.
+Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just 2 of the 5 species (Het1 and SO2).
+Table 26.1 shows the fig wasp wing length dataset for the 2 species in a tidy format, which includes columns for 2 group types, species and tree.
 
 \begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-119}Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-119}Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
 Species & Tree & wing\_length \\
 \midrule
@@ -6750,14 +6754,104 @@ Het1 & A & 2.122 \\
 Het1 & A & 1.938 \\
 Het1 & B & 1.765 \\
 Het1 & B & 1.700 \\
-Het2 & A & 1.810 \\
-Het2 & A & 1.821 \\
-Het2 & B & 1.653 \\
-Het2 & B & 1.547 \\
-LO1 & A & 1.869 \\
-LO1 & A & 1.957 \\
-LO1 & B & 1.589 \\
-LO1 & B & 1.430 \\
+SO2 & A & 1.635 \\
+SO2 & A & 1.700 \\
+SO2 & B & 1.407 \\
+SO2 & B & 1.378 \\
+\bottomrule
+\end{longtable}
+
+We could run a one-way ANOVA (or t-test) to see if wing lengths differ between species, then run another one-way ANOVA to see if wing lengths differ between trees.
+But by including both group types in the same model (species and tree), we can test how one group affects wing length in the context of the other group (e.g., how tree affects wing length, while also accounting for any effects of species on wing length).
+We can also see if there is any synergistic effect between groups, which is called an \textbf{interaction effect}.
+For example, if Het1 fig wasps had longer wing lengths than SO1 on Tree A, but shorter wing lengths than SO1 on Tree B, then we would say that there is an interaction between species and tree.
+Given this kind of interaction effect, it would not make sense to say that Het1 fig wasps have longer or shorter wings than SO1 because this would depend on the tree!
+
+This chapter will not delve into the mathematics of the two-way ANOVA\footnote{For those interested, chapter 11 of \citet{Sokal1995} works all of this out step by step.}.
+Working out a two-way ANOVA by hand requires similar, albeit more laborious, calculations of sum of squares and degrees of freedom than is needed for the one-way ANOVA in \protect\hyperlink{one-way-anova}{Chapter 23.2}.
+But the general concept is the same.
+The idea is to calculate the amount of the total variation attributable to different groups, or the interaction among group types.
+Note that the assumptions for the two-way ANOVA are the same as for the one-way ANOVA.
+
+Unlikely previous statistical tests in this book, we can actually test three separate null hypotheses with a two-way ANOVA.
+The first test is the same as the one-way ANOVA in \protect\hyperlink{Chapter_23}{Chapter 23}, which focuses on mean species wing lengths:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_{0}:\) Both mean species wing lengths are the same
+\item
+  \(H_{A}:\) Mean species wing lengths are not the same
+\end{itemize}
+
+The second test focuses on the other group type, Tree:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_{0}:\) Wing lengths are the same in both trees
+\item
+  \(H_{A}:\) Wing lengths are not the same in both trees
+\end{itemize}
+
+These two hypotheses address the \textbf{main effects} of the independent variables (species and tree) on the dependent variable (wing length).
+In other words, the mean effect of one group type (either species or tree) by itself, holding the other constant.
+The third hypothesis addresses the interaction effect:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_{0}:\) There is no interaction between species and tree
+\item
+  \(H_{A}:\) There is an interaction between species and tree
+\end{itemize}
+
+Interaction effects are difficult to understand at first, so we will look at two concrete examples of two-way ANOVAs.
+The first will use the Table 26.1 data in which no interaction effect exists.
+The second will use a different species pairing in which an interaction does exist.
+
+In a two-way ANOVA, the output (Figure 26.1) appears similar to that of a one-way ANOVA (see \protect\hyperlink{anova-f-statistic-calculation}{Chapter 23.2.3}), but there are 4 rows of output.
+Rows 1 and 2 test the null hypotheses associated with the main effects of species and tree, respectively.
+Row 3 tests the interaction effect.
+And row 4 shows us the variation in the data that cannot be attributed to either the main effects or the interaction (i.e., the residual variation).
+This is equivalent to the variation within groups in the one-way ANOVA.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_two-way_ANOVA_no_interaction} \caption{Jamovi output table for a two-way ANOVA, which tests for the effects of species (Het1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-120}
+\end{figure}
+
+This is a lot more information than the one-way ANOVA, but it helps to think of each row separately as a test of a different null hypothesis.
+From the first row, given the high F = 45.75 and the low P = 0.002, we can reject the null hypothesis that species mean wing lengths are the same.
+Similarly, from the second row, we can reject the null hypothesis that wing lengths are the same in both trees (F = 30.39; P = 0.005).
+In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and trees (F = 0.05, P = 0.839).
+Figure 26.2 shows the these results visually \citep{Jamovi2022}.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/two-way_ANOVA_no_interaction} \caption{An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-121}
+\end{figure}
+
+In Figure 26.2, there is no interaction between species and tree.
+How can we infer this from Figure 26.2?
+Wing length is always significantly higher in Tree A than it is in Tree B, regardless of the species of wasp.
+Similarly, wing length is always higher for Het1 than it is for SO2, regardless of tree.
+Consequently, while wasp species is important for predicting wing length, as is the tree from which the wasp was collected, we do not need to consider one variable to know the effect of the other.
+This is reflected in the orange and blue lines having a similar slope, or, more technically, slopes that are not significantly different from one another.
+If the slopes of the two lines were significantly different, then this would be evidence for an interaction between species and tree.
+
+What would Figure 26.2 look like if there was an interaction effect between species and tree?
+We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
+Table 26.2 shows the data.
+
+\begin{longtable}[]{@{}llr@{}}
+\caption{\label{tab:unnamed-chunk-122}Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\toprule
+Species & Tree & wing\_length \\
+\midrule
+\endfirsthead
+\toprule
+Species & Tree & wing\_length \\
+\midrule
+\endhead
 SO1 & A & 1.557 \\
 SO1 & A & 1.493 \\
 SO1 & B & 1.470 \\
@@ -6769,16 +6863,41 @@ SO2 & B & 1.378 \\
 \bottomrule
 \end{longtable}
 
-We could run a one-way ANOVA to see if wing lengths differ among species, then run another one-way ANOVA to see if wing lengths differ between trees.
-But by including both group types in the same model (species and tree), we can test how one group affects wing length in the context of the other group (e.g., how tree affects wing length, while also accounting for any effects of species on wing length).
-We can also see if there is any synergistic effect between groups, which is called an `interaction effect'.
-For example, if Het1 fig wasps had longer than average wings on Tree A, but shorter than average wings on Tree B, then we would say that there is an interaction between species and tree.
-Given this kind of interaction effect, it would not make sense to say that Het1 fig wasps have longer or shorter wings, on average, because this would depend on the tree!
+If we run the two-way ANOVA in Jamovi, then we can see the ANOVA output table (Figure 26.3).
 
-This section will not delve into the mathematics of the two-way ANOVA\footnote{For those interested, chapter 11 of \citet{Sokal1995} works all of this out step by step.}.
-Working out a two-way ANOVA by hand requires similar, albeit more laborious, calculations of sum of squares and degrees of freedom than is needed for the one-way ANOVA in \protect\hyperlink{one-way-anova}{Chapter 23.2}.
-But the concept is the same.
-The idea is to calculate the amount of the total variation attributable to different groups, or the interaction among groups.
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_two-way_ANOVA_with_interaction} \caption{Jamovi output table for a two-way ANOVA, which tests for the effects of species (SO1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-123}
+\end{figure}
+
+Figure 26.3 shows that the effect of species is not significant (P \textgreater{} 0.05), but the effect of tree is significant (P \textless{} 0.05).
+Consequently, in terms of the main effects, it appears that species does not affect wing length, but tree does affect wing length.
+Unlike the example test between Het1 and SO2, the interaction between species and tree is significant in Figure 26.3.
+This means that we cannot interpret the main effects in isolation because the effect of each on wing length will change in the presence of the other.
+In other words, the effect of tree on wing length will depend on the species.
+Figure 26.4 shows this interaction visually.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/two-way_ANOVA_with_interaction} \caption{An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., SO2 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-124}
+\end{figure}
+
+Note that for SO1, wing length is basically the same for Tree A and B (the 2 left points in Figure 26.4).
+In contrast, for SO2, tree has a very noticeable effect on wing length!
+Fig wasps in species SO2 clearly have higher wing lengths on Tree A than they do on Tree B.
+\emph{Overall}, however, the mean wing length for SO2 appears to be about the same as it is for SO1 (i.e., the mid-way point between the blue and orange points for SO2 is at about the same wing length as it is for SO1, around 1.5 mm).
+Species therefore does not really have an effect on wing length, at least not by itself.
+But species \emph{does} have a clear effect if you also take tree into account.
+In other words, to predict how tree will affect wing length (not at all for SO1, or a lot for SO2), it is necessary to know what species of fig wasp is being considered.
+This is how interactions work in ANOVA, and more generally in statistics.
+
+There is one last point that is relevant to make for the two-way ANOVA.
+Recall that we tested 3 null hypotheses simultaneously.
+Should we not then apply some kind of correction for multiple comparisons, as we did in \protect\hyperlink{Chapter_24}{Chapter 24}?
+This is actually not necessary.
+The reason is subtle.
+With the multiple t-tests, we wanted to know if \emph{any} of the pair-wise differences between groups were significant.
+Each t-test was not really a separate question in this case.
+We just tried all possible combinations in search of a pair of species with significantly different wing lengths.
+With the two-way ANOVA, we are asking 3 separate questions, and accepting a Type I error rate of 0.05 for each of them, individually.
 
 \hypertarget{Chapter_27}{%
 \chapter{\texorpdfstring{\emph{Practical}. ANOVA and associated tests}{Practical. ANOVA and associated tests}}\label{Chapter_27}}

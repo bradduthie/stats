@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-07" />
+<meta name="date" content="2023-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -462,7 +462,7 @@ Figure 18.1: A standard normal probability distribution showing 95 per cent of p
 </div>
 <p>Note that in Figure 18.1, a t-distribution with 19 degrees of freedom (df) is shown.
 The t-distribution is parameterised using df, and we lose a degree of freedom when calculating <span class="math inline">\(s^{2}\)</span> from a sample size of <span class="math inline">\(N = 20\)</span>, so <span class="math inline">\(df = 20 - 1 = 19\)</span> is the correct value (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a> for a brief explanation).
-For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in statistical programs such as Jamovi and R<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in statistical programs such as Jamovi and R<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.</p>
 <p>Recall from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 4.041\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.159\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
 Our corrected lower 95% CI is,</p>
 <p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{\sqrt{20}}\right) = 3.819\]</span></p>
@@ -502,8 +502,14 @@ Box, G E P, W G Hunter, and Hunter J S. 1978. <em><span class="nocase">Statistic
 <div id="ref-Miller2004" class="csl-entry">
 Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
 </div>
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
 <div id="ref-Sokal1995" class="csl-entry">
 Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Jamovi2022" class="csl-entry">
+The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
 </div>
 <div class="footnotes">

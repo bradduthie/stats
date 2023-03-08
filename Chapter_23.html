@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-07" />
+<meta name="date" content="2023-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -576,7 +576,7 @@ The general idea is to compare the mean variance among groups to the mean varian
 <p><span class="math display">\[F = \frac{Mean\:variance\:among\:\:groups}{Mean\:variance\:within\:\:groups}.\]</span></p>
 <p>The rest of this section works through the details of how to calculate this F statistic.
 It is easy to get lost in these details, but the calculations that follow do not need to be done by hand.
-As usual, Jamovi or R will do all of this work for us.
+As usual, Jamovi or R will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
 The reason for going through the ANOVA step-by-step is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in ANOVA output actually mean.</p>
 <div id="anova-mean-variance-among-groups" class="section level3 hasAnchor" number="23.2.1">
 <h3><span class="header-section-number">23.2.1</span> ANOVA mean variance among groups<a href="Chapter_23.html#anova-mean-variance-among-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -740,7 +740,7 @@ Figure 23.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.
 Figure 23.3: Jamovi output for a one-way ANOVA of wing length measurements in 5 species of fig wasps collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Jamovi is quite minimalist for a one-way ANOVA, but these 4 statistics (F, df1, df2, and p) are all that is really needed.
+<p>Jamovi is quite minimalist for a one-way ANOVA <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>, but these 4 statistics (F, df1, df2, and p) are all that is really needed.
 Most statistical programs will show ANOVA output that includes the SS and mean squares among (<span class="math inline">\(MS_{among}\)</span>) and within (<span class="math inline">\(MS_{within}\)</span>) groups.</p>
 <pre><code>## Analysis of Variance Table
 ## 
@@ -801,11 +801,17 @@ Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class=
 <div id="ref-Miller2004" class="csl-entry">
 Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
 </div>
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
 <div id="ref-Schmider2010" class="csl-entry">
 Schmider, Emanuel, Matthias Ziegler, Erik Danay, Luzi Beyer, and Markus Bühner. 2010. <span>“<span class="nocase">Is It Really Robust?: Reinvestigating the robustness of ANOVA against violations of the normal distribution assumption</span>.”</span> <em>Methodology</em> 6 (4): 147–51. <a href="https://doi.org/10.1027/1614-2241/a000016">https://doi.org/10.1027/1614-2241/a000016</a>.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
 Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Jamovi2022" class="csl-entry">
+The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
 </div>
 <div class="footnotes">
