@@ -333,7 +333,7 @@ div.csl-indent {
 <li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#one-way-anova"><i class="fa fa-check"></i><b>23.2</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="23.2.1" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>23.2.1</b> ANOVA mean variance among groups</a></li>
-<li class="chapter" data-level="23.2.2" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-among-groups-1"><i class="fa fa-check"></i><b>23.2.2</b> ANOVA mean variance among groups</a></li>
+<li class="chapter" data-level="23.2.2" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>23.2.2</b> ANOVA mean variance within groups</a></li>
 <li class="chapter" data-level="23.2.3" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>23.2.3</b> ANOVA F statistic calculation</a></li>
 </ul></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#assumptions-of-anova"><i class="fa fa-check"></i><b>23.3</b> Assumptions of ANOVA</a></li>
@@ -626,8 +626,8 @@ To get our mean variance among groups, we now just need to divide by the appropr
 Because there are 5 total species (<span class="math inline">\(N_{species} = 5\)</span>), <span class="math inline">\(df_{among} = 5 - 1 = 4\)</span>.
 The mean variance among groups is therefore <span class="math inline">\(MS_{among} =\)</span> 0.3651868/4 = 0.0912967.</p>
 </div>
-<div id="anova-mean-variance-among-groups-1" class="section level3 hasAnchor" number="23.2.2">
-<h3><span class="header-section-number">23.2.2</span> ANOVA mean variance among groups<a href="Chapter_23.html#anova-mean-variance-among-groups-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="anova-mean-variance-within-groups" class="section level3 hasAnchor" number="23.2.2">
+<h3><span class="header-section-number">23.2.2</span> ANOVA mean variance within groups<a href="Chapter_23.html#anova-mean-variance-within-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To get the mean variance within groups (<span class="math inline">\(MS_{within}\)</span>), we need to calculate the sum of squared deviations of wing lengths from <em>species means</em>.
 That is, we need to take the wing length of each wasp, subtract the mean species wing length, then square it.
 For example, for Het1, we calculate,</p>
@@ -733,7 +733,7 @@ Figure 23.2: F distribution with df = 4 for the numerator and df = 15 for the de
 This is our p-value.
 Since <span class="math inline">\(P &lt; 0.05\)</span>, we can reject the null hypothesis that all mean species wing lengths are the same because the variance among species wing lengths is significantly higher than the variance within species wing lengths.
 Note that the critical value of F (i.e., for which <span class="math inline">\(P = 0.05\)</span>) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19), we would reject <span class="math inline">\(H_{0}\)</span>.</p>
-<p>When running an ANOVA in a statistical program, output include (at least) the calculated F statistic, degrees of freedom, and the p-value.
+<p>When running an ANOVA in a statistical program, output includes (at least) the calculated F statistic, degrees of freedom, and the p-value.
 Figure 23.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-113"></span>
 <img src="img/jamovi_ANOVA_output.png" alt="Jamovi output is shown with a table called 'One-Way ANOVA', which includes a single measurement for F, df1, df2, and p." width="60%" />
@@ -757,7 +757,7 @@ Note that we can also get this information from Jamovi if we want it (see <a hre
 </div>
 <div id="assumptions-of-anova" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">23.3</span> Assumptions of ANOVA<a href="Chapter_23.html#assumptions-of-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As with the t-test (see <a href="Chapter_21.html#assumptions-of-t-tests">Chapter 21.4</a>), there are some important assumptions we make when using an ANOVA.
+<p>As with the t-test (see <a href="Chapter_21.html#assumptions-of-t-tests">Chapter 21.4</a>), there are some important assumptions that we make when using an ANOVA.
 Violating these assumptions will mean that our Type I error rate (<span class="math inline">\(\alpha\)</span>) is, again, potentially misleading.
 Assumptions of ANOVA include the following <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>:</p>
 <ol style="list-style-type: decimal">
