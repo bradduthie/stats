@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-08" />
+<meta name="date" content="2023-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -327,7 +327,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="Week7.html"><a href="Week7.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
 <li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
 <li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
-<li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> Analysis of variance overview</a>
+<li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> Analysis of variance</a>
 <ul>
 <li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#the-f-distribution"><i class="fa fa-check"></i><b>23.1</b> The F-distribution</a></li>
 <li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#one-way-anova"><i class="fa fa-check"></i><b>23.2</b> One-way ANOVA</a>
@@ -343,10 +343,11 @@ div.csl-indent {
 <li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
-<li class="chapter" data-level="27.1" data-path="Chapter_27.html"><a href="Chapter_27.html#anova-exercise-1"><i class="fa fa-check"></i><b>27.1</b> ANOVA Exercise 1</a></li>
-<li class="chapter" data-level="27.2" data-path="Chapter_27.html"><a href="Chapter_27.html#anova-exercise-2"><i class="fa fa-check"></i><b>27.2</b> ANOVA Exercise 2</a></li>
-<li class="chapter" data-level="27.3" data-path="Chapter_27.html"><a href="Chapter_27.html#anova-exercise-3"><i class="fa fa-check"></i><b>27.3</b> ANOVA Exercise 3</a></li>
-<li class="chapter" data-level="27.4" data-path="Chapter_27.html"><a href="Chapter_27.html#anova-exercise-4"><i class="fa fa-check"></i><b>27.4</b> ANOVA Exercise 4</a></li>
+<li class="chapter" data-level="27.1" data-path="Chapter_27.html"><a href="Chapter_27.html#one-way-anova-site"><i class="fa fa-check"></i><b>27.1</b> One-way ANOVA (site)</a></li>
+<li class="chapter" data-level="27.2" data-path="Chapter_27.html"><a href="Chapter_27.html#one-way-anova-profile"><i class="fa fa-check"></i><b>27.2</b> One-way ANOVA (profile)</a></li>
+<li class="chapter" data-level="27.3" data-path="Chapter_27.html"><a href="Chapter_27.html#multiple-comparisons"><i class="fa fa-check"></i><b>27.3</b> Multiple comparisons</a></li>
+<li class="chapter" data-level="27.4" data-path="Chapter_27.html"><a href="Chapter_27.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>27.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="27.5" data-path="Chapter_27.html"><a href="Chapter_27.html#two-way-anova"><i class="fa fa-check"></i><b>27.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="part"><span><b>IX Counts and Correlation</b></span></li>
 <li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
@@ -439,7 +440,7 @@ For an introduction to what Jamovi is and why we are using it in this module, se
 In this practical, we will work with two datasets, both of which are based on real biological and environmental studies conducted by researchers at the University of Stirling.</p>
 <p>The first dataset includes measurements of soil organic carbon (grams of Carbon per kg of soil) from the topsoil and subsoil collected in a national park in Gabon.
 These data were collected by Dr Carmen Rosa Medina-Carmona in an effort to understand how <a href="https://bg.copernicus.org/articles/3/397/2006/bg-3-397-2006.pdf">pyrogenic carbon</a> (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
-<strong>Download these data here: <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil_organic_carbon.csv</a></strong> (right click and “Save Link As…”).</p>
+<strong>Download these data here: <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil_organic_carbon.csv</a></strong> (right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’).</p>
 <p>The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) in Baja, Mexico.
 These data were collected by Dr Brad Duthie in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Measurements include fig lengths, widths, and heights in centimeters from 4 different fig trees, and the number of seeds in each fruit.
