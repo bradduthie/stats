@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-11" />
+<meta name="date" content="2023-03-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="Week9.html"/>
-<link rel="next" href="chi-squared-goodness-of-fit.html"/>
+<link rel="next" href="correlation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -351,54 +351,64 @@ div.csl-indent {
 </ul></li>
 <li class="part"><span><b>IX Counts and Correlation</b></span></li>
 <li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
-<li class="chapter" data-level="28" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>28</b> Frequency and count data</a></li>
-<li class="chapter" data-level="29" data-path="chi-squared-goodness-of-fit.html"><a href="chi-squared-goodness-of-fit.html"><i class="fa fa-check"></i><b>29</b> Chi-squared goodness of fit</a></li>
-<li class="chapter" data-level="30" data-path="chi-squared-test-of-association.html"><a href="chi-squared-test-of-association.html"><i class="fa fa-check"></i><b>30</b> Chi-squared test of association</a></li>
-<li class="chapter" data-level="31" data-path="correlation-key-concepts.html"><a href="correlation-key-concepts.html"><i class="fa fa-check"></i><b>31</b> Correlation key concepts</a></li>
-<li class="chapter" data-level="32" data-path="correlation-mathematics.html"><a href="correlation-mathematics.html"><i class="fa fa-check"></i><b>32</b> Correlation mathematics</a></li>
-<li class="chapter" data-level="33" data-path="correlation-hypothesis-testing.html"><a href="correlation-hypothesis-testing.html"><i class="fa fa-check"></i><b>33</b> Correlation hypothesis testing</a></li>
-<li class="chapter" data-level="34" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>34</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<li class="chapter" data-level="28" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html"><i class="fa fa-check"></i><b>28</b> Frequency and count data</a>
 <ul>
-<li class="chapter" data-level="34.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>34.1</b> Chi-Square Exercise 1</a></li>
-<li class="chapter" data-level="34.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>34.2</b> Chi-Square association Exercise 2</a></li>
-<li class="chapter" data-level="34.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>34.3</b> Correlation Exercise 3</a></li>
-<li class="chapter" data-level="34.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>34.4</b> Correlation Exercise 4</a></li>
+<li class="chapter" data-level="28.1" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html#the-chi-square-distribution"><i class="fa fa-check"></i><b>28.1</b> The Chi-square distribution</a></li>
+<li class="chapter" data-level="28.2" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html#chi-squared-goodness-of-fit"><i class="fa fa-check"></i><b>28.2</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="28.3" data-path="frequency-and-count-data.html"><a href="frequency-and-count-data.html#chi-squared-test-of-association"><i class="fa fa-check"></i><b>28.3</b> Chi-squared test of association</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="correlation.html"><a href="correlation.html"><i class="fa fa-check"></i><b>29</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="correlation.html"><a href="correlation.html#key-concepts-of-correlation"><i class="fa fa-check"></i><b>29.1</b> Key concepts of correlation</a></li>
+<li class="chapter" data-level="29.2" data-path="correlation.html"><a href="correlation.html#mathematics-of-correlation"><i class="fa fa-check"></i><b>29.2</b> Mathematics of correlation</a></li>
+<li class="chapter" data-level="29.3" data-path="correlation.html"><a href="correlation.html#correlation-hypothesis-testing"><i class="fa fa-check"></i><b>29.3</b> Correlation hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="29.3.1" data-path="correlation.html"><a href="correlation.html#pearson-product-moment-correlation-coefficient"><i class="fa fa-check"></i><b>29.3.1</b> Pearson product moment correlation coefficient</a></li>
+<li class="chapter" data-level="29.3.2" data-path="correlation.html"><a href="correlation.html#spearman-rank-correlation-coefficient"><i class="fa fa-check"></i><b>29.3.2</b> Spearman rank correlation coefficient</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html"><i class="fa fa-check"></i><b>30</b> <em>Practical</em>. Analysis of count data, correlation, and regression</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-exercise-1"><i class="fa fa-check"></i><b>30.1</b> Chi-Square Exercise 1</a></li>
+<li class="chapter" data-level="30.2" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#chi-square-association-exercise-2"><i class="fa fa-check"></i><b>30.2</b> Chi-Square association Exercise 2</a></li>
+<li class="chapter" data-level="30.3" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-3"><i class="fa fa-check"></i><b>30.3</b> Correlation Exercise 3</a></li>
+<li class="chapter" data-level="30.4" data-path="practical.-analysis-of-count-data-correlation-and-regression.html"><a href="practical.-analysis-of-count-data-correlation-and-regression.html#correlation-exercise-4"><i class="fa fa-check"></i><b>30.4</b> Correlation Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>X Linear Regression</b></span></li>
 <li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
-<li class="chapter" data-level="35" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>35</b> Regression key concepts</a></li>
-<li class="chapter" data-level="36" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>36</b> Regression validity</a></li>
-<li class="chapter" data-level="37" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>37</b> Introduction to multiple regression</a></li>
-<li class="chapter" data-level="38" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>38</b> Model selection (maybe remove this?)</a></li>
-<li class="chapter" data-level="39" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>39</b> <em>Practical</em>. Using regression</a>
+<li class="chapter" data-level="31" data-path="regression-key-concepts.html"><a href="regression-key-concepts.html"><i class="fa fa-check"></i><b>31</b> Regression key concepts</a></li>
+<li class="chapter" data-level="32" data-path="regression-validity.html"><a href="regression-validity.html"><i class="fa fa-check"></i><b>32</b> Regression validity</a></li>
+<li class="chapter" data-level="33" data-path="introduction-to-multiple-regression.html"><a href="introduction-to-multiple-regression.html"><i class="fa fa-check"></i><b>33</b> Introduction to multiple regression</a></li>
+<li class="chapter" data-level="34" data-path="model-selection-maybe-remove-this.html"><a href="model-selection-maybe-remove-this.html"><i class="fa fa-check"></i><b>34</b> Model selection (maybe remove this?)</a></li>
+<li class="chapter" data-level="35" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html"><i class="fa fa-check"></i><b>35</b> <em>Practical</em>. Using regression</a>
 <ul>
-<li class="chapter" data-level="39.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>39.1</b> Regression Exercise 1</a></li>
-<li class="chapter" data-level="39.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>39.2</b> Regression Exercise 2</a></li>
-<li class="chapter" data-level="39.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>39.3</b> Regression Exercise 3</a></li>
-<li class="chapter" data-level="39.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>39.4</b> Regression Exercise 4</a></li>
+<li class="chapter" data-level="35.1" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-1"><i class="fa fa-check"></i><b>35.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="35.2" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-2"><i class="fa fa-check"></i><b>35.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="35.3" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-3"><i class="fa fa-check"></i><b>35.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="35.4" data-path="practical.-using-regression.html"><a href="practical.-using-regression.html#regression-exercise-4"><i class="fa fa-check"></i><b>35.4</b> Regression Exercise 4</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
 <li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
-<li class="chapter" data-level="40" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>40</b> Introduction to randomisation</a></li>
-<li class="chapter" data-level="41" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>41</b> Assumptions of randomisation</a></li>
-<li class="chapter" data-level="42" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>42</b> Bootstrapping</a></li>
-<li class="chapter" data-level="43" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>43</b> Monte Carlo</a></li>
-<li class="chapter" data-level="44" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>44</b> <em>Practical</em>. Using R</a>
+<li class="chapter" data-level="36" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>36</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="37" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>37</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="38" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>38</b> Bootstrapping</a></li>
+<li class="chapter" data-level="39" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>39</b> Monte Carlo</a></li>
+<li class="chapter" data-level="40" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>40</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="44.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>44.1</b> R Exercise 1</a></li>
-<li class="chapter" data-level="44.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>44.2</b> R Exercise 2</a></li>
-<li class="chapter" data-level="44.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>44.3</b> R Exercise 3</a></li>
+<li class="chapter" data-level="40.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>40.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="40.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>40.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="40.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>40.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XII Statistical Reporting</b></span></li>
 <li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
-<li class="chapter" data-level="45" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>45</b> Reporting statistics</a></li>
-<li class="chapter" data-level="46" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>46</b> More introduction to R</a></li>
-<li class="chapter" data-level="47" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>47</b> More getting started with R</a></li>
-<li class="chapter" data-level="48" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>48</b> <em>Practical</em>. Using R</a>
+<li class="chapter" data-level="41" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>41</b> Reporting statistics</a></li>
+<li class="chapter" data-level="42" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>42</b> More introduction to R</a></li>
+<li class="chapter" data-level="43" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>43</b> More getting started with R</a></li>
+<li class="chapter" data-level="44" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>44</b> <em>Practical</em>. Using R</a>
 <ul>
-<li class="chapter" data-level="48.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>48.1</b> R Exercise 1</a></li>
-<li class="chapter" data-level="48.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>48.2</b> R Exercise 2</a></li>
-<li class="chapter" data-level="48.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>48.3</b> R Exercise 3</a></li>
+<li class="chapter" data-level="44.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>44.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="44.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>44.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="44.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>44.3</b> R Exercise 3</a></li>
 </ul></li>
 <li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
 <li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
@@ -433,7 +443,160 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="frequency-and-count-data" class="section level1 hasAnchor" number="28">
 <h1><span class="header-section-number">Chapter 28</span> Frequency and count data<a href="frequency-and-count-data.html#frequency-and-count-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>General explanation</p>
+<p>In this book, we have introduced hypothesis testing as a tool to determine if variables were sampled from a population with a specific mean (one sample t-test in <a href="Chapter_21.html#one-sample-t-test">Chapter 21.1</a>), or if different groups of variables were sampled from a population with the same mean (the independent samples t-test in <a href="Chapter_21.html#independent-samples-t-test">Chapter 21.2</a> and ANOVA in <a href="Chapter_23.html#Chapter_23">Chapter 23</a>).
+In these tests, the variables for which we calculated the means were always continuous (e.g., fig wasp wing lengths, nitrogen concentration in parts per million).
+That is, the variables of the t-test and ANOVA could always, at least in theory, take any real value (i.e., any decimal).
+And the comparison was always between the means of categorical groups (e.g., fig wasp species or study sites).
+But not every variable that we measure will be continuous.
+For example, in <a href="Chapter_5.html#Chapter_5">Chapter 5</a>, we also introduced discrete variables, which can only take discrete counts (1, 2, 3, 4, and so forth).
+Examples of such <strong>count data</strong> might include the number of species of birds in a forest or the number of days in the year for which an extreme temperature is recorded.
+<a href="Chapter_14.html#Chapter_14">Chapter 14</a> included some examples of count data when introducing probability distributions (e.g., counts of heads or tails in coin flips, or the number of people testing positive for Covid-19).
+Count data are discrete because they can only take integer values.
+For example, there cannot be 14.24 bird species in a forest; it needs to be a whole number.</p>
+<p>In the biological and environmental sciences, we often want to test whether or not observed counts are significantly different from some expectation.
+For example, we might hypothesise that the probability of flowers being red versus blue in a particular field is the same.
+In other words, <span class="math inline">\(Pr(flower = red) = 0.5\)</span> and <span class="math inline">\(Pr(flower = Blue) = 0.5\)</span>.
+By this logic, if we were to collect 100 flowers at random from the field, we would expect 50 to be red and 50 to be blue.
+If we actually went out and collected 100 flowers at random, but found 46 to be red and 54 to be blue, would this be sufficiently different from our expectation to reject the null hypothesis that the probability of sampling a red versus blue flower is the same?
+We could test this null hypothesis using a Chi-square goodness of fit test (<a href="frequency-and-count-data.html#the-chi-square-distribution">Chapter 28.1</a>).
+Similarly, we might want to test if 2 different count variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
+We could test this kind of hypothesis using a Chi-squared test of association (<a href="">Chapter 30</a>).</p>
+<p>Before introducing the Chi-square goodness of fit test or the Chi-square test of association, it makes sense to first introduce the Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution.
+The general motivation for introducing the Chi-square distribution is the same as it was for the t-distribution (<a href="Chapter_18.html#Chapter_18">Chapter 18</a>) or F-distribution (<a href="Chapter_23.html#the-f-distribution">Chapter 23.1</a>).
+We need some probability density distribution that is our null distribution, which is what we predict if our null hypothesis is true.
+We then compare this this null distribution our test statistic to find the probability of sampling a test statistic as or more extreme if the null hypothesis is really true (i.e., a p-value).</p>
+<div id="the-chi-square-distribution" class="section level2 hasAnchor" number="28.1">
+<h2><span class="header-section-number">28.1</span> The Chi-square distribution<a href="frequency-and-count-data.html#the-chi-square-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
+There is a lot to unpack in the previous sentence, so we can go through it step by step.
+First, we can take another look at the standard normal distribution from <a href="Chapter_14.html#normal-distribution">Chapter 14.4.4</a> (Figure 28.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-134"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-134-1.png" alt="A plot of a bell curve, shaded in grey and centered at the x-axis on a value of zero is shown. The x axis is labelled 'x'." width="672" />
+<p class="caption">
+Figure 28.1: Recreation of Figure 14.9, a standard normal probability distribution
+</p>
+</div>
+<p>Suppose that we randomly sampled 4 values from the standard normal distribution shown in Figure 28.1.</p>
+<ul>
+<li><span class="math inline">\(x_{1} = -1.244\)</span></li>
+<li><span class="math inline">\(x_{2} = 0.162\)</span></li>
+<li><span class="math inline">\(x_{3} = -2.214\)</span></li>
+<li><span class="math inline">\(x_{4} = 2.071\)</span></li>
+</ul>
+<p>We can square all of these values, then add up the squares,</p>
+<p><span class="math display">\[\chi^{2} = (-1.244)^{2} + (0.162)^{2} + (-2.214)^{2} + (2.071)^{2}.\]</span></p>
+<p>Note that <span class="math inline">\(\chi^{2}\)</span> cannot be negative because when we square a number that is either positive or negative, we always end up with a positive value (e.g., <span class="math inline">\(-2^{2} = 4\)</span>, see <a href="Chapter_1.html#numbers-and-operations">Chapter 1.1</a>).
+The final value is <span class="math inline">\(\chi^{2} = 10.76462\)</span>.
+Of course, this <span class="math inline">\(\chi^{2}\)</span> value would have been different if our <span class="math inline">\(x_{i}\)</span> values (<span class="math inline">\(x_{1}\)</span>, <span class="math inline">\(x_{2}\)</span>, <span class="math inline">\(x_{3}\)</span>, and <span class="math inline">\(x_{4}\)</span>) had been different.
+And if we are sampling randomly from the normal distribution, we should not expect to get the same <span class="math inline">\(\chi^{2}\)</span> value from 4 random standard normal deviates.
+We can therefore ask, if we were to keep sampling 4 standard normal deviates and calculating new <span class="math inline">\(\chi^{2}\)</span> values, what would be the distribution of these <span class="math inline">\(\chi^{2}\)</span> values?
+The answer is shown in Figure 28.1.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-135"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-135-1.png" alt="Plot of a curved distribution that rapidly increases to a maximum at around 2 then slowly decreases." width="672" />
+<p class="caption">
+Figure 28.2: A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.
+</p>
+</div>
+<p>Looking at the shape of Figure 28.1, we can see that most of the time, the sum of deviations from the mean of <span class="math inline">\(\mu = 0\)</span> will be about 2.
+But sometimes we will get a much lower or higher value of <span class="math inline">\(\chi^{2}\)</span> by chance, if we sample particularly low or high values of <span class="math inline">\(x_{i}\)</span>.</p>
+<p>If we summed a different number of squared <span class="math inline">\(x_{i}\)</span> values, then we would expect the distribution of <span class="math inline">\(\chi^{2}\)</span> to change.
+Had we sampled fewer than 4 <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be lower just because we are adding up fewer numbers.
+Similarly, had we sampled more than 4 <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be higher just because we are adding up more numbers.
+The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(N\)</span>), or more specifically the degrees of freedom (df, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = N - 1\)</span>.
+This is the same idea as the t-distribution from <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, which also changed shape depending on the degrees of freedom.
+Figure 28.3 shows the different <span class="math inline">\(\chi^{2}\)</span> probability density distributions for different degrees of freedom.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-136"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-136-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different Chi-square distributions with different degrees of freedom." width="672" />
+<p class="caption">
+Figure 28.3: Probability density functions for 3 different Chi-square distributions, each of which have different degrees of freedom (df).
+</p>
+</div>
+<p>As with the F distribution from <a href="Chapter_23.html#the-f-distribution">Chapter 23.1</a>, visualising the <span class="math inline">\(\chi^{2}\)</span> distribution is much, much easier using an <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/chi-square/">Click here</a> for an interactive application demonstrating how the Chi-square distribution changes with different degrees of freedom.</p>
+</blockquote>
+<p>And as with the F distribution, it is not necessary to memorise how the <span class="math inline">\(\chi^{2}\)</span> distribution changes with different degrees of freedom.
+The important point is that the distribution changes with different degrees of freedom, and we can map probabilities to the <span class="math inline">\(\chi^{2}\)</span> value on the x-axis in the same way as any other distribution.</p>
+<p>What does any of this have to do with count data? It actually is a bit messy.
+The <span class="math inline">\(\chi^{2}\)</span> distribution is not a perfect tool for comparing observed and expected counts <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+After all, counts are integer values, and the <span class="math inline">\(\chi^{2}\)</span> distribution is clearly continuous (unlike, e.g., the binomial or Poisson distributions from <a href="##probability-distributions">Chapter 14.4</a>.
+The <span class="math inline">\(\chi^{2}\)</span> distribution is in fact a useful approximation for testing counts, and one that becomes less accurate when sample size <span class="citation">(<a href="#ref-Slakter1968" role="doc-biblioref">Slakter 1968</a>)</span> or expected count size <span class="citation">(<a href="#ref-Tate1973" role="doc-biblioref">Tate and Hyer 1973</a>)</span> is small.
+Nevertheless, we can use the <span class="math inline">\(\chi^{2}\)</span> distribution as a tool for testing whether observed counts are significantly different from expected counts.
+The first test that we will look at is the goodness of fit test.</p>
+</div>
+<div id="chi-squared-goodness-of-fit" class="section level2 hasAnchor" number="28.2">
+<h2><span class="header-section-number">28.2</span> Chi-squared goodness of fit<a href="frequency-and-count-data.html#chi-squared-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first kind of test that we will consider for count data is the goodness of fit test.
+In this test, we have some number of counts that we expect to observe (e.g., expected counts of red versus blue flowers), then compare this expectation to the counts that we actually observe.
+If the expected and observed counts differ by a lot, then we will get a large test statistic and reject the null hypothesis.
+A simple concrete example will make this a bit more clear.</p>
+<p>Recall the practical in <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, in which players of the mobile app game <a href="https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame">Power Up!</a> chose a small, medium, or large dam at the start of the game.
+Suppose that we are interested in the size of dam that policy-makers choose to build when playing the game, so we find 48 such people in Scotland and ask them to play the game.
+Perhaps we do not think that the policy-makers will have any preference for a particular dam size (and therefore just pick 1 of the 3 dam sizes at random).
+We would therefore expect an equal number of small, medium, and large dams to be selected among the 48 players.
+That is, for our expected counts of each dam size (<span class="math inline">\(E_{size}\)</span>), we expect 16 small (<span class="math inline">\(E_{small} = 16\)</span>), 16 medium (<span class="math inline">\(E_{medium} = 16\)</span>), and 16 large (<span class="math inline">\(E_{large} = 16\)</span>) dams in total (because <span class="math inline">\(48/3 = 16\)</span>).</p>
+<p>Of course, even if our players have no preference for a particular dam size, the number of small, medium, and large dams will not always be <em>exactly</em> the same.
+The expected counts might still be a bit different from the observed counts of each dam size (<span class="math inline">\(O_{size}\)</span>).
+Suppose, for example, we find that out of our total 48 policy-makers, we observe 12 small (<span class="math inline">\(O_{small} = 12\)</span>), 22 medium (<span class="math inline">\(O_{medium} = 22\)</span>), and 14 large (<span class="math inline">\(O_{large} = 14\)</span>), dams were actually chosen by game players.
+What we want to test is the null hypothesis that there is no significant difference between expected and observed counts.</p>
+<ul>
+<li><span class="math inline">\(H_{0}\)</span>: There is no significant difference between expected and observed counts.</li>
+<li><span class="math inline">\(H_{A}\)</span>: There is a significant difference between expected and observed counts.</li>
+</ul>
+<p>To get our test statistic<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>, we now just need to take each observed count, subtract the expected count, square this difference, divide by the expected count, then add everything up,</p>
+<p><span class="math display">\[\chi^{2} = \frac{(12 - 16)^{2}}{16} + \frac{(22 - 16)^{2}}{16} + \frac{(14 - 16)^{2}}{16}.\]</span></p>
+<p>We can calculate the values in the numerator.
+Note that all of these numbers must be positive (e.g., <span class="math inline">\(12 - 16 = -4\)</span>, but <span class="math inline">\(-4^{2} = 16\)</span>),</p>
+<p><span class="math display">\[\chi^{2} = \frac{16}{16} + \frac{36}{16} + \frac{4}{16}.\]</span></p>
+<p>When we sum the 3 terms, we get a value of <span class="math inline">\(\chi^{2} = 3.5\)</span>.
+Note that if all of our observed values had been the same as the expected values (i.e., 16 small, medium, and large dams actually chosen), then we would get a <span class="math inline">\(\chi^{2}\)</span> value of 0.
+The more the observed values differ from the expectation of 16, the higher the <span class="math inline">\(\chi^{2}\)</span> will be.
+We can now check to see if the test statistic <span class="math inline">\(\chi^{2} = 3.5\)</span> is sufficiently large to reject the null hypothesis that our policy-makers have no preference for small, medium, or large dams.
+There are <span class="math inline">\(N = 3\)</span> categories of counts (small, medium, and large), meaning that there are <span class="math inline">\(df = 3 - 1 = 2\)</span> degrees of freedom.
+The <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>, can be used to compare our test statistic with the null distribution by setting df = 2 and the Chi-square value to 3.5.
+As it turns out, if the null hypothesis is true, then the probability of observing a value of <span class="math inline">\(\chi^{2} = 3.5\)</span> or higher (i.e., the p-value) is only <span class="math inline">\(P = 0.174\)</span>.
+Figure 28.3 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> distribution plotted, with the area above the test statistic <span class="math inline">\(\chi^{2} = 3.5\)</span> shaded in grey.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-137"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-137-1.png" alt="Plot of curved distribution that starts around 0.5 and decreases, asymptoting toward 0." width="672" />
+<p class="caption">
+Figure 28.4: A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.
+</p>
+</div>
+<p>Because <span class="math inline">\(P &gt; 0.05\)</span>, we do not reject the null hypothesis that there is no significant difference between expected and observed counts of chosen dam sizes.</p>
+<p>Note that this was a simple example.
+For a goodness of fit test, we can have any number of different count categories (at least, any number greater than 2).
+The expectations also do not <em>need</em> to be the same.
+For example, we could have tested the null hypothesis that twice as many policy-makers would choose large dams (i.e., <span class="math inline">\(E_{large} = 24\)</span>, <span class="math inline">\(E_{medium} = 12\)</span>, and <span class="math inline">\(E_{small} = 12\)</span>).
+For <span class="math inline">\(n\)</span> categories, the more general equation for the <span class="math inline">\(\chi^{2}\)</span> statistic is,</p>
+<p><span class="math display">\[\chi^{2} = \sum_{i = 1}^{n} \frac{\left(O_{i} - E_{i}\right)^{2}}{E_{i}}.\]</span></p>
+<p>We can therefore use this general equation to calculate a <span class="math inline">\(\chi^{2}\)</span> for any number of categories (<span class="math inline">\(n\)</span>).</p>
+</div>
+<div id="chi-squared-test-of-association" class="section level2 hasAnchor" number="28.3">
+<h2><span class="header-section-number">28.3</span> Chi-squared test of association<a href="frequency-and-count-data.html#chi-squared-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>More explanation</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Slakter1968" class="csl-entry">
+Slakter, Malcolm J. 1968. <span>“<span class="nocase">Accuracy of an Approximation to the Power of the Chi-Square Goodness of Fit Test with Small but Equal Expected Frequencies</span>.”</span> <em>Journal of the American Statistical Association</em> 63 (323): 912–18. <a href="https://doi.org/10.1080/01621459.1968.11009319">https://doi.org/10.1080/01621459.1968.11009319</a>.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Tate1973" class="csl-entry">
+Tate, Merle W, and Leon A Hyer. 1973. <span>“<span class="nocase">Inaccuracy of the X2 test of goodness of fit when expected frequencies are small</span>.”</span> <em>Journal of the American Statistical Association</em> 68 (344): 836–41. <a href="https://doi.org/10.1080/01621459.1973.10481433">https://doi.org/10.1080/01621459.1973.10481433</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="49">
+<li id="fn49"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="frequency-and-count-data.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="frequency-and-count-data.html#fnref50" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -441,7 +604,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="Week9.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="chi-squared-goodness-of-fit.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="correlation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
