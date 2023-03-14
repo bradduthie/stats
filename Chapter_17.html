@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-12" />
+<meta name="date" content="2023-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -507,7 +507,7 @@ Our lower 95% confidence interval is therefore,</p>
 <p><span class="math display">\[LCI_{95\%} = 4.1 - \left(1.96 \times \frac{0.6}{\sqrt{20}}\right) = 3.837\]</span></p>
 <p>Our upper 95% confidence interval is,</p>
 <p><span class="math display">\[UCI_{95\%} = 4.1 + \left(1.96 \times \frac{0.6}{\sqrt{20}}\right) = 4.363\]</span></p>
-<p>Our 95% CIs are therefore <span class="math inline">\(LCI = 4.041\)</span> and <span class="math inline">\(UCI = 4.159\)</span>.
+<p>Our 95% CIs are therefore <span class="math inline">\(LCI = 3.837\)</span> and <span class="math inline">\(UCI = 4.363\)</span>.
 We can now come back to the statistical concept of what this actually means.
 If we were to go out and repeatedly collect new samples of 20 cats, and do the above calculations each time, then 95% of the time our true mean cat body mass would be somewhere between the LCI and UCI.</p>
 <p>Ninety-five per cent confidence intervals are the most commonly used in biological and environmental sciences.
@@ -521,7 +521,7 @@ Consequently, the upper 99% confidence interval for our example of cat body mass
 <p>Our upper 99% confidence interval is,</p>
 <p><span class="math display">\[UCI_{99\%} = 4.1 + \left(2.58 \times \frac{0.6}{\sqrt{20}}\right) = 4.446\]</span></p>
 <p>Notice that the confidence intervals became wider around the sample mean.
-The 99% CI is now 4.023-4.177, while the 95% CI was 4.041-4.159.
+The 99% CI is now 3.754-4.446, while the 95% CI was 3.837-4.363
 This is because if we want to be more confident about our interval containing the true mean, we need to make a bigger interval.</p>
 <p>We could make CIs using any percentage that we want, but in practice it is very rare to see anything other than 90% (<span class="math inline">\(z = 1.65\)</span>), 95% (<span class="math inline">\(z = 1.96\)</span>), or 99% (<span class="math inline">\(z = 2.58\)</span>).
 It is useful to see what these different intervals actually look like when calculated from actual data, so this <a href="https://bradduthie.shinyapps.io/CI_hist_app/">interactive application</a> illustrates CIs on a histogram with red dotted lines next to the LCI and UCI equations.</p>
