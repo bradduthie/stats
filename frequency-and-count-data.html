@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-14" />
+<meta name="date" content="2023-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -531,31 +531,31 @@ In this test, we have some number of counts that we expect to observe (e.g., exp
 If the expected and observed counts differ by a lot, then we will get a large test statistic and reject the null hypothesis.
 A simple concrete example will make this a bit more clear.</p>
 <p>Recall the practical in <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, in which players of the mobile app game <a href="https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame">Power Up!</a> chose a small, medium, or large dam at the start of the game.
-Suppose that we are interested in the size of dam that policy-makers choose to build when playing the game, so we find 48 such people in Scotland and ask them to play the game.
+Suppose that we are interested in the size of dam that policy-makers choose to build when playing the game, so we find 60 such people in Scotland and ask them to play the game.
 Perhaps we do not think that the policy-makers will have any preference for a particular dam size (and therefore just pick 1 of the 3 dam sizes at random).
-We would therefore expect an equal number of small, medium, and large dams to be selected among the 48 players.
-That is, for our expected counts of each dam size (<span class="math inline">\(E_{size}\)</span>), we expect 16 small (<span class="math inline">\(E_{small} = 16\)</span>), 16 medium (<span class="math inline">\(E_{medium} = 16\)</span>), and 16 large (<span class="math inline">\(E_{large} = 16\)</span>) dams in total (because <span class="math inline">\(48/3 = 16\)</span>).</p>
+We would therefore expect an equal number of small, medium, and large dams to be selected among the 60 players.
+That is, for our expected counts of each dam size (<span class="math inline">\(E_{size}\)</span>), we expect 20 small (<span class="math inline">\(E_{small} = 20\)</span>), 20 medium (<span class="math inline">\(E_{medium} = 20\)</span>), and 20 large (<span class="math inline">\(E_{large} = 20\)</span>) dams in total (because <span class="math inline">\(60/3 = 20\)</span>).</p>
 <p>Of course, even if our players have no preference for a particular dam size, the number of small, medium, and large dams will not always be <em>exactly</em> the same.
 The expected counts might still be a bit different from the observed counts of each dam size (<span class="math inline">\(O_{size}\)</span>).
-Suppose, for example, we find that out of our total 48 policy-makers, we observe 12 small (<span class="math inline">\(O_{small} = 12\)</span>), 22 medium (<span class="math inline">\(O_{medium} = 22\)</span>), and 14 large (<span class="math inline">\(O_{large} = 14\)</span>), dams were actually chosen by game players.
+Suppose, for example, we find that out of our total 60 policy-makers, we observe 18 small (<span class="math inline">\(O_{small} = 18\)</span>), 24 medium (<span class="math inline">\(O_{medium} = 24\)</span>), and 18 large (<span class="math inline">\(O_{large} = 18\)</span>), dams were actually chosen by game players.
 What we want to test is the null hypothesis that there is no significant difference between expected and observed counts.</p>
 <ul>
 <li><span class="math inline">\(H_{0}\)</span>: There is no significant difference between expected and observed counts.</li>
 <li><span class="math inline">\(H_{A}\)</span>: There is a significant difference between expected and observed counts.</li>
 </ul>
 <p>To get our test statistic<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>, we now just need to take each observed count, subtract the expected count, square this difference, divide by the expected count, then add everything up,</p>
-<p><span class="math display">\[\chi^{2} = \frac{(12 - 16)^{2}}{16} + \frac{(22 - 16)^{2}}{16} + \frac{(14 - 16)^{2}}{16}.\]</span></p>
+<p><span class="math display">\[\chi^{2} = \frac{(18 - 20)^{2}}{20} + \frac{(24 - 20)^{2}}{20} + \frac{(18 - 20)^{2}}{20}.\]</span></p>
 <p>We can calculate the values in the numerator.
-Note that all of these numbers must be positive (e.g., <span class="math inline">\(12 - 16 = -4\)</span>, but <span class="math inline">\(-4^{2} = 16\)</span>),</p>
-<p><span class="math display">\[\chi^{2} = \frac{16}{16} + \frac{36}{16} + \frac{4}{16}.\]</span></p>
-<p>When we sum the 3 terms, we get a value of <span class="math inline">\(\chi^{2} = 3.5\)</span>.
-Note that if all of our observed values had been the same as the expected values (i.e., 16 small, medium, and large dams actually chosen), then we would get a <span class="math inline">\(\chi^{2}\)</span> value of 0.
-The more the observed values differ from the expectation of 16, the higher the <span class="math inline">\(\chi^{2}\)</span> will be.
-We can now check to see if the test statistic <span class="math inline">\(\chi^{2} = 3.5\)</span> is sufficiently large to reject the null hypothesis that our policy-makers have no preference for small, medium, or large dams.
+Note that all of these numbers must be positive (e.g., <span class="math inline">\(18 - 20 = -2\)</span>, but <span class="math inline">\(-2^{2} = 4\)</span>),</p>
+<p><span class="math display">\[\chi^{2} = \frac{4}{20} + \frac{16}{20} + \frac{4}{20}.\]</span></p>
+<p>When we sum the 3 terms, we get a value of <span class="math inline">\(\chi^{2} = 1.2\)</span>.
+Note that if all of our observed values had been the same as the expected values (i.e., 20 small, medium, and large dams actually chosen), then we would get a <span class="math inline">\(\chi^{2}\)</span> value of 0.
+The more the observed values differ from the expectation of 20, the higher the <span class="math inline">\(\chi^{2}\)</span> will be.
+We can now check to see if the test statistic <span class="math inline">\(\chi^{2} = 1.2\)</span> is sufficiently large to reject the null hypothesis that our policy-makers have no preference for small, medium, or large dams.
 There are <span class="math inline">\(N = 3\)</span> categories of counts (small, medium, and large), meaning that there are <span class="math inline">\(df = 3 - 1 = 2\)</span> degrees of freedom.
-The <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>, can be used to compare our test statistic with the null distribution by setting df = 2 and the Chi-square value to 3.5.
-As it turns out, if the null hypothesis is true, then the probability of observing a value of <span class="math inline">\(\chi^{2} = 3.5\)</span> or higher (i.e., the p-value) is only <span class="math inline">\(P = 0.174\)</span>.
-Figure 28.3 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> distribution plotted, with the area above the test statistic <span class="math inline">\(\chi^{2} = 3.5\)</span> shaded in grey.</p>
+The <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>, can be used to compare our test statistic with the null distribution by setting df = 2 and the Chi-square value to 1.2.
+As it turns out, if the null hypothesis is true, then the probability of observing a value of <span class="math inline">\(\chi^{2} = 1.2\)</span> or higher (i.e., the p-value) is <span class="math inline">\(P = 0.5488\)</span>.
+Figure 28.3 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> distribution plotted, with the area above the test statistic <span class="math inline">\(\chi^{2} = 1.2\)</span> shaded in grey.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-137"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-137-1.png" alt="Plot of curved distribution that starts around 0.5 and decreases, asymptoting toward 0." width="672" />
 <p class="caption">
@@ -565,8 +565,10 @@ Figure 28.4: A Chi-square distribution, which is the expected sum of 4 squared s
 <p>Because <span class="math inline">\(P &gt; 0.05\)</span>, we do not reject the null hypothesis that there is no significant difference between expected and observed counts of chosen dam sizes.</p>
 <p>Note that this was a simple example.
 For a goodness of fit test, we can have any number of different count categories (at least, any number greater than 2).
+The expectations also do not need to be integers.
+For example, if we only managed to find 59 policy makers instead of 60, then our expected counts would have been <span class="math inline">\(59/3 = 19.33\)</span> instead of <span class="math inline">\(60/3 = 20\)</span>.
 The expectations also do not <em>need</em> to be the same.
-For example, we could have tested the null hypothesis that twice as many policy-makers would choose large dams (i.e., <span class="math inline">\(E_{large} = 24\)</span>, <span class="math inline">\(E_{medium} = 12\)</span>, and <span class="math inline">\(E_{small} = 12\)</span>).
+For example, we could have tested the null hypothesis that twice as many policy-makers would choose large dams (i.e., <span class="math inline">\(E_{large} = 40\)</span>, <span class="math inline">\(E_{medium} = 10\)</span>, and <span class="math inline">\(E_{small} = 10\)</span>).
 For <span class="math inline">\(n\)</span> categories, the more general equation for the <span class="math inline">\(\chi^{2}\)</span> statistic is,</p>
 <p><span class="math display">\[\chi^{2} = \sum_{i = 1}^{n} \frac{\left(O_{i} - E_{i}\right)^{2}}{E_{i}}.\]</span></p>
 <p>We can therefore use this general equation to calculate a <span class="math inline">\(\chi^{2}\)</span> for any number of categories (<span class="math inline">\(n\)</span>).
@@ -574,13 +576,218 @@ Next, we will look at testing associations between counts in different types of 
 </div>
 <div id="chi-squared-test-of-association" class="section level2 hasAnchor" number="28.3">
 <h2><span class="header-section-number">28.3</span> Chi-squared test of association<a href="frequency-and-count-data.html#chi-squared-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>More explanation</p>
+<p>The second kind of test that we will consider for count data is the Chi-square test of association.
+While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on 2 different categorical variables.
+What we want to know is whether or not the 2 categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and S 1978</a>)</span>.
+In other words, does knowing something about one variable tell us anything about the other variable?
+A concrete example will make it easier to explain.
+We can again make use of the <a href="Chapter_16.html#Chapter_16">Chapter 16</a> game <a href="https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame">Power Up!</a>.
+As mentioned in the <a href="frequency-and-count-data.html#chi-squared-goodness-of-fit">previous section</a>, game players choose a small, medium, or large game at the start of the game.
+Players can play the game on either an Android or MacOS mobile device.
+We therefore have 2 categorical variables, dam size and OS type.
+We might want to know, do Android users choose the same dam sizes as MacOS users?
+In other words, are dam size and OS type associated?
+We can state this as a null and alternative hypthesis.</p>
+<ul>
+<li><span class="math inline">\(H_{0}\)</span>: There is no association between OS and dam size choice.</li>
+<li><span class="math inline">\(H_{A}\)</span>: There is an association between OS and dam size choice.</li>
+</ul>
+<p>Consider the data in Table 28.1, which show counts of Android versus MacOS users and their dam choices.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-138">Table 28.1: </span>Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Small</th>
+<th align="right">Medium</th>
+<th align="right">Large</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Android</td>
+<td align="right">8</td>
+<td align="right">16</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td>MacOS</td>
+<td align="right">10</td>
+<td align="right">8</td>
+<td align="right">12</td>
+</tr>
+</tbody>
+</table>
+<p>Just looking at the counts in Table 28.1, it appears that there might be an association between the 2 variables.
+For example, Android users appear to be more likely to choose a medium dam than MacOS users.
+Medium dams are the most popular choice for Android users, but they are the least popular choice for MacOS users.
+Nevertheless, could this just be due to chance?
+If it were due to chance, then how unlikely are the counts in Table 28.1?
+In other words, if Android and Mac users in the whole population really do choose dam sizes at the same frequencies, then what is the probability of getting a sample of 60 players in which the choices are as or more unbalanced as this?
+This is what we want to answer with our Chi-squared test of association.</p>
+<p>The general idea is the same as with the Chi-squared goodness of fit test.
+We have our observed values (Table 28.1).
+We now need to find the expected values to calculate a <span class="math inline">\(\chi^{2}\)</span> value.
+But the expected values are now a bit more complicated.
+With the goodness of fit test in <a href="frequency-and-count-data.html#chi-squared-goodness-of-fit">Chapter 28.2</a>, we just assumed that all categories were equally likely (i.e., the probability of choosing each size dam was the same).
+There were 60 players and 3 dam sizes, so the expected frequency of each dam choice was 60/3 = 20
+Now it is different.
+We are not testing if dam sizes or OS choices are the same.
+We want to know of they are <em>associated</em> with one another.
+That is, regardless of the popularity of Android vs MacOS, or the frequency with which small, medium and large dams are selected, do Android users choose different dam sizes than MacOS users?
+If dam size is not associated with OS, then we would predict that the relative frequency of small, medium, and large dams would be the same for both Android and MacOS.</p>
+<p>To find the expected counts of each variable combination (e.g., Android and Small, or MacOS and Large), we need to get the probability that each category is selected independently.
+For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
+Table 28.1 below shows these probabilities as additional rows and columns added onto Table 28.1</p>
+<table>
+<caption><span id="tab:unnamed-chunk-139">Table 28.2: </span>Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Small</th>
+<th align="left">Medium</th>
+<th align="left">Large</th>
+<th align="left"><strong>Probability</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Android</td>
+<td align="left">8</td>
+<td align="left">16</td>
+<td align="left">6</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td>MacOS</td>
+<td align="left">10</td>
+<td align="left">8</td>
+<td align="left">12</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="odd">
+<td><strong>Probability</strong></td>
+<td align="left">0.3</td>
+<td align="left">0.4</td>
+<td align="left">0.3</td>
+<td align="left">–</td>
+</tr>
+</tbody>
+</table>
+<p>Since there are 30 total Android users (<span class="math inline">\(8 + 16 + 6 = 30\)</span>) and 30 total MacOS users (Table 28.2), the probability of a player having an Android OS is <span class="math inline">\(30/60 = 0.5\)</span>, and the probability of a player having a MacOS is also <span class="math inline">\(30 / 60 = 0.5\)</span>.
+Similarly, there are 18 small, 24 medium, and 18 large dam choices in total.
+Hence, the probability of a player choosing a small dam is <span class="math inline">\(18/60 = 0.3\)</span>, medium is <span class="math inline">\(24/60 = 0.3\)</span>, and large is <span class="math inline">\(18/60 = 0.3\)</span>.
+If these probabilities combine independently<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>, then we can multiply them to find the probability of a particular combination of categories.
+For example, the probability of a player using Android is 0.5 and choosing a small dam is 0.3, so the probability of a player having both Android <strong>and</strong> a small dam is <span class="math inline">\(0.5 \times 0.3 = 0.15\)</span> (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a> for an introduction to probability models).
+The probability of a player using Android <strong>and</strong> choosing a medium dam is <span class="math inline">\(0.5 \times 0.4 = 0.2\)</span>.
+We can fill in all of these joint probabilities in a new Table 28.3.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-140">Table 28.3: </span>Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Small</th>
+<th align="left">Medium</th>
+<th align="left">Large</th>
+<th align="left"><strong>Probability</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Android</td>
+<td align="left">0.15</td>
+<td align="left">0.2</td>
+<td align="left">0.15</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td>MacOS</td>
+<td align="left">0.15</td>
+<td align="left">0.2</td>
+<td align="left">0.15</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="odd">
+<td><strong>Probability</strong></td>
+<td align="left">0.3</td>
+<td align="left">0.4</td>
+<td align="left">0.3</td>
+<td align="left">–</td>
+</tr>
+</tbody>
+</table>
+<p>From Table 28.3, we now have the probability of each combination of variables.
+Note that all of these probabilities sum to 1.</p>
+<p><span class="math display">\[0.15 + 0.2 + 0.15 + 0.15 + 0.2 + 0.15 = 1.\]</span></p>
+<p>To get the expected count of each combination, we just need to multiply the probability by the sample size, i.e., the total number of players (N = 60).
+For example, the expected count of players who use Android and choose a small dam will be <span class="math inline">\(0.15 \times 60 = 9\)</span>.
+Table 28.4 fills in all of the expected counts.
+Note that the sum of all the counts equals our sample size of 60.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-141">Table 28.4: </span>Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Small</th>
+<th align="left">Medium</th>
+<th align="left">Large</th>
+<th align="left"><strong>Sum</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Android</td>
+<td align="left">9</td>
+<td align="left">12</td>
+<td align="left">9</td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td>MacOS</td>
+<td align="left">9</td>
+<td align="left">12</td>
+<td align="left">9</td>
+<td align="left">30</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td align="left">18</td>
+<td align="left">24</td>
+<td align="left">18</td>
+<td align="left">–</td>
+</tr>
+</tbody>
+</table>
+<p>We now have both the observed (Table 28.2) and expected (Table 28.4) counts (remember that the expected counts do not <em>need</em> to be integers).
+To get our <span class="math inline">\(\chi^{2}\)</span> test statistic, we use the same formula as in <a href="frequency-and-count-data.html#chi-squared-goodness-of-fit">Chapter 28.2</a>,</p>
+<p><span class="math display">\[\chi^{2} = \sum_{i = 1}^{n} \frac{\left(O_{i} - E_{i}\right)^{2}}{E_{i}}.\]</span></p>
+<p>There are 9 total combinations of OS and dam size, so there are <span class="math inline">\(n = 9\)</span> values to sum up,</p>
+<p><span class="math display">\[\chi^{2} = \frac{(8-9)^2}{9} + \frac{(16 - 12)^{2}}{12} + ... + \frac{(16 - 12)^{2}}{12} + \frac{(8-9)^2}{9}.\]</span></p>
+<p>If we sum all of the 9 terms, we get a value of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
+We can compare this to the null <span class="math inline">\(\chi^{2}\)</span> distribution as we did in the <a href="frequency-and-count-data.html#chi-squared-goodness-of-fit">Chapter 28.2</a> goodness of fit test, but we need to know the correct degrees of freedom.
+The correct degrees of freedom<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> is the number of categories in variable 1 (<span class="math inline">\(n_{1}\)</span>) minus 1, times the number of categories in variable 2 (<span class="math inline">\(n_{2}\)</span>) minus 1,</p>
+<p><span class="math display">\[df = (n_{1} - 1) \times (n_{2} - 1).\]</span></p>
+<p>In the case of our example, the number of dams types minus 1 (<span class="math inline">\(n_{dam} = 3 - 1)\)</span> times the number of operating systems minus 1 (<span class="math inline">\(n_{OS} = 2 - 1\)</span>).
+The correct degrees of freedom is therefore <span class="math inline">\(df = 2 \times 1 = 2\)</span>.
+We now just need to find the p-value for a Chi-square distriution with 2 degrees of freedom and a test statistic of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
+From the <a href="https://bradduthie.shinyapps.io/chi-square/">interactive app</a> (set df to 2 and slide the Chi-square value to 4.9), we get a value of about <span class="math inline">\(P = 0.0868\)</span>.
+In other words, if <span class="math inline">\(H_{0}\)</span> is true, then the probability of getting a <span class="math inline">\(\chi^{2}\)</span> of 4.889 or higher is <span class="math inline">\(P = 0.0868\)</span>.
+Consequently, because <span class="math inline">\(P &gt; 0.05\)</span>, we would not reject the null hypothesis.
+We should therefore conclude that there is no evidence for an association between OS and dam size choice.</p>
+<p>Statistical programs such as R and Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+To do this in Jamovi, it is necessary to input the categorical data (e.g., Android, MacOS) in a tidy format, which will be a focus of the practical <a href="#Chapter_30">Chapter 30</a>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Box1978" class="csl-entry">
+Box, G E P, W G Hunter, and Hunter J S. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+</div>
 <div id="ref-Miller2004" class="csl-entry">
 Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-Slakter1968" class="csl-entry">
 Slakter, Malcolm J. 1968. <span>“<span class="nocase">Accuracy of an Approximation to the Power of the Chi-Square Goodness of Fit Test with Small but Equal Expected Frequencies</span>.”</span> <em>Journal of the American Statistical Association</em> 63 (323): 912–18. <a href="https://doi.org/10.1080/01621459.1968.11009319">https://doi.org/10.1080/01621459.1968.11009319</a>.
@@ -591,12 +798,17 @@ Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed
 <div id="ref-Tate1973" class="csl-entry">
 Tate, Merle W, and Leon A Hyer. 1973. <span>“<span class="nocase">Inaccuracy of the X2 test of goodness of fit when expected frequencies are small</span>.”</span> <em>Journal of the American Statistical Association</em> 68 (344): 836–41. <a href="https://doi.org/10.1080/01621459.1973.10481433">https://doi.org/10.1080/01621459.1973.10481433</a>.
 </div>
+<div id="ref-Jamovi2022" class="csl-entry">
+The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="49">
 <li id="fn49"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="frequency-and-count-data.html#fnref49" class="footnote-back">↩︎</a></p></li>
 <li id="fn50"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="frequency-and-count-data.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn51"><p>We can call these the ‘marginal probabilities’.<a href="frequency-and-count-data.html#fnref51" class="footnote-back">↩︎</a></p></li>
+<li id="fn52"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract 1 degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively – if we have all but 1, then we know the last since the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the “Power Up!” example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="frequency-and-count-data.html#fnref52" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
