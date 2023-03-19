@@ -776,6 +776,49 @@ Consequently, because <span class="math inline">\(P &gt; 0.05\)</span>, we would
 We should therefore conclude that there is no evidence for an association between OS and dam size choice.</p>
 <p>Statistical programs such as R and Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
 To do this in Jamovi, it is necessary to input the categorical data (e.g., Android, MacOS) in a tidy format, which will be a focus of the practical <a href="#Chapter_30">Chapter 30</a>.</p>
+<p>There is one final point regarding expected and observed values of the Chi-square test of association.
+There is another way of getting these expected values that is a bit faster (and more widely taught), but does not demonstrate the logic of expected counts as clearly.
+If we wanted to, we could sum the rows and columns of our original observations.
+Table 28.5 shows the original observations with the sum of each row and column.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-142">Table 28.5: </span>Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Small</th>
+<th align="left">Medium</th>
+<th align="left">Large</th>
+<th align="left"><strong>Sum</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Android</td>
+<td align="left">8</td>
+<td align="left">16</td>
+<td align="left">6</td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td>MacOS</td>
+<td align="left">10</td>
+<td align="left">8</td>
+<td align="left">12</td>
+<td align="left">30</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum</strong></td>
+<td align="left">18</td>
+<td align="left">24</td>
+<td align="left">18</td>
+<td align="left">–</td>
+</tr>
+</tbody>
+</table>
+<p>We can get the expected counts from Table 28.5 if we multiply each row sum by each column sum, the divide by the total sample size (<span class="math inline">\(N = 60\)</span>).
+For example, to get the expected counts of Android users who choose a small dam, we can multiply <span class="math inline">\((18 \times 30)/60 = 9\)</span>.
+To get the expected counts of MacOS users who choose a medium dam, we can multiply <span class="math inline">\((30 \times 24)/60 = 12\)</span>.
+This works for all of combinations of rows and columns, so we could do it to find all of the expected counts from Table 28.4.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -808,7 +851,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <li id="fn49"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="frequency-and-count-data.html#fnref49" class="footnote-back">↩︎</a></p></li>
 <li id="fn50"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="frequency-and-count-data.html#fnref50" class="footnote-back">↩︎</a></p></li>
 <li id="fn51"><p>We can call these the ‘marginal probabilities’.<a href="frequency-and-count-data.html#fnref51" class="footnote-back">↩︎</a></p></li>
-<li id="fn52"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract 1 degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively – if we have all but 1, then we know the last since the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the “Power Up!” example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="frequency-and-count-data.html#fnref52" class="footnote-back">↩︎</a></p></li>
+<li id="fn52"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract 1 degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but 1 probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the “Power Up!” example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="frequency-and-count-data.html#fnref52" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
