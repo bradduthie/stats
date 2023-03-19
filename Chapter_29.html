@@ -448,13 +448,13 @@ div.csl-indent {
 <p>This chapter focuses on the association between <a href="Chapter_5.html#Chapter_5">types of variables</a> that are quantitative (i.e., represented by numbers).
 It is similar to the <a href="Chapter_28.html#chi-squared-test-of-association">Chi-squared test of association</a> from <a href="Chapter_28.html#Chapter_28">Chapter 28</a> in the sense that it is about how variables are associated.
 The focus of the <a href="Chapter_28.html#chi-squared-test-of-association">Chi-squared test of association</a> was on the association when data were categorical (e.g., ‘Android’ or ‘MacOS’ operating system).
-Here we focus instead of the association when data are numeric.
+Here we focus instead on the association when data are numeric.
 But the concept is generally the same; are variables independent, or does knowing something about one variable tell us something about the other variable?
 For example, does knowing something about the latitude of a location tell us something about its average yearly temperature?</p>
 <div id="scatterplots" class="section level2 hasAnchor" number="29.1">
 <h2><span class="header-section-number">29.1</span> Scatterplots<a href="Chapter_29.html#scatterplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The easiest way to visualise the concept of a correlation is by using a scatter-plot.
-Scatterplots are useful for visualising the association between two quantitative variables.
+<p>The easiest way to visualise the concept of a correlation is by using a scatterplot.
+Scatterplots are useful for visualising the association between 2 quantitative variables.
 In a scatterplot the values of one variable are plotted on the x-axis, and the values of a second variable are plotted on the y-axis.
 Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 29.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-143"></span>
@@ -551,7 +551,7 @@ For example, if a fig wasp has a relatively long thorax, then it probably also h
 We can check this visually by plotting one variable on the x-axis and the other on the y-axis.
 Figure 29.2 does this for wasp thorax length (x-axis) and abdomen length (y-axis).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-145-1.png" alt="A plot is shown with 11 points, such tha tpoints that are higher on the x-axis are generally higher on the y-axis." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-145-1.png" alt="A plot is shown with 11 points, such that points that are higher on the x-axis are generally higher on the y-axis." width="672" />
 <p class="caption">
 Figure 29.2: An example of a scatterplot in which fig wasp thorax length (x-axis) is plotted against fig wasp abdomen length (y-axis). Each point is a different fig wasp. Wasps were collected in 2010 in Baja, Mexico.
 </p>
@@ -570,10 +570,10 @@ As thorax length increases, so does abdomen length.</p>
 <p>The <strong>correlation coefficient</strong> formalises the association described in the previous section.
 It gives us a single number that defines how 2 variables are correlated.
 We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
-Positive values indicate that two variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
-Negative values indicate that two variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
+Positive values indicate that 2 variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
+Negative values indicate that 2 variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
 Values of zero (or not significantly different from zero, more on this later) indicate that 2 variables are uncorrelated (i.e., independent of one another).
-Figure 29.3 shows scatterplots for 8 different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+Figure 29.3 shows scatterplots for 4 different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-146-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with different correlations between x and y variables." width="480" />
 <p class="caption">
@@ -585,7 +585,7 @@ The 2 are basically the same; the Spearman rank correlation coefficient is just 
 <div id="pearson-product-moment-correlation-coefficient" class="section level3 hasAnchor" number="29.2.1">
 <h3><span class="header-section-number">29.2.1</span> Pearson product moment correlation coefficient<a href="Chapter_29.html#pearson-product-moment-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To understand the correlation coefficient, we need to first understand covariance.
-<a href="Chapter_12.html#the-variance">Chapter 23.3</a> introduced the variance (<span class="math inline">\(s^{2}\)</span>) as a measure of spread in some variable <span class="math inline">\(x\)</span>,</p>
+<a href="Chapter_12.html#the-variance">Chapter 12.3</a> introduced the variance (<span class="math inline">\(s^{2}\)</span>) as a measure of spread in some variable <span class="math inline">\(x\)</span>,</p>
 <p><span class="math display">\[s^{2} = \frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]</span></p>
 <p>The variance is actually just a special case of a covariance.
 The variance describes how a variable <span class="math inline">\(x\)</span> covaries with itself.
@@ -593,17 +593,17 @@ The covariance (<span class="math inline">\(cov_{x,y}\)</span>) describes how a 
 <p><span class="math display">\[cov_{x, y} = \frac{1}{N - 1} \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right).\]</span></p>
 <p>The <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the means of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, respectively.
 Note that if <span class="math inline">\(x_{i} = y_{i}\)</span>, then the equation for <span class="math inline">\(cov_{x,y}\)</span> is identical to the equation for <span class="math inline">\(s^{2}\)</span> because <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(x_{i} - \bar{x} \right) = \left(x_{i} - \bar{x} \right)^{2}\)</span>.</p>
-<p>What the equation for <span class="math inline">\(cov_{x,y}\)</span> is describing is how the variation in <span class="math inline">\(x\)</span> is relates to variation in <span class="math inline">\(y\)</span>.
-If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, and a value of <span class="math inline">\(y_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially high because we will be multiplying 2 large positive number together.
+<p>What the equation for <span class="math inline">\(cov_{x,y}\)</span> is describing is how the variation in <span class="math inline">\(x\)</span> relates to variation in <span class="math inline">\(y\)</span>.
+If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, and a value of <span class="math inline">\(y_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially high because we will be multiplying 2 large positive numbers together.
 If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, but the corresponding <span class="math inline">\(y_{i}\)</span> is much lower than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially low because we will be multiplying a large positive number and a large negative number.
 Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(y_{i}\)</span> tend to deviate from their means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> in a consistent way, we get either high or low values of <span class="math inline">\(cov_{x,y}\)</span>.
 If there is no such relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, then we will get <span class="math inline">\(cov_{x,y}\)</span> values closer to zero.</p>
 <p>The covariance can, at least in theory, be any real number.
 How low or high it is will depend on the magnitudes of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, just like <a href="Chapter_12.html#the-variance">the variance</a>.
 To get the Pearson product moment correlation coefficient<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
-We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{x}\)</span>),</p>
+We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{y}\)</span>),</p>
 <p><span class="math display">\[r = \frac{cov_{x,y}}{s_{x} \times s_{y}}.\]</span></p>
-<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the two variables, so the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger <span class="math inline">\(s_{x} \times s_{y}\)</span>.
+<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the 2 variables, so the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger <span class="math inline">\(s_{x} \times s_{y}\)</span>.
 We can again think about the special case in which <span class="math inline">\(x = y\)</span>.
 Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom and <span class="math inline">\(r = 1\)</span>.</p>
 <p>We can expand <span class="math inline">\(cov_{x,y}\)</span>, <span class="math inline">\(s_{x}\)</span>, and <span class="math inline">\(s_{y}\)</span> to see the details of the equation for <span class="math inline">\(r\)</span>,</p>
@@ -835,7 +835,7 @@ We therefore want to test the null hypothesis that <span class="math inline">\(r
 <li><span class="math inline">\(H_{A}:\)</span> The correlation coefficient is significantly different from zero.</li>
 </ul>
 <p>Note that <span class="math inline">\(H_{A}\)</span> above is for a two-tailed test, in which we do not care about direction.
-We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</span> is that the correlation coefficient is greater than or less than zero.</p>
+We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</span> is that the correlation coefficient is greater than (or less than) zero.</p>
 <p>How do we actually test the null hypothesis?
 As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>,</p>
 <p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
@@ -848,10 +848,10 @@ One consequence of this is that, like the one sample t-test, the test of the cor
 If this is not the case, and the assumption of normality is violated, then the test might have a misleading Type I error rate.</p>
 <p>To be cautious, we should check whether or not the variables that we are correlating are normally distributed (especially if the sample size is small).
 If they are normally distributed, then we can use the Pearson’s product moment correlation to test the null hypothesis.
-If the assumption of normality is violated, then we might consider using the non-parametric Spearman rank correlation coefficient instead.
+If the assumption of normality is violated, then we might consider using the nonparametric Spearman rank correlation coefficient instead.
 The fig wasp thorax and abdomen lengths from Table 29.1 are normally distributed, so we can use the Pearson product moment correlation coefficient to test whether or not the correlation between these two variables is significant.
 In Jamovi, the t-score is not even reported as output when using a correlation test.
-We only see <span class="math inline">\(r\)</span> and the p-value (Figure 23.4).</p>
+We only see <span class="math inline">\(r\)</span> and the p-value (Figure 29.4).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-149"></span>
 <img src="img/Jamovi_correlation_output.png" alt="A table called 'Correlation Matrix' is shown, which is mostly empty except for two values in the lower left of a 2 by 2 matrix." width="100%" />
 <p class="caption">
@@ -859,10 +859,10 @@ Figure 29.4: Jamovi output for a test of the null hypothesis that thorax length 
 </p>
 </div>
 <p>From Figure 29.4, we can see that the sample <span class="math inline">\(r = 0.75858\)</span>, and the p-value is <span class="math inline">\(P = 0.00680\)</span>.
-Since our p-value is less than 0.05, we can reject the null hypothesis that fig was thorax and abdomen lengths are not correlated.
+Since our p-value is less than 0.05, we can reject the null hypothesis that fig wasp thorax and abdomen lengths are not correlated.
 To get a more intuitive sense of how the correlation coefficient works, we can use an <a href="https://bradduthie.shinyapps.io/corr_click/">interactive application</a>.</p>
 <blockquote>
-<p><a href="https://bradduthie.shinyapps.io/corr_click/">Click here</a> for an interactive application showing the relationship between a scatterplot, a correlation coefficient, and statistical significant.</p>
+<p><a href="https://bradduthie.shinyapps.io/corr_click/">Click here</a> for an interactive application showing the relationship between a scatterplot, a correlation coefficient, and statistical significance.</p>
 </blockquote>
 <p>Points can be added to the <a href="https://bradduthie.shinyapps.io/corr_click/">interactive application</a> by clicking anywhere within the plot.
 A table of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> points is shown to the right, and the correlation coefficient and p-value can be shown or hidden using the buttons on the top.</p>
