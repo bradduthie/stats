@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 22 Practical. Hypothesis testing and t-tests | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 29 Correlation | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 22 Practical. Hypothesis testing and t-tests | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 29 Correlation | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 22 Practical. Hypothesis testing and t-tests | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 29 Correlation | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Chapter_21.html"/>
-<link rel="next" href="Week7.html"/>
+<link rel="prev" href="Chapter_28.html"/>
+<link rel="next" href="Chapter_30.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -443,638 +443,441 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Chapter_22" class="section level1 hasAnchor" number="22">
-<h1><span class="header-section-number">Chapter 22</span> <em>Practical</em>. Hypothesis testing and t-tests<a href="Chapter_22.html#Chapter_22" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This lab focuses on applying the concepts about hypothesis testing from <a href="Chapter_20.html#Chapter_20">Chapter 20</a> and the statistical tests from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-There will be 5 exercises in total, which will focus on using t-tests and their non-parametric equivalents.
-The data for this lab focus on an example of biology and environmental sciences education (Figure 22.1<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>).
-Similar to the example in <a href="Chapter_21.html#Chapter_21">Chapter 21</a>, it uses datasets of student test scores (note that these data are entirely fictional; we have not used scores from real students).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-97"></span>
-<img src="img/teaching.jpg" alt="Decorative image showing the word 'TEACH' spelled out in dried pine needles" width="100%" />
+<div id="Chapter_29" class="section level1 hasAnchor" number="29">
+<h1><span class="header-section-number">Chapter 29</span> Correlation<a href="Chapter_29.html#Chapter_29" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter focuses on the association between <a href="Chapter_5.html#Chapter_5">types of variables</a> that are quantitative (i.e., represented by numbers).
+It is similar to the <a href="Chapter_28.html#chi-squared-test-of-association">Chi-squared test of association</a> from <a href="Chapter_28.html#Chapter_28">Chapter 28</a> in the sense that it is about how variables are associated.
+The focus of the <a href="Chapter_28.html#chi-squared-test-of-association">Chi-squared test of association</a> was on the association when data were categorical (e.g., ‘Android’ or ‘MacOS’ operating system).
+Here we focus instead of the association when data are numeric.
+But the concept is generally the same; are variables independent, or does knowing something about one variable tell us something about the other variable?
+For example, does knowing something about the latitude of a location tell us something about its average yearly temperature?</p>
+<div id="scatterplots" class="section level2 hasAnchor" number="29.1">
+<h2><span class="header-section-number">29.1</span> Scatterplots<a href="Chapter_29.html#scatterplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The easiest way to visualise the concept of a correlation is by using a scatter-plot.
+Scatterplots are useful for visualising the association between two quantitative variables.
+In a scatterplot the values of one variable are plotted on the x-axis, and the values of a second variable are plotted on the y-axis.
+Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 29.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-143"></span>
+<img src="img/heterandrium.png" alt="Two small black iridescent wasps are shown side by side with wings facing upwards." width="100%" />
 <p class="caption">
-Figure 22.1: The practical this week focuses on an example relevant to education. This image is in the public domain.
+Figure 29.1: Fig wasps from 2 different species are shown. Wasps were collected from Baja, Mexico.
 </p>
 </div>
-<p>We will use test data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>) and 2023 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a>).
-To download these files, right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’.
-Variables in these datasets include student IDs and scores from 3 different tests.</p>
-<div id="exercise-on-a-simple-one-sample-t-test" class="section level2 hasAnchor" number="22.1">
-<h2><span class="header-section-number">22.1</span> Exercise on a simple one sample t-test<a href="Chapter_22.html#exercise-on-a-simple-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>First we will consider test data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>).
-These data are shown below, but you should be able to download the file in the link above.</p>
+<p>Both fig wasp species in Figure 29.1 are unnamed.
+We can call the species in Figure 29.1A ‘Het1’ and the species in Figure 29.1B ‘Het2’.
+We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these 2 species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
+Table 29.1 shows these measurements for 11 wasps.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-99">Table 22.1: </span>Student test scores from 2022.</caption>
+<caption><span id="tab:unnamed-chunk-144">Table 29.1: </span>Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.</caption>
 <thead>
 <tr class="header">
-<th align="left">ID</th>
-<th align="left">Test_1</th>
-<th align="left">Test_2</th>
-<th align="left">Test_3</th>
+<th align="left">Species</th>
+<th align="right">Head</th>
+<th align="right">Thorax</th>
+<th align="right">Abdomen</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">202201</td>
-<td align="left">46.9</td>
-<td align="left">58.1</td>
-<td align="left">60.1</td>
+<td align="left">Het1</td>
+<td align="right">0.566</td>
+<td align="right">0.767</td>
+<td align="right">1.288</td>
 </tr>
 <tr class="even">
-<td align="left">202202</td>
-<td align="left">65.0</td>
-<td align="left">72.4</td>
-<td align="left">51.8</td>
+<td align="left">Het1</td>
+<td align="right">0.505</td>
+<td align="right">0.784</td>
+<td align="right">1.059</td>
 </tr>
 <tr class="odd">
-<td align="left">202203</td>
-<td align="left">41.1</td>
-<td align="left">53.0</td>
-<td align="left">57.2</td>
+<td align="left">Het1</td>
+<td align="right">0.511</td>
+<td align="right">0.769</td>
+<td align="right">1.107</td>
 </tr>
 <tr class="even">
-<td align="left">202204</td>
-<td align="left">59.1</td>
-<td align="left">62.5</td>
-<td align="left">58.3</td>
+<td align="left">Het1</td>
+<td align="right">0.479</td>
+<td align="right">0.766</td>
+<td align="right">1.242</td>
 </tr>
 <tr class="odd">
-<td align="left">202205</td>
-<td align="left">47.6</td>
-<td align="left">63.0</td>
-<td align="left">58.3</td>
+<td align="left">Het1</td>
+<td align="right">0.545</td>
+<td align="right">0.828</td>
+<td align="right">1.367</td>
 </tr>
 <tr class="even">
-<td align="left">202206</td>
-<td align="left">38.0</td>
-<td align="left">41.5</td>
-<td align="left">54.6</td>
+<td align="left">Het1</td>
+<td align="right">0.525</td>
+<td align="right">0.852</td>
+<td align="right">1.408</td>
 </tr>
 <tr class="odd">
-<td align="left">202207</td>
-<td align="left">52.9</td>
-<td align="left">66.4</td>
-<td align="left">61.2</td>
+<td align="left">Het2</td>
+<td align="right">0.497</td>
+<td align="right">0.781</td>
+<td align="right">1.248</td>
 </tr>
 <tr class="even">
-<td align="left">202208</td>
-<td align="left">73.1</td>
-<td align="left">79.9</td>
-<td align="left">57.6</td>
+<td align="left">Het2</td>
+<td align="right">0.450</td>
+<td align="right">0.696</td>
+<td align="right">1.092</td>
 </tr>
 <tr class="odd">
-<td align="left">202209</td>
-<td align="left">67.9</td>
-<td align="left">78.1</td>
-<td align="left">63.8</td>
+<td align="left">Het2</td>
+<td align="right">0.557</td>
+<td align="right">0.792</td>
+<td align="right">1.240</td>
 </tr>
 <tr class="even">
-<td align="left">202210</td>
-<td align="left">38.6</td>
-<td align="left">41.8</td>
-<td align="left">56.6</td>
+<td align="left">Het2</td>
+<td align="right">0.519</td>
+<td align="right">0.814</td>
+<td align="right">1.221</td>
 </tr>
 <tr class="odd">
-<td align="left">202211</td>
-<td align="left">58.9</td>
-<td align="left">67.3</td>
-<td align="left">62.0</td>
-</tr>
-<tr class="even">
-<td align="left">202212</td>
-<td align="left">69.0</td>
-<td align="left">70.9</td>
-<td align="left">67.7</td>
-</tr>
-<tr class="odd">
-<td align="left">202213</td>
-<td align="left">73.5</td>
-<td align="left">84.6</td>
-<td align="left">56.8</td>
-</tr>
-<tr class="even">
-<td align="left">202214</td>
-<td align="left">58.7</td>
-<td align="left">67.2</td>
-<td align="left">61.1</td>
-</tr>
-<tr class="odd">
-<td align="left">202215</td>
-<td align="left">41.1</td>
-<td align="left">41.2</td>
-<td align="left">54.1</td>
-</tr>
-<tr class="even">
-<td align="left">202216</td>
-<td align="left">50.8</td>
-<td align="left">63.3</td>
-<td align="left">77.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202217</td>
-<td align="left">62.3</td>
-<td align="left">69.0</td>
-<td align="left">60.6</td>
-</tr>
-<tr class="even">
-<td align="left">202218</td>
-<td align="left">52.2</td>
-<td align="left">55.7</td>
-<td align="left">52.9</td>
-</tr>
-<tr class="odd">
-<td align="left">202219</td>
-<td align="left">54.3</td>
-<td align="left">63.9</td>
-<td align="left">54.9</td>
-</tr>
-<tr class="even">
-<td align="left">202220</td>
-<td align="left">54.3</td>
-<td align="left">63.4</td>
-<td align="left">71.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202221</td>
-<td align="left">32.1</td>
-<td align="left">50.5</td>
-<td align="left">52.0</td>
+<td align="left">Het2</td>
+<td align="right">0.430</td>
+<td align="right">0.621</td>
+<td align="right">1.034</td>
 </tr>
 </tbody>
 </table>
-<p>Open this dataset in Jamovi.
-Before doing any analysis, compute a new column of data called ‘Overall’ that is each student’s mean test score.
-To do this, double click on the fifth column of data, then when a new panel opens up, choose ‘NEW COMPUTED VARIABLE’ from the list of available options.
-Your input should like Figure 22.2.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-100"></span>
-<img src="img/jamovi_students_overall.png" alt="Jamovi interface is shown with a new computed variable and the formula for calculating the mean of test scores in the function box." width="100%" />
+<p>Intuitively, we might expect most of these measurements to be associated with one another.
+For example, if a fig wasp has a relatively long thorax, then it probably also has a relatively long abdomen (i.e., it could just be a big wasp).
+We can check this visually by plotting one variable on the x-axis and the other on the y-axis.
+Figure 29.2 does this for wasp thorax length (x-axis) and abdomen length (y-axis).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-145-1.png" alt="A plot is shown with 11 points, such tha tpoints that are higher on the x-axis are generally higher on the y-axis." width="672" />
 <p class="caption">
-Figure 22.2: The Jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
+Figure 29.2: An example of a scatterplot in which fig wasp thorax length (x-axis) is plotted against fig wasp abdomen length (y-axis). Each point is a different fig wasp. Wasps were collected in 2010 in Baja, Mexico.
 </p>
 </div>
-<p>After calculating the overall grade for each student, find the sample size (N), overall sample mean (<span class="math inline">\(\bar{x}\)</span>), and sample standard deviation (<span class="math inline">\(s\)</span>).
-Report these below.</p>
-<p>N: __________________</p>
-<p><span class="math inline">\(\bar{x}\)</span>: _______________</p>
-<p><span class="math inline">\(s\)</span>: ___________________</p>
-<p>Suppose that you have been told that the national average of overall student test scores in classes like yours is <span class="math inline">\(\mu_{0} = 60.1\)</span>.
-A concerned colleague approaches you and expresses concern that your test scores are lower than the national average.
-You decide to test whether or not your students’ scores really are lower than the national average, or if your colleague’s concerns are unfounded.
-What kind(s) of statistical test would be most appropriate to use in this case, and what is the null hypothesis (<span class="math inline">\(H_{0}\)</span>) of the test?</p>
-<p>Test to use: ___________________________</p>
-<p><span class="math inline">\(H_{0}\)</span>: _______________________</p>
-<p>What is the alternative hypothesis (<span class="math inline">\(H_{A}\)</span>), and should you use a one or two-tailed test?</p>
-<p><span class="math inline">\(H_{A}\)</span>: _______________________</p>
-<p>One or two tailed? __________________________</p>
-<p>To test if the mean of overall student scores in your class is significantly different from <span class="math inline">\(\mu_{0} = 60.1\)</span> (technically, that your student’s scores were sampled from a population with a mean lower than 60.1), we might use a one-tailed, one sample t-test.
-Recall from <a href="Chapter_21.html#assumptions-of-t-tests">Chapter 21.4</a> the assumptions underlying a t-test:</p>
+<p>In Figure 29.2, each point is a different wasp from Table 29.1.
+For example, in the last row of Table 29.1, there is a wasp with a particularly low thorax length (0.621 mm) and abdomen length (1.034 mm).
+In the scatterplot, we can see this wasp represented by the point that is lowest and furthest to the left (Figure 29.2).</p>
+<p>There is a clear association between thorax length and abdomen length in Figure 29.2.
+Fig wasps that have low thorax lengths also tend to have low abdomen lengths, and wasps that high thorax lengths also tend to have high abdomen lengths.
+In this sense, the 2 variables are associated.
+More specifically, they are positively correlated.
+As thorax length increases, so does abdomen length.</p>
+</div>
+<div id="the-correlation-coefficient" class="section level2 hasAnchor" number="29.2">
+<h2><span class="header-section-number">29.2</span> The correlation coefficient<a href="Chapter_29.html#the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>correlation coefficient</strong> formalises the association described in the previous section.
+It gives us a single number that defines how 2 variables are correlated.
+We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
+Positive values indicate that two variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
+Negative values indicate that two variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
+Values of zero (or not significantly different from zero, more on this later) indicate that 2 variables are uncorrelated (i.e., independent of one another).
+Figure 29.3 shows scatterplots for 8 different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-146-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with different correlations between x and y variables." width="480" />
+<p class="caption">
+Figure 29.3: Examples of scatterplots with different correlation coefficients (r) between 2 variables (x and y).
+</p>
+</div>
+<p>We will look at 2 types of correlation coefficient, the Pearson product moment correlation coefficient and the Spearman rank correlation coefficient.
+The 2 are basically the same; the Spearman rank correlation coefficient is just a correlation of the ranks of values instead of the actual values.</p>
+<div id="pearson-product-moment-correlation-coefficient" class="section level3 hasAnchor" number="29.2.1">
+<h3><span class="header-section-number">29.2.1</span> Pearson product moment correlation coefficient<a href="Chapter_29.html#pearson-product-moment-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To understand the correlation coefficient, we need to first understand covariance.
+<a href="Chapter_12.html#the-variance">Chapter 23.3</a> introduced the variance (<span class="math inline">\(s^{2}\)</span>) as a measure of spread in some variable <span class="math inline">\(x\)</span>,</p>
+<p><span class="math display">\[s^{2} = \frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]</span></p>
+<p>The variance is actually just a special case of a covariance.
+The variance describes how a variable <span class="math inline">\(x\)</span> covaries with itself.
+The covariance (<span class="math inline">\(cov_{x,y}\)</span>) describes how a variable <span class="math inline">\(x\)</span> covaries with another variable <span class="math inline">\(y\)</span>,</p>
+<p><span class="math display">\[cov_{x, y} = \frac{1}{N - 1} \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right).\]</span></p>
+<p>The <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the means of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, respectively.
+Note that if <span class="math inline">\(x_{i} = y_{i}\)</span>, then the equation for <span class="math inline">\(cov_{x,y}\)</span> is identical to the equation for <span class="math inline">\(s^{2}\)</span> because <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(x_{i} - \bar{x} \right) = \left(x_{i} - \bar{x} \right)^{2}\)</span>.</p>
+<p>What the equation for <span class="math inline">\(cov_{x,y}\)</span> is describing is how the variation in <span class="math inline">\(x\)</span> is relates to variation in <span class="math inline">\(y\)</span>.
+If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, and a value of <span class="math inline">\(y_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially high because we will be multiplying 2 large positive number together.
+If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, but the corresponding <span class="math inline">\(y_{i}\)</span> is much lower than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially low because we will be multiplying a large positive number and a large negative number.
+Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(y_{i}\)</span> tend to deviate from their means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> in a consistent way, we get either high or low values of <span class="math inline">\(cov_{x,y}\)</span>.
+If there is no such relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, then we will get <span class="math inline">\(cov_{x,y}\)</span> values closer to zero.</p>
+<p>The covariance can, at least in theory, be any real number.
+How low or high it is will depend on the magnitudes of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, just like <a href="Chapter_12.html#the-variance">the variance</a>.
+To get the Pearson product moment correlation coefficient<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
+We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{x}\)</span>),</p>
+<p><span class="math display">\[r = \frac{cov_{x,y}}{s_{x} \times s_{y}}.\]</span></p>
+<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the two variables, so the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger <span class="math inline">\(s_{x} \times s_{y}\)</span>.
+We can again think about the special case in which <span class="math inline">\(x = y\)</span>.
+Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom and <span class="math inline">\(r = 1\)</span>.</p>
+<p>We can expand <span class="math inline">\(cov_{x,y}\)</span>, <span class="math inline">\(s_{x}\)</span>, and <span class="math inline">\(s_{y}\)</span> to see the details of the equation for <span class="math inline">\(r\)</span>,</p>
+<p><span class="math display">\[r = \frac{\frac{1}{N - 1} \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
+<p>This looks like a lot, but we can clean the equation up a bit because the <span class="math inline">\(1 / (N-1)\)</span> expressions cancel on the top and bottom of the equation,</p>
+<p><span class="math display">\[r = \frac{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
+<p>As with other statistics defined in this book, it is almost never necessary to calculate <span class="math inline">\(r\)</span> by hand.
+Statistical programs such as Jamovi and R will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest.
+To make this link a bit more clear, we can calculate the correlation coefficient of thorax and abdomen length from Table 29.1.
+We can set thorax to be the <span class="math inline">\(x\)</span> variable and abdomen to be the <span class="math inline">\(y\)</span> variable.
+Mean thorax length is <span class="math inline">\(\bar{x} = 0.770\)</span>, and mean abdomen length is <span class="math inline">\(\bar{y} = 1.210\)</span>.
+The standard deviation of thorax length is <span class="math inline">\(s_{x} = 0.064\)</span>, and the standard deviation of abdomen length is <span class="math inline">\(s_{y} = 0.123\)</span>.
+This gives us the numbers that we need to calculate the bottom of the fraction for <span class="math inline">\(r\)</span>, which is <span class="math inline">\(s_{x} \times s_{y} = 0.007872\)</span>.
+We now need to calculate the covariance on the top.
+To get the covariance, we first need to calculate <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for each row (<span class="math inline">\(i\)</span>) in Table 29.1.
+For example, for row 1, <span class="math inline">\(\left(0.767 - 0.770\right) \left(1.288 - 1.210\right) = -0.000234.\)</span>
+For row 2, <span class="math inline">\(\left(0.784 - 0.770\right) \left(1.059 - 1.210\right) = -0.002114.\)</span>
+We continue this for all rows.
+Table 29.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>), abdomen length (<span class="math inline">\(y_{i}\)</span>), and <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for rows <span class="math inline">\(i = 1\)</span> to <span class="math inline">\(i = 11\)</span>.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-147">Table 29.2: </span>Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.</caption>
+<thead>
+<tr class="header">
+<th align="right">Row (i)</th>
+<th align="right">Thorax</th>
+<th align="right">Abdomen</th>
+<th align="right">Squared Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.767</td>
+<td align="right">1.288</td>
+<td align="right">-0.000234</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">0.784</td>
+<td align="right">1.059</td>
+<td align="right">-0.002114</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">0.769</td>
+<td align="right">1.107</td>
+<td align="right">0.000103</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.766</td>
+<td align="right">1.242</td>
+<td align="right">-0.000128</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0.828</td>
+<td align="right">1.367</td>
+<td align="right">0.009106</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0.852</td>
+<td align="right">1.408</td>
+<td align="right">0.016236</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">0.781</td>
+<td align="right">1.248</td>
+<td align="right">0.000418</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">0.696</td>
+<td align="right">1.092</td>
+<td align="right">0.008732</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">0.792</td>
+<td align="right">1.240</td>
+<td align="right">0.000660</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">0.814</td>
+<td align="right">1.221</td>
+<td align="right">0.000484</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">0.621</td>
+<td align="right">1.034</td>
+<td align="right">0.026224</td>
+</tr>
+</tbody>
+</table>
+<p>If we sum up all of the values in the column “Squared Deviation” from Table 29.2, we get a value of 0.059487.
+We can multiply this value by <span class="math inline">\(1 / (N - 1)\)</span> to get the top of the equation for <span class="math inline">\(r\)</span>, <span class="math inline">\((1 / (11-1)) \times 0.059487 = 0.0059487\)</span>.
+We now have all of the values we need to calculate <span class="math inline">\(r\)</span> between fig wasp thorax and abdomen length,</p>
+<p><span class="math display">\[r_{x,y} = \frac{0.0059487}{0.064 \times 0.123}.\]</span></p>
+<p>Our final value is <span class="math inline">\(r_{x, y} = 0.7556784\)</span>.
+As suggested by the scatterplot in Figure 29.2, thorax and abdomen lengths are highly correlated.
+We will test whether or not this value of <span class="math inline">\(r\)</span> is statistically significant in <a href="Chapter_29.html#correlation-hypothesis-testing">Chapter 23.3</a> below, but first we will introduce the Spearman’s rank correlation coefficient.</p>
+</div>
+<div id="spearman-rank-correlation-coefficient" class="section level3 hasAnchor" number="29.2.2">
+<h3><span class="header-section-number">29.2.2</span> Spearman rank correlation coefficient<a href="Chapter_29.html#spearman-rank-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Throughout this book, we have seen how the <em>ranks</em> of data can be substituted in place of the actual values.
+This has been useful when data violate the assumptions of a statistical test, and we need a nonparametric test instead (e.g., the <a href="Chapter_22.html#wilcoxon-test-1">Wilcoxon signed rank test</a>, the <a href="Chapter_22.html#mann-whitney-u-test-1">Mann-Whitney U test</a>, or the <a href="Chapter_25.html#Chapter_25">Kruskall-Wallis H test</a>).
+We can use the same trick for the correlation coefficient.
+The Spearman rank correlation coefficient is calculated the exact same way as the Pearson product moment correlation coefficient, except on the ranks of values.
+To calculate the Spearman rank correlation coefficient for the fig wasp example in <a href="Chapter_29.html#pearson-product-moment-correlation-coefficient">the previous section</a>, we just need to rank the thorax and abdomen lengths from 1 to 11, then calculate <span class="math inline">\(r\)</span> using the rank values instead of the actual measurements of length.
+Figure 29.3 shows the same 11 fig wasp measurements as Figures 29.1 and 29.2, but with columns added to show the ranks of thorax and abdomen lengths.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-148">Table 29.3: </span>Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.</caption>
+<thead>
+<tr class="header">
+<th align="right">Wasp (i)</th>
+<th align="right">Thorax</th>
+<th align="right">Thorax rank</th>
+<th align="right">Abdomen</th>
+<th align="right">Abdomen rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">0.767</td>
+<td align="right">4</td>
+<td align="right">1.288</td>
+<td align="right">9</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">0.784</td>
+<td align="right">7</td>
+<td align="right">1.059</td>
+<td align="right">2</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">0.769</td>
+<td align="right">5</td>
+<td align="right">1.107</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">0.766</td>
+<td align="right">3</td>
+<td align="right">1.242</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">0.828</td>
+<td align="right">10</td>
+<td align="right">1.367</td>
+<td align="right">10</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">0.852</td>
+<td align="right">11</td>
+<td align="right">1.408</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">0.781</td>
+<td align="right">6</td>
+<td align="right">1.248</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">0.696</td>
+<td align="right">2</td>
+<td align="right">1.092</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">0.792</td>
+<td align="right">8</td>
+<td align="right">1.240</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">0.814</td>
+<td align="right">9</td>
+<td align="right">1.221</td>
+<td align="right">5</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">0.621</td>
+<td align="right">1</td>
+<td align="right">1.034</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>Note from Table 29.3 that the lowest value of Thorax is 0.621, so it gets a rank of 1.
+The highest value of Thorax is 0.852, so it gets a rank of 11.
+We do the same for abdomen ranks.
+To get the Spearman rank correlation coefficient, we just calculate <span class="math inline">\(r\)</span> using the ranks.
+The ranks number from 1 to 11 for both variables, so the mean rank is 6 and the standard deviation is 3.317 for both thorax and abdomen ranks.
+We can then go through each row and calculate <span class="math inline">\(\left(x_{i} - \bar{x} \right) \times \left(y_{i} - \bar{y} \right)\)</span> using the ranks.
+For the first row, this gives us <span class="math inline">\(\left(4 - 6 \right) \left(9 - 6 \right) = -6\)</span>.
+If we do this same calculation for each row and sum them up, then multiply by 1/(N-1), we get a value of 6.4.
+To calculate <span class="math inline">\(r\)</span>,</p>
+<p><span class="math display">\[r_{rank(x),rank(y)} = \frac{6.4}{3.317 \times 3.317}\]</span></p>
+<p>Our Spearman rank correlation coefficient is therefore <span class="math inline">\(r = 0.582\)</span>, which is a bit lower than our Pearson product moment correlation was.
+The key point here is that the definition of the correlation coefficient has not changed; we are just using the ranks of our measurements instead of the measurements themselves.
+The reason why we might want to use the Spearman rank correlation coefficient instead of the Pearson product moment correlation coefficient is explained in the next section.</p>
+</div>
+</div>
+<div id="correlation-hypothesis-testing" class="section level2 hasAnchor" number="29.3">
+<h2><span class="header-section-number">29.3</span> Correlation hypothesis testing<a href="Chapter_29.html#correlation-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We often want to test if 2 variables are correlated.
+In other words, is <span class="math inline">\(r\)</span> significantly different from zero?
+We therefore want to test the null hypothesis that <span class="math inline">\(r\)</span> is not significantly different from zero.</p>
 <ul>
-<li>Data are continuous (i.e., not count or categorical data)</li>
-<li>Sample observations are a random sample from the population</li>
-<li>Sample means are normally distributed around the true mean</li>
+<li><span class="math inline">\(H_{0}:\)</span> The population correlation coefficient is zero.</li>
+<li><span class="math inline">\(H_{A}:\)</span> The correlation coefficient is significantly different from zero.</li>
 </ul>
-<p>We will first focus on the first and third assumption.
-First, the sample data are indeed continuous.
-But are the sample means normally distributed around the true mean?
-A sufficient condition to fulfil this assumption is that the sample data are normally distributed <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>.
-We can test whether or not the overall mean student scores are normally distributed.
-In the Jamovi toolbar, find the button that says ‘T-Tests’ (second from the left), then choose ‘One Sample T-test’ from the pulldown menu.
-A new window will open up.
-In a one sample t-test, there is only 1 dependent variable, which in this case is ‘Overall’.
-Move the variable ‘Overall’ to the Dependent Variables box with the right arrow.
-Below the boxes, find the checkbox options under ‘<strong>Assumption Checks</strong>’.
-Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’ (Figure 22.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-101"></span>
-<img src="img/jamovi_one_sample_t-test.png" alt="Jamovi interface is shown with a panel of 4 columns of data to the left and the interface for a One Sample T-Test to the right." width="100%" />
+<p>Note that <span class="math inline">\(H_{A}\)</span> above is for a two-tailed test, in which we do not care about direction.
+We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</span> is that the correlation coefficient is greater than or less than zero.</p>
+<p>How do we actually test the null hypothesis?
+As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>,</p>
+<p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
+<p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
+Statistical programs such as Jamovi or R will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
+In <a href="Chapter_21.html#one-sample-t-test">Chapter 21.1</a>, we saw that the one sample t-test defined <span class="math inline">\(t\)</span> as the deviation of the sample mean from the true mean, divided by the standard error.
+Here we are doing the same for the correlation coefficient.
+One consequence of this is that, like the one sample t-test, the test of the correlation coefficient assumes that <span class="math inline">\(r\)</span> will be normally distributed around the true mean <span class="math inline">\(\rho\)</span>.
+If this is not the case, and the assumption of normality is violated, then the test might have a misleading Type I error rate.</p>
+<p>To be cautious, we should check whether or not the variables that we are correlating are normally distributed (especially if the sample size is small).
+If they are normally distributed, then we can use the Pearson’s product moment correlation to test the null hypothesis.
+If the assumption of normality is violated, then we might consider using the non-parametric Spearman rank correlation coefficient instead.
+The fig wasp thorax and abdomen lengths from Table 29.1 are normally distributed, so we can use the Pearson product moment correlation coefficient to test whether or not the correlation between these two variables is significant.
+In Jamovi, the t-score is not even reported as output when using a correlation test.
+We only see <span class="math inline">\(r\)</span> and the p-value (Figure 23.4).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-149"></span>
+<img src="img/Jamovi_correlation_output.png" alt="A table called 'Correlation Matrix' is shown, which is mostly empty except for two values in the lower left of a 2 by 2 matrix." width="100%" />
 <p class="caption">
-Figure 22.3: The Jamovi interface for running a one sample t-test (right hand side). The variable ‘Overall’ has been brought in the Dependent Variables box, and two different options have been selected to check the assumption of normality (a normality hypothesis test and a Q-Q plot).
+Figure 29.4: Jamovi output for a test of the null hypothesis that thorax length and abdomen length are not significantly correlated in a sample of fig wasps collected in 2010 from Baja, Mexico.
 </p>
 </div>
-<p>After checking the box for ‘Normality test’ and ‘Q-Q Plot’, new output will appear in the panel on the right hand side.
-The first output is a table showing the results a Shapiro-Wilk test.
-The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk to see if the assumptions of the t-test are violated or not).
-If we reject the null hypothesis, then we will conclude that the data are <strong>not</strong> normally distributed.
-If we do not reject the null hypothesis, then we will will assume that the data <strong>are</strong> normally distributed.
-From the Normality Test table, what is the p-value of the Shapiro-Wilk test?</p>
-<p>P = _____________________</p>
-<p>Based on this p-value, should we reject the null hypothesis? ______________</p>
-<p>Now have a look at the Q-Q plot.
-We will learn about the details of how this plot works later, but for now, you just need to know that this plot can be used to assess whether or not the data are normally distributed.
-If the data are normally distributed, then the points in the Q-Q plot should fall roughly along the diagonal black line.
-These plots take some practice to read and interpret, but for now, just have a look at the Q-Q plot and think about how it relates to the results of the Shapiro-Wilk test of normality.
-It might be useful to plot a histogram of the overall scores too in order to judge whether or not they are normally distributed (most researchers will use both a visual inspection of the data and a normality test to evaluate whether or not the assumption of normality is satisfied)</p>
-<p>Assuming that we have not rejected our null hypothesis, we can proceed with our one sample t-test.
-To do this, make sure the variable ‘Overall’ is still in the Dependent Variables box, then make sure the check box ‘Student’s’ is checked below <strong>Tests</strong>.
-Underneath <strong>Hypothesis</strong>, change the test value to 60.1 (because <span class="math inline">\(\mu_{0} = 60.1\)</span>) and put the radio button to ‘&lt; Test value’ to test the null hypothesis that the mean overall score of students is the same as <span class="math inline">\(\mu_{0}\)</span> against the alternative hypothesis that it is less than <span class="math inline">\(\mu_{0}\)</span>.
-On the right panel of Jamovi, you will see a table with the t-statistic, degrees of freedom, and p-value of the one sample t-test.
-Write these values down below.</p>
-<p>t-statistic: _________________</p>
-<p>degrees of freedom: __________________</p>
-<p>p-value: ____________________</p>
-<p>Remember how the t-statistic, degrees of freedom, and p-value are all related.
-For a reminder, use this <a href="https://bradduthie.shinyapps.io/t_score/">interactive application</a>.
-Slide the value for ‘t’ until it matches the t-statistic that your reported above, then input the correct degrees of freedom in the box to the lower right.
-Look at the probability density in blue to confirm that it is approximately the same as your p-value (there might be a slight rounding error here).
-Based on the p-value, should you reject the null hypothesis that your students’ mean overall grade is the same as the national average? Why or why not?</p>
-<pre><code>
-
-
-</code></pre>
-<p>Based on this test, how would you respond to your colleague who is concerned that your students are performing below the national average?</p>
-<pre><code>
-
-
-
-
-
-</code></pre>
-<p>Consider again the three assumptions of the t-test listed above.
-Is there an assumption that might be particularly suspect when comparing the scores of students in a single classroom with a national average? Why or why not?</p>
-<pre><code>
-
-
-
-
-
-</code></pre>
-<p>We will now test whether students in this dataset improved their test scores from Test 1 to Test 2.</p>
-</div>
-<div id="exercise-on-a-paired-t-test" class="section level2 hasAnchor" number="22.2">
-<h2><span class="header-section-number">22.2</span> Exercise on a paired t-test<a href="Chapter_22.html#exercise-on-a-paired-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose we want to test whether or not students in this dataset improved their grades from Test 1 to Test 2.
-In this case, we are interested in the variables ‘Test_1’ and ‘Test_2’, but we are not just interested in whether or not the means of the two test scores are the same.
-Instead, we want to know if the scores of individual students increased or not.
-The data are therefore naturally paired.
-Each test score belongs to a unique student, and each student has a score for Test 1 and Test 2.
-To test whether or not there has been an increase in test scores, go to the ‘T-Tests’ button in the Jamovi toolbar and select ‘Paired Samples T-Test’ from the pulldown menu.
-Place ‘Test_1’ in the Paired Variables box first, followed by ‘Test_2’.
-Jamovi will interpret the first variable placed in the box as ‘Measure 1’, and the second variable placed in the box as ‘Measure 2’.
-Before looking at any test results, first check to see if the difference between Test 1 and Test 2 scores is normally distributed using the same <strong>Assumption Checks</strong> as in the previous exercise.
-Is there any reason to believe that the data are not normally distributed?</p>
-<pre><code>
-</code></pre>
-<p>We want to know if student grades have improved.
-What is the null hypothesis (<span class="math inline">\(H_{0}\)</span>) and alternative hypothesis (<span class="math inline">\(H_{A}\)</span>) in this case?</p>
-<p><span class="math inline">\(H_{0}\)</span>: _____________________</p>
-<p><span class="math inline">\(H_{A}\)</span>: _____________________</p>
-<p>To test the null hypothesis against the appropriate alternative hypothesis, select the radio button ‘Measure 1 &lt; Measure 2’.
-As with the one sample t-test, on the right panel of Jamovi, you will see a table with the t-statistic, degrees of freedom, and p-value of the one sample t-test.
-Write these values down below.</p>
-<p>t-statistic: _________________</p>
-<p>degrees of freedom: __________________</p>
-<p>p-value: ____________________</p>
-<p>Based on this p-value, should you reject or fail to reject your null hypothesis?
-What can you then conclude about student test scores?</p>
-<pre><code>
-</code></pre>
-<p>Note that this paired t-test is, mathematically, the exact same as a one sample t-test.
-If you want to convince yourself of this, you can create a new computed variable that is <span class="math inline">\(Test\:1 - Test\:2\)</span>, then run a one sample t-test.
-You will see that the t-statistic, degrees of freedom, and p-value are all the exact same.
-Next, we will consider a case in which the assumption of normality is violated.</p>
-</div>
-<div id="wilcoxon-test-1" class="section level2 hasAnchor" number="22.3">
-<h2><span class="header-section-number">22.3</span> Wilcoxon test<a href="Chapter_22.html#wilcoxon-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that we want to test the null hypothesis that the scores from Test 3 of the dataset used in Exercises 1 and 2 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>) were sampled from a population with a mean of <span class="math inline">\(\mu_{0} = 62\)</span>.
-We are not interested in whether the scores are higher or lower than 62, just that they are different.
-Consequently, what should our alternative hypothesis (<span class="math inline">\(H_{A}\)</span>) be?</p>
-<p><span class="math inline">\(H_{A}\)</span>: ___________________</p>
-<p>Use the same procedure that you did in Exercise 1 to test this new hypothesis concerning Test 3 scores.
-First, check the assumption that the Test 3 scores are normally distributed.
-What is the p-value of the Shaprio-Wilk test this time?</p>
-<p>P = ____________________</p>
-<p>What inference can you make from the Q-Q plot?
-Do the points fall along the diagonal line?</p>
-<pre><code>
-
-
-
-</code></pre>
-<p>Based on the Shaprio-Wilk test and Q-Q plot, is it safe to assume that the Test 3 scores are normally distributed?</p>
-<pre><code>
-
-</code></pre>
-<p>Since the Test 3 scores are not normally distributed (and an assumption of the t-test is therefore potentially violated), we can use the non-parametric Wilcoxon signed-rank test instead, as was introduced in <a href="Chapter_21.html#wilcoxon-test">Chapter 21.5.1</a>.
-To apply the Wilcoxon test, check the box ‘Wilcoxon rank’ under the <strong>Tests</strong> option.
-Next, make sure to set the ‘Test value’ to 62 under the <strong>Hypothesis</strong> option.
-What are the null and alternative hypotheses of this test?</p>
-<p><span class="math inline">\(H_{0}\)</span>: _______________________</p>
-<p><span class="math inline">\(H_{A}\)</span>: _______________________</p>
-<p>The results of the Wilcoxon signed-rank test will appear in the ‘One Sample T-Test’ table in the right panel of Jamovi in a row called ‘Wilcoxon W’.
-What is the test statistic (not the p-value) for the Wilcoxon test?</p>
-<p>Test statistic: __________________</p>
-<p>Based on what you learned in <a href="Chapter_21.html#wilcoxon-test">Chapter 21.5.1</a>, what does this test statistic actually mean?</p>
-<pre><code>
-
-
-
-</code></pre>
-<p>Now look at the p-value for the Wilcoxon test.
-What is the p-value, and what should you conclude from it?</p>
-<p>P: _______________</p>
-<p>Conclusion: ___________________</p>
-<p>Next, we will introduce a new dataset to test hypotheses concerning the means of two different groups.</p>
-</div>
-<div id="independent-samples-t-test-1" class="section level2 hasAnchor" number="22.4">
-<h2><span class="header-section-number">22.4</span> Independent samples t-test<a href="Chapter_22.html#independent-samples-t-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the first 3 exercises, we tested hypotheses using data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>).
-In this exercise, we will test the differences in mean test scores between students from 2022 and 2023.
-To do this, first download the 2023 data (right click the link <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a> and choose ‘Save Link As…’, then save as a file with the extension ‘.csv’).
-These data are shown below, but you should be able to download the file in the link above.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-102">Table 22.2: </span>Student test scores from 2023.</caption>
-<thead>
-<tr class="header">
-<th align="left">ID</th>
-<th align="left">Test_1</th>
-<th align="left">Test_2</th>
-<th align="left">Test_3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">202301</td>
-<td align="left">62.7</td>
-<td align="left">63.5</td>
-<td align="left">81.8</td>
-</tr>
-<tr class="even">
-<td align="left">202302</td>
-<td align="left">57.9</td>
-<td align="left">77.4</td>
-<td align="left">57.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202303</td>
-<td align="left">64.6</td>
-<td align="left">50.7</td>
-<td align="left">57.4</td>
-</tr>
-<tr class="even">
-<td align="left">202304</td>
-<td align="left">56.1</td>
-<td align="left">70.5</td>
-<td align="left">57.0</td>
-</tr>
-<tr class="odd">
-<td align="left">202305</td>
-<td align="left">72.5</td>
-<td align="left">75.2</td>
-<td align="left">57.4</td>
-</tr>
-<tr class="even">
-<td align="left">202306</td>
-<td align="left">51.9</td>
-<td align="left">45.7</td>
-<td align="left">59.5</td>
-</tr>
-<tr class="odd">
-<td align="left">202307</td>
-<td align="left">58.1</td>
-<td align="left">49.1</td>
-<td align="left">63.3</td>
-</tr>
-<tr class="even">
-<td align="left">202308</td>
-<td align="left">59.5</td>
-<td align="left">52.4</td>
-<td align="left">57.2</td>
-</tr>
-<tr class="odd">
-<td align="left">202309</td>
-<td align="left">45.2</td>
-<td align="left">39.3</td>
-<td align="left">57.2</td>
-</tr>
-<tr class="even">
-<td align="left">202310</td>
-<td align="left">61.8</td>
-<td align="left">45.6</td>
-<td align="left">57.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202311</td>
-<td align="left">72.0</td>
-<td align="left">59.4</td>
-<td align="left">57.0</td>
-</tr>
-<tr class="even">
-<td align="left">202312</td>
-<td align="left">58.4</td>
-<td align="left">75.8</td>
-<td align="left">57.9</td>
-</tr>
-<tr class="odd">
-<td align="left">202313</td>
-<td align="left">52.8</td>
-<td align="left">46.0</td>
-<td align="left">65.8</td>
-</tr>
-<tr class="even">
-<td align="left">202314</td>
-<td align="left">71.6</td>
-<td align="left">68.9</td>
-<td align="left">62.7</td>
-</tr>
-<tr class="odd">
-<td align="left">202315</td>
-<td align="left">56.4</td>
-<td align="left">41.7</td>
-<td align="left">57.7</td>
-</tr>
-<tr class="even">
-<td align="left">202316</td>
-<td align="left">66.1</td>
-<td align="left">50.7</td>
-<td align="left">61.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202317</td>
-<td align="left">57.0</td>
-<td align="left">50.4</td>
-<td align="left">57.6</td>
-</tr>
-<tr class="even">
-<td align="left">202318</td>
-<td align="left">57.1</td>
-<td align="left">67.7</td>
-<td align="left">59.5</td>
-</tr>
-<tr class="odd">
-<td align="left">202319</td>
-<td align="left">71.1</td>
-<td align="left">49.8</td>
-<td align="left">58.8</td>
-</tr>
-<tr class="even">
-<td align="left">202320</td>
-<td align="left">66.3</td>
-<td align="left">53.6</td>
-<td align="left">57.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202321</td>
-<td align="left">68.7</td>
-<td align="left">43.9</td>
-<td align="left">57.7</td>
-</tr>
-<tr class="even">
-<td align="left">202322</td>
-<td align="left">61.0</td>
-<td align="left">77.3</td>
-<td align="left">57.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202323</td>
-<td align="left">54.3</td>
-<td align="left">67.7</td>
-<td align="left">57.7</td>
-</tr>
-<tr class="even">
-<td align="left">202324</td>
-<td align="left">56.8</td>
-<td align="left">47.6</td>
-<td align="left">78.9</td>
-</tr>
-</tbody>
-</table>
-<p>As might be expected, the 2022 and 2023 datasets are stored in separate files.
-What we need to do first is combine the data into a single tidy dataset.
-To do this, open the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a> dataset in a spreadsheet and copy all of the data (but not the column names).
-You can then paste these data directly into Jamovi in the next available row (row 22).
-Next, add in a new column for ‘Year’, so that you can differentiate 2022 students from 2023 students in the same dataset.
-To do this, you can right-click on the ‘ID’ column and choose ‘Add Variable’, then ‘Insert’.
-A new column will appear to the left, which you can name ‘Year’.
-Input ‘2022’ for rows 1-21, then ‘2023’ for the remaining rows that you just pasted into Jamovi (see Figure 22.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
-<img src="img/jamovi_insert_year.png" alt="Jamovi interface is shown with a top panel in which a Data Variable called 'Year' is being inserted, below which data are shown, including the new column with 2022 and 2023 years" width="100%" />
-<p class="caption">
-Figure 22.4: The Jamovi interface for inserting a new variable called ‘Year’, and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.
-</p>
-</div>
-<p>Note that Year does not necessarily need to be in the first column.
-You could have added it in as the second column, or as the last (i.e., the location of the column will not affect any analyses).</p>
-<p>With the new data now included in Jamovi, we can now compare student test scores between years.
-Suppose that we first want to test the null hypothesis that the overall student scores have the same mean, <span class="math inline">\(\mu_{2022} = \mu_{2023}\)</span>, with the alternative hypothesis that <span class="math inline">\(\mu_{2022} \neq \mu_{2023}\)</span>.
-Is this a one or a two tailed hypothesis?</p>
-<p>One or two tailed? _________________</p>
-<p>It is generally a good idea to plot and summarise your data before running any statistical tests.
-If you have time, have a look at histograms of the Overall student scores from each year, and look at some summary statistics from the Descriptives output.
-This will give you a sense of what to expect when running your test diagnostics (e.g., tests of normality) and might alert you to any problems before actually running the analysis (e.g., major outliers that do not make sense, such as a student having an overall score of over 1000 due to a data input error).</p>
-<p>After you have had a look at the histograms and summary statistics, go to the Jamovi toolbar and navigate to ‘T-Tests’, then the ‘Independent Samples T-Test’ from the pulldown menu.
-Remember that our objective here is to test whether the means of two groups (2022 versus 2023) are the same.
-We can therefore place the ‘Overall’ variable in the Dependent Variables box, then ‘Year’ in the Grouping Variable box.
-Before running the independent samples t-test, we again need to check our assumptions.
-In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_21.html#independent-samples-t-test">Chapter 21.2</a> that the standard ‘Student’s’ independent samples t-test also assumes that the variances of groups (i.e., the 2022 and 2023 scores) are the same, while the ‘Welch’s’ t-test does not assume equal variances.
-In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 22.5).
-This is called a ‘Levene’s test’, and we can interpret it in a similar way to the Shapiro-Wilk test of normality.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-104"></span>
-<img src="img/jamovi_independent_sample_t-test.png" alt="Jamovi interface is shown with a left panel of data, a middle panel showing an independent samples t-test being set up to test for a difference in Overall score between Years, and output for test assumptions in the right panel." width="100%" />
-<p class="caption">
-Figure 22.5: The Jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
-</p>
-</div>
-<p>If our p-value is sufficiently low (P &lt; 0.05), then we reject the null hypothesis that the groups have the same variances.
-Based on the <strong>Assumption Checks</strong> in Jamovi (and Figure 22.5), what can you conclude about the t-test assumptions?</p>
-<pre><code>
-
-
-
-
-</code></pre>
-<p>What is the p-value for the Levene’s test?</p>
-<p>P: _________________</p>
-<p>It appears from our test of assumptions that we do not reject the null hypothesis that the data are normally distributed, but we should reject the null hypothesis that the groups have equal variances.
-Based on what you learned in <a href="Chapter_21.html#independent-samples-t-test">Chapter 21.2</a>, what is the appropriate test to run in this case?</p>
-<p>Test: ____________________</p>
-<p>Note that the appropriate test should be available as a check box underneath the <strong>Tests</strong> options.
-Check the box for the correct test, then report the test statistic and p-value from the table that appears in the right panel.</p>
-<p>Test statistic: ____________________</p>
-<p>P = __________________</p>
-<p>What can you conclude from this t-test?</p>
-<pre><code>
-
-
-
-
-</code></pre>
-<p>Next, we will compare mean Test 3 scores between years 2022 and 2023.</p>
-</div>
-<div id="mann-whitney-u-test-1" class="section level2 hasAnchor" number="22.5">
-<h2><span class="header-section-number">22.5</span> Mann-Whitney U Test<a href="Chapter_22.html#mann-whitney-u-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that we now want to use the data from the previous exercise to test whether or not Test 3 scores differ between years.
-Consequently, in this exercise, Test 3 will be our Dependent Variable and Year will again be the Grouping Variable (also called the ‘Independent variable’).
-Below, summarise the hypotheses for this new test.</p>
-<p><span class="math inline">\(H_{0}:\)</span> ________________</p>
-<p><span class="math inline">\(H_{A}:\)</span> ________________</p>
-<p>Is this a one or two tailed test? _____________</p>
-<p>Next, begin a new Independent Samples T-Test in Jamovi and check the assumptions underlying the t-test.
-Do the variances appear to be the same for Test 3 scores in 2022 versus 2023?
-How can you make this conclusion?</p>
-<pre><code>
-
-</code></pre>
-<p>Next check to see if the data are normally distributed.
-What is the p-value of the Shapiro-Wilk test?</p>
-<p>P = ________________</p>
-<p>Now, have a look at the Q-Q plot.
-What can you infer from this plot about the normality of the data, and why?</p>
-<pre><code>
-
-
-
-
-</code></pre>
-<p>Based on what you found from testing the model assumptions above, and the material in <a href="Chapter_21.html#Chapter_21">Chapter 21</a>, what test is the most appropriate one to use?</p>
-<p>Test: ________________</p>
-<p>Run the above test in Jamovi, then report the test statistic and p-value below.</p>
-<p>Test statistic: ____________</p>
-<p>p-value: ___________</p>
-<p>Based on what you learned in <a href="Chapter_21.html#mann-whitney-u-test">Chapter 21.5.2</a>, what does this test statistic actually mean?</p>
-<pre><code>
-
-
-
-</code></pre>
-<p>Finally, what conclusions can you make about Test 3 scores in 2022 versus 2023?</p>
-<pre><code>
-
-
-
-
-</code></pre>
-<p>For the sake of time, we have not introduced an example in which a transformation (such as a log transformation) is applied to normalise a dataset, as explained in <a href="Chapter_21.html#assumptions-of-t-tests">Chapter 21.4</a>.
-To do such a transformation, you could create a new computed variable in Jamovi and calculate it as the natural log (LN) of a variable (e.g., Test 3).
-Figure 22.6 illustrates what this should look like.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-105"></span>
-<img src="img/jamovi_LN_transform.png" alt="Jamovi interface is shown with a new computed variable being made and the natural log of Test 3 scores being inserted into the function box." width="100%" />
-<p class="caption">
-Figure 22.6: The Jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
-</p>
-</div>
-<p>Lastly, if you have time, suppose that you wanted to test whether students from 2023 improved their scores from Test 1 to Test 2 more than students from 2022 did?
-Is there a way to do this with just the tools presented here and in <a href="Chapter_21.html#Chapter_21">Chapter 21</a>?
-Think about how the paired t-test works, and how you could apply that logic to test for the difference in the change between two independent samples (2022 versus 2023).
-What could you do to test the null hypothesis that the change in scores from Test 1 to Test 2 is the same between years?</p>
-<pre><code>
-
-
-
-
-
-
-</code></pre>
-
+<p>From Figure 29.4, we can see that the sample <span class="math inline">\(r = 0.75858\)</span>, and the p-value is <span class="math inline">\(P = 0.00680\)</span>.
+Since our p-value is less than 0.05, we can reject the null hypothesis that fig was thorax and abdomen lengths are not correlated.
+To get a more intuitive sense of how the correlation coefficient works, we can use an <a href="https://bradduthie.shinyapps.io/corr_click/">interactive application</a>.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/corr_click/">Click here</a> for an interactive application showing the relationship between a scatterplot, a correlation coefficient, and statistical significant.</p>
+</blockquote>
+<p>Points can be added to the <a href="https://bradduthie.shinyapps.io/corr_click/">interactive application</a> by clicking anywhere within the plot.
+A table of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> points is shown to the right, and the correlation coefficient and p-value can be shown or hidden using the buttons on the top.</p>
 </div>
 </div>
-
-
-
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Johnson1995" class="csl-entry">
-Johnson, Douglas H. 1995. <span>“<span class="nocase">Statistical sirens: The allure of nonparametrics</span>.”</span> <em>Ecology</em> 76 (6): 1998–2000.
+<div id="ref-Duthie2015b" class="csl-entry">
+Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
 </div>
-<div id="ref-Lumley2002" class="csl-entry">
-Lumley, Thomas, Paula Diehr, Scott Emerson, and Lu Chen. 2002. <span>“<span class="nocase">The importance of the normality assumption in large public health data sets</span>.”</span> <em>Annual Review of Public Health</em> 23: 151–69. <a href="https://doi.org/10.1146/annurev.publheath.23.100901.140546">https://doi.org/10.1146/annurev.publheath.23.100901.140546</a>.
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-Rahman1968" class="csl-entry">
+Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
@@ -1082,8 +885,10 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="40">
-<li id="fn40"><p>This figure has been released into the <a href="https://commons.wikimedia.org/wiki/File:Teach_in_pine_needles.jpg">Public Domain</a>.<a href="Chapter_22.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<ol start="53">
+<li id="fn53"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_29.html#fnref53" class="footnote-back">↩︎</a></p></li>
+<li id="fn54"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_29.html#fnref54" class="footnote-back">↩︎</a></p></li>
+<li id="fn55"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_29.html#fnref55" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1091,8 +896,8 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
           </div>
         </div>
       </div>
-<a href="Chapter_21.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Week7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_28.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_30.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1123,7 +928,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-Hypothesis_Testing.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/09-Correlation.Rmd",
 "text": "Edit"
 },
 "history": {
