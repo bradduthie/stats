@@ -763,9 +763,9 @@ Note that the sum of all the counts equals our sample size of 60.</p>
 <p>We now have both the observed (Table 28.2) and expected (Table 28.4) counts (remember that the expected counts do not <em>need</em> to be integers).
 To get our <span class="math inline">\(\chi^{2}\)</span> test statistic, we use the same formula as in <a href="Chapter_28.html#chi-squared-goodness-of-fit">Chapter 28.2</a>,</p>
 <p><span class="math display">\[\chi^{2} = \sum_{i = 1}^{n} \frac{\left(O_{i} - E_{i}\right)^{2}}{E_{i}}.\]</span></p>
-<p>There are 9 total combinations of OS and dam size, so there are <span class="math inline">\(n = 9\)</span> values to sum up,</p>
+<p>There are 6 total combinations of OS and dam size, so there are <span class="math inline">\(n = 6\)</span> values to sum up,</p>
 <p><span class="math display">\[\chi^{2} = \frac{(8-9)^2}{9} + \frac{(16 - 12)^{2}}{12} + ... + \frac{(16 - 12)^{2}}{12} + \frac{(8-9)^2}{9}.\]</span></p>
-<p>If we sum all of the 9 terms, we get a value of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
+<p>If we sum all of the 6 terms, we get a value of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
 We can compare this to the null <span class="math inline">\(\chi^{2}\)</span> distribution as we did in the <a href="Chapter_28.html#chi-squared-goodness-of-fit">Chapter 28.2</a> goodness of fit test, but we need to know the correct degrees of freedom.
 The correct degrees of freedom<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> is the number of categories in variable 1 (<span class="math inline">\(n_{1}\)</span>) minus 1, times the number of categories in variable 2 (<span class="math inline">\(n_{2}\)</span>) minus 1,</p>
 <p><span class="math display">\[df = (n_{1} - 1) \times (n_{2} - 1).\]</span></p>
