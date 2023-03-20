@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-19" />
+<meta name="date" content="2023-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -457,7 +457,7 @@ Figure 30.1: This lab practical focuses on the effects of radiation on bumblebee
 </p>
 </div>
 <p>The practical will use the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/bumblebee.csv">bumblebee.csv</a> dataset (right click and “Save Link As…”, then save it with the extension ‘.csv’).
-This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30 day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (CO_2) in micromoles per minute, and the daily volume of nector consumed by the be in ml (nectar).</p>
+This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30 day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (CO_2) in micromoles per minute, and the daily volume of nectar consumed by the be in ml (nectar).</p>
 <div id="survival-goodness-of-fit" class="section level2 hasAnchor" number="30.1">
 <h2><span class="header-section-number">30.1</span> Survival goodness of fit<a href="Chapter_30.html#survival-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose that we want to run a simple goodness of fit test to determine whether or not bees are equally likely to survive versus die in the experiment.
@@ -487,13 +487,13 @@ Here is what it should look like for the two counts in this dataset,</p>
 <p><span class="math display">\[\chi^{2} = \frac{(O_{surv} - E_{surv})^{2}}{E_{surv}} + \frac{(O_{died} - E_{died})^{2}}{E_{died}}.\]</span>
 What is the <span class="math inline">\(\chi^{2}\)</span> value?</p>
 <p><span class="math inline">\(\chi^{2}:\)</span> _____________</p>
-<p>There are 2 categories for the survival category (Yes and No).
+<p>There are 2 categories for survival (Yes and No).
 How many degrees of freedom are there?</p>
 <p>df: ________________</p>
 <p>Using the <span class="math inline">\(\chi^{2}\)</span> and df values, find the approximate p-value using this <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>.</p>
 <p>P: _______________</p>
 <p>Now we can try to use Jamovi to replicate the analysis above.
-In Jamovi Analyses tab, select ‘Frequencies’ from the toolbar, then select ‘N outcomes’.
+Inthe Jamovi Analyses tab, select ‘Frequencies’ from the toolbar, then select ‘N outcomes’.
 A new window will open up (Figure 30.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-151"></span>
 <img src="img/jamovi_goodness_of_fit_toolbar.png" alt="Jamovi toolbar is shown with a button called 'Frequencies' selected and 'N Outcomes' chosen from the pulldown menu." width="100%" />
@@ -502,7 +502,7 @@ Figure 30.2: Jamovi toolbar showing the location of the Frequencies options, wit
 </p>
 </div>
 <p>After selecting the option ‘N Outcomes: <span class="math inline">\(\chi^{2}\)</span> Goodness of fit’, a new window will appear called ‘Proportion Test (N Outcomes)’.
-To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test on bee survival, move the ‘survived’ variable in to the ‘Variable’ box.
+To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test on bee survival, move the ‘survived’ variable into the ‘Variable’ box.
 Leave the Counts box empty (Figure 30.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-152"></span>
 <img src="img/jamovi_goodness_of_fit_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for a proportion test, and the 'survived' variable has been placed in the Variable box." width="100%" />
@@ -520,7 +520,7 @@ Do these values match the values that you calculated by hand and with the <a hre
 </div>
 <div id="colony-goodness-of-fit" class="section level2 hasAnchor" number="30.2">
 <h2><span class="header-section-number">30.2</span> Colony goodness of fit<a href="Chapter_30.html#colony-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Next, suppose that we want to know if bees were sampled from the colonies with the same expected frequency.
+<p>Next, suppose that we want to know if bees were sampled from the colonies with the same expected frequencies.
 What are the null and alternative hypotheses in this scenario?</p>
 <ul>
 <li><p><span class="math inline">\(H_{0}\)</span>: _________________</p></li>
@@ -541,7 +541,7 @@ What is the output from the Goodness of Fit table?</p>
 
 </code></pre>
 <p>Note that the distrACTION module in Jamovi includes a <span class="math inline">\(\chi^{2}\)</span> distribution (called ‘x2-Distribution’), which you can use to compute probabilities and quantiles in the same way as we did for previous distributions in the module.
-Next, we will move on to a <span class="math inline">\(\chi^{2}\)</span> test of association between</p>
+Next, we will move on to a <span class="math inline">\(\chi^{2}\)</span> test of association between colony and survival.</p>
 </div>
 <div id="chi-square-test-of-association" class="section level2 hasAnchor" number="30.3">
 <h2><span class="header-section-number">30.3</span> Chi-Square test of association<a href="Chapter_30.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -556,13 +556,13 @@ What are the null and alternative hypotheses for this test of association?</p>
 To test for an association between bee colony and survival, place ‘colony’ in the ‘Rows’ box and ‘survived’ in the ‘Columns’ box.
 Leave the rest of the boxes blank (Figure 30.4).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-153"></span>
-<img src="img/jamovi_test_of_association_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for test of association with colony in a 'Rows' box and survived in a 'columns' box." width="100%" />
+<img src="img/jamovi_test_of_association_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for a Chi-square test of association with colony in a 'Rows' box and survived in a 'columns' box." width="100%" />
 <p class="caption">
 Figure 30.4: Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.
 </p>
 </div>
 <p>There is a pulldown called ‘Statistics’ below the Contingency Tables input.
-Make sure that that the <span class="math inline">\(\chi^{2}\)</span> checkbox is selected.
+Make sure that the <span class="math inline">\(\chi^{2}\)</span> checkbox is selected.
 Output from the <span class="math inline">\(\chi^{2}\)</span> test of association will appear in the panel to the right.
 Report the key statistics in the output table below.</p>
 <p><span class="math inline">\(\chi^{2}\)</span>: ______________</p>
@@ -575,7 +575,7 @@ Have a look at this and create a barplot by checking ‘Bar Plot’ under <stron
 Note that there are various options for changing bar types (side by side or stacked), y-axis limits (counts versus percentages), and bar groupings (by rows or columns).</p>
 <p>Now try running a <span class="math inline">\(\chi^{2}\)</span> test of association to see if there is an association between radiation and bee survival (hint, you just need to swap ‘colony’ for ‘radiation’ in the Rows box).
 What can you conclude from this test?
-Explain your conclusion as if were reporting the results of the test to someone who was unfamiliar with statistical hypothesis testing.</p>
+Explain your conclusion as if you were reporting the results of the test to someone who was unfamiliar with statistical hypothesis testing.</p>
 <pre><code>
 
 
@@ -583,7 +583,7 @@ Explain your conclusion as if were reporting the results of the test to someone 
 </code></pre>
 <p>Lastly, did the order which you placed the two variables matter?
 What if you switched Rows and Columns?
-In other words, put ‘survived’ in the Rows box and ‘radiation’ in the columns box.
+In other words, put ‘survived’ in the Rows box and ‘radiation’ in the Columns box.
 Does this give you the same answer?</p>
 <pre><code>
 
@@ -592,12 +592,12 @@ Does this give you the same answer?</p>
 </div>
 <div id="pearson-product-moment-correlation-test" class="section level2 hasAnchor" number="30.4">
 <h2><span class="header-section-number">30.4</span> Pearson product moment correlation test<a href="Chapter_30.html#pearson-product-moment-correlation-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that we want to test if bumblebee mass at the start of the experiment (mass) is associated with the amount of nectar consumed (nectar).
-Specifically, we want to know if more massive bees also output less carbon dioxide (<span class="math inline">\(CO_{2}\)</span>).
+<p>Suppose that we want to test if bumblebee mass at the start of the experiment (mass) is associated with carbon dioxide output (<span class="math inline">\(CO_{2}\)</span>).
+Specifically, we want to know if more massive bees also output less carbon dioxide.
 Before running any test, it is a good idea to plot the two variables using a scatterplot.
 To do this, select the ‘Exploration’ button from the toolbar in Jamovi, but instead of choosing ‘Descriptives’ as usual from the pulldown menu, select ‘Scatterplot’.
 A new window will open up that allows you to build a scatterplot by selecting the variables that you place on the x-axis and the y-axis.
-Put mass on the x-axis and nectar on the y-axis, as shown in Figure 30.5.</p>
+Put mass on the x-axis and CO_2 on the y-axis, as shown in Figure 30.5.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-154"></span>
 <img src="img/jamovi_simple_scatterplot.png" alt="Jamovi interface is shown with a variable called 'mass' placed in a box called 'X-Axis', and a variable called 'CO_2' placed in a box called 'Y-axis'." width="100%" />
 <p class="caption">
@@ -643,7 +643,7 @@ Figure 30.6: Jamovi toolbar showing the location of the Regression options, with
 </div>
 <p>The Correlation Matrix option will pull up a new window in Jamovi (Figure 30.7).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-156"></span>
-<img src="img/jamovi_correlation_interface.png" alt="Jamovi interface is shown with a variables called 'mass' and CO_2 placed in a box to the right and a checkbox for 'Pearson' selected" width="100%" />
+<img src="img/jamovi_correlation_interface.png" alt="Jamovi interface is shown with a variables called 'mass' and 'CO_2' placed in a box to the right and a checkbox for 'Pearson' selected" width="100%" />
 <p class="caption">
 Figure 30.7: Jamovi interface for testing correlation coefficients.
 </p>
@@ -657,7 +657,7 @@ This table reports both the correlation coefficient (here called “Pearson’s 
 Write these values below.</p>
 <p><span class="math inline">\(r\)</span>: ______________</p>
 <p><span class="math inline">\(P\)</span>: _____________</p>
-<p>Based on this output what should we conclude about the association between bumblebee mass and carbon dioxide output?</p>
+<p>Based on this output, what should we conclude about the association between bumblebee mass and carbon dioxide output?</p>
 <pre><code>
 
 </code></pre>
@@ -678,10 +678,10 @@ Based on the output of these tests, what kind of correlation coefficient should 
 What is the correlation coefficient and p-value from this test?</p>
 <p><span class="math inline">\(r\)</span>: ______________</p>
 <p><span class="math inline">\(P\)</span>: _____________</p>
-<p>Based on these results, do should we reject or not reject the null hypothesis?</p>
+<p>Based on these results, should we reject or not reject the null hypothesis?</p>
 <p><span class="math inline">\(H_{0}\)</span>: ____________</p>
 <p>Suppose that we had used the Pearson product moment correlation coefficient instead of the Spearman rank correlation coefficient.
-Would we have made the same conclusion about the correlation (or lack thereof) between bee mass and <span class="math inline">\(CO_{2}\)</span> output?
+Would we have made the same conclusion about the correlation (or lack thereof) between bee mass and nectar consumption?
 Why or why not?</p>
 <pre><code>
 
@@ -717,7 +717,7 @@ If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ coun
 <p>Open a new data frame in Jamovi, then recreate the small dataset in Table 30.1.
 Column names should be ‘Survived’ and ‘Count’, as shown in Figure 30.8.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-158"></span>
-<img src="img/jamovi_simple_counts.png" alt="Jamovi spreadsheet show with just 2 rows and 2 columns showing 'Survived' and 'Count'." width="100%" />
+<img src="img/jamovi_simple_counts.png" alt="Jamovi spreadsheet showing just 2 rows and 2 columns as 'Survived' and 'Count'." width="100%" />
 <p class="caption">
 Figure 30.8: Jamovi data frame with a simple organisation of count data.
 </p>
