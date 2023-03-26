@@ -384,7 +384,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#intercepts-slopes-and-residuals"><i class="fa fa-check"></i><b>31.2</b> Intercepts, slopes, and residuals</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-coefficients"><i class="fa fa-check"></i><b>31.3</b> Regression coefficients</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-line-calculation"><i class="fa fa-check"></i><b>31.4</b> Regression line calculation</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#coefficient-of-determination."><i class="fa fa-check"></i><b>31.5</b> Coefficient of determination.</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#coefficient-of-determination"><i class="fa fa-check"></i><b>31.5</b> Coefficient of determination</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-assumptions"><i class="fa fa-check"></i><b>31.6</b> Regression assumptions</a></li>
 <li class="chapter" data-level="31.7" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-hypothesis-testing"><i class="fa fa-check"></i><b>31.7</b> Regression hypothesis testing</a>
 <ul>
@@ -393,15 +393,20 @@ div.csl-indent {
 <li class="chapter" data-level="31.7.3" data-path="Chapter_31.html"><a href="Chapter_31.html#significance-of-the-slope"><i class="fa fa-check"></i><b>31.7.3</b> Significance of the slope</a></li>
 <li class="chapter" data-level="31.7.4" data-path="Chapter_31.html"><a href="Chapter_31.html#simple-regression-output"><i class="fa fa-check"></i><b>31.7.4</b> Simple regression output</a></li>
 </ul></li>
-<li class="chapter" data-level="31.8" data-path="Chapter_31.html"><a href="Chapter_31.html#conclusion"><i class="fa fa-check"></i><b>31.8</b> Conclusion</a></li>
+<li class="chapter" data-level="31.8" data-path="Chapter_31.html"><a href="Chapter_31.html#prediction-with-linear-models"><i class="fa fa-check"></i><b>31.8</b> Prediction with linear models</a></li>
+<li class="chapter" data-level="31.9" data-path="Chapter_31.html"><a href="Chapter_31.html#conclusion"><i class="fa fa-check"></i><b>31.9</b> Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Multiple regression</a></li>
+<li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Multiple regression</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="Chapter_32.html"><a href="Chapter_32.html#adjusted-coefficient-of-determination"><i class="fa fa-check"></i><b>32.1</b> Adjusted coefficient of determination</a></li>
+</ul></li>
 <li class="chapter" data-level="33" data-path="Chapter_33.html"><a href="Chapter_33.html"><i class="fa fa-check"></i><b>33</b> <em>Practical</em>. Using regression</a>
 <ul>
-<li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-1"><i class="fa fa-check"></i><b>33.1</b> Regression Exercise 1</a></li>
-<li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-2"><i class="fa fa-check"></i><b>33.2</b> Regression Exercise 2</a></li>
-<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-3"><i class="fa fa-check"></i><b>33.3</b> Regression Exercise 3</a></li>
-<li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-4"><i class="fa fa-check"></i><b>33.4</b> Regression Exercise 4</a></li>
+<li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-soil-depth"><i class="fa fa-check"></i><b>33.1</b> Predicting pyrogenic carbon from soil depth</a></li>
+<li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-fire-frequency"><i class="fa fa-check"></i><b>33.2</b> Predicting pyrogenic carbon from fire frequency</a></li>
+<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#multiple-regression-dept-and-fire-frequency"><i class="fa fa-check"></i><b>33.3</b> Multiple regression dept and fire frequency</a></li>
+<li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#large-multiple-regression"><i class="fa fa-check"></i><b>33.4</b> Large multiple regression</a></li>
+<li class="chapter" data-level="33.5" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-temperature-from-fire-frequencing"><i class="fa fa-check"></i><b>33.5</b> Predicting temperature from fire frequencing</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
 <li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
@@ -459,19 +464,20 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_32" class="section level1 hasAnchor" number="32">
 <h1><span class="header-section-number">Chapter 32</span> Multiple regression<a href="Chapter_32.html#Chapter_32" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Multiple regression is an extension of the idea of simple linear regression.
-In multiple regression, there is more than one independent variable (<span class="math inline">\(x\)</span>), and each independent variable is associated with a regression coefficient (<span class="math inline">\(b\)</span>).
+<p>Multiple regression is an extension of the general idea of simple linear regression, with some important caveats.
+In multiple regression, there is more than one independent variable (<span class="math inline">\(x\)</span>), and each independent variable is associated with its own regression coefficient (<span class="math inline">\(b\)</span>).
 For example, if we have 2 independent variables, <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{2}\)</span>, then we can predict <span class="math inline">\(y\)</span> using the equation,</p>
 <p><span class="math display">\[y = b_{0} + b_{1}x_{1} + b_{2}x_{2}.\]</span></p>
 <p>More generally, for <span class="math inline">\(k\)</span> independent variables,</p>
 <p><span class="math display">\[y = b_{0} + b_{1}x_{1} + ... + b_{k}x_{k}.\]</span></p>
 <p>Mathematically, this almost seems like a trivial extension of the simple linear regression model.
 But conceptually, there is an additional consideration necessary to correctly interpret the regression coefficients (i.e., the <span class="math inline">\(b\)</span> values).
-Values of <span class="math inline">\(b_{i}\)</span> now give us the predicted effects of <span class="math inline">\(x_{i}\)</span> if all other independent variables were to be held constant <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Values of <span class="math inline">\(b_{i}\)</span> now give us the predicted effects of <span class="math inline">\(x_{i}\)</span> <em>if all other independent variables were to be held constant</em> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 In other words, <span class="math inline">\(b_{i}\)</span> tells us what would happen if we were to increase <span class="math inline">\(x_{i}\)</span> by a value of 1 in the context of every other independent variable in the regression model.
 We call these <span class="math inline">\(b\)</span> coefficients <strong>partial regression coefficients</strong>.
 The word ‘partial’ is a general mathematical term meaning that we are only looking at the effect of a single independent variable <span class="citation">(<a href="#ref-Borowski2005" role="doc-biblioref">Borowski and Borwein 2005</a>)</span>.
-Since a multiple regression investigates the effect of an independent variable in the context of other independent variables, we might sometimes expect regression coefficients to be different from what they would be given a simple linear regression <span class="citation">(<a href="#ref-Morrissey2018" role="doc-biblioref">Morrissey and Ruxton 2018</a>)</span>.</p>
+Since multiple regression investigates the effect of each independent variable in the context of all other independent variables, we might sometimes expect regression coefficients to be different from what they would be given a simple linear regression <span class="citation">(<a href="#ref-Morrissey2018" role="doc-biblioref">Morrissey and Ruxton 2018</a>)</span>.
+It is even possible for the sign of the coefficients to change (e.g., from negative to positive).</p>
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_31.html#Chapter_31">Chapter 31</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 32.1).</p>
 <table>
@@ -493,13 +499,13 @@ Suppose that in addition to latitude, altitude was also measured in metres for e
 <td align="right">163.5</td>
 <td align="right">330.1</td>
 <td align="right">542.3</td>
-<td align="right">709.6</td>
-<td align="right">901.3</td>
 <td align="right">656.0</td>
+<td align="right">901.3</td>
+<td align="right">709.6</td>
 </tr>
 <tr class="odd">
 <td align="left">Volume</td>
-<td align="right">2399.2</td>
+<td align="right">2399.0</td>
 <td align="right">2941.7</td>
 <td align="right">2167.2</td>
 <td align="right">2051.3</td>
@@ -518,7 +524,101 @@ Figure 32.1: Relationship between latitude and fruit volume for 7 fig fruits col
 </div>
 <p>As with simple regression (<a href="Chapter_31.html#Chapter_31">Chapter 31</a>), we can test whether or not the overall model that includes both latitude and altitude as independent variables produces a significantly better fit to the data than just the mean volume.
 We can also find partial regression coefficients for latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>), and test whether or not these coefficients are significantly different from 0.</p>
-<p>In <a href="Chapter_31.html#Chapter_31">Chapter 31</a>, we found that a simple regression of latitude against fruit volume had a regression coefficient of <span class="math inline">\(b_{1} = -65.26\)</span>, but this was not significant (<span class="math inline">\(P = 0.22287\)</span>).</p>
+<p>In <a href="Chapter_31.html#Chapter_31">Chapter 31</a>, we found that a simple regression of latitude against fruit volume had an intercept of <span class="math inline">\(b_{0} = 3592.36\)</span> and a regression coefficient of <span class="math inline">\(b_{1} = -242.68\)</span>,</p>
+<p><span class="math display">\[Volume = 3592.36 - 242.68(Latitude).\]</span></p>
+<p>The slope of the regression line (<span class="math inline">\(b_{1}\)</span>) was not significantly different from zero (<span class="math inline">\(P = 0.22287\)</span>).</p>
+<p>A multiple regression can be used with latitude and altitude as independent variables to predict volume,</p>
+<p><span class="math display">\[Volume = b_{0} + b_{1}(Latitude) + b_{2}(Altitude).\]</span></p>
+<p>We have the values of volume, latitude, and altitude in Table 32.1.
+We now need to run a multiple regression to find the intercept (<span class="math inline">\(b_{0}\)</span>) and partial regression coefficients describing the partial effects of latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>) on volume.
+In Jamovi or R <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
+Table 32.2 shows an output table from R, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
+<table>
+<caption><span id="tab:unnamed-chunk-172">Table 32.2: </span>Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Estimate</th>
+<th align="right">Std. Error</th>
+<th align="right">t value</th>
+<th align="right">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td align="right">2988.245389</td>
+<td align="right">1697.5587030</td>
+<td align="right">1.7603193</td>
+<td align="right">0.1531597</td>
+</tr>
+<tr class="even">
+<td>Latitude</td>
+<td align="right">5.587834</td>
+<td align="right">71.4880645</td>
+<td align="right">0.0781646</td>
+<td align="right">0.9414511</td>
+</tr>
+<tr class="odd">
+<td>Altitude</td>
+<td align="right">-2.402240</td>
+<td align="right">0.5688147</td>
+<td align="right">-4.2232377</td>
+<td align="right">0.0134427</td>
+</tr>
+</tbody>
+</table>
+<p>There are a few things to point out from Table 32.2.
+First, note that as with simple linear regression (see <a href="Chapter_31.html#regression-hypothesis-testing">Chapter 31.7</a>), the significance of the intercept and regression coefficients is tested using the t-distribution.
+This is because we assume that these sample coefficients (<span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span>) will be normally distributed around the true population parameter values (<span class="math inline">\(\beta_{0}\)</span>, <span class="math inline">\(\beta_{1}\)</span>, and <span class="math inline">\(\beta_{2}\)</span>).
+In other words, if we were to go back out and repeatedly collect many new datasets (sampling volume, latitude, and altitude <em>ad infinitum</em>), then the distribution of <span class="math inline">\(b\)</span> sample coefficients calculated from these datasets would be normally distributed around the true <span class="math inline">\(\beta\)</span> population coefficients.
+The t-distribution, which accounts for uncertainty that is attributable to a finite sample size (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>), is therefore the correct one to use when testing the significance of coefficients.</p>
+<p>Second, the intercept has changed from what it was in the simple linear regression model.
+In the simple linear regression, it was 3592.36, but in the multiple regression it is <span class="math inline">\(b_{0} = 2989.02\)</span>.
+The p-value of the intercept has also changed.
+In the simple linear model, the p-value was significant (P = 0.0142).
+But in the multiple regression model, it is not significant (P = 0.1532).</p>
+<p>Third, and perhaps most strikingly, the prediction and significance of latitude has changed completely.
+In the simple linear regression model from <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>, fruit volume decreased with latitude (<span class="math inline">\(b_{1} = -242.68\)</span>), and this decrease was statistically significant (<span class="math inline">\(P = 0.0356\)</span>).
+Now the multiple regression output is telling us that, if anything, fruit volume appears to <em>increase</em> with latitude (<span class="math inline">\(b_{1} = 5.59\)</span>), although this is not statistically significant (<span class="math inline">\(P &gt; 0.9415\)</span>).
+What is going on here?
+This result illustrates the context dependence of partial regression coefficients in the multiple regression model.
+In other words, although fruit volume appeared to significantly decrease with increasing latitude in the simple regression model of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>, this is no longer the case once we account for the altitude from which the fruit was collected.
+Latitude, <em>by itself</em>, does not appear to affect fruit volume after all.
+It only appeared to affect fruit volume because locations at high latitude also tend to be higher in altitude.
+And each metre of altitude appears to decrease fruit volume by about -2.4 <span class="math inline">\(mm^{3}\)</span> (Table 32.2).
+This partial effect of altitude on fruit volume is statistically significant (P &lt; 0.05).
+We therefore do not reject the null hypothesis that the intercept (<span class="math inline">\(b_{0}\)</span>) and partial coefficient of latitude (<span class="math inline">\(b_{1}\)</span>) is significantly different from 0.
+But we do reject the null hypothesis that <span class="math inline">\(b_{2} = 0\)</span>, and we can conclude that altitude has an effect on fig fruit volume.</p>
+<p>We can also look at the overall multiple regression model.
+Figure 32.2 shows what this model output looks like reported by Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-173"></span>
+<img src="img/jamovi_overall_multiple_regression_output.png" alt="An output table is shown with a single row and columns for R squared, Adusted R squared, F, df1, df2, and p." width="100%" />
+<p class="caption">
+Figure 32.2: Jamovi output table for a multiple linear regression in which latitude and altitude indepdnent variables and fig fruit volume is a dependent variable.
+</p>
+</div>
+<p>As with the simple linear regression output from <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>, the overall model test output table includes columns for <span class="math inline">\(R^{2}\)</span>, F, degrees of freedom, and a p-value for the overall model.
+There is one key difference between this output table and the overall model output for a simple linear regression, and that is the Adjusted <span class="math inline">\(R^{2}\)</span>.
+This is the adjusted coefficient of determination <span class="math inline">\(R^{2}_{adj}\)</span>, which is necessary to compare regression models with different numbers of independent variables.</p>
+<div id="adjusted-coefficient-of-determination" class="section level2 hasAnchor" number="32.1">
+<h2><span class="header-section-number">32.1</span> Adjusted coefficient of determination<a href="Chapter_32.html#adjusted-coefficient-of-determination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recall from <a href="Chapter_31.html#coefficient-of-determination">Chapter 31.5</a> that the coefficient of determination (<span class="math inline">\(R^{2}\)</span>) tells us how much of the total variation in the dependent variable is explained by the regression model.
+This was fine for a simple linear regression, but with the addition of new independent variables, the proportion of the variance in y explained by our model is expected to increase even if the new independent variables are not very good predictors.
+This is because the amount of variation explained by our model can only increase if we add new independent variables.
+In other words, any new independent variable that we choose to add to the model cannot explain a negative amount of variation; that does not make any sense!
+The absolute <em>worst</em> that an independent variable can do is explain zero variation.
+And even if the independent variable is just a set of random numbers, it will likely explain <em>some</em> of the variation in the dependent variable just by chance.
+Hence, even if newly added independent variables are bad predictors, they might still improve the goodness of fit of our model by chance.
+To help account for this spurious improvement of fit, we can use an adjusted R squared (<span class="math inline">\(R^{2}_{adj}\)</span>).
+The <span class="math inline">\(R^{2}_{adj}\)</span> takes into account the <span class="math inline">\(R^{2}\)</span>, the sample size (<span class="math inline">\(N\)</span>), and the number of independent variables (<span class="math inline">\(k\)</span>),</p>
+<p><span class="math display">\[R^{2}_{adj} = 1 - \left(1 - R^{2}\right)\left(\frac{N - 1}{N - k - 1}\right).\]</span></p>
+<p>As <span class="math inline">\(k\)</span> increases, the fraction above <span class="math inline">\((N-1)/(N-k-1)\)</span> gets bigger.
+And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}\)</span> decreases.
+Consequently, more independent variables (k) cause a decrease in the adjusted R-squared value.
+This attempts to account for the inevitable tendency of <span class="math inline">\(R^{2}\)</span> to increase with <span class="math inline">\(k\)</span>.</p>
+<!--- Maybe something about multiple regression assumptions? --->
+</div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
@@ -531,8 +631,14 @@ Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant c
 <div id="ref-Morrissey2018" class="csl-entry">
 Morrissey, Michael B., and Graeme D. Ruxton. 2018. <span>“<span class="nocase">Multiple regression Is not multiple regressions: The meaning of multiple regression and the non-problem of collinearity</span>.”</span> <em>Philosophy, Theory, and Practice in Biology</em> 10 (20180709). <a href="https://doi.org/10.3998/ptpbio.16039257.0010.003">https://doi.org/10.3998/ptpbio.16039257.0010.003</a>.
 </div>
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
 <div id="ref-Sokal1995" class="csl-entry">
 Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Jamovi2022" class="csl-entry">
+The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
 </div>
             </section>

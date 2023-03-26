@@ -384,7 +384,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#intercepts-slopes-and-residuals"><i class="fa fa-check"></i><b>31.2</b> Intercepts, slopes, and residuals</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-coefficients"><i class="fa fa-check"></i><b>31.3</b> Regression coefficients</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-line-calculation"><i class="fa fa-check"></i><b>31.4</b> Regression line calculation</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#coefficient-of-determination."><i class="fa fa-check"></i><b>31.5</b> Coefficient of determination.</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#coefficient-of-determination"><i class="fa fa-check"></i><b>31.5</b> Coefficient of determination</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-assumptions"><i class="fa fa-check"></i><b>31.6</b> Regression assumptions</a></li>
 <li class="chapter" data-level="31.7" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-hypothesis-testing"><i class="fa fa-check"></i><b>31.7</b> Regression hypothesis testing</a>
 <ul>
@@ -393,15 +393,20 @@ div.csl-indent {
 <li class="chapter" data-level="31.7.3" data-path="Chapter_31.html"><a href="Chapter_31.html#significance-of-the-slope"><i class="fa fa-check"></i><b>31.7.3</b> Significance of the slope</a></li>
 <li class="chapter" data-level="31.7.4" data-path="Chapter_31.html"><a href="Chapter_31.html#simple-regression-output"><i class="fa fa-check"></i><b>31.7.4</b> Simple regression output</a></li>
 </ul></li>
-<li class="chapter" data-level="31.8" data-path="Chapter_31.html"><a href="Chapter_31.html#conclusion"><i class="fa fa-check"></i><b>31.8</b> Conclusion</a></li>
+<li class="chapter" data-level="31.8" data-path="Chapter_31.html"><a href="Chapter_31.html#prediction-with-linear-models"><i class="fa fa-check"></i><b>31.8</b> Prediction with linear models</a></li>
+<li class="chapter" data-level="31.9" data-path="Chapter_31.html"><a href="Chapter_31.html#conclusion"><i class="fa fa-check"></i><b>31.9</b> Conclusion</a></li>
 </ul></li>
-<li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Multiple regression</a></li>
+<li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Multiple regression</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="Chapter_32.html"><a href="Chapter_32.html#adjusted-coefficient-of-determination"><i class="fa fa-check"></i><b>32.1</b> Adjusted coefficient of determination</a></li>
+</ul></li>
 <li class="chapter" data-level="33" data-path="Chapter_33.html"><a href="Chapter_33.html"><i class="fa fa-check"></i><b>33</b> <em>Practical</em>. Using regression</a>
 <ul>
-<li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-1"><i class="fa fa-check"></i><b>33.1</b> Regression Exercise 1</a></li>
-<li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-2"><i class="fa fa-check"></i><b>33.2</b> Regression Exercise 2</a></li>
-<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-3"><i class="fa fa-check"></i><b>33.3</b> Regression Exercise 3</a></li>
-<li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-4"><i class="fa fa-check"></i><b>33.4</b> Regression Exercise 4</a></li>
+<li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-soil-depth"><i class="fa fa-check"></i><b>33.1</b> Predicting pyrogenic carbon from soil depth</a></li>
+<li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-fire-frequency"><i class="fa fa-check"></i><b>33.2</b> Predicting pyrogenic carbon from fire frequency</a></li>
+<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#multiple-regression-dept-and-fire-frequency"><i class="fa fa-check"></i><b>33.3</b> Multiple regression dept and fire frequency</a></li>
+<li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#large-multiple-regression"><i class="fa fa-check"></i><b>33.4</b> Large multiple regression</a></li>
+<li class="chapter" data-level="33.5" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-temperature-from-fire-frequencing"><i class="fa fa-check"></i><b>33.5</b> Predicting temperature from fire frequencing</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
 <li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
@@ -461,35 +466,330 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 33</span> <em>Practical</em>. Using regression<a href="Chapter_33.html#Chapter_33" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This lab focuses on practical exercises to apply the concepts in <a href="Chapter_31.html#Chapter_31">Chapter 31</a> and <a href="Chapter_32.html#Chapter_32">Chapter 32</a> in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The 6 exercises in this practical will apply simple linear regression (Exercises 33.1, 33.2, and 33.5) or multiple regression (33.3, 33.4, 33.6).
-The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke.
+The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 Their work focuses on carbon storage in Gabon (Figure 33.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-172"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-174"></span>
 <img src="img/gabon.jpg" alt="View of the African horizon." width="100%" />
 <p class="caption">
 Figure 33.1: This practical is inspired by data collected on Carbon storage in Gabon.
 </p>
 </div>
-<p>When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of remains sequestered in the soil due to incomplete combustion <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>)</span>.
-This pyrogenic organic carbon can persist in the soil for long periods of time and have positive effects on soil properties <span class="citation">(<a href="#ref-Reisser2016" role="doc-biblioref">Reisser et al. 2016</a>)</span>.
+<p>When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of it remains sequestered in the soil due to incomplete combustion <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>)</span>.
+This pyrogenic organic carbon can persist in the soil for long periods of time and has positive effects on soil properties <span class="citation">(<a href="#ref-Reisser2016" role="doc-biblioref">Reisser et al. 2016</a>)</span>.
 In this practical, we will look at how environmental data might be used to test what factors affect the concentration of pyrogenic carbon in the soil.
 We will use the <a href="">fire_carbon.csv</a> dataset (right click and “Save Link As…”, then save it with the extension ‘.csv’).
 This dataset includes variables for soil depth (cm), fire frequency (total number of years in which a fire occurred during the past 20 years), mean yearly temperature (degrees Celsius), mean monthly rainfall (mm per squared meter per year, <span class="math inline">\(mm\:m^{-2}\:yr^{-1}\)</span>), total soil organic carbon (SOC, as percentage of soil by weight), pyrogenic carbon (PyC, as percentage of soil organic carbon by weight), and soil pH.</p>
-<div id="regression-exercise-1" class="section level2 hasAnchor" number="33.1">
-<h2><span class="header-section-number">33.1</span> Regression Exercise 1<a href="Chapter_33.html#regression-exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this first activity, we will fit a linear regression to predict pyrogenic carbon (PyC) from soil depth.
+<div id="predicting-pyrogenic-carbon-from-soil-depth" class="section level2 hasAnchor" number="33.1">
+<h2><span class="header-section-number">33.1</span> Predicting pyrogenic carbon from soil depth<a href="Chapter_33.html#predicting-pyrogenic-carbon-from-soil-depth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this first activity, we will fit a linear regression to predict pyrogenic carbon (PyC) from soil depth (depth).
 Before doing this, what is the independent variable, and what is the dependent variable?</p>
 <p>Independent variable: __________________</p>
 <p>Dependent variable: ___________________</p>
-<p>Remember from <a href="Chapter_31.html#Chapter_31">Chapter 31</a></p>
+<p>What is the sample size of this dataset?</p>
+<p>N:________________</p>
+<p>Before running any statistical test, it is always a good idea to plot the data.
+Recall from <a href="Chapter_30.html#pearson-product-moment-correlation-test">Chapter 30.4</a> how to build a scatterplot in Jamovi.
+Navigate to the ‘Exploration’ button from the Jamovi toolbar, then choose the ‘Scatterplot’ option from the pulldown menu.
+Place the independent variable that you identified above on the x-axis, and place the dependent variable on the y-axis.
+To get the line of best fit, choose ‘Linear’ under the options below under <strong>Regression line</strong>.
+Describe the scatterplot that is produced in the Jamovi panel to the right.</p>
+<pre><code>
+
+
+</code></pre>
+<p>Recall the 4 assumptions of linear regression from <a href="Chapter_31.html#regression-assumptions">Chapter 31.6</a>.
+We will now check 3 of these assumptions (we will just have to trust that depth has been measured accurately in the field because there is no way to check).
+There are 2 assumptions that we can check using the scatterplot.
+The first assumption is that the relationship between the independent and dependent variable is linear.
+Is there any reason to be suspicious of this assumption?
+In other words, does the scatterplot show any evidence of a curvilinear pattern in the data?</p>
+<pre><code>
+
+</code></pre>
+<p>The second assumption that we can check with the scatterplot is the assumption of homoscedasticity.
+In other words, does the variance change along the range of the independent variable (i.e., the x-axis)?</p>
+<pre><code>
+
+</code></pre>
+<p>Assuming that these 2 assumptions are not violated, we can now check the last assumption that the residual values are normally distributed around the regression line.
+To do this, we need to build the linear regression.
+From the ‘Analyses’ tab of Jamovi, select the ‘Regression’ button, then choose ‘Linear regression’ from the pulldown menu.
+A new panel called ‘Linear regression’ will open.
+The dependent variable ‘PyC’ should go in the ‘Dependent Variable’ box to the right.
+The independent variable ‘depth’ should go in the ‘Covariates’ box (Figure 33.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-175"></span>
+<img src="img/Jamovi_linear_regression.png" alt="Jamovi interface for a linear regression is shown with 'PyC' placed in a Dependent Variable box and 'depth' in a Covariates box. Other variables are included in a box to the left." width="100%" />
+<p class="caption">
+Figure 33.2: Jamovi interface for running a linear regression model to predict pyrogenic carbon (PyC) from soil depth (depth).
+</p>
 </div>
-<div id="regression-exercise-2" class="section level2 hasAnchor" number="33.2">
-<h2><span class="header-section-number">33.2</span> Regression Exercise 2<a href="Chapter_33.html#regression-exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can check the assumption that the residuals are normally distributed in multiple ways.
+To do this, find the pulldown menu called ‘Assumption Checks’ in the left panel of Jamovi, and check boxes for ‘Normality test’, ‘Q-Q plot of residuals’, and ‘Residual plots’ (Figure 33.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-176"></span>
+<img src="img/Jamovi_linear_regression_normality.png" alt="Jamovi interface choosing assumption checks with checkboxes selected for 'Normality test', 'Q-Q plot of residuals', and 'Residual plots'." width="100%" />
+<p class="caption">
+Figure 33.3: Jamovi interface for specifying assumption checks on a simple linear regression.
+</p>
 </div>
-<div id="regression-exercise-3" class="section level2 hasAnchor" number="33.3">
-<h2><span class="header-section-number">33.3</span> Regression Exercise 3<a href="Chapter_33.html#regression-exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Output will appear in the Jamovi panel to the right.
+The first assumption check will be a table providing the results of a Shapiro-Wilk test of normality on the <em>residuals</em> (see <a href="Chapter_31.html#intercepts-slopes-and-residuals">Chapter 31.2</a>) of the linear regression model.
+In your own words, what is this test doing?
+That is, what are we actually testing is or is not normally distributed?
+Drawing a picture might be helping to explain.</p>
+<pre><code>
+
+
+
+
+
+
+
+</code></pre>
+<p>What is the p-value of the Shapiro-Wilk test of normality?</p>
+<p>P: __________________</p>
+<p>Based on the above p-value, is it safe to conclude that the residuals are normally distributed?</p>
+<p>Conclusion: _____________________</p>
+<p>The assumption checks output also includes a Q-Q plot.
+Below the Q-Q plot, there is a residual plot that shows ‘Fitted’ on the x-axis and ‘Residuals’ on the y-axis.
+What this tells us is the relationship between the PyC values that are predicted by the regression equation (x-axis, i.e., what our equation predicts PyC will be for a particular depth) and the actual PyC values in the data (y-axis).
+Visually, this is the equivalent of taking the line of best fit from the first scatterplot that you made and moving it (and the points around it) so that it is horizontal at y = 0.
+It is good to try to take a few moments to understand this because it will help reinforce the concept of residual values, but in practice we can base our conclusion about residual normality on the Shapiro-Wilk test as done above.</p>
+<p>Having checked all of the assumptions of a linear regression model, we can finally test whether or not our model is statistically significant.
+Find the pulldown called ‘Model Fit’ underneath the linear regression panel, then make sure that the boxes for <span class="math inline">\(R^{2}\)</span> and ‘F test’ are checked (Figure 33.4).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-177"></span>
+<img src="img/Jamovi_linear_regression_model_fit.png" alt="Jamovi interface choosing model fit output with coefficient of determination and F test selected." width="100%" />
+<p class="caption">
+Figure 33.4: Jamovi interface for specifying model fit output in a simple linear regression.
+</p>
 </div>
-<div id="regression-exercise-4" class="section level2 hasAnchor" number="33.4">
-<h2><span class="header-section-number">33.4</span> Regression Exercise 4<a href="Chapter_33.html#regression-exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A new table will open up in the right panel called ‘Model Fit Measures’.
+Write the output statistics from this table below:</p>
+<p><span class="math inline">\(R^{2}\)</span>: ________________</p>
+<p>F: ________________</p>
+<p>df1: _______________</p>
+<p>df2: _______________</p>
+<p>P: ______________</p>
+<p>Based on these statistics, what percentage of the variation in pyrogenic carbon is explained by the linear regression model?</p>
+<pre><code>
+</code></pre>
+<p>What null hypothesis does the p-value above test? (hint, see <a href="Chapter_31.html#overall-model-significance">Chapter 31.7.1</a>)</p>
+<p><span class="math inline">\(H_{0}\)</span>: __________________</p>
+<p>Do we reject or fail to reject <span class="math inline">\(H_{0}\)</span>?</p>
+<pre><code>
+</code></pre>
+<p>Lastly, have a look at the output table called ‘Model Coefficients - PyC’.
+This is the same kind of table that was introduced in <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>.
+From this table, what are the coefficient estimates for the intercept and the slope (i.e., depth)?</p>
+<p>Intercept: _______________</p>
+<p>Slope: ________________</p>
+<p>Find the p-values associated with the intercept and slope.
+What null hypotheses are we testing when inspecting these p-values? (hint, see <a href="Chapter_31.html#significance-of-the-intercept">Chapter 31.7.2</a> and <a href="Chapter_31.html#significance-of-the-slope">Chapter 31.7.3</a>)</p>
+<p>Intercept <span class="math inline">\(H_{0}\)</span>: _____________</p>
+<p>Slope <span class="math inline">\(H_{0}\)</span>: _____________</p>
+<p>Finally, what can we conclude about the relationship between depth and pyrogenic carbon storage?</p>
+<pre><code>
+
+
+</code></pre>
+</div>
+<div id="predicting-pyrogenic-carbon-from-fire-frequency" class="section level2 hasAnchor" number="33.2">
+<h2><span class="header-section-number">33.2</span> Predicting pyrogenic carbon from fire frequency<a href="Chapter_33.html#predicting-pyrogenic-carbon-from-fire-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now, we can try to predict pyrogenic carbon (PyC) from fire frequency (fire_freq).
+This exercise will be a bit more self-guided than the previous exercise.
+To begin, make a scatterplot with fire frequency on the x-axis and pyrogenic carbon on the y-axis.
+Add a linear regression line, then paste the plot or sketch it below (if sketching, no need for too much detail, just the trend line and 10-15 points is fine).</p>
+<pre><code>
+
+
+
+
+
+
+
+
+</code></pre>
+<p>Next, check the linear regression assumptions of linearity, normality, and homoscedasticity, as we did in the previous exercise.
+Do all these assumptions appear to be met?</p>
+<p>Linearity: ______________</p>
+<p>Normality: _____________</p>
+<p>Homoscedasticity: ______________</p>
+<p>Next, run the linear regression model.
+To check for the assumption of normality, you should have already specified a regression model with fire frequency as the independent variable and PyC as the dependent variable.
+Using the same protocol as the previous exercise, what percentage of the variation in PyC is explained by the regression model?</p>
+<p>Variation explained: _________________</p>
+<p>Is the overall model statistically significant?
+How do you know?</p>
+<p>Model significance: ____________________</p>
+<p>Are the intercept and slope significantly different from zero?</p>
+<p>Intercept: ______________</p>
+<p>Slope: ____________</p>
+<p>Write the intercept (<span class="math inline">\(b_{0}\)</span>) and slope (<span class="math inline">\(b_{1}\)</span>) of the regression below.</p>
+<p><span class="math inline">\(b_{0}\)</span>: ____________</p>
+<p><span class="math inline">\(b_{1}\)</span>: ____________</p>
+<p>Using these values for the intercept and the slope, write the regression equation to predict pyrogenic carbon (PyC) from fire frequency (fire_freq).</p>
+<pre><code>
+
+</code></pre>
+<p>Using this equation, what would be the predicted PyC for a location that had experienced 10 fires in the past 20 years (i.e., fire_freq = 10)?</p>
+<pre><code>
+
+</code></pre>
+<p>One final note for this exercise.
+In the Linear Regression panel of Jamovi, scroll all the way down to the last pulldown menu called ‘Save’.
+Check the boxes for ‘Predicted values’ and ‘Residuals’ (Figure 33.5).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-178"></span>
+<img src="img/Jamovi_linear_regression_save.png" alt="Jamovi interface saving output from a model regression with Predicted values and Residuals selected." width="100%" />
+<p class="caption">
+Figure 33.5: Jamovi interface for saving values of model output for a regression.
+</p>
+</div>
+<p>When you return to the ‘Data’ tab in Jamovi, you will see 2 new columns of data that Jamovi has inserted.
+One column will be the predicted values for the model, i.e., the value that the model predicts for PyC given the fire frequency in the observation (i.e., row).
+The other column will be the residual value of each observation.
+Explain what these 2 columns of data represent in terms of the scatterplot you made at the start of this exercise.
+In other words, where would the predicted and residual values be located on the scatterplot?</p>
+<pre><code>
+
+
+
+
+</code></pre>
+</div>
+<div id="multiple-regression-dept-and-fire-frequency" class="section level2 hasAnchor" number="33.3">
+<h2><span class="header-section-number">33.3</span> Multiple regression dept and fire frequency<a href="Chapter_33.html#multiple-regression-dept-and-fire-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this exercise, we will run a multiple regression to predict pyrogenic carbon (PyC) from fire frequency (fire_freq) and depth.
+Write down what the independent and dependent variable(s) are for this regression.</p>
+<p>Independent: ___________________</p>
+<p>Dependent: _________________</p>
+<p>To begin the multiple regression, select the ‘Regression’ button in the Analysis tab of Jamovi, then choose ‘Linear regression’ as you did in the first two exercises.
+Place the dependent variable in the ‘Dependent Variable’ box and both independent variables in the ‘Covariates’ box.
+As with the previous exercise, check the linear regression assumptions of linearity, normality, and homoscedasticity.
+Do all these assumptions appear to be met?</p>
+<p>Linearity: ______________</p>
+<p>Normality: _____________</p>
+<p>Homoscedasticity: ______________</p>
+<p>Make sure to select <span class="math inline">\(R^{2}\)</span>, Adjusted <span class="math inline">\(R^{2}\)</span>, and F test under the Model Fit options.
+Report these values from the Model Fit Measures output table below.</p>
+<p><span class="math inline">\(R^{2}\)</span>: ________________________</p>
+<p>Adjusted <span class="math inline">\(R^{2}\)</span>: ___________________</p>
+<p>F: _________________</p>
+<p>P: _________________</p>
+<p>Explain why the Adjusted <span class="math inline">\(R^{2}\)</span> is less than the <span class="math inline">\(R^{2}\)</span> value.
+Which one is most appropriate to use for interpreting the multiple regression?</p>
+<pre><code>
+
+
+
+</code></pre>
+<p>What is the null hypothesis of this tested with the F value and the P value shown in the Model Fit Measures table?</p>
+<p><span class="math inline">\(H_{0}\)</span>: ____________________</p>
+<p>Based on the Overall Model Test output, should you reject or not reject <span class="math inline">\(H_{0}\)</span>?</p>
+<pre><code>
+</code></pre>
+<p>Next, have a look at the Model Coefficients - PyC table.
+What can you conclude about the significance of the Intercept, and the partial regression coefficients for fire frequency and depth?</p>
+<pre><code>
+
+</code></pre>
+<p>Using the partial regression coefficient estimates, fill in the equation below,</p>
+<p><span class="math display">\[PyC = (\:\:\:\:\:\:\:\:\:\:\:\:\:\:) + (\:\:\:\:\:\:\:\:\:\:\:\:\:\:)fire\_freq + (\:\:\:\:\:\:\:\:\:\:\:\:\:\:)depth.\]</span></p>
+<p>Next, use this to predict the pyrogenic carbon for a fire frequency of 12 and a depth of 60 cm.</p>
+<p>PyC = __________________</p>
+<p>Contrast soil depth as a predictor of PyC in this multiple regression model versus the simple linear regression model in the first exercise.
+Has the significance of soil depth as an independent variable changed?
+Based on what you know about the difference between simple linear regression and multiple regression, why might this be the case?</p>
+<pre><code>
+
+
+
+</code></pre>
+</div>
+<div id="large-multiple-regression" class="section level2 hasAnchor" number="33.4">
+<h2><span class="header-section-number">33.4</span> Large multiple regression<a href="Chapter_33.html#large-multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Suppose that as scientists that we hypothesise that soil depth, fire frequency, and soil pH will all affect pyrogenic carbon storage.
+Run a multiple regression model with soil depth, fire frequency, and soil pH all as independent variables and pyrogenic carbon as a dependent variable.
+Fill in the Model Coefficient output in Table 33.1.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-179">Table 33.1: </span>Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Estimate</th>
+<th align="left">Std. Error</th>
+<th align="left">t value</th>
+<th align="left">Pr(&gt;|t|)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td align="left"></td>
+<td align="left">0.34591</td>
+<td align="left">2.85888</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td>depth</td>
+<td align="left"></td>
+<td align="left">8e-04</td>
+<td align="left">-0.07411</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>fire_freq</td>
+<td align="left"></td>
+<td align="left">0.00394</td>
+<td align="left">14.42303</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td>pH</td>
+<td align="left"></td>
+<td align="left">0.05679</td>
+<td align="left">-0.27886</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>From the Model Fit Measures table, what is the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> of this model?</p>
+<p><span class="math inline">\(R^{2}\)</span>: _______________</p>
+<p>Adjusted <span class="math inline">\(R^{2}\)</span>: ______________</p>
+<p>Compare these value to the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> from the multiple regression in the previous exercise (i.e., the one without pH as an independent variable).
+Is the <span class="math inline">\(R^{2}\)</span> value of this model higher or lower than the multiple regression model without pH?</p>
+<pre><code>
+</code></pre>
+<p>Is the Adjusted <span class="math inline">\(R^{2}\)</span> value of this model higher or lower than the multipel regression model without pH?</p>
+<pre><code>
+</code></pre>
+<p>Based on what you know from <a href="Chapter_32.html#adjusted-coefficient-of-determination">Chapter 32.1</a>, explain why the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> might have changed in different directions with the addition of a new independent variable.</p>
+<pre><code>
+
+
+
+
+</code></pre>
+<p>Finally, use the equation of this new model to predict PyC for a soil sample at a depth of 0, fire frequency of 0, and pH of 6.</p>
+<pre><code>
+
+
+
+</code></pre>
+</div>
+<div id="predicting-temperature-from-fire-frequencing" class="section level2 hasAnchor" number="33.5">
+<h2><span class="header-section-number">33.5</span> Predicting temperature from fire frequencing<a href="Chapter_33.html#predicting-temperature-from-fire-frequencing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this last brief exercise, suppose that we wanted to predict temperature (tempr) from fire frequency (fire_freq).
+Run some checks of the assumptions underlying linear regression (see <a href="Chapter_31.html#regression-assumptions">Chapter 31.6</a>).
+What assumption(s) appear as though they might be violated for this simple regression?
+Explain how you figured this out.</p>
+<pre><code>
+
+
+
+
+
+
+
+</code></pre>
 
 </div>
 </div>
@@ -507,6 +807,12 @@ Santín, Cristina, Stefan H. Doerr, Evan S. Kane, Caroline A. Masiello, Mikael O
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="61">
+<li id="fn61"><p>Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by the researchers.<a href="Chapter_33.html#fnref61" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
