@@ -129,7 +129,7 @@
 
 \title{Statistical Techniques for Biological and Environmental Sciences}
 \author{Brad Duthie}
-\date{2023-03-20}
+\date{2023-03-26}
 
 \begin{document}
 \maketitle
@@ -1518,7 +1518,7 @@ Being able to infer variable type is therefore an important skill.
 Units are essential in scientific measurement, and we will use them throughout the module to indicate the type and scale of data measurement.
 We are not expecting you to memorise all scientific units, so a \protect\hyperlink{appendixA_units}{table on units} is provided.
 
-\protect\hyperlink{Chapter_7}{Chapter 7} will introduce the propogation of measurement errors.
+\protect\hyperlink{Chapter_7}{Chapter 7} will introduce the propagation of measurement errors.
 This is important to understand because no measurement is perfectly accurate, and predicting how errors in measurement combine is fundamental to understanding measurement accuracy.
 
 \protect\hyperlink{Chapter_8}{Chapter 8} guides you through the Week 2 practical, which is an introduction to Jamovi.
@@ -1793,7 +1793,7 @@ For one final example, the inventory of carbon \(I\) within a soil is given by t
 Notice above how the \(kg\) on the top and bottom of the fraction cancel each other out, and how one \(m\) on the top cancels out one \(m\) on the bottom, so that what we are left with is grams per metre squared (\(g\:m^{-2}\)).
 
 \hypertarget{Chapter_7}{%
-\chapter{Uncertainty propogation}\label{Chapter_7}}
+\chapter{Uncertainty propagation}\label{Chapter_7}}
 
 Nothing can be measured with perfect accuracy, meaning that every measurement has some associated error.
 The measurement error might be caused by random noise in the measuring environment, or by mistakes made by the person doing the measuring.
@@ -2969,26 +2969,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-44}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.70 & 0.95 & 0.57 & 0.61 & 0.77 & 0.78 & 0.73 & 0.82 & 0.68 & 0.70 \\
-Sample\_2 & 0.60 & 0.70 & 0.76 & 0.72 & 0.52 & 0.73 & 0.83 & 0.61 & 0.60 & 0.55 \\
-Sample\_3 & 0.78 & 0.70 & 0.79 & 0.65 & 0.62 & 0.62 & 0.65 & 0.86 & 0.65 & 0.72 \\
-Sample\_4 & 0.78 & 0.85 & 0.69 & 0.61 & 0.62 & 0.73 & 0.70 & 0.67 & 0.60 & 0.70 \\
-Sample\_5 & 0.62 & 0.69 & 0.61 & 0.70 & 0.84 & 0.65 & 0.73 & 0.67 & 0.74 & 0.70 \\
-Sample\_6 & 0.57 & 0.85 & 0.53 & 0.68 & 0.66 & 0.77 & 0.78 & 0.69 & 0.76 & 0.71 \\
-Sample\_7 & 0.76 & 0.88 & 0.73 & 0.78 & 0.71 & 0.60 & 0.88 & 0.78 & 0.79 & 0.51 \\
-Sample\_8 & 0.69 & 0.76 & 0.67 & 0.61 & 0.73 & 0.73 & 0.72 & 0.84 & 0.76 & 0.52 \\
-Sample\_9 & 0.60 & 0.51 & 0.85 & 0.65 & 0.58 & 0.52 & 0.76 & 0.83 & 0.78 & 0.56 \\
-Sample\_10 & 0.68 & 0.88 & 0.82 & 0.89 & 0.68 & 0.76 & 0.76 & 0.82 & 0.71 & 0.72 \\
-Sample\_11 & 0.68 & 0.65 & 0.71 & 0.78 & 0.63 & 0.65 & 0.62 & 0.55 & 0.64 & 0.73 \\
-Sample\_12 & 0.77 & 0.62 & 0.61 & 0.86 & 0.68 & 0.68 & 0.82 & 0.73 & 0.86 & 0.63 \\
-Sample\_13 & 0.77 & 0.76 & 0.58 & 0.58 & 0.68 & 0.63 & 0.75 & 0.68 & 0.79 & 0.72 \\
-Sample\_14 & 0.58 & 0.84 & 0.66 & 0.65 & 0.74 & 0.60 & 0.53 & 0.64 & 0.75 & 0.71 \\
-Sample\_15 & 0.69 & 0.83 & 0.76 & 0.80 & 0.62 & 0.64 & 0.72 & 0.83 & 0.74 & 0.74 \\
-Sample\_16 & 0.91 & 0.70 & 0.66 & 0.73 & 0.81 & 0.85 & 0.51 & 0.58 & 0.77 & 0.67 \\
-Sample\_17 & 0.70 & 0.69 & 0.76 & 0.60 & 0.81 & 0.87 & 0.74 & 0.75 & 0.90 & 0.67 \\
-Sample\_18 & 0.70 & 0.64 & 0.63 & 0.58 & 0.77 & 0.74 & 0.63 & 0.78 & 0.66 & 0.69 \\
-Sample\_19 & 0.59 & 0.90 & 0.59 & 0.80 & 0.71 & 0.79 & 0.73 & 0.91 & 0.90 & 0.57 \\
-Sample\_20 & 0.78 & 0.65 & 0.69 & 0.72 & 0.73 & 0.59 & 0.62 & 0.64 & 0.63 & 0.64 \\
+Sample\_1 & 0.66 & 0.85 & 0.71 & 0.73 & 0.87 & 0.61 & 0.73 & 0.81 & 0.55 & 0.69 \\
+Sample\_2 & 0.78 & 0.80 & 0.75 & 0.70 & 0.70 & 0.55 & 0.82 & 0.72 & 0.78 & 0.88 \\
+Sample\_3 & 0.63 & 0.60 & 0.64 & 0.56 & 0.77 & 0.73 & 0.73 & 0.73 & 0.67 & 0.79 \\
+Sample\_4 & 0.62 & 0.58 & 0.49 & 0.53 & 0.81 & 0.86 & 0.64 & 0.74 & 0.66 & 0.79 \\
+Sample\_5 & 0.77 & 0.77 & 0.66 & 0.76 & 0.60 & 0.85 & 0.69 & 0.90 & 0.54 & 0.67 \\
+Sample\_6 & 0.76 & 0.63 & 0.78 & 0.79 & 0.66 & 0.79 & 0.74 & 0.75 & 0.75 & 0.59 \\
+Sample\_7 & 0.58 & 0.66 & 0.55 & 0.66 & 0.71 & 0.75 & 0.64 & 0.79 & 0.77 & 0.50 \\
+Sample\_8 & 0.73 & 0.72 & 0.90 & 0.59 & 0.76 & 0.73 & 0.50 & 0.82 & 0.81 & 0.67 \\
+Sample\_9 & 0.64 & 0.79 & 0.85 & 0.93 & 0.76 & 0.76 & 0.75 & 0.67 & 0.75 & 0.72 \\
+Sample\_10 & 0.71 & 0.76 & 0.82 & 0.69 & 0.77 & 0.63 & 0.85 & 0.71 & 0.86 & 0.65 \\
+Sample\_11 & 0.60 & 0.85 & 0.75 & 0.71 & 0.58 & 0.45 & 0.86 & 0.60 & 0.64 & 0.79 \\
+Sample\_12 & 0.65 & 0.77 & 0.72 & 0.67 & 0.65 & 0.80 & 0.69 & 0.60 & 0.77 & 0.70 \\
+Sample\_13 & 0.76 & 0.71 & 0.78 & 0.72 & 0.54 & 0.74 & 0.75 & 0.71 & 0.80 & 0.79 \\
+Sample\_14 & 0.65 & 0.83 & 0.60 & 0.67 & 0.78 & 0.65 & 0.53 & 0.67 & 0.86 & 0.86 \\
+Sample\_15 & 0.71 & 0.66 & 0.58 & 0.67 & 0.60 & 0.73 & 0.83 & 0.92 & 0.77 & 0.62 \\
+Sample\_16 & 0.67 & 0.66 & 0.53 & 0.61 & 0.67 & 0.82 & 0.52 & 0.76 & 0.67 & 0.84 \\
+Sample\_17 & 0.84 & 0.77 & 0.63 & 0.70 & 0.77 & 0.68 & 0.75 & 0.79 & 0.74 & 0.80 \\
+Sample\_18 & 0.63 & 0.92 & 0.71 & 0.60 & 0.77 & 0.64 & 0.76 & 0.69 & 0.71 & 0.79 \\
+Sample\_19 & 0.65 & 0.75 & 0.56 & 0.60 & 0.71 & 0.77 & 0.70 & 0.49 & 0.53 & 0.80 \\
+Sample\_20 & 0.76 & 0.71 & 0.81 & 0.68 & 0.69 & 0.68 & 0.68 & 0.81 & 0.73 & 0.72 \\
 \bottomrule
 \end{longtable}
 
@@ -2997,18 +2997,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
 ##       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-## [1,] 0.731 0.662 0.704 0.695 0.695 0.700 0.742 0.703 0.664 0.772
-## [2,] 0.664 0.726 0.694 0.670 0.737 0.719 0.749 0.682 0.749 0.669
+## [1,] 0.721 0.748 0.685 0.672 0.721 0.724 0.661 0.723 0.762 0.745
+## [2,] 0.683 0.702 0.730 0.710 0.709 0.675 0.747 0.722 0.656 0.727
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0329613.
+The standard deviation of the 20 sample means reported above is 0.0304013.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.1079558.
+The standard deviation of Sample 1 is \(s =\) 0.1018114.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.1079558}{\sqrt{10}} = 0.0341386.\]
+\[s = \frac{0.1018114}{\sqrt{10}} = 0.0321956.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0329613, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0341386.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0304013, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0321956.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{Chapter_13}{%
@@ -7990,7 +7990,7 @@ A table of \(x\) and \(y\) points is shown to the right, and the correlation coe
 This lab focuses on applying the concepts from \protect\hyperlink{Chapter_28}{Chapter 28} and \protect\hyperlink{Chapter_29}{Chapter 29} in Jamovi \citep{Jamovi2022}.
 Exercises in this practical will use the \protect\hyperlink{chi-squared-goodness-of-fit}{Chi-squared goodness of fit} test, the \protect\hyperlink{chi-squared-test-of-association}{Chi-squared test of association},
 and the \protect\hyperlink{correlation-hypothesis-testing}{correlation coefficient}.
-For the chi-square tests, this practical will use a dataset inspired by the doctoral work of Dr Jessica Burrows \citep{Burrows2022}.
+For all of these examples, this practical will use a dataset inspired by the doctoral work of Dr Jessica Burrows \citep{Burrows2022}.
 This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies (Figure 30.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Erdhummel_im_Detail.jpg}{Marco Almbauer} on 4 May 2018. Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by \citet{Burrows2022}.}.
 
 \begin{figure}
@@ -8378,33 +8378,458 @@ The panel on the right will give us the output of the \(\chi^{2}\) test of assoc
 \chapter*{Week 10 Overview}\label{Week10}}
 \addcontentsline{toc}{chapter}{Week 10 Overview}
 
-Week: 10
-Dates:
-Suggested Readings: Textbook
-Assessments: Practice quiz
-Practical:
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2329}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7671}}@{}}
+\toprule
+\endhead
+\textbf{Dates} & 27 March 2023 - 31 MAR 2023 \\
+\textbf{Reading} & \textbf{Required:} SCIU4T4 Workbook chapters 31 and 32 \\
+& \textbf{Recommended:} \citet{Navarro2022} (\href{https://davidfoxcroft.github.io/lsj-book/12-Correlation-and-linear-regression.html}{Chapter 12.1 and 12.2}) \\
+& \textbf{Suggested:} \citet{Spiegelhalter2019} (Chapter 5) \\
+& \textbf{Advanced:} \citet{Morrissey2018} (\href{https://quod.lib.umich.edu/cgi/t/text/text-idx?cc=ptpbio;c=ptb;c=ptpbio;idno=16039257.0010.003;view=text;rgn=main;xc=1;g=ptpbiog}{Download}) \\
+\textbf{Lectures} & 10.1: Regression key concepts (15:49 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c59eb428-9334-4f02-bafc-af8200d91f79}{Video}) \\
+& 10.2: Regression validity (14:30 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0f952b7f-6e22-4c1a-8edf-af8200d91fe6}{Video}) \\
+& 10.3: Introduction to multiple regression (14:59 min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0f952b7f-6e22-4c1a-8edf-af8200d91fe6}{Video}) \\
+& 10.4: Regression in Jamovi (min; \href{https://stirling.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0f952b7f-6e22-4c1a-8edf-af8200d91fe6}{Video}) \\
+\textbf{Practical} & Using regression (\protect\hyperlink{Chapter_33}{Chapter 33}) \\
+& Room: Cottrell 2A17 \\
+& Group A: 29 MAR 2023 (WED) 13:05-15:55 \\
+& Group B: 30 MAR 2023 (THU) 09:05-11:55 \\
+\textbf{Help hours} & Brad Duthie \\
+& Room: Cottrell 1A13 \\
+& 31 MAR 2023 (FRI) 15:05-17:55 \\
+\textbf{Assessments} & \href{https://canvas.stir.ac.uk/courses/13075/quizzes/30870}{Week 10 Practice quiz} on Canvas \\
+\bottomrule
+\end{longtable}
 
-\hypertarget{regression-key-concepts}{%
-\chapter{Regression key concepts}\label{regression-key-concepts}}
+\hypertarget{Chapter_31}{%
+\chapter{Simple linear regression}\label{Chapter_31}}
 
-\hypertarget{regression-validity}{%
-\chapter{Regression validity}\label{regression-validity}}
+Linear regression focuses on the association between 2 or more quantitative variables.
+In the case of simple linear regression, which is the focus of this chapter, there are only 2 variables to consider.
+At first, this might sound similar to correlation, which was introduced in \protect\hyperlink{Chapter_29}{Chapter 29}.
+Simple linear regression and correlation are indeed similar, both conceptually and mathematically, and the two are frequently confused.
+Both methods focus on 2 quantitative variables, but the general aim of regression is different from correlation.
+The aim of correlation is to describe how the variance of one variable is associated with the variance of another variable.
+In other words, the correlation measures the intensity of covariance between variables \citep{Sokal1995}.
+But there is no attempt to predict what the value of one variable will be based on the other.
 
-\hypertarget{introduction-to-multiple-regression}{%
-\chapter{Introduction to multiple regression}\label{introduction-to-multiple-regression}}
+Linear regression, in contrast to correlation, focuses on prediction.
+The aim is to predict the value of one quantitative variable Y given the value of another quantitative variable X.
+In other words, regression focuses on an association of dependence in which the value of Y depends on the value of X \citep{Rahman1968}.
+The Y variable is therefore called the \textbf{dependent variable}; it is also sometimes called the response variable or the output variable \citep{Box1978, Sokal1995}.
+The X variable is called the \textbf{independent variable}; it is also sometimes called the predictor variable or the regressor \citep{Box1978, Sokal1995}.
+Unlike correlation, the distinction between the two variable types matters because the aim is to understand how a change in the independent variable will affect the dependent variable.
+For example, if we increase X by 1, how much will Y change?
 
-General explanation
+\hypertarget{visual-interpretation-of-regression}{%
+\section{Visual interpretation of regression}\label{visual-interpretation-of-regression}}
 
-\hypertarget{model-selection-maybe-remove-this}{%
-\chapter{Model selection (maybe remove this?)}\label{model-selection-maybe-remove-this}}
+A visual example using a scatterplot can illustrate one way to think about regression.
+Suppose that we have sampled fig fruits from various latitudes (Figure 31.1), and we want to use latitude to predict fruit volume \citep{Duthie2016}.
 
-Seriously consider moving the regression into this week. and ease the amount of material in previous weeks.
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/FigTree2} \caption{Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.}\label{fig:unnamed-chunk-160}
+\end{figure}
 
-\hypertarget{practical.-using-regression}{%
-\chapter{\texorpdfstring{\emph{Practical}. Using regression}{Practical. Using regression}}\label{practical.-using-regression}}
+A sample of fig fruits from different latitudes is shown in Table 31.1.
+
+\begin{longtable}[]{@{}lrrrrrrr@{}}
+\caption{\label{tab:unnamed-chunk-161}Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\toprule
+\endhead
+Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
+Volume & 2399.2 & 2941.7 & 2167.2 & 2051.3 & 1686.2 & 937.3 & 1328.2 \\
+\bottomrule
+\end{longtable}
+
+How much does fruit volume change with latitude?
+To start answering this question, we can plot the relationship between the two variables.
+We want to predict fruit volume from latitude, meaning that fruit volume \emph{depends on} latitude.
+Fruit volume is therefore the dependent variable, and we should plot it on the y-axis.
+Latitude is our independent variable, and we should plot it on the x-axis (Figure 31.2).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-162-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.}\label{fig:unnamed-chunk-162}
+\end{figure}
+
+In Figure 31.2, each of the 7 points is a different fig fruit.
+The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in \(mm^{2}\).
+The thin dotted line shows the mean fruit volume for the 7 fruits, \(\bar{y} =\) 1930.2.
+The thick black line trending downwards in Figure 31.2 is the regression line, also called the line of best fit.
+How this line is calculated will be explained later, but for now there are two important concepts to takeaway from Figure 31.2.
+First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
+For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
+At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 \(mm^{2}\).
+This leads to the second important concept to takeaway from Figure 31.2.
+In the absence of any other information (including latitude), our best guess of what any given fruit's volume will be is just the mean (\(\bar{y} =\) 1930.2).
+A key aim of regression is to test if the regression line can do a significantly better job of predicting what fruit volume will be.
+In other words, is the solid line of Figure 31.2 really doing that much better than the horizontal dotted line?
+Before answering this question, a few new terms are needed.
+
+\hypertarget{intercepts-slopes-and-residuals}{%
+\section{Intercepts, slopes, and residuals}\label{intercepts-slopes-and-residuals}}
+
+Given the latitude of each fruit (i.e., each point in Figure 31.2), we can predict its volume from 3 numbers.
+These 3 numbers are the intercept (\(\beta_{0}\)), the slope (\(\beta_{1}\)), and the residual (\(\epsilon_{i}\)).
+The intercept is the point on the regression line where \(x = 0\), i.e., where latitude is 0 in the example of fig fruit volumes.
+This point is not actually visible in Figure 31.2 because the lowest latitude on the x-axis is 23.
+At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 \(mm^{2}\).
+If we were to extend this regression line all the way back to a latitude of 0, then we would predict a fruit volume of 8458.9.
+This is our intercept\footnote{Biologically, a fruit volume of 8458.9 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).} in Figure 31.2.
+
+The slope is the direction and steepness of the regression line.
+It describes how much our dependent variable changes if we increase the independent variable by 1.
+For example, how do we predict fruit volume to change if we increase latitude by 1 degree?
+From the regression line in Figure 31.2, whenever latitude increases by 1, we predict a decrease in fruit volume of 242.7.
+Consequently, the slope is -242.7.
+Since we are predicting using a straight line, this decrease is the same at every latitude.
+This means that we can use the slope to predict how much our dependent variable will change given any amount of units of change in our independent variable.
+For example, we can predict how fruit volume will change for any amount of change in degrees latitude.
+If latitude increases by 2 degrees, then we would predict a 2 \(\times\) -242.7 \(=\) -485.4 \(mm^{2}\) change in fruit volume (i.e., a decrease of 485.4).
+If latitude decreases by 3 degrees, then we would predict a -3 \(\times\) -242.7 \(=\) 728.1 \(mm^{2}\) change in fruit volume (i.e., an increase of 728.1).
+
+We can describe the regression line using just the intercept and the slope.
+For the example in Figure 31.2, this means that we can predict fruit volume for any given latitude with just these two numbers.
+But prediction almost always comes with some degree of uncertainty.
+For example, if we could perfectly predict fruit volume from latitude, then all of the points in Figure 31.2 would fall exactly on the regression line.
+But this is not the case.
+None of the 7 points in Figure 31.2 fall exactly on the line, so there is some unexplained variation (i.e., some error) in predicting fruit volume from latitude.
+To map each fruit's latitude to its corresponding volume, we therefore need one more number.
+This number is the \textbf{residual}, and it describes how far away a point is from the regression line (Figure 31.3).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-163-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.}\label{fig:unnamed-chunk-163}
+\end{figure}
+
+The residual of each of the 7 points is shown with a dashed line in Figure 31.3.
+Residual values are positive when they are higher than the value predicted by the regression line, and they are negative when they are lower than the value predicted by the regression line.
+In the example of Figure 31.3, the residual in red indicated by the arrow, at a latitude of 24, is 307.8 because the volume of the fig fruit collected from this latitude deviates from the predicted volume on the regression line by 307.8.
+For the point just to the left where the latitude from which the fruit was sampled is 23.7 degrees, the residual is -307.6.
+For any fig fruit \(i\), we can therefore find its volume using the intercept (\(\beta_{0}\)), the slope (\(\beta_{1}\)), and the residual value (\(\epsilon_{i}\)).
+Next, we will show how these different values relate to one another mathematically.
+
+\hypertarget{regression-coefficients}{%
+\section{Regression coefficients}\label{regression-coefficients}}
+
+Simple linear regression predicts the dependent variable (\(y\)) from the independent variable (\(x\)) using the intercept (\(b_{0}\)) and the slope (\(b_{1}\)),
+
+\[y = b_{0} + b_{1}x.\]
+
+The equation for \(y\) mathematically describes the regression line in Figures 31.2 and 31.3.
+This gives us the expected value of \(y\) for any value of \(x\)
+In other words, the equation tells us what \(y\) will be \emph{on average} for any given \(x\).
+Sometimes different letters are used to represent the same mathematical relationship, such as \(y = a + bx\) or \(y = mx + b\), but the symbols used are not really important\footnote{Another common way to represent the above is, \(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\), where \(\hat{\beta}_{0}\) and \(\hat{\beta}_{1}\) are sample estimates of the true parameters \({\beta}_{0}\) and \({\beta}_{1}\).}.
+Here, \(b_{0}\) and \(b_{1}\) are used to make the transition to multiple regression in \protect\hyperlink{Chapter_32}{Chapter 32} clearer.
+
+For any specific value of \(x_{i}\), the corresponding \(y_{i}\) can be described more generally,
+
+\[y_{i} = b_{0} + b_{1}x_{i} + \epsilon_{i}.\]
+
+For example, for any fig fruit \(i\), we can find its \emph{exact} volume (\(y_{i}\)) from its latitude (\(x_{i}\)) using the intercept (\(b_{0}\)), the slope (\(b_{1}\)), and the residual (\(\epsilon_{i}\)).
+We can do this for the residual shown in red and indicated by the arrow in Figure 31.3.
+The latitude at which this fruit was sampled was \(x_{i} =\) 24, its volume is \(y_{i} =\) 2941.7, and its residual value is 307.8.
+From the previous section, we know that \(b_{0} =\) 8458.9 and \(b_{1} =\) -242.7.
+If we substitute all of these values,
+
+\[2941.7 = 8458.9 - 242.71(24) + 307.84.\]
+
+Note that if we remove the residual 307.84, then we get the expected volume for our fig fruit at 24 degrees latitude,
+
+\[2633.86 = 8458.9 - 242.71(24).\]
+
+Visually, this is where the red dotted line meets the solid black regression line in Figure 31.3.
+
+This explains the relationship between the independent and dependent variables using the intercept, slope, and residuals.
+But how do we actually define the line of best fit?
+In other words, what makes the regression line in this example better than some other line that we might use instead?
+The next section explains how the regression line is actually calculated.
+
+\hypertarget{regression-line-calculation}{%
+\section{Regression line calculation}\label{regression-line-calculation}}
+
+The regression line is defined by its relationship to the residual values.
+Figure 31.4 shows the same regression as in Figures 31.2 and 31.3, but with the values of the residuals written next to each point.
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-164-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.}\label{fig:unnamed-chunk-164}
+\end{figure}
+
+Some of the values are positive, and some are negative.
+An intuitive reason for why the line in Figure 31.4 is the line of best fit is because the positive and negative values exactly balance each other out.
+In other words, the sum of all the residual values in Figure 31.4 is 0,
+
+\[0 = -307.6 + 307.7 + 194 + 406.9 - 677.3 - 262.2 + 338.5.\]
+
+If we were to move the regression line, then the sum of residuals would no longer be 0.
+There is only 1 line that fits.
+
+More technically, the line of best fit minimises the sum of squared residuals (\(SS_{residual}\)).
+In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,
+
+\[SS_{residual} = (-307.6)^{2} + (307.7)^2 + ... + (338.5)^{2}.\]
+
+For the regression in Figure 31.4, \(SS_{residual} =\) 1034567.
+Any line other than the regression line shown in Figure 31.4 would result in a higher \(SS_{residual}\).
+To get a better intuition for how this works, we can use an \href{https://bradduthie.shinyapps.io/regr_click/}{interactive application} in which a random set of points are placed on scatterplot and the intercept and slope are changed until the residual sum of squares is minimised.
+
+\begin{quote}
+\href{https://bradduthie.shinyapps.io/regr_click/}{Click here} for an interactive application that demonstrates how the line of best fit is determined for a simple linear regression.
+\end{quote}
+
+We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
+The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.
+
+\hypertarget{coefficient-of-determination.}{%
+\section{Coefficient of determination.}\label{coefficient-of-determination.}}
+
+We often want to know how well a regression line fits the data.
+In other words, are most of the data near the regression line (indicating a good fit), or are most far away from the regression line?
+How closely the data fit to the regression line is described by the \textbf{coefficient of determination} (\(R^{2}\)).
+More formally, the \(R^{2}\) tells us how much of the total variation in \(y\) is explained by the regression equation\footnote{Note that, mathematically, \(R^{2}\) is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand \(R^{2}\) conceptually in terms of variation explained by the regression model.},
+
+\[R^{2} = 1 - \frac{SS_{residual}}{SS_{total}}.\]
+
+Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model \(SS_{residual}\) to what the sum of squared residuals would be had we just used the mean value of \(y\) (\(SS_{total}\)).
+If \(SS_{residual}\) is very small compared to \(SS_{total}\), then subtracting \(SS_{residual}/SS_{total}\) from 1 will give a large \(R^{2}\) value.
+This large \(R^{2}\) means that the model is doing a good job of explaining variation in the data.
+Figure 31.5 shows some examples of scatterplots with different \(R^{2}\) values.
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-165-1} \caption{Examples of scatterplots with different coefficients of regression (R-squared).}\label{fig:unnamed-chunk-165}
+\end{figure}
+
+We can calculate the \(R^{2}\) value for our example of fig fruit volumes over a latitudinal gradient.
+To do this, we need to calculate the sum of the squared residual values (\(SS_{residual}\)) and the total sum of squared deviations of \(y_{i}\) from the mean \(\bar{y}\) (\(SS_{total}\)).
+From the previous section, we have already found that \(SS_{residaul} = 1034567\).
+Now, to get \(SS_{total}\), we just need to get the sum of squares for fruit volume (see \protect\hyperlink{the-variance}{Chapter 12.3}).
+We can visualise this as the sum of squared deviations from the mean fruit volume of \(\bar{y} =\) 1930.2 instead of the value predicted by the regression line (Figure 31.6).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-166-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).}\label{fig:unnamed-chunk-166}
+\end{figure}
+
+The black numbers in Figure 31.6 show the deviations of each point from the regression line, just like in Figure 31.4.
+Blue numbers have been added to Figure 31.6 to show the deviation of each point from the mean fruit volume.
+Summing the squared values of residuals from the regression line gives a value of 1034567.
+Summing the squared deviations of values from the mean \(\bar{y} =\) 1930.2 gives a value of 2721718.
+To calculate \(R^{2}\),
+
+\[R^{2} = 1 - \frac{1034567}{2721718}.\]
+
+The above gives us a value of \(R^{2} = 0.6198846\).
+In other words, about 62 per cent of the variation in fruit volume is explained by latitude.
+
+\hypertarget{regression-assumptions}{%
+\section{Regression assumptions}\label{regression-assumptions}}
+
+It is important to be aware of the assumptions underlying linear regression.
+There are 4 key assumptions underlying the simple linear regression models described in this chapter \citep{Sokal1995}.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Measurement of the independent variable (\(x\)) is completely accurate. In other words, there is no measurement error for the independent variable.
+  Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see \protect\hyperlink{accuracy}{Chapter 6.1} and \protect\hyperlink{Chapter_7}{Chapter 7}).
+\item
+  The relationship between the independent and dependent variables is linear.
+  In other words, we assume that the relationship between \(x\) and \(y\) can be defined by a straight line satisfying the equation \(y = b_{0} + b_{1}\).
+  If this is not the case (e.g., because the relationship between \(x\) and \(y\) is described by some sort of curved line), then a simple linear regression might not be appropriate.
+\item
+  For any value of \(x_{i}\), \(y_{i}\) values are independent and normally distributed.
+  In other words, the \emph{residual} values (\(\epsilon_{i}\)) should be normally distributed around the regression line, and they should not have any kind of pattern (such as, e.g., \(\epsilon_{i}\) values being negative for low \(x\) but positive for high \(x\)).
+  If we were to go out and resample the same values of \(x_{i}\), the corresponding \(y_{i}\) values should be normally distributed around the predicted \(y\).
+\item
+  For all values of \(x\), the variance of residuals is identical.
+  In other words, the variance of \(y_{i}\) values around the predicted \(y\) should not change over the range of \(x\).
+  The term for this is homoscedasticity, meaning that the variance is constant.
+  This is in contrast to heteroscedasticity, which means that the variance is not constant.
+\end{enumerate}
+
+Figure 31.7 shows a classic example of heteerscedasticity.
+Notice that the variance of \(y_{i}\) values around the regression line increases with increasing \(x\).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-167-1} \caption{A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.}\label{fig:unnamed-chunk-167}
+\end{figure}
+
+Note that even if our assumptions are not perfectly met, this does not completely invalidate the method of linear regression.
+In reality, linear regression is often robust to minor deviations from the above assumptions (as are other statistical tools), but large violations of one or more of these assumptions might indeed invalidate the use of linear regression.
+
+\hypertarget{regression-hypothesis-testing}{%
+\section{Regression hypothesis testing}\label{regression-hypothesis-testing}}
+
+We typically want to know if our regression model is useful for predicting the dependent variable given the independent variable.
+There are 3 specific null hypotheses that we can test, which tell us the significance of (1) the overall model, (2) the intercept, and (3) the slope.
+We will go through each of these null hypotheses.
+
+\hypertarget{overall-model-significance}{%
+\subsection{Overall model significance}\label{overall-model-significance}}
+
+As mentioned in \protect\hyperlink{visual-interpretation-of-regression}{Chapter 31.1}, in the absence of any other information, the best prediction of our dependent variable is the mean.
+For example, if we did not have any information about latitude in the previous sections, then the best prediction of fruit volume would just be the mean fruit volume, \(\bar{y} =\) 1930.2 (Figure 31.2).
+Does including the independent variable latitude result in a significantly better prediction than just using the mean?
+In other words, does a simple linear regression model with latitude as the independent variable explain significantly more variation in fruit volume than just the mean fruit volume?
+We can state this more formally as null and alternative hypotheses.
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_{0}\): A model with no independent variables fits the data as well as the linear model.
+\item
+  \(H_{A}\): The linear model fits the data better than the model with no independent variables.
+\end{itemize}
+
+The null hypothesis can be tested using an F-test of overall significance.
+This test makes use of the F-distribution (see \protect\hyperlink{the-f-distribution}{Chapter 23.1}) to calculate a p-value that we can use to reject or not reject \(H_{0}\).
+Recall that the F-distribution describes the null distribution for a ratio of variances.
+In this case, the F-distribution is used to test for the overall significance of a linear regression model by comparing the variation explained by the model to its residual (i.e., unexplained) variation\footnote{For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is \(SS_{deviation} = 2721718\). The amount of variation explained by the model is \(SS_{model} = 1687069\) with 1 degree of freedom. The remaining residual variation is \(SS_{residual} = 1034649\) with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in \protect\hyperlink{Chapter_23}{Chapter 23}. We calculate the mean squared errors as \(MS_{model} = 1687069/1 = 1687069\) and \(MS_{model} = 1034649/5 = 206929.8\), then take the ratio to get the value \(F = 1687069 / 206929.8 = 8.152857\).}.
+If the ratio of explained to unexplained variation is sufficiently high, then we will get a low p-value and reject the null hypothesis.
+
+\hypertarget{significance-of-the-intercept}{%
+\subsection{Significance of the intercept}\label{significance-of-the-intercept}}
+
+Just like we test the significance of the overall linear model, we can test the significance of individual model coefficients, \(b_{0}\) and \(b_{1}\).
+Recall that \(b_{0}\) is the coefficient for the intercept.
+We can test the null hypothesis that \(b_{0} = 0\) against the alternative hypothesis that it is different from 0.
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_{0}\): The intercept equals 0.
+\item
+  \(H_{A}\): The intercept does not equal 0.
+\end{itemize}
+
+The estimate of \(b_{0}\) is t-distributed (see \protect\hyperlink{Chapter_18}{Chapter 18}) around the true parameter value \(\beta_{0}\).
+Statistical programs such as Jamovi and R will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject \(H_{0}\) \citep{Jamovi2022, Rproject}.
+
+\hypertarget{significance-of-the-slope}{%
+\subsection{Significance of the slope}\label{significance-of-the-slope}}
+
+Testing the significance of the slope (\(b_{1}\)) works in the same way as testing the significance of the intercept.
+We can test the null hypothesis that \(b_{1} = 0\) against the alternative hypothesis that it is different from 0.
+Visually, this is testing whether the regression line shown in Figures 31.2-31.5 is flat, or if it is trending either upwards or downwards.
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_{0}\): The slope equals 0.
+\item
+  \(H_{A}\): The slope does not equal 0.
+\end{itemize}
+
+Like \(b_{0}\), the estimate of \(b_{1}\) is t-distributed (see \protect\hyperlink{Chapter_18}{Chapter 18}) around the true parameter value \(\beta_{1}\).
+We can therefore use the t-distribution to calculate a p-value and either reject or not reject \(H_{0}\).
+Note that this is often the hypothesis that we are most interested in testing.
+For example, we often do not care if the intercept of our model is significantly different from 0 (in the case of our fig fruit volumes, this would not even make sense; fig fruits obviously do not have zero volume at the equator).
+But we often do care if our dependent variable is increasing or decreasing with an increase in the independent variable.
+
+\hypertarget{simple-regression-output}{%
+\subsection{Simple regression output}\label{simple-regression-output}}
+
+If we run the simple regression of fig fruit latitude against fruit volume, we can find output statistics \(R^{2} = 0.27909\), and \(P = 0.22287\) for the overall model.
+This means that the model explains about 27.9 per cent of the total variation in fruit volume, but the overall model does not do a significantly better job of predicting fruit volume than the mean.
+We therefore fail to reject the null hypothesis and conclude that the model with no independent variables fits the data as well as the linear model (Figure 31.8).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_output} \caption{Jamovi output table for a simple linear regression in which latitude is an indepdnent variable and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-168}
+\end{figure}
+
+Figure 31.8 reports the \(R^{2}\) value along with with \(F\) statistic, degrees of freedom, and the resulting p-value for the overall model.
+We can also see a table of model coefficients, the intercept (\(b_{0}\)) and slope (\(b_{1}\)) associated with latitude (Figure 31.9).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_coefficients} \caption{Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.}\label{fig:unnamed-chunk-169}
+\end{figure}
+
+From the Jamovi output shown in Figure 31.9, we can see that the intercept is significant (\(P < 0.05\)), so we reject the null hypothesis that \(b_{0} = 0\).
+Fruit volume appears to decrease with increasing latitude (\(b_{1} = -65.26\)), but this decrease is not significant (\(P > 0.05\)), so we do not reject the null hypothesis that \(b_{1} = 0\).
+We therefore conclude that there is no evidence that fig fruit volume changes with latitude.
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+There are several new concepts introduced in this chapter with simple linear regression.
+It is important to understand the intercept, slope, and residuals both visually and in terms of the regression equation.
+It is also important to be able to interpret the coefficient of determination (\(R^{2}\)), and to understand the hypotheses that simple linear regression can test and the assumptions underlying these tests.
+In the next chapter, we move on to multiple regression, in which regression models include multiple independent variables.
+
+\hypertarget{Chapter_32}{%
+\chapter{Multiple regression}\label{Chapter_32}}
+
+Multiple regression is an extension of the idea of simple linear regression.
+In multiple regression, there is more than one independent variable (\(x\)), and each independent variable is associated with a regression coefficient (\(b\)).
+For example, if we have 2 independent variables, \(x_{1}\) and \(x_{2}\), then we can predict \(y\) using the equation,
+
+\[y = b_{0} + b_{1}x_{1} + b_{2}x_{2}.\]
+
+More generally, for \(k\) independent variables,
+
+\[y = b_{0} + b_{1}x_{1} + ... + b_{k}x_{k}.\]
+
+Mathematically, this almost seems like a trivial extension of the simple linear regression model.
+But conceptually, there is an additional consideration necessary to correctly interpret the regression coefficients (i.e., the \(b\) values).
+Values of \(b_{i}\) now give us the predicted effects of \(x_{i}\) if all other independent variables were to be held constant \citep{Sokal1995}.
+In other words, \(b_{i}\) tells us what would happen if we were to increase \(x_{i}\) by a value of 1 in the context of every other independent variable in the regression model.
+We call these \(b\) coefficients \textbf{partial regression coefficients}.
+The word `partial' is a general mathematical term meaning that we are only looking at the effect of a single independent variable \citep{Borowski2005}.
+Since a multiple regression investigates the effect of an independent variable in the context of other independent variables, we might sometimes expect regression coefficients to be different from what they would be given a simple linear regression \citep{Morrissey2018}.
+
+To illustrate a multiple regression, consider again the fig fruit volume example from \protect\hyperlink{Chapter_31}{Chapter 31} \citep{Duthie2016}.
+Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 32.1).
+
+\begin{longtable}[]{@{}lrrrrrrr@{}}
+\caption{\label{tab:unnamed-chunk-170}Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\toprule
+\endhead
+Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
+Altitude & 218.5 & 163.5 & 330.1 & 542.3 & 709.6 & 901.3 & 656.0 \\
+Volume & 2399.2 & 2941.7 & 2167.2 & 2051.3 & 1686.2 & 937.3 & 1328.2 \\
+\bottomrule
+\end{longtable}
+
+We can use a scatterplot to visualise each independent variable on the x-axis against the dependent variable on the y-axis (Figure 32.1).
+
+\begin{figure}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-171-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset. }\label{fig:unnamed-chunk-171}
+\end{figure}
+
+As with simple regression (\protect\hyperlink{Chapter_31}{Chapter 31}), we can test whether or not the overall model that includes both latitude and altitude as independent variables produces a significantly better fit to the data than just the mean volume.
+We can also find partial regression coefficients for latitude (\(b_{1}\)) and altitude (\(b_{2}\)), and test whether or not these coefficients are significantly different from 0.
+
+In \protect\hyperlink{Chapter_31}{Chapter 31}, we found that a simple regression of latitude against fruit volume had a regression coefficient of \(b_{1} = -65.26\), but this was not significant (\(P = 0.22287\)).
+
+\hypertarget{Chapter_33}{%
+\chapter{\texorpdfstring{\emph{Practical}. Using regression}{Practical. Using regression}}\label{Chapter_33}}
+
+This lab focuses on practical exercises to apply the concepts in \protect\hyperlink{Chapter_31}{Chapter 31} and \protect\hyperlink{Chapter_32}{Chapter 32} in Jamovi \citep{Jamovi2022}.
+The 6 exercises in this practical will apply simple linear regression (Exercises 33.1, 33.2, and 33.5) or multiple regression (33.3, 33.4, 33.6).
+The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke.
+Their work focuses on carbon storage in Gabon (Figure 33.1).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/gabon} \caption{This practical is inspired by data collected on Carbon storage in Gabon.}\label{fig:unnamed-chunk-172}
+\end{figure}
+
+When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of remains sequestered in the soil due to incomplete combustion \citep{Santin2016}.
+This pyrogenic organic carbon can persist in the soil for long periods of time and have positive effects on soil properties \citep{Reisser2016}.
+In this practical, we will look at how environmental data might be used to test what factors affect the concentration of pyrogenic carbon in the soil.
+We will use the \href{}{fire\_carbon.csv} dataset (right click and ``Save Link As\ldots{}'', then save it with the extension `.csv').
+This dataset includes variables for soil depth (cm), fire frequency (total number of years in which a fire occurred during the past 20 years), mean yearly temperature (degrees Celsius), mean monthly rainfall (mm per squared meter per year, \(mm\:m^{-2}\:yr^{-1}\)), total soil organic carbon (SOC, as percentage of soil by weight), pyrogenic carbon (PyC, as percentage of soil organic carbon by weight), and soil pH.
 
 \hypertarget{regression-exercise-1}{%
 \section{Regression Exercise 1}\label{regression-exercise-1}}
+
+In this first activity, we will fit a linear regression to predict pyrogenic carbon (PyC) from soil depth.
+Before doing this, what is the independent variable, and what is the dependent variable?
+
+Independent variable: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Dependent variable: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+Remember from \protect\hyperlink{Chapter_31}{Chapter 31}
 
 \hypertarget{regression-exercise-2}{%
 \section{Regression Exercise 2}\label{regression-exercise-2}}

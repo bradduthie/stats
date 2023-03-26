@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 31 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences</title>
+  <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 31 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  <meta name="github-repo" content="bradduthie/statistical_techniques" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 31 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences" />
+  
+  <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  
+
+<meta name="author" content="Brad Duthie" />
+
+
+<meta name="date" content="2023-03-26" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Week10.html"/>
+<link rel="next" href="Chapter_32.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Techniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-module-is-important"><i class="fa fa-check"></i>Why this module is important</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ILOs"><i class="fa fa-check"></i>Intended learning outcomes (ILOs)</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#accessibility"><i class="fa fa-check"></i>Accessibility</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching_overview"><i class="fa fa-check"></i>Teaching overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#book_chapters"><i class="fa fa-check"></i>Book chapters</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional_readings"><i class="fa fa-check"></i>Additional readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#Canvas"><i class="fa fa-check"></i>Canvas</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assessment-overview"><i class="fa fa-check"></i>Assessment overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tests"><i class="fa fa-check"></i>Tests</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exams"><i class="fa fa-check"></i>Exams</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#extenuating_circumstances"><i class="fa fa-check"></i>Extenuating circumstances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practicals"><i class="fa fa-check"></i>Practicals</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#help"><i class="fa fa-check"></i>Optional help hours</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#timetable"><i class="fa fa-check"></i>Timetable</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
+<li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_1.html"><a href="Chapter_1.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter_1.html"><a href="Chapter_1.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter_1.html"><a href="Chapter_1.html#logarithms"><i class="fa fa-check"></i><b>1.2</b> Logarithms</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter_1.html"><a href="Chapter_1.html#order-of-operations"><i class="fa fa-check"></i><b>1.3</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_2.html"><a href="Chapter_2.html"><i class="fa fa-check"></i><b>2</b> Data organisation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Statistical concepts</b></span></li>
+<li class="chapter" data-level="" data-path="Week2.html"><a href="Week2.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propagation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
+<li class="chapter" data-level="8.4" data-path="Chapter_8.html"><a href="Chapter_8.html#summary-1"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Summary statistics</b></span></li>
+<li class="chapter" data-level="" data-path="Week3.html"><a href="Week3.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="Chapter_9.html"><a href="Chapter_9.html"><i class="fa fa-check"></i><b>9</b> Decimal places, significant figures, and rounding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter_9.html"><a href="Chapter_9.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>9.1</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter_9.html"><a href="Chapter_9.html#rounding"><i class="fa fa-check"></i><b>9.2</b> Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Chapter_10.html"><a href="Chapter_10.html"><i class="fa fa-check"></i><b>10</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter_10.html"><a href="Chapter_10.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="Chapter_10.html"><a href="Chapter_10.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>10.2</b> Barplots and pie charts</a></li>
+<li class="chapter" data-level="10.3" data-path="Chapter_10.html"><a href="Chapter_10.html#box-whisker-plots"><i class="fa fa-check"></i><b>10.3</b> Box-whisker plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Chapter_11.html"><a href="Chapter_11.html"><i class="fa fa-check"></i><b>11</b> Measures of central tendency</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mean"><i class="fa fa-check"></i><b>11.1</b> The mean</a></li>
+<li class="chapter" data-level="11.2" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mode"><i class="fa fa-check"></i><b>11.2</b> The mode</a></li>
+<li class="chapter" data-level="11.3" data-path="Chapter_11.html"><a href="Chapter_11.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>11.3</b> The median and quantiles</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Chapter_12.html"><a href="Chapter_12.html"><i class="fa fa-check"></i><b>12</b> Measures of spread</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Chapter_12.html"><a href="Chapter_12.html#the-range"><i class="fa fa-check"></i><b>12.1</b> The range</a></li>
+<li class="chapter" data-level="12.2" data-path="Chapter_12.html"><a href="Chapter_12.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>12.2</b> The inter-quartile range</a></li>
+<li class="chapter" data-level="12.3" data-path="Chapter_12.html"><a href="Chapter_12.html#the-variance"><i class="fa fa-check"></i><b>12.3</b> The variance</a></li>
+<li class="chapter" data-level="12.4" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-deviation"><i class="fa fa-check"></i><b>12.4</b> The standard deviation</a></li>
+<li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
+<li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>13.3</b> Calculate summary statistics</a></li>
+<li class="chapter" data-level="13.4" data-path="Chapter_13.html"><a href="Chapter_13.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>13.4</b> Reporting decimals and significant figures</a></li>
+<li class="chapter" data-level="13.5" data-path="Chapter_13.html"><a href="Chapter_13.html#comparing-across-sites"><i class="fa fa-check"></i><b>13.5</b> Comparing across sites</a></li>
+</ul></li>
+<li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
+<li class="chapter" data-level="" data-path="Week4.html"><a href="Week4.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> Introduction to probability models</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#an-instructive-example"><i class="fa fa-check"></i><b>14.1</b> An instructive example</a></li>
+<li class="chapter" data-level="14.2" data-path="Chapter_14.html"><a href="Chapter_14.html#biological-applications"><i class="fa fa-check"></i><b>14.2</b> Biological applications</a></li>
+<li class="chapter" data-level="14.3" data-path="Chapter_14.html"><a href="Chapter_14.html#sampling-with-and-without-replacement"><i class="fa fa-check"></i><b>14.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="14.4" data-path="Chapter_14.html"><a href="Chapter_14.html#probability-distributions"><i class="fa fa-check"></i><b>14.4</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="Chapter_14.html"><a href="Chapter_14.html#binomial-distribution"><i class="fa fa-check"></i><b>14.4.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="Chapter_14.html"><a href="Chapter_14.html#poisson-distribution"><i class="fa fa-check"></i><b>14.4.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="14.4.3" data-path="Chapter_14.html"><a href="Chapter_14.html#uniform-distribution"><i class="fa fa-check"></i><b>14.4.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="14.4.4" data-path="Chapter_14.html"><a href="Chapter_14.html#normal-distribution"><i class="fa fa-check"></i><b>14.4.4</b> Normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="Chapter_14.html"><a href="Chapter_14.html#summary-2"><i class="fa fa-check"></i><b>14.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#probability-and-z-scores"><i class="fa fa-check"></i><b>15.2</b> Probability and z-scores</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="Chapter_16.html"><a href="Chapter_16.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+</ul></li>
+<li class="part"><span><b>V Statistical inference</b></span></li>
+<li class="chapter" data-level="" data-path="Week5.html"><a href="Week5.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="17" data-path="Chapter_17.html"><a href="Chapter_17.html"><i class="fa fa-check"></i><b>17</b> Confidence intervals (CIs)</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Chapter_17.html"><a href="Chapter_17.html#normal-distribution-cis"><i class="fa fa-check"></i><b>17.1</b> Normal distribution CIs</a></li>
+<li class="chapter" data-level="17.2" data-path="Chapter_17.html"><a href="Chapter_17.html#binomial-distribution-cis"><i class="fa fa-check"></i><b>17.2</b> Binomial distribution CIs</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="Chapter_18.html"><a href="Chapter_18.html"><i class="fa fa-check"></i><b>18</b> The t-interval</a></li>
+<li class="chapter" data-level="19" data-path="Chapter_19.html"><a href="Chapter_19.html"><i class="fa fa-check"></i><b>19</b> <em>Practical</em>. z- and t- intervals</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="Chapter_19.html"><a href="Chapter_19.html#confidence-intervals-with-distraction"><i class="fa fa-check"></i><b>19.1</b> Confidence intervals with distrACTION</a></li>
+<li class="chapter" data-level="19.2" data-path="Chapter_19.html"><a href="Chapter_19.html#confidence-intervals-from-z--and-t-scores"><i class="fa fa-check"></i><b>19.2</b> Confidence intervals from z- and t-scores</a></li>
+<li class="chapter" data-level="19.3" data-path="Chapter_19.html"><a href="Chapter_19.html#confidence-intervals-for-different-sample-sizes-t--and-z-"><i class="fa fa-check"></i><b>19.3</b> Confidence intervals for different sample sizes (t- and z-)</a></li>
+<li class="chapter" data-level="19.4" data-path="Chapter_19.html"><a href="Chapter_19.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.4</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="19.5" data-path="Chapter_19.html"><a href="Chapter_19.html#another-proportion-confidence-interval"><i class="fa fa-check"></i><b>19.5</b> Another proportion confidence interval</a></li>
+</ul></li>
+<li class="part"><span><b>VI Hypothesis testing</b></span></li>
+<li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
+<li class="chapter" data-level="20" data-path="Chapter_20.html"><a href="Chapter_20.html"><i class="fa fa-check"></i><b>20</b> What is hypothesis testing?</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="Chapter_20.html"><a href="Chapter_20.html#how-ridiculous-is-our-hypothesis"><i class="fa fa-check"></i><b>20.1</b> How ridiculous is our hypothesis?</a></li>
+<li class="chapter" data-level="20.2" data-path="Chapter_20.html"><a href="Chapter_20.html#statistical-hypothesis-testing"><i class="fa fa-check"></i><b>20.2</b> Statistical hypothesis testing</a></li>
+<li class="chapter" data-level="20.3" data-path="Chapter_20.html"><a href="Chapter_20.html#p-values-false-positives-and-power"><i class="fa fa-check"></i><b>20.3</b> P-values, false positives, and power</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="Chapter_21.html"><a href="Chapter_21.html"><i class="fa fa-check"></i><b>21</b> The t-test</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="Chapter_21.html"><a href="Chapter_21.html#one-sample-t-test"><i class="fa fa-check"></i><b>21.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="21.2" data-path="Chapter_21.html"><a href="Chapter_21.html#independent-samples-t-test"><i class="fa fa-check"></i><b>21.2</b> Independent samples t-test</a></li>
+<li class="chapter" data-level="21.3" data-path="Chapter_21.html"><a href="Chapter_21.html#paired-sample-t-test"><i class="fa fa-check"></i><b>21.3</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="21.4" data-path="Chapter_21.html"><a href="Chapter_21.html#assumptions-of-t-tests"><i class="fa fa-check"></i><b>21.4</b> Assumptions of t-tests</a></li>
+<li class="chapter" data-level="21.5" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternatives"><i class="fa fa-check"></i><b>21.5</b> Non-parametric alternatives</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="Chapter_21.html"><a href="Chapter_21.html#wilcoxon-test"><i class="fa fa-check"></i><b>21.5.1</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="21.5.2" data-path="Chapter_21.html"><a href="Chapter_21.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>21.5.2</b> Mann-Whitney U test</a></li>
+</ul></li>
+<li class="chapter" data-level="21.6" data-path="Chapter_21.html"><a href="Chapter_21.html#summary-3"><i class="fa fa-check"></i><b>21.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="Chapter_22.html"><a href="Chapter_22.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="Chapter_22.html"><a href="Chapter_22.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>22.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="22.2" data-path="Chapter_22.html"><a href="Chapter_22.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>22.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="22.3" data-path="Chapter_22.html"><a href="Chapter_22.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>22.3</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="22.4" data-path="Chapter_22.html"><a href="Chapter_22.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>22.4</b> Independent samples t-test</a></li>
+<li class="chapter" data-level="22.5" data-path="Chapter_22.html"><a href="Chapter_22.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>22.5</b> Mann-Whitney U Test</a></li>
+</ul></li>
+<li class="part"><span><b>VII Review of parts I-V</b></span></li>
+<li class="chapter" data-level="" data-path="Week7.html"><a href="Week7.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
+<li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
+<li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> Analysis of variance</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#the-f-distribution"><i class="fa fa-check"></i><b>23.1</b> The F-distribution</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#one-way-anova"><i class="fa fa-check"></i><b>23.2</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>23.2.1</b> ANOVA mean variance among groups</a></li>
+<li class="chapter" data-level="23.2.2" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>23.2.2</b> ANOVA mean variance within groups</a></li>
+<li class="chapter" data-level="23.2.3" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>23.2.3</b> ANOVA F statistic calculation</a></li>
+</ul></li>
+<li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#assumptions-of-anova"><i class="fa fa-check"></i><b>23.3</b> Assumptions of ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="Chapter_24.html"><a href="Chapter_24.html"><i class="fa fa-check"></i><b>24</b> Multiple comparisons</a></li>
+<li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> <em>Practical</em>. ANOVA and associated tests</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="Chapter_27.html"><a href="Chapter_27.html#one-way-anova-site"><i class="fa fa-check"></i><b>27.1</b> One-way ANOVA (site)</a></li>
+<li class="chapter" data-level="27.2" data-path="Chapter_27.html"><a href="Chapter_27.html#one-way-anova-profile"><i class="fa fa-check"></i><b>27.2</b> One-way ANOVA (profile)</a></li>
+<li class="chapter" data-level="27.3" data-path="Chapter_27.html"><a href="Chapter_27.html#multiple-comparisons"><i class="fa fa-check"></i><b>27.3</b> Multiple comparisons</a></li>
+<li class="chapter" data-level="27.4" data-path="Chapter_27.html"><a href="Chapter_27.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>27.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="27.5" data-path="Chapter_27.html"><a href="Chapter_27.html#two-way-anova"><i class="fa fa-check"></i><b>27.5</b> Two-way ANOVA</a></li>
+</ul></li>
+<li class="part"><span><b>IX Counts and Correlation</b></span></li>
+<li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> Frequency and count data</a>
+<ul>
+<li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#the-chi-square-distribution"><i class="fa fa-check"></i><b>28.1</b> The Chi-square distribution</a></li>
+<li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#chi-squared-goodness-of-fit"><i class="fa fa-check"></i><b>28.2</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#chi-squared-test-of-association"><i class="fa fa-check"></i><b>28.3</b> Chi-squared test of association</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="Chapter_29.html"><a href="Chapter_29.html#scatterplots"><i class="fa fa-check"></i><b>29.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="29.2" data-path="Chapter_29.html"><a href="Chapter_29.html#the-correlation-coefficient"><i class="fa fa-check"></i><b>29.2</b> The correlation coefficient</a>
+<ul>
+<li class="chapter" data-level="29.2.1" data-path="Chapter_29.html"><a href="Chapter_29.html#pearson-product-moment-correlation-coefficient"><i class="fa fa-check"></i><b>29.2.1</b> Pearson product moment correlation coefficient</a></li>
+<li class="chapter" data-level="29.2.2" data-path="Chapter_29.html"><a href="Chapter_29.html#spearman-rank-correlation-coefficient"><i class="fa fa-check"></i><b>29.2.2</b> Spearman rank correlation coefficient</a></li>
+</ul></li>
+<li class="chapter" data-level="29.3" data-path="Chapter_29.html"><a href="Chapter_29.html#correlation-hypothesis-testing"><i class="fa fa-check"></i><b>29.3</b> Correlation hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="Chapter_30.html"><a href="Chapter_30.html"><i class="fa fa-check"></i><b>30</b> <em>Practical</em>. Analysis of counts and correlations</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="Chapter_30.html"><a href="Chapter_30.html#survival-goodness-of-fit"><i class="fa fa-check"></i><b>30.1</b> Survival goodness of fit</a></li>
+<li class="chapter" data-level="30.2" data-path="Chapter_30.html"><a href="Chapter_30.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>30.2</b> Colony goodness of fit</a></li>
+<li class="chapter" data-level="30.3" data-path="Chapter_30.html"><a href="Chapter_30.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>30.3</b> Chi-Square test of association</a></li>
+<li class="chapter" data-level="30.4" data-path="Chapter_30.html"><a href="Chapter_30.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>30.4</b> Pearson product moment correlation test</a></li>
+<li class="chapter" data-level="30.5" data-path="Chapter_30.html"><a href="Chapter_30.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>30.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="30.6" data-path="Chapter_30.html"><a href="Chapter_30.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>30.6</b> Untidy goodness of fit</a></li>
+</ul></li>
+<li class="part"><span><b>X Linear Regression</b></span></li>
+<li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="31" data-path="Chapter_31.html"><a href="Chapter_31.html"><i class="fa fa-check"></i><b>31</b> Simple linear regression</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="Chapter_31.html"><a href="Chapter_31.html#visual-interpretation-of-regression"><i class="fa fa-check"></i><b>31.1</b> Visual interpretation of regression</a></li>
+<li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#intercepts-slopes-and-residuals"><i class="fa fa-check"></i><b>31.2</b> Intercepts, slopes, and residuals</a></li>
+<li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-coefficients"><i class="fa fa-check"></i><b>31.3</b> Regression coefficients</a></li>
+<li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-line-calculation"><i class="fa fa-check"></i><b>31.4</b> Regression line calculation</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#coefficient-of-determination."><i class="fa fa-check"></i><b>31.5</b> Coefficient of determination.</a></li>
+<li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-assumptions"><i class="fa fa-check"></i><b>31.6</b> Regression assumptions</a></li>
+<li class="chapter" data-level="31.7" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-hypothesis-testing"><i class="fa fa-check"></i><b>31.7</b> Regression hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="31.7.1" data-path="Chapter_31.html"><a href="Chapter_31.html#overall-model-significance"><i class="fa fa-check"></i><b>31.7.1</b> Overall model significance</a></li>
+<li class="chapter" data-level="31.7.2" data-path="Chapter_31.html"><a href="Chapter_31.html#significance-of-the-intercept"><i class="fa fa-check"></i><b>31.7.2</b> Significance of the intercept</a></li>
+<li class="chapter" data-level="31.7.3" data-path="Chapter_31.html"><a href="Chapter_31.html#significance-of-the-slope"><i class="fa fa-check"></i><b>31.7.3</b> Significance of the slope</a></li>
+<li class="chapter" data-level="31.7.4" data-path="Chapter_31.html"><a href="Chapter_31.html#simple-regression-output"><i class="fa fa-check"></i><b>31.7.4</b> Simple regression output</a></li>
+</ul></li>
+<li class="chapter" data-level="31.8" data-path="Chapter_31.html"><a href="Chapter_31.html#conclusion"><i class="fa fa-check"></i><b>31.8</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Multiple regression</a></li>
+<li class="chapter" data-level="33" data-path="Chapter_33.html"><a href="Chapter_33.html"><i class="fa fa-check"></i><b>33</b> <em>Practical</em>. Using regression</a>
+<ul>
+<li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-1"><i class="fa fa-check"></i><b>33.1</b> Regression Exercise 1</a></li>
+<li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-2"><i class="fa fa-check"></i><b>33.2</b> Regression Exercise 2</a></li>
+<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-3"><i class="fa fa-check"></i><b>33.3</b> Regression Exercise 3</a></li>
+<li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#regression-exercise-4"><i class="fa fa-check"></i><b>33.4</b> Regression Exercise 4</a></li>
+</ul></li>
+<li class="part"><span><b>XI Randomisation approaches</b></span></li>
+<li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="34" data-path="introduction-to-randomisation.html"><a href="introduction-to-randomisation.html"><i class="fa fa-check"></i><b>34</b> Introduction to randomisation</a></li>
+<li class="chapter" data-level="35" data-path="assumptions-of-randomisation.html"><a href="assumptions-of-randomisation.html"><i class="fa fa-check"></i><b>35</b> Assumptions of randomisation</a></li>
+<li class="chapter" data-level="36" data-path="bootstrapping.html"><a href="bootstrapping.html"><i class="fa fa-check"></i><b>36</b> Bootstrapping</a></li>
+<li class="chapter" data-level="37" data-path="monte-carlo.html"><a href="monte-carlo.html"><i class="fa fa-check"></i><b>37</b> Monte Carlo</a></li>
+<li class="chapter" data-level="38" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>38</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="38.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>38.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="38.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>38.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="38.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>38.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XII Statistical Reporting</b></span></li>
+<li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="39" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>39</b> Reporting statistics</a></li>
+<li class="chapter" data-level="40" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>40</b> More introduction to R</a></li>
+<li class="chapter" data-level="41" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>41</b> More getting started with R</a></li>
+<li class="chapter" data-level="42" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>42</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="42.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>42.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="42.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>42.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="42.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>42.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
+<li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="appendixC_tables.html"><a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values"><i class="fa fa-check"></i><b>C.1</b> Wilcoxon signed rank critical values</a></li>
+<li class="chapter" data-level="C.2" data-path="appendixC_tables.html"><a href="appendixC_tables.html#mann-whitney-u-critical-values"><i class="fa fa-check"></i><b>C.2</b> Mann-Whitney U critical values</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Techniques for Biological and Environmental Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Chapter_31" class="section level1 hasAnchor" number="31">
+<h1><span class="header-section-number">Chapter 31</span> Simple linear regression<a href="Chapter_31.html#Chapter_31" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Linear regression focuses on the association between 2 or more quantitative variables.
+In the case of simple linear regression, which is the focus of this chapter, there are only 2 variables to consider.
+At first, this might sound similar to correlation, which was introduced in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>.
+Simple linear regression and correlation are indeed similar, both conceptually and mathematically, and the two are frequently confused.
+Both methods focus on 2 quantitative variables, but the general aim of regression is different from correlation.
+The aim of correlation is to describe how the variance of one variable is associated with the variance of another variable.
+In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+But there is no attempt to predict what the value of one variable will be based on the other.</p>
+<p>Linear regression, in contrast to correlation, focuses on prediction.
+The aim is to predict the value of one quantitative variable Y given the value of another quantitative variable X.
+In other words, regression focuses on an association of dependence in which the value of Y depends on the value of X <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>.
+The Y variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+The X variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Unlike correlation, the distinction between the two variable types matters because the aim is to understand how a change in the independent variable will affect the dependent variable.
+For example, if we increase X by 1, how much will Y change?</p>
+<div id="visual-interpretation-of-regression" class="section level2 hasAnchor" number="31.1">
+<h2><span class="header-section-number">31.1</span> Visual interpretation of regression<a href="Chapter_31.html#visual-interpretation-of-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A visual example using a scatterplot can illustrate one way to think about regression.
+Suppose that we have sampled fig fruits from various latitudes (Figure 31.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-160"></span>
+<img src="img/FigTree2.jpg" alt="Two panels with green fig fruits are shown on branches with fig wasps on the surface of them, and a panel to the right shows a man on a rock reaching into the crown of a fig tree with a stick." width="100%" />
+<p class="caption">
+Figure 31.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.
+</p>
+</div>
+<p>A sample of fig fruits from different latitudes is shown in Table 31.1.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-161">Table 31.1: </span>Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Latitude</td>
+<td align="right">23.7</td>
+<td align="right">24.0</td>
+<td align="right">27.6</td>
+<td align="right">27.2</td>
+<td align="right">29.3</td>
+<td align="right">28.2</td>
+<td align="right">28.3</td>
+</tr>
+<tr class="even">
+<td align="left">Volume</td>
+<td align="right">2399.2</td>
+<td align="right">2941.7</td>
+<td align="right">2167.2</td>
+<td align="right">2051.3</td>
+<td align="right">1686.2</td>
+<td align="right">937.3</td>
+<td align="right">1328.2</td>
+</tr>
+</tbody>
+</table>
+<p>How much does fruit volume change with latitude?
+To start answering this question, we can plot the relationship between the two variables.
+We want to predict fruit volume from latitude, meaning that fruit volume <em>depends on</em> latitude.
+Fruit volume is therefore the dependent variable, and we should plot it on the y-axis.
+Latitude is our independent variable, and we should plot it on the x-axis (Figure 31.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-162"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-162-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; a thin dotted line is horizontal across the plot." width="672" />
+<p class="caption">
+Figure 31.2: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.
+</p>
+</div>
+<p>In Figure 31.2, each of the 7 points is a different fig fruit.
+The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in <span class="math inline">\(mm^{2}\)</span>.
+The thin dotted line shows the mean fruit volume for the 7 fruits, <span class="math inline">\(\bar{y} =\)</span> 1930.2.
+The thick black line trending downwards in Figure 31.2 is the regression line, also called the line of best fit.
+How this line is calculated will be explained later, but for now there are two important concepts to takeaway from Figure 31.2.
+First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
+For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
+At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 <span class="math inline">\(mm^{2}\)</span>.
+This leads to the second important concept to takeaway from Figure 31.2.
+In the absence of any other information (including latitude), our best guess of what any given fruit’s volume will be is just the mean (<span class="math inline">\(\bar{y} =\)</span> 1930.2).
+A key aim of regression is to test if the regression line can do a significantly better job of predicting what fruit volume will be.
+In other words, is the solid line of Figure 31.2 really doing that much better than the horizontal dotted line?
+Before answering this question, a few new terms are needed.</p>
+</div>
+<div id="intercepts-slopes-and-residuals" class="section level2 hasAnchor" number="31.2">
+<h2><span class="header-section-number">31.2</span> Intercepts, slopes, and residuals<a href="Chapter_31.html#intercepts-slopes-and-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Given the latitude of each fruit (i.e., each point in Figure 31.2), we can predict its volume from 3 numbers.
+These 3 numbers are the intercept (<span class="math inline">\(\beta_{0}\)</span>), the slope (<span class="math inline">\(\beta_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
+The intercept is the point on the regression line where <span class="math inline">\(x = 0\)</span>, i.e., where latitude is 0 in the example of fig fruit volumes.
+This point is not actually visible in Figure 31.2 because the lowest latitude on the x-axis is 23.
+At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 <span class="math inline">\(mm^{2}\)</span>.
+If we were to extend this regression line all the way back to a latitude of 0, then we would predict a fruit volume of 8458.9.
+This is our intercept<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a> in Figure 31.2.</p>
+<p>The slope is the direction and steepness of the regression line.
+It describes how much our dependent variable changes if we increase the independent variable by 1.
+For example, how do we predict fruit volume to change if we increase latitude by 1 degree?
+From the regression line in Figure 31.2, whenever latitude increases by 1, we predict a decrease in fruit volume of 242.7.
+Consequently, the slope is -242.7.
+Since we are predicting using a straight line, this decrease is the same at every latitude.
+This means that we can use the slope to predict how much our dependent variable will change given any amount of units of change in our independent variable.
+For example, we can predict how fruit volume will change for any amount of change in degrees latitude.
+If latitude increases by 2 degrees, then we would predict a 2 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> -485.4 <span class="math inline">\(mm^{2}\)</span> change in fruit volume (i.e., a decrease of 485.4).
+If latitude decreases by 3 degrees, then we would predict a -3 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> 728.1 <span class="math inline">\(mm^{2}\)</span> change in fruit volume (i.e., an increase of 728.1).</p>
+<p>We can describe the regression line using just the intercept and the slope.
+For the example in Figure 31.2, this means that we can predict fruit volume for any given latitude with just these two numbers.
+But prediction almost always comes with some degree of uncertainty.
+For example, if we could perfectly predict fruit volume from latitude, then all of the points in Figure 31.2 would fall exactly on the regression line.
+But this is not the case.
+None of the 7 points in Figure 31.2 fall exactly on the line, so there is some unexplained variation (i.e., some error) in predicting fruit volume from latitude.
+To map each fruit’s latitude to its corresponding volume, we therefore need one more number.
+This number is the <strong>residual</strong>, and it describes how far away a point is from the regression line (Figure 31.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-163"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-163-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
+<p class="caption">
+Figure 31.3: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
+</p>
+</div>
+<p>The residual of each of the 7 points is shown with a dashed line in Figure 31.3.
+Residual values are positive when they are higher than the value predicted by the regression line, and they are negative when they are lower than the value predicted by the regression line.
+In the example of Figure 31.3, the residual in red indicated by the arrow, at a latitude of 24, is 307.8 because the volume of the fig fruit collected from this latitude deviates from the predicted volume on the regression line by 307.8.
+For the point just to the left where the latitude from which the fruit was sampled is 23.7 degrees, the residual is -307.6.
+For any fig fruit <span class="math inline">\(i\)</span>, we can therefore find its volume using the intercept (<span class="math inline">\(\beta_{0}\)</span>), the slope (<span class="math inline">\(\beta_{1}\)</span>), and the residual value (<span class="math inline">\(\epsilon_{i}\)</span>).
+Next, we will show how these different values relate to one another mathematically.</p>
+</div>
+<div id="regression-coefficients" class="section level2 hasAnchor" number="31.3">
+<h2><span class="header-section-number">31.3</span> Regression coefficients<a href="Chapter_31.html#regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Simple linear regression predicts the dependent variable (<span class="math inline">\(y\)</span>) from the independent variable (<span class="math inline">\(x\)</span>) using the intercept (<span class="math inline">\(b_{0}\)</span>) and the slope (<span class="math inline">\(b_{1}\)</span>),</p>
+<p><span class="math display">\[y = b_{0} + b_{1}x.\]</span></p>
+<p>The equation for <span class="math inline">\(y\)</span> mathematically describes the regression line in Figures 31.2 and 31.3.
+This gives us the expected value of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>
+In other words, the equation tells us what <span class="math inline">\(y\)</span> will be <em>on average</em> for any given <span class="math inline">\(x\)</span>.
+Sometimes different letters are used to represent the same mathematical relationship, such as <span class="math inline">\(y = a + bx\)</span> or <span class="math inline">\(y = mx + b\)</span>, but the symbols used are not really important<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>.
+Here, <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> are used to make the transition to multiple regression in <a href="Chapter_32.html#Chapter_32">Chapter 32</a> clearer.</p>
+<p>For any specific value of <span class="math inline">\(x_{i}\)</span>, the corresponding <span class="math inline">\(y_{i}\)</span> can be described more generally,</p>
+<p><span class="math display">\[y_{i} = b_{0} + b_{1}x_{i} + \epsilon_{i}.\]</span></p>
+<p>For example, for any fig fruit <span class="math inline">\(i\)</span>, we can find its <em>exact</em> volume (<span class="math inline">\(y_{i}\)</span>) from its latitude (<span class="math inline">\(x_{i}\)</span>) using the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
+We can do this for the residual shown in red and indicated by the arrow in Figure 31.3.
+The latitude at which this fruit was sampled was <span class="math inline">\(x_{i} =\)</span> 24, its volume is <span class="math inline">\(y_{i} =\)</span> 2941.7, and its residual value is 307.8.
+From the previous section, we know that <span class="math inline">\(b_{0} =\)</span> 8458.9 and <span class="math inline">\(b_{1} =\)</span> -242.7.
+If we substitute all of these values,</p>
+<p><span class="math display">\[2941.7 = 8458.9 - 242.71(24) + 307.84.\]</span></p>
+<p>Note that if we remove the residual 307.84, then we get the expected volume for our fig fruit at 24 degrees latitude,</p>
+<p><span class="math display">\[2633.86 = 8458.9 - 242.71(24).\]</span></p>
+<p>Visually, this is where the red dotted line meets the solid black regression line in Figure 31.3.</p>
+<p>This explains the relationship between the independent and dependent variables using the intercept, slope, and residuals.
+But how do we actually define the line of best fit?
+In other words, what makes the regression line in this example better than some other line that we might use instead?
+The next section explains how the regression line is actually calculated.</p>
+</div>
+<div id="regression-line-calculation" class="section level2 hasAnchor" number="31.4">
+<h2><span class="header-section-number">31.4</span> Regression line calculation<a href="Chapter_31.html#regression-line-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The regression line is defined by its relationship to the residual values.
+Figure 31.4 shows the same regression as in Figures 31.2 and 31.3, but with the values of the residuals written next to each point.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-164"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-164-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
+<p class="caption">
+Figure 31.4: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
+</p>
+</div>
+<p>Some of the values are positive, and some are negative.
+An intuitive reason for why the line in Figure 31.4 is the line of best fit is because the positive and negative values exactly balance each other out.
+In other words, the sum of all the residual values in Figure 31.4 is 0,</p>
+<p><span class="math display">\[0 = -307.6 + 307.7 + 194 + 406.9 - 677.3 - 262.2 + 338.5.\]</span></p>
+<p>If we were to move the regression line, then the sum of residuals would no longer be 0.
+There is only 1 line that fits.</p>
+<p>More technically, the line of best fit minimises the sum of squared residuals (<span class="math inline">\(SS_{residual}\)</span>).
+In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,</p>
+<p><span class="math display">\[SS_{residual} = (-307.6)^{2} + (307.7)^2 + ... + (338.5)^{2}.\]</span></p>
+<p>For the regression in Figure 31.4, <span class="math inline">\(SS_{residual} =\)</span> 1034567.
+Any line other than the regression line shown in Figure 31.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span>.
+To get a better intuition for how this works, we can use an <a href="https://bradduthie.shinyapps.io/regr_click/">interactive application</a> in which a random set of points are placed on scatterplot and the intercept and slope are changed until the residual sum of squares is minimised.</p>
+<blockquote>
+<p><a href="https://bradduthie.shinyapps.io/regr_click/">Click here</a> for an interactive application that demonstrates how the line of best fit is determined for a simple linear regression.</p>
+</blockquote>
+<p>We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
+The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.</p>
+</div>
+<div id="coefficient-of-determination." class="section level2 hasAnchor" number="31.5">
+<h2><span class="header-section-number">31.5</span> Coefficient of determination.<a href="Chapter_31.html#coefficient-of-determination." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We often want to know how well a regression line fits the data.
+In other words, are most of the data near the regression line (indicating a good fit), or are most far away from the regression line?
+How closely the data fit to the regression line is described by the <strong>coefficient of determination</strong> (<span class="math inline">\(R^{2}\)</span>).
+More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression equation<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a>,</p>
+<p><span class="math display">\[R^{2} = 1 - \frac{SS_{residual}}{SS_{total}}.\]</span></p>
+<p>Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model <span class="math inline">\(SS_{residual}\)</span> to what the sum of squared residuals would be had we just used the mean value of <span class="math inline">\(y\)</span> (<span class="math inline">\(SS_{total}\)</span>).
+If <span class="math inline">\(SS_{residual}\)</span> is very small compared to <span class="math inline">\(SS_{total}\)</span>, then subtracting <span class="math inline">\(SS_{residual}/SS_{total}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
+This large <span class="math inline">\(R^{2}\)</span> means that the model is doing a good job of explaining variation in the data.
+Figure 31.5 shows some examples of scatterplots with different <span class="math inline">\(R^{2}\)</span> values.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-165"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-165-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with regression lines between x and y variables and a coefficient of variation shown in the upper corner." width="480" />
+<p class="caption">
+Figure 31.5: Examples of scatterplots with different coefficients of regression (R-squared).
+</p>
+</div>
+<p>We can calculate the <span class="math inline">\(R^{2}\)</span> value for our example of fig fruit volumes over a latitudinal gradient.
+To do this, we need to calculate the sum of the squared residual values (<span class="math inline">\(SS_{residual}\)</span>) and the total sum of squared deviations of <span class="math inline">\(y_{i}\)</span> from the mean <span class="math inline">\(\bar{y}\)</span> (<span class="math inline">\(SS_{total}\)</span>).
+From the previous section, we have already found that <span class="math inline">\(SS_{residaul} = 1034567\)</span>.
+Now, to get <span class="math inline">\(SS_{total}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Chapter 12.3</a>).
+We can visualise this as the sum of squared deviations from the mean fruit volume of <span class="math inline">\(\bar{y} =\)</span> 1930.2 instead of the value predicted by the regression line (Figure 31.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-166"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-166-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
+<p class="caption">
+Figure 31.6: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).
+</p>
+</div>
+<p>The black numbers in Figure 31.6 show the deviations of each point from the regression line, just like in Figure 31.4.
+Blue numbers have been added to Figure 31.6 to show the deviation of each point from the mean fruit volume.
+Summing the squared values of residuals from the regression line gives a value of 1034567.
+Summing the squared deviations of values from the mean <span class="math inline">\(\bar{y} =\)</span> 1930.2 gives a value of 2721718.
+To calculate <span class="math inline">\(R^{2}\)</span>,</p>
+<p><span class="math display">\[R^{2} = 1 - \frac{1034567}{2721718}.\]</span></p>
+<p>The above gives us a value of <span class="math inline">\(R^{2} = 0.6198846\)</span>.
+In other words, about 62 per cent of the variation in fruit volume is explained by latitude.</p>
+</div>
+<div id="regression-assumptions" class="section level2 hasAnchor" number="31.6">
+<h2><span class="header-section-number">31.6</span> Regression assumptions<a href="Chapter_31.html#regression-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is important to be aware of the assumptions underlying linear regression.
+There are 4 key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Measurement of the independent variable (<span class="math inline">\(x\)</span>) is completely accurate. In other words, there is no measurement error for the independent variable.
+Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see <a href="Chapter_6.html#accuracy">Chapter 6.1</a> and <a href="Chapter_7.html#Chapter_7">Chapter 7</a>).</p></li>
+<li><p>The relationship between the independent and dependent variables is linear.
+In other words, we assume that the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be defined by a straight line satisfying the equation <span class="math inline">\(y = b_{0} + b_{1}\)</span>.
+If this is not the case (e.g., because the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is described by some sort of curved line), then a simple linear regression might not be appropriate.</p></li>
+<li><p>For any value of <span class="math inline">\(x_{i}\)</span>, <span class="math inline">\(y_{i}\)</span> values are independent and normally distributed.
+In other words, the <em>residual</em> values (<span class="math inline">\(\epsilon_{i}\)</span>) should be normally distributed around the regression line, and they should not have any kind of pattern (such as, e.g., <span class="math inline">\(\epsilon_{i}\)</span> values being negative for low <span class="math inline">\(x\)</span> but positive for high <span class="math inline">\(x\)</span>).
+If we were to go out and resample the same values of <span class="math inline">\(x_{i}\)</span>, the corresponding <span class="math inline">\(y_{i}\)</span> values should be normally distributed around the predicted <span class="math inline">\(y\)</span>.</p></li>
+<li><p>For all values of <span class="math inline">\(x\)</span>, the variance of residuals is identical.
+In other words, the variance of <span class="math inline">\(y_{i}\)</span> values around the predicted <span class="math inline">\(y\)</span> should not change over the range of <span class="math inline">\(x\)</span>.
+The term for this is homoscedasticity, meaning that the variance is constant.
+This is in contrast to heteroscedasticity, which means that the variance is not constant.</p></li>
+</ol>
+<p>Figure 31.7 shows a classic example of heteerscedasticity.
+Notice that the variance of <span class="math inline">\(y_{i}\)</span> values around the regression line increases with increasing <span class="math inline">\(x\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-167"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-167-1.png" alt="A scatterplot is shown in which data points increase in variance around a regression line as the x variable increases, forming a funnel shape with the narrow point on the left." width="672" />
+<p class="caption">
+Figure 31.7: A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.
+</p>
+</div>
+<p>Note that even if our assumptions are not perfectly met, this does not completely invalidate the method of linear regression.
+In reality, linear regression is often robust to minor deviations from the above assumptions (as are other statistical tools), but large violations of one or more of these assumptions might indeed invalidate the use of linear regression.</p>
+</div>
+<div id="regression-hypothesis-testing" class="section level2 hasAnchor" number="31.7">
+<h2><span class="header-section-number">31.7</span> Regression hypothesis testing<a href="Chapter_31.html#regression-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We typically want to know if our regression model is useful for predicting the dependent variable given the independent variable.
+There are 3 specific null hypotheses that we can test, which tell us the significance of (1) the overall model, (2) the intercept, and (3) the slope.
+We will go through each of these null hypotheses.</p>
+<div id="overall-model-significance" class="section level3 hasAnchor" number="31.7.1">
+<h3><span class="header-section-number">31.7.1</span> Overall model significance<a href="Chapter_31.html#overall-model-significance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As mentioned in <a href="Chapter_31.html#visual-interpretation-of-regression">Chapter 31.1</a>, in the absence of any other information, the best prediction of our dependent variable is the mean.
+For example, if we did not have any information about latitude in the previous sections, then the best prediction of fruit volume would just be the mean fruit volume, <span class="math inline">\(\bar{y} =\)</span> 1930.2 (Figure 31.2).
+Does including the independent variable latitude result in a significantly better prediction than just using the mean?
+In other words, does a simple linear regression model with latitude as the independent variable explain significantly more variation in fruit volume than just the mean fruit volume?
+We can state this more formally as null and alternative hypotheses.</p>
+<ul>
+<li><span class="math inline">\(H_{0}\)</span>: A model with no independent variables fits the data as well as the linear model.</li>
+<li><span class="math inline">\(H_{A}\)</span>: The linear model fits the data better than the model with no independent variables.</li>
+</ul>
+<p>The null hypothesis can be tested using an F-test of overall significance.
+This test makes use of the F-distribution (see <a href="Chapter_23.html#the-f-distribution">Chapter 23.1</a>) to calculate a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span>.
+Recall that the F-distribution describes the null distribution for a ratio of variances.
+In this case, the F-distribution is used to test for the overall significance of a linear regression model by comparing the variation explained by the model to its residual (i.e., unexplained) variation<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
+If the ratio of explained to unexplained variation is sufficiently high, then we will get a low p-value and reject the null hypothesis.</p>
+</div>
+<div id="significance-of-the-intercept" class="section level3 hasAnchor" number="31.7.2">
+<h3><span class="header-section-number">31.7.2</span> Significance of the intercept<a href="Chapter_31.html#significance-of-the-intercept" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Just like we test the significance of the overall linear model, we can test the significance of individual model coefficients, <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span>.
+Recall that <span class="math inline">\(b_{0}\)</span> is the coefficient for the intercept.
+We can test the null hypothesis that <span class="math inline">\(b_{0} = 0\)</span> against the alternative hypothesis that it is different from 0.</p>
+<ul>
+<li><span class="math inline">\(H_{0}\)</span>: The intercept equals 0.</li>
+<li><span class="math inline">\(H_{A}\)</span>: The intercept does not equal 0.</li>
+</ul>
+<p>The estimate of <span class="math inline">\(b_{0}\)</span> is t-distributed (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>) around the true parameter value <span class="math inline">\(\beta_{0}\)</span>.
+Statistical programs such as Jamovi and R will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.</p>
+</div>
+<div id="significance-of-the-slope" class="section level3 hasAnchor" number="31.7.3">
+<h3><span class="header-section-number">31.7.3</span> Significance of the slope<a href="Chapter_31.html#significance-of-the-slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Testing the significance of the slope (<span class="math inline">\(b_{1}\)</span>) works in the same way as testing the significance of the intercept.
+We can test the null hypothesis that <span class="math inline">\(b_{1} = 0\)</span> against the alternative hypothesis that it is different from 0.
+Visually, this is testing whether the regression line shown in Figures 31.2-31.5 is flat, or if it is trending either upwards or downwards.</p>
+<ul>
+<li><span class="math inline">\(H_{0}\)</span>: The slope equals 0.</li>
+<li><span class="math inline">\(H_{A}\)</span>: The slope does not equal 0.</li>
+</ul>
+<p>Like <span class="math inline">\(b_{0}\)</span>, the estimate of <span class="math inline">\(b_{1}\)</span> is t-distributed (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>) around the true parameter value <span class="math inline">\(\beta_{1}\)</span>.
+We can therefore use the t-distribution to calculate a p-value and either reject or not reject <span class="math inline">\(H_{0}\)</span>.
+Note that this is often the hypothesis that we are most interested in testing.
+For example, we often do not care if the intercept of our model is significantly different from 0 (in the case of our fig fruit volumes, this would not even make sense; fig fruits obviously do not have zero volume at the equator).
+But we often do care if our dependent variable is increasing or decreasing with an increase in the independent variable.</p>
+</div>
+<div id="simple-regression-output" class="section level3 hasAnchor" number="31.7.4">
+<h3><span class="header-section-number">31.7.4</span> Simple regression output<a href="Chapter_31.html#simple-regression-output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If we run the simple regression of fig fruit latitude against fruit volume, we can find output statistics <span class="math inline">\(R^{2} = 0.27909\)</span>, and <span class="math inline">\(P = 0.22287\)</span> for the overall model.
+This means that the model explains about 27.9 per cent of the total variation in fruit volume, but the overall model does not do a significantly better job of predicting fruit volume than the mean.
+We therefore fail to reject the null hypothesis and conclude that the model with no independent variables fits the data as well as the linear model (Figure 31.8).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-168"></span>
+<img src="img/jamovi_overall_regression_output.png" alt="An output table is shown with a single row and columns for R squared, F, df1, df2, and p." width="100%" />
+<p class="caption">
+Figure 31.8: Jamovi output table for a simple linear regression in which latitude is an indepdnent variable and fig fruit volume is a dependent variable.
+</p>
+</div>
+<p>Figure 31.8 reports the <span class="math inline">\(R^{2}\)</span> value along with with <span class="math inline">\(F\)</span> statistic, degrees of freedom, and the resulting p-value for the overall model.
+We can also see a table of model coefficients, the intercept (<span class="math inline">\(b_{0}\)</span>) and slope (<span class="math inline">\(b_{1}\)</span>) associated with latitude (Figure 31.9).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-169"></span>
+<img src="img/jamovi_overall_regression_coefficients.png" alt="An output table is shown with a 2 rows and columns for Predictor, Estimate, SE, t, and p." width="100%" />
+<p class="caption">
+Figure 31.9: Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.
+</p>
+</div>
+<p>From the Jamovi output shown in Figure 31.9, we can see that the intercept is significant (<span class="math inline">\(P &lt; 0.05\)</span>), so we reject the null hypothesis that <span class="math inline">\(b_{0} = 0\)</span>.
+Fruit volume appears to decrease with increasing latitude (<span class="math inline">\(b_{1} = -65.26\)</span>), but this decrease is not significant (<span class="math inline">\(P &gt; 0.05\)</span>), so we do not reject the null hypothesis that <span class="math inline">\(b_{1} = 0\)</span>.
+We therefore conclude that there is no evidence that fig fruit volume changes with latitude.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2 hasAnchor" number="31.8">
+<h2><span class="header-section-number">31.8</span> Conclusion<a href="Chapter_31.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are several new concepts introduced in this chapter with simple linear regression.
+It is important to understand the intercept, slope, and residuals both visually and in terms of the regression equation.
+It is also important to be able to interpret the coefficient of determination (<span class="math inline">\(R^{2}\)</span>), and to understand the hypotheses that simple linear regression can test and the assumptions underlying these tests.
+In the next chapter, we move on to multiple regression, in which regression models include multiple independent variables.</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Box1978" class="csl-entry">
+Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+</div>
+<div id="ref-Duthie2016" class="csl-entry">
+Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in Ficus petiolaris and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em>. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
+</div>
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-Rahman1968" class="csl-entry">
+Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Jamovi2022" class="csl-entry">
+The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="57">
+<li id="fn57"><p>Biologically, a fruit volume of 8458.9 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_31.html#fnref57" class="footnote-back">↩︎</a></p></li>
+<li id="fn58"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_31.html#fnref58" class="footnote-back">↩︎</a></p></li>
+<li id="fn59"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_31.html#fnref59" class="footnote-back">↩︎</a></p></li>
+<li id="fn60"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721718\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1687069\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034649\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_23.html#Chapter_23">Chapter 23</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1687069/1 = 1687069\)</span> and <span class="math inline">\(MS_{model} = 1034649/5 = 206929.8\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1687069 / 206929.8 = 8.152857\)</span>.<a href="Chapter_31.html#fnref60" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Week10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Chapter_32.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/10-Regression.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
