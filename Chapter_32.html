@@ -580,7 +580,7 @@ In the simple linear model, the p-value was significant (P = 0.0142).
 But in the multiple regression model, it is not significant (P = 0.1532).</p>
 <p>Third, and perhaps most strikingly, the prediction and significance of latitude has changed completely.
 In the simple linear regression model from <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>, fruit volume decreased with latitude (<span class="math inline">\(b_{1} = -242.68\)</span>), and this decrease was statistically significant (<span class="math inline">\(P = 0.0356\)</span>).
-Now the multiple regression output is telling us that, if anything, fruit volume appears to <em>increase</em> with latitude (<span class="math inline">\(b_{1} = 5.59\)</span>), although this is not statistically significant (<span class="math inline">\(P &gt; 0.9415\)</span>).
+Now the multiple regression output is telling us that, if anything, fruit volume appears to <em>increase</em> with latitude (<span class="math inline">\(b_{1} = 5.59\)</span>), although this is not statistically significant (<span class="math inline">\(P = 0.9415\)</span>).
 What is going on here?
 This result illustrates the context dependence of partial regression coefficients in the multiple regression model.
 In other words, although fruit volume appeared to significantly decrease with increasing latitude in the simple regression model of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>, this is no longer the case once we account for the altitude from which the fruit was collected.
@@ -595,7 +595,7 @@ Figure 32.2 shows what this model output looks like reported by Jamovi <span cla
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-173"></span>
 <img src="img/jamovi_overall_multiple_regression_output.png" alt="An output table is shown with a single row and columns for R squared, Adusted R squared, F, df1, df2, and p." width="100%" />
 <p class="caption">
-Figure 32.2: Jamovi output table for a multiple linear regression in which latitude and altitude indepdnent variables and fig fruit volume is a dependent variable.
+Figure 32.2: Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.
 </p>
 </div>
 <p>As with the simple linear regression output from <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>, the overall model test output table includes columns for <span class="math inline">\(R^{2}\)</span>, F, degrees of freedom, and a p-value for the overall model.
@@ -614,7 +614,7 @@ To help account for this spurious improvement of fit, we can use an adjusted R s
 The <span class="math inline">\(R^{2}_{adj}\)</span> takes into account the <span class="math inline">\(R^{2}\)</span>, the sample size (<span class="math inline">\(N\)</span>), and the number of independent variables (<span class="math inline">\(k\)</span>),</p>
 <p><span class="math display">\[R^{2}_{adj} = 1 - \left(1 - R^{2}\right)\left(\frac{N - 1}{N - k - 1}\right).\]</span></p>
 <p>As <span class="math inline">\(k\)</span> increases, the fraction above <span class="math inline">\((N-1)/(N-k-1)\)</span> gets bigger.
-And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}\)</span> decreases.
+And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}_{adj}\)</span> decreases.
 Consequently, more independent variables (k) cause a decrease in the adjusted R-squared value.
 This attempts to account for the inevitable tendency of <span class="math inline">\(R^{2}\)</span> to increase with <span class="math inline">\(k\)</span>.</p>
 <!--- Maybe something about multiple regression assumptions? --->
