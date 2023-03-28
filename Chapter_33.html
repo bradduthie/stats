@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-03-27" />
+<meta name="date" content="2023-03-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -404,9 +404,9 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-soil-depth"><i class="fa fa-check"></i><b>33.1</b> Predicting pyrogenic carbon from soil depth</a></li>
 <li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-fire-frequency"><i class="fa fa-check"></i><b>33.2</b> Predicting pyrogenic carbon from fire frequency</a></li>
-<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#multiple-regression-dept-and-fire-frequency"><i class="fa fa-check"></i><b>33.3</b> Multiple regression dept and fire frequency</a></li>
+<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#multiple-regression-depth-and-fire-frequency"><i class="fa fa-check"></i><b>33.3</b> Multiple regression depth and fire frequency</a></li>
 <li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#large-multiple-regression"><i class="fa fa-check"></i><b>33.4</b> Large multiple regression</a></li>
-<li class="chapter" data-level="33.5" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-temperature-from-fire-frequencing"><i class="fa fa-check"></i><b>33.5</b> Predicting temperature from fire frequencing</a></li>
+<li class="chapter" data-level="33.5" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-temperature-from-fire-frequency"><i class="fa fa-check"></i><b>33.5</b> Predicting temperature from fire frequency</a></li>
 </ul></li>
 <li class="part"><span><b>XI Randomisation approaches</b></span></li>
 <li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
@@ -655,8 +655,8 @@ In other words, where would the predicted and residual values be located on the 
 
 </code></pre>
 </div>
-<div id="multiple-regression-dept-and-fire-frequency" class="section level2 hasAnchor" number="33.3">
-<h2><span class="header-section-number">33.3</span> Multiple regression dept and fire frequency<a href="Chapter_33.html#multiple-regression-dept-and-fire-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="multiple-regression-depth-and-fire-frequency" class="section level2 hasAnchor" number="33.3">
+<h2><span class="header-section-number">33.3</span> Multiple regression depth and fire frequency<a href="Chapter_33.html#multiple-regression-depth-and-fire-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this exercise, we will run a multiple regression to predict pyrogenic carbon (PyC) from fire frequency (fire_freq) and depth.
 Write down what the independent and dependent variable(s) are for this regression.</p>
 <p>Independent: ___________________</p>
@@ -681,7 +681,7 @@ Which one is most appropriate to use for interpreting the multiple regression?</
 
 
 </code></pre>
-<p>What is the null hypothesis of this tested with the F value and the P value shown in the Model Fit Measures table?</p>
+<p>What is the null hypothesis tested with the F value and the P value shown in the Model Fit Measures table?</p>
 <p><span class="math inline">\(H_{0}\)</span>: ____________________</p>
 <p>Based on the Overall Model Test output, should you reject or not reject <span class="math inline">\(H_{0}\)</span>?</p>
 <pre><code>
@@ -706,7 +706,7 @@ Based on what you know about the difference between simple linear regression and
 </div>
 <div id="large-multiple-regression" class="section level2 hasAnchor" number="33.4">
 <h2><span class="header-section-number">33.4</span> Large multiple regression<a href="Chapter_33.html#large-multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that as scientists that we hypothesise that soil depth, fire frequency, and soil pH will all affect pyrogenic carbon storage.
+<p>Suppose that as scientists we hypothesise that soil depth, fire frequency, and soil pH will all affect pyrogenic carbon storage.
 Run a multiple regression model with soil depth, fire frequency, and soil pH all as independent variables and pyrogenic carbon as a dependent variable.
 Fill in the Model Coefficient output in Table 33.1.</p>
 <table>
@@ -754,7 +754,7 @@ Fill in the Model Coefficient output in Table 33.1.</p>
 <p>From the Model Fit Measures table, what is the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> of this model?</p>
 <p><span class="math inline">\(R^{2}\)</span>: _______________</p>
 <p>Adjusted <span class="math inline">\(R^{2}\)</span>: ______________</p>
-<p>Compare these value to the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> from the multiple regression in the previous exercise (i.e., the one without pH as an independent variable).
+<p>Compare these values to the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> from the multiple regression in the previous exercise (i.e., the one without pH as an independent variable).
 Is the <span class="math inline">\(R^{2}\)</span> value of this model higher or lower than the multiple regression model without pH?</p>
 <pre><code>
 </code></pre>
@@ -775,8 +775,8 @@ Is the <span class="math inline">\(R^{2}\)</span> value of this model higher or 
 
 </code></pre>
 </div>
-<div id="predicting-temperature-from-fire-frequencing" class="section level2 hasAnchor" number="33.5">
-<h2><span class="header-section-number">33.5</span> Predicting temperature from fire frequencing<a href="Chapter_33.html#predicting-temperature-from-fire-frequencing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="predicting-temperature-from-fire-frequency" class="section level2 hasAnchor" number="33.5">
+<h2><span class="header-section-number">33.5</span> Predicting temperature from fire frequency<a href="Chapter_33.html#predicting-temperature-from-fire-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this last brief exercise, suppose that we wanted to predict temperature (tempr) from fire frequency (fire_freq).
 Run some checks of the assumptions underlying linear regression (see <a href="Chapter_31.html#regression-assumptions">Chapter 31.6</a>).
 What assumption(s) appear as though they might be violated for this simple regression?
