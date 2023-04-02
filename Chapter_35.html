@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 31 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 35 Practical. Using R | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 31 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 35 Practical. Using R | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 31 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 35 Practical. Using R | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Week10.html"/>
-<link rel="next" href="Chapter_32.html"/>
+<link rel="prev" href="Chapter_34.html"/>
+<link rel="next" href="Week12.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -471,386 +471,365 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Chapter_31" class="section level1 hasAnchor" number="31">
-<h1><span class="header-section-number">Chapter 31</span> Simple linear regression<a href="Chapter_31.html#Chapter_31" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Linear regression focuses on the association between 2 or more quantitative variables.
-In the case of simple linear regression, which is the focus of this chapter, there are only 2 variables to consider.
-At first, this might sound similar to correlation, which was introduced in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>.
-Simple linear regression and correlation are indeed similar, both conceptually and mathematically, and the two are frequently confused.
-Both methods focus on 2 quantitative variables, but the general aim of regression is different from correlation.
-The aim of correlation is to describe how the variance of one variable is associated with the variance of another variable.
-In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-But there is no attempt to predict what the value of one variable will be based on the other.</p>
-<p>Linear regression, in contrast to correlation, focuses on prediction.
-The aim is to predict the value of one quantitative variable Y given the value of another quantitative variable X.
-In other words, regression focuses on an association of dependence in which the value of Y depends on the value of X <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>.
-The Y variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-The X variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-Unlike correlation, the distinction between the two variable types matters because the aim is to understand how a change in the independent variable will affect the dependent variable.
-For example, if we increase X by 1, how much will Y change?</p>
-<div id="visual-interpretation-of-regression" class="section level2 hasAnchor" number="31.1">
-<h2><span class="header-section-number">31.1</span> Visual interpretation of regression<a href="Chapter_31.html#visual-interpretation-of-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A visual example using a scatterplot can illustrate one way to think about regression.
-Suppose that we have sampled fig fruits from various latitudes (Figure 31.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-160"></span>
-<img src="img/FigTree2.jpg" alt="Two panels with green fig fruits are shown on branches with fig wasps on the surface of them, and a panel to the right shows a man on a rock reaching into the crown of a fig tree with a stick." width="100%" />
+<div id="Chapter_35" class="section level1 hasAnchor" number="35">
+<h1><span class="header-section-number">Chapter 35</span> <em>Practical</em>. Using R<a href="Chapter_35.html#Chapter_35" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Throughout this book, we have used Jamovi for statistical analysis.
+Jamovi is excellent software for running simple statistical analyses, but it has its limitations.
+Jamovi is built upon the programming language R, which is much more powerful and versatile in comparison.
+The R programming langauge is now widely used among scientists for data anslysis.
+It can be used to analyse and plot data, run computer simulations, or even write slides, papers, or books (this book, including all interactive applications, were written using R).
+The R programming language is completely free and open source, as is the popular <a href="https://posit.co/downloads/">Rstudio</a> software for using it.
+The R programming language specialises in statistical computing, which is part of the reason for its popularity among scientists.</p>
+<p>Another reason for the popularity of R is its versatility, and the ease with which new techniques can be shared.
+Imagine that you develop a new method for analysing data.
+If you want other researchers to be able to use your method in their research, then you could write your own software from scratch for them to install and use.
+But doing this would be very time consuming, and a lot of that time would likely be spent writing the graphical user interface and making sure that your program worked across platforms (e.g., on Windows and Mac).
+Worse, once written, there would be no easy way to make your program work with other statistical software should you need to integrate different analyses or visualisation tools (e.g., plotting data).
+To avoid all of this, you could instead just present your new method for data analysis and let other researchers write their own code for implementing it.
+But not all researchers will have the time or expertise to write their own code.</p>
+<p>Instead, R allows researchers to write new tools for data analysis using simple coding scripts.
+These scripts are organised into R packages, which can be uploaded by authors to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN), then downloaded by users with a single command in R.
+This way, there is no need for completely different software to be used for different analyses; all analyses can be written and run in R.</p>
+<p>The downside to all of this is that learning R can be a bit daunting at first.
+Running analyses is not done by pointing and clicking on icons as in Jamovi.
+You need to use code.
+This practical will start with the very basics and work up to some simple data analyses.
+Rather than questions to answer, this practical has tasks for you to try to complete in R.</p>
+<div id="getting-used-to-the-r-interface" class="section level2 hasAnchor" number="35.1">
+<h2><span class="header-section-number">35.1</span> Getting used to the R interface<a href="Chapter_35.html#getting-used-to-the-r-interface" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two ways that you can use R.
+The first way is to download R and Rstudio on your own computer.
+Both R and Rstudio are free to download and use, and work on any major operating system (Windows, Mac, and Linux).
+To download R, go to <a href="https://cran.rstudio.com/">the Comprehensive R Archive Network</a> and follow the instructions for your operating system (OS).
+To download Rstudio, go to <a href="https://posit.co/download/rstudio-desktop/#download">this page on the Rstudio website</a> and choose the appropriate download for your operating system.</p>
+<p>If you cannot or do not want to download R and Rstudio on your own computer, then you can still use both by going to the <a href="https://rstudio.cloud/">Rstudio Cloud</a> and running Rstudio from a browser such as Firefox or Chrome.
+You will need to click the green “Get Started” button and sign up for a free account.
+When you open Rstudio either on your own computer or the cloud, you will see several windows open, including a console.
+The console will look something like the below.</p>
+<pre><code>R version 4.2.2 Patched (2022-11-10 r83330) -- &quot;Innocent and Trusting&quot;
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type &#39;license()&#39; or &#39;licence()&#39; for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type &#39;contributors()&#39; for more information and
+&#39;citation()&#39; on how to cite R or R packages in publications.
+
+Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or
+&#39;help.start()&#39; for an HTML browser interface to help.
+Type &#39;q()&#39; to quit R.
+
+&gt; </code></pre>
+<p>If you click to the right of the greater than sign <code>&gt;</code>, you can start using R right in the console.
+You can use R as a standard calculator here to get a feel for the console.
+Try typing something like the below (semi-colons are not actually necessary).
+For example, you could add 2 + 5.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="Chapter_35.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">5</span>;  </span></code></pre></div>
+<pre><code>[1] 7</code></pre>
+<p>Try this yourself.</p>
+<blockquote>
+<p><strong>Task 1: Add 2 numbers together in R</strong></p>
+</blockquote>
+<p>You can also multiply in R.</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="Chapter_35.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="sc">*</span> <span class="dv">4</span>;  </span></code></pre></div>
+<pre><code>[1] 16</code></pre>
+<p>The caret key <code>^</code> is used for exponents</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="Chapter_35.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">^</span><span class="dv">2</span>;  </span></code></pre></div>
+<pre><code>[1] 25</code></pre>
+<p>R will use the correct order of operations (see <a href="Chapter_1.html#order-of-operations">Chapter 1.3</a>) when doing mathematical calculations.
+For example, it will know to calculate the exponent before multiplying, and to multiply before adding.</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="Chapter_35.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">5</span><span class="sc">^</span><span class="dv">2</span>;  </span></code></pre></div>
+<pre><code>[1] 102</code></pre>
+<p>Following the correct order of operations, <span class="math inline">\(5^{2} = 25\)</span>, which is then multiplied by 4 to get <span class="math inline">\(4 \times 25 = 100\)</span>, and we add 2 to get <span class="math inline">\(100 + 2 = 102\)</span>.
+We can, however, use parentheses to specify a different order of operations.</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="Chapter_35.html#cb129-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span>) <span class="sc">*</span> <span class="dv">5</span><span class="sc">^</span><span class="dv">2</span>;  </span></code></pre></div>
+<pre><code>[1] 150</code></pre>
+<p>Now R will calculate <span class="math inline">\(2 + 4 = 6\)</span> and multiply the 6 by 25 to get an answer of 150.
+The R console very well as a calculator.
+Instead of punching buttons into a hand calculator or mobile phone, an entire equation can be written and placed into the console.
+This makes mistakes less likely.
+For example, in <a href="Chapter_1.html#order-of-operations">Chapter 1.3</a>, the following equation was presented,</p>
+<p><span class="math display">\[x = 3^{2} + 2(1 + 3)^{2} - 6 \times 0.\]</span></p>
+<p>To solve this in R, we just need to type the full equation in the console.</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="Chapter_35.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">3</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">6</span> <span class="sc">*</span> <span class="dv">0</span>;</span></code></pre></div>
+<pre><code>[1] 41</code></pre>
+<p>We get the correct answer of 41.
+Note that there needed to be an asterisk (<code>*</code>) to indicate multiplication between the 2 and the left parentheses.
+This is because parentheses specify specific functions in R.
+We will introduce functions next, but first, try the following task.</p>
+<blockquote>
+<p><strong>Task 2: Use the console to calculate <span class="math inline">\(x = \frac{2^2 + 1}{3^2 + 2}\)</span> (hint, you need to put the top and bottom of the fraction in parentheses, e.g., <code>(2^2 + 1)</code> for the numerator, and use the forward slash <code>/</code> for division).</strong></p>
+</blockquote>
+<p>You should get an answer of <code>(2^2 + 1)/(3^2 +2)</code>.</p>
+<p>As previously mentioned, parentheses specify functions in R.
+Functions have specific names such as <code>sqrt</code>, which calculates the square root of anything within the parentheses <code>sqrt()</code>.
+If, for example, you wanted to find the square root of some number, you could use the <code>sqrt</code> function below.</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="Chapter_35.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">256</span>);</span></code></pre></div>
+<pre><code>[1] 16</code></pre>
+<p>The console returns the correct answer 16.
+Similar functions exist for logarithms (<code>log</code>) and trigonometric functions (e.g., <code>sin</code>, <code>cos</code>).
+The parentheses after the word indicate that some function is being called in R.
+Try to use the square root function to solve for <span class="math inline">\(x\)</span> in another equation.</p>
+<blockquote>
+<p><strong>Task 3: Use the console to calculate <span class="math inline">\(\sqrt{3 + 4^2}\)</span>.</strong></p>
+</blockquote>
+<p>You should get an answer of 4.3588989.</p>
+<p>If you type something into the console incorrectly, you do not need to retype it entirely.
+You can use the up arrow to scroll through the history of console input.
+Try doing that now.</p>
+<blockquote>
+<p><strong>Task 4: Use the up arrow to find your previous calculation for <span class="math inline">\(\sqrt{3 + 4^2}\)</span>, then change this slightly to calculate <span class="math inline">\(\sqrt{3 + 4^3}\)</span>.</strong></p>
+</blockquote>
+<p>You should get an answer of 8.1853528.</p>
+<p>Functions do not need to be mathematical like the <code>sqrt</code> function.
+For example, the <code>getwd</code> function can be used to let you know what directory (i.e., folder) you are working in.</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="Chapter_35.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>();</span></code></pre></div>
+<pre><code>[1] &quot;/home/brad/Dropbox/teaching/modules/SCIU4T4/statistical_techniques&quot;</code></pre>
+<p>If we were to save or load a file within R, this is the location on the computer from which R would try to load.
+We could also use the <code>setwd</code> function to set a new working directory (type the working directory in quotes inside the parentheses: <code>setwd("folder/subfolder/etc")</code>).
+You can also set the working directory in Rstudio by going to the toolbar and clicking ‘Session’ and selecting ‘Set Working Directory’.</p>
+</div>
+<div id="assigning-variables-in-the-r-console" class="section level2 hasAnchor" number="35.2">
+<h2><span class="header-section-number">35.2</span> Assigning variables in the R console<a href="Chapter_35.html#assigning-variables-in-the-r-console" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In R, we can also assign values to variables using the characters <code>&lt;-</code> to make an arrow.
+For example, we might want to set <code>var_1</code> equal 10.</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="Chapter_35.html#cb137-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="ot">&lt;-</span> <span class="dv">10</span>;</span></code></pre></div>
+<p>We can now use <code>var_1</code> in the console.
+For example, since <code>var_1</code> now equals 10, if we multiply <code>var_1</code> by 5, R calculates <span class="math inline">\(10 \times 5 = 50\)</span>.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="Chapter_35.html#cb138-1" aria-hidden="true" tabindex="-1"></a>var_1 <span class="sc">*</span> <span class="dv">5</span>; <span class="co"># Multiplying the variable by 5</span></span></code></pre></div>
+<pre><code>[1] 50</code></pre>
+<p>The correct value of 50 is returned because <code>var_1</code> equals 10. Also note the comment left after the <code>#</code> key.
+In R, anything that comes after <code>#</code> on a line is a comment that R ignores.
+Comments are ways of explaining in plain words what the code is doing, or drawing attention to important notes about the code.</p>
+<blockquote>
+<p><strong>Task 5: Assign a new variable to a value of 4 (call it anything you want), then multiply the new variable by itself.</strong></p>
+</blockquote>
+<p>For Task 5, you should get an output of 16.</p>
+<p>When we assign something to a variable like <code>var_1</code>, we are not limited to a single number.
+Variables in R can be much more complex.
+For example, we can assign a new variable <code>vector_1</code> to an ordered set of 6 different numbers using the <code>c</code> function.
+The <code>c</code> function combines values together.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="Chapter_35.html#cb140-1" aria-hidden="true" tabindex="-1"></a>vector_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>); <span class="co"># Six numbers</span></span>
+<span id="cb140-2"><a href="Chapter_35.html#cb140-2" aria-hidden="true" tabindex="-1"></a>vector_1;      <span class="co"># Prints out the vector</span></span></code></pre></div>
+<pre><code>[1]  5  1  3  5  7 11</code></pre>
+<p>Doing this makes it possible to calculate for all of the values in <code>vector_1</code> at the same time.
+We might, for example, want to multiply all of the numbers by 10.</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="Chapter_35.html#cb142-1" aria-hidden="true" tabindex="-1"></a>vector_1 <span class="sc">*</span> <span class="dv">10</span></span></code></pre></div>
+<pre><code>[1]  50  10  30  50  70 110</code></pre>
+<p>Variables also do not necessarily need to be numbers.
+We might assign a new variable <code>phrase_1</code> to a string of letters.
+When doing this, the letters need to be enclosed in quotation marks.</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="Chapter_35.html#cb144-1" aria-hidden="true" tabindex="-1"></a>phrase_1 <span class="ot">&lt;-</span> <span class="st">&quot;string of words&quot;</span>;</span>
+<span id="cb144-2"><a href="Chapter_35.html#cb144-2" aria-hidden="true" tabindex="-1"></a>phrase_1;</span></code></pre></div>
+<pre><code>[1] &quot;string of words&quot;</code></pre>
+<p>We can even combine numbers, vectors, and words into a single object as a list using the <code>list</code> function.</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="Chapter_35.html#cb146-1" aria-hidden="true" tabindex="-1"></a>object_1 <span class="ot">&lt;-</span> <span class="fu">list</span>(var_1, vector_1, phrase_1);</span>
+<span id="cb146-2"><a href="Chapter_35.html#cb146-2" aria-hidden="true" tabindex="-1"></a>object_1;</span></code></pre></div>
+<pre><code>[[1]]
+[1] 10
+
+[[2]]
+[1]  5  1  3  5  7 11
+
+[[3]]
+[1] &quot;string of words&quot;</code></pre>
+<p>There are far too many possibilities to introduce everything about how R works.
+The best way to get started is to play around and see what works and what does not.
+You will not break anything.
+Error messages are good because they can help you learn how R works.</p>
+<blockquote>
+<p><strong>Task 6: Use the R console until you find a new error message.</strong></p>
+</blockquote>
+<p>Try something new in the R console.
+Keep going until you get an error message that you have not yet seen, then move on to the next exercise.</p>
+</div>
+<div id="some-descriptive-statistics" class="section level2 hasAnchor" number="35.3">
+<h2><span class="header-section-number">35.3</span> Some descriptive statistics<a href="Chapter_35.html#some-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now we can get started with some statistical analyses.
+In <a href="#Chapter_37">Chapter 37</a> we will learn how to do some familiar analyses with R scripts and data uploaded from CSV files, but for now, we will just type our data directly into the console.
+We can use the data from <a href="Chapter_34.html#randomisation-for-hypothesis-testing">Chapter 34.4</a> as an example.
+The code below reads in 2 different variables, <code>SO1</code> and <code>SO2</code>.
+The numbers are the same ovipositor lengths from the histograms in Figure 34.2 of <a href="Chapter_34.html#randomisation-for-hypothesis-testing">Chapter 34.4</a>.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="Chapter_35.html#cb148-1" aria-hidden="true" tabindex="-1"></a>SO1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.256</span>, <span class="fl">3.133</span>, <span class="fl">3.071</span>, <span class="fl">2.299</span>, <span class="fl">2.995</span>, <span class="fl">2.929</span>, <span class="fl">3.291</span>, <span class="fl">2.658</span>, <span class="fl">3.406</span>, </span>
+<span id="cb148-2"><a href="Chapter_35.html#cb148-2" aria-hidden="true" tabindex="-1"></a>         <span class="fl">2.976</span>, <span class="fl">2.817</span>, <span class="fl">3.133</span>, <span class="fl">3.000</span>, <span class="fl">3.027</span>, <span class="fl">3.178</span>, <span class="fl">3.133</span>, <span class="fl">3.210</span>);</span>
+<span id="cb148-3"><a href="Chapter_35.html#cb148-3" aria-hidden="true" tabindex="-1"></a>SO2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">3.014</span>, <span class="fl">2.790</span>, <span class="fl">2.985</span>, <span class="fl">2.911</span>, <span class="fl">2.914</span>, <span class="fl">2.724</span>, <span class="fl">2.967</span>, <span class="fl">2.745</span>, <span class="fl">2.973</span>, </span>
+<span id="cb148-4"><a href="Chapter_35.html#cb148-4" aria-hidden="true" tabindex="-1"></a>         <span class="fl">2.560</span>, <span class="fl">2.837</span>, <span class="fl">2.883</span>, <span class="fl">2.668</span>, <span class="fl">3.063</span>, <span class="fl">2.639</span>);</span></code></pre></div>
+<p>Copy and paste the code above into the R console.
+You should now have 2 new variables, <code>SO1</code> and <code>SO2</code></p>
+<blockquote>
+<p><strong>Task 7: Type <code>SO1</code> into the R console to print the ovipositor lengths for species SO1, then do the same for <code>SO2</code></strong>.</p>
+</blockquote>
+<p>We can replicate the histogram from Figure 34.2A in <a href="Chapter_34.html#randomisation-for-hypothesis-testing">Chapter 34.4</a> with the following code.</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="Chapter_35.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> SO1, <span class="at">xlab =</span> <span class="st">&quot;SO1 ovipositor length&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>);</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-209"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-209-1.png" alt="A histogram SO1 ovipositor lengths that is roughly normally distributed" width="672" />
 <p class="caption">
-Figure 31.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.
+Figure 35.1: Ovipositor length distributions for an unnamed species of fig wasps SO1.
 </p>
 </div>
-<p>A sample of fig fruits from different latitudes is shown in Table 31.1.</p>
+<p>The bin widths are not the same as Figure 34.2A because there are other options within <code>hist</code> that have not been specified.
+Within <code>hist</code> and other functions, these options such as <code>x</code>, <code>xlab</code>, and <code>main</code> are called <em>arguments</em>.
+The word ‘argument’ in this case has nothing to do with a disagreement or logical reasoning.
+In this case, it just refers to information that is passed in a function.</p>
+<blockquote>
+<p><strong>Task 8: Make a histogram of SO2 ovipositor lengths. Try using the argument <code>col = "blue"</code> in the <code>hist</code> function to make the histogram bars blue.</strong></p>
+</blockquote>
+<p>No we can try collecting some summary statistics for SO1 and SO2.
+In the lab practical from <a href="Chapter_13.html#Chapter_13">Chapter 13</a>, we used Jamovi to calculate summary statistics.
+Table 35.1 below shows how those same summary statistics can be calculated using functions in R, and the output of each function for SO1.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-161">Table 31.1: </span>Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-210">Table 35.1: </span>R functions and output for summary statistics applied to a variable (SO1) of ovipositor lengths in an unnamed species of nonpollinating fig wasp.</caption>
+<thead>
+<tr class="header">
+<th align="left">Statistic</th>
+<th align="left">Function</th>
+<th align="left">Output</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td align="left">Latitude</td>
-<td align="right">23.7</td>
-<td align="right">24.0</td>
-<td align="right">27.6</td>
-<td align="right">27.2</td>
-<td align="right">29.3</td>
-<td align="right">28.2</td>
-<td align="right">28.3</td>
+<td align="left">N</td>
+<td align="left"><code>length(SO1)</code></td>
+<td align="left">17</td>
 </tr>
 <tr class="even">
-<td align="left">Volume</td>
-<td align="right">2399.0</td>
-<td align="right">2941.7</td>
-<td align="right">2167.2</td>
-<td align="right">2051.3</td>
-<td align="right">1686.2</td>
-<td align="right">937.3</td>
-<td align="right">1328.2</td>
+<td align="left">Std. deviation</td>
+<td align="left"><code>sd(SO1)</code></td>
+<td align="left">0.260018</td>
+</tr>
+<tr class="odd">
+<td align="left">Variance</td>
+<td align="left"><code>var(SO1)</code></td>
+<td align="left">0.067609</td>
+</tr>
+<tr class="even">
+<td align="left">Minimum</td>
+<td align="left"><code>min(SO1)</code></td>
+<td align="left">2.299</td>
+</tr>
+<tr class="odd">
+<td align="left">Maximum</td>
+<td align="left"><code>max(SO1)</code></td>
+<td align="left">3.406</td>
+</tr>
+<tr class="even">
+<td align="left">Range</td>
+<td align="left"><code>range(SO1)</code></td>
+<td align="left">2.299, 3.406</td>
+</tr>
+<tr class="odd">
+<td align="left">IQR</td>
+<td align="left"><code>IQR(SO1)</code></td>
+<td align="left">0.202</td>
+</tr>
+<tr class="even">
+<td align="left">Mean</td>
+<td align="left"><code>mean(SO1)</code></td>
+<td align="left">3.030118</td>
+</tr>
+<tr class="odd">
+<td align="left">Median</td>
+<td align="left"><code>median(SO1)</code></td>
+<td align="left">3.071</td>
 </tr>
 </tbody>
 </table>
-<p>How much does fruit volume change with latitude?
-To start answering this question, we can plot the relationship between the 2 variables.
-We want to predict fruit volume from latitude, meaning that fruit volume <em>depends on</em> latitude.
-Fruit volume is therefore the dependent variable, and we should plot it on the y-axis.
-Latitude is our independent variable, and we should plot it on the x-axis (Figure 31.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-162"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-162-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; a thin dotted line is horizontal across the plot." width="672" />
-<p class="caption">
-Figure 31.2: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.
-</p>
-</div>
-<p>In Figure 31.2, each of the 7 points is a different fig fruit.
-The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in <span class="math inline">\(mm^{3}\)</span>.
-The thin dotted line shows the mean fruit volume for the 7 fruits, <span class="math inline">\(\bar{y} =\)</span> 1930.1.
-The thick black line trending downwards in Figure 31.2 is the regression line, also called the line of best fit.
-How this line is calculated will be explained later, but for now there are 2 important concepts to takeaway from Figure 31.2.
-First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
-For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
-At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 <span class="math inline">\(mm^{3}\)</span>.
-This leads to the second important concept to takeaway from Figure 31.2.
-In the absence of any other information (including latitude), our best guess of what any given fruit’s volume will be is just the mean (<span class="math inline">\(\bar{y} =\)</span> 1930.1).
-A key aim of regression is to test if the regression line can do a significantly better job of predicting what fruit volume will be.
-In other words, is the solid line of Figure 31.2 really doing that much better than the horizontal dotted line?
-Before answering this question, a few new terms are needed.</p>
-</div>
-<div id="intercepts-slopes-and-residuals" class="section level2 hasAnchor" number="31.2">
-<h2><span class="header-section-number">31.2</span> Intercepts, slopes, and residuals<a href="Chapter_31.html#intercepts-slopes-and-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Given the latitude of each fruit (i.e., each point in Figure 31.2), we can predict its volume from 3 numbers.
-These 3 numbers are the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
-The intercept is the point on the regression line where <span class="math inline">\(x = 0\)</span>, i.e., where latitude is 0 in the example of fig fruit volumes.
-This point is not actually visible in Figure 31.2 because the lowest latitude on the x-axis is 23.
-At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 <span class="math inline">\(mm^{3}\)</span>.
-If we were to extend this regression line all the way back to a latitude of 0, then we would predict a fruit volume of 8458.3.
-This is our intercept<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a> in Figure 31.2.</p>
-<p>The slope is the direction and steepness of the regression line.
-It describes how much our dependent variable changes if we increase the independent variable by 1.
-For example, how do we predict fruit volume to change if we increase latitude by 1 degree?
-From the regression line in Figure 31.2, whenever latitude increases by 1, we predict a decrease in fruit volume of 242.7.
-Consequently, the slope is -242.7.
-Since we are predicting using a straight line, this decrease is the same at every latitude.
-This means that we can use the slope to predict how much our dependent variable will change given any amount of units of change in our independent variable.
-For example, we can predict how fruit volume will change for any amount of change in degrees latitude.
-If latitude increases by 2 degrees, then we would predict a 2 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> -485.4 <span class="math inline">\(mm^{3}\)</span> change in fruit volume (i.e., a decrease of 485.4).
-If latitude decreases by 3 degrees, then we would predict a -3 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> 728.1 <span class="math inline">\(mm^{3}\)</span> change in fruit volume (i.e., an increase of 728.1).</p>
-<p>We can describe the regression line using just the intercept and the slope.
-For the example in Figure 31.2, this means that we can predict fruit volume for any given latitude with just these 2 numbers.
-But prediction almost always comes with some degree of uncertainty.
-For example, if we could perfectly predict fruit volume from latitude, then all of the points in Figure 31.2 would fall exactly on the regression line.
-But this is not the case.
-None of the 7 points in Figure 31.2 fall exactly on the line, so there is some unexplained variation (i.e., some error) in predicting fruit volume from latitude.
-To map each fruit’s latitude to its corresponding volume, we therefore need one more number.
-This number is the <strong>residual</strong>, and it describes how far away a point is from the regression line (Figure 31.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-163"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-163-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit, and one point is highlighted in red." width="672" />
-<p class="caption">
-Figure 31.3: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point, one of which is highlighted in red.
-</p>
-</div>
-<p>The residual of each of the 7 points is shown with a dashed line in Figure 31.3.
-Residual values are positive when they are higher than the value predicted by the regression line, and they are negative when they are lower than the value predicted by the regression line.
-In the example of Figure 31.3, the residual in red indicated by the arrow, at a latitude of 24, is 307.8 because the volume of the fig fruit collected from this latitude deviates from the predicted volume on the regression line by 307.8.
-For the point just to the left where the latitude from which the fruit was sampled is 23.7 degrees, the residual is -307.7.
-For any fig fruit <span class="math inline">\(i\)</span>, we can therefore find its volume using the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual value (<span class="math inline">\(\epsilon_{i}\)</span>).
-Next, we will show how these different values relate to one another mathematically.</p>
-</div>
-<div id="regression-coefficients" class="section level2 hasAnchor" number="31.3">
-<h2><span class="header-section-number">31.3</span> Regression coefficients<a href="Chapter_31.html#regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Simple linear regression predicts the dependent variable (<span class="math inline">\(y\)</span>) from the independent variable (<span class="math inline">\(x\)</span>) using the intercept (<span class="math inline">\(b_{0}\)</span>) and the slope (<span class="math inline">\(b_{1}\)</span>),</p>
-<p><span class="math display">\[y = b_{0} + b_{1}x.\]</span></p>
-<p>The equation for <span class="math inline">\(y\)</span> mathematically describes the regression line in Figures 31.2 and 31.3.
-This gives us the expected value of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>
-In other words, the equation tells us what <span class="math inline">\(y\)</span> will be <em>on average</em> for any given <span class="math inline">\(x\)</span>.
-Sometimes different letters are used to represent the same mathematical relationship, such as <span class="math inline">\(y = a + bx\)</span> or <span class="math inline">\(y = mx + b\)</span>, but the symbols used are not really important<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>.
-Here, <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> are used to make the transition to multiple regression in <a href="Chapter_32.html#Chapter_32">Chapter 32</a> clearer.</p>
-<p>For any specific value of <span class="math inline">\(x_{i}\)</span>, the corresponding <span class="math inline">\(y_{i}\)</span> can be described more generally,</p>
-<p><span class="math display">\[y_{i} = b_{0} + b_{1}x_{i} + \epsilon_{i}.\]</span></p>
-<p>For example, for any fig fruit <span class="math inline">\(i\)</span>, we can find its <em>exact</em> volume (<span class="math inline">\(y_{i}\)</span>) from its latitude (<span class="math inline">\(x_{i}\)</span>) using the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
-We can do this for the residual shown in red and indicated by the arrow in Figure 31.3.
-The latitude at which this fruit was sampled was <span class="math inline">\(x_{i} =\)</span> 24, its volume is <span class="math inline">\(y_{i} =\)</span> 2941.7, and its residual value is 307.8.
-From the previous section, we know that <span class="math inline">\(b_{0} =\)</span> 8458.3 and <span class="math inline">\(b_{1} =\)</span> -242.7.
-If we substitute all of these values,</p>
-<p><span class="math display">\[2941.7 = 8458.3 - 242.68(24) + 307.84.\]</span></p>
-<p>Note that if we remove the residual 307.84, then we get the expected volume for our fig fruit at 24 degrees latitude,</p>
-<p><span class="math display">\[2633.98 = 8458.3 - 242.68(24).\]</span></p>
-<p>Visually, this is where the red dotted line meets the solid black regression line in Figure 31.3.</p>
-<p>This explains the relationship between the independent and dependent variables using the intercept, slope, and residuals.
-But how do we actually define the line of best fit?
-In other words, what makes the regression line in this example better than some other line that we might use instead?
-The next section explains how the regression line is actually calculated.</p>
-</div>
-<div id="regression-line-calculation" class="section level2 hasAnchor" number="31.4">
-<h2><span class="header-section-number">31.4</span> Regression line calculation<a href="Chapter_31.html#regression-line-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The regression line is defined by its relationship to the residual values.
-Figure 31.4 shows the same regression as in Figures 31.2 and 31.3, but with the values of the residuals written next to each point.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-164"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-164-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
-<p class="caption">
-Figure 31.4: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
-</p>
-</div>
-<p>Some of the values are positive, and some are negative.
-An intuitive reason for why the line in Figure 31.4 is the line of best fit is because the positive and negative values exactly balance each other out.
-In other words, the sum of all the residual values in Figure 31.4 is 0,</p>
-<p><span class="math display">\[0 = -307.6 + 307.7 + 194 + 406.9 - 677.3 - 262.2 + 338.5.\]</span></p>
-<p>If we were to move the regression line, then the sum of residuals would no longer be 0.
-There is only 1 line that fits.</p>
-<p>More technically, the line of best fit minimises the sum of squared residuals (<span class="math inline">\(SS_{residual}\)</span>).
-In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,</p>
-<p><span class="math display">\[SS_{residual} = (-307.6)^{2} + (307.7)^2 + ... + (338.5)^{2}.\]</span></p>
-<p>For the regression in Figure 31.4, <span class="math inline">\(SS_{residual} =\)</span> 1034690.
-Any line other than the regression line shown in Figure 31.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span>.
-To get a better intuition for how this works, we can use an <a href="https://bradduthie.shinyapps.io/regr_click/">interactive application</a> in which a random set of points are placed on scatterplot and the intercept and slope are changed until the residual sum of squares is minimised.</p>
+<p>Notice that the <code>range</code> function gives the minimum and maximum of SO1, so we need to subtract the latter from the former to get the actual range.</p>
 <blockquote>
-<p><a href="https://bradduthie.shinyapps.io/regr_click/">Click here</a> for an interactive application that demonstrates how the line of best fit is determined for a simple linear regression.</p>
+<p><strong>Task 9: Calculate the summary statistics in Table 35.1 for SO2.</strong></p>
 </blockquote>
-<p>We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
-The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.</p>
+<p>There is no function for standard error in R.
+We could write a custom function to calculate the standard error, but for now we can just use the formula from <a href="Chapter_12.html#the-standard-error">Chapter 12.6</a> to calculate the standard error of SO1,</p>
+<p><span class="math display">\[SE = \frac{s}{\sqrt{N}}.\]</span></p>
+<p>Since we have the standard deviation (<span class="math inline">\(s\)</span>) and sample size (<span class="math inline">\(N\)</span>) from Table 35.1, we can calculate SE in R,</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="Chapter_35.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(SO1) <span class="sc">/</span> <span class="fu">sqrt</span>( <span class="fu">length</span>(SO1) );</span></code></pre></div>
+<pre><code>[1] 0.06306363</code></pre>
+<p>The code above calculates the standard deviation of SO1 (<code>sd(SO1)</code>), then divides (<code>/</code>) by the square root (<code>sqrt()</code>) of the length of SO1 (<code>length(SO1)</code>).
+This can be difficult to read because <code>length(SO1)</code> is enclosed in <code>sqrt()</code>.
+But we can break this down step by step to make it easier to read by assigning each component to a new variable.</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="Chapter_35.html#cb152-1" aria-hidden="true" tabindex="-1"></a>SO1_SD <span class="ot">&lt;-</span> <span class="fu">sd</span>(SO1);     <span class="co"># Assign the standard deviation</span></span>
+<span id="cb152-2"><a href="Chapter_35.html#cb152-2" aria-hidden="true" tabindex="-1"></a>SO1_N  <span class="ot">&lt;-</span> <span class="fu">length</span>(SO1); <span class="co"># Assign the N</span></span>
+<span id="cb152-3"><a href="Chapter_35.html#cb152-3" aria-hidden="true" tabindex="-1"></a>SO1_SD <span class="sc">/</span> <span class="fu">sqrt</span>(SO1_N);  <span class="co"># Do the calculation for SE</span></span></code></pre></div>
+<pre><code>[1] 0.06306363</code></pre>
+<p>We can do the same for SO2.</p>
+<blockquote>
+<p><strong>Task 10: Calculate the standard error of SO2 ovipositor lengths.</strong></p>
+</blockquote>
+<p>With the standard error now calculated, we can also calculate 95 per cent confidence intervals using the formula from <a href="Chapter_17.html#Chapter_17">Chapter 17</a>, just as we did for SO1 in <a href="Chapter_34.html#bootstrapping">Chapter 34.5</a>,</p>
+<p><span class="math display">\[LCI = 3.03 - \left(2.120 \times \frac{0.26}{\sqrt{17}}\right),\]</span></p>
+<p><span class="math display">\[UCI = 3.03 + \left(2.120 \times \frac{0.26}{\sqrt{17}}\right).\]</span></p>
+<p>Note that 3.03 is the mean from Table 35.1, and <span class="math inline">\(0.26/\sqrt{17}\)</span> is the standard error that we just calculated for SO1.
+The value 2.120 is the t-score associated with df = 17 - 1, i.e., 16 degrees of freedom (see <a href="Chapter_34.html#bootstrapping">Chapter 34.5</a>).
+As in <a href="Chapter_34.html#bootstrapping">Chapter 34.5</a>, we get values of LCI = 2.896 and UCI = 3.164.</p>
+<blockquote>
+<p><strong>Task 10: Calculate 95 per cent confidence intervals for SO2 ovipositor lengths (hint: the appropriate t value for df = 14 is 2.145 instead of 2.120).</strong></p>
+</blockquote>
+<p>In the last exercise, we will attempt to bootstrap these confidence intervals using the method introduced in <a href="Chapter_34.html#bootstrapping">Chapter 34.5</a>.</p>
 </div>
-<div id="coefficient-of-determination" class="section level2 hasAnchor" number="31.5">
-<h2><span class="header-section-number">31.5</span> Coefficient of determination<a href="Chapter_31.html#coefficient-of-determination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We often want to know how well a regression line fits the data.
-In other words, are most of the data near the regression line (indicating a good fit), or are most far away from the regression line?
-How closely the data fit to the regression line is described by the <strong>coefficient of determination</strong> (<span class="math inline">\(R^{2}\)</span>).
-More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression equation<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a>,</p>
-<p><span class="math display">\[R^{2} = 1 - \frac{SS_{residual}}{SS_{total}}.\]</span></p>
-<p>Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model (<span class="math inline">\(SS_{residual}\)</span>) to what the sum of squared residuals would be had we just used the mean value of <span class="math inline">\(y\)</span> (<span class="math inline">\(SS_{total}\)</span>).
-If <span class="math inline">\(SS_{residual}\)</span> is very small compared to <span class="math inline">\(SS_{total}\)</span>, then subtracting <span class="math inline">\(SS_{residual}/SS_{total}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
-This large <span class="math inline">\(R^{2}\)</span> means that the model is doing a good job of explaining variation in the data.
-Figure 31.5 shows some examples of scatterplots with different <span class="math inline">\(R^{2}\)</span> values.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-165"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-165-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with regression lines between x and y variables and a coefficient of determination shown in the upper corner." width="480" />
+<div id="bootstrapping-confidence-intervals" class="section level2 hasAnchor" number="35.4">
+<h2><span class="header-section-number">35.4</span> Bootstrapping confidence intervals<a href="Chapter_35.html#bootstrapping-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Writing resampling and randomisation procedures in R requires some knowledge of coding.
+For now, all that you need to do is copy a pre-defined function into R and use it like any other function.
+The function is called <code>simpleboot</code>.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="Chapter_35.html#cb154-1" aria-hidden="true" tabindex="-1"></a>simpleboot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">replicates =</span> <span class="dv">1000</span>, <span class="at">CIs =</span> <span class="fl">0.95</span>){</span>
+<span id="cb154-2"><a href="Chapter_35.html#cb154-2" aria-hidden="true" tabindex="-1"></a>  alpha <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> CIs;</span>
+<span id="cb154-3"><a href="Chapter_35.html#cb154-3" aria-hidden="true" tabindex="-1"></a>    vals  <span class="ot">&lt;-</span> <span class="cn">NULL</span>;                                                           </span>
+<span id="cb154-4"><a href="Chapter_35.html#cb154-4" aria-hidden="true" tabindex="-1"></a>    i     <span class="ot">&lt;-</span> <span class="dv">0</span>;                                                            </span>
+<span id="cb154-5"><a href="Chapter_35.html#cb154-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span>(i <span class="sc">&lt;</span> replicates){                                                          </span>
+<span id="cb154-6"><a href="Chapter_35.html#cb154-6" aria-hidden="true" tabindex="-1"></a>        boot  <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x =</span> x, <span class="at">size =</span> <span class="fu">length</span>(x), <span class="at">replace =</span> <span class="cn">TRUE</span>);               </span>
+<span id="cb154-7"><a href="Chapter_35.html#cb154-7" aria-hidden="true" tabindex="-1"></a>        strap <span class="ot">&lt;-</span> <span class="fu">mean</span>(boot);                                                  </span>
+<span id="cb154-8"><a href="Chapter_35.html#cb154-8" aria-hidden="true" tabindex="-1"></a>        vals  <span class="ot">&lt;-</span> <span class="fu">c</span>(vals, strap);                                             </span>
+<span id="cb154-9"><a href="Chapter_35.html#cb154-9" aria-hidden="true" tabindex="-1"></a>        i     <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span>;                                                       </span>
+<span id="cb154-10"><a href="Chapter_35.html#cb154-10" aria-hidden="true" tabindex="-1"></a>    }                                                                      </span>
+<span id="cb154-11"><a href="Chapter_35.html#cb154-11" aria-hidden="true" tabindex="-1"></a>    vals   <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="at">x =</span> vals, <span class="at">decreasing =</span> <span class="cn">FALSE</span>);                                 </span>
+<span id="cb154-12"><a href="Chapter_35.html#cb154-12" aria-hidden="true" tabindex="-1"></a>    lowCI  <span class="ot">&lt;-</span> vals[<span class="fu">round</span>((alpha<span class="sc">*</span><span class="fl">0.5</span>)<span class="sc">*</span>replicates)];                              </span>
+<span id="cb154-13"><a href="Chapter_35.html#cb154-13" aria-hidden="true" tabindex="-1"></a>    highCI <span class="ot">&lt;-</span> vals[<span class="fu">round</span>((<span class="dv">1</span><span class="sc">-</span>(alpha<span class="sc">*</span><span class="fl">0.5</span>))<span class="sc">*</span>replicates)];                          </span>
+<span id="cb154-14"><a href="Chapter_35.html#cb154-14" aria-hidden="true" tabindex="-1"></a>    confid <span class="ot">&lt;-</span> <span class="fu">c</span>(lowCI, highCI);                                               </span>
+<span id="cb154-15"><a href="Chapter_35.html#cb154-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(vals, confid));                                                             </span>
+<span id="cb154-16"><a href="Chapter_35.html#cb154-16" aria-hidden="true" tabindex="-1"></a>} </span></code></pre></div>
+<p>The <code>simpleboot</code> function takes a variable (<code>x</code>) as an argument, bootstraps mean values <code>replicates</code> times, and produces confidence intervals at a level <code>CIs</code>.
+To use it, highlight and copy the entire function, then put it into the R console.
+Make sure that every line from <code>simpleboot</code> to the last <code>}</code> is copied.
+Once it has been placed into the R console, it can be used just like any other function.
+For example, we can run <code>simpleboot</code> and store the output for SO1 values.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="Chapter_35.html#cb155-1" aria-hidden="true" tabindex="-1"></a>SO1_95s <span class="ot">&lt;-</span> <span class="fu">simpleboot</span>(<span class="at">x =</span> SO1, <span class="at">replicates =</span> <span class="dv">1000</span>, <span class="at">CIs =</span> <span class="fl">0.95</span>);</span></code></pre></div>
+<p>The output will include a list of 2 different objects.
+The first object <code>SO1_95s[[1]]</code> will be a list of 1000 bootstrapped mean values, sorted from lowest to highest.
+The second object <code>SO1_95s[[2]]</code> will be the bootstrapped upper and lower confidence intervals.
+First, we can take a look at a histogram of the bootstrapped mean values.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="Chapter_35.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> SO1_95s[[<span class="dv">1</span>]], <span class="at">xlab =</span> <span class="st">&quot;Bootstrapped SO1 means&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>);</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-215"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-215-1.png" alt="A histogram bootstrapped mean SO1 values that appears to be roughly normally distributed" width="672" />
 <p class="caption">
-Figure 31.5: Examples of scatterplots with different coefficients of determination (R-squared).
+Figure 35.2: Bootstrapped mean values for 17 ovipositor lengths in an unnamed species of fig wasp collected in Baja, Mexico.
 </p>
 </div>
-<p>We can calculate the <span class="math inline">\(R^{2}\)</span> value for our example of fig fruit volumes over a latitudinal gradient.
-To do this, we need to calculate the sum of the squared residual values (<span class="math inline">\(SS_{residual}\)</span>) and the total sum of squared deviations of <span class="math inline">\(y_{i}\)</span> from the mean <span class="math inline">\(\bar{y}\)</span> (<span class="math inline">\(SS_{total}\)</span>).
-From the previous section, we have already found that <span class="math inline">\(SS_{residaul} = 1034567\)</span>.
-Now, to get <span class="math inline">\(SS_{total}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Chapter 12.3</a>).
-We can visualise this as the sum of squared deviations from the mean fruit volume of <span class="math inline">\(\bar{y} =\)</span> 1930.1 instead of the value predicted by the regression line (Figure 31.6).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-166"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-166-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
-<p class="caption">
-Figure 31.6: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).
-</p>
-</div>
-<p>The black numbers in Figure 31.6 show the deviations of each point from the regression line, just like in Figure 31.4.
-Blue numbers have been added to Figure 31.6 to show the deviation of each point from the mean fruit volume.
-Summing the squared values of residuals from the regression line gives a value of 1034567.
-Summing the squared deviations of values from the mean <span class="math inline">\(\bar{y} =\)</span> 1930.1 gives a value of 2721718.
-To calculate <span class="math inline">\(R^{2}\)</span>,</p>
-<p><span class="math display">\[R^{2} = 1 - \frac{1034567}{2721718}.\]</span></p>
-<p>The above gives us a value of <span class="math inline">\(R^{2} = 0.6198846\)</span>.
-In other words, about 62 per cent of the variation in fruit volume is explained by latitude.</p>
-</div>
-<div id="regression-assumptions" class="section level2 hasAnchor" number="31.6">
-<h2><span class="header-section-number">31.6</span> Regression assumptions<a href="Chapter_31.html#regression-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It is important to be aware of the assumptions underlying linear regression.
-There are 4 key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
-<ol style="list-style-type: decimal">
-<li><p>Measurement of the independent variable (<span class="math inline">\(x\)</span>) is completely accurate. In other words, there is no measurement error for the independent variable.
-Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see <a href="Chapter_6.html#accuracy">Chapter 6.1</a> and <a href="Chapter_7.html#Chapter_7">Chapter 7</a>).</p></li>
-<li><p>The relationship between the independent and dependent variables is linear.
-In other words, we assume that the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can be defined by a straight line satisfying the equation <span class="math inline">\(y = b_{0} + b_{1}x\)</span>.
-If this is not the case (e.g., because the relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is described by some sort of curved line), then a simple linear regression might not be appropriate.</p></li>
-<li><p>For any value of <span class="math inline">\(x_{i}\)</span>, <span class="math inline">\(y_{i}\)</span> values are independent and normally distributed.
-In other words, the <em>residual</em> values (<span class="math inline">\(\epsilon_{i}\)</span>) should be normally distributed around the regression line, and they should not have any kind of pattern (such as, e.g., <span class="math inline">\(\epsilon_{i}\)</span> values being negative for low <span class="math inline">\(x\)</span> but positive for high <span class="math inline">\(x\)</span>).
-If we were to go out and resample the same values of <span class="math inline">\(x_{i}\)</span>, the corresponding <span class="math inline">\(y_{i}\)</span> values should be normally distributed around the predicted <span class="math inline">\(y\)</span>.</p></li>
-<li><p>For all values of <span class="math inline">\(x\)</span>, the variance of residuals is identical.
-In other words, the variance of <span class="math inline">\(y_{i}\)</span> values around the predicted <span class="math inline">\(y\)</span> should not change over the range of <span class="math inline">\(x\)</span>.
-The term for this is homoscedasticity, meaning that the variance is constant.
-This is in contrast to heteroscedasticity, which means that the variance is not constant.</p></li>
-</ol>
-<p>Figure 31.7 shows a classic example of heteroscedasticity.
-Notice that the variance of <span class="math inline">\(y_{i}\)</span> values around the regression line increases with increasing <span class="math inline">\(x\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-167"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-167-1.png" alt="A scatterplot is shown in which data points increase in variance around a regression line as the x variable increases, forming a funnel shape with the narrow point on the left." width="672" />
-<p class="caption">
-Figure 31.7: A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.
-</p>
-</div>
-<p>Note that even if our assumptions are not perfectly met, this does not completely invalidate the method of linear regression.
-In reality, linear regression is often robust to minor deviations from the above assumptions (as are other statistical tools), but large violations of one or more of these assumptions might indeed invalidate the use of linear regression.</p>
-</div>
-<div id="regression-hypothesis-testing" class="section level2 hasAnchor" number="31.7">
-<h2><span class="header-section-number">31.7</span> Regression hypothesis testing<a href="Chapter_31.html#regression-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We typically want to know if our regression model is useful for predicting the dependent variable given the independent variable.
-There are 3 specific null hypotheses that we can test, which tell us the significance of (1) the overall model, (2) the intercept, and (3) the slope.
-We will go through each of these null hypotheses.</p>
-<div id="overall-model-significance" class="section level3 hasAnchor" number="31.7.1">
-<h3><span class="header-section-number">31.7.1</span> Overall model significance<a href="Chapter_31.html#overall-model-significance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>As mentioned in <a href="Chapter_31.html#visual-interpretation-of-regression">Chapter 31.1</a>, in the absence of any other information, the best prediction of our dependent variable is the mean.
-For example, if we did not have any information about latitude in the previous sections, then the best prediction of fruit volume would just be the mean fruit volume, <span class="math inline">\(\bar{y} =\)</span> 1930.1 (Figure 31.2).
-Does including the independent variable latitude result in a significantly better prediction than just using the mean?
-In other words, does a simple linear regression model with latitude as the independent variable explain significantly more variation in fruit volume than just the mean fruit volume?
-We can state this more formally as null and alternative hypotheses.</p>
-<ul>
-<li><span class="math inline">\(H_{0}\)</span>: A model with no independent variables fits the data as well as the linear model.</li>
-<li><span class="math inline">\(H_{A}\)</span>: The linear model fits the data better than the model with no independent variables.</li>
-</ul>
-<p>The null hypothesis can be tested using an F-test of overall significance.
-This test makes use of the F-distribution (see <a href="Chapter_23.html#the-f-distribution">Chapter 23.1</a>) to calculate a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span>.
-Recall that the F-distribution describes the null distribution for a ratio of variances.
-In this case, the F-distribution is used to test for the overall significance of a linear regression model by comparing the variation explained by the model to its residual (i.e., unexplained) variation<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
-If the ratio of explained to unexplained variation is sufficiently high, then we will get a low p-value and reject the null hypothesis.</p>
-</div>
-<div id="significance-of-the-intercept" class="section level3 hasAnchor" number="31.7.2">
-<h3><span class="header-section-number">31.7.2</span> Significance of the intercept<a href="Chapter_31.html#significance-of-the-intercept" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Just like we test the significance of the overall linear model, we can test the significance of individual model coefficients, <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span>.
-Recall that <span class="math inline">\(b_{0}\)</span> is the coefficient for the intercept.
-We can test the null hypothesis that <span class="math inline">\(b_{0} = 0\)</span> against the alternative hypothesis that it is different from 0.</p>
-<ul>
-<li><span class="math inline">\(H_{0}\)</span>: The intercept equals 0.</li>
-<li><span class="math inline">\(H_{A}\)</span>: The intercept does not equal 0.</li>
-</ul>
-<p>The estimate of <span class="math inline">\(b_{0}\)</span> is t-distributed (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>) around the true parameter value <span class="math inline">\(\beta_{0}\)</span>.
-Statistical programs such as Jamovi and R will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.</p>
-</div>
-<div id="significance-of-the-slope" class="section level3 hasAnchor" number="31.7.3">
-<h3><span class="header-section-number">31.7.3</span> Significance of the slope<a href="Chapter_31.html#significance-of-the-slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Testing the significance of the slope (<span class="math inline">\(b_{1}\)</span>) works in the same way as testing the significance of the intercept.
-We can test the null hypothesis that <span class="math inline">\(b_{1} = 0\)</span> against the alternative hypothesis that it is different from 0.
-Visually, this is testing whether the regression line shown in Figures 31.2-31.5 is flat, or if it is trending either upwards or downwards.</p>
-<ul>
-<li><span class="math inline">\(H_{0}\)</span>: The slope equals 0.</li>
-<li><span class="math inline">\(H_{A}\)</span>: The slope does not equal 0.</li>
-</ul>
-<p>Like <span class="math inline">\(b_{0}\)</span>, the estimate of <span class="math inline">\(b_{1}\)</span> is t-distributed (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>) around the true parameter value <span class="math inline">\(\beta_{1}\)</span>.
-We can therefore use the t-distribution to calculate a p-value and either reject or not reject <span class="math inline">\(H_{0}\)</span>.
-Note that this is often the hypothesis that we are most interested in testing.
-For example, we often do not care if the intercept of our model is significantly different from 0 (in the case of our fig fruit volumes, this would not even make sense; fig fruits obviously do not have zero volume at the equator).
-But we often do care if our dependent variable is increasing or decreasing with an increase in the independent variable.</p>
-</div>
-<div id="simple-regression-output" class="section level3 hasAnchor" number="31.7.4">
-<h3><span class="header-section-number">31.7.4</span> Simple regression output<a href="Chapter_31.html#simple-regression-output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If we run the simple regression of fig fruit latitude against fruit volume, we can find output statistics <span class="math inline">\(R^{2} = 0.6198\)</span>, and <span class="math inline">\(P = 0.03562\)</span> for the overall model.
-This means that the model explains about 61.98 per cent of the total variation in fruit volume, and the overall model does a significantly better job of predicting fruit volume than the mean.
-We therefore reject the null hypothesis and conclude that the model with latitude as an independent variables fits the data significantly better than a model with just the mean of fruit volume (Figure 31.8).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-168"></span>
-<img src="img/jamovi_overall_regression_output.png" alt="An output table is shown with a single row and columns for R squared, F, df1, df2, and p." width="100%" />
-<p class="caption">
-Figure 31.8: Jamovi output table for a simple linear regression in which latitude is an independent variable and fig fruit volume is a dependent variable.
-</p>
-</div>
-<p>Figure 31.8 reports the <span class="math inline">\(R^{2}\)</span> value along with with <span class="math inline">\(F\)</span> statistic, degrees of freedom, and the resulting p-value for the overall model.
-We can also see a table of model coefficients, the intercept (<span class="math inline">\(b_{0}\)</span>) and slope (<span class="math inline">\(b_{1}\)</span>) associated with latitude (Figure 31.9).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-169"></span>
-<img src="img/jamovi_overall_regression_coefficients.png" alt="An output table is shown with a 2 rows and columns for Predictor, Estimate, SE, t, and p." width="100%" />
-<p class="caption">
-Figure 31.9: Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.
-</p>
-</div>
-<p>From the Jamovi output shown in Figure 31.9, we can see that the intercept is significant (<span class="math inline">\(P &lt; 0.05\)</span>), so we reject the null hypothesis that <span class="math inline">\(b_{0} = 0\)</span>.
-Fruit volume decreases with increasing latitude (<span class="math inline">\(b_{1} = -242.68\)</span>), and this decrease is also significant (<span class="math inline">\(P &lt; 0.05\)</span>), so we reject the null hypothesis that <span class="math inline">\(b_{1} = 0\)</span>.
-We therefore conclude that fig fruit volume changes with latitude.</p>
+<p>We can then print out the lower and upper confidence intervals, which report the value of the 2.5 per cent rank and 97.5 rank bootstrapped means, respectively.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="Chapter_35.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(SO1_95s[[<span class="dv">2</span>]]);</span></code></pre></div>
+<pre><code>[1] 2.900471 3.137353</code></pre>
+<p>Note that these values are not too far off the values of LCI = 2.896 and UCI = 3.164 calculated in the usual way in the previous exercise.</p>
+<blockquote>
+<p><strong>Task 11: Use the <code>simpleboot</code> function to calculate 95 per cent confidence intervals for SO2 mean ovipositor lengths.</strong></p>
+</blockquote>
+<p>The practical in <a href="#Chapter_37">Chapter 37</a> will demonstrate how to read CSV files into R and run hypothesis tests, including t-tests, ANOVAs, chi-square tests, correlation tests, and linear regression.</p>
+
 </div>
 </div>
-<div id="prediction-with-linear-models" class="section level2 hasAnchor" number="31.8">
-<h2><span class="header-section-number">31.8</span> Prediction with linear models<a href="Chapter_31.html#prediction-with-linear-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can use our linear model to predict a given value of <span class="math inline">\(y\)</span> from <span class="math inline">\(x\)</span>.
-In other words, given a value for the independent variable, we can use the regression equation (<span class="math inline">\(y = b_{0} + b_{1}x\)</span>) to predict the dependent variable.
-This is possible because our model provides values for the coefficients <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span>.
-For the example of predicting fruit volume from latitude, the linear model estimates <span class="math inline">\(b_{0} = 8458.3\)</span> and <span class="math inline">\(b_{1} = -242.68\)</span>.
-We could therefore write our regression equation,</p>
-<p><span class="math display">\[Volume = 8458.3 - 242.68(Latitude).\]</span></p>
-<p>Now, for any given latitude, we can predict fig fruit volume.
-For example, Figure 31.2 shows that there is a gap in fruit collection between 24 and 27 degrees north latitude.
-If we wanted to predict how large a fig fruit would be at a volume of 25, then we could set <span class="math inline">\(Latitude = 25\)</span> in our regression equation,</p>
-<p><span class="math display">\[Volume = 8458.3 - 242.68(25).\]</span></p>
-<p>Our predicted fig fruit volume at 25 degrees north latitude would be 2391.3 <span class="math inline">\(mm^{3}\)</span>.
-Note that this is a point on the regression line in Figure 31.2.
-To find it visually in Figure 31.2, we just need to find 25 on the x-axis, then scan upwards until we see where this position on the x-axis hits the regression line.</p>
-<p>There is an important caveat to consider when making a prediction using regression equations.
-Predictions might not be valid outside the range of independent variable values on which the regression model was built.
-In the case of the fig fruit example, the lowest latitude from which a fruit was sampled was 23.7, and the highest latitude was 29.3.
-We should be very cautious about predicting what volume will be for fruits outside of this latitudinal range because we cannot be confident that the linear relationship between latitude and fruit volume will persist.
-It is possible that at latitudes greater than 30, fruit volume will no longer decrease.
-It could even be that fruit volume starts to <em>increase</em> with increasing latitudes greater than 30.
-Since we do not have any data for such latitudes, we cannot know with much confidence what will happen.
-It is therefore best to avoid <strong>extrapolation</strong>, i.e., predicting outside of the range of values collected for the independent variable.
-In contrast, <strong>interpolation</strong>, i.e., predicting within the range of values collected for the independent variable, is generally safe.</p>
-</div>
-<div id="conclusion" class="section level2 hasAnchor" number="31.9">
-<h2><span class="header-section-number">31.9</span> Conclusion<a href="Chapter_31.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are several new concepts introduced in this chapter with simple linear regression.
-It is important to understand the intercept, slope, and residuals both visually and in terms of the regression equation.
-It is also important to be able to interpret the coefficient of determination (<span class="math inline">\(R^{2}\)</span>), and to understand the hypotheses that simple linear regression can test and the assumptions underlying these tests.
-In the next chapter, we move on to multiple regression, in which regression models include multiple independent variables.</p>
-</div>
-</div>
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
-</div>
-<div id="ref-Duthie2016" class="csl-entry">
-Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in Ficus petiolaris and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em>. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
-</div>
-<div id="ref-Rproject" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
-<div id="ref-Rahman1968" class="csl-entry">
-Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
-</div>
-<div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
-</div>
-<div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="57">
-<li id="fn57"><p>Biologically, a fruit volume of 8458.3 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_31.html#fnref57" class="footnote-back">↩︎</a></p></li>
-<li id="fn58"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_31.html#fnref58" class="footnote-back">↩︎</a></p></li>
-<li id="fn59"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_31.html#fnref59" class="footnote-back">↩︎</a></p></li>
-<li id="fn60"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721718\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1687069\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034649\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_23.html#Chapter_23">Chapter 23</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1687069/1 = 1687069\)</span> and <span class="math inline">\(MS_{residual} = 1034649/5 = 206929.8\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1687069 / 206929.8 = 8.152857\)</span>.<a href="Chapter_31.html#fnref60" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="Week10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Chapter_32.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_34.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Week12.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -881,7 +860,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/10-Regression.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/11-Randomisation.Rmd",
 "text": "Edit"
 },
 "history": {
