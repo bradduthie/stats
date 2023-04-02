@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 34 Summary of hypothesis tseting | Statistical Techniques for Biological and Environmental Sciences</title>
+  <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 34 Summary of hypothesis tseting | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  <meta name="github-repo" content="bradduthie/statistical_techniques" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 34 Summary of hypothesis tseting | Statistical Techniques for Biological and Environmental Sciences" />
+  
+  <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
+  
+
+<meta name="author" content="Brad Duthie" />
+
+
+<meta name="date" content="2023-04-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="Week11.html"/>
+<link rel="next" href="practical.-using-r.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Techniques</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-module-is-important"><i class="fa fa-check"></i>Why this module is important</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#ILOs"><i class="fa fa-check"></i>Intended learning outcomes (ILOs)</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#accessibility"><i class="fa fa-check"></i>Accessibility</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#teaching_overview"><i class="fa fa-check"></i>Teaching overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#book_chapters"><i class="fa fa-check"></i>Book chapters</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#additional_readings"><i class="fa fa-check"></i>Additional readings</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#Canvas"><i class="fa fa-check"></i>Canvas</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#assessment-overview"><i class="fa fa-check"></i>Assessment overview</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#tests"><i class="fa fa-check"></i>Tests</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#exams"><i class="fa fa-check"></i>Exams</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#feedback"><i class="fa fa-check"></i>Feedback</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#extenuating_circumstances"><i class="fa fa-check"></i>Extenuating circumstances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#practicals"><i class="fa fa-check"></i>Practicals</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#help"><i class="fa fa-check"></i>Optional help hours</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#timetable"><i class="fa fa-check"></i>Timetable</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
+<li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Week 1 Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_1.html"><a href="Chapter_1.html"><i class="fa fa-check"></i><b>1</b> Background mathematics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter_1.html"><a href="Chapter_1.html#numbers-and-operations"><i class="fa fa-check"></i><b>1.1</b> Numbers and operations</a></li>
+<li class="chapter" data-level="1.2" data-path="Chapter_1.html"><a href="Chapter_1.html#logarithms"><i class="fa fa-check"></i><b>1.2</b> Logarithms</a></li>
+<li class="chapter" data-level="1.3" data-path="Chapter_1.html"><a href="Chapter_1.html#order-of-operations"><i class="fa fa-check"></i><b>1.3</b> Order of operations</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_2.html"><a href="Chapter_2.html"><i class="fa fa-check"></i><b>2</b> Data organisation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_2.html"><a href="Chapter_2.html#tidy-data"><i class="fa fa-check"></i><b>2.1</b> Tidy data</a></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>II Statistical concepts</b></span></li>
+<li class="chapter" data-level="" data-path="Week2.html"><a href="Week2.html"><i class="fa fa-check"></i>Week 2 Overview</a></li>
+<li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
+<li class="chapter" data-level="5" data-path="Chapter_5.html"><a href="Chapter_5.html"><i class="fa fa-check"></i><b>5</b> Types of variables</a></li>
+<li class="chapter" data-level="6" data-path="Chapter_6.html"><a href="Chapter_6.html"><i class="fa fa-check"></i><b>6</b> Accuracy, precision, and units</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
+<li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
+<li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
+<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
+<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
+<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propagation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
+<li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
+<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
+<li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
+<li class="chapter" data-level="8.3" data-path="Chapter_8.html"><a href="Chapter_8.html#computing_variables_02"><i class="fa fa-check"></i><b>8.3</b> Exercise on computing variables</a></li>
+<li class="chapter" data-level="8.4" data-path="Chapter_8.html"><a href="Chapter_8.html#summary-1"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="part"><span><b>III Summary statistics</b></span></li>
+<li class="chapter" data-level="" data-path="Week3.html"><a href="Week3.html"><i class="fa fa-check"></i>Week 3 Overview</a></li>
+<li class="chapter" data-level="9" data-path="Chapter_9.html"><a href="Chapter_9.html"><i class="fa fa-check"></i><b>9</b> Decimal places, significant figures, and rounding</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="Chapter_9.html"><a href="Chapter_9.html#decimal-places-and-significant-figures"><i class="fa fa-check"></i><b>9.1</b> Decimal places and significant figures</a></li>
+<li class="chapter" data-level="9.2" data-path="Chapter_9.html"><a href="Chapter_9.html#rounding"><i class="fa fa-check"></i><b>9.2</b> Rounding</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="Chapter_10.html"><a href="Chapter_10.html"><i class="fa fa-check"></i><b>10</b> Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="Chapter_10.html"><a href="Chapter_10.html#histograms"><i class="fa fa-check"></i><b>10.1</b> Histograms</a></li>
+<li class="chapter" data-level="10.2" data-path="Chapter_10.html"><a href="Chapter_10.html#barplots-and-pie-charts"><i class="fa fa-check"></i><b>10.2</b> Barplots and pie charts</a></li>
+<li class="chapter" data-level="10.3" data-path="Chapter_10.html"><a href="Chapter_10.html#box-whisker-plots"><i class="fa fa-check"></i><b>10.3</b> Box-whisker plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="Chapter_11.html"><a href="Chapter_11.html"><i class="fa fa-check"></i><b>11</b> Measures of central tendency</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mean"><i class="fa fa-check"></i><b>11.1</b> The mean</a></li>
+<li class="chapter" data-level="11.2" data-path="Chapter_11.html"><a href="Chapter_11.html#the-mode"><i class="fa fa-check"></i><b>11.2</b> The mode</a></li>
+<li class="chapter" data-level="11.3" data-path="Chapter_11.html"><a href="Chapter_11.html#the-median-and-quantiles"><i class="fa fa-check"></i><b>11.3</b> The median and quantiles</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="Chapter_12.html"><a href="Chapter_12.html"><i class="fa fa-check"></i><b>12</b> Measures of spread</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="Chapter_12.html"><a href="Chapter_12.html#the-range"><i class="fa fa-check"></i><b>12.1</b> The range</a></li>
+<li class="chapter" data-level="12.2" data-path="Chapter_12.html"><a href="Chapter_12.html#the-inter-quartile-range"><i class="fa fa-check"></i><b>12.2</b> The inter-quartile range</a></li>
+<li class="chapter" data-level="12.3" data-path="Chapter_12.html"><a href="Chapter_12.html#the-variance"><i class="fa fa-check"></i><b>12.3</b> The variance</a></li>
+<li class="chapter" data-level="12.4" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-deviation"><i class="fa fa-check"></i><b>12.4</b> The standard deviation</a></li>
+<li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
+<li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#calculate-summary-statistics"><i class="fa fa-check"></i><b>13.3</b> Calculate summary statistics</a></li>
+<li class="chapter" data-level="13.4" data-path="Chapter_13.html"><a href="Chapter_13.html#reporting-decimals-and-significant-figures"><i class="fa fa-check"></i><b>13.4</b> Reporting decimals and significant figures</a></li>
+<li class="chapter" data-level="13.5" data-path="Chapter_13.html"><a href="Chapter_13.html#comparing-across-sites"><i class="fa fa-check"></i><b>13.5</b> Comparing across sites</a></li>
+</ul></li>
+<li class="part"><span><b>IV Probability models and the Central Limit Theorem</b></span></li>
+<li class="chapter" data-level="" data-path="Week4.html"><a href="Week4.html"><i class="fa fa-check"></i>Week 4 Overview</a></li>
+<li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> Introduction to probability models</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#an-instructive-example"><i class="fa fa-check"></i><b>14.1</b> An instructive example</a></li>
+<li class="chapter" data-level="14.2" data-path="Chapter_14.html"><a href="Chapter_14.html#biological-applications"><i class="fa fa-check"></i><b>14.2</b> Biological applications</a></li>
+<li class="chapter" data-level="14.3" data-path="Chapter_14.html"><a href="Chapter_14.html#sampling-with-and-without-replacement"><i class="fa fa-check"></i><b>14.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="14.4" data-path="Chapter_14.html"><a href="Chapter_14.html#probability-distributions"><i class="fa fa-check"></i><b>14.4</b> Probability distributions</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="Chapter_14.html"><a href="Chapter_14.html#binomial-distribution"><i class="fa fa-check"></i><b>14.4.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="14.4.2" data-path="Chapter_14.html"><a href="Chapter_14.html#poisson-distribution"><i class="fa fa-check"></i><b>14.4.2</b> Poisson distribution</a></li>
+<li class="chapter" data-level="14.4.3" data-path="Chapter_14.html"><a href="Chapter_14.html#uniform-distribution"><i class="fa fa-check"></i><b>14.4.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="14.4.4" data-path="Chapter_14.html"><a href="Chapter_14.html#normal-distribution"><i class="fa fa-check"></i><b>14.4.4</b> Normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="Chapter_14.html"><a href="Chapter_14.html#summary-2"><i class="fa fa-check"></i><b>14.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="Chapter_15.html"><a href="Chapter_15.html"><i class="fa fa-check"></i><b>15</b> The Central Limit Theorem (CLT)</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="Chapter_15.html"><a href="Chapter_15.html#the-distribution-of-means-is-normal"><i class="fa fa-check"></i><b>15.1</b> The distribution of means is normal</a></li>
+<li class="chapter" data-level="15.2" data-path="Chapter_15.html"><a href="Chapter_15.html#probability-and-z-scores"><i class="fa fa-check"></i><b>15.2</b> Probability and z-scores</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="Chapter_16.html"><a href="Chapter_16.html"><i class="fa fa-check"></i><b>16</b> <em>Practical</em>. Probability and simulation</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-dataset"><i class="fa fa-check"></i><b>16.1</b> Probabilities from a dataset</a></li>
+<li class="chapter" data-level="16.2" data-path="Chapter_16.html"><a href="Chapter_16.html#probabilities-from-a-normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Probabilities from a normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="Chapter_16.html"><a href="Chapter_16.html#central-limit-theorem"><i class="fa fa-check"></i><b>16.3</b> Central limit theorem</a></li>
+</ul></li>
+<li class="part"><span><b>V Statistical inference</b></span></li>
+<li class="chapter" data-level="" data-path="Week5.html"><a href="Week5.html"><i class="fa fa-check"></i>Week 5 Overview</a></li>
+<li class="chapter" data-level="17" data-path="Chapter_17.html"><a href="Chapter_17.html"><i class="fa fa-check"></i><b>17</b> Confidence intervals (CIs)</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="Chapter_17.html"><a href="Chapter_17.html#normal-distribution-cis"><i class="fa fa-check"></i><b>17.1</b> Normal distribution CIs</a></li>
+<li class="chapter" data-level="17.2" data-path="Chapter_17.html"><a href="Chapter_17.html#binomial-distribution-cis"><i class="fa fa-check"></i><b>17.2</b> Binomial distribution CIs</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="Chapter_18.html"><a href="Chapter_18.html"><i class="fa fa-check"></i><b>18</b> The t-interval</a></li>
+<li class="chapter" data-level="19" data-path="Chapter_19.html"><a href="Chapter_19.html"><i class="fa fa-check"></i><b>19</b> <em>Practical</em>. z- and t- intervals</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="Chapter_19.html"><a href="Chapter_19.html#confidence-intervals-with-distraction"><i class="fa fa-check"></i><b>19.1</b> Confidence intervals with distrACTION</a></li>
+<li class="chapter" data-level="19.2" data-path="Chapter_19.html"><a href="Chapter_19.html#confidence-intervals-from-z--and-t-scores"><i class="fa fa-check"></i><b>19.2</b> Confidence intervals from z- and t-scores</a></li>
+<li class="chapter" data-level="19.3" data-path="Chapter_19.html"><a href="Chapter_19.html#confidence-intervals-for-different-sample-sizes-t--and-z-"><i class="fa fa-check"></i><b>19.3</b> Confidence intervals for different sample sizes (t- and z-)</a></li>
+<li class="chapter" data-level="19.4" data-path="Chapter_19.html"><a href="Chapter_19.html#proportion-confidence-intervals"><i class="fa fa-check"></i><b>19.4</b> Proportion confidence intervals</a></li>
+<li class="chapter" data-level="19.5" data-path="Chapter_19.html"><a href="Chapter_19.html#another-proportion-confidence-interval"><i class="fa fa-check"></i><b>19.5</b> Another proportion confidence interval</a></li>
+</ul></li>
+<li class="part"><span><b>VI Hypothesis testing</b></span></li>
+<li class="chapter" data-level="" data-path="Week6.html"><a href="Week6.html"><i class="fa fa-check"></i>Week 6 Overview</a></li>
+<li class="chapter" data-level="20" data-path="Chapter_20.html"><a href="Chapter_20.html"><i class="fa fa-check"></i><b>20</b> What is hypothesis testing?</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="Chapter_20.html"><a href="Chapter_20.html#how-ridiculous-is-our-hypothesis"><i class="fa fa-check"></i><b>20.1</b> How ridiculous is our hypothesis?</a></li>
+<li class="chapter" data-level="20.2" data-path="Chapter_20.html"><a href="Chapter_20.html#statistical-hypothesis-testing"><i class="fa fa-check"></i><b>20.2</b> Statistical hypothesis testing</a></li>
+<li class="chapter" data-level="20.3" data-path="Chapter_20.html"><a href="Chapter_20.html#p-values-false-positives-and-power"><i class="fa fa-check"></i><b>20.3</b> P-values, false positives, and power</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="Chapter_21.html"><a href="Chapter_21.html"><i class="fa fa-check"></i><b>21</b> The t-test</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="Chapter_21.html"><a href="Chapter_21.html#one-sample-t-test"><i class="fa fa-check"></i><b>21.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="21.2" data-path="Chapter_21.html"><a href="Chapter_21.html#independent-samples-t-test"><i class="fa fa-check"></i><b>21.2</b> Independent samples t-test</a></li>
+<li class="chapter" data-level="21.3" data-path="Chapter_21.html"><a href="Chapter_21.html#paired-sample-t-test"><i class="fa fa-check"></i><b>21.3</b> Paired sample t-test</a></li>
+<li class="chapter" data-level="21.4" data-path="Chapter_21.html"><a href="Chapter_21.html#assumptions-of-t-tests"><i class="fa fa-check"></i><b>21.4</b> Assumptions of t-tests</a></li>
+<li class="chapter" data-level="21.5" data-path="Chapter_21.html"><a href="Chapter_21.html#non-parametric-alternatives"><i class="fa fa-check"></i><b>21.5</b> Non-parametric alternatives</a>
+<ul>
+<li class="chapter" data-level="21.5.1" data-path="Chapter_21.html"><a href="Chapter_21.html#wilcoxon-test"><i class="fa fa-check"></i><b>21.5.1</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="21.5.2" data-path="Chapter_21.html"><a href="Chapter_21.html#mann-whitney-u-test"><i class="fa fa-check"></i><b>21.5.2</b> Mann-Whitney U test</a></li>
+</ul></li>
+<li class="chapter" data-level="21.6" data-path="Chapter_21.html"><a href="Chapter_21.html#summary-3"><i class="fa fa-check"></i><b>21.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="Chapter_22.html"><a href="Chapter_22.html"><i class="fa fa-check"></i><b>22</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="Chapter_22.html"><a href="Chapter_22.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>22.1</b> Exercise on a simple one sample t-test</a></li>
+<li class="chapter" data-level="22.2" data-path="Chapter_22.html"><a href="Chapter_22.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>22.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="22.3" data-path="Chapter_22.html"><a href="Chapter_22.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>22.3</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="22.4" data-path="Chapter_22.html"><a href="Chapter_22.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>22.4</b> Independent samples t-test</a></li>
+<li class="chapter" data-level="22.5" data-path="Chapter_22.html"><a href="Chapter_22.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>22.5</b> Mann-Whitney U Test</a></li>
+</ul></li>
+<li class="part"><span><b>VII Review of parts I-V</b></span></li>
+<li class="chapter" data-level="" data-path="Week7.html"><a href="Week7.html"><i class="fa fa-check"></i>Week 7 Overview (Reading week)</a></li>
+<li class="part"><span><b>VIII Analysis of Variance (ANOVA)</b></span></li>
+<li class="chapter" data-level="" data-path="Week8.html"><a href="Week8.html"><i class="fa fa-check"></i>Week 8 Overview</a></li>
+<li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> Analysis of variance</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#the-f-distribution"><i class="fa fa-check"></i><b>23.1</b> The F-distribution</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#one-way-anova"><i class="fa fa-check"></i><b>23.2</b> One-way ANOVA</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>23.2.1</b> ANOVA mean variance among groups</a></li>
+<li class="chapter" data-level="23.2.2" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>23.2.2</b> ANOVA mean variance within groups</a></li>
+<li class="chapter" data-level="23.2.3" data-path="Chapter_23.html"><a href="Chapter_23.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>23.2.3</b> ANOVA F statistic calculation</a></li>
+</ul></li>
+<li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#assumptions-of-anova"><i class="fa fa-check"></i><b>23.3</b> Assumptions of ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="Chapter_24.html"><a href="Chapter_24.html"><i class="fa fa-check"></i><b>24</b> Multiple comparisons</a></li>
+<li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Two-way ANOVA</a></li>
+<li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> <em>Practical</em>. ANOVA and associated tests</a>
+<ul>
+<li class="chapter" data-level="27.1" data-path="Chapter_27.html"><a href="Chapter_27.html#one-way-anova-site"><i class="fa fa-check"></i><b>27.1</b> One-way ANOVA (site)</a></li>
+<li class="chapter" data-level="27.2" data-path="Chapter_27.html"><a href="Chapter_27.html#one-way-anova-profile"><i class="fa fa-check"></i><b>27.2</b> One-way ANOVA (profile)</a></li>
+<li class="chapter" data-level="27.3" data-path="Chapter_27.html"><a href="Chapter_27.html#multiple-comparisons"><i class="fa fa-check"></i><b>27.3</b> Multiple comparisons</a></li>
+<li class="chapter" data-level="27.4" data-path="Chapter_27.html"><a href="Chapter_27.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>27.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="27.5" data-path="Chapter_27.html"><a href="Chapter_27.html#two-way-anova"><i class="fa fa-check"></i><b>27.5</b> Two-way ANOVA</a></li>
+</ul></li>
+<li class="part"><span><b>IX Counts and Correlation</b></span></li>
+<li class="chapter" data-level="" data-path="Week9.html"><a href="Week9.html"><i class="fa fa-check"></i>Week 9 Overview</a></li>
+<li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> Frequency and count data</a>
+<ul>
+<li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#the-chi-square-distribution"><i class="fa fa-check"></i><b>28.1</b> The Chi-square distribution</a></li>
+<li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#chi-squared-goodness-of-fit"><i class="fa fa-check"></i><b>28.2</b> Chi-squared goodness of fit</a></li>
+<li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#chi-squared-test-of-association"><i class="fa fa-check"></i><b>28.3</b> Chi-squared test of association</a></li>
+</ul></li>
+<li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="29.1" data-path="Chapter_29.html"><a href="Chapter_29.html#scatterplots"><i class="fa fa-check"></i><b>29.1</b> Scatterplots</a></li>
+<li class="chapter" data-level="29.2" data-path="Chapter_29.html"><a href="Chapter_29.html#the-correlation-coefficient"><i class="fa fa-check"></i><b>29.2</b> The correlation coefficient</a>
+<ul>
+<li class="chapter" data-level="29.2.1" data-path="Chapter_29.html"><a href="Chapter_29.html#pearson-product-moment-correlation-coefficient"><i class="fa fa-check"></i><b>29.2.1</b> Pearson product moment correlation coefficient</a></li>
+<li class="chapter" data-level="29.2.2" data-path="Chapter_29.html"><a href="Chapter_29.html#spearman-rank-correlation-coefficient"><i class="fa fa-check"></i><b>29.2.2</b> Spearman rank correlation coefficient</a></li>
+</ul></li>
+<li class="chapter" data-level="29.3" data-path="Chapter_29.html"><a href="Chapter_29.html#correlation-hypothesis-testing"><i class="fa fa-check"></i><b>29.3</b> Correlation hypothesis testing</a></li>
+</ul></li>
+<li class="chapter" data-level="30" data-path="Chapter_30.html"><a href="Chapter_30.html"><i class="fa fa-check"></i><b>30</b> <em>Practical</em>. Analysis of counts and correlations</a>
+<ul>
+<li class="chapter" data-level="30.1" data-path="Chapter_30.html"><a href="Chapter_30.html#survival-goodness-of-fit"><i class="fa fa-check"></i><b>30.1</b> Survival goodness of fit</a></li>
+<li class="chapter" data-level="30.2" data-path="Chapter_30.html"><a href="Chapter_30.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>30.2</b> Colony goodness of fit</a></li>
+<li class="chapter" data-level="30.3" data-path="Chapter_30.html"><a href="Chapter_30.html#chi-square-test-of-association"><i class="fa fa-check"></i><b>30.3</b> Chi-Square test of association</a></li>
+<li class="chapter" data-level="30.4" data-path="Chapter_30.html"><a href="Chapter_30.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>30.4</b> Pearson product moment correlation test</a></li>
+<li class="chapter" data-level="30.5" data-path="Chapter_30.html"><a href="Chapter_30.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>30.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="30.6" data-path="Chapter_30.html"><a href="Chapter_30.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>30.6</b> Untidy goodness of fit</a></li>
+</ul></li>
+<li class="part"><span><b>X Linear Regression</b></span></li>
+<li class="chapter" data-level="" data-path="Week10.html"><a href="Week10.html"><i class="fa fa-check"></i>Week 10 Overview</a></li>
+<li class="chapter" data-level="31" data-path="Chapter_31.html"><a href="Chapter_31.html"><i class="fa fa-check"></i><b>31</b> Simple linear regression</a>
+<ul>
+<li class="chapter" data-level="31.1" data-path="Chapter_31.html"><a href="Chapter_31.html#visual-interpretation-of-regression"><i class="fa fa-check"></i><b>31.1</b> Visual interpretation of regression</a></li>
+<li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#intercepts-slopes-and-residuals"><i class="fa fa-check"></i><b>31.2</b> Intercepts, slopes, and residuals</a></li>
+<li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-coefficients"><i class="fa fa-check"></i><b>31.3</b> Regression coefficients</a></li>
+<li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-line-calculation"><i class="fa fa-check"></i><b>31.4</b> Regression line calculation</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#coefficient-of-determination"><i class="fa fa-check"></i><b>31.5</b> Coefficient of determination</a></li>
+<li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-assumptions"><i class="fa fa-check"></i><b>31.6</b> Regression assumptions</a></li>
+<li class="chapter" data-level="31.7" data-path="Chapter_31.html"><a href="Chapter_31.html#regression-hypothesis-testing"><i class="fa fa-check"></i><b>31.7</b> Regression hypothesis testing</a>
+<ul>
+<li class="chapter" data-level="31.7.1" data-path="Chapter_31.html"><a href="Chapter_31.html#overall-model-significance"><i class="fa fa-check"></i><b>31.7.1</b> Overall model significance</a></li>
+<li class="chapter" data-level="31.7.2" data-path="Chapter_31.html"><a href="Chapter_31.html#significance-of-the-intercept"><i class="fa fa-check"></i><b>31.7.2</b> Significance of the intercept</a></li>
+<li class="chapter" data-level="31.7.3" data-path="Chapter_31.html"><a href="Chapter_31.html#significance-of-the-slope"><i class="fa fa-check"></i><b>31.7.3</b> Significance of the slope</a></li>
+<li class="chapter" data-level="31.7.4" data-path="Chapter_31.html"><a href="Chapter_31.html#simple-regression-output"><i class="fa fa-check"></i><b>31.7.4</b> Simple regression output</a></li>
+</ul></li>
+<li class="chapter" data-level="31.8" data-path="Chapter_31.html"><a href="Chapter_31.html#prediction-with-linear-models"><i class="fa fa-check"></i><b>31.8</b> Prediction with linear models</a></li>
+<li class="chapter" data-level="31.9" data-path="Chapter_31.html"><a href="Chapter_31.html#conclusion"><i class="fa fa-check"></i><b>31.9</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Multiple regression</a>
+<ul>
+<li class="chapter" data-level="32.1" data-path="Chapter_32.html"><a href="Chapter_32.html#adjusted-coefficient-of-determination"><i class="fa fa-check"></i><b>32.1</b> Adjusted coefficient of determination</a></li>
+</ul></li>
+<li class="chapter" data-level="33" data-path="Chapter_33.html"><a href="Chapter_33.html"><i class="fa fa-check"></i><b>33</b> <em>Practical</em>. Using regression</a>
+<ul>
+<li class="chapter" data-level="33.1" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-soil-depth"><i class="fa fa-check"></i><b>33.1</b> Predicting pyrogenic carbon from soil depth</a></li>
+<li class="chapter" data-level="33.2" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-pyrogenic-carbon-from-fire-frequency"><i class="fa fa-check"></i><b>33.2</b> Predicting pyrogenic carbon from fire frequency</a></li>
+<li class="chapter" data-level="33.3" data-path="Chapter_33.html"><a href="Chapter_33.html#multiple-regression-depth-and-fire-frequency"><i class="fa fa-check"></i><b>33.3</b> Multiple regression depth and fire frequency</a></li>
+<li class="chapter" data-level="33.4" data-path="Chapter_33.html"><a href="Chapter_33.html#large-multiple-regression"><i class="fa fa-check"></i><b>33.4</b> Large multiple regression</a></li>
+<li class="chapter" data-level="33.5" data-path="Chapter_33.html"><a href="Chapter_33.html#predicting-temperature-from-fire-frequency"><i class="fa fa-check"></i><b>33.5</b> Predicting temperature from fire frequency</a></li>
+</ul></li>
+<li class="part"><span><b>XI Randomisation approaches</b></span></li>
+<li class="chapter" data-level="" data-path="Week11.html"><a href="Week11.html"><i class="fa fa-check"></i>Week 11 Overview</a></li>
+<li class="chapter" data-level="34" data-path="summary-of-hypothesis-tseting.html"><a href="summary-of-hypothesis-tseting.html"><i class="fa fa-check"></i><b>34</b> Summary of hypothesis tseting</a>
+<ul>
+<li class="chapter" data-level="34.1" data-path="summary-of-hypothesis-tseting.html"><a href="summary-of-hypothesis-tseting.html#randomisation-approach"><i class="fa fa-check"></i><b>34.1</b> Randomisation approach</a></li>
+<li class="chapter" data-level="34.2" data-path="summary-of-hypothesis-tseting.html"><a href="summary-of-hypothesis-tseting.html#randomisation-for-hypothesis-testing"><i class="fa fa-check"></i><b>34.2</b> Randomisation for hypothesis testing</a></li>
+<li class="chapter" data-level="34.3" data-path="summary-of-hypothesis-tseting.html"><a href="summary-of-hypothesis-tseting.html#randomisation-assumptions"><i class="fa fa-check"></i><b>34.3</b> Randomisation assumptions</a></li>
+<li class="chapter" data-level="34.4" data-path="summary-of-hypothesis-tseting.html"><a href="summary-of-hypothesis-tseting.html#bootstrapping"><i class="fa fa-check"></i><b>34.4</b> Bootstrapping</a></li>
+<li class="chapter" data-level="34.5" data-path="summary-of-hypothesis-tseting.html"><a href="summary-of-hypothesis-tseting.html#monte-carlo"><i class="fa fa-check"></i><b>34.5</b> Monte Carlo</a></li>
+</ul></li>
+<li class="chapter" data-level="35" data-path="practical.-using-r.html"><a href="practical.-using-r.html"><i class="fa fa-check"></i><b>35</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="35.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-1"><i class="fa fa-check"></i><b>35.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="35.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-2"><i class="fa fa-check"></i><b>35.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="35.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#r-exercise-3"><i class="fa fa-check"></i><b>35.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XII Statistical Reporting</b></span></li>
+<li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Week 12 Overview</a></li>
+<li class="chapter" data-level="36" data-path="reporting-statistics.html"><a href="reporting-statistics.html"><i class="fa fa-check"></i><b>36</b> Reporting statistics</a></li>
+<li class="chapter" data-level="37" data-path="more-introduction-to-r.html"><a href="more-introduction-to-r.html"><i class="fa fa-check"></i><b>37</b> More introduction to R</a></li>
+<li class="chapter" data-level="38" data-path="more-getting-started-with-r.html"><a href="more-getting-started-with-r.html"><i class="fa fa-check"></i><b>38</b> More getting started with R</a></li>
+<li class="chapter" data-level="39" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html"><i class="fa fa-check"></i><b>39</b> <em>Practical</em>. Using R</a>
+<ul>
+<li class="chapter" data-level="39.1" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-1-1"><i class="fa fa-check"></i><b>39.1</b> R Exercise 1</a></li>
+<li class="chapter" data-level="39.2" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-2-1"><i class="fa fa-check"></i><b>39.2</b> R Exercise 2</a></li>
+<li class="chapter" data-level="39.3" data-path="practical.-using-r-1.html"><a href="practical.-using-r-1.html#r-exercise-3-1"><i class="fa fa-check"></i><b>39.3</b> R Exercise 3</a></li>
+</ul></li>
+<li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
+<li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendexA_CMS.html"><a href="appendexA_CMS.html"><i class="fa fa-check"></i><b>A</b> Common Marking Scheme</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="C" data-path="appendixC_tables.html"><a href="appendixC_tables.html"><i class="fa fa-check"></i><b>C</b> Statistical tables</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="appendixC_tables.html"><a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values"><i class="fa fa-check"></i><b>C.1</b> Wilcoxon signed rank critical values</a></li>
+<li class="chapter" data-level="C.2" data-path="appendixC_tables.html"><a href="appendixC_tables.html#mann-whitney-u-critical-values"><i class="fa fa-check"></i><b>C.2</b> Mann-Whitney U critical values</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Techniques for Biological and Environmental Sciences</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="summary-of-hypothesis-tseting" class="section level1 hasAnchor" number="34">
+<h1><span class="header-section-number">Chapter 34</span> Summary of hypothesis tseting<a href="summary-of-hypothesis-tseting.html#summary-of-hypothesis-tseting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Since introducing statistical hypothesis testing in <a href="Chapter_20.html#Chapter_20">Chapter 20</a>, this book has steadily introduced statistical tests that can be run for different data types.
+In all of these statistical tests, the general idea is the same.
+We calculate some test statistic, then compare this test statistic to a null distribution to find the probability (i.e., the p-value) of getting a test statistic as or more extreme than the one we calculated if the null hypothesis were true.</p>
+<p>For the t-tests in <a href="Chapter_21.html#Chapter_21">Chapter 21</a>, the test statistic was the t-statistic, which we compared to a t-distribution.
+The <a href="Chapter_21.html#one-sample-t-test">one-sample t-test</a> compared the mean of some variable (<span class="math inline">\(\bar{x}\)</span>) to a specific number (<span class="math inline">\(\mu_{0}\)</span>), the <a href="Chapter_21.html#independent-samples-t-test">independent samples t-test</a> compared 2 group means, and the <a href="Chapter_21.html#paired-sample-t-test">paired sample t-test</a> compared the mean difference between 2 paired groups.
+All of these tests used the t-distribution and calculated some value of t.
+Very low or high values of t at the extreme ends of the t-distribution are unlikely if the null hypothesis is true, so, in a two-tailed test, these are associated with low p-values that lead us to reject the null hypothesis.</p>
+<p>For the analysis of variance (ANOVA) tests of <a href="Chapter_23.html#Chapter_23">Chapter 23</a>, the relevant test statistic was the F statistic, with the F-distribution being the null distribution expected if 2 variances are equal.
+The <a href="Chapter_23.html#one-way-anova">one-way ANOVA</a> used the within and among group variances of 2 or more groups to test the null hypothesis that all group means are equal.
+The two-way ANOVA of <a href="Chapter_26.html#Chapter_26">Chapter 26</a> extended the framework of the one-way ANOVA, allowing for a second variable of groups.
+This made it possible to simultaneously test whether or not the means of 2 different group types were the same, and whether or not there was an interaction between group types.
+All of these ANOVA tests calculated some value of F and compared it to the F distribution with an appropriate degrees of freedom.
+Sufficiently high F were associated with a low p-value, and therefore the reject of the null hypothesis of interest.</p>
+<div id="randomisation-approach" class="section level2 hasAnchor" number="34.1">
+<h2><span class="header-section-number">34.1</span> Randomisation approach<a href="summary-of-hypothesis-tseting.html#randomisation-approach" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Throughout this module, we have conducted hypothesis tests in a similar way. We have calculated some test statistic (e.g., a t-statistic, F-statistic, or a Chi-square statistic), then compared our calculated statistic to the theoretical distribution that the statistic will take assuming that the null hypothesis is true (e.g., t-distribution, F-distribution, or Chi-square distribution). In doing this, our general question has been, ‘if this is the probability distribution of test statistic values when our null hypothesis true, then what is the probability of getting the actual test statistic, or one more extreme than it, from this distribution’ – i.e., what is the p-value? Typically, our null distribution makes several assumptions about the data, such as that they are normally distributed. When these assumptions are violated, we then need to apply a transformation of some sort to the data, or to use a different non-parametric approach to testing our null hypothesis.</p>
+<p>Randomisation takes a different approach to null hypothesis testing. Instead of assuming a theoretical null distribution against which we compare our test statistic, we ask, ‘if the ordering of the data we collected was actually random, then what is the probability of getting a test statistic as or more extreme than the one that we actually did’. Rather than using a null distribution derived from statistical theory (which is what we have been doing, though we have not explained the theory underlying the shapes of the t, F, Chi-square, or other distributions; see <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span> if this interests you), we will build the null distribution by randomising our data in some useful way. Conceptually, most students actually find randomisation methods easier to understand. Unfortunately, these methods are more challenging to implement in practice (we will not ask you to do them, just to understand them). The best way to get started is with an instructive example.</p>
+</div>
+<div id="randomisation-for-hypothesis-testing" class="section level2 hasAnchor" number="34.2">
+<h2><span class="header-section-number">34.2</span> Randomisation for hypothesis testing<a href="summary-of-hypothesis-tseting.html#randomisation-for-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The data set used here is inspired by the many species of wasps that lay their eggs in the flowers of the Sonoran Desert rock fig (<em>Ficus petiolaris</em>). This tree is distributed throughout the Baja peninsula, and in parts of mainland Mexico. Fig trees and the wasps that develop inside of them have a fascinating ecology, but for now we will just focus on the morphologies of two closely related species as an example. The fig wasp below are two unnamed species of the genus <em>Idarnes</em>, which can refer to simply as ‘Short-ovipositor 1’ (SO1) and ‘Short-ovipositor 2’ (SO2).</p>
+<div class="figure">
+<img src="img/fig_wasps.jpg" alt="" />
+<p class="caption">Image of two fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’</p>
+</div>
+<p>The reason that these two species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as the ones above.</p>
+<p>Suppose that we have some data on the lengths of the ovipositors from each species. We might want to know whether the mean ovipositor length differs between the two species. Below shows the ovipositor lengths collected from 32 fig wasps, 17 of the species ‘SO1’, and 15 of the species ‘SO2’.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Species</th>
+<th align="left">Ovipositor length (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3.256</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">3.133</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3.071</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">2.299</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">2.995</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">2.929</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3.291</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">2.658</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3.406</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">2.976</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">2.817</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">3.133</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">3.027</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3.178</td>
+</tr>
+<tr class="even">
+<td align="left">SO1</td>
+<td align="left">3.133</td>
+</tr>
+<tr class="odd">
+<td align="left">SO1</td>
+<td align="left">3.21</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">3.014</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">2.79</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.985</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">2.911</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.914</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">2.724</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.967</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">2.745</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.973</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">2.56</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.837</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">2.883</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.668</td>
+</tr>
+<tr class="odd">
+<td align="left">SO2</td>
+<td align="left">3.063</td>
+</tr>
+<tr class="even">
+<td align="left">SO2</td>
+<td align="left">2.639</td>
+</tr>
+</tbody>
+</table>
+<p>To test whether or not mean ovipositor length is different between these two fig wasps, our standard approach would be to use a two sample t-test. To review, our null hypothesis would be that the two means are the same, and our alternative (two-sided) hypothesis would be that the two means are not the same. We would need to check the assumption that the data are normally distributed, and that both samples have similar variances. Assuming that the assumption of normality is not violated (in which case we would need to consider a Mann Whitney test), and that both groups had similar variances (we can use an F test to check), we could proceed with calculating our t-statistic for equal sample size,</p>
+<p><span class="math display">\[t = \frac{mean(SO1) - mean(SO2)}{s_{p}}.\]</span></p>
+<p>The <span class="math inline">\(s_{p}\)</span> is just being used as a short-hand to indicate the pooled standard deviation,</p>
+<p><span class="math display">\[s_{p} = \sqrt{ \left(\frac{(n_{1} - 1)s^{2}_{1} + (n_{2} - 1)s^{2}_{2}}{n_{1} + n_{2} - 2} \right)  \left(\frac{n_{1} + n_{2}}{n_{1}n_{2}} \right)}.\]</span></p>
+<p>Values of n1 and n2 are the sample sizes for SO1 (17) and SO2 (15), respectively, and <span class="math inline">\(s^{2}_{1}\)</span> and <span class="math inline">\(s^{2}_{2}\)</span> are the sample variances for SO1 and SO2, respectively. After we calculate our t-statistic, we could then use a critical value table to determine whether or not our p-value is below 0.05, or we could run our t-test using statistical software such as SPSS to test the null hypothesis for us. If we do all of this, then we would find that we get a t-statistic of 2.4190497 with 30 degrees of freedom, and our p-value would be 0.0218352. The mean ovipositor length of SO1 was 3.0301176 mm, and the mean ovipositor length of SO2 was 2.8448667 mm. Hence, we would reject our null hypothesis and conclude that the difference between the group means (3.0301176 - 2.8448667 = 0.185251) is statistically significant.</p>
+<p><strong>What if we took a different approach?</strong> If there really is no difference between group means, then we should be able to randomly shuffle group identities (species) and get a difference between means that is not far off the one we actually get from the data. In other words, what would the difference between group means be if we just mixed up all of the species (so some SO1s become SO2s, some SO2s become SO1s, some stay the same), then calcualted the difference betwen means of the mixed up groups? If we just do this once, we cannot learn much. But if we randomly shuffle the groups many, many times (say at least 9999), then we could see what the difference between group means would look like just by chance; that is, if ovipositor length really was not different between SO1 and SO2. We could then compare our actual difference between mean ovipositor lengths to this null distribution, in which the difference between groups means really is random (it has to be, we randomised the groups ourselves!).</p>
+<p>Use <a href="https://bradduthie.shinyapps.io/randomisation/">this app</a> to try randomisation between groups. First notice that the data are ordered as they are in the table above. Species identity is in the first table column (SO1 in orange, SO2 in blue), and ovipositor length is in the second table column. The red value with the arrow pointing to it indicating ‘Observered’ is our actual difference (about 0.185 mm). Now we are going to look at the differences when we shuffle all of the groups in the first data column. Note that all of the values in the second data column will not change; we are just going to randomly shuffle the species identities in the first column. Do this by clicking ‘Randomise’. Notice how the order of species identities has completely changed. We then calculate the difference between group means given these new species identities; the difference is shown at the top of the plot, and is plotted in grey in the developing histogram. Keep clicking ‘Randomise’ to see our null distribution of group mean differences build up. As the histogram continues to be built, we can start to see the answer to our question, “if species identity is random with respect to ovipositor length, then how unusual is the difference between species means that we observed”?</p>
+<p>With modern computing power, we do not need to do this randomisation manually. A desktop computer can easily reshuffle the species identities and calculate a difference between means thousands of times in less than a second. The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 9999 times.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
+<p>Given this distribution random mean differences between species ovipositor lengths, our observed difference of 0.185251 appears to be fairly extreme. We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are as or more extreme than our observed difference. It turns out that only 207 out of 9999 random mean differences between ovipositor lengths were greater than or equal to our observed difference of 0.185251. To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
+<p><span class="math display">\[P = \frac{207 + 1}{9999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.0208. Notice that the calculated value is assigned with a ‘P’. This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of 0.0218352 that we got from the traditional t-test. Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
+</div>
+<div id="randomisation-assumptions" class="section level2 hasAnchor" number="34.3">
+<h2><span class="header-section-number">34.3</span> Randomisation assumptions<a href="summary-of-hypothesis-tseting.html#randomisation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Recall the assumptions underlying the standard two sample t-test for comparing two population means:</p>
+<ol style="list-style-type: decimal">
+<li>The data are collected from two independent groups of experiments/individuals.</li>
+<li>The data are normally distributed</li>
+<li>The observations are independent of each other</li>
+<li>Both samples have similar variances</li>
+</ol>
+<p>There are some subtle differences in the assumptions underlying randomisation, but a benefit of the randomisation approach is that we do not need to make as many assumptions about the underlying data. We do not need assume 2-4. The randomisation approach is still valid even if the data are not normally distributed, the observations are not independent, and samples have different variances. This is can be quite useful!</p>
+<p>The downside of the randomisation approach is that the statistical inferences that we make are limited to our sample. Because the randomisation method does not assume that the data are a random sample from the population of interest (as is the case for the traditional t-test), we cannot formally make an inference about the difference between populations from which the sample was made. This is not necessarily a problem in practice, however; it is only relevant in terms of the formal assumptions of the model. Once we run our randomisation test, it might be entirely reasonable to argue verbally that the results of our randomisation test can generalise to our population of interest; that is, that the difference between groups in the sample reflects a difference in the populations from which the sample came <span class="citation">(<a href="#ref-Ludbrook1998" role="doc-biblioref">Ludbrook and Dudley 1998</a>; <a href="#ref-Ernst2004" role="doc-biblioref">Ernst 2004</a>)</span>.</p>
+</div>
+<div id="bootstrapping" class="section level2 hasAnchor" number="34.4">
+<h2><span class="header-section-number">34.4</span> Bootstrapping<a href="summary-of-hypothesis-tseting.html#bootstrapping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We also can use randomisation to calculate confidence intervals for a variable of interest. Remember that the traditional way to calculate upper and lower confidence intervals is as follows:</p>
+<ul>
+<li>Upper confidence interval: mean + constant * standard error</li>
+<li>Lower confidence interval: mean - constant * standard error</li>
+</ul>
+<p>In the above, the mean is calculated in the usual way, and the standard error is the standard deviation divided by the square root of the sample size (n),</p>
+<p><span class="math display">\[SE = \frac{s}{\sqrt{n}}.\]</span></p>
+<p>The constant is either the t score or the z score that is appropriate for calculating the per cent confidence of interest. For example, 95 per cent of the probability density of the standard normal distribution lies between a z score of -1.96 and 1.96 (use <a href="https://bradduthie.shinyapps.io/zandp/">this app</a> if you need a review). For a sufficiently large n (usually n &gt; 30), we can therefore use a constant of 1.96. If n is less than or equal to 30, then we need to use the appropriate t score (use <a href="https://bradduthie.shinyapps.io/t_score/">this app</a> for review) as our constant. Let us look again at the fig wasp ovipositor lengths, but only focus on lengths for SO1,</p>
+<p>3.256, 3.133, 3.071, 2.299, 2.995, 2.929, 3.291, 2.658, 3.406, 2.976, 2.817, 3.133, 3, 3.027, 3.178, 3.133, 3.21</p>
+<p>To get the traditional 95 per cent confidence interval, we would calculate the following:</p>
+<ul>
+<li>The mean of SO1 ovipositor lengths is 3.0301176 mm.</li>
+<li>The standard error is 0.260018 / sqrt(17) = 0.0630636</li>
+<li>The t-score for df = 17 - 1 is 2.120</li>
+</ul>
+<p>We could therefore calculate the 95 per cent confidence intervals as follows:</p>
+<ul>
+<li>Upper confidence interval: 3.0301176 + 2.120 * 0.0630636 = 3.1638125</li>
+<li>Lower confidence interval: 3.0301176 + 2.120 * 0.0630636 = 2.8964228</li>
+</ul>
+<p><strong>Again, we can try a different approach</strong>. Instead of calculating the standard error and multiplying it by a z score or t score to encompass a particular interval of probability density, we can instead resample the data we have with replacement many times (we will get to what this means soon), calculating the mean each time we resample. The general idea is that this process of resampling approximates what would happen if we were to go back and resample new data from our original population many times, thereby giving us the distribution of means from all of these hypothetical resampling events <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>. To calculate our 95 per cent confidence intervals, we then only need to rank the calculated means and find the mean closest to the lowest 2.5 per cent and the highest 97.5 per cent. Let us look again at those original values.</p>
+<p>3.256, 3.133, 3.071, 2.299, 2.995, 2.929, 3.291, 2.658, 3.406, 2.976, 2.817, 3.133, 3, 3.027, 3.178, 3.133, 3.21</p>
+<p>The phrase ‘resampling with replacement’ just means that we are going to randomly sampled some values, but not remove them from the pool of possible values after they are sampled If we resample the numbers above with replacement, we might therefore sample some values two or more times by chance, and other values might not be sampled at all. The numbers below resample from the above with replacement.</p>
+<p>3, 3.291, 3.21, 2.995, 2.299, 3.071, 3.21, 2.658, 3.21, 3, 3.21, 3.027, 2.817, 2.976, 3.133, 3.133, 3.178</p>
+<p>Notice that some values appear twice in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original. The mean of our original 17 values was 3.0301176, and the mean of the values resampled above is 3.0245882. We can resample another set of numbers to get a new mean.</p>
+<p>3.256, 3.256, 3.133, 3.133, 2.658, 2.658, 2.299, 3.256, 3.21, 3.21, 3.406, 2.929, 3.071, 3.291, 3.21, 3.133, 3.133</p>
+<p>The mean of the above sample is 3.0730588. We can continue doing this process (not by hand, of course, but with a coputer program or code) until we have a high number of random samples and means. Here is a distribution of means if we did this process 10000 times.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-184-1.png" width="672" /></p>
+<p>The red arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means. Note that it does not matter if the above distribution is not normal (it appears a bit skewed), the boostrap still works. Our values using the randomisation approach are as follows.</p>
+<ul>
+<li>Upper confidence interval: 3.1396471</li>
+<li>Lower confidence interval: 2.8998824</li>
+</ul>
+<p>Compare these values to the confidence intervals calculated with the traditional approach.</p>
+<ul>
+<li>Upper confidence interval: 3.1638125</li>
+<li>Lower confidence interval: 2.8964228</li>
+</ul>
+<p>The values are quite similar because we are doing the same thing, conceptually, using two different approaches. Note that if we tried this bootstrap again, we would get slightly different confidence intervals.</p>
+</div>
+<div id="monte-carlo" class="section level2 hasAnchor" number="34.5">
+<h2><span class="header-section-number">34.5</span> Monte Carlo<a href="summary-of-hypothesis-tseting.html#monte-carlo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The previous examples of hypothesis testing and bootstrapping involved resampling from existing data sets to address a statistical question. But we can also use randomisation in cases in which it is impossible to derive the null distribution from the data. In this last example, <strong>the goal will be to test whether or not fig trees are randomly distributed across a fixed sampling area.</strong></p>
+<p><img src="img/fig_tree.jpg" /></p>
+<p>The locations of these fig trees were collected over the course of many field seasons. The first six rows of the data set with tree locations are shown below.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Site</th>
+<th align="left">Tree</th>
+<th align="right">Latitude</th>
+<th align="right">Longitude</th>
+<th align="right">Elevation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">S172</td>
+<td align="left">T34</td>
+<td align="right">28.29021</td>
+<td align="right">-113.1116</td>
+<td align="right">718.2859</td>
+</tr>
+<tr class="even">
+<td align="left">S172</td>
+<td align="left">T01</td>
+<td align="right">28.29141</td>
+<td align="right">-113.1117</td>
+<td align="right">664.8726</td>
+</tr>
+<tr class="odd">
+<td align="left">S172</td>
+<td align="left">T02</td>
+<td align="right">28.29130</td>
+<td align="right">-113.1118</td>
+<td align="right">652.8560</td>
+</tr>
+<tr class="even">
+<td align="left">S172</td>
+<td align="left">T03</td>
+<td align="right">28.29129</td>
+<td align="right">-113.1126</td>
+<td align="right">663.6709</td>
+</tr>
+<tr class="odd">
+<td align="left">S172</td>
+<td align="left">T04</td>
+<td align="right">28.29127</td>
+<td align="right">-113.1127</td>
+<td align="right">653.3367</td>
+</tr>
+<tr class="even">
+<td align="left">S172</td>
+<td align="left">T05A</td>
+<td align="right">28.29110</td>
+<td align="right">-113.1125</td>
+<td align="right">676.8889</td>
+</tr>
+</tbody>
+</table>
+<p>We can plot the latitude and longitude of each of the 59 trees below. The brown box shows the study plot at the field site, randomly set from latitude 28.289 to 28.2918 and longitude -113.1145 to -113.1095.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-187-1.png" width="672" /></p>
+<p>The focal question is <strong>whether or not these trees are randomly distributed within the brown box.</strong> This is not a question that can be answered by randomising the latitude and longitude coordinates of trees. What we need to do instead is compare the distribution of the trees above with that of trees with randomly placed latitude and longitude coordinates within the box. This is a job for a <strong>Monte Carlo</strong> test, which compares an observed test statistic with that derived from a theoretical null model <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>. In this case, the test statistic we will use is distance to the nearest neighbour (i.e., for a focal tree, how close the nearest member of the same species). The null model that we will assume is a set of randomly sampled latitude and longitude coordinates within the fixed study area.</p>
+<p>More formally, our null hypothesis will be that the mean nearest neighour distance for a focal tree in the observed data will not differ significantly from the mean nearest neighour distance obtained form the same number of trees randomly distributed within the sampling area (brown box). To test this null hypothesis, we can randomly place 59 trees on the sampling area and calculate the mean nearest neighbour distance for the randomly placed trees. If we repeat this procedure a large number of times, then we can build a null distribution of nearest neighbour distances for trees that are randomly placed within the study are (i.e., random latitude and longitude coordinates).</p>
+<p>Given the random placement of these trees, find the mean distance to the nearest neighbouring tree, calculated across all of the randomly placed trees. This mean nearest neighbour distance is then stored so that a null distribution can be built. We can see what these randomly placed trees look like by plotting some of the iterations below.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-190-1.png" width="768" /></p>
+<p>Below, the distribution of mean distance to the nearest neighbour is plotted for the 9999 randomly generated tree study areas. The arrow shows the actual observed mean distance between nearest neighbours, as calculated form the original data set.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-191-1.png" width="672" /></p>
+<p>It appears, from the position of the mean tree nearest neighbour distance in the observed data, that the <em>F. petiolaris</em> trees are no more or less spatially aggregated than would be expected by chance.</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Ernst2004" class="csl-entry">
+Ernst, Michael D. 2004. <span>“<span class="nocase">Permutation methods: A basis for exact inference</span>.”</span> <em>Statistical Science</em> 19 (4): 676–85. <a href="https://doi.org/10.1214/088342304000000396">https://doi.org/10.1214/088342304000000396</a>.
+</div>
+<div id="ref-Ludbrook1998" class="csl-entry">
+Ludbrook, John, and Hugh Dudley. 1998. <span>“<span class="nocase">Why Permutation Tests Are Superior to t and F Tests in Biomedical Research</span>.”</span> <em>American Statistician</em> 52 (2): 127–32.
+</div>
+<div id="ref-Manly2007" class="csl-entry">
+Manly, Bryan F J. 2007. <em><span class="nocase">Randomization, Bootstrap and Monte Carlo Methods in Biology</span></em>. 3rd ed. Boca Raton, FL: Chapman &amp; Hall/CRC.
+</div>
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="Week11.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="practical.-using-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/11-Randomisation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
