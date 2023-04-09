@@ -607,7 +607,7 @@ We could therefore get the same answer as above using the code below.</p>
 <blockquote>
 <p>Task 4: Find the mean bill length of penguins in mm (column 3)</p>
 </blockquote>
-<p>Mean bill length (mm): _________________________________________________________</p>
+<p>Mean bill length (mm): ____________________</p>
 <p>Now we can try 2 more functions.
 The function <code>sd</code> returns the standard deviation of numbers (note that while <code>na.rm</code> is not an argument for every R function, it can also be used as an argument in <code>sd</code>).
 The function <code>length</code> returns the length of an object.
@@ -615,8 +615,8 @@ Try using these functions to calculate the 95 per cent confidence intervals for 
 <blockquote>
 <p>Task 5: Calculate lower and upper confidence intervals (CIs) using the R functions <code>mean</code>, <code>sd</code>, and <code>length</code>.</p>
 </blockquote>
-<p>Lower bill length CI: __________________________________________________________</p>
-<p>Upper bill length CI: __________________________________________________________</p>
+<p>Lower bill length CI: ______________________</p>
+<p>Upper bill length CI: ______________________</p>
 <p>Next, we can use the penguins dataset to run a one-way ANOVA, two-way ANOVA, <span class="math inline">\(\chi^{2}\)</span> tests, correlation test, and linear regression.
 This practical will walk you through the code so that you can focus on understanding the R output.</p>
 </div>
@@ -642,8 +642,8 @@ The function <code>anova</code> then summarises this model.</p>
 <p>Task 6: Use the code above to run an ANOVA to test the null hypothesis that species have the same bill length. Find the F value and p value from the output.</p>
 </blockquote>
 <p>Note that R uses scientific notation to write very low values. For example <code>5.5e-4</code> would be interpreted as <span class="math inline">\(5.5 \times 10^{-4}\)</span>, which is 0.00055.</p>
-<p>F value: _______________________________________________________________________</p>
-<p>p value: _______________________________________________________________________</p>
+<p>F value: _________________</p>
+<p>p value: _________________</p>
 <p>Since our p-value is less than 0.05, we can also run a Tukey’s Honestly Significant Difference test of multiple comparisons (see <a href="Chapter_24.html#Chapter_24">Chapter 24</a>).
 We need to use the <code>aov</code> and <code>TukeyHSD</code> functions to do it.</p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="Chapter_37.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(anova_model));</span></code></pre></div>
@@ -660,7 +660,10 @@ Now we are just adding a new independent variable with the <code>+</code> sign, 
 <blockquote>
 <p>Task 7: Use the code above to run a two way ANOVA. Determine whether or not the the main effects of the model (species and sex) are significant, and whether the interaction terms are significant.</p>
 </blockquote>
-<p>Significance: Species? __________ Sex? _____________ Interaction? _____________</p>
+<p>Significance:</p>
+<p>Species? __________</p>
+<p>Sex? _____________</p>
+<p>Interaction? _____________</p>
 </div>
 <div id="chi-square-test-in-r" class="section level3 hasAnchor" number="37.2.3">
 <h3><span class="header-section-number">37.2.3</span> Chi-square test in R<a href="Chapter_37.html#chi-square-test-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -729,10 +732,10 @@ In the formula, the dependent variable <code>mass</code> is separated from the i
 <blockquote>
 <p>Task 11: Examine the output of the simple regression of penguin body mass against bill depth from the code above. Find the R-squared value (called ‘Multiple R-squared’), intercept, slope, and p-value for the overall model.</p>
 </blockquote>
-<p>R-squared: _____________________________________________________________________</p>
-<p>Intercept: _____________________________________________________________________</p>
-<p>Slope: _________________________________________________________________________</p>
-<p>Model p-value: _________________________________________________________________</p>
+<p>R-squared: _______________</p>
+<p>Intercept: _______________</p>
+<p>Slope: ___________________</p>
+<p>Model p-value: ___________</p>
 <p>Note that the p-value for the model is in the very bottom right of the output.</p>
 </div>
 <div id="multiple-regression-in-r" class="section level3 hasAnchor" number="37.2.6">
@@ -748,8 +751,8 @@ For multiple regression, the code again looks suspiciously similar to what it do
 <blockquote>
 <p>Task 12: Examine the output of the multiple regression from the code above. Find the adjusted R-squared value, and write down the equation of the model.</p>
 </blockquote>
-<p>Adjusted R-squared: ____________________________________________________________</p>
-<p>Model equation: ________________________________________________________________</p>
+<p>Adjusted R-squared: ________________</p>
+<p>Model equation: ____________________</p>
 <p>We have now looked at how to run ANOVAs, Chi-square tests, correlation tests, and regression in R.
 These tests rely on assumptions about the data.
 If these assumptions are violated, then we need to run a nonparametric alternative test.
