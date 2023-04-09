@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 32 Multiple regression | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 37 Practical. Statistical techniques in R | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 32 Multiple regression | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 37 Practical. Statistical techniques in R | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 32 Multiple regression | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 37 Practical. Statistical techniques in R | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Chapter_31.html"/>
-<link rel="next" href="Chapter_33.html"/>
+<link rel="prev" href="Chapter_36.html"/>
+<link rel="next" href="Week13.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -502,183 +502,314 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Chapter_32" class="section level1 hasAnchor" number="32">
-<h1><span class="header-section-number">Chapter 32</span> Multiple regression<a href="Chapter_32.html#Chapter_32" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Multiple regression is an extension of the general idea of simple linear regression, with some important caveats.
-In multiple regression, there is more than one independent variable (<span class="math inline">\(x\)</span>), and each independent variable is associated with its own regression coefficient (<span class="math inline">\(b\)</span>).
-For example, if we have 2 independent variables, <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(x_{2}\)</span>, then we can predict <span class="math inline">\(y\)</span> using the equation,</p>
-<p><span class="math display">\[y = b_{0} + b_{1}x_{1} + b_{2}x_{2}.\]</span></p>
-<p>More generally, for <span class="math inline">\(k\)</span> independent variables,</p>
-<p><span class="math display">\[y = b_{0} + b_{1}x_{1} + ... + b_{k}x_{k}.\]</span></p>
-<p>Mathematically, this almost seems like a trivial extension of the simple linear regression model.
-But conceptually, there is an additional consideration necessary to correctly interpret the regression coefficients (i.e., the <span class="math inline">\(b\)</span> values).
-Values of <span class="math inline">\(b_{i}\)</span> now give us the predicted effects of <span class="math inline">\(x_{i}\)</span> <em>if all other independent variables were to be held constant</em> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-In other words, <span class="math inline">\(b_{i}\)</span> tells us what would happen if we were to increase <span class="math inline">\(x_{i}\)</span> by a value of 1 in the context of every other independent variable in the regression model.
-We call these <span class="math inline">\(b\)</span> coefficients <strong>partial regression coefficients</strong>.
-The word ‘partial’ is a general mathematical term meaning that we are only looking at the effect of a single independent variable <span class="citation">(<a href="#ref-Borowski2005" role="doc-biblioref">Borowski and Borwein 2005</a>)</span>.
-Since multiple regression investigates the effect of each independent variable in the context of all other independent variables, we might sometimes expect regression coefficients to be different from what they would be given a simple linear regression <span class="citation">(<a href="#ref-Morrissey2018" role="doc-biblioref">Morrissey and Ruxton 2018</a>)</span>.
-It is even possible for the sign of the coefficients to change (e.g., from negative to positive).</p>
-<p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_31.html#Chapter_31">Chapter 31</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
-Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 32.1).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-170">Table 32.1: </span>Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
-<tbody>
-<tr class="odd">
-<td align="left">Latitude</td>
-<td align="right">23.7</td>
-<td align="right">24.0</td>
-<td align="right">27.6</td>
-<td align="right">27.2</td>
-<td align="right">29.3</td>
-<td align="right">28.2</td>
-<td align="right">28.3</td>
-</tr>
-<tr class="even">
-<td align="left">Altitude</td>
-<td align="right">218.5</td>
-<td align="right">163.5</td>
-<td align="right">330.1</td>
-<td align="right">542.3</td>
-<td align="right">656.0</td>
-<td align="right">901.3</td>
-<td align="right">709.6</td>
-</tr>
-<tr class="odd">
-<td align="left">Volume</td>
-<td align="right">2399.0</td>
-<td align="right">2941.7</td>
-<td align="right">2167.2</td>
-<td align="right">2051.3</td>
-<td align="right">1686.2</td>
-<td align="right">937.3</td>
-<td align="right">1328.2</td>
-</tr>
-</tbody>
-</table>
-<p>We can use a scatterplot to visualise each independent variable on the x-axis against the dependent variable on the y-axis (Figure 32.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-171"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-171-1.png" alt="Two scatter plots are shown, one with Latitude on the x-axis and Fruit volume on the y-axis, and another with Altitude on the x-axis and Fruit volume on the y-axis." width="672" />
+<div id="Chapter_37" class="section level1 hasAnchor" number="37">
+<h1><span class="header-section-number">Chapter 37</span> <em>Practical</em>. Statistical techniques in R<a href="Chapter_37.html#Chapter_37" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This lab practical will demonstrate how to run statistical tests in R that have been introduced in Jamovi in previous practicals.
+The practical will use the <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html#package-citation-1">PalmerPenguins</a> dataset <span class="citation">(<a href="#ref-GormanEtAl2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>; <a href="#ref-HorstEtAl2020" role="doc-biblioref">Horst, Hill, and Gorman 2020</a>)</span>.
+These data include morphological measurements for 3 species of penguins that inhabit 3 islands in the Palmer Archipelago, Antarctica (Figure 37.1; artwork by <a href="https://allisonhorst.com/">allison_horst</a>, Creative Commons Attribution 4.0 International License).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-217"></span>
+<img src="img/penguins.png" alt="Cartoon image of three penguins standing in a row, each highlighted by a background of a different colour." width="100%" />
 <p class="caption">
-Figure 32.1: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset.
+Figure 37.1: This practical uses data collected on the morphologies of 3 Antarctic penguin species.
 </p>
 </div>
-<p>As with simple regression (<a href="Chapter_31.html#Chapter_31">Chapter 31</a>), we can test whether or not the overall model that includes both latitude and altitude as independent variables produces a significantly better fit to the data than just the mean volume.
-We can also find partial regression coefficients for latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>), and test whether or not these coefficients are significantly different from 0.</p>
-<p>In <a href="Chapter_31.html#Chapter_31">Chapter 31</a>, we found that a simple regression of latitude against fruit volume had an intercept of <span class="math inline">\(b_{0} = 3592.36\)</span> and a regression coefficient of <span class="math inline">\(b_{1} = -242.68\)</span>,</p>
-<p><span class="math display">\[Volume = 3592.36 - 242.68(Latitude).\]</span></p>
-<p>The slope of the regression line (<span class="math inline">\(b_{1}\)</span>) was not significantly different from zero (<span class="math inline">\(P = 0.22287\)</span>).</p>
-<p>A multiple regression can be used with latitude and altitude as independent variables to predict volume,</p>
-<p><span class="math display">\[Volume = b_{0} + b_{1}(Latitude) + b_{2}(Altitude).\]</span></p>
-<p>We have the values of volume, latitude, and altitude in Table 32.1.
-We now need to run a multiple regression to find the intercept (<span class="math inline">\(b_{0}\)</span>) and partial regression coefficients describing the partial effects of latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>) on volume.
-In Jamovi or R <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
-Table 32.2 shows an output table from R, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-172">Table 32.2: </span>Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Estimate</th>
-<th align="right">Std. Error</th>
-<th align="right">t value</th>
-<th align="right">Pr(&gt;|t|)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>(Intercept)</td>
-<td align="right">2988.245389</td>
-<td align="right">1697.5587030</td>
-<td align="right">1.7603193</td>
-<td align="right">0.1531597</td>
-</tr>
-<tr class="even">
-<td>Latitude</td>
-<td align="right">5.587834</td>
-<td align="right">71.4880645</td>
-<td align="right">0.0781646</td>
-<td align="right">0.9414511</td>
-</tr>
-<tr class="odd">
-<td>Altitude</td>
-<td align="right">-2.402240</td>
-<td align="right">0.5688147</td>
-<td align="right">-4.2232377</td>
-<td align="right">0.0134427</td>
-</tr>
-</tbody>
-</table>
-<p>There are a few things to point out from Table 32.2.
-First, note that as with simple linear regression (see <a href="Chapter_31.html#regression-hypothesis-testing">Chapter 31.7</a>), the significance of the intercept and regression coefficients is tested using the t-distribution.
-This is because we assume that these sample coefficients (<span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span>) will be normally distributed around the true population parameter values (<span class="math inline">\(\beta_{0}\)</span>, <span class="math inline">\(\beta_{1}\)</span>, and <span class="math inline">\(\beta_{2}\)</span>).
-In other words, if we were to go back out and repeatedly collect many new datasets (sampling volume, latitude, and altitude <em>ad infinitum</em>), then the distribution of <span class="math inline">\(b\)</span> sample coefficients calculated from these datasets would be normally distributed around the true <span class="math inline">\(\beta\)</span> population coefficients.
-The t-distribution, which accounts for uncertainty that is attributable to a finite sample size (see <a href="Chapter_18.html#Chapter_18">Chapter 18</a>), is therefore the correct one to use when testing the significance of coefficients.</p>
-<p>Second, the intercept has changed from what it was in the simple linear regression model.
-In the simple linear regression, it was 3592.36, but in the multiple regression it is <span class="math inline">\(b_{0} = 2989.02\)</span>.
-The p-value of the intercept has also changed.
-In the simple linear model, the p-value was significant (P = 0.0142).
-But in the multiple regression model, it is not significant (P = 0.1532).</p>
-<p>Third, and perhaps most strikingly, the prediction and significance of latitude has changed completely.
-In the simple linear regression model from <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>, fruit volume decreased with latitude (<span class="math inline">\(b_{1} = -242.68\)</span>), and this decrease was statistically significant (<span class="math inline">\(P = 0.0356\)</span>).
-Now the multiple regression output is telling us that, if anything, fruit volume appears to <em>increase</em> with latitude (<span class="math inline">\(b_{1} = 5.59\)</span>), although this is not statistically significant (<span class="math inline">\(P = 0.9415\)</span>).
-What is going on here?
-This result illustrates the context dependence of partial regression coefficients in the multiple regression model.
-In other words, although fruit volume appeared to significantly decrease with increasing latitude in the simple regression model of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>, this is no longer the case once we account for the altitude from which the fruit was collected.
-Latitude, <em>by itself</em>, does not appear to affect fruit volume after all.
-It only appeared to affect fruit volume because locations at high latitude also tend to be higher in altitude.
-And each metre of altitude appears to decrease fruit volume by about -2.4 <span class="math inline">\(mm^{3}\)</span> (Table 32.2).
-This partial effect of altitude on fruit volume is statistically significant (P &lt; 0.05).
-We therefore do not reject the null hypothesis that the intercept (<span class="math inline">\(b_{0}\)</span>) and partial coefficient of latitude (<span class="math inline">\(b_{1}\)</span>) is significantly different from 0.
-But we do reject the null hypothesis that <span class="math inline">\(b_{2} = 0\)</span>, and we can conclude that altitude has an effect on fig fruit volume.</p>
-<p>We can also look at the overall multiple regression model.
-Figure 32.2 shows what this model output looks like reported by Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-173"></span>
-<img src="img/jamovi_overall_multiple_regression_output.png" alt="An output table is shown with a single row and columns for R squared, Adusted R squared, F, df1, df2, and p." width="100%" />
+<p>The data were collected by Dr Kristen Gorman at the <a href="https://pal.lternet.edu/">Palmer Station</a> Long Term Ecological Research program from 2007-2009.
+To complete this lab, download the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv">penguins.csv</a> dataset (right click and “Save Link As…”, then save it with the extension ‘.csv’).
+Data include measurements of bill length (mm), bill depth (mm), flipper length (mm), body mass (g), and sampling year for penguins of 3 species on 3 islands.</p>
+<div id="working-with-a-data-set" class="section level2 hasAnchor" number="37.1">
+<h2><span class="header-section-number">37.1</span> Working with a data set<a href="Chapter_37.html#working-with-a-data-set" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First, we need to open Rstudio.
+You can do this on your own computer, or within a browser on the <a href="https://posit.cloud/">posit cloud</a>.
+Although it is possible to use R in a different environment than Rstudio, Rstudio will make some tasks easier.
+To get started, we need to make that we are working in the same directory (i.e., folder, see <a href="Chapter_2.html#managing-data-files">Chapter 2.3</a> on managing data files) that we saved the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv">penguins.csv</a>.
+We could use the <code>setwd()</code> function to do this (e.g., by typing something like <code>setwd("C:\Users\MyName\Documents")</code> in the console on a Windows computer).
+But the easiest way in Rstudio is to navigate to the toolbar and select ‘Session’, then ‘Set Working Directory’ from the pulldown, and then ‘Choose Directory’ (Figure 37.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-218"></span>
+<img src="img/Rstudio_setwd.png" alt="Rstudio menu is show with 'Session' selected from the toolbar, then 'Set Working Directory' from the pull down, which opens another pulldown with the highlighted option 'Choose Directory'." width="100%" />
 <p class="caption">
-Figure 32.2: Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.
+Figure 37.2: Rstudio option in the toolbar for setting a working directory.
 </p>
 </div>
-<p>As with the simple linear regression output from <a href="Chapter_31.html#simple-regression-output">Chapter 31.7.4</a>, the overall model test output table includes columns for <span class="math inline">\(R^{2}\)</span>, F, degrees of freedom, and a p-value for the overall model.
-There is one key difference between this output table and the overall model output for a simple linear regression, and that is the Adjusted <span class="math inline">\(R^{2}\)</span>.
-This is the adjusted coefficient of determination <span class="math inline">\(R^{2}_{adj}\)</span>, which is necessary to compare regression models with different numbers of independent variables.</p>
-<div id="adjusted-coefficient-of-determination" class="section level2 hasAnchor" number="32.1">
-<h2><span class="header-section-number">32.1</span> Adjusted coefficient of determination<a href="Chapter_32.html#adjusted-coefficient-of-determination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Recall from <a href="Chapter_31.html#coefficient-of-determination">Chapter 31.5</a> that the coefficient of determination (<span class="math inline">\(R^{2}\)</span>) tells us how much of the total variation in the dependent variable is explained by the regression model.
-This was fine for a simple linear regression, but with the addition of new independent variables, the proportion of the variance in y explained by our model is expected to increase even if the new independent variables are not very good predictors.
-This is because the amount of variation explained by our model can only increase if we add new independent variables.
-In other words, any new independent variable that we choose to add to the model cannot explain a negative amount of variation; that does not make any sense!
-The absolute <em>worst</em> that an independent variable can do is explain zero variation.
-And even if the independent variable is just a set of random numbers, it will likely explain <em>some</em> of the variation in the dependent variable just by chance.
-Hence, even if newly added independent variables are bad predictors, they might still improve the goodness of fit of our model by chance.
-To help account for this spurious improvement of fit, we can use an adjusted R squared (<span class="math inline">\(R^{2}_{adj}\)</span>).
-The <span class="math inline">\(R^{2}_{adj}\)</span> takes into account the <span class="math inline">\(R^{2}\)</span>, the sample size (<span class="math inline">\(N\)</span>), and the number of independent variables (<span class="math inline">\(k\)</span>),</p>
-<p><span class="math display">\[R^{2}_{adj} = 1 - \left(1 - R^{2}\right)\left(\frac{N - 1}{N - k - 1}\right).\]</span></p>
-<p>As <span class="math inline">\(k\)</span> increases, the fraction above <span class="math inline">\((N-1)/(N-k-1)\)</span> gets bigger.
-And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}_{adj}\)</span> decreases.
-Consequently, more independent variables (k) cause a decrease in the adjusted R-squared value.
-This attempts to account for the inevitable tendency of <span class="math inline">\(R^{2}\)</span> to increase with <span class="math inline">\(k\)</span>.</p>
-<!--- Maybe something about multiple regression assumptions? --->
+<p>A new window will open that will allow you to navigate to the location in which <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv">penguins.csv</a> was saved.</p>
+<p>In the practical from <a href="Chapter_35.html#Chapter_35">Chapter 35</a>, we worked entirely from the R console.
+This time, we will will introduce R scripts to make organising the code a bit easier.
+To do this, navigate to the Rstudio toolbar and select ‘File’, then ‘New File’ followed by ‘R Script’ (Figure 37.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-219"></span>
+<img src="img/Rstudio_script.png" alt="Rstudio menu is show with 'File' selected from the toolbar, then 'New File' from the pull down, which opens another pulldown with the highlighted option 'R script'." width="100%" />
+<p class="caption">
+Figure 37.3: Rstudio option in the toolbar for creating a new R script.
+</p>
+</div>
+<p>You should then see an empty script called ‘Untitled1’ open up above the R console.
+This will be useful because it will allow us to save the R commands that we run.</p>
+<blockquote>
+<p>Task 1: Open a new R script by selecting ‘File &gt; New File &gt; R script’.</p>
+</blockquote>
+<p>Now we need to read in the penguins dataset.
+Assuming that we are in the same working directory as the place we saved the file called ‘penguins.csv’, we can use the function <code>read.csv</code> to read in the CSV file.
+Type (or copy-paste) the line below into the R script.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="Chapter_37.html#cb159-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;penguins.csv&quot;</span>);</span></code></pre></div>
+<p>Put your cursor on the line that you typed (you can also highlight the whole line, but this is not necessary).
+Next, find the ‘Run’ button in the toolbar and click it (Figure 37.4).
+Rstudio will run whatever line of code your cursor is on, or whatever chunk of code is highlighted (including multiple lines at once; notice the line numbers in the left margin of the script).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-222"></span>
+<img src="img/Rstudio_run.png" alt="Rstudio toolbar is shown with multiple options, including one that says 'Run' in the upper right." width="100%" />
+<p class="caption">
+Figure 37.4: An Rstudio toolbar with the ‘Run’ option in the upper right to run a line of code from the script to the console.
+</p>
+</div>
+<p>If that did not work, then double-check to make sure that you are in the correct directory and have the file name correct.
+Everything in R is case sensitive, meaning that capitalisation matters, so R will treat ‘Penguins.csv’ and ‘penguins.csv’ as completely different!
+It is important to be precise.</p>
+<p>Once you have read in the penguins dataset, have a look at the first 6 rows using the function <code>head</code>.</p>
+<blockquote>
+<p>Task 2: View the first 6 rows of the penguins dataset.</p>
+</blockquote>
+<p>On the second line of your R script, type the code below, then run it.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="Chapter_37.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins);</span></code></pre></div>
+<pre><code>  species    island bill_length bill_depth flipper_length mass  year
+1  Adelie Torgersen        39.1       18.7            181 3750 Y2007
+2  Adelie Torgersen        39.5       17.4            186 3800 Y2007
+3  Adelie Torgersen        40.3       18.0            195 3250 Y2007
+4  Adelie Torgersen          NA         NA             NA   NA Y2007
+5  Adelie Torgersen        36.7       19.3            193 3450 Y2007
+6  Adelie Torgersen        39.3       20.6            190 3650 Y2007</code></pre>
+<p>You should see the first 6 rows of the dataset print out in the console.
+Notice that the dataset is already in a tidy format.
+Each row is an individual penguin, and each variable is a column.</p>
+<p>Unlike Jamovi, we cannot change the data in penguins simply by clicking on values.
+Like everything else in R, we need to do this using code.
+If we wanted to change the value of row one column three to 40, for example (i.e., the first penguin’s bill depth), then we would need to do the following.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="Chapter_37.html#cb162-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">1</span>, <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">40</span></span></code></pre></div>
+<p>The square brackets can be used to indicate a specific row and column in the data (i.e., data[row_number, column_number]).
+A missing value in the square brackets will be interpreted by R as referring to all elements in the dataset.
+For example, if we wanted to have R just print off the fifth row of the penguins dataset, we could run the following.</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="Chapter_37.html#cb163-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">5</span>, ]</span></code></pre></div>
+<p>The absence of any value above in <code>, ]</code> tells R to print all of the columns. We can do the same for the columns.</p>
+<blockquote>
+<p>Task 3: Print just column 3 of the penguins dataset. What does the code look like?</p>
+</blockquote>
+<p>Code to return column 3: ______________________________________</p>
+<p>Notice that some of the values in the dataset are not numeric, but instead are given as <code>NA</code>.
+This is how missing data are indicated in R.
+An example of this is shown in the measurements for the penguin in the fourth row.
+These <code>NA</code> values can become a nuisance when we try to calculate summary statistics.
+Using the <code>mean</code> function introduced in the practical last week, try running the line of code below to get the mean of column 3.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="Chapter_37.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>])</span></code></pre></div>
+<p>We get a value of <code>NA</code> instead of the mean of the numbers that are not missing.
+This is because we need to tell R explicitly to remove values that are missing when calculating the mean.
+We can do this with the <code>na.rm</code> argument in the mean function.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="Chapter_37.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Note that we can also access column three by using the <code>$</code> sign and the name of the relevant column (in this case <code>bill_length</code>).
+We could therefore get the same answer as above using the code below.</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="Chapter_37.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>There is usually more than one way of doing the same thing in R (we could also use <code>penguins[["bill_length"]]</code>).</p>
+<blockquote>
+<p>Task 4: Find the mean bill length of penguins in mm (column 3)</p>
+</blockquote>
+<p>Mean bill length (mm): _________________________________________________________</p>
+<p>Now we can try 2 more functions.
+The function <code>sd</code> returns the standard deviation of numbers (note that while <code>na.rm</code> is not an argument for every R function, it can also be used as an argument in <code>sd</code>).
+The function <code>length</code> returns the length of an object.
+Try using these functions to calculate the 95 per cent confidence intervals for mean bill length (you can use a z-score of 1.96).</p>
+<blockquote>
+<p>Task 5: Calculate lower and upper confidence intervals (CIs) using the R functions <code>mean</code>, <code>sd</code>, and <code>length</code>.</p>
+</blockquote>
+<p>Lower bill length CI: __________________________________________________________</p>
+<p>Upper bill length CI: __________________________________________________________</p>
+<p>Next, we can use the penguins dataset to run a one-way ANOVA, two-way ANOVA, <span class="math inline">\(\chi^{2}\)</span> tests, correlation test, and linear regression.
+This practical will walk you through the code so that you can focus on understanding the R output.</p>
+</div>
+<div id="familiar-statistical-tests-in-r" class="section level2 hasAnchor" number="37.2">
+<h2><span class="header-section-number">37.2</span> Familiar statistical tests in R<a href="Chapter_37.html#familiar-statistical-tests-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this exercise, we will use the penguins dataset to run some familiar statistical hypothesis tests.
+In R, there is typically more than one way to do something.
+We will focus on the simplest way to run a one-way ANOVA, two-way ANOVA, <span class="math inline">\(\chi^{2}\)</span> tests, correlation test, and linear regression.</p>
+<div id="one-way-anova-in-r" class="section level3 hasAnchor" number="37.2.1">
+<h3><span class="header-section-number">37.2.1</span> One-way ANOVA in R<a href="Chapter_37.html#one-way-anova-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can start by running a one-way ANOVA to test the null hypothesis that all species have the same mean bill length.
+Normally we would want to first check the assumptions of the ANOVA.
+For now, we will assume that no assumptions are violated, but the Shapiro-Wilk test and Levene’s test of equal variances will be demonstrated later.
+To run a one-way ANOVA in R, we can use the code below.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="Chapter_37.html#cb167-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span>
+<span id="cb167-2"><a href="Chapter_37.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(anova_model);</span></code></pre></div>
+<p>The function <code>lm</code> runs a general linear model (we have not discussed it in this module, but t-tests, ANOVA, and linear regression are all based on <a href="https://stirlingcodingclub.github.io/linear_modelling/">the same mathematical framework</a>; see <a href="#Chapter_38">Chapter 38</a> for more explanation).
+We can use the column names <code>bill_length</code> and <code>species</code> directly if we specify that we are using the dataset in which these columns are found (<code>penguins</code>).
+Inside <code>lm</code>, you will notice the <code>~</code> symbol. This just separates our dependent variable (<code>bill_length</code> on the left) and independent variable (<code>species</code> on the right).</p>
+<p>In the above, we are storing this model with a new variable named <code>anova_model</code> (note that we can use <code>&lt;-</code> to store more than just lists of numbers; in this case, our object is the whole linear model!).
+The function <code>anova</code> then summarises this model.</p>
+<blockquote>
+<p>Task 6: Use the code above to run an ANOVA to test the null hypothesis that species have the same bill length. Find the F value and p value from the output.</p>
+</blockquote>
+<p>Note that R uses scientific notation to write very low values. For example <code>5.5e-4</code> would be interpreted as <span class="math inline">\(5.5 \times 10^{-4}\)</span>, which is 0.00055.</p>
+<p>F value: _______________________________________________________________________</p>
+<p>p value: _______________________________________________________________________</p>
+<p>Since our p-value is less than 0.05, we can also run a Tukey’s Honestly Significant Difference test of multiple comparisons (see <a href="Chapter_24.html#Chapter_24">Chapter 24</a>).
+We need to use the <code>aov</code> and <code>TukeyHSD</code> functions to do it.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="Chapter_37.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(anova_model));</span></code></pre></div>
+<p>The <code>TukeyHSD</code> function will report a table of post hoc comparisons similar to the ones reported by Jamovi.</p>
+</div>
+<div id="two-way-anova-in-r" class="section level3 hasAnchor" number="37.2.2">
+<h3><span class="header-section-number">37.2.2</span> Two-way ANOVA in R<a href="Chapter_37.html#two-way-anova-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can run a two-way ANOVA using the independent variables ‘species’ and ‘year’ with the code below.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="Chapter_37.html#cb169-1" aria-hidden="true" tabindex="-1"></a>two_way_aov <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span>  bill_length <span class="sc">~</span> species <span class="sc">+</span> year <span class="sc">+</span> species<span class="sc">:</span>year, </span>
+<span id="cb169-2"><a href="Chapter_37.html#cb169-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins);</span>
+<span id="cb169-3"><a href="Chapter_37.html#cb169-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(two_way_aov);</span></code></pre></div>
+<p>Note that the code above looks very similar to our one way ANOVA.
+Now we are just adding a new independent variable with the <code>+</code> sign, and adding an interaction between species and island, which is written as <code>species:year</code>.</p>
+<blockquote>
+<p>Task 7: Use the code above to run a two way ANOVA. Determine whether or not the the main effects of the model (species and sex) are significant, and whether the interaction terms are significant.</p>
+</blockquote>
+<p>Significance: Species? __________ Sex? _____________ Interaction? _____________</p>
+</div>
+<div id="chi-square-test-in-r" class="section level3 hasAnchor" number="37.2.3">
+<h3><span class="header-section-number">37.2.3</span> Chi-square test in R<a href="Chapter_37.html#chi-square-test-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we need to first put the data in a table form.
+Suppose that we wanted to test the null hypothesis that penguins were sampled from equal frequencies across all islands.
+We can use the <code>table</code> function in R to first build a contingency table of counts of penguins observed on each island.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="Chapter_37.html#cb170-1" aria-hidden="true" tabindex="-1"></a>island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island);</span>
+<span id="cb170-2"><a href="Chapter_37.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(island_table);</span></code></pre></div>
+<pre><code>
+   Biscoe     Dream Torgersen 
+      168       124        52 </code></pre>
+<p>The contingency table generated using the <code>table</code> function reveals that there were 168 penguins observed on the island Biscoe, 124 penguins observed on the island Dream, and 52 penguins observed on the island Torgersen.
+To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we can use the <code>island_table</code> that we just created in the function <code>chisq.test</code>.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="Chapter_37.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(island_table);</span></code></pre></div>
+<p>The output of <code>chisq.test</code> will include the <span class="math inline">\(\chi^{2}\)</span> statistic (‘X-squared’), the degrees of freedom (‘df’), and the p-value.</p>
+<blockquote>
+<p>Task 8: Use the code above to run a Chi-square goodness of fit test. Report the test statistic below.</p>
+</blockquote>
+<p><span class="math inline">\(\chi^{2}\)</span> test statistic: _____________________</p>
+<p>A <span class="math inline">\(\chi^{2}\)</span> test of association also requires counts to be placed in the format of a contingency table.
+This can be done by including 2 variables as arguments in <code>table</code>.
+We can build a contingency table of penguin counts for each island.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="Chapter_37.html#cb173-1" aria-hidden="true" tabindex="-1"></a>sp_island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island, penguins<span class="sc">$</span>species);</span>
+<span id="cb173-2"><a href="Chapter_37.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sp_island_table);</span></code></pre></div>
+<pre><code>           
+            Adelie Chinstrap Gentoo
+  Biscoe        44         0    124
+  Dream         56        68      0
+  Torgersen     52         0      0</code></pre>
+<p>The <code>chisq.test</code> function can then be run directly with this new table <code>sp_island_table</code> as an argument to run a <span class="math inline">\(\chi^{2}\)</span> test of association.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="Chapter_37.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(sp_island_table);</span></code></pre></div>
+<blockquote>
+<p>Task 9: Use the code above to run a Chi-square test of association between penguin species and island counts. Report the test statistic below.</p>
+</blockquote>
+<p><span class="math inline">\(\chi^{2}\)</span> test statistic: _____________________</p>
+</div>
+<div id="correlation-test-in-r" class="section level3 hasAnchor" number="37.2.4">
+<h3><span class="header-section-number">37.2.4</span> Correlation test in R<a href="Chapter_37.html#correlation-test-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can now look at how to find the correlation between two variables in R, and how to test whether or not they are significant.
+Suppose that we want to test whether or not bill length and flipper length are correlated in penguins.
+We can do this with the <code>cor.test</code> function in R.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="Chapter_37.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length, </span>
+<span id="cb176-2"><a href="Chapter_37.html#cb176-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>);</span></code></pre></div>
+<p>Notice that the <code>cor.test</code> function makes it possible to specify the alternative hypothesis (“two.sided”, “less”, and “greater”).
+It also is possible to use a Spearman correlation coefficient (method = “spearman”) instead of a Pearson product moment correlation coefficient.</p>
+<blockquote>
+<p>Task 10: Run a test of the null hypothesis that the Pearson correlation coefficient between bill length and flipper length is zero. Report the correlation coefficient r below.</p>
+</blockquote>
+<p>r: _________________</p>
+<p>Note that the output of the correlation test includes the t statistic, which is used for correlation hypothesis testing (<a href="Chapter_29.html#correlation-hypothesis-testing">Chapter 29.3</a>).
+It also includes 95 per cent confidence itnervals around <span class="math inline">\(r\)</span>, degrees of freedom, and the p-value (note that <code>2.2e-16</code> just means <span class="math inline">\(2.2 \times 10^{-16}\)</span>, i.e., a very small number).</p>
+</div>
+<div id="simple-linear-regression-in-r" class="section level3 hasAnchor" number="37.2.5">
+<h3><span class="header-section-number">37.2.5</span> Simple linear regression in R<a href="Chapter_37.html#simple-linear-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose we want to try to predict penguin body mass from bill length.
+How would we run a simple linear regression for this in R?
+The code is actually very similar to what we used for running an ANOVA.
+We can again use the function <code>lm</code>.
+For simplicity, and because the goal here is just to show how to use the R functions, we will just assume that all of the relevant assumptions of regression are true.
+In this case, our linear model can be run using the code below.</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="Chapter_37.html#cb177-1" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length, <span class="at">data =</span> penguins);</span>
+<span id="cb177-2"><a href="Chapter_37.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod);</span></code></pre></div>
+<p>In the above code, the first line defines the model (<code>lin_mod</code>), and the second line summarises it for us with the output we need to make conclusions.
+Notice that the first line has the exact same structure as we used in the ANOVA.
+In the formula, the dependent variable <code>mass</code> is separated from the independent variable <code>bill_length</code> with the <code>~</code> character, and we specify the dataset for both variables (<code>penguins</code>).</p>
+<blockquote>
+<p>Task 11: Examine the output of the simple regression of penguin body mass against bill depth from the code above. Find the R-squared value (called ‘Multiple R-squared’), intercept, slope, and p-value for the overall model.</p>
+</blockquote>
+<p>R-squared: _____________________________________________________________________</p>
+<p>Intercept: _____________________________________________________________________</p>
+<p>Slope: _________________________________________________________________________</p>
+<p>Model p-value: _________________________________________________________________</p>
+<p>Note that the p-value for the model is in the very bottom right of the output.</p>
+</div>
+<div id="multiple-regression-in-r" class="section level3 hasAnchor" number="37.2.6">
+<h3><span class="header-section-number">37.2.6</span> Multiple regression in R<a href="Chapter_37.html#multiple-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we can add to the complexity of our model by including another independent variable.
+Suppose we want to predict body mass from both bill length and flipper length.
+Again, assume that all of the assumptions of regression are met; the goal is just to show the R functions at work.
+For multiple regression, the code again looks suspiciously similar to what it does for a two-way ANOVA (note, we should really also consider an interaction between our independent variables in multiple regression too, but for now we will just assume that none exists).</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="Chapter_37.html#cb178-1" aria-hidden="true" tabindex="-1"></a>mult_regr <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length <span class="sc">+</span> bill_depth, </span>
+<span id="cb178-2"><a href="Chapter_37.html#cb178-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins);</span>
+<span id="cb178-3"><a href="Chapter_37.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mult_regr);</span></code></pre></div>
+<p>The output above looks similar to that of our simple linear model, but we now have a coefficient and p-value for an additional independent variable (bill depth).</p>
+<blockquote>
+<p>Task 12: Examine the output of the multiple regression from the code above. Find the adjusted R-squared value, and write down the equation of the model.</p>
+</blockquote>
+<p>Adjusted R-squared: ____________________________________________________________</p>
+<p>Model equation: ________________________________________________________________</p>
+<p>We have now looked at how to run ANOVAs, Chi-square tests, correlation tests, and regression in R.
+These tests rely on assumptions about the data.
+If these assumptions are violated, then we need to run a nonparametric alternative test.
+The next section will demonstrate how to test whether or not data are normally distributed and if groups have equal variances.</p>
 </div>
 </div>
+<div id="statistical-test-assumptions-in-r" class="section level2 hasAnchor" number="37.3">
+<h2><span class="header-section-number">37.3</span> Statistical test assumptions in R<a href="Chapter_37.html#statistical-test-assumptions-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the one-way ANOVA of <a href="Chapter_37.html#one-way-anova-in-r">Chapter 37.2.1</a>, we tested if bill length differed among penguin species.
+An assumption of the ANOVA is that the data are normally distributed and groups have equal variances.
+We can run a Shapiro-Wilk test to check if data are normally distributed using the <code>shapiro.test</code> function in R.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="Chapter_37.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length);</span></code></pre></div>
+<blockquote>
+<p>Task 13: Test if penguin bill length is normally distributed.</p>
+</blockquote>
+<p>Based on this test, is bill length normally distributed? __________</p>
+<p>We can also check to see if species bill lengths have equal variances.
+We can do this using a Levene’s test of homogeneity of variances, as we have done in Jamovi.
+The base functions of the R programming language do not include a Levene’s test.
+We therefore need to download an R package that has a function for the Levene’s test.
+Packages in R include code that people have written and made available to other researchers.
+The <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) includes thousands of R packages that can be used to run all kinds of different functions.
+The package that we need is called ‘car’, and we can download it from CRAN using the <code>install.packages</code> function.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="Chapter_37.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>);</span>
+<span id="cb180-2"><a href="Chapter_37.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;car&quot;</span>);</span></code></pre></div>
+<p>The <code>install.packages("car")</code> installs the ‘car’ package, and the <code>library("car")</code> loads it into R so that the functions in the package can be used.
+One of these functions is called <code>leveneTest</code>, which we can use to run the Levene’s test of homogeneity of variances.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="Chapter_37.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
+<blockquote>
+<p>Task 14: Use the ‘car’ R package to run a Levene’s test, then report the p-value of the test below.</p>
+</blockquote>
+<p>P: __________________</p>
+<p>Remember that the Levene’s test tests the null hypothesis that group variances are the same.
+Hence, if <span class="math inline">\(P &gt; 0.05\)</span>, we should not reject the null hypothesis of equal variances.
+Nevertheless, from the earlier Shapiro-Wilk test, it appears that the data are not normally distributed.
+Instead of using a one-way ANOVA, we should therefore try the non-parameteric equivalent Kruskall-Wallis H test (<a href="Chapter_25.html#Chapter_25">Chapter 25</a>).
+The Kruskall-Wallis H test can be run in R using the <code>kruskal.test</code> function.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="Chapter_37.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
+<p>Recall from <a href="Chapter_25.html#Chapter_25">Chapter 25</a> that the Kruskall-Wallis H test uses a <span class="math inline">\(\chi^{2}\)</span> test statistic.</p>
+<blockquote>
+<p>Task 15: Run a Kruskall Wallis H test to see if bill length differs among species, then report the <span class="math inline">\(\chi^{2}\)</span> test statistic of the test below.</p>
+</blockquote>
+<p><span class="math inline">\(\chi^{2}\)</span>: ___________________</p>
+<p>There is much, much more that we could do in R.
+But once you understand the general idea of how R works, the best thing to do is play around with R code.
+If you want to run a specific statistical test, then it is almost certain that the test can be run in R.
+You might just need to search for the relevant function or R package online.</p>
+
+</div>
+</div>
+
+
+
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Borowski2005" class="csl-entry">
-Borowski, E J, and J M Borwein. 2005. <em><span class="nocase">Collins Dictionary of Mathematics</span></em>. 2nd ed. London: HarperCollins Publishers.
+<div id="ref-GormanEtAl2014" class="csl-entry">
+Gorman, Kristen B, Tony D Williams, and William R Fraser. 2014. <span>“Ecological Sexual Dimorphism and Environmental Variability Within a Community of Antarctic Penguins (Genus Pygoscelis).”</span> <em>PloS One</em> 9 (3): e90081.
 </div>
-<div id="ref-Duthie2016" class="csl-entry">
-Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in Ficus petiolaris and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em>. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
-</div>
-<div id="ref-Morrissey2018" class="csl-entry">
-Morrissey, Michael B., and Graeme D. Ruxton. 2018. <span>“<span class="nocase">Multiple regression Is not multiple regressions: The meaning of multiple regression and the non-problem of collinearity</span>.”</span> <em>Philosophy, Theory, and Practice in Biology</em> 10 (20180709). <a href="https://doi.org/10.3998/ptpbio.16039257.0010.003">https://doi.org/10.3998/ptpbio.16039257.0010.003</a>.
-</div>
-<div id="ref-Rproject" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
-<div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
-</div>
-<div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+<div id="ref-HorstEtAl2020" class="csl-entry">
+Horst, Allison Marie, Alison Presmanes Hill, and Kristen B Gorman. 2020. <em>Palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data</em>. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>.
 </div>
 </div>
             </section>
@@ -686,8 +817,8 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
           </div>
         </div>
       </div>
-<a href="Chapter_31.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Chapter_33.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_36.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Week13.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -718,7 +849,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/10-Regression.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/12-Statistical_Reporting.Rmd",
 "text": "Edit"
 },
 "history": {

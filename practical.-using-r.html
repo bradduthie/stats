@@ -465,9 +465,11 @@ div.csl-indent {
 <li class="chapter" data-level="37.2.1" data-path="practical.-using-r.html"><a href="practical.-using-r.html#one-way-anova-in-r"><i class="fa fa-check"></i><b>37.2.1</b> One-way ANOVA in R</a></li>
 <li class="chapter" data-level="37.2.2" data-path="practical.-using-r.html"><a href="practical.-using-r.html#two-way-anova-in-r"><i class="fa fa-check"></i><b>37.2.2</b> Two-way ANOVA in R</a></li>
 <li class="chapter" data-level="37.2.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#chi-square-test-in-r"><i class="fa fa-check"></i><b>37.2.3</b> Chi-square test in R</a></li>
+<li class="chapter" data-level="37.2.4" data-path="practical.-using-r.html"><a href="practical.-using-r.html#correlation-test-in-r"><i class="fa fa-check"></i><b>37.2.4</b> Correlation test in R</a></li>
+<li class="chapter" data-level="37.2.5" data-path="practical.-using-r.html"><a href="practical.-using-r.html#simple-linear-regression-in-r"><i class="fa fa-check"></i><b>37.2.5</b> Simple linear regression in R</a></li>
+<li class="chapter" data-level="37.2.6" data-path="practical.-using-r.html"><a href="practical.-using-r.html#multiple-regression-in-r"><i class="fa fa-check"></i><b>37.2.6</b> Multiple regression in R</a></li>
 </ul></li>
-<li class="chapter" data-level="37.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#reading-and-writing-data-in-r"><i class="fa fa-check"></i><b>37.3</b> Reading and writing data in R</a></li>
-<li class="chapter" data-level="37.4" data-path="practical.-using-r.html"><a href="practical.-using-r.html#appendix"><i class="fa fa-check"></i><b>37.4</b> Appendix</a></li>
+<li class="chapter" data-level="37.3" data-path="practical.-using-r.html"><a href="practical.-using-r.html#statistical-test-assumptions-in-r"><i class="fa fa-check"></i><b>37.3</b> Statistical test assumptions in R</a></li>
 </ul></li>
 <li class="part"><span><b>XIII Review of parts (VII-XII)</b></span></li>
 <li class="chapter" data-level="" data-path="Week13.html"><a href="Week13.html"><i class="fa fa-check"></i>Module summary</a></li>
@@ -642,13 +644,17 @@ The function <code>anova</code> then summarises this model.</p>
 <p>Note that R uses scientific notation to write very low values. For example <code>5.5e-4</code> would be interpreted as <span class="math inline">\(5.5 \times 10^{-4}\)</span>, which is 0.00055.</p>
 <p>F value: _______________________________________________________________________</p>
 <p>p value: _______________________________________________________________________</p>
+<p>Since our p-value is less than 0.05, we can also run a Tukey’s Honestly Significant Difference test of multiple comparisons (see <a href="Chapter_24.html#Chapter_24">Chapter 24</a>).
+We need to use the <code>aov</code> and <code>TukeyHSD</code> functions to do it.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="practical.-using-r.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(anova_model));</span></code></pre></div>
+<p>The <code>TukeyHSD</code> function will report a table of post hoc comparisons similar to the ones reported by Jamovi.</p>
 </div>
 <div id="two-way-anova-in-r" class="section level3 hasAnchor" number="37.2.2">
 <h3><span class="header-section-number">37.2.2</span> Two-way ANOVA in R<a href="practical.-using-r.html#two-way-anova-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can run a two-way ANOVA using the independent variables ‘species’ and ‘year’ with the code below.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="practical.-using-r.html#cb168-1" aria-hidden="true" tabindex="-1"></a>two_way_aov <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span>  bill_length <span class="sc">~</span> species <span class="sc">+</span> year <span class="sc">+</span> species<span class="sc">:</span>year, </span>
-<span id="cb168-2"><a href="practical.-using-r.html#cb168-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins);</span>
-<span id="cb168-3"><a href="practical.-using-r.html#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(two_way_aov);</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="practical.-using-r.html#cb169-1" aria-hidden="true" tabindex="-1"></a>two_way_aov <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span>  bill_length <span class="sc">~</span> species <span class="sc">+</span> year <span class="sc">+</span> species<span class="sc">:</span>year, </span>
+<span id="cb169-2"><a href="practical.-using-r.html#cb169-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins);</span>
+<span id="cb169-3"><a href="practical.-using-r.html#cb169-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(two_way_aov);</span></code></pre></div>
 <p>Note that the code above looks very similar to our one way ANOVA.
 Now we are just adding a new independent variable with the <code>+</code> sign, and adding an interaction between species and island, which is written as <code>species:year</code>.</p>
 <blockquote>
@@ -661,14 +667,14 @@ Now we are just adding a new independent variable with the <code>+</code> sign, 
 <p>To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we need to first put the data in a table form.
 Suppose that we wanted to test the null hypothesis that penguins were sampled from equal frequencies across all islands.
 We can use the <code>table</code> function in R to first build a contingency table of counts of penguins observed on each island.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="practical.-using-r.html#cb169-1" aria-hidden="true" tabindex="-1"></a>island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island);</span>
-<span id="cb169-2"><a href="practical.-using-r.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="practical.-using-r.html#cb170-1" aria-hidden="true" tabindex="-1"></a>island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island);</span>
+<span id="cb170-2"><a href="practical.-using-r.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(island_table);</span></code></pre></div>
 <pre><code>
    Biscoe     Dream Torgersen 
       168       124        52 </code></pre>
 <p>The contingency table generated using the <code>table</code> function reveals that there were 168 penguins observed on the island Biscoe, 124 penguins observed on the island Dream, and 52 penguins observed on the island Torgersen.
 To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we can use the <code>island_table</code> that we just created in the function <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="practical.-using-r.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="practical.-using-r.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(island_table);</span></code></pre></div>
 <p>The output of <code>chisq.test</code> will include the <span class="math inline">\(\chi^{2}\)</span> statistic (‘X-squared’), the degrees of freedom (‘df’), and the p-value.</p>
 <blockquote>
 <p>Task 8: Use the code above to run a Chi-square goodness of fit test. Report the test statistic below.</p>
@@ -677,212 +683,120 @@ To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we 
 <p>A <span class="math inline">\(\chi^{2}\)</span> test of association also requires counts to be placed in the format of a contingency table.
 This can be done by including 2 variables as arguments in <code>table</code>.
 We can build a contingency table of penguin counts for each island.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="practical.-using-r.html#cb172-1" aria-hidden="true" tabindex="-1"></a>sp_island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island, penguins<span class="sc">$</span>species);</span>
-<span id="cb172-2"><a href="practical.-using-r.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sp_island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="practical.-using-r.html#cb173-1" aria-hidden="true" tabindex="-1"></a>sp_island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island, penguins<span class="sc">$</span>species);</span>
+<span id="cb173-2"><a href="practical.-using-r.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sp_island_table);</span></code></pre></div>
 <pre><code>           
             Adelie Chinstrap Gentoo
   Biscoe        44         0    124
   Dream         56        68      0
   Torgersen     52         0      0</code></pre>
 <p>The <code>chisq.test</code> function can then be run directly with this new table <code>sp_island_table</code> as an argument to run a <span class="math inline">\(\chi^{2}\)</span> test of association.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="practical.-using-r.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(sp_island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="practical.-using-r.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(sp_island_table);</span></code></pre></div>
 <blockquote>
 <p>Task 9: Use the code above to run a Chi-square test of association between penguin species and island counts. Report the test statistic below.</p>
 </blockquote>
 <p><span class="math inline">\(\chi^{2}\)</span> test statistic: _____________________</p>
-<p><strong>Correlation</strong>. We can now look at how to find the correlation between two variables in R, and how to test whether or not they are significant. Suppose that we want to test whether or not bill length and flipper length are correlated in penguins.</p>
-<p>Remember that we should use the Pearson correlation coefficent if both of our variables are normally distributed, and we should use the Spearman Rank correlation coefficient if either of our variables are not normally distributed. Hence, this is a good time to introduce tests of normality. Given the sample size (n &gt; 30), we would typically recommend a Kolmogorov-Smirnov test of normality in this module. This is possible in R, but requires installing a new package (see the appendix below to do this and run the test). Instead, we can look at a Q-Q plot with the code below. First we can look at a Q-Q plot for bill depth.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="practical.-using-r.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> penguins<span class="sc">$</span>bill_depth) <span class="co"># This makes a plot for bill depth</span></span>
-<span id="cb175-2"><a href="practical.-using-r.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> penguins<span class="sc">$</span>bill_depth) <span class="co"># This adds a line for bill depth</span></span></code></pre></div>
-<p>Next, we can look at a Q-Q plot for flipper length.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="practical.-using-r.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> penguins<span class="sc">$</span>flipper_length) <span class="co"># This makes a plot for flipper length</span></span>
-<span id="cb176-2"><a href="practical.-using-r.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> penguins<span class="sc">$</span>flipper_length) <span class="co"># This adds a line for flipper length</span></span></code></pre></div>
+</div>
+<div id="correlation-test-in-r" class="section level3 hasAnchor" number="37.2.4">
+<h3><span class="header-section-number">37.2.4</span> Correlation test in R<a href="practical.-using-r.html#correlation-test-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can now look at how to find the correlation between two variables in R, and how to test whether or not they are significant.
+Suppose that we want to test whether or not bill length and flipper length are correlated in penguins.
+We can do this with the <code>cor.test</code> function in R.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="practical.-using-r.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length, </span>
+<span id="cb176-2"><a href="practical.-using-r.html#cb176-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>);</span></code></pre></div>
+<p>Notice that the <code>cor.test</code> function makes it possible to specify the alternative hypothesis (“two.sided”, “less”, and “greater”).
+It also is possible to use a Spearman correlation coefficient (method = “spearman”) instead of a Pearson product moment correlation coefficient.</p>
 <blockquote>
-<p>Task 3: Use the code above to make a Q-Q plot and decide whether or not the data for bill depth and flipper length are normally distributed.</p>
+<p>Task 10: Run a test of the null hypothesis that the Pearson correlation coefficient between bill length and flipper length is zero. Report the correlation coefficient r below.</p>
 </blockquote>
-<p>Neither of these Q-Q plots look very encouraging. In both cases, the extreme values do not fit on the line very well, which suggests that our data do not match the theoretical expectations of the normal distribution. If we run a Shapiro-Wilk test of normality for each variable, we get a very low p-value, which is yet more evidence that we should reject the null hypothesis that our data are normally distributed.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="practical.-using-r.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_depth) <span class="co"># Shapiro test for bill depth</span></span>
-<span id="cb177-2"><a href="practical.-using-r.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>flipper_length) <span class="co"># Shapiro test for flipper length</span></span></code></pre></div>
-<p>If we were to use the Kolmogorov-Smirnov test of normality (see the appendix below), this would also reject our null hypothesis that the data are normally distributed. We should therefore use a Spearman’s Rank correlation coefficient to test our null hypothesis that the correlation coefficient between bill depth and flipper length is zero. But first, we should use a scatterplot to visualise the data.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="practical.-using-r.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_depth, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length,</span>
-<span id="cb178-2"><a href="practical.-using-r.html#cb178-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Bill depth (mm)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>)</span></code></pre></div>
-<p>The arguments <code>xlab</code> and <code>ylab</code> above tell R what to label the x and y axes (if we leave them out, then R will just default to the variable names).</p>
+<p>r: _________________</p>
+<p>Note that the output of the correlation test includes the t statistic, which is used for correlation hypothesis testing (<a href="Chapter_29.html#correlation-hypothesis-testing">Chapter 29.3</a>).
+It also includes 95 per cent confidence itnervals around <span class="math inline">\(r\)</span>, degrees of freedom, and the p-value (note that <code>2.2e-16</code> just means <span class="math inline">\(2.2 \times 10^{-16}\)</span>, i.e., a very small number).</p>
+</div>
+<div id="simple-linear-regression-in-r" class="section level3 hasAnchor" number="37.2.5">
+<h3><span class="header-section-number">37.2.5</span> Simple linear regression in R<a href="practical.-using-r.html#simple-linear-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose we want to try to predict penguin body mass from bill length.
+How would we run a simple linear regression for this in R?
+The code is actually very similar to what we used for running an ANOVA.
+We can again use the function <code>lm</code>.
+For simplicity, and because the goal here is just to show how to use the R functions, we will just assume that all of the relevant assumptions of regression are true.
+In this case, our linear model can be run using the code below.</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="practical.-using-r.html#cb177-1" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length, <span class="at">data =</span> penguins);</span>
+<span id="cb177-2"><a href="practical.-using-r.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod);</span></code></pre></div>
+<p>In the above code, the first line defines the model (<code>lin_mod</code>), and the second line summarises it for us with the output we need to make conclusions.
+Notice that the first line has the exact same structure as we used in the ANOVA.
+In the formula, the dependent variable <code>mass</code> is separated from the independent variable <code>bill_length</code> with the <code>~</code> character, and we specify the dataset for both variables (<code>penguins</code>).</p>
 <blockquote>
-<p>Task 4: Make a scatterplot showing penguin bill depth versus flipper length in R. Is there anything notable about the scatterplot that might be cause for concern? If so, explain what you think might be happening.</p>
-</blockquote>
-<pre><code>
-
-
-
-
-
-
-
-
-</code></pre>
-<p>Now we can run our test of the correlation coefficient using the R function <code>cor.test</code> in the code below.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="practical.-using-r.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_depth, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length, </span>
-<span id="cb180-2"><a href="practical.-using-r.html#cb180-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-<p>Note in the above that we are specifying the method as <code>method = "spearman"</code>, which will tell R to use the Spearman Rank correlation coefficient instead of the default <code>method = "pearson"</code>. The R output might give a warning that it cannot compute an exact p-value with ties, but this is really only a concern if our p-value is marginal (i.e., near our threshold of 0.05).</p>
-<blockquote>
-<p>Task 5: Test whether or not bill depth and flipper length are correlated using a Spearman’s Rank correlation coefficient. Report the test statistic (called ‘rho’ in the output). Based just on this hypothesis test, what would you conclude?</p>
-</blockquote>
-<p>Test statistic: ________________________________________________________________</p>
-<p>Conclusion: ____________________________________________________________________</p>
-<blockquote>
-<p>Task 6: Based on your earlier plot from Task 4, do you trust the interpretation that bill depth and flipper length are negatively correlated? Why or why not?</p>
-</blockquote>
-<pre><code>
-
-
-
-
-
-
-
-
-</code></pre>
-<p><strong>Simple linear regression</strong>. Suppose we want to try to predict penguin body mass from bill length. How would we run a simple linear regression for this in R? The code is actually very similar to what we used for running an ANOVA (again, they actually are based on <a href="https://stirlingcodingclub.github.io/linear_modelling/">the same mathematical framework</a>); we can again use the function <code>lm</code>. For simplicity, and because the goal here is just to show how to use the R functions, we will just assume that all of the relevant assumptions of regression are true. In this case, our linear model can be run using the code below.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="practical.-using-r.html#cb182-1" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length, <span class="at">data =</span> penguins)</span>
-<span id="cb182-2"><a href="practical.-using-r.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod)</span></code></pre></div>
-<p>In the above code, the first line defines the model (<code>lin_mod</code>), and the second line summarises it for us with the output we need to make conclusions. Notice that the first line has the exact same structure as we used in the ANOVA. In the formula, the dependent variable <code>mass</code> is separated from the independent variable <code>bill_length</code> with the <code>~</code> character, and we specify the dataset for both variables (<code>penguins</code>).</p>
-<blockquote>
-<p>Task 7: Examine the output of the simple regression of penguin body mass against bill depth from the code above. Find the R-squared value (called ‘Multiple R-squared’), intercept, slope, and p-value for the overall model.</p>
+<p>Task 11: Examine the output of the simple regression of penguin body mass against bill depth from the code above. Find the R-squared value (called ‘Multiple R-squared’), intercept, slope, and p-value for the overall model.</p>
 </blockquote>
 <p>R-squared: _____________________________________________________________________</p>
 <p>Intercept: _____________________________________________________________________</p>
 <p>Slope: _________________________________________________________________________</p>
 <p>Model p-value: _________________________________________________________________</p>
 <p>Note that the p-value for the model is in the very bottom right of the output.</p>
-<p><strong>Multiple regression</strong>. Now we can add to the complexity of our model by including another independent variable. Suppose we want to predict body mass from both bill length and flipper length. Again, assume that all of the assumptions of regression are met; the goal is just to show the R functions at work. For multiple regression, the code again looks suspiciously similar to what it does for a two-way ANOVA (note, we should really also consider an interaction between our independent variables in multiple regression too, but for now we will just assume that none exists).</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="practical.-using-r.html#cb183-1" aria-hidden="true" tabindex="-1"></a>mult_regr <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length <span class="sc">+</span> bill_depth, </span>
-<span id="cb183-2"><a href="practical.-using-r.html#cb183-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins)</span>
-<span id="cb183-3"><a href="practical.-using-r.html#cb183-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mult_regr)</span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = mass ~ bill_length + bill_depth, data = penguins)
-## 
-## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -1804.61  -454.83     8.15   463.53  1544.82 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 3343.136    429.912   7.776 9.05e-14 ***
-## bill_length   75.281      5.971  12.608  &lt; 2e-16 ***
-## bill_depth  -142.723     16.507  -8.646  &lt; 2e-16 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 585.1 on 339 degrees of freedom
-##   (2 observations deleted due to missingness)
-## Multiple R-squared:  0.4708, Adjusted R-squared:  0.4677 
-## F-statistic: 150.8 on 2 and 339 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<div id="multiple-regression-in-r" class="section level3 hasAnchor" number="37.2.6">
+<h3><span class="header-section-number">37.2.6</span> Multiple regression in R<a href="practical.-using-r.html#multiple-regression-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now we can add to the complexity of our model by including another independent variable.
+Suppose we want to predict body mass from both bill length and flipper length.
+Again, assume that all of the assumptions of regression are met; the goal is just to show the R functions at work.
+For multiple regression, the code again looks suspiciously similar to what it does for a two-way ANOVA (note, we should really also consider an interaction between our independent variables in multiple regression too, but for now we will just assume that none exists).</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="practical.-using-r.html#cb178-1" aria-hidden="true" tabindex="-1"></a>mult_regr <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length <span class="sc">+</span> bill_depth, </span>
+<span id="cb178-2"><a href="practical.-using-r.html#cb178-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins);</span>
+<span id="cb178-3"><a href="practical.-using-r.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mult_regr);</span></code></pre></div>
 <p>The output above looks similar to that of our simple linear model, but we now have a coefficient and p-value for an additional independent variable (bill depth).</p>
 <blockquote>
-<p>Task 8: Examine the output of the multiple regression from the code above. Find the adjusted R-squared value, and write down the equation of the model.</p>
+<p>Task 12: Examine the output of the multiple regression from the code above. Find the adjusted R-squared value, and write down the equation of the model.</p>
 </blockquote>
 <p>Adjusted R-squared: ____________________________________________________________</p>
 <p>Model equation: ________________________________________________________________</p>
-<blockquote>
-<p>Task 9: Notice that the regression coefficient for bill length has changed in the multiple regression model from what it was in the simple linear regression. Why would this be?</p>
-</blockquote>
-<pre><code>
-
-
-
-
-
-</code></pre>
-<p>For some help, it might be good to review Lecture 12 on multiple regression (see the first video ‘introduction_to_multiple_regression’ at around the 2:43 minute mark).</p>
+<p>We have now looked at how to run ANOVAs, Chi-square tests, correlation tests, and regression in R.
+These tests rely on assumptions about the data.
+If these assumptions are violated, then we need to run a nonparametric alternative test.
+The next section will demonstrate how to test whether or not data are normally distributed and if groups have equal variances.</p>
 </div>
 </div>
-<div id="reading-and-writing-data-in-r" class="section level2 hasAnchor" number="37.3">
-<h2><span class="header-section-number">37.3</span> Reading and writing data in R<a href="practical.-using-r.html#reading-and-writing-data-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This last exercise is focused on reading data into R and writing it to an external file. Like everything in R, there are many ways to do this, so we will focus on the simple case of reading in and out a simple Comma-Separated Values (CSV) file. A CSV file is a plain text file that, as the name implies, uses commas to separate values. To upload a file to the Rstudio Cloud, find the ‘Files’ tab in the lower right and click the button underneath named ‘Upload’. A box should pop up so that you can select a file to upload from your computer.</p>
-<p><img src="img/upload.png" /></p>
-<p>We can now upload a file to the Rstudio Cloud</p>
+<div id="statistical-test-assumptions-in-r" class="section level2 hasAnchor" number="37.3">
+<h2><span class="header-section-number">37.3</span> Statistical test assumptions in R<a href="practical.-using-r.html#statistical-test-assumptions-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the one-way ANOVA of <a href="practical.-using-r.html#one-way-anova-in-r">Chapter 37.2.1</a>, we tested if bill length differed among penguin species.
+An assumption of the ANOVA is that the data are normally distributed and groups have equal variances.
+We can run a Shapiro-Wilk test to check if data are normally distributed using the <code>shapiro.test</code> function in R.</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="practical.-using-r.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length);</span></code></pre></div>
 <blockquote>
-<p>Task 1: Download the file ‘Bumpus_data.csv’ from Canvas to your computer, then upload the file to the Rstudio Cloud.</p>
+<p>Task 13: Test if penguin bill length is normally distributed.</p>
 </blockquote>
-<p>We now need to read the file into R so that we can work with it in the R console. In either the R console or your R script, we can use the code below to read the CSV file into R.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="practical.-using-r.html#cb186-1" aria-hidden="true" tabindex="-1"></a>bumpus <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;Bumpus_data.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>The quotations around “Bumpus_data.csv” are important; if we do not include them, then R will try to look for an object of the same name (which probably does not exist; remove the quotations and re-run the code to see the error message).</p>
+<p>Based on this test, is bill length normally distributed? __________</p>
+<p>We can also check to see if species bill lengths have equal variances.
+We can do this using a Levene’s test of homogeneity of variances, as we have done in Jamovi.
+The base functions of the R programming language do not include a Levene’s test.
+We therefore need to download an R package that has a function for the Levene’s test.
+Packages in R include code that people have written and made available to other researchers.
+The <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) includes thousands of R packages that can be used to run all kinds of different functions.
+The package that we need is called ‘car’, and we can download it from CRAN using the <code>install.packages</code> function.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="practical.-using-r.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>);</span>
+<span id="cb180-2"><a href="practical.-using-r.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;car&quot;</span>);</span></code></pre></div>
+<p>The <code>install.packages("car")</code> installs the ‘car’ package, and the <code>library("car")</code> loads it into R so that the functions in the package can be used.
+One of these functions is called <code>leveneTest</code>, which we can use to run the Levene’s test of homogeneity of variances.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="practical.-using-r.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
 <blockquote>
-<p>Task 2: Read the Bumpus_data.csv data file into Rstudio.</p>
+<p>Task 14: Use the ‘car’ R package to run a Levene’s test, then report the p-value of the test below.</p>
 </blockquote>
-<p>We can get a sense of what the data look like using the <code>head</code> function in R, which will show us the first six rows of the dataset.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="practical.-using-r.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bumpus)</span></code></pre></div>
-<p>Suppose that the total length (<code>totlen</code>) of the sparrow in the second row was written down incorrectly. We can use R to change the value (for a reminder, see Task 2 in Exercise 1).</p>
+<p>P: __________________</p>
+<p>Remember that the Levene’s test tests the null hypothesis that group variances are the same.
+Hence, if <span class="math inline">\(P &gt; 0.05\)</span>, we should not reject the null hypothesis of equal variances.
+Nevertheless, from the earlier Shapiro-Wilk test, it appears that the data are not normally distributed.
+Instead of using a one-way ANOVA, we should therefore try the non-parameteric equivalent Kruskall-Wallis H test (<a href="Chapter_25.html#Chapter_25">Chapter 25</a>).
+The Kruskall-Wallis H test can be run in R using the <code>kruskal.test</code> function.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="practical.-using-r.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
+<p>Recall from <a href="Chapter_25.html#Chapter_25">Chapter 25</a> that the Kruskall-Wallis H test uses a <span class="math inline">\(\chi^{2}\)</span> test statistic.</p>
 <blockquote>
-<p>Task 3: Change the <code>totlen</code> of the sparrow in row 2 from 160 to 155.</p>
+<p>Task 15: Run a Kruskall Wallis H test to see if bill length differs among species, then report the <span class="math inline">\(\chi^{2}\)</span> test statistic of the test below.</p>
 </blockquote>
-<p>Now, we can save the data set in R using the <code>write.csv</code> function using the code below.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="practical.-using-r.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> bumpus, <span class="at">file =</span> <span class="st">&quot;Bumpus_data_new.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p>By default <code>row.names = TRUE</code>, which would add a column of row numbers to our data file that we really do not want.</p>
-<blockquote>
-<p>Task 4: Write a new CSV file with the corrected total length of sparrow number two.</p>
-</blockquote>
-<p>A new file will now appear in the ‘Files’ tab of Rstudio. We can download this file and open it in Excel (or any text editor), and use it in SPSS by selecting ‘File &gt; Import Data &gt; CSV Data…’.</p>
-</div>
-<div id="appendix" class="section level2 hasAnchor" number="37.4">
-<h2><span class="header-section-number">37.4</span> Appendix<a href="practical.-using-r.html#appendix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Levene’s test of equal variances.</strong> To run a Levene’s test, we need to first install and load the ‘car’ package in R.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="practical.-using-r.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>)</span>
-<span id="cb189-2"><a href="practical.-using-r.html#cb189-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;car&quot;</span>)</span></code></pre></div>
-<p>With the ‘car’ package installed, we can run a Levene’s test to test for homogeneity of variances among species using the function <code>leveneTest</code> as below.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="practical.-using-r.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span></code></pre></div>
-<p><strong>Kolmogorov-Smirnov test of normality</strong>. To run a Kolmogorov-Smirnov test of normality, we need to first install and load the ‘nortest’ package in R.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="practical.-using-r.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;nortest&quot;</span>)</span>
-<span id="cb191-2"><a href="practical.-using-r.html#cb191-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;nortest&quot;</span>)</span></code></pre></div>
-<p>With the ‘nortest’ package installed, we can run a Kolmogorov-Smirnov test of normality using the function <code>lillie.test</code> as below (recall that column 3 of the <code>penguins</code> dataset is <code>bill_length</code>).</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="practical.-using-r.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lillie.test</span>(penguins<span class="sc">$</span>bill_length); </span></code></pre></div>
-<p><strong>Code used in the practical</strong>. A summary of the code used in the practical is below.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="practical.-using-r.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 1</span></span>
-<span id="cb193-2"><a href="practical.-using-r.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
-<span id="cb193-3"><a href="practical.-using-r.html#cb193-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;palmerpenguins&quot;</span>)</span>
-<span id="cb193-4"><a href="practical.-using-r.html#cb193-4" aria-hidden="true" tabindex="-1"></a>penguins</span>
-<span id="cb193-5"><a href="practical.-using-r.html#cb193-5" aria-hidden="true" tabindex="-1"></a>penguins[, <span class="dv">3</span>]</span>
-<span id="cb193-6"><a href="practical.-using-r.html#cb193-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>])</span>
-<span id="cb193-7"><a href="practical.-using-r.html#cb193-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb193-8"><a href="practical.-using-r.html#cb193-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb193-9"><a href="practical.-using-r.html#cb193-9" aria-hidden="true" tabindex="-1"></a>mean_bill_length <span class="ot">&lt;-</span> <span class="fu">mean</span>(penguins<span class="sc">$</span>bill_length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb193-10"><a href="practical.-using-r.html#cb193-10" aria-hidden="true" tabindex="-1"></a>sd_bill_length   <span class="ot">&lt;-</span> <span class="fu">sd</span>(penguins<span class="sc">$</span>bill_length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb193-11"><a href="practical.-using-r.html#cb193-11" aria-hidden="true" tabindex="-1"></a>N_bill_length    <span class="ot">&lt;-</span> <span class="fu">length</span>(penguins<span class="sc">$</span>bill_length)</span>
-<span id="cb193-12"><a href="practical.-using-r.html#cb193-12" aria-hidden="true" tabindex="-1"></a>mean_bill_length <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> (sd_bill_length <span class="sc">/</span> <span class="fu">sqrt</span>(N_bill_length))</span>
-<span id="cb193-13"><a href="practical.-using-r.html#cb193-13" aria-hidden="true" tabindex="-1"></a>mean_bill_length <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> (sd_bill_length <span class="sc">/</span> <span class="fu">sqrt</span>(N_bill_length))</span>
-<span id="cb193-14"><a href="practical.-using-r.html#cb193-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-15"><a href="practical.-using-r.html#cb193-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 2</span></span>
-<span id="cb193-16"><a href="practical.-using-r.html#cb193-16" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
-<span id="cb193-17"><a href="practical.-using-r.html#cb193-17" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(anova_model)</span>
-<span id="cb193-18"><a href="practical.-using-r.html#cb193-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-19"><a href="practical.-using-r.html#cb193-19" aria-hidden="true" tabindex="-1"></a>two_way_aov <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span>  bill_length <span class="sc">~</span> species <span class="sc">+</span> sex <span class="sc">+</span> species<span class="sc">:</span>sex, </span>
-<span id="cb193-20"><a href="practical.-using-r.html#cb193-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins)</span>
-<span id="cb193-21"><a href="practical.-using-r.html#cb193-21" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(two_way_aov)</span>
-<span id="cb193-22"><a href="practical.-using-r.html#cb193-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-23"><a href="practical.-using-r.html#cb193-23" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> penguins<span class="sc">$</span>bill_depth) <span class="co"># This makes a plot for bill depth</span></span>
-<span id="cb193-24"><a href="practical.-using-r.html#cb193-24" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> penguins<span class="sc">$</span>bill_depth) <span class="co"># This adds a line for bill depth</span></span>
-<span id="cb193-25"><a href="practical.-using-r.html#cb193-25" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="at">y =</span> penguins<span class="sc">$</span>flipper_length) <span class="co"># This makes a plot for flipper length</span></span>
-<span id="cb193-26"><a href="practical.-using-r.html#cb193-26" aria-hidden="true" tabindex="-1"></a><span class="fu">qqline</span>(<span class="at">y =</span> penguins<span class="sc">$</span>flipper_length) <span class="co"># This adds a line for flipper length</span></span>
-<span id="cb193-27"><a href="practical.-using-r.html#cb193-27" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_depth) <span class="co"># Shapiro test for bill depth</span></span>
-<span id="cb193-28"><a href="practical.-using-r.html#cb193-28" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>flipper_length) <span class="co"># Shapiro test for flipper length</span></span>
-<span id="cb193-29"><a href="practical.-using-r.html#cb193-29" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_depth, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length,</span>
-<span id="cb193-30"><a href="practical.-using-r.html#cb193-30" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Bill depth (mm)&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>)</span>
-<span id="cb193-31"><a href="practical.-using-r.html#cb193-31" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_depth, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length, </span>
-<span id="cb193-32"><a href="practical.-using-r.html#cb193-32" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span>
-<span id="cb193-33"><a href="practical.-using-r.html#cb193-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-34"><a href="practical.-using-r.html#cb193-34" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length, <span class="at">data =</span> penguins)</span>
-<span id="cb193-35"><a href="practical.-using-r.html#cb193-35" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod)</span>
-<span id="cb193-36"><a href="practical.-using-r.html#cb193-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-37"><a href="practical.-using-r.html#cb193-37" aria-hidden="true" tabindex="-1"></a>mult_regr <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length <span class="sc">+</span> bill_depth, </span>
-<span id="cb193-38"><a href="practical.-using-r.html#cb193-38" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins)</span>
-<span id="cb193-39"><a href="practical.-using-r.html#cb193-39" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mult_regr)</span>
-<span id="cb193-40"><a href="practical.-using-r.html#cb193-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-41"><a href="practical.-using-r.html#cb193-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 3</span></span>
-<span id="cb193-42"><a href="practical.-using-r.html#cb193-42" aria-hidden="true" tabindex="-1"></a>bumpus <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;Bumpus_data.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb193-43"><a href="practical.-using-r.html#cb193-43" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bumpus)</span>
-<span id="cb193-44"><a href="practical.-using-r.html#cb193-44" aria-hidden="true" tabindex="-1"></a>bumpus[<span class="dv">2</span>, <span class="dv">3</span>] <span class="sc">&lt;</span> <span class="dv">155</span></span>
-<span id="cb193-45"><a href="practical.-using-r.html#cb193-45" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> bumpus, <span class="at">file =</span> <span class="st">&quot;Bumpus_data_new.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><span class="math inline">\(\chi^{2}\)</span>: ___________________</p>
+<p>There is much, much more that we could do in R.
+But once you understand the general idea of how R works, the best thing to do is play around with R code.
+If you want to run a specific statistical test, then it is almost certain that the test can be run in R.
+You might just need to search for the relevant function or R package online.</p>
 
 </div>
 </div>
