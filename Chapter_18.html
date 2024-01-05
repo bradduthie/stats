@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 The t-interval | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 The t-interval | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -534,7 +538,7 @@ Figure 18.1: A standard normal probability distribution showing 95 per cent of p
 </div>
 <p>Note that in Figure 18.1, a t-distribution with 19 degrees of freedom (df) is shown.
 The t-distribution is parameterised using df, and we lose a degree of freedom when calculating <span class="math inline">\(s^{2}\)</span> from a sample size of <span class="math inline">\(N = 20\)</span>, so <span class="math inline">\(df = 20 - 1 = 19\)</span> is the correct value (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a> for a brief explanation).
-For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in statistical programs such as Jamovi and R<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.</p>
+For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in statistical programs such as jamovi and R<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.</p>
 <p>Recall from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 4.041\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.159\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
 Our corrected lower 95% CI is,</p>
 <p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{\sqrt{20}}\right) = 3.819\]</span></p>
@@ -588,9 +592,9 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <hr />
 <ol start="25">
 <li id="fn25"><p>This is also called the “Student’s t-distribution”. It was originally discovered by the head brewer of Guinness in Dublin in the early 20th century <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>. The brewer, W. S. Gosset, published under the pseudonym “A. Student” because Guinness had a policy of not allowing employees to publish <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="Chapter_18.html#fnref25" class="footnote-back">↩︎</a></p></li>
-<li id="fn26"><p>How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as <span class="math inline">\(N \to \infty\)</span>, but <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that they are indistinguishable for all intents and purposes once <span class="math inline">\(N &gt; 30\)</span>. It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as Jamovi or R will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.<a href="Chapter_18.html#fnref26" class="footnote-back">↩︎</a></p></li>
+<li id="fn26"><p>How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as <span class="math inline">\(N \to \infty\)</span>, but <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that they are indistinguishable for all intents and purposes once <span class="math inline">\(N &gt; 30\)</span>. It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as jamovi or R will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.<a href="Chapter_18.html#fnref26" class="footnote-back">↩︎</a></p></li>
 <li id="fn27"><p>We can define the t-distribution mathematically <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, but it is an absolute beast, <span class="math display">\[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom. The <span class="math inline">\(\Gamma\left(\right)\)</span> is called a “gamma function”, which is basically the equivalent of a factorial function, but for any number z (not just integers), such that <span class="math inline">\(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\)</span> (where <span class="math inline">\(z &gt; -1\)</span>, or, even more technically, the real part of <span class="math inline">\(z &gt; -1\)</span>). If z is an integer n, then <span class="math inline">\(\Gamma\left({n + 1}\right) = n!\)</span> <span class="citation">(<a href="#ref-Borowski2005" role="doc-biblioref">Borowski and Borwein 2005</a>)</span>. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of 2 different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square in <a href="#Week_9">Week 9</a>. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.<a href="Chapter_18.html#fnref27" class="footnote-back">↩︎</a></p></li>
-<li id="fn28"><p>Another interesting caveat, which Jamovi and R will take care of automatically (so we do not actually have to worry about it), is that when we calculate <span class="math inline">\(s^{2}\)</span> to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by <span class="math inline">\(1/N\)</span> instead of <span class="math inline">\(1/(N-1)\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. In other words, we no longer need to correct the sample variance <span class="math inline">\(s^{2}\)</span> to account for bias in estimating <span class="math inline">\(\sigma^{2}\)</span> because the t-distribution takes care of this for us.<a href="Chapter_18.html#fnref28" class="footnote-back">↩︎</a></p></li>
+<li id="fn28"><p>Another interesting caveat, which jamovi and R will take care of automatically (so we do not actually have to worry about it), is that when we calculate <span class="math inline">\(s^{2}\)</span> to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by <span class="math inline">\(1/N\)</span> instead of <span class="math inline">\(1/(N-1)\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. In other words, we no longer need to correct the sample variance <span class="math inline">\(s^{2}\)</span> to account for bias in estimating <span class="math inline">\(\sigma^{2}\)</span> because the t-distribution takes care of this for us.<a href="Chapter_18.html#fnref28" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -641,7 +645,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -659,7 +663,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

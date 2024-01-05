@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 27 Practical. ANOVA and associated tests | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 27 Practical. ANOVA and associated tests | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -504,7 +508,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_27" class="section level1 hasAnchor" number="27">
 <h1><span class="header-section-number">Chapter 27</span> <em>Practical</em>. ANOVA and associated tests<a href="Chapter_27.html#Chapter_27" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This lab focuses on applying the concepts from <a href="Chapter_23.html#Chapter_23">Chapter 23</a>, <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, <a href="Chapter_25.html#Chapter_25">Chapter 25</a>, and <a href="Chapter_17.html#Chapter_17">Chapter 26</a> in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This lab focuses on applying the concepts from <a href="Chapter_23.html#Chapter_23">Chapter 23</a>, <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, <a href="Chapter_25.html#Chapter_25">Chapter 25</a>, and <a href="Chapter_17.html#Chapter_17">Chapter 26</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The focus will be on ANOVA and associated tests, with 5 exercises in total.
 The data for this lab are inspired by the doctoral work of Dr Lidia De Sousa Teixeira at the University of Stirling (Figure 27.1).
 This work included a nutrient analysis of agricultural soil in different regions of Angola.
@@ -528,19 +532,19 @@ What are the null (<span class="math inline">\(H_{0}\)</span>) and alternative (
 <p><span class="math inline">\(H_{0}:\)</span> ____________________</p>
 <p><span class="math inline">\(H_{A}:\)</span> ____________________</p>
 <p>Before running a t-test, remember that we need to check the assumptions of a t-test to see if any of them are violated (<a href="Chapter_21.html#assumptions-of-t-tests">see Chapter 21.4</a>).
-Use the <strong>Assumption Checks</strong> in Jamovi as we did in the previous practical (<a href="Chapter_22.html#independent-samples-t-test-1">Chapter 22.4</a>) to test for normality and homogeneity of variances in Nitrogen concentration.
+Use the <strong>Assumption Checks</strong> in jamovi as we did in the previous practical (<a href="Chapter_22.html#independent-samples-t-test-1">Chapter 22.4</a>) to test for normality and homogeneity of variances in Nitrogen concentration.
 What can you conclude from these 2 tests?</p>
 <p>Normality conclusion: ___________________________</p>
 <p>Homogeneity of variances conclusion: ______________________________</p>
 <p>Given the conclusions from the checks of normality and homogeneity of variances above, what kind of test should you use to see if the mean Nitrogen concentration is significantly different in Funda versus Bailundo?</p>
 <p>Test: __________________</p>
-<p>Run the test above in Jamovi.
+<p>Run the test above in jamovi.
 What is the p-value of the test, and what conclusion do you make about Nitrogen concentration at the two sites?</p>
 <p>P: _________________</p>
 <p>Conclusion: ____________________</p>
 <p>Now we will use an ANOVA to test if the mean Nitrogen concentration differs between sites.
 Remember from <a href="Chapter_23.html#Chapter_23">Chapter 23</a> that the ANOVA compares the variance among groups to the variance within groups, calculating an F statistic and finding where F is in the null F distribution.
-To run an ANOVA, navigate to the ‘Analyses’ tab in Jamovi, then select the ‘ANOVA’ button in the toolbar.
+To run an ANOVA, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
 From the ANOVA pulldown, select ‘One-Way ANOVA’ (Figure 27.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-126"></span>
 <img src="img/jamovi_one-way_ANOVA.png" alt="Jamovi toolbar is shown with a button called 'ANOVA' being selected, and a pull-down menu selecting a one-way ANOVA." width="100%" />
@@ -567,7 +571,7 @@ Write down the test statistic (F), degrees of freedom, and p-values from this ta
 <p>P: _______________</p>
 <p>Remember from <a href="Chapter_23.html#Chapter_23">Chapter 23</a> that the ANOVA calculates an F statistic (mean variance among groups divided by mean variance withing groups).
 This F statistic is then compared to the null F distribution with the correct degrees of freedom to calculate the p-value.
-Use the <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a> to visualise this from the above Jamovi output.
+Use the <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a> to visualise this from the above jamovi output.
 To do this, move the ‘Variance 1’ slider in the app until it is approximately equal to F, then change df1 and df2 to the values above.
 From the <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a>, what is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F?</p>
 <p>P: _________________</p>
@@ -591,7 +595,7 @@ Why might this be?</p>
 <p>We will now run an ANOVA to see if Nitrogen concentration differs among profiles.
 In this dataset, there are lower, middle, and upper profiles, which refer to the location on along a slope from which soil samples were obtained.
 Using the same approach as the previous Exercise 27.1, we will run a one-way ANOVA with profile as the independent variable instead of site.
-Again, navigate to the ‘Analyses’ tab in Jamovi, then select the ‘ANOVA’ button in the toolbar.
+Again, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
 From the ANOVA pulldown, select ‘One-Way ANOVA’ (Figure 27.2).
 First check the assumptions of normality and homogeneity of variances.
 What can you conclude?</p>
@@ -608,8 +612,8 @@ What are the output statistics in the One-Way ANOVA table?</p>
 <p>From these statistics, what do you conclude about the difference in Nitrogen concentration among profiles?</p>
 <p>Conclusion: _____________________</p>
 <p>In the previous Exercise 27.1, we used an <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a> to visualise the relationship between the F statistic and the p-value.
-We can do the same thing with the distrACTION module in Jamovi.
-To do this, go to the distrACTION option in the Jamovi toolbar and select ‘F-Distribution’ from the pulldown menu.
+We can do the same thing with the distrACTION module in jamovi.
+To do this, go to the distrACTION option in the jamovi toolbar and select ‘F-Distribution’ from the pulldown menu.
 Place the df1 and df2 from the One-Way ANOVA table into the df1 and df2 boxes under <strong>Parameters</strong> (ignore <span class="math inline">\(\lambda\)</span>).
 Under <strong>Function</strong>, select ‘Compute probability’, then place the F value from the One-Way ANOVA table in the box for x1.
 We want the upper tail of the F probability distribution, so choose <span class="math inline">\(P(X \geq x1)\)</span> from the radio buttons below.
@@ -622,7 +626,7 @@ From the Results table, what is the critical F value (‘Quantile’), above whi
 <p>Critical F value: ________________</p>
 <p>Note that the objective of working this out in the distrACTION module (and with the interactive app) is to help explain what these different values in the One-Way ANOVA table actually mean.
 To actually test the null hypothesis, the One-Way ANOVA output table is all that we really need.</p>
-<p>Finally, note that in the ANOVA pulldown from the Jamovi toolbar, the option ‘ANOVA’ is just below the ‘One-way ANOVA’ that we used in this exercise and Exercise 27.1.
+<p>Finally, note that in the ANOVA pulldown from the jamovi toolbar, the option ‘ANOVA’ is just below the ‘One-way ANOVA’ that we used in this exercise and Exercise 27.1.
 This is just a more general tool for running an ANOVA, which includes the two-way ANOVA that we will use in Exercise 27.5 below.
 For now, give this a try by selecting ‘ANOVA’ from the pull down menu.
 In the ANOVA interface, place ‘Nitrogen’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box (Figure 27.4).</p>
@@ -732,7 +736,7 @@ Do the data appear to be normally distributed?</p>
 
 </code></pre>
 <p>We can test the assumption of normality using a Shaprio-Wilk test.
-This can be done in the Descriptives panel of Jamovi, or we can do it in the One-Way ANOVA panel.
+This can be done in the Descriptives panel of jamovi, or we can do it in the One-Way ANOVA panel.
 To do it in the one-way ANOVA panel, first select ‘ANOVA’ from the pull down menu as we did at the end of Exercise 27.2.
 In the ANOVA interface, place ‘Potassium’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box.
 Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all 3 options.
@@ -744,7 +748,7 @@ From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumpti
 <p>Given the violation of ANOVA assumptions, we should consider a non-parametric option.
 As introduced in <a href="Chapter_25.html#Chapter_25">Chapter 25</a>, the Kruskall-Wallis H test is a non-parametric alternative to a one-way ANOVA.
 Like other non-parametric tests introduced in this book, the Kruskall-Wallis H test uses the ranks of a dataset instead of the actual values.
-To run a Kruskall-Wallis H test, select the Analyses tab, then the ‘ANOVA’ button from the Jamovi toolbar.
+To run a Kruskall-Wallis H test, select the Analyses tab, then the ‘ANOVA’ button from the jamovi toolbar.
 In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskall-Wallis’ (second to last one down the list; Figure 27.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-131"></span>
 <img src="img/jamovi_Kruskall-Wallis_toolbar.png" alt="Jamovi interface is shown with a pulldown of the ANOVA menu selecting a Kruskall-Wallis test." width="100%" />
@@ -761,7 +765,7 @@ Report these values below.</p>
 <p>P: ____________</p>
 <p>From the above output, should we reject or not reject our null hypothesis?</p>
 <p><span class="math inline">\(H_{0}:\)</span> _____________________</p>
-<p>Note that the Kruskall-Wallis test in Jamovi also includes a type of multiple comparisons tests (DSCF pairwise comparisons checkbox).
+<p>Note that the Kruskall-Wallis test in jamovi also includes a type of multiple comparisons tests (DSCF pairwise comparisons checkbox).
 We will not use the Dwass-Steel-Critchlow-Fligner pairwise comparisons, but the general idea is the same as the Tukey’s HSD test for post hoc multiple comparisons in the ANOVA.</p>
 </div>
 <div id="two-way-anova" class="section level2 hasAnchor" number="27.5">
@@ -934,7 +938,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -952,7 +956,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 19 Practical. z- and t- intervals | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 19 Practical. z- and t- intervals | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -504,10 +508,10 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_19" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> <em>Practical</em>. z- and t- intervals<a href="Chapter_19.html#Chapter_19" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This lab focuses on applying the concepts from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> and <a href="Chapter_18.html#Chapter_18">Chapter 18</a> in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This lab focuses on applying the concepts from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> and <a href="Chapter_18.html#Chapter_18">Chapter 18</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 Specifically, we will practice calculating confidence intervals (CIs).
-There will be 4 exercises focusing on calculating confidence intervals in Jamovi.
-To complete the first 2 exercises, you will need the distrACTION module in Jamovi.
+There will be 4 exercises focusing on calculating confidence intervals in jamovi.
+To complete the first 2 exercises, you will need the distrACTION module in jamovi.
 We downloaded the distrACTION module in the <a href="#Week_4">Week 4</a> practical.
 If you need to download it again, the instructions to do this are in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> <a href="https://bradduthie.github.io/SCIU4T4/Chapter_16.html#probabilities-from-a-normal-distribution">Exercise 16.2</a> (briefly, go to the Modules option and select ‘jamovi library’, then scroll down until you find the ‘distraACTION’ module).</p>
 <p>The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
@@ -524,7 +528,7 @@ Here we will focus on observations of tree diameter at breast height (DBH) and g
 <div id="confidence-intervals-with-distraction" class="section level2 hasAnchor" number="19.1">
 <h2><span class="header-section-number">19.1</span> Confidence intervals with distrACTION<a href="Chapter_19.html#confidence-intervals-with-distraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, it is important to download the disrACTION module if it has not been downloaded already.
-If the distrACTION module has already been downloaded, it should appear in the toolbar of Jamovi (Figure 19.2)
+If the distrACTION module has already been downloaded, it should appear in the toolbar of jamovi (Figure 19.2)
 If it has not been downloaded, then see the instructions for downloading it with the ‘Modules’ option (see Figure 19.2) in <a href="https://bradduthie.github.io/SCIU4T4/Chapter_16.html#probabilities-from-a-normal-distribution">Exercise 16.2</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-87"></span>
 <img src="img/jamovi_toolbar_modules_distrACTION.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules' and a button called distrACTION." width="100%" />
@@ -538,8 +542,8 @@ There are 4 different sites represented by different columns in the dataset.
 The numbers under each column are measurements of tree diameter at breast height (DBH) in centimeteres.
 Before doing anything else, it is therefore necessary to put the WrEN dataset into a tidy format.
 The tidy dataset should include two columns, one for site and the other for DBH.</p>
-<p>Once the WrEN trees dataset has been reorganised into a tidy format, save it as a CSV file and open it in Jamovi.
-In Jamovi, go to Exploration and Descriptives in the toolbar and build a histogram that shows the distribution of DBH.
+<p>Once the WrEN trees dataset has been reorganised into a tidy format, save it as a CSV file and open it in jamovi.
+In jamovi, go to Exploration and Descriptives in the toolbar and build a histogram that shows the distribution of DBH.
 Do these data appear to be roughly normal?
 Why or why not?</p>
 <pre><code>
@@ -581,7 +585,7 @@ Figure 19.3: Jamovi interface for the ‘distrACTION’ module, in which quantil
 <p>From Figure 19.3, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 36.1 cm.
 Using the same principles, what is the cumulative 0.4 quantile for the DBH data?</p>
 <p>Quantile: _____________________ cm</p>
-<p>We can also use the Compute quantile(s) option in Jamovi to compute interval quantiles.
+<p>We can also use the Compute quantile(s) option in jamovi to compute interval quantiles.
 For example, if we want to know the DBH values within which 95% of the probability density is contained, we can set p = 0.95, then select the radio button ‘central interval quantiles’.
 Do this for the DBH data.
 From the Results table on the right, what interval of DBH values will contain 95% of the probability density around the mean?</p>
@@ -593,7 +597,7 @@ That is, what if we want to say that we have 95% confidence that the <em>mean</e
 We would need to use the standard deviation <em>of the sample mean</em> <span class="math inline">\(\bar{x}\)</span> around the true mean <span class="math inline">\(\mu\)</span>, rather than the sample standard deviation.
 Recall from <a href="Chapter_12.html#the-standard-error">Chapter 12.6</a> that the standard error is the standard deviation of <span class="math inline">\(\bar{x}\)</span> values around <span class="math inline">\(\mu\)</span>.
 We can therefore use the standard error to calculate confidence intervals around the mean value of DBH.
-From the Descriptives panel in Jamovi (recall that this is under the ‘Exploration’ button), find the standard error of DBH,</p>
+From the Descriptives panel in jamovi (recall that this is under the ‘Exploration’ button), find the standard error of DBH,</p>
 <p>Std. error of Mean: ___________________</p>
 <p>Now, go back to the distrACTION Normal Distribution and put the DBH mean into the parameters box as before.
 But this time, put the standard error calculated above into the box for SD.
@@ -605,7 +609,7 @@ Based on the Results table, what can you infer are the lower and upper 95% confi
 But as we saw in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, when we assume that our sample standard deviation (<span class="math inline">\(s\)</span>) is the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), then the shape of the normal distribution will be at least a bit off.
 Instead, we can get a more accurate estimate of CIs using a t-distribution.
 Jamovi usually does this automatically when calculating CIs outside of the distrACTION module.
-To get 95% CIs, go back to the Descriptives panel in Jamovi, then choose DBH (cm) as variable.
+To get 95% CIs, go back to the Descriptives panel in jamovi, then choose DBH (cm) as variable.
 Scroll down to the Statistics options and check ‘Confidence interval for Mean’ under the <strong>Mean Dispersion</strong> options, and make sure that the number in the box is 95 for 95% confidence.
 Confidence intervals will appear in the Descriptives table on the right.
 From this Descriptives table now, write the lower and upper 95% CIs below.</p>
@@ -616,7 +620,7 @@ We really do not expect much of a difference until sample sizes become small, wh
 </div>
 <div id="confidence-intervals-from-z--and-t-scores" class="section level2 hasAnchor" number="19.2">
 <h2><span class="header-section-number">19.2</span> Confidence intervals from z- and t-scores<a href="Chapter_19.html#confidence-intervals-from-z--and-t-scores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>While Jamovi can be very useful for calculating confidence intervals from a dataset, you might also need to calculate CIs from just a set of summary statistics (e.g., the mean, standard error, and sample size).
+<p>While jamovi can be very useful for calculating confidence intervals from a dataset, you might also need to calculate CIs from just a set of summary statistics (e.g., the mean, standard error, and sample size).
 This activity will demonstrate how to calculate CIs from z- and t-scores.
 Recall the formula for lower and upper confidence intervals from <a href="#Chapter_17.html#normal-distribution-cis">Chapter 17.1</a>,</p>
 <p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
@@ -668,7 +672,7 @@ Reflect on any similarities or differences that you see in all of these differen
 <p>In Exercises 19.1 and 19.2, the sample size of DBH was fairly large (N = 120).
 Now, we will calculate confidence intervals for the mean DBH of each of the 4 different sites using both z- and t-scores.
 These sites have much different sample sizes.
-From the Descriptives tool in Jamovi, write the sample sizes for DBH split by site below.</p>
+From the Descriptives tool in jamovi, write the sample sizes for DBH split by site below.</p>
 <p>Site 1182: N = _________</p>
 <p>Site 1223: N = _________</p>
 <p>Site 3008: N = _________</p>
@@ -890,7 +894,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -908,7 +912,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 37 Practical. Statistical techniques in R | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 37 Practical. Statistical techniques in R | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -504,7 +508,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_37" class="section level1 hasAnchor" number="37">
 <h1><span class="header-section-number">Chapter 37</span> <em>Practical</em>. Statistical techniques in R<a href="Chapter_37.html#Chapter_37" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This lab practical will demonstrate how to run statistical tests in R that have been introduced in Jamovi in previous practicals.
+<p>This lab practical will demonstrate how to run statistical tests in R that have been introduced in jamovi in previous practicals.
 The practical will use the <a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html#package-citation-1">PalmerPenguins</a> dataset <span class="citation">(<a href="#ref-GormanEtAl2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>; <a href="#ref-HorstEtAl2020" role="doc-biblioref">Horst, Hill, and Gorman 2020</a>)</span>.
 These data include morphological measurements for 3 species of penguins that inhabit 3 islands in the Palmer Archipelago, Antarctica (Figure 37.1; artwork by <a href="https://allisonhorst.com/">allison_horst</a>, Creative Commons Attribution 4.0 International License).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-217"></span>
@@ -577,7 +581,7 @@ It is important to be precise.</p>
 <p>You should see the first 6 rows of the dataset print out in the console.
 Notice that the dataset is already in a tidy format.
 Each row is an individual penguin, and each variable is a column.</p>
-<p>Unlike Jamovi, we cannot change the data in penguins simply by clicking on values.
+<p>Unlike jamovi, we cannot change the data in penguins simply by clicking on values.
 Like everything else in R, we need to do this using code.
 If we wanted to change the value of row one column three to 40, for example (i.e., the first penguin’s bill depth), then we would need to do the following.</p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="Chapter_37.html#cb162-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">1</span>, <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">40</span></span></code></pre></div>
@@ -589,7 +593,7 @@ For example, if we wanted to have R just print off the fifth row of the penguins
 <blockquote>
 <p>Task 3: Print just column 3 of the penguins dataset. What does the code look like?</p>
 </blockquote>
-<p>Code to return column 3: ______________________________________</p>
+<p>Code to return column 3: ______________</p>
 <p>Notice that some of the values in the dataset are not numeric, but instead are given as <code>NA</code>.
 This is how missing data are indicated in R.
 An example of this is shown in the measurements for the penguin in the fourth row.
@@ -647,7 +651,7 @@ The function <code>anova</code> then summarises this model.</p>
 <p>Since our p-value is less than 0.05, we can also run a Tukey’s Honestly Significant Difference test of multiple comparisons (see <a href="Chapter_24.html#Chapter_24">Chapter 24</a>).
 We need to use the <code>aov</code> and <code>TukeyHSD</code> functions to do it.</p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="Chapter_37.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(anova_model));</span></code></pre></div>
-<p>The <code>TukeyHSD</code> function will report a table of post hoc comparisons similar to the ones reported by Jamovi.</p>
+<p>The <code>TukeyHSD</code> function will report a table of post hoc comparisons similar to the ones reported by jamovi.</p>
 </div>
 <div id="two-way-anova-in-r" class="section level3 hasAnchor" number="37.2.2">
 <h3><span class="header-section-number">37.2.2</span> Two-way ANOVA in R<a href="Chapter_37.html#two-way-anova-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -770,7 +774,7 @@ We can run a Shapiro-Wilk test to check if data are normally distributed using t
 </blockquote>
 <p>Based on this test, is bill length normally distributed? __________</p>
 <p>We can also check to see if species bill lengths have equal variances.
-We can do this using a Levene’s test of homogeneity of variances, as we have done in Jamovi.
+We can do this using a Levene’s test of homogeneity of variances, as we have done in jamovi.
 The base functions of the R programming language do not include a Levene’s test.
 We therefore need to download an R package that has a function for the Levene’s test.
 Packages in R include code that people have written and made available to other researchers.
@@ -863,7 +867,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -881,7 +885,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

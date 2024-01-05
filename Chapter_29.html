@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 29 Correlation | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 29 Correlation | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -670,7 +674,7 @@ Since the covariance between <span class="math inline">\(x\)</span> and itself i
 <p>This looks like a lot, but we can clean the equation up a bit because the <span class="math inline">\(1 / (N-1)\)</span> expressions cancel on the top and bottom of the equation,</p>
 <p><span class="math display">\[r = \frac{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
 <p>As with other statistics defined in this book, it is almost never necessary to calculate <span class="math inline">\(r\)</span> by hand.
-Statistical programs such as Jamovi and R will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+Statistical programs such as jamovi and R will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
 The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988" role="doc-biblioref">Rodgers and Nicewander 1988</a>)</span>.
 To make this link a bit more clear, we can calculate the correlation coefficient of thorax and abdomen length from Table 29.1.
 We can set thorax to be the <span class="math inline">\(x\)</span> variable and abdomen to be the <span class="math inline">\(y\)</span> variable.
@@ -899,7 +903,7 @@ We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</
 As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>,</p>
 <p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
 <p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
-Statistical programs such as Jamovi or R will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+Statistical programs such as jamovi or R will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
 The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
 In <a href="Chapter_21.html#one-sample-t-test">Chapter 21.1</a>, we saw that the one sample t-test defined <span class="math inline">\(t\)</span> as the deviation of the sample mean from the true mean, divided by the standard error.
 Here we are doing the same for the correlation coefficient.
@@ -909,7 +913,7 @@ If this is not the case, and the assumption of normality is violated, then the t
 If they are normally distributed, then we can use the Pearson’s product moment correlation to test the null hypothesis.
 If the assumption of normality is violated, then we might consider using the nonparametric Spearman rank correlation coefficient instead.
 The fig wasp thorax and abdomen lengths from Table 29.1 are normally distributed, so we can use the Pearson product moment correlation coefficient to test whether or not the correlation between these two variables is significant.
-In Jamovi, the t-score is not even reported as output when using a correlation test.
+In jamovi, the t-score is not even reported as output when using a correlation test.
 We only see <span class="math inline">\(r\)</span> and the p-value (Figure 29.4).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-149"></span>
 <img src="img/Jamovi_correlation_output.png" alt="A table called 'Correlation Matrix' is shown, which is mostly empty except for two values in the lower left of a 2 by 2 matrix." width="100%" />
@@ -1001,7 +1005,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -1019,7 +1023,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Practical: Preparing data | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Practical: Preparing data | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -504,7 +508,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_3" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Practical: Preparing data<a href="Chapter_3.html#Chapter_3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this practical, we will use a spreadsheet to organise datasets following the tidy approach explained in <a href="Chapter_2.html#Chapter_2">Chapter 2</a>, then save these datasets as CSV files to be opened in Jamovi statistical software <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>In this practical, we will use a spreadsheet to organise datasets following the tidy approach explained in <a href="Chapter_2.html#Chapter_2">Chapter 2</a>, then save these datasets as CSV files to be opened in jamovi statistical software <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The data organisation in this lab can be completed using <a href="https://www.libreoffice.org/discover/calc/">LibreOffice Calc</a>, MS Excel, or <a href="https://docs.google.com/spreadsheets/">Google Sheets</a>.
 In the computer lab, MS Excel is probably the easiest program to use, either through AppsAnywhere or within a browser.
 The screenshots below will mostly be of LibreOffice Calc, but the instructions provided will work on any of the three aforementioned spreadsheet programs.
@@ -551,9 +555,9 @@ Fortunately, the data in Figure 3.2 are already looking quite tidy.
 The information here can be put into the spreadsheet mostly as written in the notebook.
 But there are a few points to keep in mind:</p>
 <ol style="list-style-type: decimal">
-<li>It is important to start in column A and row 1; do not leave any empty rows or columns because when we get to the statistical analysis in Jamovi, Jamovi will assume that these empty rows and columns signify missing data.</li>
-<li>There is no need to include any formatting (e.g., bold, underline, colour) because it will not be saved in the CSV or recognised by Jamovi.</li>
-<li>Missing information, such as the empty boxes for the fruit dimensions in row 4 in the notebook (Figure 3.2) should be indicated with an ‘<code>NA</code>’ (capital letters, but without the quotes). This will let Jamovi know that these data are missing.</li>
+<li>It is important to start in column A and row 1; do not leave any empty rows or columns because when we get to the statistical analysis in jamovi, jamovi will assume that these empty rows and columns signify missing data.</li>
+<li>There is no need to include any formatting (e.g., bold, underline, colour) because it will not be saved in the CSV or recognised by jamovi.</li>
+<li>Missing information, such as the empty boxes for the fruit dimensions in row 4 in the notebook (Figure 3.2) should be indicated with an ‘<code>NA</code>’ (capital letters, but without the quotes). This will let jamovi know that these data are missing.</li>
 <li>The date is written in an American style of month-day-year, which might get confusing. It might be better to have separate columns for year, month, and day, and to write out the full year (2010).</li>
 </ol>
 <p>The column names in Figure 3.2 are (1) Date, (2) Species, (3) Site number, (4) Tree number, (5) Fruit length in mm, (6) Fruit width in mm, and (7) Fruit height in mm.
@@ -828,12 +832,12 @@ Explain in 2-3 sentences.</p>
 <p>Save your wasp morphology file as a CSV.
 This was the last exercise of the practical.
 You should now be comfortable formatting tidy datasets for use in statistical software.
-Next week, we will begin using Jamovi to do some descriptive statistics and plotting.</p>
+Next week, we will begin using jamovi to do some descriptive statistics and plotting.</p>
 </div>
 <div id="summary" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Summary<a href="Chapter_3.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Completing this practical should give you the skills that you need to prepare datasets for statistical analysis.
-There are many additional features of spreadsheets that were not introduced (mainly because we will do them in Jamovi), but could be useful to learn.
+There are many additional features of spreadsheets that were not introduced (mainly because we will do them in jamovi), but could be useful to learn.
 For example, if we wanted to calculate the sum of all head lengths, we could use the function <code>=sum(B2:B27)</code> in any spreadsheet cell (where B2 is the head length of the first wasp, and B27 is the head length of the last wasp).
 Other functions such as <code>=count()</code>, <code>=min()</code>, <code>=max()</code>, or <code>=average()</code> can be similarly used for calculations.
 If you have time at the end of the lab, we recommend exploring the spreadsheet interface and seeing what you can do.</p>
@@ -906,7 +910,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -924,7 +928,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

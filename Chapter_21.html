@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 21 The t-test | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 21 The t-test | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -507,7 +511,7 @@ div.csl-indent {
 <p>A t-test is a simple and widely used statistical hypothesis test that relies on the t-distribution introduced in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.
 In this chapter, we will look at 3 types of t-tests, (1) the one sample t-test, (2) the independent samples t-test, and (3) the paired samples t-test.
 We will also look at non-parametric alternatives to t-tests (Wilcoxon and Mann-Whitney tests), which become relevant when the assumptions of t-tests are violated.
-The use of all of these tests in Jamovi will be demonstrated in the lab practical in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>.</p>
+The use of all of these tests in jamovi will be demonstrated in the lab practical in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>.</p>
 <div id="one-sample-t-test" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> One sample t-test<a href="Chapter_21.html#one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose that a biology teacher has created a new approach to teaching and wants to test whether or not their new approach results in student test scores that are higher than the reported national average of 60.
@@ -728,7 +732,7 @@ So when is a sample size large enough, or close enough to being normally distrib
 There really is not a definitive answer to this question, and the truth is that most statisticians will prefer to use a histogram (or some other visualisation approach) and their best judgement to decide if the assumption of normality is likely to be violated.</p>
 <p>In this book, we will take the traditional approach of running a statistical test called the Shapiro-Wilk test to test the null hypothesis that data are normally distributed.
 If we reject the null hypothesis (when <span class="math inline">\(P &lt; 0.05\)</span>), then we will conclude that the assumption of normality is violated and the t-test is not appropriate.
-The details of how the Shaprio-Wilk test work are not important for now, but the test can be easily run using Jamovi or R <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+The details of how the Shaprio-Wilk test work are not important for now, but the test can be easily run using jamovi or R <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
 If we reject the null hypothesis that the data are normally distributed, then we can use one of two methods to run our statistical test.</p>
 <ol style="list-style-type: decimal">
 <li>Transform the data in some way (e.g., take the log of all values) to improve normality.</li>
@@ -790,7 +794,7 @@ But if there are a lot more values above the median than expected (as with the e
 And if there are a lot more values below the median than expected, then <span class="math inline">\(W^{+}\)</span> will be relatively low.</p>
 <p>To find the probability of <span class="math inline">\(W^{+}\)</span> being as low or high as it is given that the null hypothesis is true (i.e., a p-value), we need to compare the test statistic <span class="math inline">\(W^{+}\)</span> to its distribution under the null hypothesis (note that we can also conduct a one-tailed hypothesis, in which case we are testing if <span class="math inline">\(W^{+}\)</span> is either higher or lower than expected given <span class="math inline">\(H_{0}\)</span>).
 The old way of doing this is to compare the calculated <span class="math inline">\(W^{+}\)</span> threshold values to those from a <a href="appendixC_tables.html#wilcoxon-signed-rank-critical-values">Wilcoxon Signed-Ranks Table</a>.
-The critical value table is no longer necessary, and statistical software such as Jamovi and R will calculate a p-value for us.
+The critical value table is no longer necessary, and statistical software such as jamovi and R will calculate a p-value for us.
 For the example above, the p-value associated with <span class="math inline">\(W^{+} = 48.6\)</span> and <span class="math inline">\(N = 10\)</span> is <span class="math inline">\(P = 0.037\)</span>.
 Since this p-value is less than our threshold of <span class="math inline">\(\alpha = 0.05\)</span>, we can reject the null hypothesis and conclude that the median of our dataset is significantly different from 60.</p>
 <p>Note that we can also use a Wilcoxon signed rank test as a non-parametric equivalent to a paired t-test.
@@ -1006,7 +1010,7 @@ But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">
 One way to think about this is that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very different, then one of the two samples should have very low ranks, and the other should have very high ranks <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very similar, then their summed ranks should be nearly the same.
 Hence, if the deviation of <span class="math inline">\(U\)</span> is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are identical, the we can reject <span class="math inline">\(H_{0}\)</span>.</p>
-<p>As with the <a href="Chapter_21.html#wilcoxon-test">Wilcoxon test</a>, we could compare our <span class="math inline">\(U\)</span> test statistic to a critical value from a <a href="appendixC_tables.html#mann-whitney-u-critical-values">table</a>, but statistical software such as Jamovi or R will also just give us the test statistic <span class="math inline">\(U\)</span> and associated p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+<p>As with the <a href="Chapter_21.html#wilcoxon-test">Wilcoxon test</a>, we could compare our <span class="math inline">\(U\)</span> test statistic to a critical value from a <a href="appendixC_tables.html#mann-whitney-u-critical-values">table</a>, but statistical software such as jamovi or R will also just give us the test statistic <span class="math inline">\(U\)</span> and associated p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
 In our example above, <span class="math inline">\(U = 27\)</span>, <span class="math inline">\(N_{1} = 10\)</span>, and <span class="math inline">\(N_{2} = 9\)</span> has a p-value of <span class="math inline">\(P = 0.156\)</span>, so we do not reject the null hypothesis.
 We therefore conclude that there is no evidence that there is a difference in the median test scores of the two years.</p>
 </div>
@@ -1014,7 +1018,7 @@ We therefore conclude that there is no evidence that there is a difference in th
 <div id="summary-3" class="section level2 hasAnchor" number="21.6">
 <h2><span class="header-section-number">21.6</span> Summary<a href="Chapter_21.html#summary-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The main focus of this chapter was to provide a conceptual explanation of different statistical tests.
-In practice, running these tests is relatively straightforward in statistical software such as Jamovi or R (this is good, as long as the tests are understood and interpreted correctly).
+In practice, running these tests is relatively straightforward in statistical software such as jamovi or R (this is good, as long as the tests are understood and interpreted correctly).
 In general, the first step in approaching these tests is to determine if the data call for a one sample test, an independent samples test, or a paired samples test.
 In a one sample test, the objective is to test the null hypothesis that the mean (or median) equals a specific value.
 In an independent samples test, there are two different groups, and the objective is to test the null hypothesis that the groups have the same mean (or median).
@@ -1055,11 +1059,11 @@ Welch, B. L. 1938. <span>“<span class="nocase">The Significance of the Differe
 <div class="footnotes">
 <hr />
 <ol start="34">
-<li id="fn34"><p>This is not a calculation that needs to be done by hand anymore. Statistical software such as Jamovi or R will calculate <span class="math inline">\(s_{p}\)</span> automatically from a dataset <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>. For those interested, the formula that it uses to make this calculation is, <span class="math display">\[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\]</span> This looks like a lot, but really all the equation is doing is add the two variances (<span class="math inline">\(s^{2}_{y_{1}}\)</span> and <span class="math inline">\(s^{2}_{y_{2}}\)</span>) together, but weighing them by their degrees of freedom (<span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span>), so that the one with a higher sample size has more influence on the pooled standard deviation. To get <span class="math inline">\(SE(\bar{y})\)</span>, we then need to multiply by the square root of <span class="math inline">\((n_{1} + n_{2})/(n_{1}n_{2})\)</span>, <span class="math display">\[SE(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\]</span> It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by Jamovi or R.<a href="Chapter_21.html#fnref34" class="footnote-back">↩︎</a></p></li>
-<li id="fn35"><p>Note that the degrees of freedom for the t-statistic is not straightforward when we pool variances. If the sample sizes <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> are the same, then <span class="math inline">\(df = 2(n - 1)\)</span>. If <span class="math inline">\(n_{1} \neq n_{2}\)</span>, then <span class="math inline">\(df = n_{1} + n_{2} - 2\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The rationale here is that we lose an extra degree of freedom if we need to estimate the variance of each sample separately, which is necessary if we need to weigh each variance by its own degree of freedom (see footnote 34). Statistical software such as Jamovi and R handles all of this automatically <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, so we will not dwell on it here.<a href="Chapter_21.html#fnref35" class="footnote-back">↩︎</a></p></li>
-<li id="fn36"><p>The equation for calculating the Welch’s t-statistic is actually a bit simpler than the Student’s t-test that uses the pooled estimate <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>. Instead of using <span class="math inline">\(s_{p}\)</span> (defined in footnote 34), we define our t-statistic as, <span class="math display">\[t_{s} = \frac{\bar{y}_{1} - \bar{y}_{2}}{ \sqrt{ \frac{s^{2}_{1}}{n_{1}} + \frac{s^{2}_{2}}{n_{2}}} }.\]</span> The degrees of freedom, however, is quite a bit messier than it is for the independent samples Student’s t-test, <span class="math display">\[v = \frac{\left(\frac{1}{n_{1}} + \frac{(s^{2}_{2} / s^{2}_{1})}{n_{2}} \right)^{2}}{\frac{1}{n^{2}_{1}\left(n_{1} - 1 \right)} + \frac{(s^{2}_{2} / s^{2}_{1})^{2}}{n^{2}_{2}\left(n_{2} - 1 \right)}}.\]</span> Of course, Jamovi and R will make these calculations for us, so it is not necessary to do it by hand.<a href="Chapter_21.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>This is not a calculation that needs to be done by hand anymore. Statistical software such as jamovi or R will calculate <span class="math inline">\(s_{p}\)</span> automatically from a dataset <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>. For those interested, the formula that it uses to make this calculation is, <span class="math display">\[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\]</span> This looks like a lot, but really all the equation is doing is add the two variances (<span class="math inline">\(s^{2}_{y_{1}}\)</span> and <span class="math inline">\(s^{2}_{y_{2}}\)</span>) together, but weighing them by their degrees of freedom (<span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span>), so that the one with a higher sample size has more influence on the pooled standard deviation. To get <span class="math inline">\(SE(\bar{y})\)</span>, we then need to multiply by the square root of <span class="math inline">\((n_{1} + n_{2})/(n_{1}n_{2})\)</span>, <span class="math display">\[SE(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\]</span> It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by jamovi or R.<a href="Chapter_21.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Note that the degrees of freedom for the t-statistic is not straightforward when we pool variances. If the sample sizes <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> are the same, then <span class="math inline">\(df = 2(n - 1)\)</span>. If <span class="math inline">\(n_{1} \neq n_{2}\)</span>, then <span class="math inline">\(df = n_{1} + n_{2} - 2\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The rationale here is that we lose an extra degree of freedom if we need to estimate the variance of each sample separately, which is necessary if we need to weigh each variance by its own degree of freedom (see footnote 34). Statistical software such as jamovi and R handles all of this automatically <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, so we will not dwell on it here.<a href="Chapter_21.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>The equation for calculating the Welch’s t-statistic is actually a bit simpler than the Student’s t-test that uses the pooled estimate <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>. Instead of using <span class="math inline">\(s_{p}\)</span> (defined in footnote 34), we define our t-statistic as, <span class="math display">\[t_{s} = \frac{\bar{y}_{1} - \bar{y}_{2}}{ \sqrt{ \frac{s^{2}_{1}}{n_{1}} + \frac{s^{2}_{2}}{n_{2}}} }.\]</span> The degrees of freedom, however, is quite a bit messier than it is for the independent samples Student’s t-test, <span class="math display">\[v = \frac{\left(\frac{1}{n_{1}} + \frac{(s^{2}_{2} / s^{2}_{1})}{n_{2}} \right)^{2}}{\frac{1}{n^{2}_{1}\left(n_{1} - 1 \right)} + \frac{(s^{2}_{2} / s^{2}_{1})^{2}}{n^{2}_{2}\left(n_{2} - 1 \right)}}.\]</span> Of course, jamovi and R will make these calculations for us, so it is not necessary to do it by hand.<a href="Chapter_21.html#fnref36" class="footnote-back">↩︎</a></p></li>
 <li id="fn37"><p>Actually, the Wilcoxon signed-rank test technically tests the null hypothesis that two distributions are identical, not just that the medians are identical <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>. Note that if one distribution has a higher variance than another, or is differently skewed, it will also affect the ranks. In other words, if we want to compare medians, then we need to assume that the distributions have the same shape <span class="citation">(<a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>. Because of this, and because the central limit theorem ensures that means will be normally distributed given a sufficiently high sample size (in which case, t-test assumptions are more likely to be satisfied), some researchers suggest that nonparametric statistics such as the Wilcoxon signed rank test should be used with caution <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>)</span>.<a href="Chapter_21.html#fnref37" class="footnote-back">↩︎</a></p></li>
-<li id="fn38"><p>Note that you could also take the higher of the two values <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, which is what R uses (Jamovi uses the lower of the two). The null distribution from which the p-value would be calculate would just be different in this case.<a href="Chapter_21.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn38"><p>Note that you could also take the higher of the two values <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, which is what R uses (jamovi uses the lower of the two). The null distribution from which the p-value would be calculate would just be different in this case.<a href="Chapter_21.html#fnref38" class="footnote-back">↩︎</a></p></li>
 <li id="fn39"><p>Note, you could also test the null hypothesis that the difference between paired values is some value other than zero, but this is quite rare in practice.<a href="Chapter_21.html#fnref39" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
@@ -1111,7 +1115,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -1129,7 +1133,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

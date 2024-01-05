@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -505,7 +509,7 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Statistical Techniques for Biological and Environmental Sciences</h1>
 <p class="author"><em>Brad Duthie</em></p>
-<p class="date"><em>2023-04-09</em></p>
+<p class="date"><em>2024-01-05</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -548,7 +552,7 @@ During the semester, we will highlight the relevance of these skills using real 
 </div>
 <div id="accessibility" class="section level2 unnumbered hasAnchor">
 <h2>Accessibility<a href="index.html#accessibility" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We are committed to making this module accessible, which is why the material in this book is available in multiple formats (online, PDF, audio).
+<p>We are committed to making this module accessible, which is why the material in this book is available in multiple formats (online, audiobook).
 Figures in this book should have accessible contrast and colour, and informative alt images.
 The font size, type, and colour scheme should also be adjustable in the online version.
 Links should make it easy to navigate to different parts of the book.
@@ -565,9 +569,9 @@ If possible, it is probably best to read and watch lectures before the weekly pr
 Weekly practicals are on Wednesday afternoon (Group A) or Thursday morning (Group B), depending on which group you sign up for (you only need to attend one).
 Weekly face-to-face optional help sessions are on Friday afternoons.</p>
 <ul>
-<li><strong>Practical Group A</strong>: WED 13:05-15:55 in Cottrell 2A17</li>
-<li><strong>Practical Group B</strong>: THU 09:05-11:55 in Cottrell 2A17</li>
-<li><strong>Optional Help</strong>: FRI 15:05-17:55 in Cottrell 1A13</li>
+<li><strong>Practical Group A</strong>: WED 09:05-11:55 in Cottrell 2A17</li>
+<li><strong>Practical Group B</strong>: THU 12:05-14:55 in Cottrell 2A17</li>
+<li><strong>Optional Help</strong>: FRI 15:05-17:55 in Cottrell 2A21</li>
 </ul>
 <p>These are all of the scheduled face-to-face sessions, with the exception of one help session at the very end of the semester.
 See the <a href="#schedule">full schedule</a> for all of the specific dates, times, and locations of sessions.</p>
@@ -586,7 +590,7 @@ See the <a href="#schedule">full schedule</a> for all of the specific dates, tim
 </tr>
 <tr class="even">
 <td>Lecture videos</td>
-<td>Option help sessions</td>
+<td>Optional help sessions</td>
 </tr>
 <tr class="odd">
 <td>Practice quizzes</td>
@@ -594,15 +598,14 @@ See the <a href="#schedule">full schedule</a> for all of the specific dates, tim
 </tr>
 </tbody>
 </table>
-<p>For each weak, links to all chapters, lectures, and quizzes are available in this book (e.g., the <a href="Week1.html#Week1">Week 1 Overview</a>), and on the <a href="https://canvas.stir.ac.uk/courses/13075/pages/learning-and-teaching">Learning and Teaching</a> page on Canvas.</p>
+<p>For each weak, links to all chapters, lectures, and quizzes are available in this book (e.g., the <a href="Week1.html#Week1">Week 1 Overview</a>), and on the <a href="https://canvas.stir.ac.uk/courses/14932/pages/learning-and-teaching">Learning and Teaching</a> page on Canvas.</p>
 <div id="book_chapters" class="section level3 unnumbered hasAnchor">
 <h3>Book chapters<a href="index.html#book_chapters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The book chapters that you need to read for each week are all listed at the start of each section in this book (e.g., <a href="Week1.html#Week1">Week 1</a>), and in each week’s <a href="https://canvas.stir.ac.uk/courses/13075/pages/learning-and-teaching">Learning and teaching content</a> on Canvas.
+<p>The book chapters that you need to read for each week are all listed at the start of each section in this book (e.g., <a href="Week1.html#Week1">Week 1</a>), and in each week’s <a href="https://canvas.stir.ac.uk/courses/14932/pages/learning-and-teaching">Learning and teaching content</a> on Canvas.
 On Canvas, this includes links to the book chapters online, PDF copies of the chapters, and audio recordings of the module coordinator reading them.
-Reading the <a href="bradduthie.github.io/SCIU4T4/">book online</a> gives you the option of adjusting the text size (small or large), font (serif or sans serif), and background (white, sepia, or night).
+Reading this book online gives you the option of adjusting the text size (small or large), font (serif or sans serif), and background (white, sepia, or night).
 It should be quite readable on a mobile phone, or on a computer screen.
-The PDF of the book is identical, but organised more in the form of a traditional textbook.
-An eBook is in development, but the equations do not render well.</p>
+If you prefer to read on paper, then it should be possible to print the book from a browser by navigating to ‘File’ then ‘Print’.</p>
 <p>Book chapters are generally quite short, and longer chapters are broken down into manageable subsections.
 Wherever relevant, links are provided to other chapters and references, and to interactive applications that make concepts easier to visualise.
 These applications will also be embedded into Canvas.</p>
@@ -663,20 +666,20 @@ Some of these textbooks are available in the library, and all of them are owned 
 <div id="Canvas" class="section level2 unnumbered hasAnchor">
 <h2>Canvas<a href="index.html#Canvas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This module will be taught using <a href="https://canvas.stir.ac.uk/">Canvas</a>.
-You should be enrolled in the University of Stirling Canvas module “SCIU4T4 - Statistical Techniques (2022/3)”.
+You should be enrolled in the University of Stirling Canvas module “SCIU4T4 - Statistical Techniques (2023/4)”.
 If for some reason you cannot access the module on Canvas, then please email the module coordinator as soon as possible (<a href="mailto:alexander.duthie@stir.ac.uk" class="email">alexander.duthie@stir.ac.uk</a>).</p>
 <p>In Canvas, you will find links to all learning content, including chapters to this book, video lectures, practice quizzes, tests, and exams.
 For your benefit, there is some redundancy between the information on Canvas and the information in this book.
 All of the information in this preface is also available on Canvas.
-Similarly, weekly links to readings, lectures, practicals, and assessments are posted at the start of the sections of this book and in the <a href="https://canvas.stir.ac.uk/courses/13075/pages/learning-and-teaching">Learning and Teaching</a> content on Canvas.
+Similarly, weekly links to readings, lectures, practicals, and assessments are posted at the start of the sections of this book and in the <a href="https://canvas.stir.ac.uk/courses/14932/pages/learning-and-teaching">Learning and Teaching</a> content on Canvas.
 You will also receive weekly announcements at 08:00 on Mondays summarising what needs to be done each week (again, with relevant links).
 Our objective here is to provide a clear structure for the module and regular reminders so that you always know what is happening and when.</p>
 <p>Some aspects of the module must be completed on Canvas.
 All of the links below are also on the main Canvas page.</p>
 <ul>
-<li><strong><a href="https://canvas.stir.ac.uk/courses/13075/discussion_topics">Discussions</a></strong> are a place where you can ask questions about the module. Each week, a new topic will be introduced so that you can ask questions pertaining to that week (we are not strict about which week you post in; this is more just to help keep everything organised). You can also ask questions anonymously on the <strong><a href="https://padlet.com/alexanderduthie/ox0i6vbgakpvb47b">SCIU4T4 Padlet</a></strong>. It is completely fine to ask for practice problems in the discussion boards, but please try to be as specific as possible about what you want to practice (this helps us come up with good questions).</li>
-<li><strong><a href="https://canvas.stir.ac.uk/courses/13075/quizzes">Quizzes</a></strong> are where all practice quizzes and assessments will be located. You must take these on Canvas, and you will need a laptop or desktop computer to complete them.</li>
-<li><strong><a href="https://canvas.stir.ac.uk/courses/13075/users">People</a></strong> is where you can sign up for a practical group (A or B).</li>
+<li><strong><a href="https://canvas.stir.ac.uk/courses/14932/discussion_topics">Discussions</a></strong> are a place where you can ask questions about the module. Each week, a new topic will be introduced so that you can ask questions pertaining to that week (we are not strict about which week you post in; this is more just to help keep everything organised). You can also ask questions anonymously on the <strong><a href="https://padlet.com/alexanderduthie/ox0i6vbgakpvb47b">SCIU4T4 Padlet</a></strong>. It is completely fine to ask for practice problems in the discussion boards, but please try to be as specific as possible about what you want to practice (this helps us come up with good questions).</li>
+<li><strong><a href="https://canvas.stir.ac.uk/courses/14932/quizzes">Quizzes</a></strong> are where all practice quizzes and assessments will be located. You must take these on Canvas, and you will need a laptop or desktop computer to complete them.</li>
+<li><strong><a href="https://canvas.stir.ac.uk/courses/14932/users">People</a></strong> is where you can sign up for a practical group (A or B).</li>
 </ul>
 <p>In general, it is probably also easiest to watch lecture videos from within Canvas, although this should also be possible outside of Canvas using links in this book.</p>
 </div>
@@ -703,35 +706,35 @@ All of the links below are also on the main Canvas page.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/29676">Test 1F</a></td>
+<td><a href="https://canvas.stir.ac.uk/courses/14932/quizzes/35457">Test 1F</a></td>
 <td>Formative</td>
 <td>0%</td>
 <td>1-4</td>
-<td>22 FEB at 10:00-12:00</td>
+<td>21 FEB at 12:05-13:55</td>
 </tr>
 <tr class="even">
-<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/29677">Test 1S</a></td>
+<td><a href="https://canvas.stir.ac.uk/courses/14932/quizzes/35456">Test 1S</a></td>
 <td>Summative</td>
 <td>25%</td>
 <td>1-6</td>
-<td>15 MAR at 10:00-12:00</td>
+<td>13 MAR at 12:05-13:55</td>
 </tr>
 <tr class="odd">
-<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/29678">Test 2S</a></td>
+<td><a href="https://canvas.stir.ac.uk/courses/14932/quizzes/35453">Test 2S</a></td>
 <td>Summative</td>
 <td>25%</td>
 <td>7-10</td>
-<td>05 APR at 10:00-12:00</td>
+<td>05 APR at 12:05-13:55</td>
 </tr>
 <tr class="even">
-<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/29679">Mock Exam</a></td>
+<td><a href="https://canvas.stir.ac.uk/courses/14932/quizzes/35444">Mock Exam</a></td>
 <td>Formative</td>
 <td>0%</td>
 <td>All</td>
 <td>To be determined</td>
 </tr>
 <tr class="odd">
-<td><a href="https://canvas.stir.ac.uk/courses/13075/quizzes/29680">Exam</a></td>
+<td><a href="https://canvas.stir.ac.uk/courses/14932/quizzes/35455">Exam</a></td>
 <td>Summative</td>
 <td>50%</td>
 <td>All</td>
@@ -740,7 +743,7 @@ All of the links below are also on the main Canvas page.</p>
 </tbody>
 </table>
 <p>All tests and exams are taken online on Canvas.
-You can access the assessments in the table above using the ‘<a href="https://canvas.stir.ac.uk/courses/13075/quizzes">Quizzes</a>’ link on canvas, or access an assessment directly with the above links.</p>
+You can access the assessments in the table above using the ‘<a href="https://canvas.stir.ac.uk/courses/14932/quizzes">Quizzes</a>’ link on canvas, or access an assessment directly with the above links.</p>
 <p>Tests and exams are completed online.
 Tests and exams are open book and open note.
 You are free to use any learning materials from the module, but you <strong>must complete your test independently</strong>.
@@ -819,7 +822,7 @@ Note that because all assessments are tests or exams, it is not possible to appl
 <h2>Practicals<a href="index.html#practicals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Each week, there will be a practical session to learn and practice using statistical tools.
 Practical instructions are located in the last chapter of each book section (e.g., <a href="Chapter_3.html#Chapter_3">Chapter 3</a> for week 1, or <a href="Chapter_8.html#Chapter_8">Chapter 8</a> for week 2).
-Practical sessions are held in room Cottrell 2A17 on either Wednesdays from 13:05-15:55 (Group A) or Thursdays from 09:05-11:55 (Group B).
+Practical sessions are held in room Cottrell 2A17 on either Wednesdays from 09:05-11:55 (Group A) or Thursdays from 12:05-14:55 (Group B).
 When you get to the practical, there will be a quick introduction, then you will work through the practical in a mostly self-guided way (feel free to converse with your classmates and help one another too).
 Instructors will be walking around the room to answer any questions that you have and help you if you get stuck.
 These instructors will include the lecturer leading the week’s content, the module coordinator, and module demonstrators.
@@ -833,7 +836,7 @@ If for some reason you find that the practical environment is not conducive to l
 </div>
 <div id="help" class="section level2 unnumbered hasAnchor">
 <h2>Optional help hours<a href="index.html#help" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Face-to-face help is available to you every Friday in room Cottrell 1A113 from 15:05-17:55.
+<p>Face-to-face help is available to you every Friday in room Cottrell 2A21 from 15:05-17:55.
 You are very welcome to come in during this time to ask questions about the learning content of the week, and to get some extra help with the practical if you were unable to finish it.
 Learning statistics requires a lot practice and repetition, so it is entirely okay to ask the same question multiple times if you think that it will help you better understand something.
 This is not at all an inconvenience to the teaching team; we know that this material is challenging, and we want to help you understand it!</p>
@@ -845,8 +848,8 @@ Ad hoc meetings can also be set up during the week if necessary.</p>
 <h2>Jamovi statistical software<a href="index.html#jamovi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There are a lot of different software packages for running statistical analyses.
 Previous versions of this module have been taught using <a href="https://www.minitab.com/en-us/">Minitab</a> or <a href="https://www.ibm.com/uk-en/products/spss-statistics">SPSS</a>.
-This year, and for the foreseeable future, we are using <a href="https://www.jamovi.org/">Jamovi</a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-There are a lot of tangible benefits to using <a href="https://www.jamovi.org/">Jamovi</a>:</p>
+For the foreseeable future, we are using <a href="https://www.jamovi.org/">jamovi</a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+There are a lot of tangible benefits to using <a href="https://www.jamovi.org/">jamovi</a>:</p>
 <ul>
 <li>It is user-friendly, with a point and click interface that is more intuitive than other software.</li>
 <li>It is free and open source, which means that you will be able to use it even after you have finished this module and your degree.</li>
@@ -855,13 +858,13 @@ There are a lot of tangible benefits to using <a href="https://www.jamovi.org/">
 <li>It is lightweight, and less prone to crashing than other statistical software.</li>
 <li>It is built on top of the <a href="https://www.r-project.org/about.html">R statistical programming language</a>, which makes it easier to transition to learning R.</li>
 </ul>
-<p>In short, Jamovi has a lot of advantages that make it the best option for you to learn statistics, apply your learning in future projects, and build on the skills in this module in future course work.</p>
-<p>In the computer labs on campus, you can access Jamovi using <a href="https://appsanywhere.stir.ac.uk/">AppsAnywhere</a>.
+<p>In short, jamovi has a lot of advantages that make it the best option for you to learn statistics, apply your learning in future projects, and build on the skills in this module in future course work.</p>
+<p>In the computer labs on campus, you can access jamovi using <a href="https://appsanywhere.stir.ac.uk/">AppsAnywhere</a>.
 For your personal devices, you can <a href="https://www.jamovi.org/download.html">download Jamovi here</a> (recommended).
-You can also run Jamovi <a href="https://www.jamovi.org/cloud.html">from a browser</a>, but there are currently some time limitations for doing this (sessions are limited to 45 minutes).</p>
+You can also run jamovi <a href="https://www.jamovi.org/cloud.html">from a browser</a>, but there are currently some time limitations for doing this (sessions are limited to 45 minutes).</p>
 <p>This module will also introduce R, although we will not really use R by itself until <a href="#Week_11">Week 11</a>.
 Prior to <a href="#Week_11">Week 11</a>, there will be a few R commands scattered throughout lab practicals to ease you into it and accomplish some very specific tasks (e.g., generating random numbers).
-Because Jamovi is built on top of R, R can be run directly from within Jamovi to do these tasks.
+Because jamovi is built on top of R, R can be run directly from within Jamovi to do these tasks.
 Anyone who is especially interested in learning about R and what it can do is welcome to attend fortnightly sessions of <a href="https://stirlingcodingclub.github.io/studyGroup/">Stirling Coding Club</a>, which is run by the module coordinator.
 Sessions are run online using MS Teams and do not require any active participation (i.e., you can just watch; contact the module coordinator if you want to be included in the group).</p>
 <p>The R programming language has become by far the most popular software for doing statistics in biology and environmental sciences (we will see why in <a href="#Week_11">Week 11</a>).
@@ -871,7 +874,7 @@ This book was entirely written in R using software called “Rmarkdown” and �
 <div id="timetable" class="section level2 unnumbered hasAnchor">
 <h2>Timetable<a href="index.html#timetable" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
-<caption><span id="tab:unnamed-chunk-1">Table 0.1: </span>Dates, times, and locations of all synchronous activities in Statistical Techniques for Spring 2023.</caption>
+<caption><span id="tab:unnamed-chunk-1">Table 0.1: </span>Dates, times, and locations of all synchronous activities in Statistical Techniques for Spring 2024.</caption>
 <thead>
 <tr class="header">
 <th align="right">Week</th>
@@ -886,334 +889,334 @@ This book was entirely written in R using software called “Rmarkdown” and �
 <tbody>
 <tr class="odd">
 <td align="right">1</td>
-<td align="left">25 JAN</td>
+<td align="left">24 JAN</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Preparing data (A)</td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
-<td align="left">26 JAN</td>
+<td align="left">25 JAN</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Preparing data (B)</td>
 </tr>
 <tr class="odd">
 <td align="right">1</td>
-<td align="left">27 JAN</td>
+<td align="left">26 JAN</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">BD</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
-<td align="left">01 FEB</td>
+<td align="left">31 JAN</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Stats concepts (A)</td>
 </tr>
 <tr class="odd">
 <td align="right">2</td>
-<td align="left">02 FEB</td>
+<td align="left">01 FEB</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Stats concepts (B)</td>
 </tr>
 <tr class="even">
 <td align="right">2</td>
-<td align="left">03 FEB</td>
+<td align="left">02 FEB</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">IJ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
-<td align="left">08 FEB</td>
+<td align="left">07 FEB</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Summary stats (A)</td>
 </tr>
 <tr class="even">
 <td align="right">3</td>
-<td align="left">09 FEB</td>
+<td align="left">08 FEB</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Summary stats (B)</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
-<td align="left">10 FEB</td>
+<td align="left">09 FEB</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">IJ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
-<td align="left">15 FEB</td>
+<td align="left">14 FEB</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Prob models (A)</td>
 </tr>
 <tr class="odd">
 <td align="right">4</td>
-<td align="left">16 FEB</td>
+<td align="left">15 FEB</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Prob models (B)</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
-<td align="left">17 FEB</td>
+<td align="left">16 FEB</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">IJ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="odd">
 <td align="right">5</td>
-<td align="left">22 FEB</td>
+<td align="left">21 FEB</td>
 <td align="left">WED</td>
-<td align="left">10:05-11:55</td>
-<td align="left">Online</td>
-<td align="left">BD</td>
-<td align="left">Test 1F</td>
-</tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="left">22 FEB</td>
-<td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Stats inference (A)</td>
 </tr>
+<tr class="even">
+<td align="right">5</td>
+<td align="left">21 FEB</td>
+<td align="left">WED</td>
+<td align="left">12:05-13:55</td>
+<td align="left">Online</td>
+<td align="left">BD</td>
+<td align="left">Test 1F</td>
+</tr>
 <tr class="odd">
 <td align="right">5</td>
-<td align="left">23 FEB</td>
+<td align="left">22 FEB</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">IJ</td>
 <td align="left">Stats inference (B)</td>
 </tr>
 <tr class="even">
 <td align="right">5</td>
-<td align="left">24 FEB</td>
+<td align="left">23 FEB</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">IJ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="odd">
 <td align="right">6</td>
-<td align="left">01 MAR</td>
+<td align="left">28 FEB</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">MQ</td>
 <td align="left">Hypo testing (A)</td>
 </tr>
 <tr class="even">
 <td align="right">6</td>
-<td align="left">02 MAR</td>
+<td align="left">29 FEB</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">MQ</td>
 <td align="left">Hypo testing (B)</td>
 </tr>
 <tr class="odd">
 <td align="right">6</td>
-<td align="left">03 MAR</td>
+<td align="left">01 MAR</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">MQ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="even">
 <td align="right">8</td>
-<td align="left">15 MAR</td>
+<td align="left">13 MAR</td>
 <td align="left">WED</td>
-<td align="left">10:05-11:55</td>
-<td align="left">Online</td>
-<td align="left">BD</td>
-<td align="left">Test 1S</td>
-</tr>
-<tr class="odd">
-<td align="right">8</td>
-<td align="left">15 MAR</td>
-<td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">MQ</td>
 <td align="left">ANOVA (A)</td>
 </tr>
+<tr class="odd">
+<td align="right">8</td>
+<td align="left">13 MAR</td>
+<td align="left">WED</td>
+<td align="left">12:05-13:55</td>
+<td align="left">Online</td>
+<td align="left">BD</td>
+<td align="left">Test 1S</td>
+</tr>
 <tr class="even">
 <td align="right">8</td>
-<td align="left">16 MAR</td>
+<td align="left">14 MAR</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">MQ</td>
 <td align="left">ANOVA (B)</td>
 </tr>
 <tr class="odd">
 <td align="right">8</td>
-<td align="left">17 MAR</td>
+<td align="left">15 MAR</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">MQ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="even">
 <td align="right">9</td>
-<td align="left">22 MAR</td>
+<td align="left">20 MAR</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">MQ</td>
 <td align="left">Counts (A)</td>
 </tr>
 <tr class="odd">
 <td align="right">9</td>
-<td align="left">23 MAR</td>
+<td align="left">21 MAR</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">MQ</td>
 <td align="left">Counts (B)</td>
 </tr>
 <tr class="even">
 <td align="right">9</td>
-<td align="left">24 MAR</td>
+<td align="left">22 MAR</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">MQ</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="odd">
 <td align="right">10</td>
-<td align="left">29 MAR</td>
+<td align="left">27 MAR</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Regression (A)</td>
 </tr>
 <tr class="even">
 <td align="right">10</td>
-<td align="left">30 MAR</td>
+<td align="left">28 MAR</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Regression (B)</td>
 </tr>
 <tr class="odd">
 <td align="right">10</td>
-<td align="left">31 MAR</td>
+<td align="left">29 MAR</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">BD</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="even">
 <td align="right">11</td>
-<td align="left">05 APR</td>
+<td align="left">03 APR</td>
 <td align="left">WED</td>
-<td align="left">10:05-11:55</td>
-<td align="left">Online</td>
-<td align="left">BD</td>
-<td align="left">Test 2S</td>
-</tr>
-<tr class="odd">
-<td align="right">11</td>
-<td align="left">05 APR</td>
-<td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Randomisation (A)</td>
 </tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">03 APR</td>
+<td align="left">WED</td>
+<td align="left">12:05-13:55</td>
+<td align="left">Online</td>
+<td align="left">BD</td>
+<td align="left">Test 2S</td>
+</tr>
 <tr class="even">
 <td align="right">11</td>
-<td align="left">06 APR</td>
+<td align="left">04 APR</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Randomisation (B)</td>
 </tr>
 <tr class="odd">
 <td align="right">11</td>
-<td align="left">07 APR</td>
+<td align="left">05 APR</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">Tutorial</td>
+<td align="left">C2A21</td>
 <td align="left">BD</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="even">
 <td align="right">12</td>
-<td align="left">12 APR</td>
+<td align="left">10 APR</td>
 <td align="left">WED</td>
-<td align="left">13:05-15:55</td>
+<td align="left">09:05-11:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Stats reporting (A)</td>
 </tr>
 <tr class="odd">
 <td align="right">12</td>
-<td align="left">13 APR</td>
+<td align="left">11 APR</td>
 <td align="left">THU</td>
-<td align="left">09:05-11:55</td>
+<td align="left">12:05-14:55</td>
 <td align="left">C2A17</td>
 <td align="left">BD</td>
 <td align="left">Stats reporting (B)</td>
 </tr>
 <tr class="even">
 <td align="right">12</td>
-<td align="left">14 APR</td>
+<td align="left">12 APR</td>
 <td align="left">FRI</td>
 <td align="left">15:05-17:55</td>
-<td align="left">C1A13</td>
+<td align="left">C2A21</td>
 <td align="left">BD</td>
 <td align="left">Help (optional)</td>
 </tr>
 <tr class="odd">
 <td align="right">13</td>
-<td align="left">18 APR</td>
+<td align="left">16 APR</td>
 <td align="left">TUE</td>
-<td align="left">14:05-16:55</td>
-<td align="left">C1A13</td>
+<td align="left">13:05-15:55</td>
+<td align="left">C2A21</td>
 <td align="left">BD</td>
 <td align="left">Help (optional)</td>
 </tr>
@@ -1285,7 +1288,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -1303,7 +1306,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

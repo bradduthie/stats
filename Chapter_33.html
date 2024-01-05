@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 33 Practical. Using regression | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 33 Practical. Using regression | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -504,7 +508,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_33" class="section level1 hasAnchor" number="33">
 <h1><span class="header-section-number">Chapter 33</span> <em>Practical</em>. Using regression<a href="Chapter_33.html#Chapter_33" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This lab focuses on practical exercises to apply the concepts in <a href="Chapter_31.html#Chapter_31">Chapter 31</a> and <a href="Chapter_32.html#Chapter_32">Chapter 32</a> in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This lab focuses on practical exercises to apply the concepts in <a href="Chapter_31.html#Chapter_31">Chapter 31</a> and <a href="Chapter_32.html#Chapter_32">Chapter 32</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The 5 exercises in this practical will apply simple linear regression (Exercises 33.1, 33.2, and 33.5) or multiple regression (33.3 and 33.4).
 The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 Their work focuses on carbon storage in Gabon (Figure 33.1).</p>
@@ -528,11 +532,11 @@ Before doing this, what is the independent variable, and what is the dependent v
 <p>What is the sample size of this dataset?</p>
 <p>N:________________</p>
 <p>Before running any statistical test, it is always a good idea to plot the data.
-Recall from <a href="Chapter_30.html#pearson-product-moment-correlation-test">Chapter 30.4</a> how to build a scatterplot in Jamovi.
-Navigate to the ‘Exploration’ button from the Jamovi toolbar, then choose the ‘Scatterplot’ option from the pulldown menu.
+Recall from <a href="Chapter_30.html#pearson-product-moment-correlation-test">Chapter 30.4</a> how to build a scatterplot in jamovi.
+Navigate to the ‘Exploration’ button from the jamovi toolbar, then choose the ‘Scatterplot’ option from the pulldown menu.
 Place the independent variable that you identified above on the x-axis, and place the dependent variable on the y-axis.
 To get the line of best fit, choose ‘Linear’ under the options below under <strong>Regression line</strong>.
-Describe the scatterplot that is produced in the Jamovi panel to the right.</p>
+Describe the scatterplot that is produced in the jamovi panel to the right.</p>
 <pre><code>
 
 
@@ -553,7 +557,7 @@ In other words, does the variance change along the range of the independent vari
 </code></pre>
 <p>Assuming that these 2 assumptions are not violated, we can now check the last assumption that the residual values are normally distributed around the regression line.
 To do this, we need to build the linear regression.
-From the ‘Analyses’ tab of Jamovi, select the ‘Regression’ button, then choose ‘Linear regression’ from the pulldown menu.
+From the ‘Analyses’ tab of jamovi, select the ‘Regression’ button, then choose ‘Linear regression’ from the pulldown menu.
 A new panel called ‘Linear regression’ will open.
 The dependent variable ‘PyC’ should go in the ‘Dependent Variable’ box to the right.
 The independent variable ‘depth’ should go in the ‘Covariates’ box (Figure 33.2).</p>
@@ -564,14 +568,14 @@ Figure 33.2: Jamovi interface for running a linear regression model to predict p
 </p>
 </div>
 <p>We can check the assumption that the residuals are normally distributed in multiple ways.
-To do this, find the pulldown menu called ‘Assumption Checks’ in the left panel of Jamovi, and check boxes for ‘Normality test’, ‘Q-Q plot of residuals’, and ‘Residual plots’ (Figure 33.3).</p>
+To do this, find the pulldown menu called ‘Assumption Checks’ in the left panel of jamovi, and check boxes for ‘Normality test’, ‘Q-Q plot of residuals’, and ‘Residual plots’ (Figure 33.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-176"></span>
 <img src="img/Jamovi_linear_regression_normality.png" alt="Jamovi interface choosing assumption checks with checkboxes selected for 'Normality test', 'Q-Q plot of residuals', and 'Residual plots'." width="100%" />
 <p class="caption">
 Figure 33.3: Jamovi interface for specifying assumption checks on a simple linear regression.
 </p>
 </div>
-<p>Output will appear in the Jamovi panel to the right.
+<p>Output will appear in the jamovi panel to the right.
 The first assumption check will be a table providing the results of a Shapiro-Wilk test of normality on the <em>residuals</em> (see <a href="Chapter_31.html#intercepts-slopes-and-residuals">Chapter 31.2</a>) of the linear regression model.
 In your own words, what is this test doing?
 That is, what are we actually testing is or is not normally distributed?
@@ -675,7 +679,7 @@ How do you know?</p>
 
 </code></pre>
 <p>One final note for this exercise.
-In the Linear Regression panel of Jamovi, scroll all the way down to the last pulldown menu called ‘Save’.
+In the Linear Regression panel of jamovi, scroll all the way down to the last pulldown menu called ‘Save’.
 Check the boxes for ‘Predicted values’ and ‘Residuals’ (Figure 33.5).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-178"></span>
 <img src="img/Jamovi_linear_regression_save.png" alt="Jamovi interface saving output from a model regression with Predicted values and Residuals selected." width="100%" />
@@ -683,7 +687,7 @@ Check the boxes for ‘Predicted values’ and ‘Residuals’ (Figure 33.5).</p
 Figure 33.5: Jamovi interface for saving values of model output for a regression.
 </p>
 </div>
-<p>When you return to the ‘Data’ tab in Jamovi, you will see 2 new columns of data that Jamovi has inserted.
+<p>When you return to the ‘Data’ tab in jamovi, you will see 2 new columns of data that jamovi has inserted.
 One column will be the predicted values for the model, i.e., the value that the model predicts for PyC given the fire frequency in the observation (i.e., row).
 The other column will be the residual value of each observation.
 Explain what these 2 columns of data represent in terms of the scatterplot you made at the start of this exercise.
@@ -701,7 +705,7 @@ In other words, where would the predicted and residual values be located on the 
 Write down what the independent and dependent variable(s) are for this regression.</p>
 <p>Independent: ___________________</p>
 <p>Dependent: _________________</p>
-<p>To begin the multiple regression, select the ‘Regression’ button in the Analysis tab of Jamovi, then choose ‘Linear regression’ as you did in the first two exercises.
+<p>To begin the multiple regression, select the ‘Regression’ button in the Analysis tab of jamovi, then choose ‘Linear regression’ as you did in the first two exercises.
 Place the dependent variable in the ‘Dependent Variable’ box and both independent variables in the ‘Covariates’ box.
 As with the previous exercise, check the linear regression assumptions of linearity, normality, and homoscedasticity.
 Do all these assumptions appear to be met?</p>
@@ -902,7 +906,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -920,7 +924,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

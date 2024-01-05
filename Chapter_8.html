@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Practical. Introduction to Jamovi | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 8 Practical. Introduction to jamovi | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Practical. Introduction to Jamovi | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 8 Practical. Introduction to jamovi | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Practical. Introduction to Jamovi | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 8 Practical. Introduction to jamovi | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -503,11 +507,11 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="Chapter_8" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">Chapter 8</span> Practical. Introduction to Jamovi<a href="Chapter_8.html#Chapter_8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This practical focuses on learning how to work with datasets in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<h1><span class="header-section-number">Chapter 8</span> Practical. Introduction to jamovi<a href="Chapter_8.html#Chapter_8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This practical focuses on learning how to work with datasets in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 Jamovi is available in the university laboratory computers through AppsAnywhere.
 You can also <a href="https://www.jamovi.org/download.html">download it</a> on your own computer for free or run it directly <a href="https://www.jamovi.org/cloud.html">from a browser</a>.
-For an introduction to what Jamovi is and why we are using it in this module, see the introduction of this workbook and <a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html#the-spreadsheet">Sections 3.3</a>-<a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html#summary">3.9</a> of <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span>.
+For an introduction to what jamovi is and why we are using it in this module, see the introduction of this workbook and <a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html#the-spreadsheet">Sections 3.3</a>-<a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html#summary">3.9</a> of <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span>.
 In this practical, we will work with two datasets, both of which are based on real biological and environmental studies conducted by researchers at the University of Stirling.</p>
 <p>The first dataset includes measurements of soil organic carbon (grams of Carbon per kg of soil) from the topsoil and subsoil collected in a national park in Gabon.
 These data were collected by Dr Carmen Rosa Medina-Carmona in an effort to understand how <a href="https://bg.copernicus.org/articles/3/397/2006/bg-3-397-2006.pdf">pyrogenic carbon</a> (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
@@ -524,23 +528,23 @@ Figure 8.1: Three images showing the process of collecting data for the dimensio
 </div>
 <p>This lab will use the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv">soil organic carbon</a> dataset in <a href="#02_summary_statistics">Exercise 8.1</a> for summary statistics.
 The <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv">fig fruits</a> will be used for <a href="#02_transforming_variables">Exercise 8.2</a> on transforming variables and <a href="#02_computing_variables">Exercise 8.3</a> on computing a variable.
-Some of these exercises will be similar to what we did in the week 1 practical from <a href="##Chapter_3">Chapter 3</a>, but in Jamovi rather than a separate spreadsheet.</p>
+Some of these exercises will be similar to what we did in the week 1 practical from <a href="##Chapter_3">Chapter 3</a>, but in jamovi rather than a separate spreadsheet.</p>
 <div id="summary_statistics_02" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Exercise for summary statistics<a href="Chapter_8.html#summary_statistics_02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Download the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil organic carbon</a> dataset if you have not already done so (right click and “Save Link As…”), and save it in a location where you know you will be able to find it again, then open Jamovi.
-Once Jamovi is open, you can import the dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting ‘Open’ (Figure 8.2).</p>
+<p>Download the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil organic carbon</a> dataset if you have not already done so (right click and “Save Link As…”), and save it in a location where you know you will be able to find it again, then open jamovi.
+Once jamovi is open, you can import the dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting ‘Open’ (Figure 8.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
-<img src="img/jamovi_toolbar.png" alt="The Jamovi toolbar including tabs for opening files represented by three horizontal lines, Variables, Data, Analyses, and Edit." width="100%" />
+<img src="img/jamovi_toolbar.png" alt="The jamovi toolbar including tabs for opening files represented by three horizontal lines, Variables, Data, Analyses, and Edit." width="100%" />
 <p class="caption">
-Figure 8.2: The Jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right
+Figure 8.2: The jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right
 </p>
 </div>
-<p>You might need to click ‘Browse’ in the upper right of Jamovi to find the file.
+<p>You might need to click ‘Browse’ in the upper right of jamovi to find the file.
 Figure 8.3 below shows how this will look when you browse for a data file.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
-<img src="img/open_soil_organic_carbon.png" alt="The Jamovi interface for opening a file with the 'Import' tab selected, 'Downloads' and 'Browse' options at the top of the toolbar, and a separate window that includes two files that can be selected." width="100%" />
+<img src="img/open_soil_organic_carbon.png" alt="The jamovi interface for opening a file with the 'Import' tab selected, 'Downloads' and 'Browse' options at the top of the toolbar, and a separate window that includes two files that can be selected." width="100%" />
 <p class="caption">
-Figure 8.3: The Jamovi interface for opening a file with the ‘Import’ tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.
+Figure 8.3: The jamovi interface for opening a file with the ‘Import’ tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.
 </p>
 </div>
 <p>Once the data are imported, you should see two separate columns.
@@ -548,12 +552,12 @@ The first column will show soil organic carbon values for topsoil samples, and t
 These data are not formatted in a tidy way.
 We need to fix this so that each row is a unique observation and each column is a variable (see <a href="Chapter_2.html#Chapter_2">Chapter 2</a>).
 It might be easiest to reorganise the data in a spreadsheet such as LibreOffice Calc or Microsoft Excel.
-But you can also edit the data directly in Jamovi by clicking on the ‘Data’ tab in the toolbar (see Figures 8.2 and 8.4).
-The best way to reorganise the data in Jamovi is to double-click on the third column of data next to ‘subsoil’ (see Figure 8.4).</p>
+But you can also edit the data directly in jamovi by clicking on the ‘Data’ tab in the toolbar (see Figures 8.2 and 8.4).
+The best way to reorganise the data in jamovi is to double-click on the third column of data next to ‘subsoil’ (see Figure 8.4).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
-<img src="img/jamovi_new_variable.png" alt="The Jamovi toolbar is shown with data columns for topsoil and subsoil. In the third column from the right, there is text that says 'Click Here' in red." width="100%" />
+<img src="img/jamovi_new_variable.png" alt="The jamovi toolbar is shown with data columns for topsoil and subsoil. In the third column from the right, there is text that says 'Click Here' in red." width="100%" />
 <p class="caption">
-Figure 8.4: The Jamovi toolbar is shown with the soil organic carbon dataset. In Jamovi, double-clicking above column three where it says ‘CLICK HERE’ will allow you to input a new variable.
+Figure 8.4: The jamovi toolbar is shown with the soil organic carbon dataset. In jamovi, double-clicking above column three where it says ‘CLICK HERE’ will allow you to input a new variable.
 </p>
 </div>
 <p>After double-clicking on the location shown in Figure 8.4, there will be three buttons visible.
@@ -561,9 +565,9 @@ You can click the ‘New Data Variable’ to insert a new variable named ‘soil
 Keep the ‘Measure type’ as ‘Nominal’, but change the ‘Data type’ to ‘text’.
 When you are done, click the <code>&gt;</code> character to the right so that the variable is fixed (Figure 8.5).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
-<img src="img/jamovi_set_variable.png" alt="The Jamovi toolbar is shown with a box open to insert a new variable. The 'Data Variable' name is 'soil_type', and pulldown boxes indicate that 'Measure type' is set to 'Nominal' and 'Data type' is set to 'Text'. The mouse pointer is hovering over an arrow that says 'Next Variable'." width="100%" />
+<img src="img/jamovi_set_variable.png" alt="The jamovi toolbar is shown with a box open to insert a new variable. The 'Data Variable' name is 'soil_type', and pulldown boxes indicate that 'Measure type' is set to 'Nominal' and 'Data type' is set to 'Text'. The mouse pointer is hovering over an arrow that says 'Next Variable'." width="100%" />
 <p class="caption">
-Figure 8.5: The Jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.
+Figure 8.5: The jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.
 </p>
 </div>
 <p>After typing in the new variable ‘soil_type’, add another variable called ‘organic_carbon’.
@@ -583,22 +587,22 @@ You are now ready to calculate some descriptive statistics from the data.</p>
 <p>First, we can calculate the minimum, maximum, and mean of all of the organic carbon values (i.e., the ‘grand’ mean, which includes both soil types).
 To do this, select the ‘Analyses’ tab, then click on the left-most button called ‘Exploration’ in the toolbar (Figure 8.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-29"></span>
-<img src="img/jamovi_exploration.png" alt="The Jamovi toolbar is shown with a tab called 'Analyses' selected. Underneath the Analyses tab, there are several buttons, and the 'Exploration' button is highlighted. Below the exploration button are the first three rows of soil organic carbon data." width="100%" />
+<img src="img/jamovi_exploration.png" alt="The jamovi toolbar is shown with a tab called 'Analyses' selected. Underneath the Analyses tab, there are several buttons, and the 'Exploration' button is highlighted. Below the exploration button are the first three rows of soil organic carbon data." width="100%" />
 <p class="caption">
-Figure 8.6: The Jamovi toolbar where the tab ‘Analyses’ can be selected at the very top. Below this tab, the button ‘Exploration’ can be clicked to calculate descriptive statistics.
+Figure 8.6: The jamovi toolbar where the tab ‘Analyses’ can be selected at the very top. Below this tab, the button ‘Exploration’ can be clicked to calculate descriptive statistics.
 </p>
 </div>
 <p>After clicking on ‘Exploration’, a pull-down box will appear with an option for ‘Descriptives’.
 Select this option, and you will see a new window with our two columns of data in the left-most box.
 Click once on the ‘organic_carbon’ variable and use the right arrow to move it into the ‘Variables’ box.
-In the right-most panel of Jamovi, a table called ‘Descriptives’ will appear, which will include values for the organic carbon mean, minimum, and maximum.
+In the right-most panel of jamovi, a table called ‘Descriptives’ will appear, which will include values for the organic carbon mean, minimum, and maximum.
 Write these values on the lines below, and remember to include units.</p>
 <p>Grand Mean: ____________________________</p>
 <p>Grand Minimum: ____________________________</p>
 <p>Grand Maximum: ____________________________</p>
 <p>These values might be useful, but recall that there are two different soil types that need to be considered, topsoil and subsoil.
 The mean, minimum, and maximum above pools both of these soil types together, but we might instead want to know the mean, minimum, and maximum values for topsoil and subsoil separately.
-Splitting organic carbon by soil types is straightforward in Jamovi.
+Splitting organic carbon by soil types is straightforward in jamovi.
 To do it, go back to the Exploration <span class="math inline">\(\to\)</span> Descriptives option and again put ‘organic_carbon’ in the Variables box.
 This time, however, notice the ‘Split by’ box below the Variables box.
 Now, click on ‘soil_type’ in the descriptives and click on the lower right arrow to move soil type into the ‘Split by’ box.
@@ -612,7 +616,7 @@ First, write the mean, minimum, and maximum topsoil values below.</p>
 <p>Subsoil Minimum: ____________________________</p>
 <p>Subsoil Maximum: ____________________________</p>
 <p>From the values above, the mean of organic carbon sampled from the topsoil appears to be greater than the mean of organic carbon sampled from the subsoil.
-Assuming that Jamovi has calculated the means correctly, we can be confident that the topsoil <em>sample</em> mean is higher.
+Assuming that jamovi has calculated the means correctly, we can be confident that the topsoil <em>sample</em> mean is higher.
 But what about the <em>population</em> means?
 Think back to concepts of populations versus samples from <a href="Chapter_4.html#Chapter_4">Chapter 4</a>.
 Based on these samples in the dataset, can we really say for certain that the population mean of topsoil is higher than the population mean of subsoil?
@@ -638,7 +642,7 @@ Doing this will make the statistical hypothesis testing that comes later in the 
 <div id="transforming_variables_02" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Exercise on transforming variables<a href="Chapter_8.html#transforming_variables_02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this next exercise, we will work with the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv">fig fruits</a> dataset (right click and “Save Link As…”).
-Open this dataset into Jamovi.
+Open this dataset into jamovi.
 Note that there are 5 columns of data, and all of the data appear to be in a tidy format.
 Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
 The first several rows should look like the below.</p>
@@ -651,18 +655,18 @@ The first several rows should look like the below.</p>
 6    A       1.5      1.4       1.5   173</code></pre>
 <p>The dataset includes the tree from which the fig was sampled in column 1 (A, B, C, and D), then the length, width, and heights of the fig in cm.
 Finally, the last column shows how many seeds were counted within the fig.
-Use the Descriptives option in Jamovi to find the grand (i.e., not split by Tree) mean length, width, and height of figs in the dataset.
+Use the Descriptives option in jamovi to find the grand (i.e., not split by Tree) mean length, width, and height of figs in the dataset.
 Write these means down below (remember the units).</p>
 <p>Grand Mean length: ____________________________</p>
 <p>Grand Mean height: ____________________________</p>
 <p>Grand Mean width: ____________________________</p>
-<p>Now look at the different rows in the Descriptives table of Jamovi.
+<p>Now look at the different rows in the Descriptives table of jamovi.
 Note that there is a row for ‘Missing’, and there appears to be one missing value for fig width and fig height.
 This is very common in real datasets.
 Sometimes practical limitations in the field prevent data from being collected, or something happens that causes data to be lost.
 We therefore need to be able to work with datasets that have missing data.
 For now, we will just note the missing data and find them in the actual data set.
-Go back to the ‘Data’ tab in Jamovi and find the figs with a missing width and height value.
+Go back to the ‘Data’ tab in jamovi and find the figs with a missing width and height value.
 Report the rows of these missing values below.</p>
 <p>Missing width row: ____________________________</p>
 <p>Missing height row: ____________________________</p>
@@ -673,9 +677,9 @@ We will start by creating a new column ‘Length_mm’ by transforming the exist
 To do this, click on the ‘Data’ tab at the top of the toolbar again, then click on the ‘Length_cm’ column name to highlight the entire column.
 Your screen should look like the image in Figure 8.7.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-31"></span>
-<img src="img/jamovi_transform_fig_length.png" alt="The Jamovi toolbar is shown with a tab called 'Data' selected. Underneath the Data tab, there are several buttons, including 'Setup', 'Compute', and 'Transform'. Below these buttons, four columns of data are shown, with the focal column length in cm highlighted." width="100%" />
+<img src="img/jamovi_transform_fig_length.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath the Data tab, there are several buttons, including 'Setup', 'Compute', and 'Transform'. Below these buttons, four columns of data are shown, with the focal column length in cm highlighted." width="100%" />
 <p class="caption">
-Figure 8.7: The Jamovi toolbar where the tab ‘Data’ is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above
+Figure 8.7: The jamovi toolbar where the tab ‘Data’ is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above
 </p>
 </div>
 <p>With the ‘Length_cm’ column highlighted, click on the ‘Transform’ button in the toolbar.
@@ -692,9 +696,9 @@ It does not matter what we call it (e.g., ‘cm_to_mm’ is fine).
 Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multiply the values of ‘Length_cm’ by 10.
 We can do this by appending a <code>* 10</code> to the lower box of the transform window, so that it reads <code>= $source * 10</code> (Figure 8.8).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-32"></span>
-<img src="img/jamovi_transform_cm_to_mm.png" alt="The Jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'Transform', where the name 'cm to mm' has been typed in. Underneath the box is the code to multiply the column by 10, and below the code is the fig fruits dataset." width="100%" />
+<img src="img/jamovi_transform_cm_to_mm.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'Transform', where the name 'cm to mm' has been typed in. Underneath the box is the code to multiply the column by 10, and below the code is the fig fruits dataset." width="100%" />
 <p class="caption">
-Figure 8.8: The Jamovi toolbar where the tab ‘Data’ is selected. The box below shows the transform, which has been named ‘cm to mm’. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new ‘Length mm’ column is 10 times the length column.
+Figure 8.8: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the transform, which has been named ‘cm to mm’. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new ‘Length mm’ column is 10 times the length column.
 </p>
 </div>
 <p>When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
@@ -732,7 +736,7 @@ We could therefore rewrite the equation above,</p>
 <p><span class="math display">\[V = \frac{4}{3} \times 3.14 \times r \times r \times r.\]</span></p>
 <p>This is the formula that we can use to create our new column of data for fig volume.
 To do this, double-click on the first empty column of the dataset, just to the right of the ‘Seeds’ column header.
-You will see a pull down option in Jamovi with 3 options, one of which is ‘NEW COMPUTED VARIABLE’.
+You will see a pull down option in jamovi with 3 options, one of which is ‘NEW COMPUTED VARIABLE’.
 This is the option that we want.
 We need to name this new variable, so we can call it ‘fig_volume’.
 Next, we need to type in the formula for calculating volume.
@@ -744,15 +748,15 @@ Ignore the functions box for now, and find ‘Width_mm’ in the list of variabl
 Double click on this to put it into the formula, then divide it by 2.
 You can repeat this two more times to complete the computed variable as shown in Figure 8.9.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
-<img src="img/jamovi_compute_new_variable.png" alt="The Jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'COMPUTED VARIABLE', where the name 'fig volume' has been typed in. Underneath the box is the code for the volume of a sphere and below the code is the fig fruits dataset." width="100%" />
+<img src="img/jamovi_compute_new_variable.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'COMPUTED VARIABLE', where the name 'fig volume' has been typed in. Underneath the box is the code for the volume of a sphere and below the code is the fig fruits dataset." width="100%" />
 <p class="caption">
-Figure 8.9: The Jamovi toolbar where the tab ‘Data’ is selected. The box below shows the new computed variable ‘fig volume’, which has been created by calculating the product of 4/3, 3.14, and Width mm three times.
+Figure 8.9: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the new computed variable ‘fig volume’, which has been created by calculating the product of 4/3, 3.14, and Width mm three times.
 </p>
 </div>
 <p>Note that we can get the cube of ‘Width_mm’ more concisely by using the carrot character (<code>^</code>).
 That is, we would get the same answer shown in Figure 8.9 if we instead typed the below in the function box.</p>
 <pre><code>= (4/3) * 3.14 * (Width_mm/2)^3</code></pre>
-<p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3. If we instead had written, <code>Width_mm/2^3</code>, then Jamovi would first take the cube of 2 <span class="math inline">\((2 \times 2 \times 2 = 8)\)</span>, then divided <code>Width_mm</code> by this value giving a different and incorrect answer. When in doubt, it is always useful to use parentheses to specify what calculations should be done first.</p>
+<p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3. If we instead had written, <code>Width_mm/2^3</code>, then jamovi would first take the cube of 2 <span class="math inline">\((2 \times 2 \times 2 = 8)\)</span>, then divided <code>Width_mm</code> by this value giving a different and incorrect answer. When in doubt, it is always useful to use parentheses to specify what calculations should be done first.</p>
 <p>You now have the new column of data ‘fig_volume’.
 Remember that the calculations underlying apply to the units too.
 The width of the fig was calculated in mm, but we have taken width to the power of 3 when calculating the volume.
@@ -762,7 +766,7 @@ In the spaces below, find the mean, minimum, and maximum volumes of all figs and
 <p>Maximum: ____________________________</p>
 <p>Finally, it would be good to plot these newly calculated fig volume data.
 These data are continuous, so we can use a histogram to visualise the fig volume distribution.
-To make a histogram, go to the Exploration <span class="math inline">\(\to\)</span> Descriptives window in Jamovi (the same place where you found the mean, minimum, and maximum).
+To make a histogram, go to the Exploration <span class="math inline">\(\to\)</span> Descriptives window in jamovi (the same place where you found the mean, minimum, and maximum).
 Now, look on the lower left-hand side of the window and find the pulldown menu for ‘Plots’.
 Click ‘Plots’, and you should see several different plotting options.
 Check the option for ‘Histogram’ and see the new histogram plotted in the window to the right.
@@ -776,19 +780,19 @@ Draw a rough sketch of the histogram in the area below.</p>
 
 </code></pre>
 <p>Finally, we should save the file that we have been working on.
-There are two ways to save a file in Jamovi, and it is a good idea to save both ways.
-The first way is to use Jamovi’s own (binary) file type, which has the extension OMV.
-This will not only save the data (including the calculated variables created within Jamovi), but also any analyses that we have done (e.g., calculation of minimums, maximums, and means) or graphs that we have made (e.g., the histogram).
-To do this, click on the three horizontal lines in the upper left of the Jamovi toolbar, then select ‘Save As’.
+There are two ways to save a file in jamovi, and it is a good idea to save both ways.
+The first way is to use jamovi’s own (binary) file type, which has the extension OMV.
+This will not only save the data (including the calculated variables created within jamovi), but also any analyses that we have done (e.g., calculation of minimums, maximums, and means) or graphs that we have made (e.g., the histogram).
+To do this, click on the three horizontal lines in the upper left of the jamovi toolbar, then select ‘Save As’.
 Choose an appropriate name (e.g., ‘SCIU4T4_Week2_practical.omv’), then save the file in a location where you know that you will be able to find it again.
 Like, all binary files, an OMV file cannot be opened as plain text.
 Hence, it might be a good idea to save the dataset as a CSV file (note, this will not save any of the analyses or graphs).
 To do this, click on the three horizontal lines in the upper left of the toolbar again, but this time click ‘Export’.
 Give the file an appropriate name (e.g., ‘SCIU4T4_Week2_data’), then choose ‘CSV’ from the pulldown menu below (Figure 8.10).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
-<img src="img/export_jamovi.png" alt="A Jamovi Export window is open with a file being saved and the pull down menu below selecting 'CSV' as an option" width="100%" />
+<img src="img/export_jamovi.png" alt="A jamovi Export window is open with a file being saved and the pull down menu below selecting 'CSV' as an option" width="100%" />
 <p class="caption">
-Figure 8.10: The Jamovi Export menu in which data are be saved as a CSV using the pulldown menu below the filename
+Figure 8.10: The jamovi Export menu in which data are be saved as a CSV using the pulldown menu below the filename
 </p>
 </div>
 <p>Make sure to choose a save location that you know you will be able to find again (to navigate through file directories, click ‘Browse’ in the upper right).
@@ -796,9 +800,9 @@ To save, click on ‘Export’ in the upper right (Figure 8.10).</p>
 </div>
 <div id="summary-1" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Summary<a href="Chapter_8.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You should now know some of the basic tools for working with data, calculating some simple descriptive statistics, plotting a histogram, and saving output and data in Jamovi.
+<p>You should now know some of the basic tools for working with data, calculating some simple descriptive statistics, plotting a histogram, and saving output and data in jamovi.
 These skills will be used throughout the module, so it is important to be comfortable with them as the analyses become more complex.
-If you still have time at the end of the lab practical, it might be a good idea to explore other features in Jamovi.</p>
+If you still have time at the end of the lab practical, it might be a good idea to explore other features in jamovi.</p>
 
 </div>
 </div>
@@ -874,7 +878,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -892,7 +896,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

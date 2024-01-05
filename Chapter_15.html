@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 15 The Central Limit Theorem (CLT) | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 15 The Central Limit Theorem (CLT) | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -540,7 +544,7 @@ Figure 15.1: A simulated demonstration of the central limit theorem. (a) Recreat
 The first (Figure 15.1a) shows the original distribution from Figure 14.6, from which samples are collected and sample means are calculated.
 The second (Figure 15.1b) shows the distribution of 1000 sample means (i.e., <span class="math inline">\(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)</span>).
 Each mean <span class="math inline">\(\bar{x}_{i}\)</span> is calculated from a sample of <span class="math inline">\(N = 100\)</span> from the distribution in Figure 15.1a.
-Sampling is simulated using a random number generator on the computer (the lab practical in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> shows an example of how to do this in Jamovi).</p>
+Sampling is simulated using a random number generator on the computer (the lab practical in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> shows an example of how to do this in jamovi).</p>
 <p>The distribution of sample means shown in Figure 15.1b is not perfectly normal.
 We can try again with an even bigger sample size of <span class="math inline">\(N = 1000\)</span>, this time with a Poisson distribution where <span class="math inline">\(\lambda = 1\)</span> in Figure 14.7.
 Figure 15.2 shows this result, with the original Poisson distribution shown in Figure 15.2a, and the corresponding distribution built from 1000 sample means shown in Figure 15.2b.</p>
@@ -631,7 +635,7 @@ Mathematically, here is how the calculation is made,</p>
 <p>For example, if we had a value of <span class="math inline">\(x = 9.1\)</span> in our simulated dataset, in which <span class="math inline">\(\mu = 5\)</span> and <span class="math inline">\(\sigma = 2\)</span>, then we could calculate <span class="math inline">\(z = (9.1 - 5) / 2 = 2.05\)</span>.
 Since we almost never know what the true population mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) are, we usually need to use the estimates made from our sample,</p>
 <p><span class="math display">\[z = \frac{x - \bar{x}}{s}.\]</span></p>
-<p>We could then use a statistical program such as Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>, our <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, or an old-fashioned z-table<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
+<p>We could then use a statistical program such as jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>, our <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, or an old-fashioned z-table<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
 These z scores will become especially useful for calculating confidence intervals in <a href="Chapter_17.html#Chapter_17">Chapter 17</a>.
 They can also be useful for comparing values from variables or statistics measured on different scales <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Cheadle2003" role="doc-biblioref">Cheadle et al. 2003</a>; <a href="#ref-Adams2016" role="doc-biblioref">Adams and Collyer 2016</a>)</span>.</p>
 </div>
@@ -712,7 +716,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -730,7 +734,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

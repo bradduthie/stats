@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 17 Confidence intervals (CIs) | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 17 Confidence intervals (CIs) | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -643,7 +647,7 @@ Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed
 <ol start="19">
 <li id="fn19"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_14.html#Chapter_14">Chapter 14</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called “credible intervals” rather than “confidence intervals” <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective; i.e., based in some way on the subjective opinion of the individual researcher.<a href="Chapter_17.html#fnref19" class="footnote-back">↩︎</a></p></li>
 <li id="fn20"><p>While it is always important to be careful when searching, typing “z score 99 percent confidence interval” will almost always get the intended result.<a href="Chapter_17.html#fnref20" class="footnote-back">↩︎</a></p></li>
-<li id="fn21"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in Jamovi because Jamovi applies a correction for you, which we will look at in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.<a href="Chapter_17.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.<a href="Chapter_17.html#fnref21" class="footnote-back">↩︎</a></p></li>
 <li id="fn22"><p>The hat over the P, (<span class="math inline">\(\hat{P}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="Chapter_17.html#fnref22" class="footnote-back">↩︎</a></p></li>
 <li id="fn23"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>; i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="Chapter_17.html#fnref23" class="footnote-back">↩︎</a></p></li>
 <li id="fn24"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z score to probability density. For this reason, it is best to stick with <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N}\)</span>. There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.<a href="Chapter_17.html#fnref24" class="footnote-back">↩︎</a></p></li>
@@ -697,7 +701,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -715,7 +719,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

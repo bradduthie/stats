@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 Practical. Plotting and statistical summaries in Jamovi | Statistical Techniques for Biological and Environmental Sciences</title>
+  <title>Chapter 13 Practical. Plotting and statistical summaries in jamovi | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 Practical. Plotting and statistical summaries in Jamovi | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta property="og:title" content="Chapter 13 Practical. Plotting and statistical summaries in jamovi | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   <meta name="github-repo" content="bradduthie/statistical_techniques" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 Practical. Plotting and statistical summaries in Jamovi | Statistical Techniques for Biological and Environmental Sciences" />
+  <meta name="twitter:title" content="Chapter 13 Practical. Plotting and statistical summaries in jamovi | Statistical Techniques for Biological and Environmental Sciences" />
   
   <meta name="twitter:description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2023-04-09" />
+<meta name="date" content="2024-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -101,6 +101,10 @@ code span.pp { font-weight: bold; } /* Preprocessor */
 code span.wa { font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
 div.csl-bib-body { }
@@ -208,7 +212,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 <li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to Jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -243,7 +247,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in Jamovi</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>13.1</b> Reorganise the dataset into a tidy format</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#histograms-and-box-whisker-plots"><i class="fa fa-check"></i><b>13.2</b> Histograms and box-whisker plots</a></li>
@@ -503,8 +507,8 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="Chapter_13" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">Chapter 13</span> <em>Practical</em>. Plotting and statistical summaries in Jamovi<a href="Chapter_13.html#Chapter_13" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This practical focuses on applying the concepts from Chapters 9-12 in Jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<h1><span class="header-section-number">Chapter 13</span> <em>Practical</em>. Plotting and statistical summaries in jamovi<a href="Chapter_13.html#Chapter_13" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This practical focuses on applying the concepts from Chapters 9-12 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The data that we will work with in this practical were collected from a research project conducted by Dr Alan Law, Prof Nils Bunnefeld, and Prof Nigel Willby at the University of Stirling <span class="citation">(<a href="#ref-Law2014" role="doc-biblioref">Law, Bunnefeld, and Willby 2014</a>)</span>.
 The project focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, <em>Nymphaea alba</em>, which beavers regularly consume (Figure 13.1)<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-46"></span>
@@ -515,8 +519,8 @@ Figure 13.1: Photo of white water lillies on the water.
 </div>
 <p>As an instructive example, this lab will use the data from <span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span> on the petiole diameter (mm) from <em>N. alba</em> collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
 The <em>N. alba</em> dataset is available to download <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/Nymphaea_alba.csv">here</a> (right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’).
-Note that the data are not in a tidy format, so it is important to first reorganise the data so that they can be analysed in Jamovi (13.1).
-Once the data are properly organised, we will use Jamovi to plot them (13.2), calculate summary statistics (13.3), apply appropriate decimals, significant figures, and rounding (13.4), and compare petiole diameters across sites (13.5).</p>
+Note that the data are not in a tidy format, so it is important to first reorganise the data so that they can be analysed in jamovi (13.1).
+Once the data are properly organised, we will use jamovi to plot them (13.2), calculate summary statistics (13.3), apply appropriate decimals, significant figures, and rounding (13.4), and compare petiole diameters across sites (13.5).</p>
 <div id="reorganise-the-dataset-into-a-tidy-format" class="section level2 hasAnchor" number="13.1">
 <h2><span class="header-section-number">13.1</span> Reorganise the dataset into a tidy format<a href="Chapter_13.html#reorganise-the-dataset-into-a-tidy-format" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <em>N. alba</em> dataset is not in a tidy format.
@@ -543,23 +547,23 @@ The full dataset is shown below.</p>
 18      2.77          5.16        9.93   7.19 7.04  6.12 6.12
 19      1.91          8.64        8.28   7.29 6.35  7.26 5.11
 20      2.62          7.01        7.24   8.18 6.30  9.14 8.18</code></pre>
-<p>Remember that to make these data tidy and usable in Jamovi, we need each row to be a unique observation.
+<p>Remember that to make these data tidy and usable in jamovi, we need each row to be a unique observation.
 What we really want then is a dataset with two columns of data.
 The first column should indicate the site, and the second column should indicate the petiole diameter.
 This can be done in two ways.
 First, we could use a spreadsheet programme like LibreOffice or MS Excel to create a new dataset with two columns, one column with the site information and the other column with the petiole diameters.
-Second, we could use the ‘Data’ tab in Jamovi to create two new columns of data (one for site and the other for petiole diameter).
+Second, we could use the ‘Data’ tab in jamovi to create two new columns of data (one for site and the other for petiole diameter).
 Either way, we need to copy and paste site names into the first column and petiole diameters in the second column.
 This is a bit tedious, and we will not ask you to do it for every dataset, but it is an important step in the process of data analysis.
-See Figure 13.2 for how this would look in Jamovi.</p>
+See Figure 13.2 for how this would look in jamovi.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-48"></span>
 <img src="img/lilypad_tidy.png" alt="Jamovi interface is shown with new columns being added to the dataset." width="100%" />
 <p class="caption">
 Figure 13.2: Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing ‘Add Variable’.
 </p>
 </div>
-<p>Note that to insert a new column in Jamovi, we need to right click on an existing column and select ‘Add Variable’ <span class="math inline">\(\to\)</span> ‘Insert’.
-A new column will then pop up in Jamovi, and we can give this an informative name.
+<p>Note that to insert a new column in jamovi, we need to right click on an existing column and select ‘Add Variable’ <span class="math inline">\(\to\)</span> ‘Insert’.
+A new column will then pop up in jamovi, and we can give this an informative name.
 Make sure to specify that the ‘Site’ column should be a nominal measure type, and the ‘petiole_diameter_mm’ column should be a continuous measure type.
 The first 6 rows of the dataset should look like the below.</p>
 <pre><code>       Site petiole_diameter_mm
@@ -569,13 +573,13 @@ The first 6 rows of the dataset should look like the below.</p>
 4 Lily_Loch                6.07
 5 Lily_Loch                6.81
 6 Lily_Loch                8.05</code></pre>
-<p>With the reorganised dataset, we are now ready to do some analysis in Jamovi.
+<p>With the reorganised dataset, we are now ready to do some analysis in jamovi.
 We will start with some plotting.</p>
 </div>
 <div id="histograms-and-box-whisker-plots" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> Histograms and box-whisker plots<a href="Chapter_13.html#histograms-and-box-whisker-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will start by making a histogram of the full dataset of petiole diameter.
-To do this, we need to go to the ‘Analyses’ tab of the Jamovi toolbar, then select the ‘Exploration’ button.</p>
+To do this, we need to go to the ‘Analyses’ tab of the jamovi toolbar, then select the ‘Exploration’ button.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-50"></span>
 <img src="img/lilypad_descriptives.png" alt="Jamovi interface is shown with an Exploration and Descriptive option being selected." width="100%" />
 <p class="caption">
@@ -614,7 +618,7 @@ Just looking at the histogram, write down what you think the following summary s
 To label the axes better, go back to the data tab and double click on the column heading ‘petiole_diameter_mm’.
 Change the name of the data variable to ‘Petiole diameter (mm)’.
 The newly named variable will then appear when a new histogram of the petiole diameter data is made.
-To write a caption in Jamovi, click on the ‘Edit’ tab at the very top of the toolbar.
+To write a caption in jamovi, click on the ‘Edit’ tab at the very top of the toolbar.
 You will see some blue boxes above and below the histogram, and you can write your caption by clicking on the box immediately below the histogram.
 Write a caption for the histogram below.</p>
 <pre><code>
@@ -640,7 +644,7 @@ You should now see all of the different sites on the x-axis of the newly created
 Based on the boxplot, which site appears to have the highest and lowest median petiole diameter?</p>
 <p>Highest: ____________________________</p>
 <p>Lowest: ____________________________</p>
-<p>There is one more trick with box-whisker plots in Jamovi that is useful.
+<p>There is one more trick with box-whisker plots in jamovi that is useful.
 The current plots show a summary of each site, but it might also be useful to plot the actual data points to give some more information about the distribution of petiole diameters.
 You can do this by checking the option ‘Data’, which places the petiole diameter of each sample over the box and whiskers for each site.
 The y-axis shows the petiole diameter of each data point.
@@ -652,7 +656,7 @@ Think about where the points are in relation to the box and whiskers of the plot
 </div>
 <div id="calculate-summary-statistics" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> Calculate summary statistics<a href="Chapter_13.html#calculate-summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can calculate the summary statistics using the ‘Descriptives’ option in Jamovi, just as we did with the histogram and box-whisker plots.
+<p>We can calculate the summary statistics using the ‘Descriptives’ option in jamovi, just as we did with the histogram and box-whisker plots.
 Before doing anything else, again place the petiole diameter variable in the box of variables, but do not split the dataset by site just yet because we first want summary statistics across the entire dataset.
 Below the box of variables, but above the Plots options, there are options for selecting different summary statistics.
 Open up this new box and have a look at the different summary statistics that can be calculated.
@@ -670,26 +674,26 @@ To calculate all of the variables explained in <a href="Chapter_11.html#Chapter_
 <li>Mode: _______________________</li>
 <li>Std. error of mean: _______________________</li>
 </ul>
-<p>When you do this, the Statistics option in Jamovi should like like it does in Figure 13.5.</p>
+<p>When you do this, the Statistics option in jamovi should like like it does in Figure 13.5.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
 <img src="img/lilypad_summary_statistics.png" alt="Jamovi Descriptives interface is shown with checkboxes for different summary statistics, most of which are checked." width="100%" />
 <p class="caption">
 Figure 13.5: Jamovi Descriptives toolbar showing the summary statistics available to report.
 </p>
 </div>
-<p>Once you check these boxes, you will see a ‘Descriptives’ table open on the right hand side of Jamovi.
+<p>Once you check these boxes, you will see a ‘Descriptives’ table open on the right hand side of jamovi.
 This table will report all of the summary statistics that you have checked.
 Write down the values for the summary statistics next to the corresponding bullet points above.</p>
 <p>Next split these summary statistics up by site.
-Notice the very large table that is now produced on the right hand side of Jamovi.
+Notice the very large table that is now produced on the right hand side of jamovi.
 Which of the 7 sites in the data set has the highest mean petiole diameter, and what is its mean?</p>
 <p>Site: ______________________________</p>
 <p>Mean: ______________________________</p>
 <p>Which of the 7 sites has the lowest variance in petiole diameter, and what is its variance?</p>
 <p>Site: ______________________________</p>
 <p>Variance: ______________________________</p>
-<p>Make sure that you are able to find and interpret these summary statistics in Jamovi.
-Explore different options to get more comfortable using Jamovi for building plots and reporting summary statistics.
+<p>Make sure that you are able to find and interpret these summary statistics in jamovi.
+Explore different options to get more comfortable using jamovi for building plots and reporting summary statistics.
 Can you find the first and third quartiles for each site?
 Report the third quartiles for each site below.</p>
 <p>Beag: ______________________________</p>
@@ -721,7 +725,7 @@ In assessments, you will often be asked to report a particular answer to a speci
 </ul>
 <p>Remember from 13.2 that you were asked to write down what you thought the mean, median, and standard deviation were just by inspecting the histogram.
 Compare your answers in that section with the rounded statistics listed above.
-Were you able to get a similar value from the histogram as calculated in Jamovi from the data?
+Were you able to get a similar value from the histogram as calculated in jamovi from the data?
 What can you learn from the histogram that you cannot from the summary statistics, and what can you learn from the summary statistics that you cannot from the histogram?
 Write your reflections in the space below.</p>
 <pre><code>
@@ -736,7 +740,7 @@ Write your reflections in the space below.</p>
 </div>
 <div id="comparing-across-sites" class="section level2 hasAnchor" number="13.5">
 <h2><span class="header-section-number">13.5</span> Comparing across sites<a href="Chapter_13.html#comparing-across-sites" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To make a barplot that compares the mean petiole diameters across sites, we again use the Descriptives option in Jamovi.
+<p>To make a barplot that compares the mean petiole diameters across sites, we again use the Descriptives option in jamovi.
 Place petiole diameter as the variable, and spit this by site.
 Next, go down to the plotting options and check ‘Bar plot’.
 You will see a barplot produced in the window to the right with different sites on the x-axis.
@@ -843,7 +847,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
@@ -861,7 +865,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
