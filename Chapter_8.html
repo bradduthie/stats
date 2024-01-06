@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-01-05" />
+<meta name="date" content="2024-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -516,7 +516,7 @@ In this practical, we will work with two datasets, both of which are based on re
 <p>The first dataset includes measurements of soil organic carbon (grams of Carbon per kg of soil) from the topsoil and subsoil collected in a national park in Gabon.
 These data were collected by Dr Carmen Rosa Medina-Carmona in an effort to understand how <a href="https://bg.copernicus.org/articles/3/397/2006/bg-3-397-2006.pdf">pyrogenic carbon</a> (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
 <strong>Download these data here: <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil_organic_carbon.csv</a></strong> (right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’).</p>
-<p>The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) in Baja, Mexico.
+<p>The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) in Baja, Mexico (Figure 8.1).
 These data were collected by Dr Brad Duthie in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Measurements include fig lengths, widths, and heights in centimeters from 4 different fig trees, and the number of seeds in each fruit.
 <strong>Download these data here: <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv">fig_fruits.csv</a></strong> (right click and “Save Link As…”).</p>
@@ -597,9 +597,9 @@ Select this option, and you will see a new window with our two columns of data i
 Click once on the ‘organic_carbon’ variable and use the right arrow to move it into the ‘Variables’ box.
 In the right-most panel of jamovi, a table called ‘Descriptives’ will appear, which will include values for the organic carbon mean, minimum, and maximum.
 Write these values on the lines below, and remember to include units.</p>
-<p>Grand Mean: ____________________________</p>
-<p>Grand Minimum: ____________________________</p>
-<p>Grand Maximum: ____________________________</p>
+<p>Mean: ____________________________</p>
+<p>Minimum: ____________________________</p>
+<p>Maximum: ____________________________</p>
 <p>These values might be useful, but recall that there are two different soil types that need to be considered, topsoil and subsoil.
 The mean, minimum, and maximum above pools both of these soil types together, but we might instead want to know the mean, minimum, and maximum values for topsoil and subsoil separately.
 Splitting organic carbon by soil types is straightforward in jamovi.
@@ -736,13 +736,13 @@ We could therefore rewrite the equation above,</p>
 <p><span class="math display">\[V = \frac{4}{3} \times 3.14 \times r \times r \times r.\]</span></p>
 <p>This is the formula that we can use to create our new column of data for fig volume.
 To do this, double-click on the first empty column of the dataset, just to the right of the ‘Seeds’ column header.
-You will see a pull down option in jamovi with 3 options, one of which is ‘NEW COMPUTED VARIABLE’.
+You will see a pull down menu in jamovi with 3 options, one of which is ‘NEW COMPUTED VARIABLE’.
 This is the option that we want.
 We need to name this new variable, so we can call it ‘fig_volume’.
 Next, we need to type in the formula for calculating volume.
 First, in the small box next to the <span class="math inline">\(f_{x}\)</span>, type in the (4/3) multiplied by 3.14 as below.</p>
-<pre><code>= (4/3) * 3.14 *</code></pre>
-<p>Next, we need to multiply by the variable ‘Width_mm’ divided by 2 (to get the radius), three times. We can do this by clicking on the <span class="math inline">\(f_{x}\)</span> box to the left.
+<pre><code>= (4/3) * 3.14</code></pre>
+<p>Next, we need to multiply by the variable ‘Width_mm’ divided by 2 (to get the radius) three times. We can do this by clicking on the <span class="math inline">\(f_{x}\)</span> box to the left.
 Two new boxes will appear; the first is named ‘Functions’, and the second is named ‘Variables’.
 Ignore the functions box for now, and find ‘Width_mm’ in the list of variables.
 Double click on this to put it into the formula, then divide it by 2.
@@ -758,7 +758,7 @@ That is, we would get the same answer shown in Figure 8.9 if we instead typed th
 <pre><code>= (4/3) * 3.14 * (Width_mm/2)^3</code></pre>
 <p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3. If we instead had written, <code>Width_mm/2^3</code>, then jamovi would first take the cube of 2 <span class="math inline">\((2 \times 2 \times 2 = 8)\)</span>, then divided <code>Width_mm</code> by this value giving a different and incorrect answer. When in doubt, it is always useful to use parentheses to specify what calculations should be done first.</p>
 <p>You now have the new column of data ‘fig_volume’.
-Remember that the calculations underlying apply to the units too.
+Remember that the calculations apply to the units too.
 The width of the fig was calculated in mm, but we have taken width to the power of 3 when calculating the volume.
 In the spaces below, find the mean, minimum, and maximum volumes of all figs and report them in the correct units.</p>
 <p>Mean: ____________________________</p>
@@ -785,7 +785,7 @@ The first way is to use jamovi’s own (binary) file type, which has the extensi
 This will not only save the data (including the calculated variables created within jamovi), but also any analyses that we have done (e.g., calculation of minimums, maximums, and means) or graphs that we have made (e.g., the histogram).
 To do this, click on the three horizontal lines in the upper left of the jamovi toolbar, then select ‘Save As’.
 Choose an appropriate name (e.g., ‘SCIU4T4_Week2_practical.omv’), then save the file in a location where you know that you will be able to find it again.
-Like, all binary files, an OMV file cannot be opened as plain text.
+Like all binary files, an OMV file cannot be opened as plain text.
 Hence, it might be a good idea to save the dataset as a CSV file (note, this will not save any of the analyses or graphs).
 To do this, click on the three horizontal lines in the upper left of the toolbar again, but this time click ‘Export’.
 Give the file an appropriate name (e.g., ‘SCIU4T4_Week2_data’), then choose ‘CSV’ from the pulldown menu below (Figure 8.10).</p>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-01-05" />
+<meta name="date" content="2024-01-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -512,7 +512,7 @@ div.csl-indent {
 The data organisation in this lab can be completed using <a href="https://www.libreoffice.org/discover/calc/">LibreOffice Calc</a>, MS Excel, or <a href="https://docs.google.com/spreadsheets/">Google Sheets</a>.
 In the computer lab, MS Excel is probably the easiest program to use, either through AppsAnywhere or within a browser.
 The screenshots below will mostly be of LibreOffice Calc, but the instructions provided will work on any of the three aforementioned spreadsheet programs.
-You can download a PDF of this practical <a href="https://bradduthie.github.io/SCIU4T4/chapters/chapter_3.pdf">here</a>, or a DOCX of just the questions <a href="https://bradduthie.github.io/SCIU4T4/practical_answers/Week1.docx">here</a>.</p>
+You can download a DOCX of just the questions <a href="https://bradduthie.github.io/SCIU4T4/practical_answers/Week1.docx">here</a>.</p>
 <p>There are 4 data exercises in this practical.
 All of these exercises will focus on organising data into a tidy format.
 Being able to do this will be essential for later practicals and assessments, and for future modules (especially fourth year dissertation work).
@@ -613,7 +613,7 @@ This will ensure that you always know where your data files are located and can 
 <p>Exercise 2 is more self-guided than Exercise 1.
 After reading <a href="Chapter_2.html#Chapter_2">Chapter 2</a> and completing Exercise 1, you should have a bit more confidence in organising data in a tidy format.
 Here we will work with a dataset that includes counts of the number of eggs collected from fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers <span class="citation">(<a href="#ref-Weiblen2002" role="doc-biblioref">Weiblen 2002</a>)</span>.
-You can <strong>download the dataset <a href="https://github.com/bradduthie/SCIU4T4/blob/main/data/wasp_egg_loads_untidy.xlsx?raw=true">here</a></strong>, or recreate it from Figure 3.6.</p>
+You can <strong>download the dataset <a href="https://github.com/bradduthie/SCIU4T4/blob/main/data/wasp_egg_loads_untidy.xlsx?raw=true">here</a></strong> (right click and “Save Link As…”), or recreate it from Figure 3.6.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
 <img src="img/wasp_egg_loads_untidy.png" alt="A screenshot of a spreadsheet that includes 5 columns of labels, below which there are integer numbers. Some text specifies that these numbers are wasp species egg loads." width="100%" />
 <p class="caption">
@@ -632,7 +632,7 @@ It might be a good idea to check with classmates and an instructor to confirm th
 <p>Exercise 3, like Exercise 2, is self-guided.
 The data are presented in a fairly common, but untidy, format, and the challenge is to reorganise them into a tidy dataset that is ready for statistical analysis.
 Table 3.1 shows the number of different species of wasps counted in 5 different fig fruits.
-Rows list all of the species and columns list the fruits, with the counts in the middle
+Rows list all of the species and columns list the fruits, with the counts in the middle.
 This is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.</p>
 <table>
 <caption><span id="tab:unnamed-chunk-17">Table 3.1: </span>An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
@@ -744,7 +744,7 @@ You can replace <span class="math inline">\(\pi\)</span> with the approximation 
 To make this calculation in your spreadsheet, find the cell in which you want to put the head volume.
 By typing in the <code>=</code> sign, the spreadsheet will know to start a new calculation or function in that cell.
 Try this with an empty cell by typing “<code>= 5 + 4</code>” in it (without quotes).
-When you hit ‘Enter’, the spreadsheet will make the calculation for you and the number in the new cell will be 9.
+When you hit ‘Enter’, the spreadsheet will make the calculation for you, and the number in the new cell will be 9.
 To see the equation again, you just need to double-click on the cell.</p>
 <p>To get an estimate of head volume into the dataset, we can create a new column of data.
 To calculate <span class="math inline">\(V_{head}\)</span> for the first wasp in row 2 of Figure 3.8, we could select the spreadsheet cell H2 and type the code, <code>=(4/3)*(3.14)*((B2+C2)/4)^3</code>.
@@ -753,7 +753,7 @@ If the values of <code>B2</code> or <code>C2</code> were to change, then so woul
 Also notice that we are using parentheses to make sure that the order of operations is correct.
 We want to add head length and width before dividing by 4, so we type <code>((B2+C2)/4)</code> to ensure with the innermost parentheses that head length and width are added before dividing.
 Once all of this is completed, we raise everything in parentheses to the third power using the <code>^3</code>, so <code>((B2+C2)/4)^3</code>.
-Different mathematical operations can be carried out using the the symbols in Table 3.2.</p>
+Different mathematical operations can be carried out using the symbols in Table 3.2.</p>
 <table>
 <caption>List of mathematical operations available in a spreadsheet.</caption>
 <thead>
