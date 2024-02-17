@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -499,25 +503,25 @@ In science, a hypothesis should make some kind of testable statement about the r
 For example, we might hypothesise that in a particular population of sparrows, juveniles that have higher body mass will also have higher survival rates.
 In contrast, statistical hypotheses compare a sample outcome to the outcome predicted given a relevant statistical distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 That is, we start with a hypothesis that our data are sampled from some distribution, then work out whether or not we should reject this hypothesis.
-This concept is counter-intuitive, but it is <strong>absolutely fundamental for understanding the logic underlying most modern statistical techniques</strong> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>; <a href="#ref-Greenland2016" role="doc-biblioref">Greenland et al. 2016</a>)</span>, including all subsequent chapters of this workbook, so we will focus on it here in-depth.
+This concept is counter-intuitive, but it is absolutely fundamental for understanding the logic underlying most modern statistical techniques <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>; <a href="#ref-Greenland2016" role="doc-biblioref">Greenland et al. 2016</a>)</span>, including all subsequent chapters of this workbook, so we will focus on it here in-depth.
 The most instructive way to explain the general idea is with the example of coin flips <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>)</span>, as we looked at in <a href="Chapter_15.html#Chapter_15">Chapter 15</a>.</p>
 <div id="how-ridiculous-is-our-hypothesis" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> How ridiculous is our hypothesis?<a href="Chapter_21.html#how-ridiculous-is-our-hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Imagine that a coin is flipped 100 times.
 We are told that the coin is fair, meaning that there is an equal probability of it landing on heads or tails (i.e., the probability is 0.5 for both heads and tails in any given flip).
 From <a href="#Chapter_15.html#binomial-distribution">Chapter 15.4.1</a>, recall that the number of times out of 100 that the coin flip comes up heads will be described by a binomial distribution.
-The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 20.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-88-1.png" alt="A barplot is shown with 101 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape." width="672" />
+The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 21.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-90-1.png" alt="A barplot is shown with 101 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape." width="672" />
 <p class="caption">
 Figure 21.1: Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the pobabilities associated with this number of flips out of 100 being heads are so low.
 </p>
 </div>
-<p>The distribution in Figure 20.1 is what we expect to happen if the coin we are flipping 100 times is actually fair.
+<p>The distribution in Figure 21.1 is what we expect to happen if the coin we are flipping 100 times is actually fair.
 In other words, it is the predicted distribution of outcomes <em>if our hypothesis that the coin is fair is true</em> (more on that later).
 Now, suppose that we actually run the experiment; we flip the coin in question 100 times.
 Perhaps we observe heads 30 times out of the 100 total flips.
-From the distribution in Figure 20.1, this result seems <em>very</em> unlikely if the coin is actually fair.
+From the distribution in Figure 21.1, this result seems <em>very</em> unlikely if the coin is actually fair.
 If we do the maths, the probability of observing 30 heads or fewer (i.e., getting anywhere between 0 and 30 heads total) is only <span class="math inline">\(P = 0.0000392507\)</span>.
 And the probability of getting this much of a deviation from 50 heads (i.e., either 20 less than or 20 more than 50) is <span class="math inline">\(P = 0.0000785014\)</span> (two times 0.0000392507, since the binomial distribution is symmetrical around 50).
 This seems a bit ridiculous!
@@ -530,7 +534,7 @@ This does not sound nearly so unrealistic.
 If a fair coin will give us this much of a deviation from the expected 50 heads and 50 tails about 20% of the time, then perhaps our hypothesis is not so ridiculous, and we can conclude the coin is indeed fair.</p>
 <p>How improbable does our result need to be to cause us to reject our hypothesis that the coin is fair?
 There is no definitive answer to this question.
-In the biological and environmental sciences, we traditionally use a probability of 0.05, but this threshold is completely arbitrary<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.
+In the biological and environmental sciences, we traditionally use a probability of 0.05, but this threshold is completely arbitrary<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.
 All it means is that we are willing to reject our hypothesis (i.e., declare the coin to be unfair) when it is actually true (i.e., the coin really <em>is</em> fair) about 5% of the time.
 Note that we do need to decide on some finite threshold for rejecting our hypothesis because even extremely rare events, by definition, can sometimes happen.
 In the case of 100 coin flips, there is always a small probability of getting <em>any</em> number of heads from a fair coin (although getting zero heads would be extraordinarily rare, <span class="math inline">\(P \approx 7.89 \times 10^{-31}\)</span>, i.e., a decimal followed by 30 zeros, then a 7).
@@ -549,9 +553,9 @@ Typically, <span class="math inline">\(H_{0}\)</span> is associated with the lac
 This null hypothesis contrasts an <strong>alternative hypothesis</strong>, which we abbreviate as <span class="math inline">\(H_{A}\)</span> (e.g., the coin is not fair).
 Alternative hypotheses are always defined by some relationship to <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 Typically, <span class="math inline">\(H_{A}\)</span> is associated with something interesting happening, such as a biased coin, a difference between groups of observations, or an association between two variables.
-Table 20.1 below presents some null and alternative hypotheses that might be relevant in the biological or environmental sciences.</p>
+Table 21.1 below presents some null and alternative hypotheses that might be relevant in the biological or environmental sciences.</p>
 <table>
-<caption>Hypothetical null and alternative hypotheses in the biological and environmental sciences.</caption>
+<caption>Table 21.1 Hypothetical null and alternative hypotheses in the biological and environmental sciences.</caption>
 <colgroup>
 <col width="46%" />
 <col width="53%" />
@@ -580,28 +584,28 @@ Table 20.1 below presents some null and alternative hypotheses that might be rel
 <p>Notice that alternative hypotheses can indicate direction (e.g., amphibian body size will increase, or nitrogen content will be lower in non-agricultural fields), or they can be non-directional (e.g., mortality will be different based on life-history stage).
 When our alternative hypothesis indicates direction, we say that the hypothesis is <strong>one-sided</strong>.
 This is because we are looking at one side of the null distribution.
-In the case of our coin example, a one-sided <span class="math inline">\(H_{A}\)</span> might be that the probability of flipping heads is less than 0.5, meaning that we reject <span class="math inline">\(H_{0}\)</span> only given numbers on the left side of the distribution in Figure 20.1 (where the number of flips heads are fewer than 50).
+In the case of our coin example, a one-sided <span class="math inline">\(H_{A}\)</span> might be that the probability of flipping heads is less than 0.5, meaning that we reject <span class="math inline">\(H_{0}\)</span> only given numbers on the left side of the distribution in Figure 21.1 (where the number of flips heads are fewer than 50).
 A different one-sided <span class="math inline">\(H_{A}\)</span> would be that the probability of flipping heads is greater than 0.5, in which case we would reject <span class="math inline">\(H_{0}\)</span> only given numbers on the right side of the distribution.
 In contrast, when our alternative hypothesis does not indicate direction, we say that the hypothesis is <strong>two-sided</strong>.
 This is because we are looking at both sides of the null distribution.
 In the case of our coin example, we might not care in which direction the coin is biased (towards heads or tails), just that the probability of flipping heads does not equal 0.5.
-In this case, we reject <span class="math inline">\(H_{0}\)</span> at both extremes of the distribution of Figure 20.1.</p>
+In this case, we reject <span class="math inline">\(H_{0}\)</span> at both extremes of the distribution of Figure 21.1.</p>
 </div>
 <div id="p-values-false-positives-and-power" class="section level2 hasAnchor" number="21.3">
 <h2><span class="header-section-number">21.3</span> P-values, false positives, and power<a href="Chapter_21.html#p-values-false-positives-and-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In our hypothetical coin flipping example, we used <span class="math inline">\(P\)</span> to indicate the probability of getting a particular number of heads out of 100 total flips if our coin was fair.
 This <span class="math inline">\(P\)</span> (sometimes denoted with a lower-case <span class="math inline">\(p\)</span>) is what we call a ‘p-value’.</p>
 <blockquote>
-<p><strong>A p-value is the probability of getting a result as or more extreme than the one observed assuming <span class="math inline">\(H_{0}\)</span> is true.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></strong></p>
+<p><strong>A p-value is the probability of getting a result as or more extreme than the one observed assuming <span class="math inline">\(H_{0}\)</span> is true.<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></strong></p>
 </blockquote>
-<p>This is separated and in bold because it is a very important concept in statistics, and it is one that is very, very easy to misinterpret<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>.
+<p>This is separated and in bold because it is a very important concept in statistics, and it is one that is very, very easy to misinterpret<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>.
 A p-value is <em>not</em> the probability that the null hypothesis is true (we actually have no way of knowing this probability).
 It is also not the probability that an alternative hypothesis is false (we have no way of knowing this probability either).
 A p-value specifically <em>assumes that the null hypothesis is true</em>, then asks what the probability of an observed result would be <em>conditional upon this assumption</em>.
 In the case of our coin flipping example, we cannot really know the probability that the coin is fair or unfair (depending on your philosophy of statistics, this might not even make conceptual sense).
 But we can say that <strong>if</strong> the coin <strong>is</strong> fair, then an observation of <span class="math inline">\(\leq 45\)</span> would occur with a probability of <span class="math inline">\(P = 0.0967\)</span>.</p>
-<p>Before actually calculating a p-value, we typically set a threshold level (<span class="math inline">\(\alpha\)</span>) below which we will conclude that our p-value is <strong>statistically significant</strong><a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.
-As mentioned in <a href="Chapter_21.html#how-ridiculous-is-our-hypothesis">section 20.1</a>, we traditionally set <span class="math inline">\(\alpha= 0.05\)</span> in the biological and environmental sciences (although rarely <span class="math inline">\(\alpha = 0.01\)</span> is used).
+<p>Before actually calculating a p-value, we typically set a threshold level (<span class="math inline">\(\alpha\)</span>) below which we will conclude that our p-value is <strong>statistically significant</strong><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.
+As mentioned in <a href="Chapter_21.html#how-ridiculous-is-our-hypothesis">section 21.1</a>, we traditionally set <span class="math inline">\(\alpha= 0.05\)</span> in the biological and environmental sciences (although rarely <span class="math inline">\(\alpha = 0.01\)</span> is used).
 This means that if <span class="math inline">\(P \leq 0.05\)</span>, then we reject <span class="math inline">\(H_{0}\)</span> and conclude that our observation is statistically significant.
 It also means that even when <span class="math inline">\(H_{0}\)</span> really is true (e.g., the coin is really fair), we will mistakenly reject <span class="math inline">\(H_{0}\)</span> with a probability of 0.05 (i.e., 5% of the time).
 This is called a <strong>Type I error</strong> (i.e., a false positive), and it typically means that we will infer a pattern of some kind (e.g., a difference between groups, or a relationship between variables) where none really exists.
@@ -616,9 +620,9 @@ Note that <span class="math inline">\(\alpha\)</span> and <span class="math inli
 Our <span class="math inline">\(\alpha\)</span> is whatever we set it to be (e.g., <span class="math inline">\(\alpha = 0.05\)</span>).
 But statistical power will depend on the size of the effect that we are measuring (e.g., how much bias their is in a coin if we are testing whether or not it is fair), and on the size of our sample.
 Increasing our sample size will always increase our statistical power, i.e., our ability to reject the null hypothesis when it is really false.
-Table 20.2 below illustrates the relationship between whether or not <span class="math inline">\(H_{0}\)</span> is true, and whether or not we reject it.</p>
+Table 21.2 below illustrates the relationship between whether or not <span class="math inline">\(H_{0}\)</span> is true, and whether or not we reject it.</p>
 <table>
-<caption>Summary of Type I and Type II errors in relation to a null hypothesis (<span class="math inline">\(H_{0}\)</span>).</caption>
+<caption>Table 21.2 Summary of Type I and Type II errors in relation to a null hypothesis (<span class="math inline">\(H_{0}\)</span>).</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -640,9 +644,9 @@ Table 20.2 below illustrates the relationship between whether or not <span class
 </tbody>
 </table>
 <p>Note that we never <em>accept</em> a null hypothesis; we just fail to reject it.
-Statistical tests are not really set up in a way that <span class="math inline">\(H_{0}\)</span> can be accepted<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
+Statistical tests are not really set up in a way that <span class="math inline">\(H_{0}\)</span> can be accepted<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
 The reason for this is subtle, but we can see the logic if we again consider the case of the fair coin.
-If <span class="math inline">\(H_{0}\)</span> is true, then the probability of flipping heads is <span class="math inline">\(P(heads) = 0.5\)</span> (i.e., <span class="math inline">\(H_{0}: P(heads) = 0.5\)</span>).
+If <span class="math inline">\(H_{0}\)</span> is true, then the probability of flipping heads is <span class="math inline">\(P(heads) = 0.5\)</span> (i.e., <span class="math inline">\(H_{0}:\:P(heads) = 0.5\)</span>).
 But even if we fail to reject <span class="math inline">\(H_{0}\)</span>, this does not mean that we can conclude with any real confidence that our null hypothesis <span class="math inline">\(P(heads) = 0.5\)</span> is true.
 What if we instead tested the null hypothesis that our coin was <em>very slightly</em> biased, such that <span class="math inline">\(H_{0}:\:P(heads) = 0.4999\)</span>?
 If we failed to reject the null hypothesis that <span class="math inline">\(P(heads) = 0.5\)</span>, then we would probably also fail to reject a <span class="math inline">\(H_{0}\)</span> that <span class="math inline">\(P(heads) = 0.4999\)</span>.
@@ -683,12 +687,12 @@ Wasserstein, Ronald L., and Nicole A. Lazar. 2016. <span>“<span class="nocase"
 </div>
 <div class="footnotes">
 <hr />
-<ol start="29">
-<li id="fn29"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="Chapter_21.html#fnref29" class="footnote-back">↩︎</a></p></li>
-<li id="fn30"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref30" class="footnote-back">↩︎</a></p></li>
-<li id="fn31"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-McShane2019" role="doc-biblioref">McShane et al. 2019</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this lab workbook (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref32" class="footnote-back">↩︎</a></p></li>
-<li id="fn33"><p>Note that we might, for non-statistical reasons conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<ol start="44">
+<li id="fn44"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn45"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.<a href="Chapter_21.html#fnref45" class="footnote-back">↩︎</a></p></li>
+<li id="fn46"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref46" class="footnote-back">↩︎</a></p></li>
+<li id="fn47"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-McShane2019" role="doc-biblioref">McShane et al. 2019</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this lab workbook (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>Note that we might, for non-statistical reasons conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref48" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -504,24 +508,24 @@ The idea is to calculate 2 numbers that we can say with some degree of confidenc
 The wider this interval is, the more confident that we can be that the true mean <span class="math inline">\(\mu\)</span> is somewhere within it.
 The narrower the interval is, the less confident we can be that our confidence intervals (CIs) contain <span class="math inline">\(\mu\)</span>.</p>
 <p>Confidence intervals are notoriously easy to misunderstand.
-We will explain this verbally first, focusing on the general ideas rather than the technical details.
-Then we will present the calculations before coming back to their interpretation again.
+I will explain this verbally first, focusing on the general ideas rather than the technical details.
+Then I will present the calculations before coming back to their interpretation again.
 The idea follows a similar logic to the standard error from <a href="Chapter_12.html#Chapter_12">Chapter 12</a>.</p>
-<p>Suppose that we want to know the mean body mass of all domestic cats (Figure 17.1).
+<p>Suppose that we want to know the mean body mass of all domestic cats (Figure 18.1).
 We cannot weigh every living cat in the world, but maybe we can find enough to get a sample of 20.
 From these 20 cats, we want to find some interval of masses (e.g., 3.9-4.3 kg) within which the <em>true</em> mean mass of the population is contained.
 The only way to be 100% certain that our proposed interval <em>definitely</em> contains the true mean would be to make the interval absurdly large.
 Instead, we might more sensibly ask what the interval would need to be to contain the mean with 95% confidence.
 What does “with 95% confidence” actually mean?
-It means when we do the calculation to get the interval, the true mean should be somewhere within the interval 95% of the time that a sample is collected.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
+It means that when we do the calculation to get the interval, the true mean should be somewhere within the interval 95% of the time that a sample is collected.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-83"></span>
 <img src="img/housecats.png" alt="Two cats sitting close together on a windowsill, a large orange one in the front and small black and brown one in the back" width="100%" />
 <p class="caption">
 Figure 18.1: Two domestic cats sitting side by side with much different body masses.
 </p>
 </div>
 <p>In other words, if we were to go back out and collect another sample of 20 cats, and then another, and another (and so forth), calculating 95% CIs each time, then in 95% of our samples the true mean will be within our CIs (meaning that 5% of the time it will be outside the CIs).
-Note that this is slightly different than saying that there is a 95% probability that the true mean is between our CIs.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
+Note that this is slightly different than saying that there is a 95% probability that the true mean is between our CIs.[^26]
 Instead, the idea is that if we were to repeatedly resample from a population and calculate CIs each time, then 95% of the time the true mean would be within our CIs <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 If this idea does not make sense at first, that is okay.
 The calculation is actually relatively straightforward, and we will come back to the statistical concept again afterwards to interpret it.
@@ -530,7 +534,7 @@ First we will look at CIs assuming a normal distribution, then the special case 
 <h2><span class="header-section-number">18.1</span> Normal distribution CIs<a href="Chapter_18.html#normal-distribution-cis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Remember from the Central Limit Theorem in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> that as our sample size <span class="math inline">\(N\)</span> increases, the distribution of our sample mean <span class="math inline">\(\bar{x}\)</span> will start looking more and more like a normal distribution.
 Also from <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, we know that we can calculate the probability associated with any interval of values in a normal distribution.
-For example, we saw that about 68.2% of the probability density of a normal distribution is contained within a standard deviation of the mean.
+For example, we saw that about 68.2% of the probability density of a normal distribution is contained within one standard deviation of the mean.
 We can use this knowledge from <a href="Chapter_16.html#Chapter_16">Chapter 16</a> to set confidence intervals for any percentage of values around the sample mean (<span class="math inline">\(\bar{x}\)</span>) using a standard error (SE) and z-score (z).
 Confidence intervals include 2 numbers.
 The <strong>lower confidence interval</strong> (LCI) is below the mean, and the <strong>upper confidence interval</strong> (UCI) is above the mean.
@@ -539,18 +543,14 @@ Here is how they are calculated,</p>
 <p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
 <p>Note that the equations are the same, except that for the LCI, we are subtracting <span class="math inline">\(z \times SE\)</span>, and for the UCI we are adding it.
 The specific value of z determines the confidence interval that we are calculating.
-For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 17.2).
-Hence, if we use <span class="math inline">\(z = 1.96\)</span> to calculate LCI and UCI, we would be getting 95% confidence intervals around our mean.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-82"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-82-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. A value of zero centres the x-axis, which is labelled 'z-score'." width="672" />
+For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 18.2).
+Hence, if we use <span class="math inline">\(z = 1.96\)</span> to calculate LCI and UCI, we would be getting 95% confidence intervals around our mean (an interactive application<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> helps visualise the relationship between probability intervals and z-scores more generally).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-84"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-84-1.png" alt="A plot of a bell curve in which the middle 95 per cent of the distribution is shaded in grey. A value of zero centres the x-axis, which is labelled 'z-score'." width="672" />
 <p class="caption">
 Figure 18.2: A standard normal probability distribution showing 95 per cent of probability density surrounding the mean.
 </p>
 </div>
-<p>An <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a> helps visualise the relationship between probability intervals and z-scores more generally (make sure to set ‘Tailed’ to ‘Two-tailed’ using the pulldown menu).</p>
-<blockquote>
-<p><a href="https://bradduthie.shinyapps.io/zandp/">Click here</a> for an interactive application demonstrating the relationship between probability intervals and z-scores.</p>
-</blockquote>
 <p>Now suppose that we want to calculate 95% CIs around the sample mean of our <span class="math inline">\(N = 20\)</span> domestic cats from earlier.
 We find that the mean body mass of cats in our sample is <span class="math inline">\(\bar{x} = 4.1\)</span> kg, and that the standard deviation is <span class="math inline">\(s = 0.6\)</span> kg (suppose that we are willing to assume, for now, that <span class="math inline">\(s = \sigma\)</span>; that is, we know the true standard deviation of the population).
 Remember from <a href="Chapter_12.html#Chapter_12">Chapter 12</a> that the sample standard error can be calculated as <span class="math inline">\(s / \sqrt{N}\)</span>.
@@ -566,7 +566,7 @@ In other words, we accept that about 5% of the time (1 in 20 times), our confide
 Suppose, however, that we wanted to be a bit more cautious.
 We could calculate 99% CIs; that is, CIs that contain the true mean in 99% of samples.
 To do this, we just need to find the z-score that corresponds with 99% of the probability density of the standard normal distribution.
-This value is about <span class="math inline">\(z = 2.58\)</span>, which we could find with the <a href="https://bradduthie.shinyapps.io/zandp/">interactive application</a>, a <a href="https://www.z-table.com/">z table</a>, some maths, or a quick online search<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
+This value is about <span class="math inline">\(z = 2.58\)</span>, which we could find with an interactive application<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>, a <a href="https://www.z-table.com/">z table</a>, some maths, or a quick online search<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>.
 Consequently, the upper 99% confidence interval for our example of cat body masses would be,</p>
 <p><span class="math display">\[LCI_{99\%} = 4.1 - \left(2.58 \times \frac{0.6}{\sqrt{20}}\right) = 3.754\]</span></p>
 <p>Our upper 99% confidence interval is,</p>
@@ -575,14 +575,11 @@ Consequently, the upper 99% confidence interval for our example of cat body mass
 The 99% CI is now 3.754-4.446, while the 95% CI was 3.837-4.363
 This is because if we want to be more confident about our interval containing the true mean, we need to make a bigger interval.</p>
 <p>We could make CIs using any percentage that we want, but in practice it is very rare to see anything other than 90% (<span class="math inline">\(z = 1.65\)</span>), 95% (<span class="math inline">\(z = 1.96\)</span>), or 99% (<span class="math inline">\(z = 2.58\)</span>).
-It is useful to see what these different intervals actually look like when calculated from actual data, so this <a href="https://bradduthie.shinyapps.io/CI_hist_app/">interactive application</a> illustrates CIs on a histogram with red dotted lines next to the LCI and UCI equations.</p>
-<blockquote>
-<p><a href="https://bradduthie.shinyapps.io/CI_hist_app/">Click here</a> for an interactive application demonstrating confidence intervals.</p>
-</blockquote>
-<p>Unfortunately, the CI calculations from the this section are a bit of an idealised situation.
+It is useful to see what these different intervals actually look like when calculated from actual data (an interactive application<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a> illustrates CIs on a histogram).
+Unfortunately, the CI calculations from the this section are a bit of an idealised situation.
 We assumed that the sample means are normally distributed around the population mean.
 While we know that this <em>should</em> be the case as our sample size increases, it is not quite true when our sample is small.
-In practice, what this means is that our z-scores are usually not going to be the best values to use when calculating CIs, although they are often good enough when a sample size is large<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
+In practice, what this means is that our z-scores are usually not going to be the best values to use when calculating CIs, although they are often good enough when a sample size is large<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
 We will see what to do about this in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, but first we turn to the special case of how to calculate CIs from binomial proportions.</p>
 </div>
 <div id="binomial-distribution-cis" class="section level2 hasAnchor" number="18.2">
@@ -590,10 +587,10 @@ We will see what to do about this in <a href="Chapter_19.html#Chapter_19">Chapte
 <p>For a binomial distribution, our data are counts of successes and failures (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>).
 For example, we might flip a coin 40 times and observe 22 heads and 18 tails.
 Suppose that we do not know in advance the coin is fair, so we cannot be sure that the probability of it landing on heads is <span class="math inline">\(p = 0.5\)</span>.
-From our collected data, our estimated probability of landing on heads is, <span class="math inline">\(\hat{p} = 22/40 = 0.55\)</span>.<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>
+From our collected data, our estimated probability of landing on heads is, <span class="math inline">\(\hat{p} = 22/40 = 0.55\)</span>.<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>
 But how would we calculate the CIs around this estimate?
 In this case, the formula is similar to ones for LCI and UCI from the normal distribution shown earlier.
-We just need to note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>
+We just need to note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>
 This means that the standard deviation of <span class="math inline">\(p\)</span> is <span class="math inline">\(\sigma = \sqrt{p\left(1 - p\right)}\)</span>, and <span class="math inline">\(p\)</span> has a standard error,</p>
 <p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
 <p>We can use this standard error in the same equation from earlier for calculating confidence intervals.
@@ -602,8 +599,8 @@ For example, if we wanted to calculate the lower 95% CI for <span class="math in
 <p>Similarly, to calculate the upper 95% CI,</p>
 <p><span class="math display">\[UCI_{95\%} = 0.55 + 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.704.\]</span></p>
 <p>Our conclusion is that, based on our sample, 95% of the time we flip a coin 40 times, the true mean <span class="math inline">\(p\)</span> will be somewhere between 0.396 and 0.704.
-These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></p>
-<p>We can do another example, this time with our example of the probability of testing positive for Covid-19 at <span class="math inline">\(\hat{p} = 0.025\)</span>.
+These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
+<p>We can do another example, this time with our previous case of the probability of testing positive for Covid-19 at <span class="math inline">\(\hat{p} = 0.025\)</span>.
 Suppose this value of <span class="math inline">\(\hat{p}\)</span> was calculated from a survey of 400 people (<span class="math inline">\(N = 400\)</span>).
 We might want to be especially cautious about estimating CIs around such an important probability, so perhaps we prefer to use 99% CIs instead of 95% CIs.
 In this case, we use <span class="math inline">\(z = 2.58\)</span> as with the normal distribution example from earlier.
@@ -621,22 +618,21 @@ But we apply this z score using the binomial standard error to get the LCI,</p>
 <div id="ref-Box1978" class="csl-entry">
 Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
 </div>
-<div id="ref-Ellison2004" class="csl-entry">
-Ellison, Aaron M. 2004. <span>“<span class="nocase">Bayesian inference in ecology</span>.”</span> <em>Ecology Letters</em> 7 (6): 509–20. <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">https://doi.org/10.1111/j.1461-0248.2004.00603.x</a>.
-</div>
 <div id="ref-Sokal1995" class="csl-entry">
 Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="19">
-<li id="fn19"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called “credible intervals” rather than “confidence intervals” <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective; i.e., based in some way on the subjective opinion of the individual researcher.<a href="Chapter_18.html#fnref19" class="footnote-back">↩︎</a></p></li>
-<li id="fn20"><p>While it is always important to be careful when searching, typing “z score 99 percent confidence interval” will almost always get the intended result.<a href="Chapter_18.html#fnref20" class="footnote-back">↩︎</a></p></li>
-<li id="fn21"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.<a href="Chapter_18.html#fnref21" class="footnote-back">↩︎</a></p></li>
-<li id="fn22"><p>The hat over the P, (<span class="math inline">\(\hat{P}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="Chapter_18.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>; i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="Chapter_18.html#fnref23" class="footnote-back">↩︎</a></p></li>
-<li id="fn24"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z score to probability density. For this reason, it is best to stick with <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N}\)</span>. There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.<a href="Chapter_18.html#fnref24" class="footnote-back">↩︎</a></p></li>
+<ol start="29">
+<li id="fn29"><p><a href="https://bradduthie.shinyapps.io/zandp/" class="uri">https://bradduthie.shinyapps.io/zandp/</a><a href="Chapter_18.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p><a href="https://bradduthie.shinyapps.io/zandp/" class="uri">https://bradduthie.shinyapps.io/zandp/</a><a href="Chapter_18.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn31"><p>While it is always important to be careful when searching, typing “z score 99 percent confidence interval” will almost always get the intended result.<a href="Chapter_18.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p><a href="https://bradduthie.shinyapps.io/CI_hist_app/" class="uri">https://bradduthie.shinyapps.io/CI_hist_app/</a><a href="Chapter_18.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.<a href="Chapter_18.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>The hat over the P, (<span class="math inline">\(\hat{P}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="Chapter_18.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>; i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="Chapter_18.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z score to probability density. For this reason, it is best to stick with <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N}\)</span>. There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.<a href="Chapter_18.html#fnref36" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

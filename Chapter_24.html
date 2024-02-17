@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -502,9 +506,9 @@ An ANOVA can be used to test the null hypothesis that <em>all</em> groups in a d
 For example, we might want to know if mean wing length is the same for 5 species of fig wasps sampled from the same area <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
 What follows is an explanation of why this can be done by looking at the variance within and between groups (note, ‘groups’ are also sometimes called ‘factors’ or ‘levels’).
 Groups are categorical data (see <a href="Chapter_5.html#Chapter_5">Chapter 5</a>).
-In the case of the fig wasp example, the groups are the different species (Table 23.1).</p>
+In the case of the fig wasp example, the groups are the different species (Table 24.1).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-105">Table 24.1: </span>Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<caption><span id="tab:unnamed-chunk-107">Table 24.1: </span>Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -546,13 +550,13 @@ In the case of the fig wasp example, the groups are the different species (Table
 </tbody>
 </table>
 <p>Why is any of this necessary?
-If we want to know if the 5 species of fig wasps in Table 23.1 have the same mean wing length, can we not just use t-tests to compare the means between each species?
+If we want to know if the 5 species of fig wasps in Table 24.1 have the same mean wing length, can we not just use t-tests to compare the means between each species?
 There are a couple problems with this approach.
 First, there are a lot of group combinations to compare (Het1 vs Het2, Het1 vs LO1, Het1 vs SO1, etc.).
-For the 5 fig wasp species in Table 21.2, there are 10 pair-wise combinations that would need to be tested.
-And the number of combinations grows exponentially<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a> with each new group added to the dataset (Table 23.2)</p>
+For the 5 fig wasp species in Table 24.1, there are 10 pair-wise combinations that would need to be tested.
+And the number of combinations grows exponentially<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a> with each new group added to the dataset (Table 24.2).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-106">Table 24.2: </span>The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
+<caption><span id="tab:unnamed-chunk-108">Table 24.2: </span>The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Groups</td>
@@ -583,9 +587,9 @@ And the number of combinations grows exponentially<a href="#fn41" class="footnot
 <p>Aside from the tedium of testing every possible combination of group means, there is a more serious problem having to do with the Type I error.
 Recall from <a href="Chapter_21.html#p-values-false-positives-and-power">Chapter 21.3</a> that a Type I error occurs when we reject the null hypothesis (<span class="math inline">\(H_{0}\)</span>) and erroneously conclude that <span class="math inline">\(H_{0}\)</span> is false when it is actually true (i.e., a false positive).
 If we reject <span class="math inline">\(H_{0}\)</span> at a threshold level of <span class="math inline">\(\alpha = 0.05\)</span> (i.e., reject <span class="math inline">\(H_{0}\)</span> when <span class="math inline">\(P &lt; 0.05\)</span>, as usual), then we will erroneously reject the null hypothesis about 5% of the time that we run a statistical test and <span class="math inline">\(H_{0}\)</span> is true.
-But if we run 10 separate t-tests to see if the fig wasp species in Table 23.1 have different mean wing lengths, then the probability of making an error increases considerably.
+But if we run 10 separate t-tests to see if the fig wasp species in Table 24.1 have different mean wing lengths, then the probability of making an error increases considerably.
 The probability of erroneously rejecting <strong>at least 1</strong> of the 10 null hypotheses increases from 0.05 to about 0.40.
-In other words, about 40% of the time, we would conclude that at least 2 species differ in their mean wing lengths<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, even when all species <em>really do</em> have the same wing length.
+In other words, about 40% of the time, we would conclude that at least 2 species differ in their mean wing lengths<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>, even when all species <em>really do</em> have the same wing length.
 This is not a mistake that we want to make, which is why we should first test if all of the means are equal:</p>
 <ul>
 <li><span class="math inline">\(H_{0}:\)</span> All mean species wing lengths are the same</li>
@@ -600,8 +604,8 @@ This is relevant because the test statistic calculated in an ANOVA is called an 
 <h2><span class="header-section-number">24.1</span> The F-distribution<a href="Chapter_24.html#the-f-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If we want to test whether or not 2 variances are the same, then we need to know what the null distribution should be if 2 different samples came from a population with the same variance.
 The general idea is the same as it was for the distributions introduced in <a href="Chapter_15.html#probability-distributions">Chapter 15.4</a>.
-For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when <span class="math inline">\(P(Heads) = 0.5\)</span> and <span class="math inline">\(N = 10\)</span> (see <a href="Chapter_15.html#binomial-distribution">Chapter 15.4.1</a> Figure 14.5).
-To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.
+For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when <span class="math inline">\(P(Heads) = 0.5\)</span> and <span class="math inline">\(N = 10\)</span> (see <a href="Chapter_15.html#binomial-distribution">Chapter 15.4.1</a> Figure 15.5).
+To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a>.
 For example, the ratio of the variances for samples 1 and 2 is <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>,</p>
 <p><span class="math display">\[F = \frac{Variance\:1}{Variance\:2}.\]</span></p>
 <p>Note that if the variances of samples 1 and 2 are the exact same, then F = 1.
@@ -612,22 +616,18 @@ Recall that the shape of the t-distribution is slightly different for different 
 As df increases, the t-distribution starts to resemble the normal distribution.
 For the F-distribution, there are actually 2 degrees of freedom to consider.
 One degree of freedom is needed for Variance 1, and a second degree of freedom is needed for Variance 2.
-Together, these 2 degrees of freedom will determine the shape of the F-distribution (Figure 23.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-107"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-107-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different F distributions with different degrees of freedom." width="672" />
+Together, these 2 degrees of freedom will determine the shape of the F-distribution (Figure 24.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-109"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different F distributions with different degrees of freedom." width="672" />
 <p class="caption">
 Figure 24.1: Probability density functions for 3 different F distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).
 </p>
 </div>
-<p>Figure 23.1 shows an F distribution for 3 different combinations of degrees of freedom.
-The F distribution changes its shape considerably given different df values.
-Visualising this is much, much easier using an <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive application</a>.</p>
-<blockquote>
-<p><a href="https://bradduthie.shinyapps.io/f_distribution/">Click here</a> for an interactive application demonstrating how the F distribution changes with different degrees of freedom.</p>
-</blockquote>
+<p>Figure 24.1 shows an F distribution for 3 different combinations of degrees of freedom.
+The F distribution changes its shape considerably given different df values (visualising this is easier with an interactive application<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>).</p>
 <p>It is not necessary to memorise how the F distribution changes with different degrees of freedom.
 The point is that the probability distribution changes given different degrees of freedom, and that the relationship between probability and the value on the x-axis (F) works like other distributions such as the normal or t-distribution.
-The entire area under the curve must sum to 1, and we can calculate the area above and below any F value (rather, we can get statistical programs such as jamovi and R to do this for us).
+The entire area under the curve must sum to 1, and we can calculate the area above and below any F value (rather, we can get jamovi to do this for us).
 Consequently, we can use the F-distribution as the null distribution for the ratio of two variances.
 If the null hypothesis that the 2 variances are the same is true (i.e., F = 1), then the F-distribution gives us the probability of the ratio of 2 variances being as or more extreme (i.e., further from 1) than a specific value.</p>
 </div>
@@ -638,7 +638,7 @@ The general idea is to compare the mean variance among groups to the mean varian
 <p><span class="math display">\[F = \frac{Mean\:variance\:among\:\:groups}{Mean\:variance\:within\:\:groups}.\]</span></p>
 <p>The rest of this section works through the details of how to calculate this F statistic.
 It is easy to get lost in these details, but the calculations that follow do not need to be done by hand.
-As usual, jamovi or R will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+As usual, jamovi will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The reason for going through the ANOVA step-by-step is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in ANOVA output actually mean.</p>
 <div id="anova-mean-variance-among-groups" class="section level3 hasAnchor" number="24.2.1">
 <h3><span class="header-section-number">24.2.1</span> ANOVA mean variance among groups<a href="Chapter_24.html#anova-mean-variance-among-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -646,16 +646,16 @@ The reason for going through the ANOVA step-by-step is to show how the total var
 The SS was introduced to show how the variance is calculated in <a href="Chapter_12.html#the-variance">Chapter 12.3</a>,</p>
 <p><span class="math display">\[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]</span></p>
 <p>Instead of dividing SS by N - 1 (i.e., the total df), as we would do to get a sample variance, we will need to divide it by the df <em>among groups</em> (<span class="math inline">\(df_{among}\)</span>) and df within groups (<span class="math inline">\(df_{within}\)</span>).
-We can then use these <span class="math inline">\(SS_{among}/df_{among}\)</span> and <span class="math inline">\(SS_{within}/df_{within}\)</span> values to calculate our F<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
+We can then use these <span class="math inline">\(SS_{among}/df_{among}\)</span> and <span class="math inline">\(SS_{within}/df_{within}\)</span> values to calculate our F<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.</p>
 <p>This all sounds a bit abstract at first, so an example will be helpful.
-We can again consider the wing length measurements from the 5 species of fig wasps shown in Table 23.1.
+We can again consider the wing length measurements from the 5 species of fig wasps shown in Table 24.1.
 First, note that the <strong>grand mean</strong> (i.e., the mean across all species) is <span class="math inline">\(\bar{\bar{x}} =\)</span> 1.6691.
 We can also get the sample mean values of each group, individually.
 For example, for Het1,</p>
 <p><span class="math display">\[\bar{x}_{Het1} = \frac{2.122 + 1.938 + 1.765 + 1.7}{4} = 1.88125\]</span>
-We can calculate the means for all 5 fig wasps (Table 23.3).</p>
+We can calculate the means for all 5 fig wasps (Table 24.3).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-108">Table 24.3: </span>Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).</caption>
+<caption><span id="tab:unnamed-chunk-110">Table 24.3: </span>Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -676,7 +676,7 @@ We can calculate the means for all 5 fig wasps (Table 23.3).</p>
 </tbody>
 </table>
 <p>To get the mean variance among groups, we need to calculate the sum of the squared deviations of each species wing length (<span class="math inline">\(\bar{x}_{Het1} =\)</span> 1.88125, <span class="math inline">\(\bar{x}_{Het2} =\)</span> 1.70775, etc.) from the grand mean (<span class="math inline">\(\bar{\bar{x}} =\)</span> 1.6691).
-We also need to weigh the squared deviation of each species by the number of samples for each species<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>.
+We also need to weigh the squared deviation of each species by the number of samples for each species<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>.
 For example, for Het1, the squared deviation would be <span class="math inline">\(4(1.88125 - 1.6691)^{2}\)</span> because there are 4 fig wasps, so we multiply the squared deviation from the mean by 4.
 We can then calculate the sum of squared deviations of the species means from the grand mean,</p>
 <p><span class="math display">\[SS_{among} = 4(1.88125 - 1.6691)^{2} +
@@ -701,9 +701,9 @@ For example, for Het1, we calculate,</p>
               0.0032206 +
               0.0135141 +
               0.0328516 = 0.1075467.\]</span></p>
-<p>Table 23.4 shows what happens after taking the wing lengths from Table 22.1, subtracting the means, then squaring.</p>
+<p>Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-109">Table 24.4: </span>The squared deviations from species means for each wing length presented in Table 23.1</caption>
+<caption><span id="tab:unnamed-chunk-111">Table 24.4: </span>The squared deviations from species means for each wing length presented in Table 24.1</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -744,9 +744,9 @@ For example, for Het1, we calculate,</p>
 </tr>
 </tbody>
 </table>
-<p>If we sum each column (i.e., do what we did for <span class="math inline">\(SS_{Het1}\)</span> for each species), then we get the SS for each species (Table 23.5).</p>
+<p>If we sum each column (i.e., do what we did for <span class="math inline">\(SS_{Het1}\)</span> for each species), then we get the SS for each species (Table 24.5).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-110">Table 24.5: </span>The sum of squared deviations from species means for each wing length presented in Table 23.1</caption>
+<caption><span id="tab:unnamed-chunk-112">Table 24.5: </span>The sum of squared deviations from species means for each wing length presented in Table 24.1</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -766,7 +766,7 @@ For example, for Het1, we calculate,</p>
 </tr>
 </tbody>
 </table>
-<p>If we sum the squared deviations in Table 23.5, we get a <span class="math inline">\(SS_{within} =\)</span> 0.422097.
+<p>If we sum the squared deviations in Table 24.5, we get a <span class="math inline">\(SS_{within} =\)</span> 0.422097.
 Note that each species included 4 wing lengths.
 We lose a degree of freedom for each of the 5 species (because we had to calculate the species mean), so our total df is 3 for each species, and <span class="math inline">\(5 \times 3 = 15\)</span> degrees of freedom within groups (<span class="math inline">\(df_{within}\)</span>).
 To get the mean variance within groups (denominator of F), we calculate <span class="math inline">\(MS_{within} = SS_{within} / df_{within} =\)</span> 0.0281398.</p>
@@ -782,21 +782,21 @@ To get the mean variance within groups (denominator of F), we calculate <span cl
 <p>Remember that if the mean variance among groups is the same as the mean variance within groups (i.e., <span class="math inline">\(MS_{among} = MS_{within}\)</span>), then F = 1.
 We can test the null hypothesis that <span class="math inline">\(MS_{among} = MS_{within}\)</span> against the alternative hypothesis that there is more variation among groups than within groups (<span class="math inline">\(H_{A}: MS_{among} &gt; MS_{within}\)</span>) using the F distribution (note that this is a one-tailed test).
 In the example of 5 fig wasp species, <span class="math inline">\(df_{among} = 4\)</span> and <span class="math inline">\(df_{within} = 15\)</span>,
-so we need an F distribution with 4 degrees of freedom in the numerator and 15 degrees of freedom in the denominator<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>.
-We can use the <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a> to get the F-distribution and p-value (Figure 23.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-111"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-111-1.png" alt="A plot is shown with an F probabilty density distribution and values on the x-axis from 0-4. The area under the curve where F &gt; 3.244 is shaded in grey, and F = 3.244 is indicated with an arrow." width="672" />
+so we need an F distribution with 4 degrees of freedom in the numerator and 15 degrees of freedom in the denominator<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a>.
+We can use an interactive app<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a> to get the F-distribution and p-value (Figure 24.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-113"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-113-1.png" alt="A plot is shown with an F probabilty density distribution and values on the x-axis from 0-4. The area under the curve where F &gt; 3.244 is shaded in grey, and F = 3.244 is indicated with an arrow." width="672" />
 <p class="caption">
 Figure 24.2: F distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.
 </p>
 </div>
-<p>The area shaded in grey in Figure 23.2, where F &gt; 3.2443976, is approximately <span class="math inline">\(P =\)</span> 0.041762.
+<p>The area shaded in grey in Figure 24.2, where F &gt; 3.2443976, is approximately <span class="math inline">\(P =\)</span> 0.041762.
 This is our p-value.
 Since <span class="math inline">\(P &lt; 0.05\)</span>, we can reject the null hypothesis that all mean species wing lengths are the same because the variance among species wing lengths is significantly higher than the variance within species wing lengths.
 Note that the critical value of F (i.e., for which <span class="math inline">\(P = 0.05\)</span>) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19), we would reject <span class="math inline">\(H_{0}\)</span>.</p>
 <p>When running an ANOVA in a statistical program, output includes (at least) the calculated F statistic, degrees of freedom, and the p-value.
-Figure 23.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-112"></span>
+Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-114"></span>
 <img src="img/jamovi_ANOVA_output.png" alt="Jamovi output is shown with a table called 'One-Way ANOVA', which includes a single measurement for F, df1, df2, and p." width="60%" />
 <p class="caption">
 Figure 24.3: Jamovi output for a one-way ANOVA of wing length measurements in 5 species of fig wasps collected in 2010 near La Paz in Baja, Mexico.
@@ -812,8 +812,8 @@ Most statistical programs will show ANOVA output that includes the SS and mean s
 ## Residuals 15 0.42210 0.028140                  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>The above output, taken from R, includes the same information as jamovi (F, df1, df2, and p), but also includes SS and mean variances.
-Note that we can also get this information from jamovi if we want it (see <a href="Chapter_27.html#Chapter_27">Chapter 27</a>).</p>
+<p>The above output, taken from R <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, includes the same information as jamovi (F, df1, df2, and p), but also includes SS and mean variances.
+We can also get this information from jamovi if we want it (see <a href="Chapter_27.html#Chapter_27">Chapter 27</a>).</p>
 </div>
 </div>
 <div id="assumptions-of-anova" class="section level2 hasAnchor" number="24.3">
@@ -878,13 +878,15 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="41">
-<li id="fn41"><p>Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, <span class="math display">\[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\]</span> The number of combinations therefore increases with increasing group number (g).<a href="Chapter_24.html#fnref41" class="footnote-back">↩︎</a></p></li>
-<li id="fn42"><p>To get the 0.4, we can first calculate the probability that we (correctly) do not reject <span class="math inline">\(H_{0}\)</span> for all 10 pair-wise species combinations <span class="math inline">\((1 - 0.05)^{10} \approx 0.60\)</span>, then subtract from 1, <span class="math inline">\(P(Do\:not\:reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\)</span>. That is, we find the probability of there not being a Type I error in the first test (1 - 0.05), <strong>and</strong> the second test (1 - 0.05), and so forth, thereby multiplying (1 - 0.05) by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least 1 Type I error is 1 minus this probability.<a href="Chapter_24.html#fnref42" class="footnote-back">↩︎</a></p></li>
-<li id="fn43"><p>The F-distribution was originally discovered in the context of the ratio of random variables with chi-square distributions, with each variable being divided by its own degree of freedom <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square distribution in <a href="Week9.html#Week9">Week 9</a>.<a href="Chapter_24.html#fnref43" class="footnote-back">↩︎</a></p></li>
-<li id="fn44"><p>Note that the SS divided by the degrees of freedom (N - 1) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{Het1}\)</span>, <span class="math inline">\(s^{2}_{Het2}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref44" class="footnote-back">↩︎</a></p></li>
-<li id="fn45"><p>In this case, weighing by sample size is not so important because each species has the same number of samples. But when different groups have different numbers of samples, we need to multiply by sample number so that each group contributes proportionally to the SS.<a href="Chapter_24.html#fnref45" class="footnote-back">↩︎</a></p></li>
-<li id="fn46"><p>Note that <span class="math inline">\(df_{among} = 4\)</span> and <span class="math inline">\(df_{within} = 15\)</span> sum to 19, which is the total df of the entire dataset (<span class="math inline">\(N - 1 = 20 - 1 = 19\)</span>). This is always the case for the ANOVA; the overall df constrains the degrees of freedom among and within groups.<a href="Chapter_24.html#fnref46" class="footnote-back">↩︎</a></p></li>
+<ol start="63">
+<li id="fn63"><p>Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, <span class="math display">\[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\]</span> The number of combinations therefore increases with increasing group number (g).<a href="Chapter_24.html#fnref63" class="footnote-back">↩︎</a></p></li>
+<li id="fn64"><p>Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, <span class="math display">\[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\]</span> The number of combinations therefore increases with increasing group number (g).<a href="Chapter_24.html#fnref64" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>The F-distribution was originally discovered in the context of the ratio of random variables with chi-square distributions, with each variable being divided by its own degree of freedom <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square distribution in <a href="Week9.html#Week9">Part IX</a>.<a href="Chapter_24.html#fnref65" class="footnote-back">↩︎</a></p></li>
+<li id="fn66"><p>Note that the SS divided by the degrees of freedom (N - 1) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{Het1}\)</span>, <span class="math inline">\(s^{2}_{Het2}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref66" class="footnote-back">↩︎</a></p></li>
+<li id="fn67"><p>Note that the SS divided by the degrees of freedom (N - 1) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{Het1}\)</span>, <span class="math inline">\(s^{2}_{Het2}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref67" class="footnote-back">↩︎</a></p></li>
+<li id="fn68"><p>Biologically, a fruit volume of 8458.3 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_24.html#fnref68" class="footnote-back">↩︎</a></p></li>
+<li id="fn69"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_24.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<li id="fn70"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_24.html#fnref70" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

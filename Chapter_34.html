@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -496,9 +500,9 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 34</span> <em>Practical</em>. Using regression<a href="Chapter_34.html#Chapter_34" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This lab focuses on practical exercises to apply the concepts in <a href="Chapter_32.html#Chapter_32">Chapter 32</a> and <a href="Chapter_33.html#Chapter_33">Chapter 33</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The 5 exercises in this practical will apply simple linear regression (Exercises 33.1, 33.2, and 33.5) or multiple regression (33.3 and 33.4).
-The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
+The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke<a href="#fn91" class="footnote-ref" id="fnref91"><sup>91</sup></a>.
 Their work focuses on carbon storage in Gabon (Figure 33.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-173"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-175"></span>
 <img src="img/gabon.jpg" alt="View of the African horizon." width="100%" />
 <p class="caption">
 Figure 34.1: This practical is inspired by data collected on Carbon storage in Gabon.
@@ -547,7 +551,7 @@ From the ‘Analyses’ tab of jamovi, select the ‘Regression’ button, then 
 A new panel called ‘Linear regression’ will open.
 The dependent variable ‘PyC’ should go in the ‘Dependent Variable’ box to the right.
 The independent variable ‘depth’ should go in the ‘Covariates’ box (Figure 33.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-174"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-176"></span>
 <img src="img/Jamovi_linear_regression.png" alt="Jamovi interface for a linear regression is shown with 'PyC' placed in a Dependent Variable box and 'depth' in a Covariates box. Other variables are included in a box to the left." width="100%" />
 <p class="caption">
 Figure 34.2: Jamovi interface for running a linear regression model to predict pyrogenic carbon (PyC) from soil depth (depth).
@@ -555,7 +559,7 @@ Figure 34.2: Jamovi interface for running a linear regression model to predict p
 </div>
 <p>We can check the assumption that the residuals are normally distributed in multiple ways.
 To do this, find the pulldown menu called ‘Assumption Checks’ in the left panel of jamovi, and check boxes for ‘Normality test’, ‘Q-Q plot of residuals’, and ‘Residual plots’ (Figure 33.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-175"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-177"></span>
 <img src="img/Jamovi_linear_regression_normality.png" alt="Jamovi interface choosing assumption checks with checkboxes selected for 'Normality test', 'Q-Q plot of residuals', and 'Residual plots'." width="100%" />
 <p class="caption">
 Figure 34.3: Jamovi interface for specifying assumption checks on a simple linear regression.
@@ -586,7 +590,7 @@ Visually, this is the equivalent of taking the line of best fit from the first s
 It is good to try to take a few moments to understand this because it will help reinforce the concept of residual values, but in practice we can base our conclusion about residual normality on the Shapiro-Wilk test as done above.</p>
 <p>Having checked all of the assumptions of a linear regression model, we can finally test whether or not our model is statistically significant.
 Find the pulldown called ‘Model Fit’ underneath the linear regression panel, then make sure that the boxes for <span class="math inline">\(R^{2}\)</span> and ‘F test’ are checked (Figure 33.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-176"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-178"></span>
 <img src="img/Jamovi_linear_regression_model_fit.png" alt="Jamovi interface choosing model fit output with coefficient of determination and F test selected." width="100%" />
 <p class="caption">
 Figure 34.4: Jamovi interface for specifying model fit output in a simple linear regression.
@@ -667,7 +671,7 @@ How do you know?</p>
 <p>One final note for this exercise.
 In the Linear Regression panel of jamovi, scroll all the way down to the last pulldown menu called ‘Save’.
 Check the boxes for ‘Predicted values’ and ‘Residuals’ (Figure 33.5).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-177"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-179"></span>
 <img src="img/Jamovi_linear_regression_save.png" alt="Jamovi interface saving output from a model regression with Predicted values and Residuals selected." width="100%" />
 <p class="caption">
 Figure 34.5: Jamovi interface for saving values of model output for a regression.
@@ -740,7 +744,7 @@ Based on what you know about the difference between simple linear regression and
 Run a multiple regression model with soil depth, fire frequency, and soil pH all as independent variables and pyrogenic carbon as a dependent variable.
 Fill in the Model Coefficient output in Table 33.1.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-178">Table 34.1: </span>Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.</caption>
+<caption><span id="tab:unnamed-chunk-180">Table 34.1: </span>Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -840,8 +844,8 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="61">
-<li id="fn61"><p>Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by the researchers.<a href="Chapter_34.html#fnref61" class="footnote-back">↩︎</a></p></li>
+<ol start="91">
+<li id="fn91"><p>Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by the researchers.<a href="Chapter_34.html#fnref91" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

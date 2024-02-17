@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -495,7 +499,7 @@ div.csl-indent {
 <div id="Chapter_6" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Accuracy, precision, and units<a href="Chapter_6.html#Chapter_6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The science of measurements is called “metrology”, which, among other topics, focuses on measurement accuracy, precision, and units <span class="citation">(<a href="#ref-Rabinovich2013" role="doc-biblioref">Rabinovich 2013</a>)</span>.
-We will not discuss these topics in depth, but they are important for statistical techniques because measurement, in the broadest sense of the word, is the foundation of data collection.
+We will not consider these topics in depth, but they are important for statistical techniques because measurement, in the broadest sense of the word, is the foundation of data collection.
 When collecting data, we want measurements to be accurate, precise, and clearly defined.</p>
 <div id="accuracy" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Accuracy<a href="Chapter_6.html#accuracy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -514,7 +518,7 @@ The <strong>accuracy</strong> of a measurement is defined by how close the measu
 In other words, precision describes how similar measurements are expected to be.
 If, for example, a scale measures an object to be the exact same mass every time it is weighed (regardless of whether the mass is accurate), then the measurement is highly precise.
 If, however, the scale measures a different mass each time the object is weighed (for this hypothetical, assume that the true mass of the object does not change), then the measurement is not as precise.</p>
-<p>One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
 <img src="img/accuracy_vs_precision.png" alt="Four targets, A, B, C, and D, are shown side-by-side, wach with five points scatter on top of them. Points in A are close together and near the centre, points in B are far apart but around the center, points in C are close together but away from the centre, and points in D are far apart and away from the centre." width="100%" />
 <p class="caption">
@@ -530,7 +534,7 @@ Measurement can be accurate but not precise (Figure 6.1B) or precise but not acc
 Having standardised units of measurement is highly important to ensure measurement accuracy <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
 Originally, these units were often defined in terms of physical artefacts.
 For example, the kilogram (kg) was once defined by a physical cylinder of metal housed in the Bureau International des Poids et Mesures (BIPM).
-In other words, the mass of a metal sitting at the BIPM <em>defined</em> what a kg was, with the mass of every other measurement being based on this physical object <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
+In other words, the mass of a metal sitting at the BIPM <em>defined</em> what a kg was, with the mass of every other measurement being based on this physical object <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>; <a href="#ref-Freedman2011" role="doc-biblioref">Freedman, Pisani, and Purves 2011</a>)</span>.
 This can potentially present a problem if the mass of that one object changes over time, thereby causing a change in how a kg is defined.
 Where possible, it is therefore preferable to define units in terms of fundamental constants of nature.
 In 2019, for example, the kg was redefined in terms of the Planck constant, a specific atomic transition frequency, and the speed of light <span class="citation">(<a href="#ref-Stock2019" role="doc-biblioref">Stock et al. 2019</a>)</span>.
@@ -538,9 +542,9 @@ This ensures that measurements of mass remain accurate over time because what a 
 <p>We can separate units into base units and derived units.
 Table 6.1 below lists some common base units for convenience <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
 You do not need to memorise these units, but it is good to be familiar with them.
-We will use these units throughout the module.</p>
+We will use these units throughout the book.</p>
 <table>
-<caption>Base units of SI measurements. For details see <span class="citation">Quinn (<a href="#ref-Quinn1995" role="doc-biblioref">1995</a>)</span>.</caption>
+<caption>Table 6.1: Base units of SI measurements. For details see <span class="citation">Quinn (<a href="#ref-Quinn1995" role="doc-biblioref">1995</a>)</span>.</caption>
 <thead>
 <tr class="header">
 <th><strong>Measured Quantity</strong></th>
@@ -589,7 +593,7 @@ We will use these units throughout the module.</p>
 <p>We can also define derived SI units from the base units of Table 6.1; examples of these derived SI units are provided in Table 6.2.
 Again, you do not need to memorise these units, but it is good to be aware of them.</p>
 <table>
-<caption>Examples of derived SI units.</caption>
+<caption>Table 6.2: Examples of derived SI units.</caption>
 <colgroup>
 <col width="20%" />
 <col width="15%" />
@@ -656,7 +660,7 @@ As a very simple example, if we want to know the speed at which an object is mov
 <p><span class="math display">\[speed = \frac{10\:m}{20\:s} = 0.5\:m/s = 0.5\:m\:s^{-1}.\]</span></p>
 <p>Notice that the final units are in metres per second, which can be written as <span class="math inline">\(m/s\)</span> or <span class="math inline">\(m\:s^{-1}\)</span> (remember that raising <span class="math inline">\(s\)</span> to the <span class="math inline">\(-1\)</span> power is the same as <span class="math inline">\(1/s\)</span>; see <a href="Chapter_1.html#Chapter_1">Chapter 1</a> for a quick reminder about superscripts).
 It is a common error to calculate just the numeric components of a calculation and ignore the associated units.
-Often on assessments, we will ask you not to include units in your answer (this is just for convenience on the tests and exam), but recognising that units are also part of calculations is important.</p>
+Recognising that units are also part of calculations is important.</p>
 </div>
 <div id="other-examples-of-units" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Other examples of units<a href="Chapter_6.html#other-examples-of-units" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -686,6 +690,9 @@ Notice above how the <span class="math inline">\(kg\)</span> on the top and bott
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Freedman2011" class="csl-entry">
+Freedman, David, Robert Pisani, and Roger Purves. 2011. <em><span>Statistics</span></em>. 4th ed. New York: W. W. Norton &amp; Company.
+</div>
 <div id="ref-Quinn1995" class="csl-entry">
 Quinn, T. J. 1995. <span>“<span class="nocase">Base units of the Syst<span class="nocase">è</span>me International d’Unit<span class="nocase">é</span>s, their accuracy, dissemination and international traceability</span>.”</span> <em>Metrologia</em> 31 (6): 515–27. <a href="https://doi.org/10.1088/0026-1394/31/6/011">https://doi.org/10.1088/0026-1394/31/6/011</a>.
 </div>
@@ -698,8 +705,8 @@ Stock, Michael, Richard Davis, Estefanía De Mirandés, and Martin J. T. Milton.
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>This figure was released into the public domain by <a href="https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg">Egon Willighagen</a> on 8 March 2014.<a href="Chapter_6.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="3">
+<li id="fn3"><p>This figure was released into the public domain by <a href="https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg">Egon Willighagen</a> on 8 March 2014.<a href="Chapter_6.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

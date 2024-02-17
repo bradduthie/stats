@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -505,19 +509,19 @@ For example, does knowing something about the latitude of a location tell us som
 <p>The easiest way to visualise the concept of a correlation is by using a scatterplot.
 Scatterplots are useful for visualising the association between 2 quantitative variables.
 In a scatterplot the values of one variable are plotted on the x-axis, and the values of a second variable are plotted on the y-axis.
-Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 29.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-142"></span>
+Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 30.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-144"></span>
 <img src="img/heterandrium.png" alt="Two small black iridescent wasps are shown side by side with wings facing upwards." width="100%" />
 <p class="caption">
 Figure 30.1: Fig wasps from 2 different species are shown. Wasps were collected from Baja, Mexico.
 </p>
 </div>
-<p>Both fig wasp species in Figure 29.1 are unnamed.
-We can call the species in Figure 29.1A ‘Het1’ and the species in Figure 29.1B ‘Het2’.
+<p>Both fig wasp species in Figure 30.1 are unnamed.
+We can call the species in Figure 30.1A ‘Het1’ and the species in Figure 30.1B ‘Het2’.
 We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these 2 species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
-Table 29.1 shows these measurements for 11 wasps.</p>
+Table 30.1 shows these measurements for 11 wasps.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-143">Table 30.1: </span>Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-145">Table 30.1: </span>Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.</caption>
 <thead>
 <tr class="header">
 <th align="left">Species</th>
@@ -598,17 +602,17 @@ Table 29.1 shows these measurements for 11 wasps.</p>
 <p>Intuitively, we might expect most of these measurements to be associated with one another.
 For example, if a fig wasp has a relatively long thorax, then it probably also has a relatively long abdomen (i.e., it could just be a big wasp).
 We can check this visually by plotting one variable on the x-axis and the other on the y-axis.
-Figure 29.2 does this for wasp thorax length (x-axis) and abdomen length (y-axis).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-144"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-144-1.png" alt="A plot is shown with 11 points, such that points that are higher on the x-axis are generally higher on the y-axis." width="672" />
+Figure 30.2 does this for wasp thorax length (x-axis) and abdomen length (y-axis).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-146-1.png" alt="A plot is shown with 11 points, such that points that are higher on the x-axis are generally higher on the y-axis." width="672" />
 <p class="caption">
 Figure 30.2: An example of a scatterplot in which fig wasp thorax length (x-axis) is plotted against fig wasp abdomen length (y-axis). Each point is a different fig wasp. Wasps were collected in 2010 in Baja, Mexico.
 </p>
 </div>
-<p>In Figure 29.2, each point is a different wasp from Table 29.1.
-For example, in the last row of Table 29.1, there is a wasp with a particularly low thorax length (0.621 mm) and abdomen length (1.034 mm).
-In the scatterplot, we can see this wasp represented by the point that is lowest and furthest to the left (Figure 29.2).</p>
-<p>There is a clear association between thorax length and abdomen length in Figure 29.2.
+<p>In Figure 30.2, each point is a different wasp from Table 30.1.
+For example, in the last row of Table 30.1, there is a wasp with a particularly low thorax length (0.621 mm) and abdomen length (1.034 mm).
+In the scatterplot, we can see this wasp represented by the point that is lowest and furthest to the left (Figure 30.2).</p>
+<p>There is a clear association between thorax length and abdomen length in Figure 30.2.
 Fig wasps that have low thorax lengths also tend to have low abdomen lengths, and wasps that high thorax lengths also tend to have high abdomen lengths.
 In this sense, the 2 variables are associated.
 More specifically, they are positively correlated.
@@ -618,13 +622,13 @@ As thorax length increases, so does abdomen length.</p>
 <h2><span class="header-section-number">30.2</span> The correlation coefficient<a href="Chapter_30.html#the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <strong>correlation coefficient</strong> formalises the association described in the previous section.
 It gives us a single number that defines how 2 variables are correlated.
-We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
+We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>.
 Positive values indicate that 2 variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
 Negative values indicate that 2 variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
 Values of zero (or not significantly different from zero, more on this later) indicate that 2 variables are uncorrelated (i.e., independent of one another).
-Figure 29.3 shows scatterplots for 4 different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-145-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with different correlations between x and y variables." width="480" />
+Figure 30.3 shows scatterplots for 4 different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-147-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with different correlations between x and y variables." width="480" />
 <p class="caption">
 Figure 30.3: Examples of scatterplots with different correlation coefficients (r) between 2 variables (x and y).
 </p>
@@ -649,32 +653,32 @@ Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="m
 If there is no such relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, then we will get <span class="math inline">\(cov_{x,y}\)</span> values closer to zero.</p>
 <p>The covariance can, at least in theory, be any real number.
 How low or high it is will depend on the magnitudes of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, just like <a href="Chapter_12.html#the-variance">the variance</a>.
-To get the Pearson product moment correlation coefficient<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
+To get the Pearson product moment correlation coefficient<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
 We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{y}\)</span>),</p>
 <p><span class="math display">\[r = \frac{cov_{x,y}}{s_{x} \times s_{y}}.\]</span></p>
-<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the 2 variables, so the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger <span class="math inline">\(s_{x} \times s_{y}\)</span>.
+<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the 2 variables, and the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger than this total.
 We can again think about the special case in which <span class="math inline">\(x = y\)</span>.
-Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom and <span class="math inline">\(r = 1\)</span>.</p>
+Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom and <span class="math inline">\(r = 1\)</span> (i.e., <span class="math inline">\(x\)</span> is completely correlated with itself).</p>
 <p>We can expand <span class="math inline">\(cov_{x,y}\)</span>, <span class="math inline">\(s_{x}\)</span>, and <span class="math inline">\(s_{y}\)</span> to see the details of the equation for <span class="math inline">\(r\)</span>,</p>
 <p><span class="math display">\[r = \frac{\frac{1}{N - 1} \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
 <p>This looks like a lot, but we can clean the equation up a bit because the <span class="math inline">\(1 / (N-1)\)</span> expressions cancel on the top and bottom of the equation,</p>
 <p><span class="math display">\[r = \frac{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
 <p>As with other statistics defined in this book, it is almost never necessary to calculate <span class="math inline">\(r\)</span> by hand.
-Statistical programs such as jamovi and R will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+Jamovi will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988" role="doc-biblioref">Rodgers and Nicewander 1988</a>)</span>.
-To make this link a bit more clear, we can calculate the correlation coefficient of thorax and abdomen length from Table 29.1.
+To make this link a bit more clear, we can calculate the correlation coefficient of thorax and abdomen length from Table 30.1.
 We can set thorax to be the <span class="math inline">\(x\)</span> variable and abdomen to be the <span class="math inline">\(y\)</span> variable.
 Mean thorax length is <span class="math inline">\(\bar{x} = 0.770\)</span>, and mean abdomen length is <span class="math inline">\(\bar{y} = 1.210\)</span>.
 The standard deviation of thorax length is <span class="math inline">\(s_{x} = 0.064\)</span>, and the standard deviation of abdomen length is <span class="math inline">\(s_{y} = 0.123\)</span>.
 This gives us the numbers that we need to calculate the bottom of the fraction for <span class="math inline">\(r\)</span>, which is <span class="math inline">\(s_{x} \times s_{y} = 0.007872\)</span>.
 We now need to calculate the covariance on the top.
-To get the covariance, we first need to calculate <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for each row (<span class="math inline">\(i\)</span>) in Table 29.1.
+To get the covariance, we first need to calculate <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for each row (<span class="math inline">\(i\)</span>) in Table 30.1.
 For example, for row 1, <span class="math inline">\(\left(0.767 - 0.770\right) \left(1.288 - 1.210\right) = -0.000234.\)</span>
 For row 2, <span class="math inline">\(\left(0.784 - 0.770\right) \left(1.059 - 1.210\right) = -0.002114.\)</span>
 We continue this for all rows.
-Table 29.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>), abdomen length (<span class="math inline">\(y_{i}\)</span>), and <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for rows <span class="math inline">\(i = 1\)</span> to <span class="math inline">\(i = 11\)</span>.</p>
+Table 30.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>), abdomen length (<span class="math inline">\(y_{i}\)</span>), and <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for rows <span class="math inline">\(i = 1\)</span> to <span class="math inline">\(i = 11\)</span>.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-146">Table 30.2: </span>Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.</caption>
+<caption><span id="tab:unnamed-chunk-148">Table 30.2: </span>Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.</caption>
 <thead>
 <tr class="header">
 <th align="right">Row (i)</th>
@@ -752,24 +756,24 @@ Table 29.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>),
 </tr>
 </tbody>
 </table>
-<p>If we sum up all of the values in the column “Squared Deviation” from Table 29.2, we get a value of 0.059487.
+<p>If we sum up all of the values in the column “Squared Deviation” from Table 30.2, we get a value of 0.059487.
 We can multiply this value by <span class="math inline">\(1 / (N - 1)\)</span> to get the top of the equation for <span class="math inline">\(r\)</span>, <span class="math inline">\((1 / (11-1)) \times 0.059487 = 0.0059487\)</span>.
 We now have all of the values we need to calculate <span class="math inline">\(r\)</span> between fig wasp thorax and abdomen length,</p>
 <p><span class="math display">\[r_{x,y} = \frac{0.0059487}{0.064 \times 0.123}.\]</span></p>
 <p>Our final value is <span class="math inline">\(r_{x, y} = 0.7556784\)</span>.
-As suggested by the scatterplot in Figure 29.2, thorax and abdomen lengths are highly correlated.
+As suggested by the scatterplot in Figure 30.2, thorax and abdomen lengths are highly correlated.
 We will test whether or not this value of <span class="math inline">\(r\)</span> is statistically significant in <a href="Chapter_30.html#correlation-hypothesis-testing">Chapter 24.3</a> below, but first we will introduce the Spearman’s rank correlation coefficient.</p>
 </div>
 <div id="spearman-rank-correlation-coefficient" class="section level3 hasAnchor" number="30.2.2">
 <h3><span class="header-section-number">30.2.2</span> Spearman rank correlation coefficient<a href="Chapter_30.html#spearman-rank-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Throughout this book, we have seen how the <em>ranks</em> of data can be substituted in place of the actual values.
+<p>We have seen how the <em>ranks</em> of data can be substituted in place of the actual values.
 This has been useful when data violate the assumptions of a statistical test, and we need a non-parametric test instead (e.g., the <a href="Chapter_23.html#wilcoxon-test-1">Wilcoxon signed rank test</a>, the <a href="Chapter_23.html#mann-whitney-u-test-1">Mann-Whitney U test</a>, or the <a href="Chapter_26.html#Chapter_26">Kruskall-Wallis H test</a>).
 We can use the same trick for the correlation coefficient.
 The Spearman rank correlation coefficient is calculated the exact same way as the Pearson product moment correlation coefficient, except on the ranks of values.
 To calculate the Spearman rank correlation coefficient for the fig wasp example in <a href="Chapter_30.html#pearson-product-moment-correlation-coefficient">the previous section</a>, we just need to rank the thorax and abdomen lengths from 1 to 11, then calculate <span class="math inline">\(r\)</span> using the rank values instead of the actual measurements of length.
-Figure 29.3 shows the same 11 fig wasp measurements as Figures 29.1 and 29.2, but with columns added to show the ranks of thorax and abdomen lengths.</p>
+Figure 30.3 shows the same 11 fig wasp measurements as Figures 30.1 and 30.2, but with columns added to show the ranks of thorax and abdomen lengths.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-147">Table 30.3: </span>Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.</caption>
+<caption><span id="tab:unnamed-chunk-149">Table 30.3: </span>Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.</caption>
 <thead>
 <tr class="header">
 <th align="right">Wasp (i)</th>
@@ -859,7 +863,7 @@ Figure 29.3 shows the same 11 fig wasp measurements as Figures 29.1 and 29.2, bu
 </tr>
 </tbody>
 </table>
-<p>Note from Table 29.3 that the lowest value of Thorax is 0.621, so it gets a rank of 1.
+<p>Note from Table 30.3 that the lowest value of Thorax is 0.621, so it gets a rank of 1.
 The highest value of Thorax is 0.852, so it gets a rank of 11.
 We do the same for abdomen ranks.
 To get the Spearman rank correlation coefficient, we just calculate <span class="math inline">\(r\)</span> using the ranks.
@@ -886,10 +890,10 @@ We therefore want to test the null hypothesis that <span class="math inline">\(r
 <p>Note that <span class="math inline">\(H_{A}\)</span> above is for a two-tailed test, in which we do not care about direction.
 We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</span> is that the correlation coefficient is greater than (or less than) zero.</p>
 <p>How do we actually test the null hypothesis?
-As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>,</p>
+As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn83" class="footnote-ref" id="fnref83"><sup>83</sup></a>,</p>
 <p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
 <p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
-Statistical programs such as jamovi or R will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
+Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
 In <a href="Chapter_22.html#one-sample-t-test">Chapter 22.1</a>, we saw that the one sample t-test defined <span class="math inline">\(t\)</span> as the deviation of the sample mean from the true mean, divided by the standard error.
 Here we are doing the same for the correlation coefficient.
@@ -898,23 +902,17 @@ If this is not the case, and the assumption of normality is violated, then the t
 <p>To be cautious, we should check whether or not the variables that we are correlating are normally distributed (especially if the sample size is small).
 If they are normally distributed, then we can use the Pearson’s product moment correlation to test the null hypothesis.
 If the assumption of normality is violated, then we might consider using the nonparametric Spearman rank correlation coefficient instead.
-The fig wasp thorax and abdomen lengths from Table 29.1 are normally distributed, so we can use the Pearson product moment correlation coefficient to test whether or not the correlation between these two variables is significant.
+The fig wasp thorax and abdomen lengths from Table 30.1 are normally distributed, so we can use the Pearson product moment correlation coefficient to test whether or not the correlation between these two variables is significant.
 In jamovi, the t-score is not even reported as output when using a correlation test.
-We only see <span class="math inline">\(r\)</span> and the p-value (Figure 29.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-148"></span>
+We only see <span class="math inline">\(r\)</span> and the p-value (Figure 30.4).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-150"></span>
 <img src="img/Jamovi_correlation_output.png" alt="A table called 'Correlation Matrix' is shown, which is mostly empty except for two values in the lower left of a 2 by 2 matrix." width="100%" />
 <p class="caption">
 Figure 30.4: Jamovi output for a test of the null hypothesis that thorax length and abdomen length are not significantly correlated in a sample of fig wasps collected in 2010 from Baja, Mexico.
 </p>
 </div>
-<p>From Figure 29.4, we can see that the sample <span class="math inline">\(r = 0.75858\)</span>, and the p-value is <span class="math inline">\(P = 0.00680\)</span>.
-Since our p-value is less than 0.05, we can reject the null hypothesis that fig wasp thorax and abdomen lengths are not correlated.
-To get a more intuitive sense of how the correlation coefficient works, we can use an <a href="https://bradduthie.shinyapps.io/corr_click/">interactive application</a>.</p>
-<blockquote>
-<p><a href="https://bradduthie.shinyapps.io/corr_click/">Click here</a> for an interactive application showing the relationship between a scatterplot, a correlation coefficient, and statistical significance.</p>
-</blockquote>
-<p>Points can be added to the <a href="https://bradduthie.shinyapps.io/corr_click/">interactive application</a> by clicking anywhere within the plot.
-A table of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> points is shown to the right, and the correlation coefficient and p-value can be shown or hidden using the buttons on the top.</p>
+<p>From Figure 30.4, we can see that the sample <span class="math inline">\(r = 0.75858\)</span>, and the p-value is <span class="math inline">\(P = 0.00680\)</span>.
+Since our p-value is less than 0.05, we can reject the null hypothesis that fig wasp thorax and abdomen lengths are not correlated (an interactive application<a href="#fn84" class="footnote-ref" id="fnref84"><sup>84</sup></a> can make this more intuitive).</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -922,14 +920,11 @@ A table of <span class="math inline">\(x\)</span> and <span class="math inline">
 <div id="ref-Duthie2015b" class="csl-entry">
 Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
 </div>
-<div id="ref-Rproject" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
 <div id="ref-Rahman1968" class="csl-entry">
 Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
 </div>
 <div id="ref-Rodgers1988" class="csl-entry">
-Rodgers, Joseph Lee, and WA Nicewander. 1988. <span>“<span class="nocase">Thirteen ways to look at the correlation coefficient</span>.”</span> <em>The American Statistician</em> 42 (1): 59–66. <a href="http://www.tandfonline.com/doi/abs/10.1080/00031305.1988.10475524">http://www.tandfonline.com/doi/abs/10.1080/00031305.1988.10475524</a>.
+Rodgers, Joseph Lee, and WA Nicewander. 1988. <span>“<span class="nocase">Thirteen ways to look at the correlation coefficient</span>.”</span> <em>The American Statistician</em> 42 (1): 59–66.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
@@ -937,10 +932,11 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="53">
-<li id="fn53"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref53" class="footnote-back">↩︎</a></p></li>
-<li id="fn54"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref54" class="footnote-back">↩︎</a></p></li>
-<li id="fn55"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_30.html#fnref55" class="footnote-back">↩︎</a></p></li>
+<ol start="81">
+<li id="fn81"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref81" class="footnote-back">↩︎</a></p></li>
+<li id="fn82"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref82" class="footnote-back">↩︎</a></p></li>
+<li id="fn83"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_30.html#fnref83" class="footnote-back">↩︎</a></p></li>
+<li id="fn84"><p><a href="https://bradduthie.shinyapps.io/corr_click/" class="uri">https://bradduthie.shinyapps.io/corr_click/</a><a href="Chapter_30.html#fnref84" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

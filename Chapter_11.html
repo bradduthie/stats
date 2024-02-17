@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -501,10 +505,10 @@ Throughout this section, verbal and mathematical explanations of summary statist
 The point of doing this is to help connect the two ways of summarising the data.
 All of the summary statistics that follow describe calculations for a <em>sample</em> and are therefore estimates of the true values in a <em>population</em>.
 Recall from <a href="Chapter_4.html#Chapter_4">Chapter 4</a> the difference between a population and a sample.
-This module focuses on statistical techniques, not statistical theory, so summary statistics will just focus on how to estimate statistics from sampled data instead of how statistics are defined mathematically<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+This book focuses on statistical techniques, not statistical theory, so summary statistics will just focus on how to estimate statistics from sampled data instead of how statistics are defined mathematically<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>.</p>
 <div id="the-mean" class="section level2 hasAnchor" number="11.1">
 <h2><span class="header-section-number">11.1</span> The mean<a href="Chapter_11.html#the-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The arithmetic mean (hereafter just <em>the mean</em><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>) of a sample is one of the most commonly reported statistics when communicating information about a dataset.
+<p>The arithmetic mean (hereafter just <em>the mean</em><a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>) of a sample is one of the most commonly reported statistics when communicating information about a dataset.
 The mean is a measure of central tendency, so it is located somewhere in the middle of a distribution.
 Figure 11.1 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-40"></span>
@@ -535,7 +539,7 @@ To do this, each value can be symbolised by an <span class="math inline">\(x\)</
 The usefulness of this notation, <span class="math inline">\(x_{i}\)</span>, will become clear soon.
 It takes some getting used to, but the table below shows each symbol with its corresponding value to make it more intuitive.</p>
 <table>
-<caption>A sample dataset that includes eight values.</caption>
+<caption>Table 11.1: A sample dataset that includes eight values.</caption>
 <thead>
 <tr class="header">
 <th>Symbol</th>
@@ -656,7 +660,7 @@ Statisticians have just proposed different approaches to calculating quantiles f
 This can be unsatisfying when first learning statistics because it would be nice to have a single approach that is demonstrably correct, i.e., the <em>right</em> answer under all circumstances.
 Unfortunately, this is not the case here, nor is it the case for a lot of statistical techniques.
 Often there are different approaches to answering the same statistical question and no simple right answer.
-For this module, we will almost always be reporting calculations of quantiles from jamovi, and we will clearly indicate that this is how they should be calculated for assessment questions.
+For this book, we will always report calculations of quantiles from jamovi.
 But it is important to recognise that different statistical tools might give different answers <span class="citation">(<a href="#ref-Hyndman1996" role="doc-biblioref">Hyndman and Fan 1996</a>)</span>.</p>
 </div>
 </div>
@@ -680,9 +684,9 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p>If interested, a good textbook for learning about theoretical statistics and the mathematics underlying what we do in this module is <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>.<a href="Chapter_11.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>There are other types of means, such as the geometric mean or the harmonic mean, but we will not use these at all in this module.<a href="Chapter_11.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<ol start="9">
+<li id="fn9"><p>If interested, a good textbook for learning about theoretical statistics and the mathematics underlying what we do in this module is <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>.<a href="Chapter_11.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>There are other types of means, such as the geometric mean or the harmonic mean, but we will not use these at all in this module.<a href="Chapter_11.html#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

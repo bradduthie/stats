@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -512,8 +516,8 @@ Figure 2.2: A portion of a lab notebook used to record measurements of fig fruit
 </p>
 </div>
 <p>Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
-This chapter introduces the tidy format <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>, which can be used for structuring data files for statistical software.
-This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in statistical software such as jamovi or R <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.</p>
+This chapter introduces the tidy format <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>, which is widely used for structuring data files.
+This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
 <div id="tidy-data" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Tidy data<a href="Chapter_2.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>After data are collected, they need to be stored digitally (i.e., in a computer file, such as a spreadsheet).
@@ -526,7 +530,7 @@ Note that sometimes data can be input directly into a spreadsheet or mobile appl
 Spreadsheets enable data input, manipulation, and calculation in a highly flexible way.
 Most spreadsheet programs even have some capacity for data visualisation and statistical analysis.
 For the purposes of statistical analysis, spreadsheets are probably most often used for inputting data in a way that can be used by more powerful statistical software.
-Commonly used spreadsheet programs are MS Excel, Google Sheets, LibreOffice Calc.
+Commonly used spreadsheet programs are MS Excel, Google Sheets, and LibreOffice Calc.
 The interface and functions of these programs are very similar, nearly identical for most purposes.
 They can all open and save the same file types (e.g., XLSX, ODS, CSV), and they all have the same overall look, feel, and functionality for data input, so the program used is mostly a matter of personal preference.
 In this text, we will use LibreOffice because it is completely free and open source, and easily available to <a href="https://www.libreoffice.org/download/download-libreoffice/">download</a> at <a href="http://libreoffice.org">http://libreoffice.org</a>.
@@ -540,8 +544,8 @@ Figure 2.3: A LibreOffice spreadsheet showing data from fig fruits collected in 
 <p>Spreadsheets are separated into individual rectangular cells, which are identified by a specific column and row (Figure 2.3).
 Columns are indicated by letters, and rows are indicated by numbers.
 We can refer to a specific cell by its letter and number combination.
-For example, the active cell in Figure 2.3 is F3, which has a value of ‘3’ indicating the value recorded in that specific measurement (in this case, foundress pollinators in the fig fruit).
-We will look more at how to interact with the spreadsheet in the <a href="Chapter_3.html#Chapter_3">Chapter 3</a> lab practical, but for now we will focus on how the data are organised.</p>
+For example, the active cell in Figure 2.3 is F3, which has a value of ‘3’ indicating the value recorded in that specific measurement (in this case, foundress pollinators in a fig fruit).
+We will look more at how to interact with the spreadsheet in <a href="Chapter_3.html#Chapter_3">Chapter 3</a>, but for now we will focus on how the data are organised.</p>
 <p>There are a lot of potential ways that data could be organised in a spreadsheet.
 For good statistical analysis, there are a few principles that are helpful to follow.
 Whenever we collect data, we record observations about different units.
@@ -557,7 +561,7 @@ Tidy datasets that can be used in statistical analysis programs are defined by t
 </ol>
 <p>If, for example, we were to measure the heights and leaf lengths for 4 trees, we might organise the data as in Table 2.1.</p>
 <table>
-<caption>Hypothetical tidy dataset in which each column of data is a variable and each row of data is an observational unit (tree).</caption>
+<caption>Table 2.1: Hypothetical tidy dataset in which each column of data is a variable and each row of data is an observational unit (tree).</caption>
 <thead>
 <tr class="header">
 <th>Tree</th>
@@ -595,7 +599,7 @@ Tidy datasets that can be used in statistical analysis programs are defined by t
 </table>
 <p>By convention <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>, variables tend to be in the left-most columns if they are known in advance or fixed in some way by the data collection or experiment (e.g., tree number or species in Table 2.1).
 In contrast, variables that are actually measured tend to be in the right-most columns (e.g., tree height or leaf length).
-This is more for readability of the data; statistical software such as jamovi will not care about the order of data columns.</p>
+This is more for readability of the data; jamovi will not care about the order of data columns.</p>
 </div>
 <div id="data-files" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> Data files<a href="Chapter_2.html#data-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -610,12 +614,12 @@ They only allow information to be stored as plain text; no colour, bold, italic,
 All of the information is just made up of characters on one or more lines.
 This sounds so simple as to be almost obsolete; what is the point of not allowing anything besides plain text?
 The point is that text files are generally much more secure for long-term storage.
-The plain text format makes data easier to recover if a file is corrupted, readable by a wider range of software, and more amenable to version control (<a href="https://bradduthie.github.io/version_control/vc_notes.html">version control</a> is a tool that essentially saves the whole history of folder, and potentially different versions of it in parallel; it is not necessary for introductory statistics, but is often critical for big collaborative projects).
+The plain text format makes data easier to recover if a file is corrupted, is readable by a wider range of software, and is more amenable to version control (<a href="https://bradduthie.github.io/version_control/vc_notes.html">version control</a> is a tool that essentially saves the whole history of folder, and potentially different versions of it in parallel; it is not necessary for introductory statistics, but is often critical for big collaborative projects).
 There are many types of text files with extensions such as TXT, CSV, HTML, R, CPP, or MD.
 For data storage, we will use comma separated value (CSV) files.
 As the name implies, CSV files include plain text separated by commas.
 Each line of the CSV file is a new row, and commas separate information into columns.
-These CSV files can be opened in any text editor, but are also recognised by nearly all spreadsheet programs and statistical software.
+These CSV files can be opened in any text editor, but they are also recognised by nearly all spreadsheet programs and statistical software.
 The data shown in Figure 2.3 are from a CSV file called “wasp_data.csv”.
 Figure 2.4 shows the same data when opened with a text editor.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
@@ -646,8 +650,8 @@ You can think of the storage space on a computer, cloud, or network drive, as a 
 The big box can contain other smaller boxes (folders, in this analogy), or it can contain items that you need (files, in this analogy).
 Figure 2.5 shows the general idea.
 On this computer, there is a folder called ‘brad’, which has inside it 5 other folders (Figure 2.5A).
-Each of the 5 inner folders is used to store more folders and files for a specific module from 2006.
-Clicking on the ‘Biostatistics’ folder leads to the sub-folders inside it, and to files saved specifically for a biostatistics module (e.g., homework assignments, lecture notes, and an exam review document).
+Each of the 5 inner folders is used to store more folders and files for a specific class from 2006.
+Clicking on the ‘Biostatistics’ folder leads to the sub-folders inside it, and to files saved specifically for a biostatistics class (e.g., homework assignments, lecture notes, and an exam review document).
 Files on a computer therefore have a location that we can find using a particular <strong>path</strong>.
 We can write the path name using slashes to indicate nested folders.
 For example, the file ‘HW9.scx’ in Figure 2.5B would have the path name ‘/home/brad/Spring_2006/Biostatistics/HW9.scx’.
@@ -677,7 +681,7 @@ Figure 2.7: Windows file directory showing the file organisation of modules take
 </p>
 </div>
 <p>The details are not as important as the idea of organising files in a logical way that allows you to know roughly where to find important files on a computer or cloud drive.
-It is usually a good idea to give every unique project or subject (e.g., a university module, a student group, holiday plans, health records) its own folder.
+It is usually a good idea to give every unique project or subject (e.g., a university class, a student group, holiday plans, health records) its own folder.
 This makes it much easier to find related files such as datasets, lecture notes, or assignments when necessary.
 It is usually possible to right click somewhere in a directory to create a new folder.
 In Figure 2.7, there is even a ‘New folder’ button in the toolbar with a yellow folder icon above it.
@@ -686,14 +690,11 @@ It takes some time to organise files this way, and to get used to saving files i
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Rproject" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
 <div id="ref-Wickham2014" class="csl-entry">
-Wickham, Hadley. 2014. <span>“<span>Tiday Data</span>.”</span> <em>Journal of Statistical Software</em> 59 (10): 1–23. <a href="http://www.jstatsoft.org/">http://www.jstatsoft.org/</a>.
+Wickham, Hadley. 2014. <span>“<span>Tiday Data</span>.”</span> <em>Journal of Statistical Software</em> 59 (10): 1–23.
 </div>
 </div>
             </section>

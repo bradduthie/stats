@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -498,7 +502,7 @@ div.csl-indent {
 Graphs come in many different types, and different types of graphs are effective for different types of data.
 This chapter focuses on 4 types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.</p>
 <p>After collecting or obtaining a new dataset, it is almost always a good idea to plot the data in some way.
-Visualisation can often highlight important and obvious properties of a dataset more efficiently that inspecting raw data, calculating summary statistics, or running statistical tests.
+Visualisation can often highlight important and obvious properties of a dataset more efficiently than inspecting raw data, calculating summary statistics, or running statistical tests.
 When making graphs to communicate data visually, it is important to ensure that the person reading the graph has a clear understanding of what is being presented.
 In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descriptive caption, and indicating what any graph symbols mean.
 In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or unnecessary distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher and Wagener 2011</a>)</span>.
@@ -508,7 +512,7 @@ As a guide, the histogram, pie chart, barplot, and box-whisker plot below illust
 <h2><span class="header-section-number">10.1</span> Histograms<a href="Chapter_10.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Histograms illustrate the distribution of <a href="Chapter_5.html#Chapter_5">continuous data</a>.
 They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
-The histogram shown in Figure 10.1 provides an example using the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv">fig fruits</a> data set from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a> (for a step-by-step demonstration of how a histogram is built, see <a href="https://bradduthie.shinyapps.io/build_histogram/">this interactive application</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>).</p>
+The histogram shown in Figure 10.1 provides an example using the fig fruits data set from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a> (an interactive application<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> shows a step-by-step demonstration of how a histogram is built).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
 <p class="caption">
@@ -518,20 +522,17 @@ Figure 10.1: Example histogram fig fruit width (cm) using data from 78 fig fruit
 <p>The histogram in Figure 10.1 shows how many fruits there are for different intervals of width, i.e., the frequency with which fruits within some width interval occur in the data.
 For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
 In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
-The bars of the histogram touch each other, which reinforces the idea that the data are <a href="Chapter_5.html#Chapter_5">continuous</a> <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
-<blockquote>
-<p><a href="https://bradduthie.shinyapps.io/build_histogram/">Click here</a> for an interactive application showing how histograms are built.</p>
-</blockquote>
+The bars of the histogram touch each other, which reinforces the idea that the data are continuous <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
 <p>It is especially important to be able to read and understand information from a histogram because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
 For example, the <em>shape</em> of the distribution of fig fruit widths might be important for performing a particular test.
 For the purposes of this chapter, the <em>shape</em> of the distribution just means what the data look like when plotted like this in a histogram.
 In this case, there is a peak toward the centre of the distribution, with fewer low and high values (this kind of distribution is quite common).
-Different distribution shapes will be discussed more in <a href="Week4.html#Week4">Week 4</a>.</p>
+Different distribution shapes will be discussed more in <a href="Week4.html#Week4">Part IV</a>.</p>
 </div>
 <div id="barplots-and-pie-charts" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Barplots and pie charts<a href="Chapter_10.html#barplots-and-pie-charts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>While histograms are an effective way of visualising <a href="Chapter_5.html#Chapter_5">continuous data</a>, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise <a href="Chapter_5.html#Chapter_5">categorical data</a>.
-For example, in the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv">fig fruits</a> data set from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
+<p>While histograms are an effective way of visualising continuous data, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise categorical data.
+For example, in the fig fruits data set from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
@@ -612,8 +613,8 @@ Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>Here is the full URL: <a href="https://bradduthie.shinyapps.io/build_histogram/" class="uri">https://bradduthie.shinyapps.io/build_histogram/</a><a href="Chapter_10.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<ol start="8">
+<li id="fn8"><p><a href="https://bradduthie.shinyapps.io/build_histogram/" class="uri">https://bradduthie.shinyapps.io/build_histogram/</a><a href="Chapter_10.html#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

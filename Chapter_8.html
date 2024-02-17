@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -495,30 +499,27 @@ div.csl-indent {
 <div id="Chapter_8" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Chapter 8</span> Practical. Introduction to jamovi<a href="Chapter_8.html#Chapter_8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This practical focuses on learning how to work with datasets in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-Jamovi is available in the university laboratory computers through AppsAnywhere.
-You can also <a href="https://www.jamovi.org/download.html">download it</a> on your own computer for free or run it directly <a href="https://www.jamovi.org/cloud.html">from a browser</a>.
-For an introduction to what jamovi is and why we are using it in this module, see the introduction of this workbook and <a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html#the-spreadsheet">Sections 3.3</a>-<a href="https://davidfoxcroft.github.io/lsj-book/03-Getting-started-with-jamovi.html#summary">3.9</a> of <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span>.
-In this practical, we will work with two datasets, both of which are based on real biological and environmental studies conducted by researchers at the University of Stirling.</p>
-<p>The first dataset includes measurements of soil organic carbon (grams of Carbon per kg of soil) from the topsoil and subsoil collected in a national park in Gabon.
-These data were collected by Dr Carmen Rosa Medina-Carmona in an effort to understand how <a href="https://bg.copernicus.org/articles/3/397/2006/bg-3-397-2006.pdf">pyrogenic carbon</a> (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
-<strong>Download these data here: <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil_organic_carbon.csv</a></strong> (right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’).</p>
+You can <a href="https://www.jamovi.org/download.html">download jamovi</a> (<a href="https://www.jamovi.org/" class="uri">https://www.jamovi.org/</a>) for free or run it directly <a href="https://www.jamovi.org/cloud.html">from a browser</a> using the jamovi cloud (<a href="https://www.jamovi.org/cloud.html" class="uri">https://www.jamovi.org/cloud.html</a>).
+In this chapter, we will work with two datasets.</p>
+<p>The first dataset includes some hypothetical measurements of soil organic carbon (grams of Carbon per kg of soil) from topsoil and subsoil collected in a national park (note these data are intended for pedagogical purposes only).
+Such data might be collected to understand how pyrogenic carbon (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
+These data can be downloaded online<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
 <p>The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) in Baja, Mexico (Figure 8.1).
-These data were collected by Dr Brad Duthie in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
+I collected these data in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Measurements include fig lengths, widths, and heights in centimeters from 4 different fig trees, and the number of seeds in each fruit.
-<strong>Download these data here: <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv">fig_fruits.csv</a></strong> (right click and “Save Link As…”).</p>
+This dataset can also be downloaded online<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
 <img src="img/fig_data_set.png" alt="Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. Panel A shows a person staring into a microscope in field attire, panel B shows a picture of a wild fig with a fig wasp sitting on top of it, and panel C shows a sliced open fig with seeds along the inside; below the fig is a ruler and above it is a pencil description of the site and date from which the fig was collected." width="100%" />
 <p class="caption">
 Figure 8.1: Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.
 </p>
 </div>
-<p>This lab will use the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/soil_organic_carbon.csv">soil organic carbon</a> dataset in <a href="#02_summary_statistics">Exercise 8.1</a> for summary statistics.
-The <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/fig_fruits.csv">fig fruits</a> will be used for <a href="#02_transforming_variables">Exercise 8.2</a> on transforming variables and <a href="#02_computing_variables">Exercise 8.3</a> on computing a variable.
-Some of these exercises will be similar to what we did in the week 1 practical from <a href="##Chapter_3">Chapter 3</a>, but in jamovi rather than a separate spreadsheet.</p>
+<p>This lab will use the soil organic carbon dataset<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> in <a href="#02_summary_statistics">Exercise 8.1</a> for summary statistics.
+The fig fruits dataset<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> will be used for <a href="#02_transforming_variables">Exercise 8.2</a> on transforming variables and <a href="#02_computing_variables">Exercise 8.3</a> on computing a variable.
+Some of these exercises will be similar those of <a href="Chapter_3.html#Chapter_3">Chapter 3</a>, but in jamovi rather than a separate spreadsheet.</p>
 <div id="summary_statistics_02" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Exercise for summary statistics<a href="Chapter_8.html#summary_statistics_02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Download the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/soil_organic_carbon.csv">soil organic carbon</a> dataset if you have not already done so (right click and “Save Link As…”), and save it in a location where you know you will be able to find it again, then open jamovi.
-Once jamovi is open, you can import the dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting ‘Open’ (Figure 8.2).</p>
+<p>Once jamovi is open, you can import the soil organic carbon dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting ‘Open’ (Figure 8.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
 <img src="img/jamovi_toolbar.png" alt="The jamovi toolbar including tabs for opening files represented by three horizontal lines, Variables, Data, Analyses, and Edit." width="100%" />
 <p class="caption">
@@ -627,7 +628,7 @@ Doing this will make the statistical hypothesis testing that comes later in the 
 </div>
 <div id="transforming_variables_02" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Exercise on transforming variables<a href="Chapter_8.html#transforming_variables_02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this next exercise, we will work with the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/fig_fruits.csv">fig fruits</a> dataset (right click and “Save Link As…”).
+<p>In this next exercise, we will work with the fig fruits dataset.
 Open this dataset into jamovi.
 Note that there are 5 columns of data, and all of the data appear to be in a tidy format.
 Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
@@ -728,7 +729,8 @@ We need to name this new variable, so we can call it ‘fig_volume’.
 Next, we need to type in the formula for calculating volume.
 First, in the small box next to the <span class="math inline">\(f_{x}\)</span>, type in the (4/3) multiplied by 3.14 as below.</p>
 <pre><code>= (4/3) * 3.14</code></pre>
-<p>Next, we need to multiply by the variable ‘Width_mm’ divided by 2 (to get the radius) three times. We can do this by clicking on the <span class="math inline">\(f_{x}\)</span> box to the left.
+<p>Next, we need to multiply by the variable ‘Width_mm’ divided by 2 (to get the radius) three times.
+We can do this by clicking on the <span class="math inline">\(f_{x}\)</span> box to the left.
 Two new boxes will appear; the first is named ‘Functions’, and the second is named ‘Variables’.
 Ignore the functions box for now, and find ‘Width_mm’ in the list of variables.
 Double click on this to put it into the formula, then divide it by 2.
@@ -742,7 +744,9 @@ Figure 8.9: The jamovi toolbar where the tab ‘Data’ is selected. The box bel
 <p>Note that we can get the cube of ‘Width_mm’ more concisely by using the carrot character (<code>^</code>).
 That is, we would get the same answer shown in Figure 8.9 if we instead typed the below in the function box.</p>
 <pre><code>= (4/3) * 3.14 * (Width_mm/2)^3</code></pre>
-<p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3. If we instead had written, <code>Width_mm/2^3</code>, then jamovi would first take the cube of 2 <span class="math inline">\((2 \times 2 \times 2 = 8)\)</span>, then divided <code>Width_mm</code> by this value giving a different and incorrect answer. When in doubt, it is always useful to use parentheses to specify what calculations should be done first.</p>
+<p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3.
+If we instead had written, <code>Width_mm/2^3</code>, then jamovi would first take the cube of 2 <span class="math inline">\((2 \times 2 \times 2 = 8)\)</span>, then divided <code>Width_mm</code> by this value giving a different and incorrect answer.
+When in doubt, it is always useful to use parentheses to specify what calculations should be done first.</p>
 <p>You now have the new column of data ‘fig_volume’.
 Remember that the calculations apply to the units too.
 The width of the fig was calculated in mm, but we have taken width to the power of 3 when calculating the volume.
@@ -770,11 +774,11 @@ There are two ways to save a file in jamovi, and it is a good idea to save both 
 The first way is to use jamovi’s own (binary) file type, which has the extension OMV.
 This will not only save the data (including the calculated variables created within jamovi), but also any analyses that we have done (e.g., calculation of minimums, maximums, and means) or graphs that we have made (e.g., the histogram).
 To do this, click on the three horizontal lines in the upper left of the jamovi toolbar, then select ‘Save As’.
-Choose an appropriate name (e.g., ‘SCIU4T4_Week2_practical.omv’), then save the file in a location where you know that you will be able to find it again.
+Choose an appropriate name (e.g., ‘chapter_8_exercises.omv’), then save the file in a location where you know that you will be able to find it again.
 Like all binary files, an OMV file cannot be opened as plain text.
 Hence, it might be a good idea to save the dataset as a CSV file (note, this will not save any of the analyses or graphs).
 To do this, click on the three horizontal lines in the upper left of the toolbar again, but this time click ‘Export’.
-Give the file an appropriate name (e.g., ‘SCIU4T4_Week2_data’), then choose ‘CSV’ from the pulldown menu below (Figure 8.10).</p>
+Give the file an appropriate name (e.g., ‘chapter_8_dataset’), then choose ‘CSV’ from the pulldown menu below (Figure 8.10).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
 <img src="img/export_jamovi.png" alt="A jamovi Export window is open with a file being saved and the pull down menu below selecting 'CSV' as an option" width="100%" />
 <p class="caption">
@@ -787,8 +791,7 @@ To save, click on ‘Export’ in the upper right (Figure 8.10).</p>
 <div id="summary-1" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Summary<a href="Chapter_8.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You should now know some of the basic tools for working with data, calculating some simple descriptive statistics, plotting a histogram, and saving output and data in jamovi.
-These skills will be used throughout the module, so it is important to be comfortable with them as the analyses become more complex.
-If you still have time at the end of the lab practical, it might be a good idea to explore other features in jamovi.</p>
+These skills will be used throughout the book, so it is important to be comfortable with them as the analyses become more complex.</p>
 
 </div>
 </div>
@@ -803,9 +806,6 @@ Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class=
 <div id="ref-Duthie2016" class="csl-entry">
 Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in Ficus petiolaris and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em>. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
 </div>
-<div id="ref-Navarro2022" class="csl-entry">
-Navarro, Danielle J, and David R Foxcroft. 2022. <em><span class="nocase">Learning Statistics with Jamovi</span></em>. (Version 0.75). <a href="https://doi.org/10.24384/hgc3-7p15">https://doi.org/10.24384/hgc3-7p15</a>.
-</div>
 <div id="ref-Preston2006" class="csl-entry">
 Preston, C. M., and M. W. I. Schmidt. 2006. <span>“<span class="nocase">Black (pyrogenic) carbon: A synthesis of current knowledge and uncertainties with special consideration of boreal regions</span>.”</span> <em>Biogeosciences</em> 3 (4): 397–420. <a href="https://doi.org/10.5194/bg-3-397-2006">https://doi.org/10.5194/bg-3-397-2006</a>.
 </div>
@@ -815,6 +815,15 @@ Santín, Cristina, Stefan H. Doerr, Evan S. Kane, Caroline A. Masiello, Mikael O
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p><a href="https://bradduthie.github.io/stats/data/soil_organic_carbon.csv">https://bradduthie.github.io/stats/data/soil_organic_carbon.csv</a><a href="Chapter_8.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://bradduthie.github.io/stats/data/fig_fruits.csv">https://bradduthie.github.io/stats/data/fig_fruits.csv</a><a href="Chapter_8.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://bradduthie.github.io/stats/data/soil_organic_carbon.csv">https://bradduthie.github.io/stats/data/soil_organic_carbon.csv</a><a href="Chapter_8.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://bradduthie.github.io/stats/data/fig_fruits.csv">https://bradduthie.github.io/stats/data/fig_fruits.csv</a><a href="Chapter_8.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

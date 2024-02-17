@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -499,9 +503,9 @@ The Kruskall-Wallis test is essentially an extension of the Mann-Whitney U test 
 Like the Mann-Whitney U test, it uses the <em>ranks</em> of values instead of the actual values in the dataset.
 The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (H) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
-For convenience, Table 23.1 is reproduced here as Table 25.1.</p>
+For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-115">Table 26.1: </span>Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<caption><span id="tab:unnamed-chunk-117">Table 26.1: </span>Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -547,10 +551,10 @@ But we had not actually tested the assumptions of the one-way ANOVA before runni
 If we had tested the ANOVA assumptions, we would not reject the null hypothesis that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
 But a Levene’s test of homogeneity of variances convincingly rejects the null hypothesis that the group variances are equal (P = 0.008).
 Consequently, we should probably have used the non-parametric Kruskall-Wallis H test instead.
-To do this, we first need to rank all of the values in Table 25.1.
-There are 20 total values, so we rank them from 1 to 20 (Table 25.2).</p>
+To do this, we first need to rank all of the values in Table 26.1.
+There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-116">Table 26.2: </span>Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-118">Table 26.2: </span>Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -601,17 +605,17 @@ In the numerator of the equation for H, we are calculating the squared deviation
 We are then dividing by the sum of squared deviations of all ranks (<span class="math inline">\(R_{ij}\)</span>) from the overall mean rank <span class="math inline">\(\bar{\bar R}\)</span>.
 All of this gets multiplied by <span class="math inline">\(N - 1\)</span> to give the test statistic H.
 We can then compare H to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al. 2003</a>)</span>.
-But most statistical programs such as jamovi and R compare H to a Chi-square distribution (see <a href="Week9.html#Week9">Week 9</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.</p>
+But most statistical programs such as jamovi compare H to a Chi-square distribution (see <a href="Week9.html#Week9">Part IX</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.</p>
 <p>The output of a Kruskall-Wallis H test is quite minimal and easy to read.
-jamovi and R report a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>.
-Figure 25.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing lengths data.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-117"></span>
+Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+Figure 26.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing lengths data.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
 <img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskall-Wallis H test." width="60%" />
 <p class="caption">
 Figure 26.1: Jamovi output table for a non-parametric Kruskall-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for 5 different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Given the Kruskall-Wallis H test output (Figure 25.1), we should not reject the null hypothesis that species have different wing lengths because P &gt; 0.05.
+<p>Given the Kruskall-Wallis H test output (Figure 26.1), we should not reject the null hypothesis that species have different wing lengths because P &gt; 0.05.
 This is in contrast to our one-way ANOVA result, for which we did reject the same null hypothesis.
 The Kruskall-Wallis H test does not assume that group variances are the same, unlike the one-way ANOVA.
 Since we know that the homogeneity of variances assumption is violated for the fig wasp data, it is probably best to be cautious and conclude that there is no evidence that mean wing lengths differ among species.</p>
@@ -629,9 +633,6 @@ Kruskal, William H, and W Allen Wallis. 1952. <span>“<span class="nocase">Use 
 </div>
 <div id="ref-Miller2004" class="csl-entry">
 Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
-</div>
-<div id="ref-Rproject" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.

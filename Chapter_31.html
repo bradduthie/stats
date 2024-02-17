@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -497,16 +501,16 @@ div.csl-indent {
 <p>This lab focuses on applying the concepts from <a href="Chapter_29.html#Chapter_29">Chapter 29</a> and <a href="Chapter_30.html#Chapter_30">Chapter 30</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 Exercises in this practical will use the <a href="Chapter_29.html#chi-squared-goodness-of-fit">Chi-squared goodness of fit</a> test, the <a href="Chapter_29.html#chi-squared-test-of-association">Chi-squared test of association</a>,
 and the <a href="Chapter_30.html#correlation-hypothesis-testing">correlation coefficient</a>.
-For all of these examples, this practical will use a dataset inspired by the doctoral work of Dr Jessica Burrows <span class="citation">(<a href="#ref-Burrows2022" role="doc-biblioref">Burrows et al. 2022</a>)</span>.
-This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies (Figure 30.1)<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-149"></span>
+For all of these examples, this practical will use a dataset inspired by <span class="citation">Burrows et al. (<a href="#ref-Burrows2022" role="doc-biblioref">2022</a>)</span>.
+This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies (Figure 31.1)<a href="#fn85" class="footnote-ref" id="fnref85"><sup>85</sup></a>.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-151"></span>
 <img src="img/bumblebee.jpg" alt="Close up of a bumblebee" width="60%" />
 <p class="caption">
 Figure 31.1: This lab practical focuses on the effects of radiation on bumblebees.
 </p>
 </div>
-<p>The practical will use the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/bumblebee.csv">bumblebee.csv</a> dataset (right click and “Save Link As…”, then save it with the extension ‘.csv’).
-This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30 day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (CO_2) in micromoles per minute, and the daily volume of nectar consumed by the be in ml (nectar).</p>
+<p>The practical will use the bumblebee dataset<a href="#fn86" class="footnote-ref" id="fnref86"><sup>86</sup></a>.
+This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30 day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (<span class="math inline">\(CO_2\)</span>) in micromoles per minute, and the daily volume of nectar consumed by the be in ml (nectar).</p>
 <div id="survival-goodness-of-fit" class="section level2 hasAnchor" number="31.1">
 <h2><span class="header-section-number">31.1</span> Survival goodness of fit<a href="Chapter_31.html#survival-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose that we want to run a simple goodness of fit test to determine whether or not bees are equally likely to survive versus die in the experiment.
@@ -539,12 +543,10 @@ What is the <span class="math inline">\(\chi^{2}\)</span> value?</p>
 <p>There are 2 categories for survival (Yes and No).
 How many degrees of freedom are there?</p>
 <p>df: ________________</p>
-<p>Using the <span class="math inline">\(\chi^{2}\)</span> and df values, find the approximate p-value using this <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>.</p>
-<p>P: _______________</p>
-<p>Now we can try to use jamovi to replicate the analysis above.
+<p>Now we can try to use jamovi to replicate the analysis above and find a p-value.
 In the jamovi Analyses tab, select ‘Frequencies’ from the toolbar, then select ‘N outcomes’.
-A new window will open up (Figure 30.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-150"></span>
+A new window will open up (Figure 31.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-152"></span>
 <img src="img/jamovi_goodness_of_fit_toolbar.png" alt="Jamovi toolbar is shown with a button called 'Frequencies' selected and 'N Outcomes' chosen from the pulldown menu." width="100%" />
 <p class="caption">
 Figure 31.2: Jamovi toolbar showing the location of the Frequencies options, with the Chi-square goodness of fit test available under a choice called ‘N Outcomes’ in the pulldown menu.
@@ -552,8 +554,8 @@ Figure 31.2: Jamovi toolbar showing the location of the Frequencies options, wit
 </div>
 <p>After selecting the option ‘N Outcomes: <span class="math inline">\(\chi^{2}\)</span> Goodness of fit’, a new window will appear called ‘Proportion Test (N Outcomes)’.
 To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test on bee survival, move the ‘survived’ variable into the ‘Variable’ box.
-Leave the Counts box empty (Figure 30.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-151"></span>
+Leave the Counts box empty (Figure 31.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-153"></span>
 <img src="img/jamovi_goodness_of_fit_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for a proportion test, and the 'survived' variable has been placed in the Variable box." width="100%" />
 <p class="caption">
 Figure 31.3: Jamovi interface for running a Chi-square goodness of fit test on bumblebee survival in a dataset.
@@ -561,10 +563,10 @@ Figure 31.3: Jamovi interface for running a Chi-square goodness of fit test on b
 </div>
 <p>The <span class="math inline">\(\chi^{2}\)</span> Goodness of Fit table will appear in the panel to the right.
 From this table, we can see the <span class="math inline">\(\chi^{2}\)</span> test statistic, degrees of freedom (df), and the p-value (p).
-Do these values match the values that you calculated by hand and with the <a href="https://bradduthie.shinyapps.io/chi-square/">interactive application</a>?</p>
-<pre><code>
-
-</code></pre>
+Write these values below, and check to see if the <span class="math inline">\(\chi^{2}\)</span> and df match the values you calculated above by hand.</p>
+<p><span class="math inline">\(\chi^{2}:\)</span> _____________</p>
+<p>df: ________________</p>
+<p>P: ________________</p>
 <p>Next, we will try another goodness of fit test, but this time to test whether or not bees were taken from all colonies with the same probability.</p>
 </div>
 <div id="colony-goodness-of-fit" class="section level2 hasAnchor" number="31.2">
@@ -581,7 +583,7 @@ What are the null and alternative hypotheses in this scenario?</p>
 What is the output from the Goodness of Fit table?</p>
 <p><span class="math inline">\(\chi^{2}\)</span>: ____________</p>
 <p>df: _____________</p>
-<p>p: ____________</p>
+<p>P: ____________</p>
 <p>From this output, what can you conclude about how bees were taken from the colonies?</p>
 <pre><code>
 
@@ -601,10 +603,10 @@ What are the null and alternative hypotheses for this test of association?</p>
 <li><p><span class="math inline">\(H_{0}\)</span>: _________________</p></li>
 <li><p><span class="math inline">\(H_{A}\)</span>: _________________</p></li>
 </ul>
-<p>To run the <span class="math inline">\(\chi^{2}\)</span> test of association, choose ‘Frequencies’ from the jamovi toolbar (Figure 30.2), but this time select ‘Independent Samples: <span class="math inline">\(\chi^{2}\)</span> test of association’ from the pulldown menu.
+<p>To run the <span class="math inline">\(\chi^{2}\)</span> test of association, choose ‘Frequencies’ from the jamovi toolbar (Figure 31.2), but this time select ‘Independent Samples: <span class="math inline">\(\chi^{2}\)</span> test of association’ from the pulldown menu.
 To test for an association between bee colony and survival, place ‘colony’ in the ‘Rows’ box and ‘survived’ in the ‘Columns’ box.
-Leave the rest of the boxes blank (Figure 30.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-152"></span>
+Leave the rest of the boxes blank (Figure 31.4).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-154"></span>
 <img src="img/jamovi_test_of_association_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for a Chi-square test of association with colony in a 'Rows' box and survived in a 'columns' box." width="100%" />
 <p class="caption">
 Figure 31.4: Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.
@@ -616,7 +618,7 @@ Output from the <span class="math inline">\(\chi^{2}\)</span> test of associatio
 Report the key statistics in the output table below.</p>
 <p><span class="math inline">\(\chi^{2}\)</span>: ______________</p>
 <p>df: _____________</p>
-<p>p: _____________</p>
+<p>P: _____________</p>
 <p>From these statistics, should you reject or not reject the null hypothesis?</p>
 <p><span class="math inline">\(H_{0}\)</span>: ______________</p>
 <p>Note that scrolling down further in the left panel (Contingency Tables) reveals an option for plotting.
@@ -646,8 +648,8 @@ Specifically, we want to know if more massive bees also output less carbon dioxi
 Before running any test, it is a good idea to plot the two variables using a scatterplot.
 To do this, select the ‘Exploration’ button from the toolbar in jamovi, but instead of choosing ‘Descriptives’ as usual from the pulldown menu, select ‘Scatterplot’.
 A new window will open up that allows you to build a scatterplot by selecting the variables that you place on the x-axis and the y-axis.
-Put mass on the x-axis and CO_2 on the y-axis, as shown in Figure 30.5.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-153"></span>
+Put mass on the x-axis and CO_2 on the y-axis, as shown in Figure 31.5.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-155"></span>
 <img src="img/jamovi_simple_scatterplot.png" alt="Jamovi interface is shown with a variable called 'mass' placed in a box called 'X-Axis', and a variable called 'CO_2' placed in a box called 'Y-axis'." width="100%" />
 <p class="caption">
 Figure 31.5: Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis
@@ -683,22 +685,22 @@ Write these p-values down below.</p>
 <pre><code>
 
 </code></pre>
-<p>To run the correlation coefficient test, choose the button in the jamovi toolbar called ‘Regression’, then select the first option ‘Correlation Matrix’ from the pulldown menu (Figure 30.6).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-154"></span>
+<p>To run the correlation coefficient test, choose the button in the jamovi toolbar called ‘Regression’, then select the first option ‘Correlation Matrix’ from the pulldown menu (Figure 31.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-156"></span>
 <img src="img/jamovi_correlation_toolbar.png" alt="Jamovi toolbar is shown with a button called 'Regression' selected and 'Correlation Matrix' chosen from the pulldown menu." width="100%" />
 <p class="caption">
 Figure 31.6: Jamovi toolbar showing the location of the Regression options, with the Correlation Matrix option available in the pulldown menu.
 </p>
 </div>
-<p>The Correlation Matrix option will pull up a new window in jamovi (Figure 30.7).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-155"></span>
+<p>The Correlation Matrix option will pull up a new window in jamovi (Figure 31.7).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-157"></span>
 <img src="img/jamovi_correlation_interface.png" alt="Jamovi interface is shown with a variables called 'mass' and 'CO_2' placed in a box to the right and a checkbox for 'Pearson' selected" width="100%" />
 <p class="caption">
 Figure 31.7: Jamovi interface for testing correlation coefficients.
 </p>
 </div>
-<p>Notice that the Pearson product moment correlation is selected in the checkbox of Figure 30.7 (‘Pearson’).
-Immediatley below this checkbox is a box called ‘Spearman’, which would report the Spearman rank correlation coefficient test.
+<p>Notice that the Pearson product moment correlation is selected in the checkbox of Figure 31.7 (‘Pearson’).
+Immediately below this checkbox is a box called ‘Spearman’, which would report the Spearman rank correlation coefficient test.
 Below the <strong>Correlation Coefficients</strong> options, there are options for <strong>Hypothesis</strong>.
 Remember that we are interested in the alternative hypothesis that mass and <span class="math inline">\(CO_{2}\)</span> are negatively correlated, so we should select the radio button ‘Correlated negatively’.</p>
 <p>The output of the correlation test appears in the panel on the right in the form of a table called ‘Correlation Matrix’.
@@ -736,16 +738,15 @@ Why or why not?</p>
 
 
 </code></pre>
-<p>If you have sufficient time, move on to the final exercise, which will demonstrate an additional way to run Chi-square tests.</p>
 </div>
 <div id="untidy-goodness-of-fit" class="section level2 hasAnchor" number="31.6">
 <h2><span class="header-section-number">31.6</span> Untidy goodness of fit<a href="Chapter_31.html#untidy-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In Exercise 30.1, we ran a <span class="math inline">\(\chi^{2}\)</span> test using data in a tidy format, in which each row corresponded to a single observation and categorical data were listed over <span class="math inline">\(N = 256\)</span> rows.
+<p>In Exercise 31.1, we ran a <span class="math inline">\(\chi^{2}\)</span> test using data in a tidy format, in which each row corresponded to a single observation and categorical data were listed over <span class="math inline">\(N = 256\)</span> rows.
 For the ‘survived’ variable, this meant 256 rows of ‘Yes’ or ‘No’.
 But there is a shortcut in jamovi if we do not have a full tidy dataset.
-If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ counts, you could set up the data as a table of counts (Table 30.1).</p>
+If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ counts, you could set up the data as a table of counts (Table 31.1).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-156">Table 31.1: </span>Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.</caption>
+<caption><span id="tab:unnamed-chunk-158">Table 31.1: </span>Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.</caption>
 <thead>
 <tr class="header">
 <th align="left">Survived</th>
@@ -763,9 +764,9 @@ If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ coun
 </tr>
 </tbody>
 </table>
-<p>Open a new data frame in jamovi, then recreate the small dataset in Table 30.1.
-Column names should be ‘Survived’ and ‘Count’, as shown in Figure 30.8.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-157"></span>
+<p>Open a new data frame in jamovi, then recreate the small dataset in Table 31.1.
+Column names should be ‘Survived’ and ‘Count’, as shown in Figure 31.8.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-159"></span>
 <img src="img/jamovi_simple_counts.png" alt="Jamovi spreadsheet showing just 2 rows and 2 columns as 'Survived' and 'Count'." width="100%" />
 <p class="caption">
 Figure 31.8: Jamovi data frame with a simple organisation of count data.
@@ -773,11 +774,11 @@ Figure 31.8: Jamovi data frame with a simple organisation of count data.
 </div>
 <p>Next, navigate to the ‘Analyses’ tab and choose ‘N Outcomes’ to do a goodness of fit test.
 Place ‘Survived’ in the Variable box, then place ‘Count’ in the Counts (optional) box.
-Notice that you will get the same <span class="math inline">\(\chi^{2}\)</span>, df, and p values in the output table as you did in Exercise 30.1</p>
+Notice that you will get the same <span class="math inline">\(\chi^{2}\)</span>, df, and p values in the output table as you did in Exercise 31.1</p>
 <p>We could do the same for a <span class="math inline">\(\chi^{2}\)</span> test of association, although it would be a bit more complicated.
-To test for an association between radiation and survival, as we did at the end of Exercise 30.3, we would need 3 columns and 8 rows of data (Table 30.2).</p>
+To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need 3 columns and 8 rows of data (Table 31.2).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-158">Table 31.2: </span>Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.</caption>
+<caption><span id="tab:unnamed-chunk-160">Table 31.2: </span>Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.</caption>
 <thead>
 <tr class="header">
 <th align="left">Survived</th>
@@ -828,7 +829,7 @@ To test for an association between radiation and survival, as we did at the end 
 </tr>
 </tbody>
 </table>
-<p>If we put Table 30.2 into jamovi, we can run a <span class="math inline">\(\chi^{2}\)</span> test of association by navigating to the ‘Frequencies’ button in the jamovi toolbar and selecting ‘Independent Samples: <span class="math inline">\(\chi^{2}\)</span> test of assocation’ from the pulldown.
+<p>If we put Table 31.2 into jamovi, we can run a <span class="math inline">\(\chi^{2}\)</span> test of association by navigating to the ‘Frequencies’ button in the jamovi toolbar and selecting ‘Independent Samples: <span class="math inline">\(\chi^{2}\)</span> test of assiocation’ from the pulldown.
 In the Contingency Tables input panel, we can put ‘Survived’ in the Rows box, ‘Radiation’ in the Columns box, then place ‘Count’ in the Counts (optional) box.
 The panel on the right will give us the output of the <span class="math inline">\(\chi^{2}\)</span> test of association.</p>
 
@@ -848,8 +849,9 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="56">
-<li id="fn56"><p>This figure was released into the public domain by <a href="https://commons.wikimedia.org/wiki/File:Erdhummel_im_Detail.jpg">Marco Almbauer</a> on 4 May 2018. Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by <span class="citation">Burrows et al. (<a href="#ref-Burrows2022" role="doc-biblioref">2022</a>)</span>.<a href="Chapter_31.html#fnref56" class="footnote-back">↩︎</a></p></li>
+<ol start="85">
+<li id="fn85"><p>This figure was released into the public domain by <a href="https://commons.wikimedia.org/wiki/File:Erdhummel_im_Detail.jpg">Marco Almbauer</a> on 4 May 2018. Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by <span class="citation">Burrows et al. (<a href="#ref-Burrows2022" role="doc-biblioref">2022</a>)</span>.<a href="Chapter_31.html#fnref85" class="footnote-back">↩︎</a></p></li>
+<li id="fn86"><p><a href="https://bradduthie.github.io/stats/data/bumblebee.csv">https://bradduthie.github.io/stats/data/bumblebee.csv</a><a href="Chapter_31.html#fnref86" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

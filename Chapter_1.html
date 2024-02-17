@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -500,7 +504,7 @@ Fortunately, while the <em>theory</em> underlying statistical techniques does re
 This module focuses on the application of statistical techniques, so all that is required is a background in some fundamental mathematical concepts such as mathematical operations (addition, subtraction, multiplication, division, and exponents), simple algebra, and probability.
 This chapter will review these operations and the mathematical symbols used to communicate them.</p>
 <p>The second mathematical challenge that students face when learning statistics for the first time is a bit more subtle.
-Students with no statistical background sometimes have an expectation that statistics will be similar to previously learned mathematical topics such as algebra, geometry, or trigonometry.
+Students with no statistical background sometimes have an expectation that statistics will be similar to previously learnt mathematical topics such as algebra, geometry, or trigonometry.
 In some ways, this is true, but in a lot of ways statistics is a much different way of thinking than any of these topics.
 A lot of mathematical subjects focus on questions that have very clear right or wrong answers (or, at least, this is how they are often taught).
 If, for example, we are given the lengths of two sides of a right triangle, then we might be asked to calculate the hypotenuse of the triangle using Pythagorean theorem (<span class="math inline">\(a^{2} + b^{2} = c^{2}\)</span>, where c is the hypotenuse).
@@ -509,13 +513,8 @@ In statistics, answers are not always so clear cut.
 Statistics, by its very nature, deals with uncertainty.
 While all of the standard rules of mathematics still apply, statistical questions such as, “Can I use this statistical test on my data?”, “Do I have a large enough sample size?”, or even “Is my hypothesis well-supported?” often do not have unequivocal ‘correct’ answers.
 Being a good statistician often means making well-informed, but ultimately at least somewhat subjective, judgements about how to make inferences from data.</p>
-<p>For the purpose of assessments in this module (tests and exams), please note that we will only ask questions that <strong>do</strong> have clear and correct answers.
-This is to keep the module assessment fair and transparent.
-For example, we will not ask you questions like, “Can I use this statistical test on my data” unless the answer is a very clear yes or no.
-And we will not ask you questions like, “Is my hypothesis well-supported”, but specify what we mean instead by asking questions such as, “should you reject the null hypothesis at the <span class="math inline">\(\alpha = 0.05\)</span> level of Type I error” (we will worry about what this means later).
-We will give practice questions, a practice test, and a practice exam, so that the nature of assessment questions is clear before you are actually assessed for a grade.</p>
 <p>For now, we will move on to looking at numbers and operations, logarithms, and order of operations.
-These topics will be relevant throughout the semester, so it is important to understand them and be able to apply them when doing calculations.</p>
+These topics will be relevant throughout the book, so it is important to understand them and be able to apply them when doing calculations.</p>
 <div id="numbers-and-operations" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> Numbers and operations<a href="Chapter_1.html#numbers-and-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Calculating statistics and reading statistical output requires some knowledge of numbers and basic mathematical operations.
@@ -643,7 +642,7 @@ Figure 1.1: Global carbon dioxide emissions from 1750-2021.
 <p>We can see from Figure 1.1 that global CO<span class="math inline">\(_{2}\)</span> emissions go up exponentially over time, but this exponential relationship means that the y-axis has to cover a large range of values.
 This makes it difficult to see what is actually happening in the first 100 years.
 Are CO<span class="math inline">\(_{2}\)</span> emissions increasing from 1750-1850, or do they stay about the same?
-If instead of plotting billions of tonnes of CO<span class="math inline">\(_{2}\)</span> on the y-axis, we plotted the logarithm of these values, then the pattern in the first 100 years becomes a bit more clear (Figure 1.2).</p>
+If instead of plotting billions of tonnes of CO<span class="math inline">\(_{2}\)</span> on the y-axis, we plotted the logarithm of these values, then the pattern in the first 100 years becomes a bit clearer (Figure 1.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" alt="A plot showing linear increase in global carbon dioxide emissions over time, with emissions plotted on a natural log scale." width="100%" />
 <p class="caption">
@@ -684,7 +683,7 @@ First, parentheses are a useful tool for being unequivocal about the order of op
 We could, for example, always be completely clear about the order to calculate by writing something like <span class="math inline">\((8/2) \times (2+2)\)</span> or <span class="math inline">\(8 / (2(2 + 2))\)</span>, although this can get a bit messy.
 Second, rules 2-4 are ordered by the magnitude of operation effects; for example, exponents have a bigger effect than multiplication, which has a bigger effect than addition.
 In general, however, these are just standard conventions that need to be known for reading and writing mathematical expressions.
-In this module, you will not see something ambiguous like <span class="math inline">\(x = 8 \div 2\left(2+2\right)\)</span>, but you should be able to correctly calculate something like this,</p>
+In this book, you will not see something ambiguous like <span class="math inline">\(x = 8 \div 2\left(2+2\right)\)</span>, but you should be able to correctly calculate something like this,</p>
 <p><span class="math display">\[x = 3^{2} + 2\left(1 + 3\right)^{2} - 6 \times 0.\]</span></p>
 <p>First, remember that parentheses come first, so we can rewrite the above,</p>
 <p><span class="math display">\[x = 3^{2} + 2\left(4\right)^{2} - 6 \times 0.\]</span></p>
@@ -694,7 +693,7 @@ In this module, you will not see something ambiguous like <span class="math inli
 <p><span class="math display">\[x = 9 + 32 -  0.\]</span></p>
 <p>Lastly, we calculate addition and subtraction,</p>
 <p><span class="math display">\[x = 41.\]</span></p>
-<p>In this module, you will very rarely need to calculate something with this many different steps.
+<p>In this book, you will very rarely need to calculate something with this many different steps.
 But you will often need to calculate equations like the one below,</p>
 <p><span class="math display">\[x = 20 + 1.96 \times 2.1.\]</span></p>
 <p>It is important to remember to multiply <span class="math inline">\(1.96 \times 2.1\)</span> <em>before</em> adding 20.
@@ -713,7 +712,7 @@ For example,</p>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Askey1999" class="csl-entry">
-Askey, R. 1999. <span>“<span class="nocase">Why does a negative x a negative = a positive?</span>”</span> <em>American Educator</em>, 4–5. <a href="http://homepages.math.uic.edu/~saunders/MTHT467_2011/AskeyGelfand.pdf">http://homepages.math.uic.edu/~saunders/MTHT467_2011/AskeyGelfand.pdf</a>.
+Askey, R. 1999. <span>“<span class="nocase">Why does a negative x a negative = a positive?</span>”</span> <em>American Educator</em>, 4–5.
 </div>
 <div id="ref-Chernoff2022" class="csl-entry">
 Chernoff, Egan J, and Rina Zazkis. 2022. <span>“<span class="nocase">The simple reason a viral math equation stumped the internet</span>.”</span> <a href="https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518">https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518</a>.

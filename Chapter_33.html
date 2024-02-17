@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -511,7 +515,7 @@ It is even possible for the sign of the coefficients to change (e.g., from negat
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_32.html#Chapter_32">Chapter 32</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 32.1).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-169">Table 33.1: </span>Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-171">Table 33.1: </span>Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Latitude</td>
@@ -546,8 +550,8 @@ Suppose that in addition to latitude, altitude was also measured in metres for e
 </tbody>
 </table>
 <p>We can use a scatterplot to visualise each independent variable on the x-axis against the dependent variable on the y-axis (Figure 32.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-170"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-170-1.png" alt="Two scatter plots are shown, one with Latitude on the x-axis and Fruit volume on the y-axis, and another with Altitude on the x-axis and Fruit volume on the y-axis." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-172"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-172-1.png" alt="Two scatter plots are shown, one with Latitude on the x-axis and Fruit volume on the y-axis, and another with Altitude on the x-axis and Fruit volume on the y-axis." width="672" />
 <p class="caption">
 Figure 33.1: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset.
 </p>
@@ -564,7 +568,7 @@ We now need to run a multiple regression to find the intercept (<span class="mat
 In jamovi or R <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>; <a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 32.2 shows an output table from R, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-171">Table 33.2: </span>Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<caption><span id="tab:unnamed-chunk-173">Table 33.2: </span>Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -622,7 +626,7 @@ We therefore do not reject the null hypothesis that the intercept (<span class="
 But we do reject the null hypothesis that <span class="math inline">\(b_{2} = 0\)</span>, and we can conclude that altitude has an effect on fig fruit volume.</p>
 <p>We can also look at the overall multiple regression model.
 Figure 32.2 shows what this model output looks like reported by jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-172"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-174"></span>
 <img src="img/jamovi_overall_multiple_regression_output.png" alt="An output table is shown with a single row and columns for R squared, Adusted R squared, F, df1, df2, and p." width="100%" />
 <p class="caption">
 Figure 33.2: Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.

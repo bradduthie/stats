@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -496,23 +500,22 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 23</span> <em>Practical</em>. Hypothesis testing and t-tests<a href="Chapter_23.html#Chapter_23" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This lab focuses on applying the concepts about hypothesis testing from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> and the statistical tests from <a href="Chapter_22.html#Chapter_22">Chapter 22</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 There will be 5 exercises in total, which will focus on using t-tests and their non-parametric equivalents.
-The data for this lab focus on an example of biology and environmental sciences education (Figure 22.1<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>).
+The data for this lab focus on an example of biology and environmental sciences education (Figure 23.1<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>).
 Similar to the example in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, it uses datasets of student test scores (note that these data are entirely fictional; we have not used scores from real students).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-96"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-98"></span>
 <img src="img/teaching.jpg" alt="Decorative image showing the word 'TEACH' spelled out in dried pine needles" width="100%" />
 <p class="caption">
 Figure 23.1: The practical this week focuses on an example relevant to education. This image is in the public domain.
 </p>
 </div>
-<p>We will use test data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>) and 2023 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a>).
-To download these files, right click on the links and choose ‘Save Link As…’, then save it with the extension ‘.csv’.
+<p>We will use test data from 2022<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a> and 2023<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>.
 Variables in these datasets include student IDs and scores from 3 different tests.</p>
 <div id="exercise-on-a-simple-one-sample-t-test" class="section level2 hasAnchor" number="23.1">
 <h2><span class="header-section-number">23.1</span> Exercise on a simple one sample t-test<a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>First we will consider test data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>).
+<p>First we will consider test data from 2022<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a>.
 These data are shown below, but you should be able to download the file in the link above.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-98">Table 23.1: </span>Student test scores from 2022.</caption>
+<caption><span id="tab:unnamed-chunk-100">Table 23.1: </span>Student test scores from 2022.</caption>
 <thead>
 <tr class="header">
 <th align="left">ID</th>
@@ -653,8 +656,8 @@ These data are shown below, but you should be able to download the file in the l
 <p>Open this dataset in jamovi.
 Before doing any analysis, compute a new column of data called ‘Overall’ that is each student’s mean test score.
 To do this, double click on the fifth column of data, then when a new panel opens up, choose ‘NEW COMPUTED VARIABLE’ from the list of available options.
-Your input should like Figure 22.2.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-99"></span>
+Your input should like Figure 23.2.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-101"></span>
 <img src="img/jamovi_students_overall.png" alt="Jamovi interface is shown with a new computed variable and the formula for calculating the mean of test scores in the function box." width="100%" />
 <p class="caption">
 Figure 23.2: The jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
@@ -691,8 +694,8 @@ A new window will open up.
 In a one sample t-test, there is only 1 dependent variable, which in this case is ‘Overall’.
 Move the variable ‘Overall’ to the Dependent Variables box with the right arrow.
 Below the boxes, find the checkbox options under ‘<strong>Assumption Checks</strong>’.
-Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’ (Figure 22.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-100"></span>
+Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’ (Figure 23.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-102"></span>
 <img src="img/jamovi_one_sample_t-test.png" alt="Jamovi interface is shown with a panel of 4 columns of data to the left and the interface for a One Sample T-Test to the right." width="100%" />
 <p class="caption">
 Figure 23.3: The jamovi interface for running a one sample t-test (right hand side). The variable ‘Overall’ has been brought in the Dependent Variables box, and two different options have been selected to check the assumption of normality (a normality hypothesis test and a Q-Q plot).
@@ -720,10 +723,8 @@ Write these values down below.</p>
 <p>degrees of freedom: __________________</p>
 <p>p-value: ____________________</p>
 <p>Remember how the t-statistic, degrees of freedom, and p-value are all related.
-For a reminder, use this <a href="https://bradduthie.shinyapps.io/t_score/">interactive application</a>.
-Slide the value for ‘t’ until it matches the t-statistic that your reported above, then input the correct degrees of freedom in the box to the lower right.
-Look at the probability density in blue to confirm that it is approximately the same as your p-value (there might be a slight rounding error here).
-Based on the p-value, should you reject the null hypothesis that your students’ mean overall grade is the same as the national average? Why or why not?</p>
+Based on the p-value, should you reject the null hypothesis that your students’ mean overall grade is the same as the national average?
+Why or why not?</p>
 <pre><code>
 
 
@@ -737,7 +738,8 @@ Based on the p-value, should you reject the null hypothesis that your students�
 
 </code></pre>
 <p>Consider again the three assumptions of the t-test listed above.
-Is there an assumption that might be particularly suspect when comparing the scores of students in a single classroom with a national average? Why or why not?</p>
+Is there an assumption that might be particularly suspect when comparing the scores of students in a single classroom with a national average?
+Why or why not?</p>
 <pre><code>
 
 
@@ -782,7 +784,7 @@ Next, we will consider a case in which the assumption of normality is violated.<
 </div>
 <div id="wilcoxon-test-1" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">23.3</span> Wilcoxon test<a href="Chapter_23.html#wilcoxon-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that we want to test the null hypothesis that the scores from Test 3 of the dataset used in Exercises 1 and 2 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>) were sampled from a population with a mean of <span class="math inline">\(\mu_{0} = 62\)</span>.
+<p>Suppose that we want to test the null hypothesis that the scores from Test 3 of the dataset<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a> used in Exercises 1 and 2 were sampled from a population with a mean of <span class="math inline">\(\mu_{0} = 62\)</span>.
 We are not interested in whether the scores are higher or lower than 62, just that they are different.
 Consequently, what should our alternative hypothesis (<span class="math inline">\(H_{A}\)</span>) be?</p>
 <p><span class="math inline">\(H_{A}\)</span>: ___________________</p>
@@ -824,12 +826,11 @@ What is the p-value, and what should you conclude from it?</p>
 </div>
 <div id="independent-samples-t-test-1" class="section level2 hasAnchor" number="23.4">
 <h2><span class="header-section-number">23.4</span> Independent samples t-test<a href="Chapter_23.html#independent-samples-t-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the first 3 exercises, we tested hypotheses using data from 2022 (<a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_1.csv">student_scores_year_1.csv</a>).
+<p>In the first 3 exercises, we tested hypotheses using data from 2022<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 In this exercise, we will test the differences in mean test scores between students from 2022 and 2023.
-To do this, first download the 2023 data (right click the link <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a> and choose ‘Save Link As…’, then save as a file with the extension ‘.csv’).
-These data are shown below, but you should be able to download the file in the link above.</p>
+These data<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a> are shown below.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-101">Table 23.2: </span>Student test scores from 2023.</caption>
+<caption><span id="tab:unnamed-chunk-103">Table 23.2: </span>Student test scores from 2023.</caption>
 <thead>
 <tr class="header">
 <th align="left">ID</th>
@@ -987,13 +988,13 @@ These data are shown below, but you should be able to download the file in the l
 </table>
 <p>As might be expected, the 2022 and 2023 datasets are stored in separate files.
 What we need to do first is combine the data into a single tidy dataset.
-To do this, open the <a href="https://raw.githubusercontent.com/bradduthie/statistical_techniques/main/data/student_scores_year_2.csv">student_scores_year_2.csv</a> dataset in a spreadsheet and copy all of the data (but not the column names).
+To do this, open the Year 2 dataset in a spreadsheet and copy all of the data (but not the column names).
 You can then paste these data directly into jamovi in the next available row (row 22).
 Next, add in a new column for ‘Year’, so that you can differentiate 2022 students from 2023 students in the same dataset.
 To do this, you can right-click on the ‘ID’ column and choose ‘Add Variable’, then ‘Insert’.
 A new column will appear to the left, which you can name ‘Year’.
-Input ‘2022’ for rows 1-21, then ‘2023’ for the remaining rows that you just pasted into jamovi (see Figure 22.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-102"></span>
+Input ‘2022’ for rows 1-21, then ‘2023’ for the remaining rows that you just pasted into jamovi (see Figure 23.4).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-104"></span>
 <img src="img/jamovi_insert_year.png" alt="Jamovi interface is shown with a top panel in which a Data Variable called 'Year' is being inserted, below which data are shown, including the new column with 2022 and 2023 years" width="100%" />
 <p class="caption">
 Figure 23.4: The jamovi interface for inserting a new variable called ‘Year’, and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.
@@ -1013,16 +1014,16 @@ Remember that our objective here is to test whether the means of two groups (202
 We can therefore place the ‘Overall’ variable in the Dependent Variables box, then ‘Year’ in the Grouping Variable box.
 Before running the independent samples t-test, we again need to check our assumptions.
 In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a> that the standard ‘Student’s’ independent samples t-test also assumes that the variances of groups (i.e., the 2022 and 2023 scores) are the same, while the ‘Welch’s’ t-test does not assume equal variances.
-In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 22.5).
+In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 23.5).
 This is called a ‘Levene’s test’, and we can interpret it in a similar way to the Shapiro-Wilk test of normality.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-105"></span>
 <img src="img/jamovi_independent_sample_t-test.png" alt="Jamovi interface is shown with a left panel of data, a middle panel showing an independent samples t-test being set up to test for a difference in Overall score between Years, and output for test assumptions in the right panel." width="100%" />
 <p class="caption">
 Figure 23.5: The jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
 </p>
 </div>
 <p>If our p-value is sufficiently low (P &lt; 0.05), then we reject the null hypothesis that the groups have the same variances.
-Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 22.5), what can you conclude about the t-test assumptions?</p>
+Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 23.5), what can you conclude about the t-test assumptions?</p>
 <pre><code>
 
 
@@ -1030,14 +1031,14 @@ Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 22.5), wha
 
 </code></pre>
 <p>What is the p-value for the Levene’s test?</p>
-<p>P: _________________</p>
+<p><span class="math inline">\(P\)</span> = _________________</p>
 <p>It appears from our test of assumptions that we do not reject the null hypothesis that the data are normally distributed, but we should reject the null hypothesis that the groups have equal variances.
 Based on what you learned in <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a>, what is the appropriate test to run in this case?</p>
 <p>Test: ____________________</p>
 <p>Note that the appropriate test should be available as a check box underneath the <strong>Tests</strong> options.
 Check the box for the correct test, then report the test statistic and p-value from the table that appears in the right panel.</p>
 <p>Test statistic: ____________________</p>
-<p>P = __________________</p>
+<p><span class="math inline">\(P\)</span> = __________________</p>
 <p>What can you conclude from this t-test?</p>
 <pre><code>
 
@@ -1063,7 +1064,7 @@ How can you make this conclusion?</p>
 </code></pre>
 <p>Next check to see if the data are normally distributed.
 What is the p-value of the Shapiro-Wilk test?</p>
-<p>P = ________________</p>
+<p><span class="math inline">\(P\)</span> = ________________</p>
 <p>Now, have a look at the Q-Q plot.
 What can you infer from this plot about the normality of the data, and why?</p>
 <pre><code>
@@ -1090,16 +1091,16 @@ What can you infer from this plot about the normality of the data, and why?</p>
 
 
 </code></pre>
-<p>For the sake of time, we have not introduced an example in which a transformation (such as a log transformation) is applied to normalise a dataset, as explained in <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a>.
+<p>I have not introduced an example in which a transformation (such as a log transformation) is applied to normalise a dataset, as explained in <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a>.
 To do such a transformation, you could create a new computed variable in jamovi and calculate it as the natural log (LN) of a variable (e.g., Test 3).
-Figure 22.6 illustrates what this should look like.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-104"></span>
+Figure 23.6 illustrates what this should look like.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
 <img src="img/jamovi_LN_transform.png" alt="Jamovi interface is shown with a new computed variable being made and the natural log of Test 3 scores being inserted into the function box." width="100%" />
 <p class="caption">
 Figure 23.6: The jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
 </p>
 </div>
-<p>Lastly, if you have time, suppose that you wanted to test whether students from 2023 improved their scores from Test 1 to Test 2 more than students from 2022 did?
+<p>Lastly, suppose that you wanted to test whether students from 2023 improved their scores from Test 1 to Test 2 more than students from 2022 did.
 Is there a way to do this with just the tools presented here and in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>?
 Think about how the paired t-test works, and how you could apply that logic to test for the difference in the change between two independent samples (2022 versus 2023).
 What could you do to test the null hypothesis that the change in scores from Test 1 to Test 2 is the same between years?</p>
@@ -1131,8 +1132,14 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="40">
-<li id="fn40"><p>This figure has been released into the <a href="https://commons.wikimedia.org/wiki/File:Teach_in_pine_needles.jpg">Public Domain</a>.<a href="Chapter_23.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<ol start="56">
+<li id="fn56"><p>This figure has been released into the <a href="https://commons.wikimedia.org/wiki/File:Teach_in_pine_needles.jpg">Public Domain</a>.<a href="Chapter_23.html#fnref56" class="footnote-back">↩︎</a></p></li>
+<li id="fn57"><p><a href="https://bradduthie.github.io/stats/data/student_scores_year_1.csv">https://bradduthie.github.io/stats/data/student_scores_year_1.csv</a><a href="Chapter_23.html#fnref57" class="footnote-back">↩︎</a></p></li>
+<li id="fn58"><p><a href="https://bradduthie.github.io/stats/data/student_scores_year_2.csv">https://bradduthie.github.io/stats/data/student_scores_year_2.csv</a><a href="Chapter_23.html#fnref58" class="footnote-back">↩︎</a></p></li>
+<li id="fn59"><p><a href="https://bradduthie.github.io/stats/data/student_scores_year_1.csv">https://bradduthie.github.io/stats/data/student_scores_year_1.csv</a><a href="Chapter_23.html#fnref59" class="footnote-back">↩︎</a></p></li>
+<li id="fn60"><p><a href="https://bradduthie.github.io/stats/data/student_scores_year_2.csv">https://bradduthie.github.io/stats/data/student_scores_year_2.csv</a><a href="Chapter_23.html#fnref60" class="footnote-back">↩︎</a></p></li>
+<li id="fn61"><p><a href="https://bradduthie.github.io/stats/data/student_scores_year_1.csv">https://bradduthie.github.io/stats/data/student_scores_year_1.csv</a><a href="Chapter_23.html#fnref61" class="footnote-back">↩︎</a></p></li>
+<li id="fn62"><p><a href="https://bradduthie.github.io/stats/data/student_scores_year_2.csv">https://bradduthie.github.io/stats/data/student_scores_year_2.csv</a><a href="Chapter_23.html#fnref62" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

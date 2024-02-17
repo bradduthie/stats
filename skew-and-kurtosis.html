@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -494,6 +498,96 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="skew-and-kurtosis" class="section level1 hasAnchor" number="13">
 <h1><span class="header-section-number">Chapter 13</span> Skew and Kurtosis<a href="skew-and-kurtosis.html#skew-and-kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Following measures of central tendency in <a href="Chapter_11.html#Chapter_11">Chapter 11</a> and measures of spread in <a href="Chapter_12.html#Chapter_12">Chapter 12</a>, there are two more concepts that are worth briefly mentioning.
+Both of these concepts concern the shape of a distribution.
+The first concept is skew, and the second is kurtosis.
+This is also a good place to introduce what the word ‘moment’ refers to in the statistics.</p>
+<div id="skew" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Skew<a href="skew-and-kurtosis.html#skew" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>skew</strong> of a distribution refers to its asymmetry <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>, which can be observed in a histogram (Figure 13.1).
+What we are looking for here are the sides of the distribution, also known as the ‘tails’.
+When the left tail sticks out as it does in Figure 13.1A, we can describe the distribution as ‘left skewed’ or ‘negatively skewed’.
+When the right tail sticks out as it does in Figure 13.1B, we can describe the distribution as ‘right skewed’ or ‘positively skewed’.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-45"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-45-1.png" alt="Two histograms are shown side by side. The histogram on the left looks normal, but with an extended tail on the left hand side. The histogram on the right also looks normal, but with an extend tail on the right hand side." width="100%" />
+<p class="caption">
+Figure 13.1: Histograms showing (A) a distribution that has a negative (i.e., ‘left’) skew and (B) a distribution that has a positive (i.e., ‘right’) skew.
+</p>
+</div>
+<p>When a distribution is skewed, the mean and median of the distribution will be different <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+This is because the mean of the distribution will be pulled towards the tail that sticks out due to the extreme values in the tail.
+In contrast, the median is robust to these extreme values.
+This can be important when interpreting the median versus mean as a measure of central tendency <span class="citation">(<a href="#ref-Reichmann1970" role="doc-biblioref">Reichmann 1970</a>)</span>.
+For example, household income data are typically highly right skewed because a small proportion of households have a much higher income than the typical household <span class="citation">(<a href="#ref-Mcdonald2013" role="doc-biblioref">Mcdonald, Sorensen, and Turley 2013</a>)</span>.
+Consequently, when data are strongly skewed, the mean and median give us different information, and it often makes sense to use the median as an indication of what is typical <span class="citation">(<a href="#ref-Chiripanhura2011" role="doc-biblioref">Chiripanhura 2011</a>)</span>.</p>
+</div>
+<div id="kurtosis" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Kurtosis<a href="skew-and-kurtosis.html#kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>kurtosis</strong> describes the extent to which a distribution is flat.
+In other words, whether data tend to be in the centre and at the tails, or whether data tend to be between the centre and tails <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+If there are more values in the center and tails of the distribution, then the distribution is described as ‘leptokurtic’ (Figure 13.2A).
+If there are more values between the centre and the tails, the the distribution is described as ‘platykurtic’ (Figure 13.2B).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-46"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-46-1.png" alt="Two histograms are shown side by side. The histogram on the left looks normal, but with more values in the centre and toward the extreme sides. The histogram on the right also looks normal, but with relatively few values in the centre and at the extremes." width="100%" />
+<p class="caption">
+Figure 13.2: Histograms showing (A) a leptokurtic distribution and (B) a platykurtic distribution.
+</p>
+</div>
+<p>The extent to which any given distribution is leptokurtic versus platykurtic is defined relative to the normal distribution, which will be introduced in <a href="Chapter_15.html#Chapter_15">Chapter 15</a>.</p>
+</div>
+<div id="moments" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Moments<a href="skew-and-kurtosis.html#moments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When actually doing statistics in the biological and environmental sciences, just being able to recognise skew and kurtosis on a histogram is usually sufficient.
+It is possible to actually calculate skew and kurtosis as we would measures of central tendency and spread <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>; <a href="#ref-Groeneveld1984" role="doc-biblioref">Groeneveld and Meeden 1984</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, but this is very rarely necessary <span class="citation">(but see <a href="#ref-Doane2011" role="doc-biblioref">Doane and Seward 2011</a>)</span>.
+Nevertheless, this is a good place to introduce the concept of what a moment is in statistics.</p>
+<p>The word ‘moment’ usually refers to a brief period in time.
+But this is not what the word means in statistics.
+In statistics, a <strong>moment</strong> is related to how much some value (more technically, a random variable) is expected to deviate from the mean <span class="citation">(<a href="#ref-Upton2014" role="doc-biblioref">Upton and Cook 2014</a>)</span>.
+The term has its origins in physics <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.
+A moment statistic describes the expected deviation from the mean, raised to some power.
+We have already looked at the second moment about the mean (i.e., the expected deviation raised to the power 2).
+This was the variance,</p>
+<p><span class="math display">\[s^{2} = \frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]</span></p>
+<p>A different exponent would indicate a different moment.
+For example, a 3 would give us the third moment (skew), and a 4 would give us the fourth moment (kurtosis).
+The equations for calculating these sample moments are a bit more complicated than simply replacing the 2 with a 3 or 4 in the equation for variance.
+This is because the corrections for the third and fourth moments are no longer <span class="math inline">\(N - 1\)</span>.
+The corrections now also need to be scaled by the standard deviation <span class="citation">(for details, see <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+For the purpose of doing statistics in the biological and environmental sciences, it is usually sufficient to recognise that second, third, and fourth moments refer to variance, skew, and kurtosis, respectively.</p>
+</div>
+</div>
+<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Chiripanhura2011" class="csl-entry">
+Chiripanhura, Blessing. 2011. <span>“<span class="nocase">Median and mean income analyses</span>.”</span> <em>Economic and Labour Market Review</em> 5: 45–64.
+</div>
+<div id="ref-Doane2011" class="csl-entry">
+Doane, David P., and Lori E. Seward. 2011. <span>“<span class="nocase">Measuring skewness: A forgotten statistic?</span>”</span> <em>Journal of Statistics Education</em> 19 (2). <a href="https://doi.org/10.1080/10691898.2011.11889611">https://doi.org/10.1080/10691898.2011.11889611</a>.
+</div>
+<div id="ref-Dytham2011" class="csl-entry">
+Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+</div>
+<div id="ref-Groeneveld1984" class="csl-entry">
+Groeneveld, Richard A, and Glen Meeden. 1984. <span>“<span class="nocase">Measuring Skewness and Kurtosis</span>.”</span> <em>Journal of the Royal Statistical Society. Series D (The Statistician)</em> 33 (4): 391–99.
+</div>
+<div id="ref-Mcdonald2013" class="csl-entry">
+Mcdonald, James B., Jeff Sorensen, and Patrick A. Turley. 2013. <span>“<span class="nocase">Skewness and kurtosis properties of income distribution models</span>.”</span> <em>Review of Income and Wealth</em> 59 (2): 360–74. <a href="https://doi.org/10.1111/j.1475-4991.2011.00478.x">https://doi.org/10.1111/j.1475-4991.2011.00478.x</a>.
+</div>
+<div id="ref-Miller2004" class="csl-entry">
+Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+</div>
+<div id="ref-Rahman1968" class="csl-entry">
+Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
+</div>
+<div id="ref-Reichmann1970" class="csl-entry">
+Reichmann, W J. 1970. <em><span class="nocase">Use and Abuse of Statistics</span></em>. 3rd ed. London: Penguin Books.
+</div>
+<div id="ref-Sokal1995" class="csl-entry">
+Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Upton2014" class="csl-entry">
+Upton, Graham, and Ian Cook. 2014. <em><span class="nocase">Dictionary of Statistics</span></em>. 3rd ed. Oxford: Oxford University Press.
+</div>
 </div>
             </section>
 

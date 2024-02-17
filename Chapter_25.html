@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -510,17 +514,17 @@ The general idea of a Tukey’s test is the same as the Bonferonni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
 The Tukey’s test does this by using a modified t-test, with a t-distribution called the “studentised range distribution” that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.</p>
 <p>Multiple comparisons tests can be run automatically in statistical programs such as jamovi and R.
-Figure 24.1 shows a post-hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-114"></span>
+Figure 25.1 shows a post-hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-116"></span>
 <img src="img/jamovi_multiple_comparisons.png" alt="Jamovi output is shown with a large table called 'Post Hoc Comparisons', which reports statistics for 10 pair-wise combinations of 5 species." width="100%" />
 <p class="caption">
 Figure 25.1: Jamovi output showing a table of 10 post hoc comparisons between species mean wing lengths for 5 different species of fig wasps. The last 3 columns show the uncorrected p-value (p), a p-value obtained from a Tukey’s test, and a p-value obtained from a Bonferroni correction. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>The column ‘p’ in Figure 24.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
+<p>The column ‘p’ in Figure 25.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
 The columns <span class="math inline">\(p_{tukey}\)</span> and <span class="math inline">\(p_{bonferonni}\)</span> show corrected p-values for the Tukey’s test and Bonferroni corrected t-test, respectively.
 We can interpret these p-values as usual, concluding that two species have different means if <span class="math inline">\(P &lt; 0.05\)</span> (i.e., jamovi does the correction for us; we do not need to divide <span class="math inline">\(\alpha = 0.05\)</span> to figure out what the significance threshold should be given the Bonferonni correction).</p>
-<p>Note that from Figure 24.1, it appears that both the Tukey’s test and the Bonferonni correction fail to find that any pair of species have significantly different means.
+<p>Note that from Figure 25.1, it appears that both the Tukey’s test and the Bonferonni correction fail to find that any pair of species have significantly different means.
 This does not mean that we have done the test incorrectly.
 The multiple comparisons tests are asking a slightly different question than the one-way ANOVA.
 The multiple comparisons tests are testing the null hypothesis that two <em>particular</em> species have the same mean wing lengths.

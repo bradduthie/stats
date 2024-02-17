@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-11" />
+<meta name="date" content="2024-02-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -194,7 +194,6 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
-<li class="chapter" data-level="7.3" data-path="Chapter_7.html"><a href="Chapter_7.html#applying-formulas-for-combining-errors"><i class="fa fa-check"></i><b>7.3</b> Applying formulas for combining errors</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
 <ul>
@@ -231,7 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a></li>
+<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+</ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="Chapter_14.html"><a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format"><i class="fa fa-check"></i><b>14.1</b> Reorganise the dataset into a tidy format</a></li>
@@ -496,8 +500,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 9</span> Decimal places, significant figures, and rounding<a href="Chapter_9.html#Chapter_9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>When making calculations, it is important that any numbers reported are communicated with <a href="Chapter_6.html#Chapter_6">accuracy and precision</a>.
 This means reporting numbers with the correct number of digits.
-This chapter focuses on correctly interpreting the decimal places and significant figures of a number, and correctly rounding.
-In your assessments, you will frequently be asked to report an answer to a specific number of decimal places or significant figures, and you will be expected to round numbers correctly.</p>
+This chapter focuses on correctly interpreting the decimal places and significant figures of a number, and correctly rounding.</p>
 <div id="decimal-places-and-significant-figures" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Decimal places and significant figures<a href="Chapter_9.html#decimal-places-and-significant-figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A higher number of digits communicates a greater level of accuracy.
@@ -512,9 +515,8 @@ For example, the number 2.718 has 4 significant figures and 2.7 has 2 significan
 For example, the number 0.045 has only 2 significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy).
 In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.44995 and 0.45005, not just 0.0445 and 0.0455).
 Lastly, the measurement 4500 has only 2 significant figures because the last 2 zeros are only serving as a placeholder to indicate magnitude, not accuracy (if we wanted to represent 4500 with 4 significant figures, we could use scientific notation and express it as <span class="math inline">\(4.500 \times 10^3\)</span>).</p>
-<p>Here is a table with some examples of numbers, their decimal places, and their significant figures.</p>
+<p>Table 9.1 shows some examples of numbers, their decimal places, and their significant figures.</p>
 <table>
-<caption>Numbers are presented in rows of the first column. Decimal places and significant figures for each row number are presented in the second and third column, respectively.</caption>
 <thead>
 <tr class="header">
 <th>Number</th>
@@ -555,6 +557,7 @@ Lastly, the measurement 4500 has only 2 significant figures because the last 2 z
 </tr>
 </tbody>
 </table>
+<p>Table 9.1: Numbers are presented in rows of the first column. Decimal places and significant figures for each row number are presented in the second and third column, respectively.</p>
 <p>It is a good idea to double-check that the values in these tables make sense.
 For assessments, make sure that you are confident that you can report your answer to a given number of decimal places or significant figures.</p>
 </div>
@@ -570,9 +573,8 @@ If we wanted to round the number to 5 significant digits, then we would write it
 And if we wanted to round 3.141593 to 4 significant digits, then we would write it as 3.142 because the digit that immediately follows is 5.
 Note that this does not just apply for decimals.
 If we wanted to round 1253 to 3 significant figures, then we would round by writing it as 1250.</p>
-<p>Here is a table with some examples of numbers rounded to a given significant figure.</p>
+<p>Table 9.2 shows some examples of numbers rounded to a given significant figure.</p>
 <table>
-<caption>Numbers to be rounded are presented in rows of the first column. The significant figures to which rounding is desired is in the second column, and the third column shows the correctly rounded number.</caption>
 <thead>
 <tr class="header">
 <th>Original number</th>
@@ -613,8 +615,7 @@ If we wanted to round 1253 to 3 significant figures, then we would round by writ
 </tr>
 </tbody>
 </table>
-<p>In this module, it will be necessary to round calculated values to a specified decimal or significant figure.
-It is therefore important to understand the rules for rounding and why the values in the table above are rounded correctly.</p>
+<p>Table 9.2: Numbers to be rounded are presented in rows of the first column. The significant figures to which rounding is desired is in the second column, and the third column shows the correctly rounded number.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
