@@ -626,13 +626,13 @@ This is really all that it is necessary to know for now, but see this footnote<a
 There is also a broader concept of <em>degrees of freedom</em>, which explains why we need to take into account the number of parameters in a statistic that are free to vary when calculating a statistic<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
 <p><strong>Degrees of freedom</strong> is a difficult concept to understand, but we can broadly define the degree of freedom as the number of independent pieces of information that we have when calculating a statistic <span class="citation">(<a href="#ref-Grafen2002" role="doc-biblioref">Grafen and Hails 2022</a>; <a href="#ref-Upton2014" role="doc-biblioref">Upton and Cook 2014</a>)</span>.
 When we need to estimate a parameter from a dataset in the process of calculating a statistic, we lose an independent piece of information, and therefore a degree of freedom <span class="citation">(<a href="#ref-Pandey2008" role="doc-biblioref">Pandey and Bright 2008</a>)</span>.
-For example, if we collect <span class="math inline">\(N = 10\)</span> samples, then there are 10 independent pieces of information that we can use to calculate the mean (<span class="math inline">\(\bar{x} = (x_{1} + x_{2} + ... + x_{9} + x_{10})/N\)</span>).
+For example, if we collect <span class="math inline">\(N = 10\)</span> samples, then there are 10 independent pieces of information that we can use to calculate the mean.
 To calculate the variance, we use all of these 10 samples <em>and</em> <span class="math inline">\(\bar{x}\)</span> (note that <span class="math inline">\(\bar{x}\)</span> appears in the equation for variance above).
 This suggests that we actually have 11 independent pieces of information in making our calculation (all of the samples and the sample mean).
 But not all of these values are actually free to vary.
 When we know what the 10 sample values are, then the sample mean is fixed.
 And if we know what 9 sample values are and what the mean is, then we can work what the last sample value must be.
-We therefore lose a degree of freedom by including <span class="math inline">\(\bar{x}\)</span> in the calculation of variance, so we need to divide by <span class="math inline">\(N - 1\)</span> rather than <span class="math inline">\(N\)</span> to avoid bias <span class="citation">(<a href="#ref-Wardlaw1985" role="doc-biblioref">Wardlaw 2022</a>; <a href="#ref-Fowler1998" role="doc-biblioref">Fowler, Cohen, and Jarvis 1998</a>)</span>.
+We therefore lose a degree of freedom by including <span class="math inline">\(\bar{x}\)</span> in the calculation of variance, so we need to divide by <span class="math inline">\(N - 1\)</span> rather than <span class="math inline">\(N\)</span> to avoid bias <span class="citation">(<a href="#ref-Wardlaw1985" role="doc-biblioref">Wardlaw 1985</a>; <a href="#ref-Fowler1998" role="doc-biblioref">Fowler, Cohen, and Jarvis 1998</a>)</span>.
 Another way of thinking about degrees of freedom is as the number of differences that can arise between what we sample versus what we expect just based on the mathematics <span class="citation">(<a href="#ref-Fryer1966" role="doc-biblioref">Fryer 1966</a>)</span>.
 In other words, how much is our calculation free to vary just due to chance?
 In calculating the variance, the mathematics introduces a constraint by including <span class="math inline">\(\bar{x}\)</span>, thereby reducing degrees of freedom.</p>
@@ -732,277 +732,277 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 <tbody>
 <tr class="odd">
 <td align="left">Sample_1</td>
-<td align="right">0.56</td>
-<td align="right">0.78</td>
-<td align="right">0.59</td>
-<td align="right">0.82</td>
-<td align="right">0.76</td>
-<td align="right">0.63</td>
-<td align="right">0.64</td>
-<td align="right">0.82</td>
-<td align="right">0.45</td>
-<td align="right">0.64</td>
+<td align="right">0.62</td>
+<td align="right">0.74</td>
+<td align="right">0.65</td>
+<td align="right">0.71</td>
+<td align="right">0.80</td>
+<td align="right">0.80</td>
+<td align="right">0.90</td>
+<td align="right">0.89</td>
+<td align="right">0.80</td>
+<td align="right">0.68</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_2</td>
-<td align="right">0.67</td>
 <td align="right">0.62</td>
+<td align="right">0.55</td>
+<td align="right">0.77</td>
+<td align="right">0.66</td>
+<td align="right">0.67</td>
 <td align="right">0.73</td>
-<td align="right">0.56</td>
-<td align="right">0.51</td>
-<td align="right">0.49</td>
-<td align="right">0.70</td>
+<td align="right">0.57</td>
+<td align="right">0.75</td>
 <td align="right">0.48</td>
-<td align="right">0.69</td>
-<td align="right">0.60</td>
+<td align="right">0.64</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_3</td>
-<td align="right">0.57</td>
-<td align="right">0.76</td>
+<td align="right">0.67</td>
+<td align="right">0.81</td>
+<td align="right">0.65</td>
 <td align="right">0.75</td>
-<td align="right">0.66</td>
-<td align="right">0.66</td>
-<td align="right">0.73</td>
+<td align="right">0.67</td>
+<td align="right">0.62</td>
+<td align="right">0.55</td>
+<td align="right">0.74</td>
 <td align="right">0.60</td>
-<td align="right">0.73</td>
-<td align="right">0.78</td>
-<td align="right">0.75</td>
+<td align="right">0.65</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_4</td>
-<td align="right">0.79</td>
-<td align="right">0.74</td>
-<td align="right">0.66</td>
-<td align="right">0.54</td>
-<td align="right">0.54</td>
-<td align="right">0.67</td>
-<td align="right">0.52</td>
+<td align="right">0.86</td>
 <td align="right">0.77</td>
-<td align="right">0.47</td>
-<td align="right">0.74</td>
+<td align="right">0.54</td>
+<td align="right">0.84</td>
+<td align="right">0.76</td>
+<td align="right">0.68</td>
+<td align="right">0.88</td>
+<td align="right">0.72</td>
+<td align="right">0.83</td>
+<td align="right">0.65</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_5</td>
+<td align="right">0.57</td>
+<td align="right">0.72</td>
 <td align="right">0.73</td>
 <td align="right">0.60</td>
-<td align="right">0.78</td>
-<td align="right">0.53</td>
-<td align="right">0.62</td>
-<td align="right">0.56</td>
-<td align="right">0.83</td>
+<td align="right">0.69</td>
+<td align="right">0.82</td>
+<td align="right">0.87</td>
+<td align="right">0.67</td>
+<td align="right">0.59</td>
 <td align="right">0.71</td>
-<td align="right">0.73</td>
-<td align="right">0.55</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_6</td>
 <td align="right">0.71</td>
-<td align="right">0.68</td>
-<td align="right">0.65</td>
+<td align="right">0.61</td>
+<td align="right">0.58</td>
+<td align="right">0.66</td>
+<td align="right">0.64</td>
 <td align="right">0.73</td>
-<td align="right">0.82</td>
-<td align="right">0.88</td>
-<td align="right">0.62</td>
+<td align="right">0.73</td>
+<td align="right">0.58</td>
+<td align="right">0.60</td>
 <td align="right">0.65</td>
-<td align="right">0.72</td>
-<td align="right">0.74</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_7</td>
-<td align="right">0.67</td>
+<td align="right">0.85</td>
+<td align="right">0.79</td>
 <td align="right">0.66</td>
-<td align="right">0.70</td>
-<td align="right">0.88</td>
+<td align="right">0.62</td>
 <td align="right">0.68</td>
-<td align="right">0.59</td>
-<td align="right">0.66</td>
 <td align="right">0.73</td>
-<td align="right">0.69</td>
-<td align="right">0.61</td>
+<td align="right">0.79</td>
+<td align="right">0.78</td>
+<td align="right">0.53</td>
+<td align="right">0.83</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_8</td>
-<td align="right">0.76</td>
-<td align="right">0.67</td>
-<td align="right">0.72</td>
-<td align="right">0.67</td>
-<td align="right">0.85</td>
-<td align="right">0.67</td>
-<td align="right">0.56</td>
-<td align="right">0.80</td>
-<td align="right">0.70</td>
-<td align="right">0.74</td>
+<td align="right">0.65</td>
+<td align="right">0.79</td>
+<td align="right">0.81</td>
+<td align="right">0.52</td>
+<td align="right">0.60</td>
+<td align="right">0.71</td>
+<td align="right">0.57</td>
+<td align="right">0.53</td>
+<td align="right">0.77</td>
+<td align="right">0.64</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_9</td>
-<td align="right">0.67</td>
-<td align="right">0.65</td>
-<td align="right">0.61</td>
+<td align="right">0.73</td>
+<td align="right">0.66</td>
 <td align="right">0.62</td>
-<td align="right">0.69</td>
-<td align="right">0.54</td>
-<td align="right">0.74</td>
-<td align="right">0.67</td>
 <td align="right">0.62</td>
-<td align="right">0.77</td>
+<td align="right">0.47</td>
+<td align="right">0.83</td>
+<td align="right">0.71</td>
+<td align="right">0.83</td>
+<td align="right">0.62</td>
+<td align="right">0.67</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_10</td>
-<td align="right">0.62</td>
-<td align="right">0.57</td>
-<td align="right">0.90</td>
-<td align="right">0.65</td>
+<td align="right">0.61</td>
 <td align="right">0.73</td>
-<td align="right">0.56</td>
-<td align="right">0.84</td>
-<td align="right">0.81</td>
-<td align="right">0.78</td>
-<td align="right">0.62</td>
+<td align="right">0.65</td>
+<td align="right">0.57</td>
+<td align="right">0.96</td>
+<td align="right">0.52</td>
+<td align="right">0.79</td>
+<td align="right">0.80</td>
+<td align="right">0.68</td>
+<td align="right">0.50</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_11</td>
-<td align="right">0.77</td>
-<td align="right">0.81</td>
-<td align="right">0.71</td>
-<td align="right">0.89</td>
-<td align="right">0.84</td>
-<td align="right">0.58</td>
-<td align="right">0.79</td>
-<td align="right">0.89</td>
-<td align="right">0.56</td>
-<td align="right">0.77</td>
+<td align="right">0.70</td>
+<td align="right">0.47</td>
+<td align="right">0.69</td>
+<td align="right">0.67</td>
+<td align="right">0.74</td>
+<td align="right">0.72</td>
+<td align="right">0.66</td>
+<td align="right">0.70</td>
+<td align="right">0.67</td>
+<td align="right">0.75</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_12</td>
-<td align="right">0.61</td>
-<td align="right">0.61</td>
-<td align="right">0.47</td>
-<td align="right">0.84</td>
+<td align="right">0.70</td>
+<td align="right">0.64</td>
+<td align="right">0.73</td>
+<td align="right">0.74</td>
+<td align="right">0.70</td>
+<td align="right">0.70</td>
+<td align="right">0.63</td>
+<td align="right">0.70</td>
+<td align="right">0.69</td>
 <td align="right">0.76</td>
-<td align="right">0.66</td>
-<td align="right">0.51</td>
-<td align="right">0.80</td>
-<td align="right">0.59</td>
-<td align="right">0.68</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_13</td>
-<td align="right">0.72</td>
-<td align="right">0.64</td>
-<td align="right">0.66</td>
-<td align="right">0.74</td>
 <td align="right">0.65</td>
-<td align="right">0.88</td>
-<td align="right">0.70</td>
-<td align="right">0.73</td>
+<td align="right">0.68</td>
+<td align="right">0.60</td>
+<td align="right">0.74</td>
 <td align="right">0.82</td>
+<td align="right">0.71</td>
+<td align="right">0.55</td>
+<td align="right">0.60</td>
+<td align="right">0.90</td>
 <td align="right">0.68</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_14</td>
-<td align="right">0.98</td>
+<td align="right">0.52</td>
+<td align="right">0.68</td>
+<td align="right">0.66</td>
+<td align="right">0.67</td>
+<td align="right">0.72</td>
+<td align="right">0.68</td>
 <td align="right">0.69</td>
-<td align="right">0.70</td>
-<td align="right">0.70</td>
-<td align="right">0.77</td>
-<td align="right">0.75</td>
-<td align="right">0.54</td>
-<td align="right">0.80</td>
 <td align="right">0.71</td>
-<td align="right">0.82</td>
+<td align="right">0.77</td>
+<td align="right">0.80</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_15</td>
-<td align="right">0.72</td>
-<td align="right">0.82</td>
-<td align="right">0.56</td>
-<td align="right">0.75</td>
-<td align="right">0.66</td>
-<td align="right">0.59</td>
-<td align="right">0.76</td>
 <td align="right">0.83</td>
-<td align="right">0.79</td>
+<td align="right">0.63</td>
+<td align="right">0.81</td>
+<td align="right">0.75</td>
+<td align="right">0.67</td>
+<td align="right">0.50</td>
 <td align="right">0.68</td>
+<td align="right">0.72</td>
+<td align="right">0.80</td>
+<td align="right">0.53</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_16</td>
-<td align="right">0.45</td>
-<td align="right">0.56</td>
-<td align="right">0.85</td>
-<td align="right">0.73</td>
-<td align="right">0.77</td>
-<td align="right">0.54</td>
-<td align="right">0.89</td>
-<td align="right">0.70</td>
-<td align="right">0.53</td>
+<td align="right">0.41</td>
+<td align="right">0.69</td>
 <td align="right">0.64</td>
+<td align="right">0.72</td>
+<td align="right">0.64</td>
+<td align="right">0.82</td>
+<td align="right">0.62</td>
+<td align="right">0.64</td>
+<td align="right">0.71</td>
+<td align="right">0.82</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_17</td>
-<td align="right">0.90</td>
+<td align="right">0.92</td>
+<td align="right">0.62</td>
+<td align="right">0.73</td>
+<td align="right">0.51</td>
+<td align="right">0.74</td>
+<td align="right">0.81</td>
+<td align="right">0.88</td>
+<td align="right">0.82</td>
 <td align="right">0.71</td>
-<td align="right">0.86</td>
-<td align="right">0.49</td>
-<td align="right">0.56</td>
 <td align="right">0.68</td>
-<td align="right">0.68</td>
-<td align="right">0.58</td>
-<td align="right">0.77</td>
-<td align="right">0.78</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_18</td>
-<td align="right">0.71</td>
-<td align="right">0.72</td>
-<td align="right">0.68</td>
-<td align="right">0.53</td>
-<td align="right">0.87</td>
-<td align="right">0.73</td>
-<td align="right">0.77</td>
 <td align="right">0.64</td>
-<td align="right">0.83</td>
-<td align="right">0.70</td>
+<td align="right">0.67</td>
+<td align="right">0.71</td>
+<td align="right">0.59</td>
+<td align="right">0.85</td>
+<td align="right">0.67</td>
+<td align="right">0.76</td>
+<td align="right">0.68</td>
+<td align="right">0.75</td>
+<td align="right">0.73</td>
 </tr>
 <tr class="odd">
 <td align="left">Sample_19</td>
-<td align="right">0.57</td>
-<td align="right">0.60</td>
-<td align="right">0.57</td>
-<td align="right">0.60</td>
-<td align="right">0.74</td>
-<td align="right">0.61</td>
+<td align="right">0.80</td>
+<td align="right">0.55</td>
+<td align="right">0.73</td>
+<td align="right">0.72</td>
+<td align="right">0.53</td>
+<td align="right">0.73</td>
+<td align="right">0.72</td>
 <td align="right">0.69</td>
-<td align="right">0.68</td>
-<td align="right">0.70</td>
-<td align="right">0.66</td>
+<td align="right">0.61</td>
+<td align="right">0.55</td>
 </tr>
 <tr class="even">
 <td align="left">Sample_20</td>
-<td align="right">0.73</td>
-<td align="right">0.65</td>
-<td align="right">0.60</td>
-<td align="right">0.62</td>
-<td align="right">0.65</td>
-<td align="right">0.66</td>
+<td align="right">0.71</td>
 <td align="right">0.69</td>
-<td align="right">0.61</td>
-<td align="right">0.53</td>
-<td align="right">0.74</td>
+<td align="right">0.60</td>
+<td align="right">0.79</td>
+<td align="right">0.85</td>
+<td align="right">0.70</td>
+<td align="right">0.70</td>
+<td align="right">0.63</td>
+<td align="right">0.85</td>
+<td align="right">0.62</td>
 </tr>
 </tbody>
 </table>
 <p>We can calculate the mean of each sample by calculating the mean of each row.
 These 20 means are reported below.</p>
 <pre><code>      [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.669 0.605 0.699 0.644 0.664 0.720 0.687 0.714 0.658 0.708
-[2,] 0.761 0.653 0.722 0.746 0.716 0.666 0.701 0.718 0.642 0.648</code></pre>
-<p>The standard deviation of the 20 sample means reported above is 0.0397313.
+[1,] 0.759 0.644 0.671 0.753 0.697 0.649 0.726 0.659 0.676 0.681
+[2,] 0.677 0.699 0.693 0.690 0.692 0.671 0.742 0.705 0.663 0.714</code></pre>
+<p>The standard deviation of the 20 sample means reported above is 0.03256.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.1226966.
+The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.0956208.
 We can calculate the standard error from these sample values below,</p>
-<p><span class="math display">\[s = \frac{0.1226966}{\sqrt{10}} = 0.0388001.\]</span></p>
-<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0397313, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0388001.
+<p><span class="math display">\[s = \frac{0.0956208}{\sqrt{10}} = 0.0302379.\]</span></p>
+<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.03256, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0302379.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher <span class="math inline">\(N\)</span>) or a larger number of samples.</p>
 </div>
 </div>
@@ -1042,7 +1042,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 Upton, Graham, and Ian Cook. 2014. <em><span class="nocase">Dictionary of Statistics</span></em>. 3rd ed. Oxford: Oxford University Press.
 </div>
 <div id="ref-Wardlaw1985" class="csl-entry">
-Wardlaw, Alastair C. 2022. <em><span class="nocase">Practical Statistics for Experimental Biologists</span></em>. Chichester, UK: John Wiley &amp; Sons.
+Wardlaw, Alastair C. 1985. <em><span class="nocase">Practical Statistics for Experimental Biologists</span></em>. Chichester, UK: John Wiley &amp; Sons.
 </div>
 </div>
 <div class="footnotes">
