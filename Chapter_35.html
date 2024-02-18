@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-17" />
+<meta name="date" content="2024-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -596,7 +596,7 @@ In other words, what would the difference between group means be if we just mixe
 If we just do this once, then we cannot learn much.
 But if we randomly shuffle the groups many, many times (say at least 9999), then we could see what the difference between group means would look like just by chance; that is, if ovipositor length really was not different between SO1 and SO2.
 We could then compare our actual difference between mean ovipositor lengths to this null distribution, in which the difference between groups means really is random (it has to be, we randomised the groups ourselves!).
-The idea is easiest to see using an interactive application<a href="#fn95" class="footnote-ref" id="fnref95"><sup>95</sup></a> that builds a null distribution of differences between the mean of SO1 and SO2 and compares it to the observed difference of <span class="math inline">\(\bar{y}_{SO1} - \bar{y}_{SO2} =\)</span> 0.185.</p>
+The idea is easiest to see using an interactive application<a href="#fn87" class="footnote-ref" id="fnref87"><sup>87</sup></a> that builds a null distribution of differences between the mean of SO1 and SO2 and compares it to the observed difference of <span class="math inline">\(\bar{y}_{SO1} - \bar{y}_{SO2} =\)</span> 0.185.</p>
 <p>With modern computing power, we do not need to do this randomisation manually.
 A desktop computer can easily reshuffle the species identities and calculate a difference between means thousands of times in less than a second.
 The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 99999 times.</p>
@@ -608,10 +608,10 @@ Figure 35.4: A distribution of the difference between mean species ovipositor le
 </div>
 <p>Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2137 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2087 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
-<p><span class="math display">\[P = \frac{2137 + 1}{99999 + 1}.\]</span></p>
-<p>When we calculate the above, we get a value of 0.02138.
+<p><span class="math display">\[P = \frac{2087 + 1}{99999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.02088.
 Notice that the calculated value is assigned with a ‘P’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
@@ -652,12 +652,12 @@ To calculate our 95 per cent confidence intervals, we then only need to rank the
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Chapter 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sampled some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>3.291, 3, 2.929, 3.027, 2.658, 3.133, 3.071, 2.929, 2.658, 2.658, 3.178, 3.071, 3.133, 3.133, 3.21, 2.658, 2.929</p>
+<p>2.929, 3.027, 3, 3.406, 3.406, 3.291, 2.658, 2.658, 3.256, 2.817, 2.929, 2.817, 2.817, 2.817, 2.995, 3.256, 3.133</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 2.98.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.012.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.406, 3, 3.256, 3.133, 3.071, 3.133, 3.133, 2.995, 3.133, 3.406, 3.133, 3.291, 3.256, 2.658, 2.995, 3.21, 3.133</p>
-<p>The mean of the above sample is 3.138.
+<p>3.178, 3.133, 3.027, 3, 2.299, 3.256, 3, 3.133, 3.21, 2.929, 3.21, 2.976, 3.291, 3.406, 2.976, 2.976, 2.299</p>
+<p>The mean of the above sample is 3.018.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-187"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-187-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
@@ -668,7 +668,7 @@ Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17
 <p>The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.902 and UCI = 3.14.
+The values using the randomisation approach are LCI = 2.901 and UCI = 3.141.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.</p>
 </div>
@@ -819,8 +819,8 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="95">
-<li id="fn95"><p><a href="https://bradduthie.shinyapps.io/randomisation/">https://bradduthie.shinyapps.io/randomisation/</a><a href="Chapter_35.html#fnref95" class="footnote-back">↩︎</a></p></li>
+<ol start="87">
+<li id="fn87"><p><a href="https://bradduthie.shinyapps.io/randomisation/">https://bradduthie.shinyapps.io/randomisation/</a><a href="Chapter_35.html#fnref87" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

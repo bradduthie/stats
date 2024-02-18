@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-17" />
+<meta name="date" content="2024-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -625,7 +625,7 @@ As thorax length increases, so does abdomen length.</p>
 <h2><span class="header-section-number">30.2</span> The correlation coefficient<a href="Chapter_30.html#the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <strong>correlation coefficient</strong> formalises the association described in the previous section.
 It gives us a single number that defines how 2 variables are correlated.
-We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a>.
+We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn74" class="footnote-ref" id="fnref74"><sup>74</sup></a>.
 Positive values indicate that 2 variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
 Negative values indicate that 2 variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
 Values of zero (or not significantly different from zero, more on this later) indicate that 2 variables are uncorrelated (i.e., independent of one another).
@@ -656,7 +656,7 @@ Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="m
 If there is no such relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, then we will get <span class="math inline">\(cov_{x,y}\)</span> values closer to zero.</p>
 <p>The covariance can, at least in theory, be any real number.
 How low or high it is will depend on the magnitudes of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, just like <a href="Chapter_12.html#the-variance">the variance</a>.
-To get the Pearson product moment correlation coefficient<a href="#fn83" class="footnote-ref" id="fnref83"><sup>83</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
+To get the Pearson product moment correlation coefficient<a href="#fn75" class="footnote-ref" id="fnref75"><sup>75</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
 We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{y}\)</span>),</p>
 <p><span class="math display">\[r = \frac{cov_{x,y}}{s_{x} \times s_{y}}.\]</span></p>
 <p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the 2 variables, and the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger than this total.
@@ -893,7 +893,7 @@ We therefore want to test the null hypothesis that <span class="math inline">\(r
 <p>Note that <span class="math inline">\(H_{A}\)</span> above is for a two-tailed test, in which we do not care about direction.
 We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</span> is that the correlation coefficient is greater than (or less than) zero.</p>
 <p>How do we actually test the null hypothesis?
-As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn84" class="footnote-ref" id="fnref84"><sup>84</sup></a>,</p>
+As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true mean (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn76" class="footnote-ref" id="fnref76"><sup>76</sup></a>,</p>
 <p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
 <p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
 Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
@@ -915,7 +915,7 @@ Figure 30.4: Jamovi output for a test of the null hypothesis that thorax length 
 </p>
 </div>
 <p>From Figure 30.4, we can see that the sample <span class="math inline">\(r = 0.75858\)</span>, and the p-value is <span class="math inline">\(P = 0.00680\)</span>.
-Since our p-value is less than 0.05, we can reject the null hypothesis that fig wasp thorax and abdomen lengths are not correlated (an interactive application<a href="#fn85" class="footnote-ref" id="fnref85"><sup>85</sup></a> can make this more intuitive).</p>
+Since our p-value is less than 0.05, we can reject the null hypothesis that fig wasp thorax and abdomen lengths are not correlated (an interactive application<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a> can make this more intuitive).</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -935,11 +935,11 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="82">
-<li id="fn82"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref82" class="footnote-back">↩︎</a></p></li>
-<li id="fn83"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref83" class="footnote-back">↩︎</a></p></li>
-<li id="fn84"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_30.html#fnref84" class="footnote-back">↩︎</a></p></li>
-<li id="fn85"><p><a href="https://bradduthie.shinyapps.io/corr_click/" class="uri">https://bradduthie.shinyapps.io/corr_click/</a><a href="Chapter_30.html#fnref85" class="footnote-back">↩︎</a></p></li>
+<ol start="74">
+<li id="fn74"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref74" class="footnote-back">↩︎</a></p></li>
+<li id="fn75"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref75" class="footnote-back">↩︎</a></p></li>
+<li id="fn76"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_30.html#fnref76" class="footnote-back">↩︎</a></p></li>
+<li id="fn77"><p><a href="https://bradduthie.shinyapps.io/corr_click/" class="uri">https://bradduthie.shinyapps.io/corr_click/</a><a href="Chapter_30.html#fnref77" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-17" />
+<meta name="date" content="2024-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -506,7 +506,7 @@ But we might also have a dataset in which there is more than 1 type of group.
 For example, suppose we know that the fig wasps used in Chapters 24-26 actually came from 2 different trees (Tree A and Tree B).
 This would mean that there could be a confounding variable affecting wing length, violating assumption 2 from <a href="Chapter_24.html#assumptions-of-anova">Chapter 24.3</a>.
 If, for whatever reason, fig wasps on different trees have different wing lengths, then we should include tree as an explanatory variable in the ANOVA.
-Because we would then have 2 group types (species and tree), we would need a two-way ANOVA<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>.
+Because we would then have 2 group types (species and tree), we would need a two-way ANOVA<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
 Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just 2 of the 5 species (Het1 and SO2).
 Table 27.1 shows the fig wasp wing length dataset for the 2 species in a tidy format, which includes columns for 2 group types, species and tree.</p>
 <table>
@@ -566,7 +566,7 @@ But by including both group types in the same model (species and tree), we can t
 We can also see if there is any synergistic effect between groups, which is called an <strong>interaction effect</strong>.
 For example, if Het1 fig wasps had longer wing lengths than SO1 on Tree A, but shorter wing lengths than SO1 on Tree B, then we would say that there is an interaction between species and tree.
 Given this kind of interaction effect, it would not make sense to say that Het1 fig wasps have longer or shorter wings than SO1 because this would depend on the tree!</p>
-<p>This chapter will not delve into the mathematics of the two-way ANOVA<a href="#fn73" class="footnote-ref" id="fnref73"><sup>73</sup></a>.
+<p>This chapter will not delve into the mathematics of the two-way ANOVA<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a>.
 Working out a two-way ANOVA by hand requires similar, albeit more laborious, calculations of sum of squares and degrees of freedom than is needed for the one-way ANOVA in <a href="Chapter_24.html#one-way-anova">Chapter 24.2</a>.
 But the general concept is the same.
 The idea is to calculate the amount of the total variation attributable to different groups, or the interaction among group types.
@@ -724,9 +724,9 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="72">
-<li id="fn72"><p>Yes, it is possible to have a three-way or a four-way ANOVA, but having so many group types can get very messy very quickly, especially if we want to look at interactions between group types.<a href="Chapter_27.html#fnref72" class="footnote-back">↩︎</a></p></li>
-<li id="fn73"><p>For those interested, chapter 11 of <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> works all of this out step by step.<a href="Chapter_27.html#fnref73" class="footnote-back">↩︎</a></p></li>
+<ol start="64">
+<li id="fn64"><p>Yes, it is possible to have a three-way or a four-way ANOVA, but having so many group types can get very messy very quickly, especially if we want to look at interactions between group types.<a href="Chapter_27.html#fnref64" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>For those interested, chapter 11 of <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> works all of this out step by step.<a href="Chapter_27.html#fnref65" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

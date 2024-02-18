@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-17" />
+<meta name="date" content="2024-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -516,7 +516,7 @@ Worse, once written, there would be no easy way to make your program work with o
 To avoid all of this, you could instead just present your new method for data analysis and let other researchers write their own code for implementing it.
 But not all researchers will have the time or expertise to write their own code.</p>
 <p>Instead, R allows researchers to write new tools for data analysis using simple coding scripts.
-These scripts are organised into R packages, which can be uploaded by authors to the Comprehensive R Archive Network (CRAN)<a href="#fn96" class="footnote-ref" id="fnref96"><sup>96</sup></a>, then downloaded by users with a single command in R.
+These scripts are organised into R packages, which can be uploaded by authors to the Comprehensive R Archive Network (CRAN)<a href="#fn88" class="footnote-ref" id="fnref88"><sup>88</sup></a>, then downloaded by users with a single command in R.
 This way, there is no need for completely different software to be used for different analyses; all analyses can be written and run in R.</p>
 <p>The downside to all of this is that learning R can be a bit daunting at first.
 Running analyses is not done by pointing and clicking on icons as in jamovi.
@@ -528,8 +528,8 @@ Rather than questions to answer, this practical has tasks for you to try to comp
 <p>There are two ways that you can use R.
 The first way is to download R and Rstudio on your own computer.
 Both R and Rstudio are free to download and use, and work on any major operating system (Windows, Mac, and Linux).
-To download R, go to the Comprehensive R Archive Network<a href="#fn97" class="footnote-ref" id="fnref97"><sup>97</sup></a> and follow the instructions for your operating system (OS).
-To download Rstudio, go to the Posit website<a href="#fn98" class="footnote-ref" id="fnref98"><sup>98</sup></a> and choose the appropriate download for your operating system.</p>
+To download R, go to the Comprehensive R Archive Network (<a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>) and follow the instructions for your operating system (OS).
+To download Rstudio, go to the Posit website<a href="#fn89" class="footnote-ref" id="fnref89"><sup>89</sup></a> and choose the appropriate download for your operating system.</p>
 <p>If you cannot or do not want to download R and Rstudio on your own computer, then you can still use both by going to the Rstudio Cloud (<a href="https://rstudio.cloud/" class="uri">https://rstudio.cloud/</a>) and running Rstudio from a browser such as Firefox or Chrome.
 You will need to click the green “Get Started” button and sign up for a free account.
 When you open Rstudio either on your own computer or the cloud, you will see several windows open, including a console.
@@ -839,7 +839,7 @@ Figure 36.2: Bootstrapped mean values for 17 ovipositor lengths in an unnamed sp
 </div>
 <p>We can then print out the lower and upper confidence intervals, which report the value of the 2.5 per cent rank and 97.5 rank bootstrapped means, respectively.</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="Chapter_36.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(SO1_95s[[<span class="dv">2</span>]]);</span></code></pre></div>
-<pre><code>[1] 2.894353 3.133941</code></pre>
+<pre><code>[1] 2.907176 3.149118</code></pre>
 <p>Note that these values are not too far off the values of LCI = 2.896 and UCI = 3.164 calculated in the usual way in the previous exercise.</p>
 <blockquote>
 <p><strong>Task 11: Use the <code>simpleboot</code> function to calculate 95 per cent confidence intervals for SO2 mean ovipositor lengths.</strong></p>
@@ -853,10 +853,9 @@ Figure 36.2: Bootstrapped mean values for 17 ovipositor lengths in an unnamed sp
 
 <div class="footnotes">
 <hr />
-<ol start="96">
-<li id="fn96"><p><a href="https://cran.r-project.org/">https://cran.r-project.org/</a><a href="Chapter_36.html#fnref96" class="footnote-back">↩︎</a></p></li>
-<li id="fn97"><p><a href="https://cran.r-project.org/">https://cran.r-project.org/</a><a href="Chapter_36.html#fnref97" class="footnote-back">↩︎</a></p></li>
-<li id="fn98"><p><a href="https://posit.co/download/rstudio-desktop/#download">https://posit.co/download/rstudio-desktop/#download</a><a href="Chapter_36.html#fnref98" class="footnote-back">↩︎</a></p></li>
+<ol start="88">
+<li id="fn88"><p><a href="https://cran.r-project.org/">https://cran.r-project.org/</a><a href="Chapter_36.html#fnref88" class="footnote-back">↩︎</a></p></li>
+<li id="fn89"><p><a href="https://posit.co/download/rstudio-desktop/#download">https://posit.co/download/rstudio-desktop/#download</a><a href="Chapter_36.html#fnref89" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

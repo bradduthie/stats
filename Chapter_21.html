@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-17" />
+<meta name="date" content="2024-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -537,7 +537,7 @@ This does not sound nearly so unrealistic.
 If a fair coin will give us this much of a deviation from the expected 50 heads and 50 tails about 20% of the time, then perhaps our hypothesis is not so ridiculous, and we can conclude the coin is indeed fair.</p>
 <p>How improbable does our result need to be to cause us to reject our hypothesis that the coin is fair?
 There is no definitive answer to this question.
-In the biological and environmental sciences, we traditionally use a probability of 0.05, but this threshold is completely arbitrary<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>.
+In the biological and environmental sciences, we traditionally use a probability of 0.05, but this threshold is completely arbitrary<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.
 All it means is that we are willing to reject our hypothesis (i.e., declare the coin to be unfair) when it is actually true (i.e., the coin really <em>is</em> fair) about 5% of the time.
 Note that we do need to decide on some finite threshold for rejecting our hypothesis because even extremely rare events, by definition, can sometimes happen.
 In the case of 100 coin flips, there is always a small probability of getting <em>any</em> number of heads from a fair coin (although getting zero heads would be extraordinarily rare, <span class="math inline">\(P \approx 7.89 \times 10^{-31}\)</span>, i.e., a decimal followed by 30 zeros, then a 7).
@@ -599,15 +599,15 @@ In this case, we reject <span class="math inline">\(H_{0}\)</span> at both extre
 <p>In our hypothetical coin flipping example, we used <span class="math inline">\(P\)</span> to indicate the probability of getting a particular number of heads out of 100 total flips if our coin was fair.
 This <span class="math inline">\(P\)</span> (sometimes denoted with a lower-case <span class="math inline">\(p\)</span>) is what we call a ‘p-value’.</p>
 <blockquote>
-<p><strong>A p-value is the probability of getting a result as or more extreme than the one observed assuming <span class="math inline">\(H_{0}\)</span> is true.<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></strong></p>
+<p><strong>A p-value is the probability of getting a result as or more extreme than the one observed assuming <span class="math inline">\(H_{0}\)</span> is true.<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a></strong></p>
 </blockquote>
-<p>This is separated and in bold because it is a very important concept in statistics, and it is one that is very, very easy to misinterpret<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.
+<p>This is separated and in bold because it is a very important concept in statistics, and it is one that is very, very easy to misinterpret<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.
 A p-value is <em>not</em> the probability that the null hypothesis is true (we actually have no way of knowing this probability).
 It is also not the probability that an alternative hypothesis is false (we have no way of knowing this probability either).
 A p-value specifically <em>assumes that the null hypothesis is true</em>, then asks what the probability of an observed result would be <em>conditional upon this assumption</em>.
 In the case of our coin flipping example, we cannot really know the probability that the coin is fair or unfair (depending on your philosophy of statistics, this might not even make conceptual sense).
 But we can say that <strong>if</strong> the coin <strong>is</strong> fair, then an observation of <span class="math inline">\(\leq 45\)</span> would occur with a probability of <span class="math inline">\(P = 0.0967\)</span>.</p>
-<p>Before actually calculating a p-value, we typically set a threshold level (<span class="math inline">\(\alpha\)</span>) below which we will conclude that our p-value is <strong>statistically significant</strong><a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
+<p>Before actually calculating a p-value, we typically set a threshold level (<span class="math inline">\(\alpha\)</span>) below which we will conclude that our p-value is <strong>statistically significant</strong><a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.
 As mentioned in <a href="Chapter_21.html#how-ridiculous-is-our-hypothesis">section 21.1</a>, we traditionally set <span class="math inline">\(\alpha= 0.05\)</span> in the biological and environmental sciences (although rarely <span class="math inline">\(\alpha = 0.01\)</span> is used).
 This means that if <span class="math inline">\(P \leq 0.05\)</span>, then we reject <span class="math inline">\(H_{0}\)</span> and conclude that our observation is statistically significant.
 It also means that even when <span class="math inline">\(H_{0}\)</span> really is true (e.g., the coin is really fair), we will mistakenly reject <span class="math inline">\(H_{0}\)</span> with a probability of 0.05 (i.e., 5% of the time).
@@ -647,7 +647,7 @@ Table 21.2 below illustrates the relationship between whether or not <span class
 </tbody>
 </table>
 <p>Note that we never <em>accept</em> a null hypothesis; we just fail to reject it.
-Statistical tests are not really set up in a way that <span class="math inline">\(H_{0}\)</span> can be accepted<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>.
+Statistical tests are not really set up in a way that <span class="math inline">\(H_{0}\)</span> can be accepted<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>.
 The reason for this is subtle, but we can see the logic if we again consider the case of the fair coin.
 If <span class="math inline">\(H_{0}\)</span> is true, then the probability of flipping heads is <span class="math inline">\(P(heads) = 0.5\)</span> (i.e., <span class="math inline">\(H_{0}:\:P(heads) = 0.5\)</span>).
 But even if we fail to reject <span class="math inline">\(H_{0}\)</span>, this does not mean that we can conclude with any real confidence that our null hypothesis <span class="math inline">\(P(heads) = 0.5\)</span> is true.
@@ -690,12 +690,12 @@ Wasserstein, Ronald L., and Nicole A. Lazar. 2016. <span>“<span class="nocase"
 </div>
 <div class="footnotes">
 <hr />
-<ol start="45">
-<li id="fn45"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="Chapter_21.html#fnref45" class="footnote-back">↩︎</a></p></li>
-<li id="fn46"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref46" class="footnote-back">↩︎</a></p></li>
-<li id="fn47"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref47" class="footnote-back">↩︎</a></p></li>
-<li id="fn48"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-McShane2019" role="doc-biblioref">McShane et al. 2019</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this lab workbook (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref48" class="footnote-back">↩︎</a></p></li>
-<li id="fn49"><p>Note that we might, for non-statistical reasons conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<ol start="41">
+<li id="fn41"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="Chapter_21.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn43"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref43" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-McShane2019" role="doc-biblioref">McShane et al. 2019</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this lab workbook (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn45"><p>Note that we might, for non-statistical reasons conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref45" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-17" />
+<meta name="date" content="2024-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -585,7 +585,7 @@ The intercept is the point on the regression line where <span class="math inline
 This point is not actually visible in Figure 32.2 because the lowest latitude on the x-axis is 23.
 At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 <span class="math inline">\(mm^{3}\)</span>.
 If we were to extend this regression line all the way back to a latitude of 0, then we would predict a fruit volume of 8458.3.
-This is our intercept<a href="#fn88" class="footnote-ref" id="fnref88"><sup>88</sup></a> in Figure 32.2.</p>
+This is our intercept<a href="#fn80" class="footnote-ref" id="fnref80"><sup>80</sup></a> in Figure 32.2.</p>
 <p>The slope is the direction and steepness of the regression line.
 It describes how much our dependent variable changes if we increase the independent variable by 1.
 For example, how do we predict fruit volume to change if we increase latitude by 1 degree?
@@ -624,7 +624,7 @@ Next, we will show how these different values relate to one another mathematical
 <p>The equation for <span class="math inline">\(y\)</span> mathematically describes the regression line in Figures 32.2 and 32.3.
 This gives us the expected value of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>
 In other words, the equation tells us what <span class="math inline">\(y\)</span> will be <em>on average</em> for any given <span class="math inline">\(x\)</span>.
-Sometimes different letters are used to represent the same mathematical relationship, such as <span class="math inline">\(y = a + bx\)</span> or <span class="math inline">\(y = mx + b\)</span>, but the symbols used are not really important<a href="#fn89" class="footnote-ref" id="fnref89"><sup>89</sup></a>.
+Sometimes different letters are used to represent the same mathematical relationship, such as <span class="math inline">\(y = a + bx\)</span> or <span class="math inline">\(y = mx + b\)</span>, but the symbols used are not really important<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>.
 Here, <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> are used to make the transition to multiple regression in <a href="Chapter_33.html#Chapter_33">Chapter 33</a> clearer.</p>
 <p>For any specific value of <span class="math inline">\(x_{i}\)</span>, the corresponding <span class="math inline">\(y_{i}\)</span> can be described more generally,</p>
 <p><span class="math display">\[y_{i} = b_{0} + b_{1}x_{i} + \epsilon_{i}.\]</span></p>
@@ -662,7 +662,7 @@ There is only one line that fits.</p>
 In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,</p>
 <p><span class="math display">\[SS_{residual} = (-307.6)^{2} + (307.7)^2 + ... + (338.5)^{2}.\]</span></p>
 <p>For the regression in Figure 32.4, <span class="math inline">\(SS_{residual} =\)</span> 1034690.
-Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn90" class="footnote-ref" id="fnref90"><sup>90</sup></a> in which a random set of points are placed on scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
+Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a> in which a random set of points are placed on scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
 <p>We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
 The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.</p>
 </div>
@@ -671,7 +671,7 @@ The next section focuses on the coefficient of determination, which describes ho
 <p>We often want to know how well a regression line fits the data.
 In other words, are most of the data near the regression line (indicating a good fit), or are most far away from the regression line?
 How closely the data fit to the regression line is described by the <strong>coefficient of determination</strong> (<span class="math inline">\(R^{2}\)</span>).
-More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression equation<a href="#fn91" class="footnote-ref" id="fnref91"><sup>91</sup></a>,</p>
+More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression equation<a href="#fn83" class="footnote-ref" id="fnref83"><sup>83</sup></a>,</p>
 <p><span class="math display">\[R^{2} = 1 - \frac{SS_{residual}}{SS_{total}}.\]</span></p>
 <p>Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model (<span class="math inline">\(SS_{residual}\)</span>) to what the sum of squared residuals would be had we just used the mean value of <span class="math inline">\(y\)</span> (<span class="math inline">\(SS_{total}\)</span>).
 If <span class="math inline">\(SS_{residual}\)</span> is very small compared to <span class="math inline">\(SS_{total}\)</span>, then subtracting <span class="math inline">\(SS_{residual}/SS_{total}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
@@ -751,7 +751,7 @@ We can state this more formally as null and alternative hypotheses.</p>
 <p>The null hypothesis can be tested using an F-test of overall significance.
 This test makes use of the F-distribution (see <a href="Chapter_24.html#the-f-distribution">Chapter 24.1</a>) to calculate a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span>.
 Recall that the F-distribution describes the null distribution for a ratio of variances.
-In this case, the F-distribution is used to test for the overall significance of a linear regression model by comparing the variation explained by the model to its residual (i.e., unexplained) variation<a href="#fn92" class="footnote-ref" id="fnref92"><sup>92</sup></a>.
+In this case, the F-distribution is used to test for the overall significance of a linear regression model by comparing the variation explained by the model to its residual (i.e., unexplained) variation<a href="#fn84" class="footnote-ref" id="fnref84"><sup>84</sup></a>.
 If the ratio of explained to unexplained variation is sufficiently high, then we will get a low p-value and reject the null hypothesis.</p>
 </div>
 <div id="significance-of-the-intercept" class="section level3 hasAnchor" number="32.7.2">
@@ -858,12 +858,12 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 </div>
 <div class="footnotes">
 <hr />
-<ol start="88">
-<li id="fn88"><p>Biologically, a fruit volume of 8458.3 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_32.html#fnref88" class="footnote-back">↩︎</a></p></li>
-<li id="fn89"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_32.html#fnref89" class="footnote-back">↩︎</a></p></li>
-<li id="fn90"><p><a href="https://bradduthie.shinyapps.io/regr_click/">https://bradduthie.shinyapps.io/regr_click/</a><a href="Chapter_32.html#fnref90" class="footnote-back">↩︎</a></p></li>
-<li id="fn91"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref91" class="footnote-back">↩︎</a></p></li>
-<li id="fn92"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721718\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1687069\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034649\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1687069/1 = 1687069\)</span> and <span class="math inline">\(MS_{residual} = 1034649/5 = 206929.8\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1687069 / 206929.8 = 8.152857\)</span>.<a href="Chapter_32.html#fnref92" class="footnote-back">↩︎</a></p></li>
+<ol start="80">
+<li id="fn80"><p>Biologically, a fruit volume of 8458.3 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_32.html#fnref80" class="footnote-back">↩︎</a></p></li>
+<li id="fn81"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_32.html#fnref81" class="footnote-back">↩︎</a></p></li>
+<li id="fn82"><p><a href="https://bradduthie.shinyapps.io/regr_click/">https://bradduthie.shinyapps.io/regr_click/</a><a href="Chapter_32.html#fnref82" class="footnote-back">↩︎</a></p></li>
+<li id="fn83"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref83" class="footnote-back">↩︎</a></p></li>
+<li id="fn84"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721718\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1687069\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034649\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1687069/1 = 1687069\)</span> and <span class="math inline">\(MS_{residual} = 1034649/5 = 206929.8\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1687069 / 206929.8 = 8.152857\)</span>.<a href="Chapter_32.html#fnref84" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
