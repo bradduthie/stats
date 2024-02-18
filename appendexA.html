@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>B Uncertainty derivation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
+  <title>A Answers to chapter exercises | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="B Uncertainty derivation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
+  <meta property="og:title" content="A Answers to chapter exercises | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="B Uncertainty derivation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
+  <meta name="twitter:title" content="A Answers to chapter exercises | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="appendexA.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="Chapter_39.html"/>
+<link rel="next" href="uncertainty_derivation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -499,78 +499,32 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="uncertainty_derivation" class="section level1 hasAnchor" number="41">
-<h1><span class="header-section-number">B</span> Uncertainty derivation<a href="uncertainty_derivation.html#uncertainty_derivation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>It is not necessary to be able to derive the equations for propagating error from week 2, but working through the below might be interesting, and provide a better appreciation for why these formulas make sense.
-Another derivation is available in <span class="citation">Box, Hunter, and Hunter (<a href="#ref-Box1978" role="doc-biblioref">1978</a>)</span> (page 563), but this derivation is expressed in terms of variances and covariances, which is likely to be less helpful for this module.
-What follows is not intended to be rigorous, but to provide an intuitive understanding of why the equation for propagating error when adding or subtracting looks so different from the equation for propagating error when multiplying or dividing.</p>
-<p><strong>Propagation of error for addition and subtraction</strong>.</p>
-<p>For adding and subtracting error, we know that we get our variable <span class="math inline">\(Z\)</span> by adding <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. This is just how <span class="math inline">\(Z\)</span> is defined. We also know that <span class="math inline">\(Z\)</span> is going to have some error <span class="math inline">\(E_Z\)</span>, and we know that <span class="math inline">\(Z\)</span> plus or minus its error will equal <span class="math inline">\(X\)</span> plus or minus its error plus <span class="math inline">\(Y\)</span> plus or minus its error,</p>
-<p><span class="math display">\[(Z \pm E_Z) = (X  \pm E_X) + (Y \pm E_Y).\]</span></p>
-<p>Again, this is just our starting definition, but double-check to make sure it makes sense. We can now note that we know,</p>
-<p><span class="math display">\[Z =X+Y.\]</span></p>
-<p>If it is not intuitive as to why, just imagine that there is no error associated with the measurement of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> (i.e., <span class="math inline">\(E_{X} = 0\)</span> and <span class="math inline">\(E_{Y} = 0\)</span>).
-In this case, there cannot be any error in <span class="math inline">\(Z\)</span>. So, if we substitute <span class="math inline">\(X + Y\)</span> for <span class="math inline">\(Z\)</span>, we have the below,</p>
-<p><span class="math display">\[((X + Y) \pm E_Z) = (X  \pm E_X) + (Y \pm E_Y).\]</span></p>
-<p>By the <a href="https://en.wikipedia.org/wiki/Associative_property">associative property</a>, we can get rid of the parenthesis for addition and subtraction, giving us the below,</p>
-<p><span class="math display">\[X + Y \pm E_Z = X  \pm E_X + Y \pm E_Y.\]</span></p>
-<p>Now we can subtract <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> from both sides and see that we just have the errors of <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>,</p>
-<p><span class="math display">\[\pm E_Z = \pm E_X \pm E_Y.\]</span></p>
-<p>The plus/minus is a bother. Note, however, that for any real number <span class="math inline">\(m\)</span>, <span class="math inline">\(m^{2} = (-m)^2\)</span>. For example, if <span class="math inline">\(m = 4\)</span>, then <span class="math inline">\((4)2 = 16\)</span> and <span class="math inline">\((-4)2 = 16\)</span>, so we can square both sides to get positive numbers and make things easier,</p>
-<p><span class="math display">\[E_Z^2 = (\pm E_X \pm E_Y)^2.\]</span>
-We can expand the above,</p>
-<p><span class="math display">\[E_Z^2 = E_X^2 + E_Y^2 \pm2E_X E_Y.\]</span></p>
-<p>Now here is an assumption that we have not told you about elsewhere in the module.
-With the formulas that we have given you, we are assuming that the errors of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.
-To put it in more statistical terms, the covariance between the errors of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is assumed to be zero.
-Without going into the details (covariance will be introduced later in the module), if we assume that the covariance between these errors is zero, then we can also assume the last term of the above is zero, so we can get rid of it (i.e., <span class="math inline">\(2E_{X}E_{Y} = 0\)</span>),</p>
-<p><span class="math display">\[E_Z^2 = E_X^2 + E_Y^2.\]</span></p>
-<p>If we take the square root of both sides, then we have the equation from <a href="Chapter_7.html#Chapter_7">Chapter 7</a>,</p>
-<p><span class="math display">\[E_Z = \sqrt{E_X^2 + E_Y^2}.\]</span></p>
-<p><strong>Propagation of error for multiplication and division</strong>.</p>
-<p>Now that we have seen the logic for propagating errors in addition and subtraction, we can do the same for multiplication and division.
-We can start with the same point that we are getting our new variable <span class="math inline">\(Z\)</span> by multiplying <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> together, <span class="math inline">\(Z = XY\)</span>. So, if both <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have errors, the errors will be multiplicative as below,</p>
-<p><span class="math display">\[Z \pm E_Z = (X \pm E_X)(Y \pm E_Y).\]</span></p>
-<p>Again, all we are doing here is substituting <span class="math inline">\(Z\)</span>, <span class="math inline">\(X\)</span>, and <span class="math inline">\(Y\)</span>, for an expression in parentheses that includes the variable plus or minus its associated error.
-Now we can expand the right hand side of the equation,</p>
-<p><span class="math display">\[Z \pm E_Z = XY + Y E_X + X E_Y + E_X E_Y.\]</span></p>
-<p>As with our propagation of error in addition, here we are also going to assume that the sources of error for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent (i.e., their covariance is zero).
-This allows us to set <span class="math inline">\(E_{X}E_{Y} = 0\)</span>, which leaves us with the below,</p>
-<p><span class="math display">\[Z \pm E_Z = XY + Y E_X + X E_Y.\]</span></p>
-<p>Now, because <span class="math inline">\(Z = XY\)</span>, we can substitute on the left hand side of the equation,</p>
-<p><span class="math display">\[XY \pm E_Z = XY + Y E_X + X E_Y.\]</span></p>
-<p>Now we can subtract the <span class="math inline">\(XY\)</span> from both sides of the equation,</p>
-<p><span class="math display">\[\pm E_Z = Y E_X + X E_Y.\]</span></p>
-<p>Next, let us divide both sides by <span class="math inline">\(XY\)</span>,</p>
-<p><span class="math display">\[\frac{\pm E_Z}{XY} = \frac{Y E_X + X E_Y}{XY}.\]</span></p>
-<p>We can expand the right hand side,</p>
-<p><span class="math display">\[\frac{\pm E_Z}{XY} = \frac{Y E_X}{XY} +\frac{X E_Y}{XY}.\]</span></p>
-<p>This allows us to cancel out the <span class="math inline">\(Y\)</span> variables in the first term of the right hand side, and the <span class="math inline">\(X\)</span> variables in second term of the right hand side,</p>
-<p><span class="math display">\[\frac{\pm E_Z}{XY} = \frac{E_X}{X} +\frac{E_Y}{Y}.\]</span></p>
-<p>Again, we have the plus/minus on the left, so let us square both sides,</p>
-<p><span class="math display">\[\left(\frac{\pm E_Z}{XY}\right)^2 = \left(\frac{E_X}{X} +\frac{E_Y}{Y}\right)^2.\]</span></p>
-<p>We can expand the right hand side,</p>
-<p><span class="math display">\[\left(\frac{\pm E_Z}{XY}\right)^2 = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2 + 2\left(\frac{E_X}{X}\right)\left(\frac{E_Y}{Y}\right).\]</span></p>
-<p>Again, because we are assuming that the errors of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we can set the third term on the right hand side of the equation to zero.
-This leaves,</p>
-<p><span class="math display">\[\left(\frac{\pm E_Z}{XY}\right)^2 = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2.\]</span></p>
-<p>Note that <span class="math inline">\(XY = Z\)</span>, so we can substitute in the left hand side,</p>
-<p><span class="math display">\[\left(\frac{\pm E_Z}{Z}\right)^2 = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2.\]</span></p>
-<p>Now we can apply the square on the left hand side to the top and bottom, which gets rid of the plus/minus,</p>
-<p><span class="math display">\[\frac{E_Z^2}{Z^2} = \left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2.\]</span></p>
-<p>We can now multiply both sides of the equation by <span class="math inline">\(Z^2\)</span>,</p>
-<p><span class="math display">\[E_Z^2 = Z^2 \left(\left(\frac{E_X}{X}\right)^2 +\left(\frac{E_Y}{Y}\right)^2 \right).\]</span></p>
-<p>We can now take the square root of both sides,</p>
-<p><span class="math display">\[E_Z = \sqrt{ Z^2 \left( \left( \frac{E_X}{X}\right)^2 + \left(\frac{E_Y}{Y}\right)^2 \right) }.\]</span></p>
-<p>We can pull the <span class="math inline">\(Z^2\)</span> out of the square root,</p>
-<p><span class="math display">\[E_Z = Z \sqrt{\left( \frac{E_X}{X}\right)^2 + \left(\frac{E_Y}{Y}\right)^2}.\]</span></p>
-<p>That leaves us with the equation that was given in <a href="Chapter_7.html#Chapter_7">Chapter 7</a>.</p>
-
+<div id="appendexA" class="section level1 hasAnchor" number="40">
+<h1><span class="header-section-number">A</span> Answers to chapter exercises<a href="appendexA.html#appendexA" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Here are answers to the chapter exercises.</p>
+<div id="chapter-3" class="section level2 hasAnchor" number="40.1">
+<h2><span class="header-section-number">A.1</span> Chapter 3<a href="appendexA.html#chapter-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+<div id="chapter-8" class="section level2 hasAnchor" number="40.2">
+<h2><span class="header-section-number">A.2</span> Chapter 8<a href="appendexA.html#chapter-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="chapter-14" class="section level2 hasAnchor" number="40.3">
+<h2><span class="header-section-number">A.3</span> Chapter 14<a href="appendexA.html#chapter-14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="chapter-20" class="section level2 hasAnchor" number="40.4">
+<h2><span class="header-section-number">A.4</span> Chapter 20<a href="appendexA.html#chapter-20" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="chapter-23" class="section level2 hasAnchor" number="40.5">
+<h2><span class="header-section-number">A.5</span> Chapter 23<a href="appendexA.html#chapter-23" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="chapter-28" class="section level2 hasAnchor" number="40.6">
+<h2><span class="header-section-number">A.6</span> Chapter 28<a href="appendexA.html#chapter-28" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="chapter-31" class="section level2 hasAnchor" number="40.7">
+<h2><span class="header-section-number">A.7</span> Chapter 31<a href="appendexA.html#chapter-31" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="chapter-34" class="section level2 hasAnchor" number="40.8">
+<h2><span class="header-section-number">A.8</span> Chapter 34<a href="appendexA.html#chapter-34" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
 </div>
             </section>
@@ -578,8 +532,8 @@ Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistic
           </div>
         </div>
       </div>
-<a href="appendexA.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chapter_39.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="uncertainty_derivation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
