@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -592,40 +592,53 @@ For example, we might flip a coin 40 times and observe 22 heads and 18 tails.
 Suppose that we do not know in advance the coin is fair, so we cannot be sure that the probability of it landing on heads is <span class="math inline">\(p = 0.5\)</span>.
 From our collected data, our estimated probability of landing on heads is, <span class="math inline">\(\hat{p} = 22/40 = 0.55\)</span>.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>
 But how would we calculate the CIs around this estimate?
-In this case, the formula is similar to ones for LCI and UCI from the normal distribution shown earlier.
-We just need to note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>
+There are multiple ways to calculate CIs around proportions.
+One common method relies on a normal approximation; that is, approximating the discrete counts of the binomial distribution using the continuous normal distribution.
+For example, we can note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>
 This means that the standard deviation of <span class="math inline">\(p\)</span> is <span class="math inline">\(\sigma = \sqrt{p\left(1 - p\right)}\)</span>, and <span class="math inline">\(p\)</span> has a standard error,</p>
 <p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
-<p>We can use this standard error in the same equation from earlier for calculating confidence intervals.
+<p>We could then use this standard error in the same equation from earlier for calculating confidence intervals.
 For example, if we wanted to calculate the lower 95% CI for <span class="math inline">\(\hat{p} = 0.55\)</span>,</p>
 <p><span class="math display">\[LCI_{95\%} = 0.55 - 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.396\]</span></p>
 <p>Similarly, to calculate the upper 95% CI,</p>
 <p><span class="math display">\[UCI_{95\%} = 0.55 + 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.704.\]</span></p>
 <p>Our conclusion is that, based on our sample, 95% of the time we flip a coin 40 times, the true mean <span class="math inline">\(p\)</span> will be somewhere between 0.396 and 0.704.
-These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a></p>
-<p>We can do another example, this time with our previous case of the probability of testing positive for Covid-19 at <span class="math inline">\(\hat{p} = 0.025\)</span>.
-Suppose this value of <span class="math inline">\(\hat{p}\)</span> was calculated from a survey of 400 people (<span class="math inline">\(N = 400\)</span>).
-We might want to be especially cautious about estimating CIs around such an important probability, so perhaps we prefer to use 99% CIs instead of 95% CIs.
-In this case, we use <span class="math inline">\(z = 2.58\)</span> as with the normal distribution example from earlier.
-But we apply this z score using the binomial standard error to get the LCI,</p>
-<p><span class="math display">\[LCI_{99\%} = 0.025 - 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.00486\]</span></p>
-<p>Similarly, we get the UCI,</p>
-<p><span class="math display">\[UCI_{99\%} = 0.025 + 2.58 \sqrt{\frac{0.025\left(1 - 0.025\right)}{400}} = 0.0451.\]</span></p>
-<p>Notice that the LCI and UCI differ here by about an order of magnitude (i.e., the UCI is about 10 times higher than the LCI).</p>
-<p>In summary, this chapter has focused on what confidence intervals are and how to calculate them.
-<a href="Chapter_19.html#Chapter_19">Chapter 19</a> will turn to the t-interval, what it is and why it is used.</p>
+These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>
+This CI is called the Wald interval.
+It is easy to calculate, and is instructive for showing another way that CIs can be calculated.
+But it does not actually do a very good job of accurately producing 95% CIs around a proportion, especially when our proportion is very low or high <span class="citation">(<a href="#ref-Schilling2014" role="doc-biblioref">Schilling and Doi 2014</a>; <a href="#ref-Andersson2023" role="doc-biblioref">Andersson 2023</a>)</span>.</p>
+<p>In fact, there are many different methods proposed to calculate binomial CIs, and a lot of statistical research has been done to compare and contrast these methods <span class="citation">(<a href="#ref-Reed2007" role="doc-biblioref">Reed 2007</a>; <a href="#ref-Thulin2014" role="doc-biblioref">Thulin 2014</a>; <a href="#ref-Schilling2014" role="doc-biblioref">Schilling and Doi 2014</a>)</span>.
+Jamovi uses Clopper-Pearson CIs <span class="citation">(<a href="#ref-Clopper1934" role="doc-biblioref">Clopper and Pearson E. S. 1934</a>)</span>.
+Instead of relying on a normal approximation, the Clopper-Pearson method uses the binomial probability distribution (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>) to build CIs.
+This is what is known as an ‘exact method’.
+Clopper-Pearson CIs tend to err on the side of caution (they are often made wider than necessary), but they are a much better option than Wald CIs <span class="citation">(<a href="#ref-Reed2007" role="doc-biblioref">Reed 2007</a>)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Andersson2023" class="csl-entry">
+Andersson, Per Gösta. 2023. <span>“<span class="nocase">The Wald Confidence Interval for a Binomial p as an Illuminating "Bad" Example</span>.”</span> <em>American Statistician</em>. <a href="https://doi.org/10.1080/00031305.2023.2183257">https://doi.org/10.1080/00031305.2023.2183257</a>.
+</div>
 <div id="ref-Box1978" class="csl-entry">
 Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+</div>
+<div id="ref-Clopper1934" class="csl-entry">
+Clopper, C. J., and Pearson E. S. 1934. <span>“<span class="nocase">The use of confdience or fiducial limits illustrated in the case of the binomial</span>.”</span> <em>Biometrika</em> 26 (4): 404–13.
 </div>
 <div id="ref-Ellison2004" class="csl-entry">
 Ellison, Aaron M. 2004. <span>“<span class="nocase">Bayesian inference in ecology</span>.”</span> <em>Ecology Letters</em> 7 (6): 509–20. <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">https://doi.org/10.1111/j.1461-0248.2004.00603.x</a>.
 </div>
+<div id="ref-Reed2007" class="csl-entry">
+Reed, James F. 2007. <span>“<span class="nocase">Better binomial confidence intervals</span>.”</span> <em>Journal of Modern Applied Statistical Methods</em> 6 (1): 153–61. <a href="https://doi.org/10.22237/jmasm/1177992840">https://doi.org/10.22237/jmasm/1177992840</a>.
+</div>
+<div id="ref-Schilling2014" class="csl-entry">
+Schilling, Mark F., and Jimmy A. Doi. 2014. <span>“<span class="nocase">A Coverage Probability Approach to Finding an Optimal Binomial Confidence Procedure</span>.”</span> <em>American Statistician</em> 68 (3): 133–45. <a href="https://doi.org/10.1080/00031305.2014.899274">https://doi.org/10.1080/00031305.2014.899274</a>.
+</div>
 <div id="ref-Sokal1995" class="csl-entry">
 Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+</div>
+<div id="ref-Thulin2014" class="csl-entry">
+Thulin, Måns. 2014. <span>“<span class="nocase">The cost of using exact confidence intervals for a binomial proportion</span>.”</span> <em>Electronic Journal of Statistics</em> 8 (1): 817–40. <a href="https://doi.org/10.1214/14-EJS909">https://doi.org/10.1214/14-EJS909</a>.
 </div>
 </div>
 <div class="footnotes">

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -554,7 +554,7 @@ The best way to get started is with an instructive example.</p>
 This tree is distributed throughout the Baja peninsula, and in parts of mainland Mexico.
 Fig trees and the wasps that develop inside of them have a fascinating ecology, but for now we will just focus on the morphologies of 2 closely related species as an example.
 The fig wasps in Figure 35.1 are 2 unnamed species of the genus <em>Idarnes</em>, which can refer to simply as ‘Short-ovipositor 1’ (SO1) and ‘Short-ovipositor 2’ (SO2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-181"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-182"></span>
 <img src="img/fig_wasps.jpg" alt="A 2 panel figure is shown, with 2 black wasps under a microscope slide shown side by side, each of which has an ovipositor about twice its body length." width="100%" />
 <p class="caption">
 Figure 35.1: Image of 2 fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’
@@ -563,8 +563,8 @@ Figure 35.1: Image of 2 fig wasp species, roughly 3 mm in length, labelled ‘SO
 <p>The reason that these 2 species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as the ones above.</p>
 <p>Suppose that we have some data on the lengths of the ovipositors from each species.
 We might want to know whether the mean ovipositor length differs between the 2 species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 of the species ‘SO1’, and 15 of the species ‘SO2’.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-182"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-182-1.png" alt="A 2 panel figure showing a histogram in each panel, the left with a histogram of SO1 ovipositor length and the right with another SO2 ovipositor length. Histograms are roughly normally distributed" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-183"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-183-1.png" alt="A 2 panel figure showing a histogram in each panel, the left with a histogram of SO1 ovipositor length and the right with another SO2 ovipositor length. Histograms are roughly normally distributed" width="672" />
 <p class="caption">
 Figure 35.2: Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.
 </p>
@@ -580,8 +580,8 @@ We can therefore calculate <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y
 <p><span class="math display">\[t_{\bar{y}_{SO1} - \bar{y}_{SO2}} = \frac{3.03 - 2.845}{0.077}.\]</span></p>
 <p>After we calculate our t-statistic as <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419, we would use the t-distribution to find the p-value (or, rather, get jamovi to do this for us).
 Figure 35.3 shows the t-distribution for 30 degrees of freedom with an arrow pointing at the value of <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-183"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-183-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around 2.419." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-184"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-184-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around 2.419." width="672" />
 <p class="caption">
 Figure 35.3: A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.
 </p>
@@ -600,18 +600,18 @@ The idea is easiest to see using an interactive application<a href="#fn87" class
 <p>With modern computing power, we do not need to do this randomisation manually.
 A desktop computer can easily reshuffle the species identities and calculate a difference between means thousands of times in less than a second.
 The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 99999 times.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-184"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-184-1.png" alt="A histogram with 120 narrow bars that form a bell shaped distribution around a mean of 0. An arrow points out a value of mean SO1 minus mean SO2" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-185"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-185-1.png" alt="A histogram with 120 narrow bars that form a bell shaped distribution around a mean of 0. An arrow points out a value of mean SO1 minus mean SO2" width="672" />
 <p class="caption">
 Figure 35.4: A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.
 </p>
 </div>
 <p>Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2158 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2076 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
-<p><span class="math display">\[P = \frac{2158 + 1}{99999 + 1}.\]</span></p>
-<p>When we calculate the above, we get a value of 0.02159.
+<p><span class="math display">\[P = \frac{2076 + 1}{99999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.02077.
 Notice that the calculated value is assigned with a ‘P’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
@@ -652,15 +652,15 @@ To calculate our 95 per cent confidence intervals, we then only need to rank the
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Chapter 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sampled some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>2.658, 2.299, 3.133, 3.178, 3.133, 3.406, 3.21, 3.133, 3.178, 3.071, 3.406, 3.178, 3.133, 3.21, 3.133, 3.133, 3</p>
+<p>3.071, 2.929, 2.929, 3.133, 2.929, 3.256, 3.071, 3.133, 3.178, 2.929, 3.027, 3, 2.976, 2.658, 3.21, 2.995, 3.071</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.094.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.029.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.027, 3.133, 3.178, 3.133, 3.133, 3.406, 2.817, 2.658, 2.817, 2.929, 3.178, 2.995, 3.178, 3.256, 2.995, 2.299, 2.299</p>
-<p>The mean of the above sample is 2.967.
+<p>3.406, 3.027, 3.133, 3.133, 2.299, 3.071, 2.299, 3.027, 2.817, 3.256, 3.133, 2.658, 3.027, 2.658, 2.929, 2.658, 2.299</p>
+<p>The mean of the above sample is 2.872.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-187"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-187-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-188"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-188-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
 <p class="caption">
 Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17 measurements of a fig wasp species collected from Baja, Mexico. A total of 10000 bootstrapped means are shown, and arrows indicate the location of the 2.5 per cent (LCI) and 97.5 per cent (UCI) ranked boostrapped mean values.
 </p>
@@ -668,7 +668,7 @@ Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17
 <p>The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.904 and UCI = 3.14.
+The values using the randomisation approach are LCI = 2.902 and UCI = 3.141.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.</p>
 </div>
@@ -677,7 +677,7 @@ But instead of finding confidence intervals of the sample means around the true 
 <p>The previous examples of hypothesis testing and bootstrapping involved resampling from existing data sets to address a statistical question.
 But we can also use randomisation in cases in which it is impossible to derive the null distribution from the data.
 In this last example, the goal will be to test whether or not fig trees (Figure 35.6) are randomly distributed across a fixed sampling area.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-188"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-189"></span>
 <img src="img/fig_tree.jpg" alt="A fig tree is shown with a wide crown and a man in beige clothing is looking up from underneath it." width="100%" />
 <p class="caption">
 Figure 35.6: A tree of the Sonoran Desert Rock Fig from Baja, Mexico.
@@ -687,7 +687,7 @@ Figure 35.6: A tree of the Sonoran Desert Rock Fig from Baja, Mexico.
 In Baja, Mexico, a dataset of 59 trees was collected.
 The first 6 rows of this dataset with tree locations are shown in Table 35.1.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-190">Table 35.1: </span>Latitudes, longitudes, and elevations of Sonoran Desert Rock Fig trees collected from a sample site in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-191">Table 35.1: </span>Latitudes, longitudes, and elevations of Sonoran Desert Rock Fig trees collected from a sample site in Baja, Mexico.</caption>
 <thead>
 <tr class="header">
 <th align="left">Site</th>
@@ -744,8 +744,8 @@ The first 6 rows of this dataset with tree locations are shown in Table 35.1.</p
 </table>
 <p>We can plot the latitude and longitude of each of the 59 trees below.
 Figure 35.7 shows the study plot at the field site, which was set to be from latitude 28.289 to 28.2918 and longitude -113.1145 to -113.1095.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-191"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-191-1.png" alt="A brown area is shown with a collection of black dots on it; the x-axis and y-axis give longitude and latitude, respectively." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-192"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-192-1.png" alt="A brown area is shown with a collection of black dots on it; the x-axis and y-axis give longitude and latitude, respectively." width="100%" />
 <p class="caption">
 Figure 35.7: Latitude and longitude locations of Sonoran Desert Rock Fig trees from Baja, Mexico.
 </p>
@@ -763,16 +763,16 @@ If we repeat this procedure a large number of times, then we can build a null di
 <p>Given the random placement of these trees, we can find the mean distance to the nearest neighbouring tree, calculated across all of the randomly placed trees.
 This mean nearest neighbour distance is then stored so that a null distribution can be built.
 We can see what these randomly placed trees look like by plotting some of the iterations in Figure 35.8.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-193"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-193-1.png" alt="A 4 by 4 arrangement of 16 panels is shown with brown boxes; in each brown box, there are a large number of randomly scatter black points." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-194"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-194-1.png" alt="A 4 by 4 arrangement of 16 panels is shown with brown boxes; in each brown box, there are a large number of randomly scatter black points." width="100%" />
 <p class="caption">
 Figure 35.8: Sixteen separate random allocations of latitude and longitude locations within a sampling are of Sonoran Desert Rock Fig trees from Baja, Mexico. There are 59 total locations randomly allocated for each panel, each representing an individual fig tree.
 </p>
 </div>
 <p>In Figure 35.9, the distribution of mean distance to the nearest neighbour is plotted for the 9999 randomly generated tree study areas.
 The arrow shows the actual observed mean distance between nearest neighbours, as calculated form the original data set.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-194"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-194-1.png" alt="A histogram showing a mostly normal distribution is shown with mean nearest neighbour distance on the x-axis, and an arrow pointing almost right down the middle of the distribution." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-195"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-195-1.png" alt="A histogram showing a mostly normal distribution is shown with mean nearest neighbour distance on the x-axis, and an arrow pointing almost right down the middle of the distribution." width="100%" />
 <p class="caption">
 Figure 35.9: The distribution of mean neareast neighbour distance from 9999 random simulations of 59 latitude and longitidue locations within a field site in Baja, Mexico. The black arrow indicates mean nearest neighbour distance for 59 observed trees from the field site.
 </p>

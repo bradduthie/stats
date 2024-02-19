@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -528,8 +528,8 @@ We then compare this null distribution to our test statistic to find the probabi
 <p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
 There is a lot to unpack in the previous sentence, so we can go through it step by step.
 First, we can take another look at the standard normal distribution from <a href="Chapter_15.html#normal-distribution">Chapter 15.4.4</a> (Figure 29.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-135"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-135-1.png" alt="A plot of a bell curve, shaded in grey and centered at the x-axis on a value of zero is shown. The x axis is labelled 'x'." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-136"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-136-1.png" alt="A plot of a bell curve, shaded in grey and centered at the x-axis on a value of zero is shown. The x axis is labelled 'x'." width="672" />
 <p class="caption">
 Figure 29.1: Recreation of Figure 15.9, a standard normal probability distribution
 </p>
@@ -549,8 +549,8 @@ Of course, this <span class="math inline">\(\chi^{2}\)</span> value would have b
 And if we are sampling randomly from the normal distribution, we should not expect to get the same <span class="math inline">\(\chi^{2}\)</span> value from 4 new random standard normal deviates.
 We can therefore ask, if we were to keep sampling 4 standard normal deviates and calculating new <span class="math inline">\(\chi^{2}\)</span> values, what would be the distribution of these <span class="math inline">\(\chi^{2}\)</span> values?
 The answer is shown in Figure 29.2.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-136"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-136-1.png" alt="Plot of a curved distribution that rapidly increases to a maximum at around 2 then slowly decreases." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-137"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-137-1.png" alt="Plot of a curved distribution that rapidly increases to a maximum at around 2 then slowly decreases." width="672" />
 <p class="caption">
 Figure 29.2: A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.
 </p>
@@ -563,8 +563,8 @@ Similarly, had we sampled more than 4 <span class="math inline">\(x_{i}\)</span>
 The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(N\)</span>), or more specifically the degrees of freedom (df, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = N - 1\)</span>.
 This is the same idea as the t-distribution from <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, which also changed shape depending on the degrees of freedom.
 Figure 29.3 shows the different <span class="math inline">\(\chi^{2}\)</span> probability density distributions for different degrees of freedom.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-137"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-137-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different Chi-square distributions with different degrees of freedom." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-138"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-138-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different Chi-square distributions with different degrees of freedom." width="672" />
 <p class="caption">
 Figure 29.3: Probability density functions for 3 different Chi-square distributions, each of which have different degrees of freedom (df).
 </p>
@@ -610,8 +610,8 @@ We can now check to see if the test statistic <span class="math inline">\(\chi^{
 There are <span class="math inline">\(N = 3\)</span> categories of counts (small, medium, and large), meaning that there are <span class="math inline">\(df = 3 - 1 = 2\)</span> degrees of freedom.
 As it turns out, if the null hypothesis is true, then the probability of observing a value of <span class="math inline">\(\chi^{2} = 1.2\)</span> or higher (i.e., the p-value) is <span class="math inline">\(P = 0.5488\)</span>.
 Figure 29.4 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> distribution plotted, with the area above the test statistic <span class="math inline">\(\chi^{2} = 1.2\)</span> shaded in grey.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-138"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-138-1.png" alt="Plot of curved distribution that starts around 0.5 and decreases, asymptoting toward 0." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-139"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-139-1.png" alt="Plot of curved distribution that starts around 0.5 and decreases, asymptoting toward 0." width="672" />
 <p class="caption">
 Figure 29.4: A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.
 </p>
@@ -648,7 +648,7 @@ We can state this as a null and alternative hypothesis.</p>
 </ul>
 <p>Consider the data in Table 29.1, which show counts of Android versus MacOS users and their dam choices.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-139">Table 29.1: </span>Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).</caption>
+<caption><span id="tab:unnamed-chunk-140">Table 29.1: </span>Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -694,7 +694,7 @@ If dam size is not associated with OS, then we would predict that the relative f
 For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1</p>
 <table>
-<caption><span id="tab:unnamed-chunk-140">Table 29.2: </span>Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
+<caption><span id="tab:unnamed-chunk-141">Table 29.2: </span>Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -736,7 +736,7 @@ For example, the probability of a player using Android is 0.5 and choosing a sma
 The probability of a player using Android <strong>and</strong> choosing a medium dam is <span class="math inline">\(0.5 \times 0.4 = 0.2\)</span>.
 We can fill in all of these joint probabilities in a new Table 29.3.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-141">Table 29.3: </span>Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<caption><span id="tab:unnamed-chunk-142">Table 29.3: </span>Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -778,7 +778,7 @@ For example, the expected count of players who use Android and choose a small da
 Table 29.4 fills in all of the expected counts.
 Note that the sum of all the counts equals our sample size of 60.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-142">Table 29.4: </span>Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<caption><span id="tab:unnamed-chunk-143">Table 29.4: </span>Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -835,7 +835,7 @@ There is another way of getting these expected values that is a bit faster (and 
 If we wanted to, we could sum the rows and columns of our original observations.
 Table 29.5 shows the original observations with the sum of each row and column.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-143">Table 29.5: </span>Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
+<caption><span id="tab:unnamed-chunk-144">Table 29.5: </span>Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
 <thead>
 <tr class="header">
 <th></th>

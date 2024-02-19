@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -508,7 +508,7 @@ The idea is to rank all values in the dataset, ignoring group, then calculate a 
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
 For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-117">Table 26.1: </span>Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<caption><span id="tab:unnamed-chunk-118">Table 26.1: </span>Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -557,7 +557,7 @@ Consequently, we should probably have used the non-parametric Kruskall-Wallis H 
 To do this, we first need to rank all of the values in Table 26.1.
 There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-118">Table 26.2: </span>Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-119">Table 26.2: </span>Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -612,7 +612,7 @@ But most statistical programs such as jamovi compare H to a Chi-square distribut
 <p>The output of a Kruskall-Wallis H test is quite minimal and easy to read.
 Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 Figure 26.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing lengths data.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-120"></span>
 <img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskall-Wallis H test." width="60%" />
 <p class="caption">
 Figure 26.1: Jamovi output table for a non-parametric Kruskall-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for 5 different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.

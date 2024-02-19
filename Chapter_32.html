@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -520,7 +520,7 @@ For example, if we increase X by 1, how much will Y change?</p>
 <h2><span class="header-section-number">32.1</span> Visual interpretation of regression<a href="Chapter_32.html#visual-interpretation-of-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A visual example using a scatterplot can illustrate one way to think about regression.
 Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-161"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-162"></span>
 <img src="img/FigTree2.jpg" alt="Two panels with green fig fruits are shown on branches with fig wasps on the surface of them, and a panel to the right shows a man on a rock reaching into the crown of a fig tree with a stick." width="100%" />
 <p class="caption">
 Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.
@@ -528,7 +528,7 @@ Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico
 </div>
 <p>A sample of fig fruits from different latitudes is shown in Table 32.1.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-162">Table 32.1: </span>Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-163">Table 32.1: </span>Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Latitude</td>
@@ -557,8 +557,8 @@ To start answering this question, we can plot the relationship between the 2 var
 We want to predict fruit volume from latitude, meaning that fruit volume <em>depends on</em> latitude.
 Fruit volume is therefore the dependent variable, and we should plot it on the y-axis.
 Latitude is our independent variable, and we should plot it on the x-axis (Figure 32.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-163"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-163-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; a thin dotted line is horizontal across the plot." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-164"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-164-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; a thin dotted line is horizontal across the plot." width="672" />
 <p class="caption">
 Figure 32.2: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.
 </p>
@@ -604,8 +604,8 @@ But this is not the case.
 None of the 7 points in Figure 32.2 fall exactly on the line, so there is some unexplained variation (i.e., some error) in predicting fruit volume from latitude.
 To map each fruit’s latitude to its corresponding volume, we therefore need one more number.
 This number is the <strong>residual</strong>, and it describes how far away a point is from the regression line (Figure 32.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-164"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-164-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit, and one point is highlighted in red." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-165"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-165-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit, and one point is highlighted in red." width="672" />
 <p class="caption">
 Figure 32.3: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point, one of which is highlighted in red.
 </p>
@@ -646,8 +646,8 @@ The next section explains how the regression line is actually calculated.</p>
 <h2><span class="header-section-number">32.4</span> Regression line calculation<a href="Chapter_32.html#regression-line-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The regression line is defined by its relationship to the residual values.
 Figure 32.4 shows the same regression as in Figures 32.2 and 32.3, but with the values of the residuals written next to each point.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-165"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-165-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-166"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-166-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
 <p class="caption">
 Figure 32.4: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
 </p>
@@ -677,8 +677,8 @@ More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much 
 If <span class="math inline">\(SS_{residual}\)</span> is very small compared to <span class="math inline">\(SS_{total}\)</span>, then subtracting <span class="math inline">\(SS_{residual}/SS_{total}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
 This large <span class="math inline">\(R^{2}\)</span> means that the model is doing a good job of explaining variation in the data.
 Figure 32.5 shows some examples of scatterplots with different <span class="math inline">\(R^{2}\)</span> values.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-166"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-166-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with regression lines between x and y variables and a coefficient of determination shown in the upper corner." width="480" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-167"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-167-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with regression lines between x and y variables and a coefficient of determination shown in the upper corner." width="480" />
 <p class="caption">
 Figure 32.5: Examples of scatterplots with different coefficients of determination (R-squared).
 </p>
@@ -688,8 +688,8 @@ To do this, we need to calculate the sum of the squared residual values (<span c
 From the previous section, we have already found that <span class="math inline">\(SS_{residaul} = 1034567\)</span>.
 Now, to get <span class="math inline">\(SS_{total}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Chapter 12.3</a>).
 We can visualise this as the sum of squared deviations from the mean fruit volume of <span class="math inline">\(\bar{y} =\)</span> 1930.1 instead of the value predicted by the regression line (Figure 32.6).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-167"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-167-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-168"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-168-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
 <p class="caption">
 Figure 32.6: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).
 </p>
@@ -723,8 +723,8 @@ This is in contrast to heteroscedasticity, which means that the variance is not 
 </ol>
 <p>Figure 32.7 shows a classic example of heteroscedasticity.
 Notice that the variance of <span class="math inline">\(y_{i}\)</span> values around the regression line increases with increasing <span class="math inline">\(x\)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-168"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-168-1.png" alt="A scatterplot is shown in which data points increase in variance around a regression line as the x variable increases, forming a funnel shape with the narrow point on the left." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-169"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-169-1.png" alt="A scatterplot is shown in which data points increase in variance around a regression line as the x variable increases, forming a funnel shape with the narrow point on the left." width="672" />
 <p class="caption">
 Figure 32.7: A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.
 </p>
@@ -786,7 +786,7 @@ But we often do care if our dependent variable is increasing or decreasing with 
 <p>If we run the simple regression of fig fruit latitude against fruit volume, we can find output statistics <span class="math inline">\(R^{2} = 0.6198\)</span>, and <span class="math inline">\(P = 0.03562\)</span> for the overall model.
 This means that the model explains about 61.98 per cent of the total variation in fruit volume, and the overall model does a significantly better job of predicting fruit volume than the mean.
 We therefore reject the null hypothesis and conclude that the model with latitude as an independent variables fits the data significantly better than a model with just the mean of fruit volume (Figure 32.8).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-169"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-170"></span>
 <img src="img/jamovi_overall_regression_output.png" alt="An output table is shown with a single row and columns for R squared, F, df1, df2, and p." width="100%" />
 <p class="caption">
 Figure 32.8: Jamovi output table for a simple linear regression in which latitude is an independent variable and fig fruit volume is a dependent variable.
@@ -794,7 +794,7 @@ Figure 32.8: Jamovi output table for a simple linear regression in which latitud
 </div>
 <p>Figure 32.8 reports the <span class="math inline">\(R^{2}\)</span> value along with with <span class="math inline">\(F\)</span> statistic, degrees of freedom, and the resulting p-value for the overall model.
 We can also see a table of model coefficients, the intercept (<span class="math inline">\(b_{0}\)</span>) and slope (<span class="math inline">\(b_{1}\)</span>) associated with latitude (Figure 32.9).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-170"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-171"></span>
 <img src="img/jamovi_overall_regression_coefficients.png" alt="An output table is shown with a 2 rows and columns for Predictor, Estimate, SE, t, and p." width="100%" />
 <p class="caption">
 Figure 32.9: Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.

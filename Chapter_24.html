@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -511,7 +511,7 @@ What follows is an explanation of why this can be done by looking at the varianc
 Groups are categorical data (see <a href="Chapter_5.html#Chapter_5">Chapter 5</a>).
 In the case of the fig wasp example, the groups are the different species (Table 24.1).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-107">Table 24.1: </span>Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<caption><span id="tab:unnamed-chunk-108">Table 24.1: </span>Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -559,7 +559,7 @@ First, there are a lot of group combinations to compare (Het1 vs Het2, Het1 vs L
 For the 5 fig wasp species in Table 24.1, there are 10 pair-wise combinations that would need to be tested.
 And the number of combinations grows exponentially<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a> with each new group added to the dataset (Table 24.2).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-108">Table 24.2: </span>The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
+<caption><span id="tab:unnamed-chunk-109">Table 24.2: </span>The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Groups</td>
@@ -620,8 +620,8 @@ As df increases, the t-distribution starts to resemble the normal distribution.
 For the F-distribution, there are actually 2 degrees of freedom to consider.
 One degree of freedom is needed for Variance 1, and a second degree of freedom is needed for Variance 2.
 Together, these 2 degrees of freedom will determine the shape of the F-distribution (Figure 24.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-109"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-109-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different F distributions with different degrees of freedom." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-110"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-110-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different F distributions with different degrees of freedom." width="672" />
 <p class="caption">
 Figure 24.1: Probability density functions for 3 different F distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).
 </p>
@@ -658,7 +658,7 @@ For example, for Het1,</p>
 <p><span class="math display">\[\bar{x}_{Het1} = \frac{2.122 + 1.938 + 1.765 + 1.7}{4} = 1.88125\]</span>
 We can calculate the means for all 5 fig wasps (Table 24.3).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-110">Table 24.3: </span>Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).</caption>
+<caption><span id="tab:unnamed-chunk-111">Table 24.3: </span>Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -706,7 +706,7 @@ For example, for Het1, we calculate,</p>
               0.0328516 = 0.1075467.\]</span></p>
 <p>Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-111">Table 24.4: </span>The squared deviations from species means for each wing length presented in Table 24.1</caption>
+<caption><span id="tab:unnamed-chunk-112">Table 24.4: </span>The squared deviations from species means for each wing length presented in Table 24.1</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -749,7 +749,7 @@ For example, for Het1, we calculate,</p>
 </table>
 <p>If we sum each column (i.e., do what we did for <span class="math inline">\(SS_{Het1}\)</span> for each species), then we get the SS for each species (Table 24.5).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-112">Table 24.5: </span>The sum of squared deviations from species means for each wing length presented in Table 24.1</caption>
+<caption><span id="tab:unnamed-chunk-113">Table 24.5: </span>The sum of squared deviations from species means for each wing length presented in Table 24.1</caption>
 <thead>
 <tr class="header">
 <th align="right">Het1</th>
@@ -787,8 +787,8 @@ We can test the null hypothesis that <span class="math inline">\(MS_{among} = MS
 In the example of 5 fig wasp species, <span class="math inline">\(df_{among} = 4\)</span> and <span class="math inline">\(df_{within} = 15\)</span>,
 so we need an F distribution with 4 degrees of freedom in the numerator and 15 degrees of freedom in the denominator<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
 We can use an interactive app<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a> to get the F-distribution and p-value (Figure 24.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-113"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-113-1.png" alt="A plot is shown with an F probabilty density distribution and values on the x-axis from 0-4. The area under the curve where F &gt; 3.244 is shaded in grey, and F = 3.244 is indicated with an arrow." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-114"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-114-1.png" alt="A plot is shown with an F probabilty density distribution and values on the x-axis from 0-4. The area under the curve where F &gt; 3.244 is shaded in grey, and F = 3.244 is indicated with an arrow." width="672" />
 <p class="caption">
 Figure 24.2: F distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.
 </p>
@@ -799,7 +799,7 @@ Since <span class="math inline">\(P &lt; 0.05\)</span>, we can reject the null h
 Note that the critical value of F (i.e., for which <span class="math inline">\(P = 0.05\)</span>) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19), we would reject <span class="math inline">\(H_{0}\)</span>.</p>
 <p>When running an ANOVA in a statistical program, output includes (at least) the calculated F statistic, degrees of freedom, and the p-value.
 Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-114"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-115"></span>
 <img src="img/jamovi_ANOVA_output.png" alt="Jamovi output is shown with a table called 'One-Way ANOVA', which includes a single measurement for F, df1, df2, and p." width="60%" />
 <p class="caption">
 Figure 24.3: Jamovi output for a one-way ANOVA of wing length measurements in 5 species of fig wasps collected in 2010 near La Paz in Baja, Mexico.

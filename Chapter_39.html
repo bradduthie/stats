@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -505,7 +505,7 @@ div.csl-indent {
 The practical will use data of fig wasp wing loadings<a href="#fn90" class="footnote-ref" id="fnref90"><sup>90</sup></a>.</p>
 <p><a href="https://allisonhorst.github.io/palmerpenguins/articles/intro.html#package-citation-1">PalmerPenguins</a> dataset <span class="citation">(<a href="#ref-GormanEtAl2014" role="doc-biblioref">Gorman, Williams, and Fraser 2014</a>; <a href="#ref-HorstEtAl2020" role="doc-biblioref">Horst, Hill, and Gorman 2020</a>)</span>.
 These data include morphological measurements for 3 species of penguins that inhabit 3 islands in the Palmer Archipelago, Antarctica (Figure 37.1; artwork by <a href="https://allisonhorst.com/">allison_horst</a>, Creative Commons Attribution 4.0 International License).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-218"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-219"></span>
 <img src="img/penguins.png" alt="Cartoon image of three penguins standing in a row, each highlighted by a background of a different colour." width="100%" />
 <p class="caption">
 Figure 39.1: This practical uses data collected on the morphologies of 3 Antarctic penguin species.
@@ -522,7 +522,7 @@ Although it is possible to use R in a different environment than Rstudio, Rstudi
 To get started, we need to make that we are working in the same directory (i.e., folder, see <a href="Chapter_2.html#managing-data-files">Chapter 2.3</a> on managing data files) that we saved the <a href="https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv">penguins.csv</a>.
 We could use the <code>setwd()</code> function to do this (e.g., by typing something like <code>setwd("C:\Users\MyName\Documents")</code> in the console on a Windows computer).
 But the easiest way in Rstudio is to navigate to the toolbar and select ‘Session’, then ‘Set Working Directory’ from the pulldown, and then ‘Choose Directory’ (Figure 37.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-219"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-220"></span>
 <img src="img/Rstudio_setwd.png" alt="Rstudio menu is show with 'Session' selected from the toolbar, then 'Set Working Directory' from the pull down, which opens another pulldown with the highlighted option 'Choose Directory'." width="100%" />
 <p class="caption">
 Figure 39.2: Rstudio option in the toolbar for setting a working directory.
@@ -532,7 +532,7 @@ Figure 39.2: Rstudio option in the toolbar for setting a working directory.
 <p>In the practical from <a href="Chapter_36.html#Chapter_36">Chapter 36</a>, we worked entirely from the R console.
 This time, we will will introduce R scripts to make organising the code a bit easier.
 To do this, navigate to the Rstudio toolbar and select ‘File’, then ‘New File’ followed by ‘R Script’ (Figure 37.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-220"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-221"></span>
 <img src="img/Rstudio_script.png" alt="Rstudio menu is show with 'File' selected from the toolbar, then 'New File' from the pull down, which opens another pulldown with the highlighted option 'R script'." width="100%" />
 <p class="caption">
 Figure 39.3: Rstudio option in the toolbar for creating a new R script.
@@ -546,11 +546,11 @@ This will be useful because it will allow us to save the R commands that we run.
 <p>Now we need to read in the penguins dataset.
 Assuming that we are in the same working directory as the place we saved the file called ‘penguins.csv’, we can use the function <code>read.csv</code> to read in the CSV file.
 Type (or copy-paste) the line below into the R script.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="Chapter_39.html#cb158-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;penguins.csv&quot;</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="Chapter_39.html#cb160-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">&quot;penguins.csv&quot;</span>);</span></code></pre></div>
 <p>Put your cursor on the line that you typed (you can also highlight the whole line, but this is not necessary).
 Next, find the ‘Run’ button in the toolbar and click it (Figure 37.4).
 Rstudio will run whatever line of code your cursor is on, or whatever chunk of code is highlighted (including multiple lines at once; notice the line numbers in the left margin of the script).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-223"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-224"></span>
 <img src="img/Rstudio_run.png" alt="Rstudio toolbar is shown with multiple options, including one that says 'Run' in the upper right." width="100%" />
 <p class="caption">
 Figure 39.4: An Rstudio toolbar with the ‘Run’ option in the upper right to run a line of code from the script to the console.
@@ -564,7 +564,7 @@ It is important to be precise.</p>
 <p>Task 2: View the first 6 rows of the penguins dataset.</p>
 </blockquote>
 <p>On the second line of your R script, type the code below, then run it.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="Chapter_39.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins);</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="Chapter_39.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins);</span></code></pre></div>
 <pre><code>  species    island bill_length bill_depth flipper_length mass  year
 1  Adelie Torgersen        39.1       18.7            181 3750 Y2007
 2  Adelie Torgersen        39.5       17.4            186 3800 Y2007
@@ -578,11 +578,11 @@ Each row is an individual penguin, and each variable is a column.</p>
 <p>Unlike jamovi, we cannot change the data in penguins simply by clicking on values.
 Like everything else in R, we need to do this using code.
 If we wanted to change the value of row one column three to 40, for example (i.e., the first penguin’s bill depth), then we would need to do the following.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="Chapter_39.html#cb161-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">1</span>, <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">40</span></span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="Chapter_39.html#cb163-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">1</span>, <span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="dv">40</span></span></code></pre></div>
 <p>The square brackets can be used to indicate a specific row and column in the data (i.e., data[row_number, column_number]).
 A missing value in the square brackets will be interpreted by R as referring to all elements in the dataset.
 For example, if we wanted to have R just print off the fifth row of the penguins dataset, we could run the following.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="Chapter_39.html#cb162-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">5</span>, ]</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="Chapter_39.html#cb164-1" aria-hidden="true" tabindex="-1"></a>penguins[<span class="dv">5</span>, ]</span></code></pre></div>
 <p>The absence of any value above in <code>, ]</code> tells R to print all of the columns. We can do the same for the columns.</p>
 <blockquote>
 <p>Task 3: Print just column 3 of the penguins dataset. What does the code look like?</p>
@@ -593,14 +593,14 @@ This is how missing data are indicated in R.
 An example of this is shown in the measurements for the penguin in the fourth row.
 These <code>NA</code> values can become a nuisance when we try to calculate summary statistics.
 Using the <code>mean</code> function introduced in the practical last week, try running the line of code below to get the mean of column 3.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="Chapter_39.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="Chapter_39.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>])</span></code></pre></div>
 <p>We get a value of <code>NA</code> instead of the mean of the numbers that are not missing.
 This is because we need to tell R explicitly to remove values that are missing when calculating the mean.
 We can do this with the <code>na.rm</code> argument in the mean function.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="Chapter_39.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="Chapter_39.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins[,<span class="dv">3</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>Note that we can also access column three by using the <code>$</code> sign and the name of the relevant column (in this case <code>bill_length</code>).
 We could therefore get the same answer as above using the code below.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="Chapter_39.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="Chapter_39.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>There is usually more than one way of doing the same thing in R (we could also use <code>penguins[["bill_length"]]</code>).</p>
 <blockquote>
 <p>Task 4: Find the mean bill length of penguins in mm (column 3)</p>
@@ -629,8 +629,8 @@ We will focus on the simplest way to run a one-way ANOVA, two-way ANOVA, <span c
 Normally we would want to first check the assumptions of the ANOVA.
 For now, we will assume that no assumptions are violated, but the Shapiro-Wilk test and Levene’s test of equal variances will be demonstrated later.
 To run a one-way ANOVA in R, we can use the code below.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="Chapter_39.html#cb166-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span>
-<span id="cb166-2"><a href="Chapter_39.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(anova_model);</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="Chapter_39.html#cb168-1" aria-hidden="true" tabindex="-1"></a>anova_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span>
+<span id="cb168-2"><a href="Chapter_39.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(anova_model);</span></code></pre></div>
 <p>The function <code>lm</code> runs a general linear model (we have not discussed it in this module, but t-tests, ANOVA, and linear regression are all based on <a href="https://stirlingcodingclub.github.io/linear_modelling/">the same mathematical framework</a>; see <a href="#Chapter_40">Chapter 40</a> for more explanation).
 We can use the column names <code>bill_length</code> and <code>species</code> directly if we specify that we are using the dataset in which these columns are found (<code>penguins</code>).
 Inside <code>lm</code>, you will notice the <code>~</code> symbol. This just separates our dependent variable (<code>bill_length</code> on the left) and independent variable (<code>species</code> on the right).</p>
@@ -644,15 +644,15 @@ The function <code>anova</code> then summarises this model.</p>
 <p>p value: _________________</p>
 <p>Since our p-value is less than 0.05, we can also run a Tukey’s Honestly Significant Difference test of multiple comparisons (see <a href="Chapter_25.html#Chapter_25">Chapter 25</a>).
 We need to use the <code>aov</code> and <code>TukeyHSD</code> functions to do it.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="Chapter_39.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(anova_model));</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="Chapter_39.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(<span class="fu">aov</span>(anova_model));</span></code></pre></div>
 <p>The <code>TukeyHSD</code> function will report a table of post hoc comparisons similar to the ones reported by jamovi.</p>
 </div>
 <div id="two-way-anova-in-r" class="section level3 hasAnchor" number="39.2.2">
 <h3><span class="header-section-number">39.2.2</span> Two-way ANOVA in R<a href="Chapter_39.html#two-way-anova-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can run a two-way ANOVA using the independent variables ‘species’ and ‘year’ with the code below.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="Chapter_39.html#cb168-1" aria-hidden="true" tabindex="-1"></a>two_way_aov <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span>  bill_length <span class="sc">~</span> species <span class="sc">+</span> year <span class="sc">+</span> species<span class="sc">:</span>year, </span>
-<span id="cb168-2"><a href="Chapter_39.html#cb168-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins);</span>
-<span id="cb168-3"><a href="Chapter_39.html#cb168-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(two_way_aov);</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="Chapter_39.html#cb170-1" aria-hidden="true" tabindex="-1"></a>two_way_aov <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span>  bill_length <span class="sc">~</span> species <span class="sc">+</span> year <span class="sc">+</span> species<span class="sc">:</span>year, </span>
+<span id="cb170-2"><a href="Chapter_39.html#cb170-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">data =</span> penguins);</span>
+<span id="cb170-3"><a href="Chapter_39.html#cb170-3" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(two_way_aov);</span></code></pre></div>
 <p>Note that the code above looks very similar to our one way ANOVA.
 Now we are just adding a new independent variable with the <code>+</code> sign, and adding an interaction between species and island, which is written as <code>species:year</code>.</p>
 <blockquote>
@@ -668,14 +668,14 @@ Now we are just adding a new independent variable with the <code>+</code> sign, 
 <p>To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we need to first put the data in a table form.
 Suppose that we wanted to test the null hypothesis that penguins were sampled from equal frequencies across all islands.
 We can use the <code>table</code> function in R to first build a contingency table of counts of penguins observed on each island.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="Chapter_39.html#cb169-1" aria-hidden="true" tabindex="-1"></a>island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island);</span>
-<span id="cb169-2"><a href="Chapter_39.html#cb169-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="Chapter_39.html#cb171-1" aria-hidden="true" tabindex="-1"></a>island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island);</span>
+<span id="cb171-2"><a href="Chapter_39.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(island_table);</span></code></pre></div>
 <pre><code>
    Biscoe     Dream Torgersen 
       168       124        52 </code></pre>
 <p>The contingency table generated using the <code>table</code> function reveals that there were 168 penguins observed on the island Biscoe, 124 penguins observed on the island Dream, and 52 penguins observed on the island Torgersen.
 To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we can use the <code>island_table</code> that we just created in the function <code>chisq.test</code>.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="Chapter_39.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="Chapter_39.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(island_table);</span></code></pre></div>
 <p>The output of <code>chisq.test</code> will include the <span class="math inline">\(\chi^{2}\)</span> statistic (‘X-squared’), the degrees of freedom (‘df’), and the p-value.</p>
 <blockquote>
 <p>Task 8: Use the code above to run a Chi-square goodness of fit test. Report the test statistic below.</p>
@@ -684,15 +684,15 @@ To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test, we 
 <p>A <span class="math inline">\(\chi^{2}\)</span> test of association also requires counts to be placed in the format of a contingency table.
 This can be done by including 2 variables as arguments in <code>table</code>.
 We can build a contingency table of penguin counts for each island.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="Chapter_39.html#cb172-1" aria-hidden="true" tabindex="-1"></a>sp_island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island, penguins<span class="sc">$</span>species);</span>
-<span id="cb172-2"><a href="Chapter_39.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sp_island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="Chapter_39.html#cb174-1" aria-hidden="true" tabindex="-1"></a>sp_island_table <span class="ot">&lt;-</span> <span class="fu">table</span>(penguins<span class="sc">$</span>island, penguins<span class="sc">$</span>species);</span>
+<span id="cb174-2"><a href="Chapter_39.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sp_island_table);</span></code></pre></div>
 <pre><code>           
             Adelie Chinstrap Gentoo
   Biscoe        44         0    124
   Dream         56        68      0
   Torgersen     52         0      0</code></pre>
 <p>The <code>chisq.test</code> function can then be run directly with this new table <code>sp_island_table</code> as an argument to run a <span class="math inline">\(\chi^{2}\)</span> test of association.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="Chapter_39.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(sp_island_table);</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="Chapter_39.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(sp_island_table);</span></code></pre></div>
 <blockquote>
 <p>Task 9: Use the code above to run a Chi-square test of association between penguin species and island counts. Report the test statistic below.</p>
 </blockquote>
@@ -703,8 +703,8 @@ We can build a contingency table of penguin counts for each island.</p>
 <p>We can now look at how to find the correlation between two variables in R, and how to test whether or not they are significant.
 Suppose that we want to test whether or not bill length and flipper length are correlated in penguins.
 We can do this with the <code>cor.test</code> function in R.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="Chapter_39.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length, </span>
-<span id="cb175-2"><a href="Chapter_39.html#cb175-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="Chapter_39.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length, <span class="at">y =</span> penguins<span class="sc">$</span>flipper_length, </span>
+<span id="cb177-2"><a href="Chapter_39.html#cb177-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>);</span></code></pre></div>
 <p>Notice that the <code>cor.test</code> function makes it possible to specify the alternative hypothesis (“two.sided”, “less”, and “greater”).
 It also is possible to use a Spearman correlation coefficient (method = “spearman”) instead of a Pearson product moment correlation coefficient.</p>
 <blockquote>
@@ -722,8 +722,8 @@ The code is actually very similar to what we used for running an ANOVA.
 We can again use the function <code>lm</code>.
 For simplicity, and because the goal here is just to show how to use the R functions, we will just assume that all of the relevant assumptions of regression are true.
 In this case, our linear model can be run using the code below.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="Chapter_39.html#cb176-1" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length, <span class="at">data =</span> penguins);</span>
-<span id="cb176-2"><a href="Chapter_39.html#cb176-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod);</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="Chapter_39.html#cb178-1" aria-hidden="true" tabindex="-1"></a>lin_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length, <span class="at">data =</span> penguins);</span>
+<span id="cb178-2"><a href="Chapter_39.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lin_mod);</span></code></pre></div>
 <p>In the above code, the first line defines the model (<code>lin_mod</code>), and the second line summarises it for us with the output we need to make conclusions.
 Notice that the first line has the exact same structure as we used in the ANOVA.
 In the formula, the dependent variable <code>mass</code> is separated from the independent variable <code>bill_length</code> with the <code>~</code> character, and we specify the dataset for both variables (<code>penguins</code>).</p>
@@ -742,9 +742,9 @@ In the formula, the dependent variable <code>mass</code> is separated from the i
 Suppose we want to predict body mass from both bill length and flipper length.
 Again, assume that all of the assumptions of regression are met; the goal is just to show the R functions at work.
 For multiple regression, the code again looks suspiciously similar to what it does for a two-way ANOVA (note, we should really also consider an interaction between our independent variables in multiple regression too, but for now we will just assume that none exists).</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="Chapter_39.html#cb177-1" aria-hidden="true" tabindex="-1"></a>mult_regr <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length <span class="sc">+</span> bill_depth, </span>
-<span id="cb177-2"><a href="Chapter_39.html#cb177-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins);</span>
-<span id="cb177-3"><a href="Chapter_39.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mult_regr);</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="Chapter_39.html#cb179-1" aria-hidden="true" tabindex="-1"></a>mult_regr <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="at">formula =</span> mass <span class="sc">~</span> bill_length <span class="sc">+</span> bill_depth, </span>
+<span id="cb179-2"><a href="Chapter_39.html#cb179-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins);</span>
+<span id="cb179-3"><a href="Chapter_39.html#cb179-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mult_regr);</span></code></pre></div>
 <p>The output above looks similar to that of our simple linear model, but we now have a coefficient and p-value for an additional independent variable (bill depth).</p>
 <blockquote>
 <p>Task 12: Examine the output of the multiple regression from the code above. Find the adjusted R-squared value, and write down the equation of the model.</p>
@@ -762,7 +762,7 @@ The next section will demonstrate how to test whether or not data are normally d
 <p>In the one-way ANOVA of <a href="Chapter_39.html#one-way-anova-in-r">Chapter 39.2.1</a>, we tested if bill length differed among penguin species.
 An assumption of the ANOVA is that the data are normally distributed and groups have equal variances.
 We can run a Shapiro-Wilk test to check if data are normally distributed using the <code>shapiro.test</code> function in R.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="Chapter_39.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length);</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="Chapter_39.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(<span class="at">x =</span> penguins<span class="sc">$</span>bill_length);</span></code></pre></div>
 <blockquote>
 <p>Task 13: Test if penguin bill length is normally distributed.</p>
 </blockquote>
@@ -774,11 +774,11 @@ We therefore need to download an R package that has a function for the Levene’
 Packages in R include code that people have written and made available to other researchers.
 The <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> (CRAN) includes thousands of R packages that can be used to run all kinds of different functions.
 The package that we need is called ‘car’, and we can download it from CRAN using the <code>install.packages</code> function.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="Chapter_39.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>);</span>
-<span id="cb179-2"><a href="Chapter_39.html#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;car&quot;</span>);</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="Chapter_39.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>);</span>
+<span id="cb181-2"><a href="Chapter_39.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;car&quot;</span>);</span></code></pre></div>
 <p>The <code>install.packages("car")</code> installs the ‘car’ package, and the <code>library("car")</code> loads it into R so that the functions in the package can be used.
 One of these functions is called <code>leveneTest</code>, which we can use to run the Levene’s test of homogeneity of variances.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="Chapter_39.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="Chapter_39.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
 <blockquote>
 <p>Task 14: Use the ‘car’ R package to run a Levene’s test, then report the p-value of the test below.</p>
 </blockquote>
@@ -788,7 +788,7 @@ Hence, if <span class="math inline">\(P &gt; 0.05\)</span>, we should not reject
 Nevertheless, from the earlier Shapiro-Wilk test, it appears that the data are not normally distributed.
 Instead of using a one-way ANOVA, we should therefore try the non-parameteric equivalent Kruskall-Wallis H test (<a href="Chapter_26.html#Chapter_26">Chapter 26</a>).
 The Kruskall-Wallis H test can be run in R using the <code>kruskal.test</code> function.</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="Chapter_39.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="Chapter_39.html#cb183-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(bill_length <span class="sc">~</span> species, <span class="at">data =</span> penguins);</span></code></pre></div>
 <p>Recall from <a href="Chapter_26.html#Chapter_26">Chapter 26</a> that the Kruskall-Wallis H test uses a <span class="math inline">\(\chi^{2}\)</span> test statistic.</p>
 <blockquote>
 <p>Task 15: Run a Kruskall Wallis H test to see if bill length differs among species, then report the <span class="math inline">\(\chi^{2}\)</span> test statistic of the test below.</p>

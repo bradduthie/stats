@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-18" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -530,7 +530,7 @@ Figure 20.2: Jamovi tool bar, which includes an added module called distrACTION.
 <p>Once the distrACTION module has been made available, download the WrEN trees dataset<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a> and open it in a spreadsheet.
 Notice that the dataset is not in a tidy format.
 There are 4 different sites represented by different columns in the dataset.
-The numbers under each column are measurements of tree diameter at breast height (DBH) in centimeteres.
+The numbers under each column are measurements of tree diameter at breast height (DBH) in centimetres.
 Before doing anything else, it is therefore necessary to put the WrEN dataset into a tidy format.
 The tidy dataset should include two columns, one for site and the other for DBH.</p>
 <p>Once the WrEN trees dataset has been reorganised into a tidy format, save it as a CSV file and open it in jamovi.
@@ -573,7 +573,7 @@ Make sure that the ‘cumulative quantile’ radio button is selected, then set 
 Figure 20.3: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
 </p>
 </div>
-<p>From Figure 20.3, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 36.1 cm.
+<p>From Figure 20.3, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 44.3 cm.
 Using the same principles, what is the cumulative 0.4 quantile for the DBH data?</p>
 <p>Quantile: _____________________ cm</p>
 <p>We can also use the Compute quantile(s) option in jamovi to compute interval quantiles.
@@ -767,14 +767,224 @@ Now, fill in the table below reporting 95% CIs calculated using each distributio
 <div id="proportion-confidence-intervals" class="section level2 hasAnchor" number="20.4">
 <h2><span class="header-section-number">20.4</span> Proportion confidence intervals<a href="Chapter_20.html#proportion-confidence-intervals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will now try calculating confidence intervals for proportional data using the WrEN Sites dataset<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.
-Notice that there are more sites included than there were in the dataset used in Exercises 20.1-20.3, and that some of these sites are grazed while others are not (column ‘Grazing’).
+This is a small dataset, so these data are shown below for convenience.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-90">Table 20.1: </span>Landscape data inspired by the Woodland Creation and Ecological Networks (WrEN) project. Data include 24 sites that are classified as either ancient or secondary woodland, with tree counts and Diameter at Breast Height (DBH) summary statistics from trees, and whether or not there is grazing on the site.</caption>
+<thead>
+<tr class="header">
+<th align="right">Site</th>
+<th align="left">Woodland</th>
+<th align="right">Trees</th>
+<th align="right">DBH_mean_cm</th>
+<th align="right">DBH_SD_cm</th>
+<th align="left">Grazing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1076</td>
+<td align="left">Ancient</td>
+<td align="right">22</td>
+<td align="right">21.3</td>
+<td align="right">10.7</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">1182</td>
+<td align="left">Ancient</td>
+<td align="right">4</td>
+<td align="right">42.2</td>
+<td align="right">7.6</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">1368</td>
+<td align="left">Ancient</td>
+<td align="right">57</td>
+<td align="right">18.2</td>
+<td align="right">8.3</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">1575</td>
+<td align="left">Ancient</td>
+<td align="right">13</td>
+<td align="right">38.2</td>
+<td align="right">14.1</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">3008</td>
+<td align="left">Ancient</td>
+<td align="right">12</td>
+<td align="right">51.0</td>
+<td align="right">13.0</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">3188</td>
+<td align="left">Ancient</td>
+<td align="right">179</td>
+<td align="right">25.1</td>
+<td align="right">17.5</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">3509</td>
+<td align="left">Ancient</td>
+<td align="right">37</td>
+<td align="right">52.7</td>
+<td align="right">26.2</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">9603</td>
+<td align="left">Ancient</td>
+<td align="right">32</td>
+<td align="right">43.5</td>
+<td align="right">28.0</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">9828</td>
+<td align="left">Ancient</td>
+<td align="right">146</td>
+<td align="right">48.4</td>
+<td align="right">22.1</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">10786</td>
+<td align="left">Ancient</td>
+<td align="right">109</td>
+<td align="right">51.3</td>
+<td align="right">14.6</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">10922</td>
+<td align="left">Ancient</td>
+<td align="right">84</td>
+<td align="right">27.7</td>
+<td align="right">7.4</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">11607</td>
+<td align="left">Ancient</td>
+<td align="right">175</td>
+<td align="right">25.7</td>
+<td align="right">13.2</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">23142</td>
+<td align="left">Ancient</td>
+<td align="right">28</td>
+<td align="right">36.1</td>
+<td align="right">32.3</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">23197</td>
+<td align="left">Ancient</td>
+<td align="right">29</td>
+<td align="right">30.2</td>
+<td align="right">20.9</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">23277</td>
+<td align="left">Ancient</td>
+<td align="right">81</td>
+<td align="right">29.0</td>
+<td align="right">23.9</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">428</td>
+<td align="left">Secondary</td>
+<td align="right">131</td>
+<td align="right">26.7</td>
+<td align="right">21.2</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">656</td>
+<td align="left">Secondary</td>
+<td align="right">116</td>
+<td align="right">26.1</td>
+<td align="right">10.3</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">789</td>
+<td align="left">Secondary</td>
+<td align="right">63</td>
+<td align="right">28.0</td>
+<td align="right">16.1</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">1223</td>
+<td align="left">Secondary</td>
+<td align="right">22</td>
+<td align="right">12.9</td>
+<td align="right">3.1</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">1229</td>
+<td align="left">Secondary</td>
+<td align="right">150</td>
+<td align="right">22.2</td>
+<td align="right">10.3</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="right">1694</td>
+<td align="left">Secondary</td>
+<td align="right">4</td>
+<td align="right">22.3</td>
+<td align="right">15.9</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">1726</td>
+<td align="left">Secondary</td>
+<td align="right">23</td>
+<td align="right">18.8</td>
+<td align="right">10.0</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">1747</td>
+<td align="left">Secondary</td>
+<td align="right">136</td>
+<td align="right">21.9</td>
+<td align="right">14.3</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="even">
+<td align="right">1954</td>
+<td align="left">Secondary</td>
+<td align="right">23</td>
+<td align="right">17.5</td>
+<td align="right">6.8</td>
+<td align="left">No</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that there are more sites included than there were in the dataset used in Exercises 20.1-20.3, and that some of these sites are grazed while others are not (column ‘Grazing’).
 From the Descriptives options, find the number of sites grazed versus not grazed (hint, remember from <a href="Chapter_17.html#Chapter_17">Chapter 17</a> to put ‘Grazing’ in the variable box and click the ‘Frequency tables’ checkbox).</p>
 <p>Grazed: ____________</p>
 <p>Not Grazed: _____________</p>
 <p>From these counts above, what is the estimate (<span class="math inline">\(p\)</span>, or more technically <span class="math inline">\(\hat{p}\)</span>, with the hat indicating that it is an estimate) of the proportion of sites that are grazed?</p>
 <p><span class="math inline">\(p\)</span>: __________</p>
 <p><a href="Chapter_18.html#binomial-distribution-cis">Chapter 18.2</a> explained how to calculate lower and upper CIs for binomial distributions (i.e., proportion data).
-To do this, we can use equations similar to the ones used for LCI and UCI from Exercise 20.2 above,</p>
+It showed how to calculate Wald CIs, but also noted that Clopper-Pearson CIs are generally more accurate.
+First, we will calculate Wald CIs by hand, then use jamovi to calculate Clopper-Pearson CIs.
+To calculate the Wald CIs, we can use equations similar to the ones used for LCI and UCI from Exercise 20.2 above,</p>
 <p><span class="math display">\[LCI = p - z \times SE(p),\]</span></p>
 <p><span class="math display">\[UCI = p + z \times SE(p),\]</span></p>
 <p>We have already calculated <span class="math inline">\(p\)</span>, and we can find z-scores for confidence intervals in the same way that we did in Exercise 20.2 (i.e., the z-scores associated with 95% confidence intervals do not change just because we are working with proportions).
@@ -785,17 +995,43 @@ The formula for standard error of a proportion is,</p>
 <p>We can estimate <span class="math inline">\(p\)</span> using <span class="math inline">\(p\)</span>, and <span class="math inline">\(N\)</span> is the total sample size.
 Using the above equation, what is the standard error of p?</p>
 <p>SE(p): ____________</p>
-<p>Using this standard error, what are the lower and upper 95% confidence intervals around <span class="math inline">\(p\)</span>?</p>
-<p><span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
-<p><span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
+<p>Using this standard error, what are the Wald lower and upper 95% confidence intervals around <span class="math inline">\(p\)</span>?</p>
+<p>Wald <span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
+<p>Wald <span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
 <p>Next, find the lower and upper 99% CIs around <span class="math inline">\(p\)</span> and report them below (hint: the only difference here from the calculation of the 95% CIs are the z-scores).</p>
-<p><span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
-<p><span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
+<p>Wald <span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
+<p>Wald <span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
+<p>Do you notice anything unusual about the lower 99% CI?</p>
+<pre><code>
+
+
+</code></pre>
+<p>Now we can use jamovi to find the Clopper-Pearson 95% and 99% CIs.
+Jamovi does this for us, so no calculation is required.
+To calculate Clopper-Pearson CIs, Find the ‘Frequencies’ button on the toolbar in the ‘Analyses’ tab.
+Click on ‘Frequencies’, then choose ‘2 Outcomes’ from the pull down menu.
+You will see a box on the left called ‘Proportion Test (2 Outcomes)’.
+From here, move ‘Grazing’ from the left box to the right box.
+Under <strong>Additional Statistics</strong>, check the box for ‘Confidence intervals’, and make sure that the interval is 95.
+A table called ‘Proportion Test (2 Outcomes)’ will appear to the right.
+Find the row with the Grazing Level ‘Yes’, then report what you see for <span class="math inline">\(p\)</span>, and the lower and upper CIs below.</p>
+<p><span class="math inline">\(p\)</span>: __________</p>
+<p>Clopper-Pearson <span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
+<p>Clopper-Pearson <span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
+<p>To calculate 99% CIs, change the number in the Interval box from 95 to 99.
+Report the 99% CIs below.</p>
+<p>Clopper-Pearson <span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
+<p>Clopper-Pearson <span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
+<p>What do you notice about the difference between the Wald CIs and the Clopper-Pearson CIs?</p>
+<pre><code>
+
+
+</code></pre>
 </div>
 <div id="another-proportion-confidence-interval" class="section level2 hasAnchor" number="20.5">
 <h2><span class="header-section-number">20.5</span> Another proportion confidence interval<a href="Chapter_20.html#another-proportion-confidence-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Next, find the 80%, 95%, and 99% CIs for the proportion of sites that are classified as Ancient woodland.
-First consider an 80% CI (hint, use the distrACTION module again to find the z-scores).</p>
+<p>Next, find the 80%, 95%, and 99% CIs for the proportion of sites that are classified as Ancient woodland using the Clopper-Pearson method for calculating binomial CIs.
+First consider an 80% CI.</p>
 <p><span class="math inline">\(LCI_{80\%} =\)</span> ______________</p>
 <p><span class="math inline">\(UCI_{80\%} =\)</span> ______________</p>
 <p>Next, calculate 95% CIs for the proportion of sites classified as Ancient woodland.</p>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
+  <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
+  <meta name="github-repo" content="bradduthie/statistics_book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
+  
+  <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
+  
+
+<meta name="author" content="Brad Duthie" />
+
+
+<meta name="date" content="2024-02-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="Week12.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { font-weight: bold; } /* Alert */
+code span.an { font-style: italic; } /* Annotation */
+code span.cf { font-weight: bold; } /* ControlFlow */
+code span.co { font-style: italic; } /* Comment */
+code span.cv { font-style: italic; } /* CommentVar */
+code span.do { font-style: italic; } /* Documentation */
+code span.dt { text-decoration: underline; } /* DataType */
+code span.er { font-weight: bold; } /* Error */
+code span.in { font-style: italic; } /* Information */
+code span.kw { font-weight: bold; } /* Keyword */
+code span.pp { font-weight: bold; } /* Preprocessor */
+code span.wa { font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistics with jamovi</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Experimental Design and Statistical Reporting</b></span></li>
+<li class="chapter" data-level="" data-path="Week12.html"><a href="Week12.html"><i class="fa fa-check"></i>Part XI Overview</a></li>
+<li class="chapter" data-level="1" data-path="Chapter_37.html"><a href="Chapter_37.html"><i class="fa fa-check"></i><b>1</b> Experimental design</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="Chapter_37.html"><a href="Chapter_37.html#before-collecting-data"><i class="fa fa-check"></i><b>1.1</b> Before collecting data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Chapter_38.html"><a href="Chapter_38.html"><i class="fa fa-check"></i><b>2</b> Reporting statistics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="Chapter_38.html"><a href="Chapter_38.html#statistical-reporting"><i class="fa fa-check"></i><b>2.1</b> Statistical reporting</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="Chapter_38.html"><a href="Chapter_38.html#abstract"><i class="fa fa-check"></i><b>2.1.1</b> Abstract</a></li>
+<li class="chapter" data-level="2.1.2" data-path="Chapter_38.html"><a href="Chapter_38.html#introduction"><i class="fa fa-check"></i><b>2.1.2</b> Introduction</a></li>
+<li class="chapter" data-level="2.1.3" data-path="Chapter_38.html"><a href="Chapter_38.html#methods"><i class="fa fa-check"></i><b>2.1.3</b> Methods</a></li>
+<li class="chapter" data-level="2.1.4" data-path="Chapter_38.html"><a href="Chapter_38.html#results"><i class="fa fa-check"></i><b>2.1.4</b> Results</a></li>
+<li class="chapter" data-level="2.1.5" data-path="Chapter_38.html"><a href="Chapter_38.html#discussion"><i class="fa fa-check"></i><b>2.1.5</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="Chapter_38.html"><a href="Chapter_38.html#figures-and-tables"><i class="fa fa-check"></i><b>2.2</b> Figures and tables</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="Chapter_38.html"><a href="Chapter_38.html#figures"><i class="fa fa-check"></i><b>2.2.1</b> Figures</a></li>
+<li class="chapter" data-level="2.2.2" data-path="Chapter_38.html"><a href="Chapter_38.html#tables"><i class="fa fa-check"></i><b>2.2.2</b> Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="Chapter_38.html"><a href="Chapter_38.html#statistical-tests"><i class="fa fa-check"></i><b>2.3</b> Statistical tests</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-t-tests"><i class="fa fa-check"></i><b>2.3.1</b> Reporting t-tests</a></li>
+<li class="chapter" data-level="2.3.2" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-anova"><i class="fa fa-check"></i><b>2.3.2</b> Reporting ANOVA</a></li>
+<li class="chapter" data-level="2.3.3" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-a-main-whitney-u-test"><i class="fa fa-check"></i><b>2.3.3</b> Reporting a Main-Whitney U test</a></li>
+<li class="chapter" data-level="2.3.4" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-a-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>2.3.4</b> Reporting a Wilcoxon signed-rank test</a></li>
+<li class="chapter" data-level="2.3.5" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-chi-square-tests"><i class="fa fa-check"></i><b>2.3.5</b> Reporting Chi-square tests</a></li>
+<li class="chapter" data-level="2.3.6" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-correlation-coefficients"><i class="fa fa-check"></i><b>2.3.6</b> Reporting correlation coefficients</a></li>
+<li class="chapter" data-level="2.3.7" data-path="Chapter_38.html"><a href="Chapter_38.html#reporting-regressions"><i class="fa fa-check"></i><b>2.3.7</b> Reporting regressions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="Chapter_38.html"><a href="Chapter_38.html#conclusions"><i class="fa fa-check"></i><b>2.4</b> Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="Chapter_39.html"><a href="Chapter_39.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Statistical techniques in R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="Chapter_39.html"><a href="Chapter_39.html#working-with-a-data-set"><i class="fa fa-check"></i><b>3.1</b> Working with a data set</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_39.html"><a href="Chapter_39.html#familiar-statistical-tests-in-r"><i class="fa fa-check"></i><b>3.2</b> Familiar statistical tests in R</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="Chapter_39.html"><a href="Chapter_39.html#one-way-anova-in-r"><i class="fa fa-check"></i><b>3.2.1</b> One-way ANOVA in R</a></li>
+<li class="chapter" data-level="3.2.2" data-path="Chapter_39.html"><a href="Chapter_39.html#two-way-anova-in-r"><i class="fa fa-check"></i><b>3.2.2</b> Two-way ANOVA in R</a></li>
+<li class="chapter" data-level="3.2.3" data-path="Chapter_39.html"><a href="Chapter_39.html#chi-square-test-in-r"><i class="fa fa-check"></i><b>3.2.3</b> Chi-square test in R</a></li>
+<li class="chapter" data-level="3.2.4" data-path="Chapter_39.html"><a href="Chapter_39.html#correlation-test-in-r"><i class="fa fa-check"></i><b>3.2.4</b> Correlation test in R</a></li>
+<li class="chapter" data-level="3.2.5" data-path="Chapter_39.html"><a href="Chapter_39.html#simple-linear-regression-in-r"><i class="fa fa-check"></i><b>3.2.5</b> Simple linear regression in R</a></li>
+<li class="chapter" data-level="3.2.6" data-path="Chapter_39.html"><a href="Chapter_39.html#multiple-regression-in-r"><i class="fa fa-check"></i><b>3.2.6</b> Multiple regression in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_39.html"><a href="Chapter_39.html#statistical-test-assumptions-in-r"><i class="fa fa-check"></i><b>3.3</b> Statistical test assumptions in R</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendexA.html"><a href="appendexA.html"><i class="fa fa-check"></i><b>A</b> Answers to chapter exercises</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="appendexA.html"><a href="appendexA.html#chapter-3"><i class="fa fa-check"></i><b>A.1</b> Chapter 3</a></li>
+<li class="chapter" data-level="A.2" data-path="appendexA.html"><a href="appendexA.html#chapter-8"><i class="fa fa-check"></i><b>A.2</b> Chapter 8</a></li>
+<li class="chapter" data-level="A.3" data-path="appendexA.html"><a href="appendexA.html#chapter-14"><i class="fa fa-check"></i><b>A.3</b> Chapter 14</a></li>
+<li class="chapter" data-level="A.4" data-path="appendexA.html"><a href="appendexA.html#chapter-20"><i class="fa fa-check"></i><b>A.4</b> Chapter 20</a></li>
+<li class="chapter" data-level="A.5" data-path="appendexA.html"><a href="appendexA.html#chapter-23"><i class="fa fa-check"></i><b>A.5</b> Chapter 23</a></li>
+<li class="chapter" data-level="A.6" data-path="appendexA.html"><a href="appendexA.html#chapter-28"><i class="fa fa-check"></i><b>A.6</b> Chapter 28</a></li>
+<li class="chapter" data-level="A.7" data-path="appendexA.html"><a href="appendexA.html#chapter-31"><i class="fa fa-check"></i><b>A.7</b> Chapter 31</a></li>
+<li class="chapter" data-level="A.8" data-path="appendexA.html"><a href="appendexA.html#chapter-34"><i class="fa fa-check"></i><b>A.8</b> Chapter 34</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</h1>
+<p class="author"><em>Brad Duthie</em></p>
+<p class="date"><em>2024-02-19</em></p>
+</div>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="preface.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Some text with the preface</p>
+<p>Datasets for all exercises are available here in the Open Science Framework <a href="https://osf.io/dxwyv" class="uri">https://osf.io/dxwyv</a></p>
+<p>Writing some stuff <span class="math inline">\(\text{\sout{||||}}\)</span> $<code>is copied. Once it has been placed into the R console, it can be used just like any other function. For example, we can run</code>simpleboot` and store the output for SO1 values.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="preface.html#cb1-1" aria-hidden="true" tabindex="-1"></a>SO1_95s <span class="ot">&lt;-</span> <span class="fu">simpleboot</span>(<span class="at">x =</span> SO1, <span class="at">replicates =</span> <span class="dv">1000</span>, <span class="at">CIs =</span> <span class="fl">0.95</span>);</span></code></pre></div>
+<p>The output will include a list of 2 different objects.
+The first object <code>SO1_95s[[1]]</code> will be a list of 1000 bootstrapped mean values, sorted from lowest to highest.
+The second object <code>SO1_95s[[2]]</code> will be the bootstrapped upper and lower confidence intervals.
+First, we can take a look at a histogram of the bootstrapped mean values.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="preface.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="at">x =</span> SO1_95s[[<span class="dv">1</span>]], <span class="at">xlab =</span> <span class="st">&quot;Bootstrapped SO1 means&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>);</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-216"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-216-1.png" alt="A histogram bootstrapped mean SO1 values that appears to be roughly normally distributed" width="672" />
+<p class="caption">
+Figure 0.1: Bootstrapped mean values for 17 ovipositor lengths in an unnamed species of fig wasp collected in Baja, Mexico.
+</p>
+</div>
+<p>We can then print out the lower and upper confidence intervals, which report the value of the 2.5 per cent rank and 97.5 rank bootstrapped means, respectively.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="preface.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(SO1_95s[[<span class="dv">2</span>]]);</span></code></pre></div>
+<pre><code>[1] 2.902647 3.133176</code></pre>
+<p>Note that these values are not too far off the values of LCI = 2.896 and UCI = 3.164 calculated in the usual way in the previous exercise.</p>
+<blockquote>
+<p><strong>Task 11: Use the <code>simpleboot</code> function to calculate 95 per cent confidence intervals for SO2 mean ovipositor lengths.</strong></p>
+</blockquote>
+<p>The practical in <a href="Chapter_39.html#Chapter_39">Chapter 39</a> will demonstrate how to read CSV files into R and run hypothesis tests, including t-tests, ANOVAs, chi-square tests, correlation tests, and linear regression.</p>
+
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="Week12.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/10-Randomisation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
