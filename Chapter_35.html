@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-19" />
+<meta name="date" content="2024-02-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -468,8 +468,19 @@ div.csl-indent {
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendexA.html"><a href="appendexA.html"><i class="fa fa-check"></i><b>A</b> Answers to chapter exercises</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="appendexA.html"><a href="appendexA.html#chapter-3"><i class="fa fa-check"></i><b>A.1</b> Chapter 3</a></li>
-<li class="chapter" data-level="A.2" data-path="appendexA.html"><a href="appendexA.html#chapter-8"><i class="fa fa-check"></i><b>A.2</b> Chapter 8</a></li>
+<li class="chapter" data-level="A.1" data-path="appendexA.html"><a href="appendexA.html#chapter-3"><i class="fa fa-check"></i><b>A.1</b> Chapter 3</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="appendexA.html"><a href="appendexA.html#exercise-3.1"><i class="fa fa-check"></i><b>A.1.1</b> Exercise 3.1:</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendexA.html"><a href="appendexA.html#exercise-3.2"><i class="fa fa-check"></i><b>A.1.2</b> Exercise 3.2</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendexA.html"><a href="appendexA.html#exercise-3.2-1"><i class="fa fa-check"></i><b>A.1.3</b> Exercise 3.2</a></li>
+<li class="chapter" data-level="A.1.4" data-path="appendexA.html"><a href="appendexA.html#exercise-3.4"><i class="fa fa-check"></i><b>A.1.4</b> Exercise 3.4</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="appendexA.html"><a href="appendexA.html#chapter-8"><i class="fa fa-check"></i><b>A.2</b> Chapter 8</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="appendexA.html"><a href="appendexA.html#exercise-8.1"><i class="fa fa-check"></i><b>A.2.1</b> Exercise 8.1</a></li>
+<li class="chapter" data-level="A.2.2" data-path="appendexA.html"><a href="appendexA.html#exercise-8.2"><i class="fa fa-check"></i><b>A.2.2</b> Exercise 8.2</a></li>
+<li class="chapter" data-level="A.2.3" data-path="appendexA.html"><a href="appendexA.html#exercise-8.3"><i class="fa fa-check"></i><b>A.2.3</b> Exercise 8.3</a></li>
+</ul></li>
 <li class="chapter" data-level="A.3" data-path="appendexA.html"><a href="appendexA.html#chapter-14"><i class="fa fa-check"></i><b>A.3</b> Chapter 14</a></li>
 <li class="chapter" data-level="A.4" data-path="appendexA.html"><a href="appendexA.html#chapter-20"><i class="fa fa-check"></i><b>A.4</b> Chapter 20</a></li>
 <li class="chapter" data-level="A.5" data-path="appendexA.html"><a href="appendexA.html#chapter-23"><i class="fa fa-check"></i><b>A.5</b> Chapter 23</a></li>
@@ -608,10 +619,10 @@ Figure 35.4: A distribution of the difference between mean species ovipositor le
 </div>
 <p>Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2076 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2093 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
-<p><span class="math display">\[P = \frac{2076 + 1}{99999 + 1}.\]</span></p>
-<p>When we calculate the above, we get a value of 0.02077.
+<p><span class="math display">\[P = \frac{2093 + 1}{99999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.02094.
 Notice that the calculated value is assigned with a ‘P’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
@@ -652,12 +663,12 @@ To calculate our 95 per cent confidence intervals, we then only need to rank the
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Chapter 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sampled some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>3.071, 2.929, 2.929, 3.133, 2.929, 3.256, 3.071, 3.133, 3.178, 2.929, 3.027, 3, 2.976, 2.658, 3.21, 2.995, 3.071</p>
+<p>2.976, 3.071, 3, 2.976, 3.071, 3.027, 3.071, 3.256, 3, 3.178, 2.976, 3.178, 2.658, 3.133, 3.21, 3.133, 2.817</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.029.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.043.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.406, 3.027, 3.133, 3.133, 2.299, 3.071, 2.299, 3.027, 2.817, 3.256, 3.133, 2.658, 3.027, 2.658, 2.929, 2.658, 2.299</p>
-<p>The mean of the above sample is 2.872.
+<p>2.299, 2.817, 3.256, 3, 2.817, 2.929, 3.406, 3.133, 3.027, 3.071, 2.299, 2.658, 3.027, 2.976, 2.976, 2.995, 2.929</p>
+<p>The mean of the above sample is 2.919.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-188"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-188-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
@@ -668,7 +679,7 @@ Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17
 <p>The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.902 and UCI = 3.141.
+The values using the randomisation approach are LCI = 2.898 and UCI = 3.139.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.</p>
 </div>
