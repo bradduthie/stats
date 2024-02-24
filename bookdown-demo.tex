@@ -130,7 +130,7 @@
 
 \title{Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi}
 \author{Brad Duthie}
-\date{2024-02-20}
+\date{2024-02-24}
 
 \begin{document}
 \maketitle
@@ -144,76 +144,81 @@
 \chapter*{Preface}\label{preface}}
 \addcontentsline{toc}{chapter}{Preface}
 
-Some text with the preface
-
-Datasets for all exercises are available here in the Open Science Framework \url{https://osf.io/dxwyv}
-
-\hypertarget{why-this-book-is-important}{%
-\section*{Why this book is important}\label{why-this-book-is-important}}
-\addcontentsline{toc}{section}{Why this book is important}
-
 Nearly all research in the biological and environmental sciences relies on data analysis of some kind.
 Statistical literacy is therefore important, not just for \emph{doing} research, but also for \emph{understanding} and \emph{evaluating} the research of other scientists.
-Throughout this book, we will illustrate the importance of statistics using examples inspired by, or directly sourced from, real-world projects in the biological and environmental sciences.
-Many of these examples, including those used in lab practicals, will draw from research projects conducted at the University of Stirling.
-Several examples will focus on research that is important for addressing major global challenges in sustainability, food security, conservation, or the spread of disease.
-Other examples will focus on research that addresses fundamental scientific questions about ecology and evolution.
-We hope that you will find topics that interest you, and that this module will inspire you to learn more about statistics.
+This book is an introductory textbook for learning statistics.
+It starts with the very basics and prioritises helping the reader develop a conceptual understanding of statistics and applying the most fundamental statistical tools.
+Mathematical details are generally placed in footnotes, and developing good statistical judgement is embraced over the adherence to rigid protocols.
+Wherever possible, I have tried to introduce new concepts with concrete examples that will likely be familiar to the reader and therefore serve as a useful starting point for understanding the more abstract concepts.
+After reading this book, the reader should be able to understand and communicate fundamental concepts of introductory statistics and apply them in the biological and environmental sciences.
 
-\hypertarget{book_chapters}{%
-\subsection*{Book chapters}\label{book_chapters}}
-\addcontentsline{toc}{subsection}{Book chapters}
+This book originated as a workbook for the second year university statistics class that I teach for biological and environmental science students at the University of Stirling in Stirling, Scotland.
+I wanted to rebuild the learning content from scratch after switching from a proprietary statistical software to the free and open-source jamovi \citep{Jamovi2022}.
+There are a lot of good statistics textbooks (many of which are cited throughout this book), but I could not find anything for biological or environmental science students that used jamovi.
+As a teacher, I have found jamovi to be the ideal tool for teaching introductory statistics.
+Its user friendly interface has made it possible to focus on teaching statistical concepts rather than the details of navigating software.
+It works on Windows, Mac, Linux, or Chrome, and can even be used in a browser (\url{https://www.jamovi.org/}), so I know that my students will be able to have access to jamovi after they are done with my class.
+I hope that this book is helpful for teachers wanting to use jamovi in the classroom, and that it is useful for anyone who wants to understand and apply statistical techniques that are widely used across the biological and environmental sciences
 
+\hypertarget{structure}{%
+\section*{How this book is structured}\label{structure}}
+\addcontentsline{toc}{section}{How this book is structured}
+
+This book includes 35 chapters separated into nine parts.
+Parts focuses on a set of (sometimes loosely) related concepts that might be used as one week of material for an introductory statistics class.
+Each part ends with a practical chapter that includes exercises for applying the concepts introduced in previous chapters to datasets in jamovi (the two exceptions are Part I, which uses spreadsheets outwith jamovi, and Part IX, in which the practical chapter is followed by a final chapter on randomisation).
+Answers to questions in practical exercises can be found in \protect\hyperlink{appendexA}{Appendix A}.
 Book chapters are generally quite short, and longer chapters are broken down into manageable subsections.
-Wherever relevant, links are provided to other chapters and references, and to interactive applications that make concepts easier to visualise.
-These applications will also be embedded into Canvas.
+In several places, there are footnotes with links to interactive applications that I have written in shiny \citep{Rshiny, Wickham2021}.
+These applications should make it easier to visualise some of the more challenging concepts and reinforce the text.
 
-\begin{quote}
-\href{https://bradduthie.shinyapps.io/forest/}{Click here} for an example interactive application.
-\end{quote}
+\hypertarget{datasets}{%
+\section*{Datasets used in this book}\label{datasets}}
+\addcontentsline{toc}{section}{Datasets used in this book}
 
-Information that is interesting but not critical to know is generally relegated to footnotes.
+Datasets for all exercises (and code for shiny apps) are freely available to download from Open Science Framework (\url{https://osf.io/dxwyv}).
+They are also stored on GitHub (\url{https://github.com/bradduthie/stats}), and can be accessed there using direct links in footnotes.
 
-\hypertarget{jamovi}{%
-\section*{Jamovi statistical software}\label{jamovi}}
-\addcontentsline{toc}{section}{Jamovi statistical software}
+Datasets are mostly inspired by, or directly sourced from, real research in the biological and environmental sciences.
+A lot of data were collected from, or based on, my own doctoral work at Iowa State University.
+Other datasets are inspired by projects led by my colleagues at the University of Stirling.
+\textbf{These data are for pedagogical purposes only.}
+With some exceptions from my own data collected from the Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) system \citep[see][]{Duthie2015b, Duthie2016}, all data in this book were constructed solely to illustrate statistical concepts and techniques as effectively as possible.
+Any data introduced in this book should therefore be treated as entirely hypothetical, and the reader will be reminded of this in subsequent chapters.
 
-There are a lot of different software packages for running statistical analyses.
-Previous versions of this module have been taught using \href{https://www.minitab.com/en-us/}{Minitab} or \href{https://www.ibm.com/uk-en/products/spss-statistics}{SPSS}.
-For the foreseeable future, we are using \href{https://www.jamovi.org/}{jamovi} \citep{Jamovi2022}.
-There are a lot of tangible benefits to using \href{https://www.jamovi.org/}{jamovi}:
+\hypertarget{acknowledgements}{%
+\section*{Acknowledgements}\label{acknowledgements}}
+\addcontentsline{toc}{section}{Acknowledgements}
 
-\begin{itemize}
-\tightlist
-\item
-  It is user-friendly, with a point and click interface that is more intuitive than other software.
-\item
-  It is free and open source, which means that you will be able to use it even after you have finished this module and your degree.
-\item
-  It is written by a community of statisticians and scientists with a focus on teaching.
-\item
-  It works on Windows, Mac, Linux, or Chrome, and can even be operated \href{https://www.jamovi.org/cloud.html}{in a browser}.
-\item
-  It is lightweight, and less prone to crashing than other statistical software.
-\item
-  It is built on top of the \href{https://www.r-project.org/about.html}{R statistical programming language}, which makes it easier to transition to learning R.
-\end{itemize}
+Most of this book was written in the summer and autumn of 2022, and during a busy spring semester of teaching statistics in 2023.
+I am very grateful for the feedback that I have received from undergraduate students in the 2023 and 2024 Statistical Techniques class at the University of Stirling.
+I love teaching this module, and conversations that I have had with students during weekly practical sessions have made the text clearer and corrected numerous typographical errors.
+The book has also benefited from suggestions and corrections from numerous PhD students who served as teaching assistants on the class, including Adam Fell, Adrian Bach, Arianna Chiti, Benjamin Marshall, Chloe Pow, Daniel Atton Beckman, Eleri Kent, Rebecca Metcalf, and Shubham Pawar.
+I am especially grateful to my co-teachers Martina Quaggiotto and Ian Jones.
+Martina and Ian supported my plan to overhaul the learning material for our statistics class and put in a lot of work to fix teaching content that was not actually broken.
+I am also grateful to several colleagues at the University of Stirling who have provided images and inspired me with interesting projects and datasets, including Alan Law, Becky Boulton, Carmen Carmona, David Copplestone, Elisa Fuentes-Montemayor, Izzy Jones, Jens-Arne Subke, Jessica Burrows, Kirsty Park, Lidia De Sousa Teixeira, Matthew Tinsley, Nigel Willby, and Nils Bunnefeld.
 
-In short, jamovi has a lot of advantages that make it the best option for you to learn statistics, apply your learning in future projects, and build on the skills in this module in future course work.
+I want to thank CRC Press, and especially Lara Spieker, for making the publishing process such a positive experience.
+This book has benefited from feedback from three anonymous reviewers.
+It was written using Bookdown \citep{xie2015, Xie2016, Xie2023} within Rstudio \citep{Rstudio} in the R programming language \citep{Rproject} running on the Xubuntu open source operating system (\url{https://xubuntu.org/}).
 
-In the computer labs on campus, you can access jamovi using \href{https://appsanywhere.stir.ac.uk/}{AppsAnywhere}.
-For your personal devices, you can \href{https://www.jamovi.org/download.html}{download Jamovi here} (recommended).
-You can also run jamovi \href{https://www.jamovi.org/cloud.html}{from a browser}, but there are currently some time limitations for doing this (sessions are limited to 45 minutes).
+I want to thank my kid, Emrys.
+They are a joy in my life and have taught me so much.
 
-This module will also introduce R, although we will not really use R by itself until \protect\hyperlink{Week_11}{Week 11}.
-Prior to \protect\hyperlink{Week_11}{Week 11}, there will be a few R commands scattered throughout lab practicals to ease you into it and accomplish some very specific tasks (e.g., generating random numbers).
-Because jamovi is built on top of R, R can be run directly from within Jamovi to do these tasks.
-Anyone who is especially interested in learning about R and what it can do is welcome to attend fortnightly sessions of \href{https://stirlingcodingclub.github.io/studyGroup/}{Stirling Coding Club}, which is run by the module coordinator.
-Sessions are run online using MS Teams and do not require any active participation (i.e., you can just watch; contact the module coordinator if you want to be included in the group).
+Lastly, I want to thank my wife Catherine.
+We have supported one another through so many challenges in life, through the uncertainties of career, immigration, and Covid-19.
+Her support has been indispensable for writing this book, and I will always be grateful for it.
 
-The R programming language has become by far the most popular software for doing statistics in biology and environmental sciences (we will see why in \protect\hyperlink{Week_11}{Week 11}).
-It is highly flexible and can be used for all kinds of projects.
-This book was entirely written in R using software called ``Rmarkdown'' and ``\href{https://pandoc.org/}{Pandoc}''.
+\hypertarget{author}{%
+\section*{About the author}\label{author}}
+\addcontentsline{toc}{section}{About the author}
+
+Brad Duthie (\url{http://bradduthie.github.io}) is a Lecturer in Environmental Modelling at the University of Stirling.
+He completed his PhD in Ecology and Evolutionary Biology at Iowa State University with a graduate minor in Statistics.
+His research focuses primarily on theory and modelling in ecology and evolutionary biology with particular interests in evolutionary ecology and community ecology.
+He also contributes to several research projects as a biostatistician and wrote and maintains two R packages for agent-based modelling.
+As an educator, Brad completed a Graduate Student Teaching Certificate at Iowa State University and became a Fellow of the Higher Education Academy while working as a Postdoctoral Research Fellow at the University of Aberdeen.
+He has taught undergraduate classes in statistics, ecology, and evolution at the University of Stirling and is the Programme Director for Biology and Animal Biology.
 
 \hypertarget{part-background-mathematics-and-data-organisation}{%
 \part{Background mathematics and data organisation}\label{part-background-mathematics-and-data-organisation}}
@@ -224,19 +229,25 @@ This book was entirely written in R using software called ``Rmarkdown'' and ``\h
 
 Part I focuses on background mathematics and data organisation.
 The objective is to provide a review of the mathematics required to understand the statistical concepts and techniques throughout this book.
-\protect\hyperlink{Chapter_1}{Chapter 1} will review some background mathematics that is relevant to introductory statistics.
-This information might not be new to you, but it is a good idea to review some fundamental mathematical concepts that will be used throughout the book.
-The chapter focuses on the very basics of numbers and mathematical operations, and also reviews logarithms (which are especially relevant for data visualisation and transformation) and the order of mathematical operations.
-\protect\hyperlink{Chapter_2}{Chapter 2} focuses entirely on data organisation.
-Before actually doing any statistics, it is important to be able to organise data in a way that can be understood by other researchers and interpreted by statistical software.
-The chapter explains what to do after data have been collected in the field or laboratory.
-Being able to organise data in the correct format and manage data files appropriately is critical for successfully using jamovi (or any statistical software).
-Finally, \protect\hyperlink{Chapter_3}{Chapter 3} provides some practical skills for organising datasets and preparing them for statistical analysis.
-The aim of this chapter is for you to learn how to take data recorded in the field, laboratory, or some other source and put it into a format that can be used in jamovi.
-Four exercises use data on fig seed counts, fig wasp egg counts, fig wasp counts, and fig wasp morphological measurements from the Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) in Baja, Mexico.
-Datasets are available online.
-The chapter introduces spreadsheets as a tool for data organisation.
-Spreadsheets are sometimes necessary (or just helpful) to use for viewing and organising data prior to opening a dataset in jamovi.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_1}{Chapter 1} will review some background mathematics that is relevant to introductory statistics.
+  This information might not be new to you, but it is a good idea to review some fundamental mathematical concepts that will be used throughout the book.
+  The chapter focuses on the very basics of numbers and mathematical operations, and also reviews logarithms (which are especially relevant for data visualisation and transformation) and the order of mathematical operations.
+\item
+  \protect\hyperlink{Chapter_2}{Chapter 2} focuses entirely on data organisation.
+  Before actually doing any statistics, it is important to be able to organise data in a way that can be understood by other researchers and interpreted by statistical software.
+  The chapter explains what to do after data have been collected in the field or laboratory.
+  Being able to organise data in the correct format and manage data files appropriately is critical for successfully using jamovi (or any statistical software).
+\item
+  \protect\hyperlink{Chapter_3}{Chapter 3} provides some practical skills for organising datasets and preparing them for statistical analysis.
+  The aim of this chapter is for you to learn how to take data recorded in the field, laboratory, or some other source and put it into a format that can be used in jamovi.
+  Four exercises use data on fig seed counts, fig wasp egg counts, fig wasp counts, and fig wasp morphological measurements from the Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) in Baja, Mexico.
+  Datasets are available online.
+  The chapter introduces spreadsheets as a tool for data organisation.
+  Spreadsheets are sometimes necessary (or just helpful) to use for viewing and organising data prior to opening a dataset in jamovi.
+\end{itemize}
 
 \hypertarget{Chapter_1}{%
 \chapter{Background mathematics}\label{Chapter_1}}
@@ -713,7 +724,7 @@ In Figure 2.7, there is even a `New folder' button in the toolbar with a yellow 
 It takes some time to organise files this way, and to get used to saving files in specific locations, but it is well worth it in the long-term.
 
 \hypertarget{Chapter_3}{%
-\chapter{Practical: Preparing data}\label{Chapter_3}}
+\chapter{\texorpdfstring{\emph{Practical}. Preparing data}{Practical. Preparing data}}\label{Chapter_3}}
 
 In this chapter, we will use a spreadsheet to organise datasets following the tidy approach explained in \protect\hyperlink{Chapter_2}{Chapter 2}, then save these datasets as CSV files to be opened in jamovi statistical software \citep{Jamovi2022}.
 The data organisation in this chapter can be completed using \href{https://www.libreoffice.org/discover/calc/}{LibreOffice Calc}, MS Excel, or \href{https://docs.google.com/spreadsheets/}{Google Sheets}.
@@ -1028,24 +1039,32 @@ Other functions such as \texttt{=count()}, \texttt{=min()}, \texttt{=max()}, or 
 
 Part II focuses on general statistical concepts, data, and measurement.
 The goal in this part is to understand key ideas about sampling and measurement.
-\protect\hyperlink{Chapter_4}{Chapter 4} focuses on key concepts that will be used throughout this book.
-In particular, it is important to understand the difference between a \textbf{population} and a \textbf{sample}, and to recognise that there are many types of variables in statistics.
-\protect\hyperlink{Chapter_5}{Chapter 5} introduces different variable types.
-Different types of variables have different characteristics, which will affect how these variables are best visualised in figures and analysed with statistical hypothesis tests introduced later in the semester.
-A variable's type will rarely be stated explicitly when doing scientific research.
-Being able to infer variable type is therefore an important skill.
-\protect\hyperlink{Chapter_6}{Chapter 6} summarises what accuracy and precision are in measurement, and and different types of units.
-It focuses on units of measurement, and how these units are communicated in text.
-Units are essential in scientific measurement, and we will use them throughout the book to indicate the type and scale of data measurement.
-\protect\hyperlink{Chapter_7}{Chapter 7} introduces the propagation of measurement errors.
-This is important to understand because no measurement is perfectly accurate, and predicting how errors in measurement combine is fundamental to understanding measurement accuracy.
-Equations are provided for adding and subtracting errors, and for multiplying and dividing errors.
-\protect\hyperlink{Chapter_8}{Chapter 8} guides you through an introduction to jamovi.
-This aim of this chapter is to help you become familiar with the jamovi interface and comfortable importing data into jamovi to collect some descriptive statistics.
-Exercises in this practical use two datasets
-The first dataset includes some hypothetical measurements of soil organic carbon, as might be collected in the field,
-The second dataset includes measurements of fig dimensions from the same Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) system used in Chapter 3.
-Three exercises introduce some very basic summary statistics, and demonstrate how to transform variables and compute new variables.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_4}{Chapter 4} focuses on key concepts that will be used throughout this book.
+  In particular, it is important to understand the difference between a \textbf{population} and a \textbf{sample}, and to recognise that there are many types of variables in statistics.
+\item
+  \protect\hyperlink{Chapter_5}{Chapter 5} introduces different variable types.
+  Different types of variables have different characteristics, which will affect how these variables are best visualised in figures and analysed with statistical hypothesis tests introduced later in the semester.
+  A variable's type will rarely be stated explicitly when doing scientific research.
+  Being able to infer variable type is therefore an important skill.
+\item
+  \protect\hyperlink{Chapter_6}{Chapter 6} summarises what accuracy and precision are in measurement, and and different types of units.
+  It focuses on units of measurement, and how these units are communicated in text.
+  Units are essential in scientific measurement, and we will use them throughout the book to indicate the type and scale of data measurement.
+\item
+  \protect\hyperlink{Chapter_7}{Chapter 7} introduces the propagation of measurement errors.
+  This is important to understand because no measurement is perfectly accurate, and predicting how errors in measurement combine is fundamental to understanding measurement accuracy.
+  Equations are provided for adding and subtracting errors, and for multiplying and dividing errors.
+\item
+  \protect\hyperlink{Chapter_8}{Chapter 8} guides you through an introduction to jamovi.
+  This aim of this chapter is to help you become familiar with the jamovi interface and comfortable importing data into jamovi to collect some descriptive statistics.
+  Exercises in this practical use two datasets
+  The first dataset includes some hypothetical measurements of soil organic carbon, as might be collected in the field,
+  The second dataset includes measurements of fig dimensions from the same Sonoran Desert Rock Fig (\emph{Ficus petiolaris}) system used in Chapter 3.
+  Three exercises introduce some very basic summary statistics, and demonstrate how to transform variables and compute new variables.
+\end{itemize}
 
 \hypertarget{Chapter_4}{%
 \chapter{Populations and samples}\label{Chapter_4}}
@@ -1382,7 +1401,7 @@ It is necessary to be able to apply these equations correctly to estimate combin
 It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in \protect\hyperlink{uncertainty_derivation}{Appendix B} for the curious.
 
 \hypertarget{Chapter_8}{%
-\chapter{Practical. Introduction to jamovi}\label{Chapter_8}}
+\chapter{\texorpdfstring{\emph{Practical}. Introduction to jamovi}{Practical. Introduction to jamovi}}\label{Chapter_8}}
 
 This practical focuses on learning how to work with datasets in jamovi \citep{Jamovi2022}.
 You can \href{https://www.jamovi.org/download.html}{download jamovi} (\url{https://www.jamovi.org/}) for free or run it directly \href{https://www.jamovi.org/cloud.html}{from a browser} using the jamovi cloud (\url{https://www.jamovi.org/cloud.html}).
@@ -1739,24 +1758,33 @@ These skills will be used throughout the book, so it is important to be comforta
 
 Part III focuses on descriptive statistics, and how to report them, interpret them, and communicate them with graphs.
 It introduces what to do with data after they have been collected and organised in jamovi.
-\protect\hyperlink{Chapter_9}{Chapter 9} focuses on how to interpret numbers with the correct degree of accuracy and precision.
-In practice, this means interpreting values with the correct number of digits (decimal places and significant figures), and rounding appropriately.
-It is important to ensure that data are not interpreted or reported has having a higher degree of accuracy or precision than is justified by measurement.
-\protect\hyperlink{Chapter_10}{Chapter 10} then introduces different types of graphs for communicating data visually.
-The chapter focuses specifically on histograms, pie charts, barplots, and box-whisker plots.
-It explains what type of plot is appropriate for a given type of variable (see \protect\hyperlink{Chapter_5}{Chapter 5}).
-\protect\hyperlink{Chapter_11}{Chapter 11} introduces the first type of summary statistics with measures of central tendency.
-These are measures that describe the centre of the data using a single number.
-Measures of central tendency in this chapter include the mean, the mode, the median, and quantiles.
-\protect\hyperlink{Chapter_12}{Chapter 12} introduces on measures of spread.
-In contrast to measures of central tendency, which focus on the centre of a dataset, measures of spread focus on how much the data are spread out.
-Measures of spread in this chapter include the range, the inter-quartile range, the variance, the standard deviation, the coefficient of variation, and the standard error.
-\protect\hyperlink{Chapter_13}{Chapter 13} explains the concepts of skew and kurtosis, and statistical moments.
-This chapter emphasises how to recognise from a histogram when data are left or right skewed, or when data are leptokurtic or platykurtic.
-It also explains why the second, third, and fourth moments identify the variance, skew, and kurtosis, respectively.
-\protect\hyperlink{Chapter_14}{Chapter 14} is a guide to using jamovi for making plots introduced in \protect\hyperlink{Chapter_10}{Chapter 10}, and finding measures of central tendency and spread introduced in \protect\hyperlink{Chapter_11}{Chapter 11} and \protect\hyperlink{Chapter_12}{Chapter 12}, respectively, and reporting them accurately using the knowledge from \protect\hyperlink{Chapter_9}{Chapter 9}.
-Five exercises are introduced in total.
-These exercises use hypothetical measurements of petiole diameter from the white water lily (\emph{Nymphaea alba}), which is found in different sites across Scotland.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_9}{Chapter 9} focuses on how to interpret numbers with the correct degree of accuracy and precision.
+  In practice, this means interpreting values with the correct number of digits (decimal places and significant figures), and rounding appropriately.
+  It is important to ensure that data are not interpreted or reported has having a higher degree of accuracy or precision than is justified by measurement.
+\item
+  \protect\hyperlink{Chapter_10}{Chapter 10} then introduces different types of graphs for communicating data visually.
+  The chapter focuses specifically on histograms, pie charts, barplots, and box-whisker plots.
+  It explains what type of plot is appropriate for a given type of variable (see \protect\hyperlink{Chapter_5}{Chapter 5}).
+\item
+  \protect\hyperlink{Chapter_11}{Chapter 11} introduces the first type of summary statistics with measures of central tendency.
+  These are measures that describe the centre of the data using a single number.
+  Measures of central tendency in this chapter include the mean, the mode, the median, and quantiles.
+\item
+  \protect\hyperlink{Chapter_12}{Chapter 12} introduces on measures of spread.
+  In contrast to measures of central tendency, which focus on the centre of a dataset, measures of spread focus on how much the data are spread out.
+  Measures of spread in this chapter include the range, the inter-quartile range, the variance, the standard deviation, the coefficient of variation, and the standard error.
+\item
+  \protect\hyperlink{Chapter_13}{Chapter 13} explains the concepts of skew and kurtosis, and statistical moments.
+  This chapter emphasises how to recognise from a histogram when data are left or right skewed, or when data are leptokurtic or platykurtic.
+  It also explains why the second, third, and fourth moments identify the variance, skew, and kurtosis, respectively.
+\item
+  \protect\hyperlink{Chapter_14}{Chapter 14} is a guide to using jamovi for making plots introduced in \protect\hyperlink{Chapter_10}{Chapter 10}, and finding measures of central tendency and spread introduced in \protect\hyperlink{Chapter_11}{Chapter 11} and \protect\hyperlink{Chapter_12}{Chapter 12}, respectively, and reporting them accurately using the knowledge from \protect\hyperlink{Chapter_9}{Chapter 9}.
+  Five exercises are introduced in total.
+  These exercises use hypothetical measurements of petiole diameter from the white water lily (\emph{Nymphaea alba}), which is found in different sites across Scotland.
+\end{itemize}
 
 \hypertarget{Chapter_9}{%
 \chapter{Decimal places, significant figures, and rounding}\label{Chapter_9}}
@@ -2450,26 +2478,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-43}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.82 & 0.79 & 0.50 & 0.66 & 0.70 & 0.78 & 0.75 & 0.77 & 0.78 & 0.66 \\
-Sample\_2 & 0.75 & 0.82 & 0.68 & 0.62 & 0.72 & 0.76 & 0.67 & 0.63 & 0.50 & 0.57 \\
-Sample\_3 & 0.64 & 0.76 & 0.54 & 0.72 & 0.63 & 0.67 & 0.54 & 0.67 & 0.73 & 0.53 \\
-Sample\_4 & 0.78 & 0.81 & 0.77 & 0.86 & 0.74 & 0.73 & 0.75 & 0.69 & 0.69 & 0.72 \\
-Sample\_5 & 0.71 & 0.72 & 0.63 & 0.47 & 0.68 & 0.50 & 0.65 & 0.74 & 0.69 & 0.93 \\
-Sample\_6 & 0.66 & 0.94 & 0.71 & 0.67 & 0.79 & 0.60 & 0.68 & 0.69 & 0.68 & 0.49 \\
-Sample\_7 & 0.62 & 0.72 & 0.70 & 0.62 & 0.66 & 0.71 & 0.88 & 0.73 & 0.55 & 0.48 \\
-Sample\_8 & 0.74 & 0.63 & 0.69 & 0.71 & 0.61 & 0.60 & 0.71 & 0.74 & 0.49 & 0.78 \\
-Sample\_9 & 1.04 & 0.64 & 0.66 & 0.68 & 0.78 & 0.50 & 0.68 & 0.70 & 0.65 & 0.75 \\
-Sample\_10 & 0.74 & 0.76 & 0.65 & 0.67 & 0.80 & 0.72 & 0.81 & 0.63 & 0.84 & 0.72 \\
-Sample\_11 & 0.61 & 0.99 & 0.78 & 0.81 & 0.82 & 0.70 & 0.78 & 0.65 & 0.75 & 0.80 \\
-Sample\_12 & 0.43 & 0.67 & 0.58 & 0.55 & 0.68 & 0.71 & 0.69 & 0.74 & 0.88 & 0.84 \\
-Sample\_13 & 0.71 & 0.63 & 0.88 & 0.82 & 0.70 & 0.66 & 0.83 & 0.75 & 0.64 & 0.68 \\
-Sample\_14 & 0.62 & 0.77 & 0.54 & 0.73 & 0.62 & 0.73 & 0.65 & 0.64 & 0.65 & 0.67 \\
-Sample\_15 & 0.76 & 0.60 & 0.65 & 0.81 & 0.76 & 0.62 & 0.76 & 0.71 & 0.69 & 0.55 \\
-Sample\_16 & 0.83 & 0.69 & 0.60 & 0.63 & 0.82 & 0.70 & 0.73 & 0.76 & 0.60 & 0.56 \\
-Sample\_17 & 0.59 & 0.59 & 0.68 & 0.73 & 0.71 & 0.64 & 0.64 & 0.61 & 0.76 & 0.95 \\
-Sample\_18 & 0.72 & 0.58 & 0.60 & 0.61 & 0.85 & 0.74 & 0.64 & 0.65 & 0.79 & 0.58 \\
-Sample\_19 & 0.74 & 0.75 & 0.71 & 0.65 & 0.73 & 0.77 & 0.56 & 0.70 & 0.61 & 0.76 \\
-Sample\_20 & 0.70 & 0.73 & 0.46 & 0.66 & 0.68 & 0.82 & 0.56 & 0.62 & 0.81 & 0.77 \\
+Sample\_1 & 0.77 & 0.65 & 0.46 & 0.78 & 0.56 & 0.74 & 0.63 & 0.76 & 0.73 & 0.70 \\
+Sample\_2 & 0.73 & 0.66 & 0.74 & 0.61 & 0.59 & 0.66 & 0.70 & 0.75 & 0.64 & 0.61 \\
+Sample\_3 & 0.75 & 0.81 & 0.72 & 0.67 & 0.72 & 0.97 & 0.66 & 0.69 & 0.77 & 0.60 \\
+Sample\_4 & 0.73 & 0.67 & 0.59 & 0.83 & 0.79 & 0.93 & 0.78 & 0.70 & 0.69 & 0.75 \\
+Sample\_5 & 0.63 & 0.63 & 0.75 & 0.56 & 0.55 & 0.73 & 0.75 & 0.67 & 0.73 & 0.82 \\
+Sample\_6 & 0.73 & 0.75 & 0.69 & 0.80 & 0.81 & 0.65 & 0.57 & 0.64 & 0.77 & 0.75 \\
+Sample\_7 & 0.79 & 0.64 & 0.85 & 0.71 & 0.77 & 0.77 & 0.60 & 0.68 & 0.72 & 0.56 \\
+Sample\_8 & 0.64 & 0.62 & 0.80 & 0.60 & 0.58 & 0.67 & 0.60 & 0.66 & 0.71 & 0.69 \\
+Sample\_9 & 0.66 & 0.96 & 0.77 & 0.67 & 0.47 & 0.70 & 0.66 & 0.77 & 0.70 & 0.74 \\
+Sample\_10 & 0.75 & 0.82 & 0.70 & 0.86 & 0.73 & 0.68 & 0.64 & 0.72 & 0.64 & 0.64 \\
+Sample\_11 & 0.55 & 0.72 & 0.74 & 0.81 & 0.62 & 0.65 & 0.85 & 0.58 & 0.85 & 0.56 \\
+Sample\_12 & 0.74 & 0.58 & 0.77 & 0.77 & 0.84 & 0.89 & 0.65 & 0.80 & 0.68 & 0.73 \\
+Sample\_13 & 0.69 & 0.66 & 0.61 & 0.68 & 0.59 & 0.77 & 0.77 & 0.74 & 0.59 & 0.69 \\
+Sample\_14 & 0.62 & 0.66 & 0.58 & 0.85 & 0.69 & 0.62 & 0.63 & 0.62 & 0.53 & 0.56 \\
+Sample\_15 & 0.73 & 0.50 & 0.66 & 0.74 & 0.55 & 0.70 & 0.72 & 0.61 & 0.75 & 0.55 \\
+Sample\_16 & 0.85 & 0.70 & 0.65 & 0.76 & 0.80 & 0.86 & 0.68 & 0.79 & 0.81 & 0.81 \\
+Sample\_17 & 0.63 & 0.67 & 0.67 & 0.70 & 0.76 & 0.91 & 0.61 & 0.78 & 0.64 & 0.66 \\
+Sample\_18 & 0.65 & 0.71 & 0.72 & 0.58 & 0.74 & 0.78 & 0.75 & 0.73 & 0.61 & 0.49 \\
+Sample\_19 & 0.64 & 0.87 & 0.79 & 0.68 & 0.67 & 0.57 & 0.86 & 0.76 & 0.47 & 0.55 \\
+Sample\_20 & 0.66 & 0.74 & 0.67 & 0.73 & 0.66 & 0.78 & 0.86 & 0.64 & 0.63 & 0.70 \\
 \bottomrule
 \end{longtable}
 
@@ -2478,18 +2506,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.721 0.672 0.643 0.754 0.672 0.691 0.667 0.670 0.708 0.734
-[2,] 0.769 0.677 0.730 0.662 0.691 0.692 0.690 0.676 0.698 0.681
+[1,] 0.678 0.669 0.736 0.746 0.682 0.716 0.709 0.657 0.710 0.718
+[2,] 0.693 0.745 0.679 0.636 0.651 0.771 0.703 0.676 0.686 0.707
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0322521.
+The standard deviation of the 20 sample means reported above is 0.0345061.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.0951548.
+The standard deviation of Sample 1 is \(s =\) 0.1039017.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.0951548}{\sqrt{10}} = 0.0300906.\]
+\[s = \frac{0.1039017}{\sqrt{10}} = 0.0328566.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0322521, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0300906.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0345061, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0328566.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{skew-and-kurtosis}{%
@@ -2886,18 +2914,24 @@ If so, then what does this say about our ability to make conclusions about the d
 Part IV focuses on probability and the central limit theorem.
 These topics are essential for making statistical inferences, understanding uncertainty, and conducting statistical hypothesis tests.
 Probability is especially important because understanding how probability works is necessary for understanding the probability distributions that are used throughout the rest of this book.
-\protect\hyperlink{Chapter_15}{Chapter 15} introduces probability models and how to interpret them.
-The chapter also provides some examples of probability distributions that are especially relevant to biological and environmental sciences.
-\protect\hyperlink{Chapter_16}{Chapter 16} the introduces the central limit theorem (CLT).
-It focuses on what the CLT is and why it is so important in statistics.
-As with most topics in this book, the goal here is conceptual understanding.
-The key idea is that the distribution of sample means is always expected to be normally distributed, and this chapter demonstrates this principle using the distributions introduced in Chapter 15.
-Chapter 16 also introduces standard normal deviates (z-scores) and how they relate to probability.
-\protect\hyperlink{Chapter_17}{Chapter 17} guides you through applying the ideas from \protect\hyperlink{Chapter_15}{Chapter 15} and \protect\hyperlink{Chapter_16}{Chapter 16} in jamovi to predict probabilities from a real dataset.
-This chapter includes 3 exercises, which focus on calculating probabilities from a dataset and the normal distribution, and demonstrating the CLT with simulated data.
-It also introduces modules in jamovi, and how they can be downloaded and used.
-The first two exercises use a hypothetical dataset collected from a mobile game about decision-making in sustainable development.
-This dataset includes game player decisions on dam construction and subsequent development on the game landscape, and the scores of players at the end of the game.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_15}{Chapter 15} introduces probability models and how to interpret them.
+  The chapter also provides some examples of probability distributions that are especially relevant to biological and environmental sciences.
+\item
+  \protect\hyperlink{Chapter_16}{Chapter 16} the introduces the central limit theorem (CLT).
+  It focuses on what the CLT is and why it is so important in statistics.
+  As with most topics in this book, the goal here is conceptual understanding.
+  The key idea is that the distribution of sample means is always expected to be normally distributed, and this chapter demonstrates this principle using the distributions introduced in Chapter 15.
+  Chapter 16 also introduces standard normal deviates (z-scores) and how they relate to probability.
+\item
+  \protect\hyperlink{Chapter_17}{Chapter 17} guides you through applying the ideas from \protect\hyperlink{Chapter_15}{Chapter 15} and \protect\hyperlink{Chapter_16}{Chapter 16} in jamovi to predict probabilities from a real dataset.
+  This chapter includes 3 exercises, which focus on calculating probabilities from a dataset and the normal distribution, and demonstrating the CLT with simulated data.
+  It also introduces modules in jamovi, and how they can be downloaded and used.
+  The first two exercises use a hypothetical dataset collected from a mobile game about decision-making in sustainable development.
+  This dataset includes game player decisions on dam construction and subsequent development on the game landscape, and the scores of players at the end of the game.
+\end{itemize}
 
 \hypertarget{Chapter_15}{%
 \chapter{Introduction to probability models}\label{Chapter_15}}
@@ -3867,17 +3901,23 @@ What general conclusion can you make about the distribution of sample means from
 Part V focuses making statistical inferences using confidence intervals (CIs) and introduces the t-interval.
 Confidence intervals calculate two values, an upper and a lower CI, within which we expect a statistic (e.g., the mean) to be contained with some probability.
 They are regularly used to indicate the degree of uncertainty in an estimated statistic.
-\protect\hyperlink{Chapter_18}{Chapter 18} introduces what confidence intervals are and how to calculate them for normally and binomially distributed variables.
-Understanding CIs builds on the concepts from Parts III and IV, especially the standard error introduced in \protect\hyperlink{Chapter_12}{Chapter 12} and z-scores introduced in \protect\hyperlink{Chapter_16}{Chapter 16}.
-Calculating CIs also requires an understanding of mathematical order of operations, which were first introduced in \protect\hyperlink{Chapter_1}{Chapter 1}.
-\protect\hyperlink{Chapter_19}{Chapter 19} introduces the t-distribution and explains why this interval is usually necessary for calculating confidence intervals.
-The t-distribution makes it possible to adjust confidence intervals appropriately given a small sample size.
-The t-distribution also appears in multiple hypothesis tests that are introduced later in this book, most obviously the t-test, but also regression.
-\protect\hyperlink{Chapter_20}{Chapter 20} guides you through how to calculate confidence intervals in jamovi.
-This chapter includes five exercises, all of which involve calculating confidence intervals.
-In addition to working through how to calculate confidence intervals in jamovi, this chapter includes an exercise that shows the importance of the t-distribution for small sample size.
-Exercises use a hypothetical dataset inspired by the Woodland Creation and Ecological Networks (WrEN) project.
-Data include measurements of tree diameters at breast height across different sites.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_18}{Chapter 18} introduces what confidence intervals are and how to calculate them for normally and binomially distributed variables.
+  Understanding CIs builds on the concepts from Parts III and IV, especially the standard error introduced in \protect\hyperlink{Chapter_12}{Chapter 12} and z-scores introduced in \protect\hyperlink{Chapter_16}{Chapter 16}.
+  Calculating CIs also requires an understanding of mathematical order of operations, which were first introduced in \protect\hyperlink{Chapter_1}{Chapter 1}.
+\item
+  \protect\hyperlink{Chapter_19}{Chapter 19} introduces the t-distribution and explains why this interval is usually necessary for calculating confidence intervals.
+  The t-distribution makes it possible to adjust confidence intervals appropriately given a small sample size.
+  The t-distribution also appears in multiple hypothesis tests that are introduced later in this book, most obviously the t-test, but also regression.
+\item
+  \protect\hyperlink{Chapter_20}{Chapter 20} guides you through how to calculate confidence intervals in jamovi.
+  This chapter includes five exercises, all of which involve calculating confidence intervals.
+  In addition to working through how to calculate confidence intervals in jamovi, this chapter includes an exercise that shows the importance of the t-distribution for small sample size.
+  Exercises use a hypothetical dataset inspired by the Woodland Creation and Ecological Networks (WrEN) project.
+  Data include measurements of tree diameters at breast height across different sites.
+\end{itemize}
 
 \hypertarget{Chapter_18}{%
 \chapter{Confidence intervals (CIs)}\label{Chapter_18}}
@@ -4093,7 +4133,7 @@ To complete the first 2 exercises, you will need the distrACTION module in jamov
 If you need to download it again, the instructions to do this are in \protect\hyperlink{Chapter_17}{Chapter 17} \href{https://bradduthie.github.io/SCIU4T4/Chapter_17.html\#probabilities-from-a-normal-distribution}{Exercise 16.2} (briefly, go to the Modules option and select `jamovi library', then scroll down until you find the `distraACTION' module).
 
 The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project \citep{Fuentes-Montemayor2022, Fuentes-Montemayor2022a}.
-The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Dr Robbie Whytock, Dr Kevin Watts, and Prof Kirsty Park (\url{https://www.wren-project.com/}).
+The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Prof Kevin Watts, and Prof Kirsty Park (\url{https://www.wren-project.com/}).
 It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.
 
 \begin{figure}
@@ -4394,7 +4434,7 @@ The formula for standard error of a proportion is,
 
 \[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]
 
-We can estimate \(p\) using \(p\), and \(N\) is the total sample size.
+We can estimate \(p\) as the total number of grazed sites divided by \(N\), where \(N\) is the total sample size.
 Using the above equation, what is the standard error of p?
 
 SE(p): \_\_\_\_\_\_\_\_\_\_\_\_
@@ -4496,14 +4536,20 @@ There is no right or wrong answer here, but confidence intervals are very challe
 Part VI introduces hypothesis testing, and how to use and interpret statistical tests that test whether or not the mean (or median) of a dataset is significantly different from some specific value, or whether two different groups in a dataset have the same mean (or median).
 Hypothesis testing is a fundamental concept in statistics, but it is often misunderstood.
 The three chapters in this part of the book explain the fundamental concepts of null hypothesis testing, then introduce some of the most basic statistical techniques to test for differences between two groups.
-\protect\hyperlink{Chapter_21}{Chapter 21} introduces hypothesis testing, and what it means in statistics. This chapter discusses the general idea of hypothesis testing using the concrete example of coin flipping to explain statistical terminology (null and alternative hypotheses, and p-values).
-The concepts and terminology in this chapter are essential for understanding the more advanced tests in later chapters.
-\protect\hyperlink{Chapter_22}{Chapter 22} introduces the t-test and its non-parametric alternatives.
-These tests include the one sample t-test, the independent samples t-test, the paired sample t-test, the Wilcoxon test, and the Mann-Whitney U test.
-The chapter also explains the assumptions underlying these different tests.
-Finally, \protect\hyperlink{Chapter_23}{Chapter 23} is a guide for using jamovi to run the statistical tests that are introduced in Chapter 22.
-It includes five exercises, one for each of the Chapter 22 statistical tests.
-Exercises focus on a hypothetical example of biology education, specifically scores from biology students on different tests, and across two different years.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_21}{Chapter 21} introduces hypothesis testing, and what it means in statistics. This chapter discusses the general idea of hypothesis testing using the concrete example of coin flipping to explain statistical terminology (null and alternative hypotheses, and p-values).
+  The concepts and terminology in this chapter are essential for understanding the more advanced tests in later chapters.
+\item
+  \protect\hyperlink{Chapter_22}{Chapter 22} introduces the t-test and its non-parametric alternatives.
+  These tests include the one sample t-test, the independent samples t-test, the paired sample t-test, the Wilcoxon test, and the Mann-Whitney U test.
+  The chapter also explains the assumptions underlying these different tests.
+\item
+  \protect\hyperlink{Chapter_23}{Chapter 23} is a guide for using jamovi to run the statistical tests that are introduced in Chapter 22.
+  It includes five exercises, one for each of the Chapter 22 statistical tests.
+  Exercises focus on a hypothetical example of biology education, specifically scores from biology students on different tests, and across two different years.
+\end{itemize}
 
 \hypertarget{Chapter_21}{%
 \chapter{What is hypothesis testing?}\label{Chapter_21}}
@@ -5705,21 +5751,29 @@ What could you do to test the null hypothesis that the change in scores from Tes
 Part VII introduces ANalysis Of VAriance (ANOVA) and related methods, all of which focus on testing whether or not multiple groups in a dataset have the same mean.
 ANOVA is a very widely used statistical tool, and this part of the book introduces its most well-known applications.
 The concepts here follow from Part VI, but focus more broadly on hypothesis testing when there are more than two groups of continuous data.
-\protect\hyperlink{Chapter_24}{Chapter 24} introduces the general idea of the ANOVA, how it is calculated, and the F distribution that is used to test the null hypothesis that all groups have the same mean.
-The F distribution, like the t-distribution that was first introduced in \protect\hyperlink{Chapter_19}{Chapter 19}, appears in many places in statistics.
-Chapter 24 also outlines the assumptions of ANOVA.
-\protect\hyperlink{Chapter_25}{Chapter 25} introduces multiple comparisons tests.
-These tests can be used to find out which group means differ in a dataset when there are more than 2 groups.
-The chapter also explains why not correcting for multiple comparisons can lead to erroneously rejecting a null hypothesis when it is true (i.e., a Type I error) at a higher frequency than desired.
-\protect\hyperlink{Chapter_26}{Chapter 26} introduces the Kruskall-Wallis H test.
-This is the non-parametric equivalent of the one-way ANOVA, which can be used when assumptions of the ANOVA are violated.
-The Kruskall-Wallis is an extension of the Mann-Whitney U test from \protect\hyperlink{mann-whitney-u-test}{Chapter 22.5.2}
-\protect\hyperlink{Chapter_27}{Chapter 27} introduces the two-way ANOVA.
-The two-way ANOVA is relevant when there are two types of groups (the chapter uses the example in which insect wing lengths are sampled from both different species and different trees).
-Using the two-way ANOVA, this chapter also introduces how to test multiple null hypotheses with a single test, and it introduces the concept of statistical interactions between variables (e.g., between species and trees).
-Finally, \protect\hyperlink{Chapter_28}{Chapter 28} demonstrates how to use and correctly interpret the tests that are introduced in chapters 23-26 in jamovi.
-It includes five exercises, two that demonstrate how to use a one-way ANOVA, one that demonstrates how to run a test of multiple comparisons, one that demonstrates the Kruskall-Wallis H test, and one that demonstrates a two-way ANOVA in jamovi.
-Exercises focus on a hypothetical example of sampling nutrient concentrations across different sites and soil profiles.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_24}{Chapter 24} introduces the general idea of the ANOVA, how it is calculated, and the F distribution that is used to test the null hypothesis that all groups have the same mean.
+  The F distribution, like the t-distribution that was first introduced in \protect\hyperlink{Chapter_19}{Chapter 19}, appears in many places in statistics.
+  Chapter 24 also outlines the assumptions of ANOVA.
+\item
+  \protect\hyperlink{Chapter_25}{Chapter 25} introduces multiple comparisons tests.
+  These tests can be used to find out which group means differ in a dataset when there are more than 2 groups.
+  The chapter also explains why not correcting for multiple comparisons can lead to erroneously rejecting a null hypothesis when it is true (i.e., a Type I error) at a higher frequency than desired.
+\item
+  \protect\hyperlink{Chapter_26}{Chapter 26} introduces the Kruskall-Wallis H test.
+  This is the non-parametric equivalent of the one-way ANOVA, which can be used when assumptions of the ANOVA are violated.
+  The Kruskall-Wallis is an extension of the Mann-Whitney U test from \protect\hyperlink{mann-whitney-u-test}{Chapter 22.5.2}
+\item
+  \protect\hyperlink{Chapter_27}{Chapter 27} introduces the two-way ANOVA.
+  The two-way ANOVA is relevant when there are two types of groups (the chapter uses the example in which insect wing lengths are sampled from both different species and different trees).
+  Using the two-way ANOVA, this chapter also introduces how to test multiple null hypotheses with a single test, and it introduces the concept of statistical interactions between variables (e.g., between species and trees).
+\item
+  \protect\hyperlink{Chapter_28}{Chapter 28} demonstrates how to use and correctly interpret the tests that are introduced in chapters 23-26 in jamovi.
+  It includes five exercises, two that demonstrate how to use a one-way ANOVA, one that demonstrates how to run a test of multiple comparisons, one that demonstrates the Kruskall-Wallis H test, and one that demonstrates a two-way ANOVA in jamovi.
+  Exercises focus on a hypothetical example of sampling nutrient concentrations across different sites and soil profiles.
+\end{itemize}
 
 \hypertarget{Chapter_24}{%
 \chapter{Analysis of variance}\label{Chapter_24}}
@@ -6747,20 +6801,26 @@ Variables are associated when at least some of the variation in one variable can
 For example, if knowing the number of trees plot of land helps predict the presence or absence of a particular bird species, then tree number and bird species presence are associated.
 Or, if knowing an animal's body length helps predict its mass, then body length and mass are associated.
 This part of the book is broken down into chapters focused on counts and correlations.
-\protect\hyperlink{Chapter_29}{Chapter 29} focuses on count data.
-Count data are defined by natural numbers of discrete entities (e.g., the number of trees or birds in a site).
-We can test statistical hypotheses on count data using a Chi-square (\(\chi^{2}\)) distribution, which is introduced in the first part of the chapter.
-Like the t-distribution and F-distribution, the Chi-square distribution also appears in many places in statistics.
-In this chapter, applications of the Chi-squared distribution are the Chi-squared goodness of fit test, which tests if observed counts are significant different from some expectation, and the Chi-square test of association, which tests if counts of two different categories are associated.
-\protect\hyperlink{Chapter_30}{Chapter 30} focuses on continuous data.
-Continuous data can take any real value (e.g., body length or mass).
-Association between two continuous variables can be calculated as a correlation.
-This chapter introduces correlation, how it can be visualised using a scatterplot and defined mathematically as the correlation coefficient.
-Two different correlation coefficients are introduced, then a test is introduced to reject or not reject the null hypothesis that two variables are uncorrelated.
-This test of the correlation coefficient relies on the t-distribution, which was introduced in \protect\hyperlink{Chapter_19}{Chapter 19}.
-Finally, \protect\hyperlink{Chapter_31}{Chapter 31} demonstrates how to use jamovi to run and correctly interpret output for the Chi-square tests introduced in Chapter 29 and correlation tests introduced in Chapter 30.
-It includes six exercises, which focus on the Chi-square goodness of fit, the Chi-square test of association, and tests of the correlation coefficient.
-Exercises use a dataset that is inspired by experimental work testing the effects of radiation on bumblebee traits.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_29}{Chapter 29} focuses on count data.
+  Count data are defined by natural numbers of discrete entities (e.g., the number of trees or birds in a site).
+  We can test statistical hypotheses on count data using a Chi-square (\(\chi^{2}\)) distribution, which is introduced in the first part of the chapter.
+  Like the t-distribution and F-distribution, the Chi-square distribution also appears in many places in statistics.
+  In this chapter, applications of the Chi-squared distribution are the Chi-squared goodness of fit test, which tests if observed counts are significant different from some expectation, and the Chi-square test of association, which tests if counts of two different categories are associated.
+\item
+  \protect\hyperlink{Chapter_30}{Chapter 30} focuses on continuous data.
+  Continuous data can take any real value (e.g., body length or mass).
+  Association between two continuous variables can be calculated as a correlation.
+  This chapter introduces correlation, how it can be visualised using a scatterplot and defined mathematically as the correlation coefficient.
+  Two different correlation coefficients are introduced, then a test is introduced to reject or not reject the null hypothesis that two variables are uncorrelated.
+  This test of the correlation coefficient relies on the t-distribution, which was introduced in \protect\hyperlink{Chapter_19}{Chapter 19}.
+\item
+  \protect\hyperlink{Chapter_31}{Chapter 31} demonstrates how to use jamovi to run and correctly interpret output for the Chi-square tests introduced in Chapter 29 and correlation tests introduced in Chapter 30.
+  It includes six exercises, which focus on the Chi-square goodness of fit, the Chi-square test of association, and tests of the correlation coefficient.
+  Exercises use a dataset that is inspired by experimental work testing the effects of radiation on bumblebee traits.
+\end{itemize}
 
 \hypertarget{Chapter_29}{%
 \chapter{Frequency and count data}\label{Chapter_29}}
@@ -6836,9 +6896,11 @@ But sometimes we will get a much lower or higher value of \(\chi^{2}\) by chance
 If we summed a different number of squared \(x_{i}\) values, then we would expect the distribution of \(\chi^{2}\) to change.
 Had we sampled fewer than 4 \(x_{i}\) values, the expected \(\chi^{2}\) would be lower just because we are adding up fewer numbers.
 Similarly, had we sampled more than 4 \(x_{i}\) values, the expected \(\chi^{2}\) would be higher just because we are adding up more numbers.
-The shape of the \(\chi^{2}\) distribution\footnote{A random variable \(X\) has a \(\chi^{2}\) distribution if and only if its probability density function is defined by \citep{Miller2004}, \[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} & \quad for\:x > 0 \\ 0 & \quad elsewhere \end{array}\right.\] In this equation, \(v\) is the degrees of freedom of the distribution.} is therefore determined by the number of values sampled (\(N\)), or more specifically the degrees of freedom (df, or sometimes \(v\)), which in a sample is \(df = N - 1\).
+The shape of the \(\chi^{2}\) distributionchi\_square\_distribution{]} is therefore determined by the number of values sampled (\(N\)), or more specifically the degrees of freedom (df, or sometimes \(v\)), which in a sample is \(df = N - 1\).
 This is the same idea as the t-distribution from \protect\hyperlink{Chapter_19}{Chapter 19}, which also changed shape depending on the degrees of freedom.
 Figure 29.3 shows the different \(\chi^{2}\) probability density distributions for different degrees of freedom.
+
+chi\_square\_distribution{]}: A random variable \(X\) has a \(\chi^{2}\) distribution if and only if its probability density function is defined by \citep{Miller2004}, \[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} & \quad for\:x > 0 \\ 0 & \quad elsewhere \end{array}\right.\] In this equation, \(v\) is the degrees of freedom of the distribution.
 
 \begin{figure}
 \includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-137-1} \caption{Probability density functions for 3 different Chi-square distributions, each of which have different degrees of freedom (df).}\label{fig:unnamed-chunk-137}
@@ -7382,11 +7444,7 @@ This lab focuses on applying the concepts from \protect\hyperlink{Chapter_29}{Ch
 Exercises in this practical will use the \protect\hyperlink{chi-squared-goodness-of-fit}{Chi-squared goodness of fit} test, the \protect\hyperlink{chi-squared-test-of-association}{Chi-squared test of association},
 and the \protect\hyperlink{correlation-hypothesis-testing}{correlation coefficient}.
 For all of these examples, this practical will use a dataset inspired by \citet{Burrows2022}.
-This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies (Figure 31.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Erdhummel_im_Detail.jpg}{Marco Almbauer} on 4 May 2018. Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by \citet{Burrows2022}.}.
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{img/bumblebee} \caption{This lab practical focuses on the effects of radiation on bumblebees.}\label{fig:unnamed-chunk-151}
-\end{figure}
+This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies.
 
 The practical will use the bumblebee dataset\footnote{\url{https://bradduthie.github.io/stats/data/bumblebee.csv}}.
 This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30 day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (\(CO_2\)) in micromoles per minute, and the daily volume of nectar consumed by the be in ml (nectar).
@@ -7442,19 +7500,15 @@ How many degrees of freedom are there?
 df: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Now we can try to use jamovi to replicate the analysis above and find a p-value.
-In the jamovi Analyses tab, select `Frequencies' from the toolbar, then select `N outcomes'.
-A new window will open up (Figure 31.2).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_goodness_of_fit_toolbar} \caption{Jamovi toolbar showing the location of the Frequencies options, with the Chi-square goodness of fit test available under a choice called 'N Outcomes' in the pulldown menu.}\label{fig:unnamed-chunk-152}
-\end{figure}
+In the jamovi Analyses tab, select `Frequencies' from the toolbar, then select `N Outcomes: \(\chi^{2}\) Goodness of fit' from the pulldown menu.
+A new window will open up.
 
 After selecting the option `N Outcomes: \(\chi^{2}\) Goodness of fit', a new window will appear called `Proportion Test (N Outcomes)'.
 To run a \(\chi^{2}\) goodness of fit test on bee survival, move the `survived' variable into the `Variable' box.
 Leave the Counts box empty (Figure 31.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_goodness_of_fit_interface} \caption{Jamovi interface for running a Chi-square goodness of fit test on bumblebee survival in a dataset.}\label{fig:unnamed-chunk-153}
+\includegraphics[width=1\linewidth]{img/jamovi_goodness_of_fit_interface} \caption{Jamovi interface for running a Chi-square goodness of fit test on bumblebee survival in a dataset.}\label{fig:unnamed-chunk-151}
 \end{figure}
 
 The \(\chi^{2}\) Goodness of Fit table will appear in the panel to the right.
@@ -7526,7 +7580,7 @@ To test for an association between bee colony and survival, place `colony' in th
 Leave the rest of the boxes blank (Figure 31.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_test_of_association_interface} \caption{Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.}\label{fig:unnamed-chunk-154}
+\includegraphics[width=1\linewidth]{img/jamovi_test_of_association_interface} \caption{Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.}\label{fig:unnamed-chunk-152}
 \end{figure}
 
 There is a pulldown called `Statistics' below the Contingency Tables input.
@@ -7580,7 +7634,7 @@ A new window will open up that allows you to build a scatterplot by selecting th
 Put mass on the x-axis and CO\_2 on the y-axis, as shown in Figure 31.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_simple_scatterplot} \caption{Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis}\label{fig:unnamed-chunk-155}
+\includegraphics[width=1\linewidth]{img/jamovi_simple_scatterplot} \caption{Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis}\label{fig:unnamed-chunk-153}
 \end{figure}
 
 Notice that the scatterplot appears in the panel on the right.
@@ -7625,16 +7679,11 @@ Based on these p-values, which type of correlation coefficient should we use to 
 
 \end{verbatim}
 
-To run the correlation coefficient test, choose the button in the jamovi toolbar called `Regression', then select the first option `Correlation Matrix' from the pulldown menu (Figure 31.6).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_correlation_toolbar} \caption{Jamovi toolbar showing the location of the Regression options, with the Correlation Matrix option available in the pulldown menu.}\label{fig:unnamed-chunk-156}
-\end{figure}
-
+To run the correlation coefficient test, choose the button in the jamovi toolbar called `Regression', then select the first option `Correlation Matrix' from the pulldown menu.
 The Correlation Matrix option will pull up a new window in jamovi (Figure 31.7).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_correlation_interface} \caption{Jamovi interface for testing correlation coefficients.}\label{fig:unnamed-chunk-157}
+\includegraphics[width=1\linewidth]{img/jamovi_correlation_interface} \caption{Jamovi interface for testing correlation coefficients.}\label{fig:unnamed-chunk-154}
 \end{figure}
 
 Notice that the Pearson product moment correlation is selected in the checkbox of Figure 31.7 (`Pearson').
@@ -7705,7 +7754,7 @@ But there is a shortcut in jamovi if we do not have a full tidy dataset.
 If you know that the dataset included 139 `Yes' counts and 117 `No' counts, you could set up the data as a table of counts (Table 31.1).
 
 \begin{longtable}[]{@{}lr@{}}
-\caption{\label{tab:unnamed-chunk-158}Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-155}Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.}\tabularnewline
 \toprule
 Survived & Count \\
 \midrule
@@ -7723,7 +7772,7 @@ Open a new data frame in jamovi, then recreate the small dataset in Table 31.1.
 Column names should be `Survived' and `Count', as shown in Figure 31.8.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_simple_counts} \caption{Jamovi data frame with a simple organisation of count data.}\label{fig:unnamed-chunk-159}
+\includegraphics[width=1\linewidth]{img/jamovi_simple_counts} \caption{Jamovi data frame with a simple organisation of count data.}\label{fig:unnamed-chunk-156}
 \end{figure}
 
 Next, navigate to the `Analyses' tab and choose `N Outcomes' to do a goodness of fit test.
@@ -7734,7 +7783,7 @@ We could do the same for a \(\chi^{2}\) test of association, although it would b
 To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need 3 columns and 8 rows of data (Table 31.2).
 
 \begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-160}Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-157}Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.}\tabularnewline
 \toprule
 Survived & Radiation & Count \\
 \midrule
@@ -7770,20 +7819,33 @@ Linear regression, like ANOVA, is a very widely used tool in statistics.
 Regression can be used to predict the value of one variable as a linear function of one or more other variables.
 The variable being predicted is dependent on these other variables, so we call it the `dependent' variable.
 The variables used to predict are, in contrast, called `independent' variables.
-\protect\hyperlink{Chapter_32}{Chapter 32} uses a concrete example of fig fruit volumes across different latitudes to illustrate the key concepts of simple linear regression (i.e., regression with only one independent variable).
-This chapter leads with a visual interpretation of regression using a scatterplot to define the intercept, slope, and residual values in a linear regression model.
-This visual interpretation leads into the regression equation and how to interpret regression coefficients.
-Next, Chapter 32 introduces the coefficient of determination as a statistic to summarise how good any given linear model is at predicting the dependent variable.
-This chapter also introduces assumptions of regression coefficients, what hypothesis tests can be conducted using linear regression, and how to use linear regression to make predictions.
-This chapter is longer than most because there are a lot of inter-related concepts in regression, which need to be introduced step by step.
-In contrast, \protect\hyperlink{Chapter_33}{Chapter 33} is shorter.
-It extends the concept of simple linear regression to multiple regression, which is defined by the existence of more than one independent variable.
-This chapter explains what happens when multiple independent variables are included in a linear regression model, and especially how to interpret (partial) regression coefficients in multiple regression, and why they differ from the regression coefficients calculated in simple linear regression.
-The chapter then concludes by introducing a coefficient of determination that adjusts for multiple independent variables.
-\protect\hyperlink{Chapter_34}{\#Chapter 34} demonstrates how to run simple and multiple linear regression models in jamovi.
-This chapter includes five exercises and uses a dataset that is inspired by ongoing work to understand how pyrogenic carbon is stored in soils.
-Pyrogenic carbon is produced when biomass is burned and becomes sequestered in soil.
-Exercises in this chapter test whether or not environmental variables (e.g., rainfall and soil depth) are significant for predicting the concentration of pyrogenic carbon in soils.
+
+\begin{itemize}
+\item
+  \protect\hyperlink{Chapter_32}{Chapter 32} uses a concrete example of fig fruit volumes across different latitudes to illustrate the key concepts of simple linear regression (i.e., regression with only one independent variable).
+  This chapter leads with a visual interpretation of regression using a scatterplot to define the intercept, slope, and residual values in a linear regression model.
+  This visual interpretation leads into the regression equation and how to interpret regression coefficients.
+  Next, Chapter 32 introduces the coefficient of determination as a statistic to summarise how good any given linear model is at predicting the dependent variable.
+  This chapter also introduces assumptions of regression coefficients, what hypothesis tests can be conducted using linear regression, and how to use linear regression to make predictions.
+  This chapter is longer than most because there are a lot of inter-related concepts in regression, which need to be introduced step by step.
+\item
+  \protect\hyperlink{Chapter_33}{Chapter 33} extends the concept of simple linear regression to multiple regression, which is defined by the existence of more than one independent variable.
+  This chapter explains what happens when multiple independent variables are included in a linear regression model, and especially how to interpret (partial) regression coefficients in multiple regression, and why they differ from the regression coefficients calculated in simple linear regression.
+  The chapter then concludes by introducing a coefficient of determination that adjusts for multiple independent variables.
+\item
+  \protect\hyperlink{Chapter_34}{\#Chapter 34} demonstrates how to run simple and multiple linear regression models in jamovi.
+  This chapter includes five exercises and uses a dataset that is inspired by ongoing work to understand how pyrogenic carbon is stored in soils.
+  Pyrogenic carbon is produced when biomass is burned and becomes sequestered in soil.
+  Exercises in this chapter test whether or not environmental variables (e.g., rainfall and soil depth) are significant for predicting the concentration of pyrogenic carbon in soils.
+\item
+  \protect\hyperlink{Chapter_35}{Chapter 35} takes a different approach to explaining hypothesis tests.
+  Instead of specifying null distributions beforehand, we can use randomisation to build a null distribution from the sampled data.
+  Randomisation is a flexible tool for hypothesis testing, but it also provides a different perspective on what p-values really are and how to think about them.
+  Since hypothesis tests and, in particular, p-values are so often misunderstood, explaining how they work from this different perspective can be very instructive.
+  For some students, randomisation is the topic in which the nature of p-values finally starts to become clear, and this is the primary motivation for including it in this book.
+  Chapter 35 introduces randomisation as a tool for testing the same null hypothesis as the independent samples t-test, and compares the two approaches side by side to demonstrate their equivalence.
+  It then introduces bootstrapping as a method for obtaining confidence intervals.
+\end{itemize}
 
 \hypertarget{Chapter_32}{%
 \chapter{Simple linear regression}\label{Chapter_32}}
@@ -7812,13 +7874,13 @@ A visual example using a scatterplot can illustrate one way to think about regre
 Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume \citep{Duthie2016}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/FigTree2} \caption{Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.}\label{fig:unnamed-chunk-161}
+\includegraphics[width=1\linewidth]{img/FigTree2} \caption{Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.}\label{fig:unnamed-chunk-158}
 \end{figure}
 
 A sample of fig fruits from different latitudes is shown in Table 32.1.
 
 \begin{longtable}[]{@{}lrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-162}Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-159}Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
 \toprule
 \endhead
 Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
@@ -7833,7 +7895,7 @@ Fruit volume is therefore the dependent variable, and we should plot it on the y
 Latitude is our independent variable, and we should plot it on the x-axis (Figure 32.2).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-163-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.}\label{fig:unnamed-chunk-163}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-160-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.}\label{fig:unnamed-chunk-160}
 \end{figure}
 
 In Figure 32.2, each of the 7 points is a different fig fruit.
@@ -7882,7 +7944,7 @@ To map each fruit's latitude to its corresponding volume, we therefore need one 
 This number is the \textbf{residual}, and it describes how far away a point is from the regression line (Figure 32.3).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-164-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point, one of which is highlighted in red.}\label{fig:unnamed-chunk-164}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-161-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point, one of which is highlighted in red.}\label{fig:unnamed-chunk-161}
 \end{figure}
 
 The residual of each of the 7 points is shown with a dashed line in Figure 32.3.
@@ -7935,7 +7997,7 @@ The regression line is defined by its relationship to the residual values.
 Figure 32.4 shows the same regression as in Figures 32.2 and 32.3, but with the values of the residuals written next to each point.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-165-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.}\label{fig:unnamed-chunk-165}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-162-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.}\label{fig:unnamed-chunk-162}
 \end{figure}
 
 Some of the values are positive, and some are negative.
@@ -7974,7 +8036,7 @@ This large \(R^{2}\) means that the model is doing a good job of explaining vari
 Figure 32.5 shows some examples of scatterplots with different \(R^{2}\) values.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-166-1} \caption{Examples of scatterplots with different coefficients of determination (R-squared).}\label{fig:unnamed-chunk-166}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-163-1} \caption{Examples of scatterplots with different coefficients of determination (R-squared).}\label{fig:unnamed-chunk-163}
 \end{figure}
 
 We can calculate the \(R^{2}\) value for our example of fig fruit volumes over a latitudinal gradient.
@@ -7984,7 +8046,7 @@ Now, to get \(SS_{total}\), we just need to get the sum of squares for fruit vol
 We can visualise this as the sum of squared deviations from the mean fruit volume of \(\bar{y} =\) 1930.1 instead of the value predicted by the regression line (Figure 32.6).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-167-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).}\label{fig:unnamed-chunk-167}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-164-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).}\label{fig:unnamed-chunk-164}
 \end{figure}
 
 The black numbers in Figure 32.6 show the deviations of each point from the regression line, just like in Figure 32.4.
@@ -8028,7 +8090,7 @@ Figure 32.7 shows a classic example of heteroscedasticity.
 Notice that the variance of \(y_{i}\) values around the regression line increases with increasing \(x\).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-168-1} \caption{A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.}\label{fig:unnamed-chunk-168}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-165-1} \caption{A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.}\label{fig:unnamed-chunk-165}
 \end{figure}
 
 Note that even if our assumptions are not perfectly met, this does not completely invalidate the method of linear regression.
@@ -8111,14 +8173,14 @@ This means that the model explains about 61.98 per cent of the total variation i
 We therefore reject the null hypothesis and conclude that the model with latitude as an independent variables fits the data significantly better than a model with just the mean of fruit volume (Figure 32.8).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_output} \caption{Jamovi output table for a simple linear regression in which latitude is an independent variable and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-169}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_output} \caption{Jamovi output table for a simple linear regression in which latitude is an independent variable and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-166}
 \end{figure}
 
 Figure 32.8 reports the \(R^{2}\) value along with with \(F\) statistic, degrees of freedom, and the resulting p-value for the overall model.
 We can also see a table of model coefficients, the intercept (\(b_{0}\)) and slope (\(b_{1}\)) associated with latitude (Figure 32.9).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_coefficients} \caption{Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.}\label{fig:unnamed-chunk-170}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_coefficients} \caption{Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.}\label{fig:unnamed-chunk-167}
 \end{figure}
 
 From the jamovi output shown in Figure 32.9, we can see that the intercept is significant (\(P < 0.05\)), so we reject the null hypothesis that \(b_{0} = 0\).
@@ -8190,7 +8252,7 @@ To illustrate a multiple regression, consider again the fig fruit volume example
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).
 
 \begin{longtable}[]{@{}lrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-171}Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-168}Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
 \toprule
 \endhead
 Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
@@ -8202,7 +8264,7 @@ Volume & 2399.0 & 2941.7 & 2167.2 & 2051.3 & 1686.2 & 937.3 & 1328.2 \\
 We can use a scatterplot to visualise each independent variable on the x-axis against the dependent variable on the y-axis (Figure 33.1).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-172-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset. }\label{fig:unnamed-chunk-172}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-169-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset. }\label{fig:unnamed-chunk-169}
 \end{figure}
 
 As with simple regression (\protect\hyperlink{Chapter_32}{Chapter 32}), we can test whether or not the overall model that includes both latitude and altitude as independent variables produces a significantly better fit to the data than just the mean volume.
@@ -8224,7 +8286,7 @@ In jamovi, running a multiple regression is just a matter of including the addit
 Table 32.2 shows an output table, which gives us estimates of \(b_{0}\), \(b_{1}\), and \(b_{2}\) (column `Estimate'), along with p-values for the intercept and each partial regression coefficient (column `Pr(\textgreater\textbar t\textbar)').
 
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:unnamed-chunk-173}Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(\textgreater\textbar t\textbar)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-170}Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(\textgreater\textbar t\textbar)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.}\tabularnewline
 \toprule
 & Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
 \midrule
@@ -8268,7 +8330,7 @@ We can also look at the overall multiple regression model.
 Figure 33.2 shows what this model output looks like reported by jamovi \citep{Jamovi2022}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_overall_multiple_regression_output} \caption{Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-174}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_multiple_regression_output} \caption{Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-171}
 \end{figure}
 
 As with the simple linear regression output from \protect\hyperlink{simple-regression-output}{Chapter 32.7.4}, the overall model test output table includes columns for \(R^{2}\), F, degrees of freedom, and a p-value for the overall model.
@@ -8300,12 +8362,8 @@ This attempts to account for the inevitable tendency of \(R^{2}\) to increase wi
 
 This lab focuses on practical exercises to apply the concepts in \protect\hyperlink{Chapter_32}{Chapter 32} and \protect\hyperlink{Chapter_33}{Chapter 33} in jamovi \citep{Jamovi2022}.
 The 5 exercises in this practical will apply simple linear regression (Exercises 34.1, 34.2, and 34.5) or multiple regression (34.3 and 34.4).
-The dataset used in this practical is inspired by the work of Dr Carmen Rosa Medina-Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke\footnote{Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by the researchers.}.
-Their work focuses on carbon storage in Gabon (Figure 34.1).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/gabon} \caption{This practical is inspired by data collected on Carbon storage in Gabon.}\label{fig:unnamed-chunk-175}
-\end{figure}
+The dataset used in this practical is inspired by the work of Dr Carmen Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke\footnote{Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by the researchers.}.
+Their work focuses on carbon storage in Gabon.
 
 When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of it remains sequestered in the soil due to incomplete combustion \citep{Santin2016}.
 This pyrogenic organic carbon can persist in the soil for long periods of time and has positive effects on soil properties \citep{Reisser2016}.
@@ -8362,19 +8420,14 @@ To do this, we need to build the linear regression.
 From the `Analyses' tab of jamovi, select the `Regression' button, then choose `Linear regression' from the pulldown menu.
 A new panel called `Linear regression' will open.
 The dependent variable `PyC' should go in the `Dependent Variable' box to the right.
-The independent variable `depth' should go in the `Covariates' box (Figure 34.2).
+The independent variable `depth' should go in the `Covariates' box (Figure 34.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression} \caption{Jamovi interface for running a linear regression model to predict pyrogenic carbon (PyC) from soil depth (depth).}\label{fig:unnamed-chunk-176}
+\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression} \caption{Jamovi interface for running a linear regression model to predict pyrogenic carbon (PyC) from soil depth (depth).}\label{fig:unnamed-chunk-172}
 \end{figure}
 
 We can check the assumption that the residuals are normally distributed in multiple ways.
-To do this, find the pulldown menu called `Assumption Checks' in the left panel of jamovi, and check boxes for `Normality test', `Q-Q plot of residuals', and `Residual plots' (Figure 34.3).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression_normality} \caption{Jamovi interface for specifying assumption checks on a simple linear regression.}\label{fig:unnamed-chunk-177}
-\end{figure}
-
+To do this, find the pulldown menu called `Assumption Checks' in the left panel of jamovi, and check boxes for `Normality test', `Q-Q plot of residuals', and `Residual plots'.
 Output will appear in the jamovi panel to the right.
 The first assumption check will be a table providing the results of a Shapiro-Wilk test of normality on the \emph{residuals} (see \protect\hyperlink{intercepts-slopes-and-residuals}{Chapter 32.2}) of the linear regression model.
 In your own words, what is this test doing?
@@ -8406,12 +8459,7 @@ Visually, this is the equivalent of taking the line of best fit from the first s
 It is good to try to take a few moments to understand this because it will help reinforce the concept of residual values, but in practice we can base our conclusion about residual normality on the Shapiro-Wilk test as done above.
 
 Having checked all of the assumptions of a linear regression model, we can finally test whether or not our model is statistically significant.
-Find the pulldown called `Model Fit' underneath the linear regression panel, then make sure that the boxes for \(R^{2}\) and `F test' are checked (Figure 34.4).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression_model_fit} \caption{Jamovi interface for specifying model fit output in a simple linear regression.}\label{fig:unnamed-chunk-178}
-\end{figure}
-
+Find the pulldown called `Model Fit' underneath the linear regression panel, then make sure that the boxes for \(R^{2}\) and `F test' are checked.
 A new table will open up in the right panel called `Model Fit Measures'.
 Write the output statistics from this table below:
 
@@ -8526,12 +8574,7 @@ Using this equation, what would be the predicted PyC for a location that had exp
 
 One final note for this exercise.
 In the Linear Regression panel of jamovi, scroll all the way down to the last pulldown menu called `Save'.
-Check the boxes for `Predicted values' and `Residuals' (Figure 34.5).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression_save} \caption{Jamovi interface for saving values of model output for a regression.}\label{fig:unnamed-chunk-179}
-\end{figure}
-
+Check the boxes for `Predicted values' and `Residuals'.
 When you return to the `Data' tab in jamovi, you will see 2 new columns of data that jamovi has inserted.
 One column will be the predicted values for the model, i.e., the value that the model predicts for PyC given the fire frequency in the observation (i.e., row).
 The other column will be the residual value of each observation.
@@ -8628,7 +8671,7 @@ Run a multiple regression model with soil depth, fire frequency, and soil pH all
 Fill in the Model Coefficient output in Table 34.1.
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-180}Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-173}Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.}\tabularnewline
 \toprule
 & Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
 \midrule
@@ -8696,32 +8739,6 @@ Explain how you figured this out.
 
 \end{verbatim}
 
-\hypertarget{part-randomisation-approaches}{%
-\part{Randomisation approaches}\label{part-randomisation-approaches}}
-
-\hypertarget{Week11}{%
-\chapter*{Part X Overview}\label{Week11}}
-\addcontentsline{toc}{chapter}{Part X Overview}
-
-Part X introduces a different way to think about hypothesis testing.
-Up until this part of the book, statistical hypothesis tests have been explained in a similar way.
-In all cases, we had some kind of null distribution, such as a t-distribution, F-distribution, or Chi-square distribution.
-This null distribution described the probability distribution for a test statistic when the null hypothesis was true.
-For example, in the one-sample t-test, the t-distribution described the probability of obtaining a particular t-score from a sample that was collected from a population with a mean of \(\mu_{0}\).
-We then calculated the probability (p-value) of obtaining our test statistic given that the null hypothesis was true.
-\protect\hyperlink{Chapter_35}{Chapter 35} takes a different approach to conducting the same hypothesis tests.
-Instead of specifying null distributions beforehand, we can use randomisation to build a null distribution from the sampled data.
-Randomisation is a flexible tool for hypothesis testing, but it also provides a different perspective on what p-values really are and how to think about them.
-Since hypothesis tests and, in particular, p-values are so often misunderstood, explaining how they work from this different perspective can be very instructive.
-For some students, randomisation is the topic in which the nature of p-values finally starts to become clear, and this is the primary motivation for including it in this book.
-Chapter 35 introduces randomisation as a tool for testing the same null hypothesis as the independent samples t-test, and compares the two approaches side by side to demonstrate their equivalence.
-It then introduces bootstrapping as a method for obtaining confidence intervals, and use of the Monte Carlo test.
-At the time of writing, the randomisation tests used in this chapter are not available in jamovi, so this is a good place in the book to introduce the R programming language.
-\protect\hyperlink{Chapter_36}{Chapter 36} provides an introduction to R, which is the programming language on top of which jamovi is built.
-Rather than breaking this chapter down into exercises as in previous book parts, this chapter introduces 11 tasks for getting started in R.
-These tasks introduce the R interface, how to assign variables in R, how to calculate some descriptive statistics and make histograms.
-It also demonstrates how to run a function for bootstrapping confidence intervals, as first introduced in Chapter 35.
-
 \hypertarget{Chapter_35}{%
 \chapter{Randomisation}\label{Chapter_35}}
 
@@ -8788,7 +8805,7 @@ Fig trees and the wasps that develop inside of them have a fascinating ecology, 
 The fig wasps in Figure 35.1 are 2 unnamed species of the genus \emph{Idarnes}, which can refer to simply as `Short-ovipositor 1' (SO1) and `Short-ovipositor 2' (SO2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_wasps} \caption{Image of 2 fig wasp species, roughly 3 mm in length, labelled 'SO1' and 'SO2'}\label{fig:unnamed-chunk-181}
+\includegraphics[width=1\linewidth]{img/fig_wasps} \caption{Image of 2 fig wasp species, roughly 3 mm in length, labelled 'SO1' and 'SO2'}\label{fig:unnamed-chunk-174}
 \end{figure}
 
 The reason that these 2 species are called `SO1' and `SO2' is that there is actually another species that lays its eggs in \emph{F. petiolaris} flowers, one with an ovipositor that is at least twice as long as the ones above.
@@ -8797,7 +8814,7 @@ Suppose that we have some data on the lengths of the ovipositors from each speci
 We might want to know whether the mean ovipositor length differs between the 2 species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 of the species `SO1', and 15 of the species `SO2'.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-182-1} \caption{Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.}\label{fig:unnamed-chunk-182}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-175-1} \caption{Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.}\label{fig:unnamed-chunk-175}
 \end{figure}
 
 To test whether or not mean ovipositor length is different between these 2 fig wasps, our standard approach would be to use an independent samples t-test (see \protect\hyperlink{independent-samples-t-test}{Chapter 22.2}).
@@ -8817,7 +8834,7 @@ After we calculate our t-statistic as \(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\) 2.
 Figure 35.3 shows the t-distribution for 30 degrees of freedom with an arrow pointing at the value of \(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\) 2.419.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-183-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.}\label{fig:unnamed-chunk-183}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-176-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.}\label{fig:unnamed-chunk-176}
 \end{figure}
 
 If the null hypothesis is true, and \(\bar{y}_{SO1}\) and \(\bar{y}_{SO2}\) are actually sampled from a population with the same mean, then the probability of randomly sampling a value more extreme than 2.419 (i.e., greater than 2.419 or less than -2.419) is \(P =\) 0.0218352.
@@ -8838,17 +8855,17 @@ A desktop computer can easily reshuffle the species identities and calculate a d
 The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 99999 times.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-184-1} \caption{A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.}\label{fig:unnamed-chunk-184}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-177-1} \caption{A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.}\label{fig:unnamed-chunk-177}
 \end{figure}
 
 Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2027 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2154 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),
 
-\[P = \frac{2027 + 1}{99999 + 1}.\]
+\[P = \frac{2154 + 1}{99999 + 1}.\]
 
-When we calculate the above, we get a value of 0.02028.
+When we calculate the above, we get a value of 0.02155.
 Notice that the calculated value is assigned with a `P'.
 This is because the value \textbf{is a p-value} (technically, an unbiased estimate of a p-value). Consider how close it is to the value of \(P =\) 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.
@@ -8904,1374 +8921,38 @@ Remember from \protect\hyperlink{sampling-with-and-without-replacement}{Chapter 
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.
 
-3.21, 3.133, 2.299, 3.027, 3.133, 2.929, 3.406, 3.133, 3.133, 3.21, 3.133, 3.133, 3.133, 3.133, 2.929, 3.178, 3.133
+3.256, 2.976, 3.256, 3.133, 3.291, 2.299, 3, 2.929, 3.256, 3.133, 3.21, 3.178, 3.027, 2.929, 3.178, 3.133, 3.071
 
 Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.081.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.074.
 We can resample another set of numbers to get a new mean.
 
-3.133, 2.299, 3.291, 3.133, 3.133, 3.406, 3.256, 2.299, 3.406, 3.256, 2.995, 2.299, 2.976, 3.256, 3.256, 3.291, 3.133
+2.658, 2.817, 3.406, 3.406, 3.071, 3.291, 3.133, 2.299, 3.133, 2.995, 2.995, 3.133, 3.071, 3.133, 2.929, 2.817, 2.976
 
-The mean of the above sample is 3.048.
+The mean of the above sample is 3.015.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-187-1} \caption{A distribution of bootstrapped values of ovipositor lengths from 17 measurements of a fig wasp species collected from Baja, Mexico. A total of 10000 bootstrapped means are shown, and arrows indicate the location of the 2.5 per cent (LCI) and 97.5 per cent (UCI) ranked boostrapped mean values.}\label{fig:unnamed-chunk-187}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-180-1} \caption{A distribution of bootstrapped values of ovipositor lengths from 17 measurements of a fig wasp species collected from Baja, Mexico. A total of 10000 bootstrapped means are shown, and arrows indicate the location of the 2.5 per cent (LCI) and 97.5 per cent (UCI) ranked boostrapped mean values.}\label{fig:unnamed-chunk-180}
 \end{figure}
 
 The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.903 and UCI = 3.142.
+The values using the randomisation approach are LCI = 2.901 and UCI = 3.14.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.
-
-\hypertarget{monte-carlo}{%
-\section{Monte Carlo}\label{monte-carlo}}
-
-The previous examples of hypothesis testing and bootstrapping involved resampling from existing data sets to address a statistical question.
-But we can also use randomisation in cases in which it is impossible to derive the null distribution from the data.
-In this last example, the goal will be to test whether or not fig trees (Figure 35.6) are randomly distributed across a fixed sampling area.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_tree} \caption{A tree of the Sonoran Desert Rock Fig from Baja, Mexico.}\label{fig:unnamed-chunk-188}
-\end{figure}
-
-Locations of these fig trees were collected over the course of many field seasons.
-In Baja, Mexico, a dataset of 59 trees was collected.
-The first 6 rows of this dataset with tree locations are shown in Table 35.1.
-
-\begin{longtable}[]{@{}llrrr@{}}
-\caption{\label{tab:unnamed-chunk-190}Latitudes, longitudes, and elevations of Sonoran Desert Rock Fig trees collected from a sample site in Baja, Mexico.}\tabularnewline
-\toprule
-Site & Tree & Latitude & Longitude & Elevation \\
-\midrule
-\endfirsthead
-\toprule
-Site & Tree & Latitude & Longitude & Elevation \\
-\midrule
-\endhead
-S172 & T34 & 28.29021 & -113.1116 & 718.2859 \\
-S172 & T01 & 28.29141 & -113.1117 & 664.8726 \\
-S172 & T02 & 28.29130 & -113.1118 & 652.8560 \\
-S172 & T03 & 28.29129 & -113.1126 & 663.6709 \\
-S172 & T04 & 28.29127 & -113.1127 & 653.3367 \\
-S172 & T05A & 28.29110 & -113.1125 & 676.8889 \\
-\bottomrule
-\end{longtable}
-
-We can plot the latitude and longitude of each of the 59 trees below.
-Figure 35.7 shows the study plot at the field site, which was set to be from latitude 28.289 to 28.2918 and longitude -113.1145 to -113.1095.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-191-1} \caption{Latitude and longitude locations of Sonoran Desert Rock Fig trees from Baja, Mexico.}\label{fig:unnamed-chunk-191}
-\end{figure}
-
-The focal question is whether or not these trees are randomly distributed within the brown box.
-Alternatively, the trees might be more clustered together than we would expect by chance.
-This is not a question that can be answered by randomising the latitude and longitude coordinates of trees.
-What we need to do instead is compare the distribution of the trees above with that of trees with randomly placed latitude and longitude coordinates within the box.
-This is a job for a Monte Carlo test, which compares an observed test statistic with that derived from a theoretical null model \citep{Manly2007}.
-In this case, the test statistic we will use is distance to the nearest neighbour (i.e., for a focal tree, how close the nearest member of the same species).
-The null model that we will assume is a set of randomly sampled latitude and longitude coordinates within the fixed study area.
-
-More formally, our null hypothesis will be that the mean nearest neighour distance for a focal tree in the observed data will not differ significantly from the mean nearest neighour distance obtained from the same number of trees randomly distributed within the sampling area (brown box).
-To test this null hypothesis, we can randomly place 59 trees within the sampling area and calculate the mean nearest neighbour distance for the randomly placed trees.
-If we repeat this procedure a large number of times, then we can build a null distribution of nearest neighbour distances for trees that are randomly placed within the study area (i.e., random latitude and longitude coordinates).
-
-Given the random placement of these trees, we can find the mean distance to the nearest neighbouring tree, calculated across all of the randomly placed trees.
-This mean nearest neighbour distance is then stored so that a null distribution can be built.
-We can see what these randomly placed trees look like by plotting some of the iterations in Figure 35.8.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-193-1} \caption{Sixteen separate random allocations of latitude and longitude locations within a sampling  are of Sonoran Desert Rock Fig trees from Baja, Mexico. There are 59 total locations randomly allocated for each panel, each representing an individual fig tree.}\label{fig:unnamed-chunk-193}
-\end{figure}
-
-In Figure 35.9, the distribution of mean distance to the nearest neighbour is plotted for the 9999 randomly generated tree study areas.
-The arrow shows the actual observed mean distance between nearest neighbours, as calculated form the original data set.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-194-1} \caption{The distribution of mean neareast neighbour distance from 9999 random simulations of 59 latitude and longitidue locations within a field site in Baja, Mexico. The black arrow indicates mean nearest neighbour distance for 59 observed trees from the field site.}\label{fig:unnamed-chunk-194}
-\end{figure}
-
-It appears, from the position of the mean tree nearest neighbour distance in the observed data, that the \emph{F. petiolaris} trees are no more or less spatially aggregated than would be expected by chance.
 
 \hypertarget{randomisation-conclusions}{%
 \section{Randomisation conclusions}\label{randomisation-conclusions}}
 
 The examples demonstrated in this chapter are just a small set of what is possible using randomisation approaches.
-Randomisation, bootstrapping, and Monte Carlo tests are highly flexible tools that can be used in a variety of ways \citep{Manly2007}.
+Randomisation and bootstrapping are highly flexible tools that can be used in a variety of ways \citep{Manly2007}.
 They could be used as substitutes (or complements) to any of the hypothesis tests that we have used in this book.
 For example, to use a randomisation approach for testing whether or not a correlation coefficient is significantly different from 0, we could randomly shuffle the values of one variable 9999 times.
 After each shuffle, we would calculate the Pearson product moment correlation coefficient, then use the 9999 randomised correlations as a null distribution to compare against the observed correlation coefficient.
 This would give us a plot like the one shown in Figure 35.4, but showing the null distribution of the correlation coefficient instead of the difference between group means.
 Similar approaches could be used for ANOVA or linear regression \citep{Manly2007}.
-
-\hypertarget{Chapter_36}{%
-\chapter{\texorpdfstring{\emph{Practical}. Introduction to R}{Practical. Introduction to R}}\label{Chapter_36}}
-
-Throughout this book, we have used jamovi for statistical analysis.
-Jamovi is excellent software for running simple statistical analyses, but it has its limitations.
-Jamovi is built upon the programming language R, which is much more powerful and versatile in comparison.
-The R programming language is now widely used among scientists for data analysis.
-It can be used to analyse and plot data, run computer simulations, or even write slides, papers, or books (this book was written using R).
-The R programming language is completely free and open source, as is the popular \href{https://posit.co/downloads/}{Rstudio} software for using it.
-The R programming language specialises in statistical computing, which is part of the reason for its popularity among scientists.
-
-Another reason for the popularity of R is its versatility, and the ease with which new techniques can be shared.
-Imagine that you develop a new method for analysing data.
-If you want other researchers to be able to use your method in their research, then you could write your own software from scratch for them to install and use.
-But doing this would be very time consuming, and a lot of that time would likely be spent writing the graphical user interface and making sure that your program worked across platforms (e.g., on Windows and Mac).
-Worse, once written, there would be no easy way to make your program work with other statistical software should you need to integrate different analyses or visualisation tools (e.g., plotting data).
-To avoid all of this, you could instead just present your new method for data analysis and let other researchers write their own code for implementing it.
-But not all researchers will have the time or expertise to write their own code.
-
-Instead, R allows researchers to write new tools for data analysis using simple coding scripts.
-These scripts are organised into R packages, which can be uploaded by authors to the Comprehensive R Archive Network (CRAN)\footnote{\url{https://cran.r-project.org/}}, then downloaded by users with a single command in R.
-This way, there is no need for completely different software to be used for different analyses; all analyses can be written and run in R.
-
-The downside to all of this is that learning R can be a bit daunting at first.
-Running analyses is not done by pointing and clicking on icons as in jamovi.
-You need to use code.
-This practical will start with the very basics and work up to some simple data analyses.
-Rather than questions to answer, this practical has tasks for you to try to complete in R.
-
-\hypertarget{getting-used-to-the-r-interface}{%
-\section{Getting used to the R interface}\label{getting-used-to-the-r-interface}}
-
-There are two ways that you can use R.
-The first way is to download R and Rstudio on your own computer.
-Both R and Rstudio are free to download and use, and work on any major operating system (Windows, Mac, and Linux).
-To download R, go to the Comprehensive R Archive Network (\url{https://cran.r-project.org/}) and follow the instructions for your operating system (OS).
-To download Rstudio, go to the Posit website\footnote{\url{https://posit.co/download/rstudio-desktop/\#download}} and choose the appropriate download for your operating system.
-
-If you cannot or do not want to download R and Rstudio on your own computer, then you can still use both by going to the Rstudio Cloud (\url{https://rstudio.cloud/}) and running Rstudio from a browser such as Firefox or Chrome.
-You will need to click the green ``Get Started'' button and sign up for a free account.
-When you open Rstudio either on your own computer or the cloud, you will see several windows open, including a console.
-The console will look something like the below.
-
-\begin{verbatim}
-R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
-Copyright (C) 2022 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under certain conditions.
-Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
-
-R is a collaborative project with many contributors.
-Type 'contributors()' for more information and
-'citation()' on how to cite R or R packages in publications.
-
-Type 'demo()' for some demos, 'help()' for on-line help, or
-'help.start()' for an HTML browser interface to help.
-Type 'q()' to quit R.
-
-> 
-\end{verbatim}
-
-If you click to the right of the greater than sign \texttt{\textgreater{}}, you can start using R right in the console.
-You can use R as a standard calculator here to get a feel for the console.
-Try typing something like the below (semi-colons are not actually necessary).
-For example, you could add 2 + 5.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2} \SpecialCharTok{+} \DecValTok{5}\NormalTok{;  }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 7
-\end{verbatim}
-
-Try this yourself.
-
-\begin{quote}
-\textbf{Task 1: Add 2 numbers together in R}
-\end{quote}
-
-You can also multiply in R.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{4} \SpecialCharTok{*} \DecValTok{4}\NormalTok{;  }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 16
-\end{verbatim}
-
-The caret key \texttt{\^{}} is used for exponents
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{5}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{;  }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 25
-\end{verbatim}
-
-R will use the correct order of operations (see \protect\hyperlink{order-of-operations}{Chapter 1.3}) when doing mathematical calculations.
-For example, it will know to calculate the exponent before multiplying, and to multiply before adding.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{2} \SpecialCharTok{+} \DecValTok{4} \SpecialCharTok{*} \DecValTok{5}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{;  }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 102
-\end{verbatim}
-
-Following the correct order of operations, \(5^{2} = 25\), which is then multiplied by 4 to get \(4 \times 25 = 100\), and we add 2 to get \(100 + 2 = 102\).
-We can, however, use parentheses to specify a different order of operations.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(}\DecValTok{2} \SpecialCharTok{+} \DecValTok{4}\NormalTok{) }\SpecialCharTok{*} \DecValTok{5}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{;  }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 150
-\end{verbatim}
-
-Now R will calculate \(2 + 4 = 6\) and multiply the 6 by 25 to get an answer of 150.
-The R console functions very well as a calculator.
-Instead of punching buttons into a hand calculator or mobile phone, an entire equation can be written and placed into the console.
-This makes mistakes less likely.
-For example, in \protect\hyperlink{order-of-operations}{Chapter 1.3}, the following equation was presented,
-
-\[x = 3^{2} + 2(1 + 3)^{2} - 6 \times 0.\]
-
-To solve this in R, we just need to type the full equation in the console.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DecValTok{3}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{+} \DecValTok{2}\SpecialCharTok{*}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+} \DecValTok{3}\NormalTok{)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{{-}} \DecValTok{6} \SpecialCharTok{*} \DecValTok{0}\NormalTok{;}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 41
-\end{verbatim}
-
-We get the correct answer of 41.
-Note that there needed to be an asterisk (\texttt{*}) to indicate multiplication between the 2 and the left parentheses.
-This is because parentheses specify specific functions in R.
-We will introduce functions next, but first, try the following task.
-
-\begin{quote}
-\textbf{Task 2: Use the console to calculate \(x = \frac{2^2 + 1}{3^2 + 2}\) (hint, you need to put the top and bottom of the fraction in parentheses, e.g., \texttt{(2\^{}2\ +\ 1)} for the numerator, and use the forward slash \texttt{/} for division).}
-\end{quote}
-
-You should get an answer of 0.4545455.
-
-As previously mentioned, parentheses specify functions in R.
-Functions have specific names such as \texttt{sqrt}, which calculates the square root of anything within the parentheses \texttt{sqrt()}.
-If, for example, you wanted to find the square root of some number, you could use the \texttt{sqrt} function below.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{sqrt}\NormalTok{(}\DecValTok{256}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 16
-\end{verbatim}
-
-The console returns the correct answer 16.
-Similar functions exist for logarithms (\texttt{log}) and trigonometric functions (e.g., \texttt{sin}, \texttt{cos}).
-The parentheses after the word indicate that some function is being called in R.
-Try to use the square root function to solve for \(x\) in another equation.
-
-\begin{quote}
-\textbf{Task 3: Use the console to calculate \(\sqrt{3 + 4^2}\).}
-\end{quote}
-
-You should get an answer of 4.3588989.
-
-If you type something into the console incorrectly, you do not need to retype it entirely.
-You can use the up arrow to scroll through the history of console input.
-Try doing that now.
-
-\begin{quote}
-\textbf{Task 4: Use the up arrow to find your previous calculation for \(\sqrt{3 + 4^2}\), then change this slightly to calculate \(\sqrt{3 + 4^3}\).}
-\end{quote}
-
-You should get an answer of 8.1853528.
-
-Functions do not need to be mathematical like the \texttt{sqrt} function.
-For example, the \texttt{getwd} function can be used to let you know what directory (i.e., folder) you are working in.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{getwd}\NormalTok{();}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] "/home/brad/Dropbox/teaching/statistics_book/statistics_book"
-\end{verbatim}
-
-If we were to save or load a file within R, this is the location on the computer from which R would try to load.
-We could also use the \texttt{setwd} function to set a new working directory (type the working directory in quotes inside the parentheses: \texttt{setwd("folder/subfolder/etc")}).
-You can also set the working directory in Rstudio by going to the toolbar and clicking `Session' and selecting `Set Working Directory'.
-
-\hypertarget{assigning-variables-in-the-r-console}{%
-\section{Assigning variables in the R console}\label{assigning-variables-in-the-r-console}}
-
-In R, we can also assign values to variables using the characters \texttt{\textless{}-} to make an arrow.
-For example, we might want to set \texttt{var\_1} equal 10.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{var\_1 }\OtherTok{\textless{}{-}} \DecValTok{10}\NormalTok{;}
-\end{Highlighting}
-\end{Shaded}
-
-We can now use \texttt{var\_1} in the console.
-For example, since \texttt{var\_1} now equals 10, if we multiply \texttt{var\_1} by 5, R calculates \(10 \times 5 = 50\).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{var\_1 }\SpecialCharTok{*} \DecValTok{5}\NormalTok{; }\CommentTok{\# Multiplying the variable by 5}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 50
-\end{verbatim}
-
-The correct value of 50 is returned because \texttt{var\_1} equals 10. Also note the comment left after the \texttt{\#} key.
-In R, anything that comes after \texttt{\#} on a line is a comment that R ignores.
-Comments are ways of explaining in plain words what the code is doing, or drawing attention to important notes about the code.
-
-\begin{quote}
-\textbf{Task 5: Assign a new variable to a value of 4 (call it anything you want), then multiply the new variable by itself.}
-\end{quote}
-
-For Task 5, you should get an output of 16.
-
-When we assign something to a variable like \texttt{var\_1}, we are not limited to a single number.
-Variables in R can be much more complex.
-For example, we can assign a new variable \texttt{vector\_1} to an ordered set of 6 different numbers using the \texttt{c} function.
-The \texttt{c} function combines values together.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{vector\_1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{11}\NormalTok{); }\CommentTok{\# Six numbers}
-\NormalTok{vector\_1;      }\CommentTok{\# Prints out the vector}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1]  5  1  3  5  7 11
-\end{verbatim}
-
-Doing this makes it possible to calculate for all of the values in \texttt{vector\_1} at the same time.
-We might, for example, want to multiply all of the numbers by 10.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{vector\_1 }\SpecialCharTok{*} \DecValTok{10}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1]  50  10  30  50  70 110
-\end{verbatim}
-
-Variables also do not necessarily need to be numbers.
-We might assign a new variable \texttt{phrase\_1} to a string of letters.
-When doing this, the letters need to be enclosed in quotation marks.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{phrase\_1 }\OtherTok{\textless{}{-}} \StringTok{"string of words"}\NormalTok{;}
-\NormalTok{phrase\_1;}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] "string of words"
-\end{verbatim}
-
-We can even combine numbers, vectors, and words into a single object as a list using the \texttt{list} function.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{object\_1 }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(var\_1, vector\_1, phrase\_1);}
-\NormalTok{object\_1;}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[[1]]
-[1] 10
-
-[[2]]
-[1]  5  1  3  5  7 11
-
-[[3]]
-[1] "string of words"
-\end{verbatim}
-
-There are far too many possibilities to introduce everything about how R works.
-The best way to get started is to play around and see what works and what does not.
-You will not break anything.
-Error messages are good because they can help you learn how R works.
-
-\begin{quote}
-\textbf{Task 6: Use the R console until you find a new error message.}
-\end{quote}
-
-Try something new in the R console.
-Keep going until you get an error message that you have not yet seen, then move on to the next exercise.
-
-\hypertarget{some-descriptive-statistics}{%
-\section{Some descriptive statistics}\label{some-descriptive-statistics}}
-
-Now we can get started with some statistical analyses.
-In \protect\hyperlink{Chapter_39}{Chapter 39} we will learn how to do some familiar analyses with R scripts and data uploaded from CSV files, but for now, we will just type our data directly into the console.
-We can use the data from \protect\hyperlink{randomisation-for-hypothesis-testing}{Chapter 35.4} as an example.
-The code below reads in 2 different variables, \texttt{SO1} and \texttt{SO2}.
-The numbers are the same ovipositor lengths from the histograms in Figure 34.2 of \protect\hyperlink{randomisation-for-hypothesis-testing}{Chapter 35.4}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{SO1 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{3.256}\NormalTok{, }\FloatTok{3.133}\NormalTok{, }\FloatTok{3.071}\NormalTok{, }\FloatTok{2.299}\NormalTok{, }\FloatTok{2.995}\NormalTok{, }\FloatTok{2.929}\NormalTok{, }\FloatTok{3.291}\NormalTok{, }\FloatTok{2.658}\NormalTok{, }\FloatTok{3.406}\NormalTok{, }
-         \FloatTok{2.976}\NormalTok{, }\FloatTok{2.817}\NormalTok{, }\FloatTok{3.133}\NormalTok{, }\FloatTok{3.000}\NormalTok{, }\FloatTok{3.027}\NormalTok{, }\FloatTok{3.178}\NormalTok{, }\FloatTok{3.133}\NormalTok{, }\FloatTok{3.210}\NormalTok{);}
-\NormalTok{SO2 }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{3.014}\NormalTok{, }\FloatTok{2.790}\NormalTok{, }\FloatTok{2.985}\NormalTok{, }\FloatTok{2.911}\NormalTok{, }\FloatTok{2.914}\NormalTok{, }\FloatTok{2.724}\NormalTok{, }\FloatTok{2.967}\NormalTok{, }\FloatTok{2.745}\NormalTok{, }\FloatTok{2.973}\NormalTok{, }
-         \FloatTok{2.560}\NormalTok{, }\FloatTok{2.837}\NormalTok{, }\FloatTok{2.883}\NormalTok{, }\FloatTok{2.668}\NormalTok{, }\FloatTok{3.063}\NormalTok{, }\FloatTok{2.639}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-Copy and paste the code above into the R console.
-You should now have 2 new variables, \texttt{SO1} and \texttt{SO2}
-
-\begin{quote}
-\textbf{Task 7: Type \texttt{SO1} into the R console to print the ovipositor lengths for species SO1, then do the same for \texttt{SO2}}.
-\end{quote}
-
-We can replicate the histogram from Figure 35.2A in \protect\hyperlink{randomisation-for-hypothesis-testing}{Chapter 35.4} with the following code.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SO1, }\AttributeTok{xlab =} \StringTok{"SO1 ovipositor length (mm)"}\NormalTok{, }\AttributeTok{main =} \StringTok{""}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-210-1} \caption{Ovipositor length distributions for an unnamed species of fig wasps SO1.}\label{fig:unnamed-chunk-210}
-\end{figure}
-
-The bin widths in Figure 36.1 are not the same as Figure 35.2A because there are other options within \texttt{hist} that have not been specified.
-Within \texttt{hist} and other functions, these options such as \texttt{x}, \texttt{xlab}, and \texttt{main} are called \emph{arguments}.
-The word `argument' in this case has nothing to do with a disagreement or logical reasoning.
-In this case, it just refers to information that is passed in a function.
-
-\begin{quote}
-\textbf{Task 8: Make a histogram of SO2 ovipositor lengths. Try using the argument \texttt{col\ =\ "blue"} in the \texttt{hist} function to make the histogram bars blue.}
-\end{quote}
-
-Now we can try collecting some summary statistics for SO1 and SO2.
-In the lab practical from \protect\hyperlink{Chapter_14}{Chapter 14}, we used jamovi to calculate summary statistics.
-Table 36.1 below shows how those same summary statistics can be calculated using functions in R, and the output of each function for SO1.
-
-\begin{longtable}[]{@{}lll@{}}
-\caption{\label{tab:unnamed-chunk-211}R functions and output for summary statistics applied to a variable (SO1) of ovipositor lengths in an unnamed species of nonpollinating fig wasp.}\tabularnewline
-\toprule
-Statistic & Function & Output \\
-\midrule
-\endfirsthead
-\toprule
-Statistic & Function & Output \\
-\midrule
-\endhead
-N & \texttt{length(SO1)} & 17 \\
-Std. deviation & \texttt{sd(SO1)} & 0.260018 \\
-Variance & \texttt{var(SO1)} & 0.067609 \\
-Minimum & \texttt{min(SO1)} & 2.299 \\
-Maximum & \texttt{max(SO1)} & 3.406 \\
-Range & \texttt{range(SO1)} & 2.299, 3.406 \\
-IQR & \texttt{IQR(SO1)} & 0.202 \\
-Mean & \texttt{mean(SO1)} & 3.030118 \\
-Median & \texttt{median(SO1)} & 3.071 \\
-\bottomrule
-\end{longtable}
-
-Notice that the \texttt{range} function gives the minimum and maximum of SO1, so we need to subtract the latter from the former to get the actual range.
-
-\begin{quote}
-\textbf{Task 9: Calculate the summary statistics in Table 35.1 for SO2.}
-\end{quote}
-
-There is no function for standard error in R.
-We could write a custom function to calculate the standard error, but for now we can just use the formula from \protect\hyperlink{the-standard-error}{Chapter 12.6} to calculate the standard error of SO1,
-
-\[SE = \frac{s}{\sqrt{N}}.\]
-
-Since we have the standard deviation (\(s\)) and sample size (\(N\)) from Table 36.1, we can calculate SE in R,
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{sd}\NormalTok{(SO1) }\SpecialCharTok{/} \FunctionTok{sqrt}\NormalTok{( }\FunctionTok{length}\NormalTok{(SO1) );}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 0.06306363
-\end{verbatim}
-
-The code above calculates the standard deviation of SO1 (\texttt{sd(SO1)}), then divides (\texttt{/}) by the square root (\texttt{sqrt()}) of the length of SO1 (\texttt{length(SO1)}).
-This can be difficult to read because \texttt{length(SO1)} is enclosed in \texttt{sqrt()}.
-But we can break this down step by step to make it easier to read by assigning each component to a new variable.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{SO1\_SD }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(SO1);     }\CommentTok{\# Assign the standard deviation}
-\NormalTok{SO1\_N  }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{(SO1); }\CommentTok{\# Assign the N}
-\NormalTok{SO1\_SD }\SpecialCharTok{/} \FunctionTok{sqrt}\NormalTok{(SO1\_N);  }\CommentTok{\# Do the calculation for SE}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 0.06306363
-\end{verbatim}
-
-We can do the same for SO2.
-
-\begin{quote}
-\textbf{Task 10: Calculate the standard error of SO2 ovipositor lengths.}
-\end{quote}
-
-With the standard error now calculated, we can also calculate 95 per cent confidence intervals using the formula from \protect\hyperlink{Chapter_18}{Chapter 18}, just as we did for SO1 in \protect\hyperlink{bootstrapping}{Chapter 35.5},
-
-\[LCI = 3.03 - \left(2.120 \times \frac{0.26}{\sqrt{17}}\right),\]
-
-\[UCI = 3.03 + \left(2.120 \times \frac{0.26}{\sqrt{17}}\right).\]
-
-Note that 3.03 is the mean from Table 36.1, and \(0.26/\sqrt{17}\) is the standard error that we just calculated for SO1.
-The value 2.120 is the t-score associated with df = 17 - 1, i.e., 16 degrees of freedom (see \protect\hyperlink{bootstrapping}{Chapter 35.5}).
-As in \protect\hyperlink{bootstrapping}{Chapter 35.5}, we get values of LCI = 2.896 and UCI = 3.164.
-
-\begin{quote}
-\textbf{Task 10: Calculate 95 per cent confidence intervals for SO2 ovipositor lengths (hint: the appropriate t value for df = 14 is 2.145 instead of 2.120).}
-\end{quote}
-
-In the last exercise, we will attempt to bootstrap these confidence intervals using the method introduced in \protect\hyperlink{bootstrapping}{Chapter 35.5}.
-
-\hypertarget{bootstrapping-confidence-intervals}{%
-\section{Bootstrapping confidence intervals}\label{bootstrapping-confidence-intervals}}
-
-Writing resampling and randomisation procedures in R requires some knowledge of coding.
-For now, all that you need to do is copy a pre-defined function into R and use it like any other function.
-The function is called \texttt{simpleboot}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{simpleboot }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(x, }\AttributeTok{replicates =} \DecValTok{1000}\NormalTok{, }\AttributeTok{CIs =} \FloatTok{0.95}\NormalTok{)\{}
-\NormalTok{  alpha }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ CIs;}
-\NormalTok{    vals  }\OtherTok{\textless{}{-}} \ConstantTok{NULL}\NormalTok{;                                                           }
-\NormalTok{    i     }\OtherTok{\textless{}{-}} \DecValTok{0}\NormalTok{;                                                            }
-    \ControlFlowTok{while}\NormalTok{(i }\SpecialCharTok{\textless{}}\NormalTok{ replicates)\{                                                          }
-\NormalTok{        boot  }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x, }\AttributeTok{size =} \FunctionTok{length}\NormalTok{(x), }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{);               }
-\NormalTok{        strap }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(boot);                                                  }
-\NormalTok{        vals  }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(vals, strap);                                             }
-\NormalTok{        i     }\OtherTok{\textless{}{-}}\NormalTok{ i }\SpecialCharTok{+} \DecValTok{1}\NormalTok{;                                                       }
-\NormalTok{    \}                                                                      }
-\NormalTok{    vals   }\OtherTok{\textless{}{-}} \FunctionTok{sort}\NormalTok{(}\AttributeTok{x =}\NormalTok{ vals, }\AttributeTok{decreasing =} \ConstantTok{FALSE}\NormalTok{);                                 }
-\NormalTok{    lowCI  }\OtherTok{\textless{}{-}}\NormalTok{ vals[}\FunctionTok{round}\NormalTok{((alpha}\SpecialCharTok{*}\FloatTok{0.5}\NormalTok{)}\SpecialCharTok{*}\NormalTok{replicates)];                              }
-\NormalTok{    highCI }\OtherTok{\textless{}{-}}\NormalTok{ vals[}\FunctionTok{round}\NormalTok{((}\DecValTok{1}\SpecialCharTok{{-}}\NormalTok{(alpha}\SpecialCharTok{*}\FloatTok{0.5}\NormalTok{))}\SpecialCharTok{*}\NormalTok{replicates)];                          }
-\NormalTok{    confid }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(lowCI, highCI);                                               }
-    \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(vals, confid));                                                             }
-\NormalTok{\} }
-\end{Highlighting}
-\end{Shaded}
-
-The \texttt{simpleboot} function takes a variable (\texttt{x}) as an argument, bootstraps mean values \texttt{replicates} times, and produces confidence intervals at a level \texttt{CIs}.
-To use it, highlight and copy the entire function, then put it into the R console.
-Make sure that every line from \texttt{simpleboot} to the last \texttt{\}} is copied.
-Once it has been placed into the R console, it can be used just like any other function.
-For example, we can run \texttt{simpleboot} and store the output for SO1 values.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{SO1\_95s }\OtherTok{\textless{}{-}} \FunctionTok{simpleboot}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SO1, }\AttributeTok{replicates =} \DecValTok{1000}\NormalTok{, }\AttributeTok{CIs =} \FloatTok{0.95}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-The output will include a list of 2 different objects.
-The first object \texttt{SO1\_95s{[}{[}1{]}{]}} will be a list of 1000 bootstrapped mean values, sorted from lowest to highest.
-The second object \texttt{SO1\_95s{[}{[}2{]}{]}} will be the bootstrapped upper and lower confidence intervals.
-First, we can take a look at a histogram of the bootstrapped mean values.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(}\AttributeTok{x =}\NormalTok{ SO1\_95s[[}\DecValTok{1}\NormalTok{]], }\AttributeTok{xlab =} \StringTok{"Bootstrapped SO1 means"}\NormalTok{, }\AttributeTok{main =} \StringTok{""}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-216-1} \caption{Bootstrapped mean values for 17 ovipositor lengths in an unnamed species of fig wasp collected in Baja, Mexico.}\label{fig:unnamed-chunk-216}
-\end{figure}
-
-We can then print out the lower and upper confidence intervals, which report the value of the 2.5 per cent rank and 97.5 rank bootstrapped means, respectively.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{print}\NormalTok{(SO1\_95s[[}\DecValTok{2}\NormalTok{]]);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-[1] 2.897647 3.137353
-\end{verbatim}
-
-Note that these values are not too far off the values of LCI = 2.896 and UCI = 3.164 calculated in the usual way in the previous exercise.
-
-\begin{quote}
-\textbf{Task 11: Use the \texttt{simpleboot} function to calculate 95 per cent confidence intervals for SO2 mean ovipositor lengths.}
-\end{quote}
-
-The practical in \protect\hyperlink{Chapter_39}{Chapter 39} will demonstrate how to read CSV files into R and run hypothesis tests, including t-tests, ANOVAs, chi-square tests, correlation tests, and linear regression.
-
-\hypertarget{part-experimental-design-and-statistical-reporting}{%
-\part{Experimental Design and Statistical Reporting}\label{part-experimental-design-and-statistical-reporting}}
-
-\hypertarget{Week12}{%
-\chapter*{Part XI Overview}\label{Week12}}
-\addcontentsline{toc}{chapter}{Part XI Overview}
-
-Part XI concludes this book with two topics that are important for applying and communicating statistical techniques.
-The first topic is experimental design, which is introduced in \protect\hyperlink{Chapter_37}{Chapter 37}.
-This chapter introduces a range of relevant issues to consider before collecting data.
-It is not intended to comprehensive, but rather to help you avoid pitfalls that might arise during data analysis.
-Without proper planning for data collection, statistical analysis can become unnecessarily complicated, inefficient, or worse!
-Failure to consider relevant factors in experimental design might make it impossible to test the desired scientific hypothesis, thereby rendering data collection useless, at least for its intended purpose.
-This is obviously something to avoid, so some discussion of experimental design is warranted.
-The second topic is reporting statistics, which is introduced in \protect\hyperlink{Chapter_38}{Chapter 38}.
-After conducting the statistical tests that are introduced throughout this book, it is important to be able to effectively communicate your results.
-Chapter 38 briefly introduces the structure of scientific reporting and provides some guidelines for reporting statistics in the biological and environmental sciences.
-These guidelines are not intended to be hard rules, but provide some examples of effective ways to report output from the major statistical tests introduced in this book, including ANOVA and its nonparametric alternatives, Chi-square tests, correlation coefficients, and linear regression output.
-\protect\hyperlink{Chapter_39}{Chapter 39} finishes the book by demonstrating how to conduct these statistical tests in R.
-Like the introduction to R in \protect\hyperlink{Chapter_36}{Chapter 36}, it uses a series of tasks to be completed.
-The chapter works through how to open and view a dataset in R, then use R code to run ANOVAs, Chi-square tests, correlation tests, and simple and multiple linear regression.
-It also demonstrates how to test key assumptions underlying statistical tests, such as the Shapiro-Wilk test and Levene test.
-The dataset used in this chapter is yet another fig wasp example, which includes morphological measurements of fig wasps of five different species spread across multiple sites and trees.
-
-\hypertarget{Chapter_37}{%
-\chapter{Experimental design}\label{Chapter_37}}
-
-\hypertarget{before-collecting-data}{%
-\section{Before collecting data}\label{before-collecting-data}}
-
-When conducting a study that requires statistical analysis, it is important to plan ahead when setting up experiments or field observations and collecting data.
-Without proper planning, there is a risk that the collected data will be impossible to analyse or inappropriate for the scientific hypothesis of interest.
-Finding out an analysis will not work after spending a considerable amount of time on data collection can be frustrating and demoralising, especially when it could have been avoided by more careful planning.
-Before collecting any data, it is therefore important to plan, or even simulate, what a dataset will look like in a tidy format.
-This can be done by creating a spreadsheet with appropriate data columns prior to data collection.
-It is important to think about what kinds of analyses will be performed and how large of a sample size might be needed.
-It is often a good idea to conduct a power analysis before data collection \citep{Steidl1997}.
-A power analysis is a formal way of estimating how big of a sample size is necessary to reject the null hypothesis given a particular effect size \citep{Jones2003}.
-For example, suppose that we want test whether 2 species of fig wasps have different mean ovipositor lengths, as in the example from \protect\hyperlink{randomisation-for-hypothesis-testing}{Chapter 35.3}.
-A power analysis might be used to determine how many fig wasps need to be collected and measured to detect that a given difference in mean ovipositor length (e.g., 1.0 mm) is statistically significant (i.e., P \textless{} 0.05).
-In other words, if the difference in mean ovipositor length between two species is 1.0 mm, then how big of a sample size is needed to reliably reject the null hypothesis (P \textless{} 0.05) when running a t-test?
-Ideally, such a power analysis could be informed by preliminary data.
-This is not always possible, and an introduction to power analysis is beyond the scope of this book.
-What is most important is that the statistical analysis is planned as much as possible \emph{before} data are collected.
-Failing to plan can result in a complete inability to run an effective statistical analysis.
-This happens when data are not collected in a way that satisfies the assumptions of statistical tests, or if a sample size is grossly insufficient.
-Whenever in doubt, it is strongly recommended to consult with a statistician prior to data collection.
-
-\hypertarget{Chapter_38}{%
-\chapter{Reporting statistics}\label{Chapter_38}}
-
-In this book, we have focused on the analysis and visualisation of different kinds of data.
-This chapter focuses on how to report these analyses in scientific writing, which might include practical write-ups, reports, dissertations, or peer-reviewed manuscripts.
-What follows are some general guidelines for the biological and environmental sciences.
-These guidelines are not necessarily hard rules, but following them will improve the clarity with which statistical analyses are communicated.
-
-\hypertarget{statistical-reporting}{%
-\section{Statistical reporting}\label{statistical-reporting}}
-
-Good scientific reporting requires a clear communication of how data were collected and analysed.
-Guidelines for explaining data analysis can vary across different fields of study.
-What follows are recommendations for communicating data analyses in the biological sciences, as might be applied to writing reports, dissertations, or scientific manuscripts.
-Such documents are typically (though not always) divided into abstract, introduction, methods, results, and discussion sections.
-
-\hypertarget{abstract}{%
-\subsection{Abstract}\label{abstract}}
-
-The abstract is a brief summary of a scientific paper, and should be a self-contained paragraph of somewhere between 150-500 words that provide some relevant background and communicate the most important findings of the paper.
-A brief explanation of the methodology is important, but there is usually no need to state what statistical tests were performed.
-It is also not usually strictly necessary to present statistical output in the abstract, although doing so can often be useful \citep{Andrade2011}.
-
-\hypertarget{introduction}{%
-\subsection{Introduction}\label{introduction}}
-
-The Introduction of a scientific report should provide enough background for the reader to understand the research question and its importance.
-Introductions should start by broadly establishing the field of study and its importance, then provide a summary of relevant work that has been previously conducted, and finally explain the knowledge gap that the report will address \citep{Woodford1999, Turbek2016}.
-In other words, the Introduction should ideally finish by explaining what is not yet known, but will be addressed by the scientific report.
-No statistical methods or analyses need to be presented in the Introduction because the scientific question needs to be introduced before the methods or statistics will make sense \citep{Bouma2000}.
-Nevertheless, it is important to clearly state the scientific question so that readers will be able to appreciate why particular statistical techniques are being introduced in the Methods.
-
-\hypertarget{methods}{%
-\subsection{Methods}\label{methods}}
-
-The Methods section should explain how data were collected and analysed, including a justification of research design and analysis choice if appropriate \citep{Bouma2000}.
-Before explaining the statistical analyses used, it is important to explain what data were collected and how.
-This includes details about biological species, field locations, chemicals and equipment used, experimental procedures, and ethics \citep{council2006scientific, Woodford1999}.
-Units of measurement should also be provided for all variables \citep{Lang1997}.
-The Methods should include the name of any statistical tests used \citep{council2006scientific}, and whether or not data conform to test assumptions (or, e.g., if data need to be transformed to fit the assumptions of statistical tests).
-The statistical software used to analyse the data, such as jamovi \citep{Jamovi2022} or R \citep{Rproject}, should also be cited \citep{Lang1997, council2006scientific}.
-For example:
-
-\begin{quote}
-``Because stigmatic pollen counts were not normally distributed, they were analysed using non-parametric statistics (Mann-Whitney U test) for pairwise comparisons among four times of collection at the 0.05 level of significance. All data analysis was conducted in SPSS, version 17.0. All means are presented with standard errors (\(\pm\) SE)'' \citep{Xiong2013}.
-\end{quote}
-
-\begin{quote}
-``All statistical analyses were carried out using R 3.1.0 (R Core Team 2012). {[}\ldots{]} ANOVAs were carried out to test whether the three soil-conditioning treatments affected plant biomass and trait and soil N availability, and whether there was an effect of drought, with a two-way interaction term between soil conditioning and drought. Non-constancy of variances was evaluated using Levene's test in the car package of R (Levene 1960), and normality was ascertained and corrected for where necessary using Box--Cox transformations in the MASS package (Box and Cox 1964)'' \citep{Fry2018}.
-\end{quote}
-
-Often, this statistical analysis is reported in a separate subsection of the methods.
-It is not necessary to state null hypotheses for statistical tests \citep{Lang1997}.
-Overall, the Methods should explain the design of the study, data collection, and statistical analysis in sufficient detail for readers to be able to evaluate and potentially repeat the study \citep{Woodford1999}.
-To avoid length Methods sections, methodological and statistical details can sometimes be placed in supplemental material (i.e., a separate document to accompany the main text).
-
-\hypertarget{results}{%
-\subsection{Results}\label{results}}
-
-The Results section should report the results of statistical tests, usually without any scientific interpretation.
-In other words, the primary focus should be on the patterns observed in the data, not an explanation of their underlying biological or environmental cause.
-This allows readers to evaluate results objectively, without interpretation from the author.
-
-Results should report relevant statistics and their uncertainty.
-Confidence intervals should be provided for key summary statistics \citep{Lang1997}.
-Key statistics from statistical tests can be reported in parentheses.
-For example, we might state, ``an Independent Samples t-test found a significant difference between mean fig wasp ovipositor lengths (t = 2.419, df = 30, P = 0.022)''.
-Relevant statistics for specific tests are explained below in \protect\hyperlink{statistical-tests}{section 36.4}.
-In general, it is good to report a p-value exactly, but if the value is less than 0.001, it is fine to report as \(P < 0.001\) \citep{council2006scientific}.
-Direct measurements should be reported to the level of precision allowed by the measuring device used, and summary statistics such as means and standard deviations should be reported to just 1 significant figure higher than the raw measurements \citep{council2006scientific}.
-Note that this only applies to \emph{reporting} statistics.
-For the actual statistical analysis, all digits should be used \citep{Lang1997}.
-
-\hypertarget{discussion}{%
-\subsection{Discussion}\label{discussion}}
-
-The Discussion section should present the main conclusions of the study, followed by any secondary conclusions \citep{Woodford1999}.
-It interprets the results and explains their importance in the broader context of the scientific literature \citep{Turbek2016}.
-The Discussion should also critically evaluate the strengths and weakness of the report and attempt to generalise its conclusions \citep{Turbek2016}.
-The open-ended nature of the Discussion section often makes it the most difficult section to write for many researchers.
-
-\hypertarget{figures-and-tables}{%
-\section{Figures and tables}\label{figures-and-tables}}
-
-Figures and tables should be used whenever possible to efficiently communicate results.
-It is best to avoid presenting the same information in figures and tables, and there is no reason to duplicate information in the main text of a manuscript if it is presented clearly in a table or figure \citep{Lang1997}.
-All figures and tables should be referenced within the main text.
-This is usually done parenthetically (see below for examples).
-Figures and tables should always include an informative caption that is self-contained so that readers can understand the information being presented in the figure or table without referring back to the main text.
-
-\hypertarget{figures}{%
-\subsection{Figures}\label{figures}}
-
-Figures can be used to present data and statistical results visually.
-Figure axes should always be clearly labelled with the appropriate units of measurement.
-Captions should be placed below figures.
-Colour should not be used unless it is necessary.
-When using colour in figures, it is important to use accessible colour combinations and high contrast \citep{Jambor2021, Painter2021}.
-For electronic documents, alt images should be provided whenever possible.
-
-Different kinds of figures are appropriate for different kinds of data (see \protect\hyperlink{Chapter_10}{Chapter 10} and \protect\hyperlink{scatterplots}{Chapter 30.1}).
-\protect\hyperlink{histograms}{Histograms} and \protect\hyperlink{box-whisker-plots}{box-whisker plots} are most effective for presenting the distribution of continuous data \citep{Lang1997, Weissgerber2015}.
-\protect\hyperlink{barplots-and-pie-charts}{Barplots and pie charts} present categorical data \citep{Lang1997, Weissgerber2015}.
-\protect\hyperlink{scatterplots}{Scatterplots} are used to compare quantitative variables.
-
-When presenting a figure with multiple panels, it is important to distinguish between panels, usually with letters (e.g., A, B, C).
-Examples of figures can be found throughout this book.
-
-\hypertarget{tables}{%
-\subsection{Tables}\label{tables}}
-
-Tables can be used in multiple ways within scientific reports, including to present data, provide descriptions of variables, and report statistical output.
-Tables should include informative column headings, and units of measurement should be reported in headings or in the table caption.
-Table captions should be placed above tables.
-Some statistical analyses are usefully reported in the form of a table, such as counts in contingency tables (e.g., for a \(\chi^{2}\) test of association), or the results of an ANOVA or linear regression.
-Jamovi output tables are typically appropriate for reporting statistical tests, and these can be copied and pasted into documents \citep{Jamovi2022}.
-
-\hypertarget{statistical-tests}{%
-\section{Statistical tests}\label{statistical-tests}}
-
-There is no universally accepted way to report the results of statistical tests, but some suggestions follow for reporting the output of t-tests, ANOVAs, Mann-Whitney tests, Wilcoxon signed-rank tests, correlation coefficients, and linear regression.
-
-\hypertarget{reporting-t-tests}{%
-\subsection{Reporting t-tests}\label{reporting-t-tests}}
-
-For t-tests, it is useful to report the test statistic (t-score), degrees of freedom (df), and the p-value.
-or example, for a test with a df = 14, t-statistic of 9.56, and p-value of 0.02, we might write that ``two groups different significantly from each other (\(t_{(14)} = 9.56\), \(P = 0.02\)).
-Note that the subscript of t (\(t_{(14)}\)) is used to indicate the 14 degrees of freedom.
-
-\hypertarget{reporting-anova}{%
-\subsection{Reporting ANOVA}\label{reporting-anova}}
-
-For a one-way ANOVA, it is a good idea to report the F value, the p-value, and the degrees of freedom for the effect and error terms.
-For example, for an ANOVA with an F-value of 11.37, p-value of 0.0002, and with 2 degrees of freedom for the effect term (i.e., 3 groups) and 25 degrees of freedom for error term, we could write that ``plant height differed significantly as a function of soil type (\(F_{(2, 25)} = 11.37\), \(P < 0.001\))''.
-Note that because the actual p-value (\(P = 0.0002\)) is so low, we can simply write \(P < 0.001\).
-
-A two-way ANOVA reports the same values, but should include all of the main effects and interactions. An example might be, ``the main effect of soil type was significant (\(F_{(2, 24)}\), \(P = 0.002\)), as was the main effect of plant species (\(F_{(3, 25)} = 12.70\), \(P < 0.001\)). The interaction of these two factors was not significant (\(F_{6, 25} = 1.71\), \(P = 0.160\))''.
-Note that this information might also be presented in the form of an ANOVA table, in which case it is not necessary to include all of these statistics in the main text.
-
-\hypertarget{reporting-a-main-whitney-u-test}{%
-\subsection{Reporting a Main-Whitney U test}\label{reporting-a-main-whitney-u-test}}
-
-When reporting the results of a Mann-Whitney test, the W statistic (sometimes indicated instead with a Z) and the p-value should be reported.
-For a test between two groups in which W = 1596.5 and the p-value = 0.002, an example would be, ``the total length of sparrows differed significantly with the survival status of sparrows (\(W = 1596.5\), \(P = 0.002\))''.
-
-\hypertarget{reporting-a-wilcoxon-signed-rank-test}{%
-\subsection{Reporting a Wilcoxon signed-rank test}\label{reporting-a-wilcoxon-signed-rank-test}}
-
-When reporting the results of a Wilcoxon signed-rank test, it is good to include the W statistic and p-value as with the Mann-Whitney test.
-An example would be, ``photosynthetic rate significantly in plants before and after frost (\(W = 14.01\), \(P = 0.007\))''.
-
-\hypertarget{reporting-chi-square-tests}{%
-\subsection{Reporting Chi-square tests}\label{reporting-chi-square-tests}}
-
-To report results from a \(\chi^{2}\) goodness of fit test, it is best to include the \(\chi^{2}\) test statistic, degrees of freedom, and the p-value.
-For example, for a \(\chi^{2}\) value of 1.2, degrees of freedom of 2, and p-value of 0.549, we could write, ``there is no significant difference between expected and observed counts of chosen dam sizes (\(\chi^{2}_{(2)} = 1.2\), \(P = 0.549\))''.
-
-Reporting results from a \(\chi^{2}\) test of association can be done similarly.
-For example, we might observe a \(\chi^{2}\) value of 4.89, 2 degrees of freedom for the first categorical variable and 1 for the second categorical variable, and a p-value of 0.549.
-We could report this as, ``there is no association between dam size and operating system (\(\chi^{2}_{(2, 1)} = 4.89\), \(P = 0.549\))'' (see \protect\hyperlink{Chapter_29}{Chapter 29}).
-
-\hypertarget{reporting-correlation-coefficients}{%
-\subsection{Reporting correlation coefficients}\label{reporting-correlation-coefficients}}
-
-To present the results of a test of the correlation coefficient (either the Pearson or Spearman Rank correlation coefficient), we can report the correlation coefficient and the corresponding p-value.
-An example of this is, ``egg production was positively correlated with body mass (\(r = 0.898\), \(P = 0.038\))''.
-
-\hypertarget{reporting-regressions}{%
-\subsection{Reporting regressions}\label{reporting-regressions}}
-
-When reporting the results of a regression, it is important to report the R-squared value, regression coefficients, and p-values of model or regression coefficients.
-It is also advised to report the equation of the linear regression \citep{Lang1997}.
-There are multiple ways of presenting this information clearly (in some cases, it might make sense to present the equation in a figure rather than the text).
-One example would be, ``sparrow body mass (g) increased significantly with sparrow total length (mm; \(R^{2} = 0.341\), \(b_{1} = 0.242\), \(P < 0.001\)) according to the model, \(mass = -13.07 + 0.242(length)\)''.
-When reporting multiple regression coefficients, relevant subscripts can be added for each coefficient (e.g., \(b_{1}\), \(b_{2}\), or more explicitly \(b_{mass}\), \(b_{wing\:length}\)).
-For large multiple regressions with many coefficients, it might make sense to report results in the form of a table.
-
-\hypertarget{conclusions}{%
-\section{Conclusions}\label{conclusions}}
-
-This chapter has presented some suggestions for reporting data and statistical output.
-These suggestions can be applied to scientific reports, dissertations, or scientific manuscripts.
-The recommendations in this chapter should mostly be treated as guidelines.
-There is no universally agreed upon way of reporting statistical output, but the guidelines of this chapter should be sufficient unless instructed otherwise.
-\citet{Lang1997} provides a more comprehensive guide to statistical reporting.
-
-\hypertarget{Chapter_39}{%
-\chapter{\texorpdfstring{\emph{Practical}. Statistical techniques in R}{Practical. Statistical techniques in R}}\label{Chapter_39}}
-
-This chapter will demonstrate how to run statistical tests in R that have been introduced in jamovi in previous practicals.
-The practical will use data of fig wasp wing loadings\footnote{\url{https://bradduthie.github.io/stats/data/wing_loadings.csv}}.
-
-\href{https://allisonhorst.github.io/palmerpenguins/articles/intro.html\#package-citation-1}{PalmerPenguins} dataset \citep{GormanEtAl2014, HorstEtAl2020}.
-These data include morphological measurements for 3 species of penguins that inhabit 3 islands in the Palmer Archipelago, Antarctica (Figure 37.1; artwork by \href{https://allisonhorst.com/}{allison\_horst}, Creative Commons Attribution 4.0 International License).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/penguins} \caption{This practical uses data collected on the morphologies of 3 Antarctic penguin species.}\label{fig:unnamed-chunk-218}
-\end{figure}
-
-The data were collected by Dr Kristen Gorman at the \href{https://pal.lternet.edu/}{Palmer Station} Long Term Ecological Research program from 2007-2009.
-To complete this lab, download the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv}{penguins.csv} dataset (right click and ``Save Link As\ldots{}'', then save it with the extension `.csv').
-Data include measurements of bill length (mm), bill depth (mm), flipper length (mm), body mass (g), and sampling year for penguins of 3 species on 3 islands.
-
-\hypertarget{working-with-a-data-set}{%
-\section{Working with a data set}\label{working-with-a-data-set}}
-
-First, we need to open Rstudio.
-You can do this on your own computer, or within a browser on the \href{https://posit.cloud/}{posit cloud}.
-Although it is possible to use R in a different environment than Rstudio, Rstudio will make some tasks easier.
-To get started, we need to make that we are working in the same directory (i.e., folder, see \protect\hyperlink{managing-data-files}{Chapter 2.3} on managing data files) that we saved the \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv}{penguins.csv}.
-We could use the \texttt{setwd()} function to do this (e.g., by typing something like \texttt{setwd("C:\textbackslash{}Users\textbackslash{}MyName\textbackslash{}Documents")} in the console on a Windows computer).
-But the easiest way in Rstudio is to navigate to the toolbar and select `Session', then `Set Working Directory' from the pulldown, and then `Choose Directory' (Figure 37.2).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/Rstudio_setwd} \caption{Rstudio option in the toolbar for setting a working directory.}\label{fig:unnamed-chunk-219}
-\end{figure}
-
-A new window will open that will allow you to navigate to the location in which \href{https://raw.githubusercontent.com/bradduthie/SCIU4T4/main/data/penguins.csv}{penguins.csv} was saved.
-
-In the practical from \protect\hyperlink{Chapter_36}{Chapter 36}, we worked entirely from the R console.
-This time, we will will introduce R scripts to make organising the code a bit easier.
-To do this, navigate to the Rstudio toolbar and select `File', then `New File' followed by `R Script' (Figure 37.3).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/Rstudio_script} \caption{Rstudio option in the toolbar for creating a new R script.}\label{fig:unnamed-chunk-220}
-\end{figure}
-
-You should then see an empty script called `Untitled1' open up above the R console.
-This will be useful because it will allow us to save the R commands that we run.
-
-\begin{quote}
-Task 1: Open a new R script by selecting `File \textgreater{} New File \textgreater{} R script'.
-\end{quote}
-
-Now we need to read in the penguins dataset.
-Assuming that we are in the same working directory as the place we saved the file called `penguins.csv', we can use the function \texttt{read.csv} to read in the CSV file.
-Type (or copy-paste) the line below into the R script.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{penguins }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\AttributeTok{file =} \StringTok{"penguins.csv"}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-Put your cursor on the line that you typed (you can also highlight the whole line, but this is not necessary).
-Next, find the `Run' button in the toolbar and click it (Figure 37.4).
-Rstudio will run whatever line of code your cursor is on, or whatever chunk of code is highlighted (including multiple lines at once; notice the line numbers in the left margin of the script).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/Rstudio_run} \caption{An Rstudio toolbar with the 'Run' option in the upper right to run a line of code from the script to the console.}\label{fig:unnamed-chunk-223}
-\end{figure}
-
-If that did not work, then double-check to make sure that you are in the correct directory and have the file name correct.
-Everything in R is case sensitive, meaning that capitalisation matters, so R will treat `Penguins.csv' and `penguins.csv' as completely different!
-It is important to be precise.
-
-Once you have read in the penguins dataset, have a look at the first 6 rows using the function \texttt{head}.
-
-\begin{quote}
-Task 2: View the first 6 rows of the penguins dataset.
-\end{quote}
-
-On the second line of your R script, type the code below, then run it.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{head}\NormalTok{(penguins);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-  species    island bill_length bill_depth flipper_length mass  year
-1  Adelie Torgersen        39.1       18.7            181 3750 Y2007
-2  Adelie Torgersen        39.5       17.4            186 3800 Y2007
-3  Adelie Torgersen        40.3       18.0            195 3250 Y2007
-4  Adelie Torgersen          NA         NA             NA   NA Y2007
-5  Adelie Torgersen        36.7       19.3            193 3450 Y2007
-6  Adelie Torgersen        39.3       20.6            190 3650 Y2007
-\end{verbatim}
-
-You should see the first 6 rows of the dataset print out in the console.
-Notice that the dataset is already in a tidy format.
-Each row is an individual penguin, and each variable is a column.
-
-Unlike jamovi, we cannot change the data in penguins simply by clicking on values.
-Like everything else in R, we need to do this using code.
-If we wanted to change the value of row one column three to 40, for example (i.e., the first penguin's bill depth), then we would need to do the following.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{penguins[}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{] }\OtherTok{\textless{}{-}} \DecValTok{40}
-\end{Highlighting}
-\end{Shaded}
-
-The square brackets can be used to indicate a specific row and column in the data (i.e., data{[}row\_number, column\_number{]}).
-A missing value in the square brackets will be interpreted by R as referring to all elements in the dataset.
-For example, if we wanted to have R just print off the fifth row of the penguins dataset, we could run the following.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{penguins[}\DecValTok{5}\NormalTok{, ]}
-\end{Highlighting}
-\end{Shaded}
-
-The absence of any value above in \texttt{,\ {]}} tells R to print all of the columns. We can do the same for the columns.
-
-\begin{quote}
-Task 3: Print just column 3 of the penguins dataset. What does the code look like?
-\end{quote}
-
-Code to return column 3: \_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Notice that some of the values in the dataset are not numeric, but instead are given as \texttt{NA}.
-This is how missing data are indicated in R.
-An example of this is shown in the measurements for the penguin in the fourth row.
-These \texttt{NA} values can become a nuisance when we try to calculate summary statistics.
-Using the \texttt{mean} function introduced in the practical last week, try running the line of code below to get the mean of column 3.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =}\NormalTok{ penguins[,}\DecValTok{3}\NormalTok{])}
-\end{Highlighting}
-\end{Shaded}
-
-We get a value of \texttt{NA} instead of the mean of the numbers that are not missing.
-This is because we need to tell R explicitly to remove values that are missing when calculating the mean.
-We can do this with the \texttt{na.rm} argument in the mean function.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =}\NormalTok{ penguins[,}\DecValTok{3}\NormalTok{], }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Note that we can also access column three by using the \texttt{\$} sign and the name of the relevant column (in this case \texttt{bill\_length}).
-We could therefore get the same answer as above using the code below.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =}\NormalTok{ penguins}\SpecialCharTok{$}\NormalTok{bill\_length, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-There is usually more than one way of doing the same thing in R (we could also use \texttt{penguins{[}{[}"bill\_length"{]}{]}}).
-
-\begin{quote}
-Task 4: Find the mean bill length of penguins in mm (column 3)
-\end{quote}
-
-Mean bill length (mm): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Now we can try 2 more functions.
-The function \texttt{sd} returns the standard deviation of numbers (note that while \texttt{na.rm} is not an argument for every R function, it can also be used as an argument in \texttt{sd}).
-The function \texttt{length} returns the length of an object.
-Try using these functions to calculate the 95 per cent confidence intervals for mean bill length (you can use a z-score of 1.96).
-
-\begin{quote}
-Task 5: Calculate lower and upper confidence intervals (CIs) using the R functions \texttt{mean}, \texttt{sd}, and \texttt{length}.
-\end{quote}
-
-Lower bill length CI: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Upper bill length CI: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Next, we can use the penguins dataset to run a one-way ANOVA, two-way ANOVA, \(\chi^{2}\) tests, correlation test, and linear regression.
-This practical will walk you through the code so that you can focus on understanding the R output.
-
-\hypertarget{familiar-statistical-tests-in-r}{%
-\section{Familiar statistical tests in R}\label{familiar-statistical-tests-in-r}}
-
-In this exercise, we will use the penguins dataset to run some familiar statistical hypothesis tests.
-In R, there is typically more than one way to do something.
-We will focus on the simplest way to run a one-way ANOVA, two-way ANOVA, \(\chi^{2}\) tests, correlation test, and linear regression.
-
-\hypertarget{one-way-anova-in-r}{%
-\subsection{One-way ANOVA in R}\label{one-way-anova-in-r}}
-
-We can start by running a one-way ANOVA to test the null hypothesis that all species have the same mean bill length.
-Normally we would want to first check the assumptions of the ANOVA.
-For now, we will assume that no assumptions are violated, but the Shapiro-Wilk test and Levene's test of equal variances will be demonstrated later.
-To run a one-way ANOVA in R, we can use the code below.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{anova\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ bill\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins);}
-\FunctionTok{anova}\NormalTok{(anova\_model);}
-\end{Highlighting}
-\end{Shaded}
-
-The function \texttt{lm} runs a general linear model (we have not discussed it in this module, but t-tests, ANOVA, and linear regression are all based on \href{https://stirlingcodingclub.github.io/linear_modelling/}{the same mathematical framework}; see \protect\hyperlink{Chapter_40}{Chapter 40} for more explanation).
-We can use the column names \texttt{bill\_length} and \texttt{species} directly if we specify that we are using the dataset in which these columns are found (\texttt{penguins}).
-Inside \texttt{lm}, you will notice the \texttt{\textasciitilde{}} symbol. This just separates our dependent variable (\texttt{bill\_length} on the left) and independent variable (\texttt{species} on the right).
-
-In the above, we are storing this model with a new variable named \texttt{anova\_model} (note that we can use \texttt{\textless{}-} to store more than just lists of numbers; in this case, our object is the whole linear model!).
-The function \texttt{anova} then summarises this model.
-
-\begin{quote}
-Task 6: Use the code above to run an ANOVA to test the null hypothesis that species have the same bill length. Find the F value and p value from the output.
-\end{quote}
-
-Note that R uses scientific notation to write very low values. For example \texttt{5.5e-4} would be interpreted as \(5.5 \times 10^{-4}\), which is 0.00055.
-
-F value: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-p value: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Since our p-value is less than 0.05, we can also run a Tukey's Honestly Significant Difference test of multiple comparisons (see \protect\hyperlink{Chapter_25}{Chapter 25}).
-We need to use the \texttt{aov} and \texttt{TukeyHSD} functions to do it.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{TukeyHSD}\NormalTok{(}\FunctionTok{aov}\NormalTok{(anova\_model));}
-\end{Highlighting}
-\end{Shaded}
-
-The \texttt{TukeyHSD} function will report a table of post hoc comparisons similar to the ones reported by jamovi.
-
-\hypertarget{two-way-anova-in-r}{%
-\subsection{Two-way ANOVA in R}\label{two-way-anova-in-r}}
-
-We can run a two-way ANOVA using the independent variables `species' and `year' with the code below.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{two\_way\_aov }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{  bill\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species }\SpecialCharTok{+}\NormalTok{ year }\SpecialCharTok{+}\NormalTok{ species}\SpecialCharTok{:}\NormalTok{year, }
-                  \AttributeTok{data =}\NormalTok{ penguins);}
-\FunctionTok{anova}\NormalTok{(two\_way\_aov);}
-\end{Highlighting}
-\end{Shaded}
-
-Note that the code above looks very similar to our one way ANOVA.
-Now we are just adding a new independent variable with the \texttt{+} sign, and adding an interaction between species and island, which is written as \texttt{species:year}.
-
-\begin{quote}
-Task 7: Use the code above to run a two way ANOVA. Determine whether or not the the main effects of the model (species and sex) are significant, and whether the interaction terms are significant.
-\end{quote}
-
-Significance:
-
-Species? \_\_\_\_\_\_\_\_\_\_
-
-Sex? \_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Interaction? \_\_\_\_\_\_\_\_\_\_\_\_\_
-
-\hypertarget{chi-square-test-in-r}{%
-\subsection{Chi-square test in R}\label{chi-square-test-in-r}}
-
-To run a \(\chi^{2}\) goodness of fit test, we need to first put the data in a table form.
-Suppose that we wanted to test the null hypothesis that penguins were sampled from equal frequencies across all islands.
-We can use the \texttt{table} function in R to first build a contingency table of counts of penguins observed on each island.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{island\_table }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{island);}
-\FunctionTok{print}\NormalTok{(island\_table);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-   Biscoe     Dream Torgersen 
-      168       124        52 
-\end{verbatim}
-
-The contingency table generated using the \texttt{table} function reveals that there were 168 penguins observed on the island Biscoe, 124 penguins observed on the island Dream, and 52 penguins observed on the island Torgersen.
-To run a \(\chi^{2}\) goodness of fit test, we can use the \texttt{island\_table} that we just created in the function \texttt{chisq.test}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{chisq.test}\NormalTok{(island\_table);}
-\end{Highlighting}
-\end{Shaded}
-
-The output of \texttt{chisq.test} will include the \(\chi^{2}\) statistic (`X-squared'), the degrees of freedom (`df'), and the p-value.
-
-\begin{quote}
-Task 8: Use the code above to run a Chi-square goodness of fit test. Report the test statistic below.
-\end{quote}
-
-\(\chi^{2}\) test statistic: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-A \(\chi^{2}\) test of association also requires counts to be placed in the format of a contingency table.
-This can be done by including 2 variables as arguments in \texttt{table}.
-We can build a contingency table of penguin counts for each island.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{sp\_island\_table }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(penguins}\SpecialCharTok{$}\NormalTok{island, penguins}\SpecialCharTok{$}\NormalTok{species);}
-\FunctionTok{print}\NormalTok{(sp\_island\_table);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-           
-            Adelie Chinstrap Gentoo
-  Biscoe        44         0    124
-  Dream         56        68      0
-  Torgersen     52         0      0
-\end{verbatim}
-
-The \texttt{chisq.test} function can then be run directly with this new table \texttt{sp\_island\_table} as an argument to run a \(\chi^{2}\) test of association.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{chisq.test}\NormalTok{(sp\_island\_table);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{quote}
-Task 9: Use the code above to run a Chi-square test of association between penguin species and island counts. Report the test statistic below.
-\end{quote}
-
-\(\chi^{2}\) test statistic: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-\hypertarget{correlation-test-in-r}{%
-\subsection{Correlation test in R}\label{correlation-test-in-r}}
-
-We can now look at how to find the correlation between two variables in R, and how to test whether or not they are significant.
-Suppose that we want to test whether or not bill length and flipper length are correlated in penguins.
-We can do this with the \texttt{cor.test} function in R.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{cor.test}\NormalTok{(}\AttributeTok{x =}\NormalTok{ penguins}\SpecialCharTok{$}\NormalTok{bill\_length, }\AttributeTok{y =}\NormalTok{ penguins}\SpecialCharTok{$}\NormalTok{flipper\_length, }
-         \AttributeTok{alternative =} \StringTok{"two.sided"}\NormalTok{, }\AttributeTok{method =} \StringTok{"pearson"}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-Notice that the \texttt{cor.test} function makes it possible to specify the alternative hypothesis (``two.sided'', ``less'', and ``greater'').
-It also is possible to use a Spearman correlation coefficient (method = ``spearman'') instead of a Pearson product moment correlation coefficient.
-
-\begin{quote}
-Task 10: Run a test of the null hypothesis that the Pearson correlation coefficient between bill length and flipper length is zero. Report the correlation coefficient r below.
-\end{quote}
-
-r: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Note that the output of the correlation test includes the t statistic, which is used for correlation hypothesis testing (\protect\hyperlink{correlation-hypothesis-testing}{Chapter 30.3}).
-It also includes 95 per cent confidence itnervals around \(r\), degrees of freedom, and the p-value (note that \texttt{2.2e-16} just means \(2.2 \times 10^{-16}\), i.e., a very small number).
-
-\hypertarget{simple-linear-regression-in-r}{%
-\subsection{Simple linear regression in R}\label{simple-linear-regression-in-r}}
-
-Suppose we want to try to predict penguin body mass from bill length.
-How would we run a simple linear regression for this in R?
-The code is actually very similar to what we used for running an ANOVA.
-We can again use the function \texttt{lm}.
-For simplicity, and because the goal here is just to show how to use the R functions, we will just assume that all of the relevant assumptions of regression are true.
-In this case, our linear model can be run using the code below.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{lin\_mod }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ mass }\SpecialCharTok{\textasciitilde{}}\NormalTok{ bill\_length, }\AttributeTok{data =}\NormalTok{ penguins);}
-\FunctionTok{summary}\NormalTok{(lin\_mod);}
-\end{Highlighting}
-\end{Shaded}
-
-In the above code, the first line defines the model (\texttt{lin\_mod}), and the second line summarises it for us with the output we need to make conclusions.
-Notice that the first line has the exact same structure as we used in the ANOVA.
-In the formula, the dependent variable \texttt{mass} is separated from the independent variable \texttt{bill\_length} with the \texttt{\textasciitilde{}} character, and we specify the dataset for both variables (\texttt{penguins}).
-
-\begin{quote}
-Task 11: Examine the output of the simple regression of penguin body mass against bill depth from the code above. Find the R-squared value (called `Multiple R-squared'), intercept, slope, and p-value for the overall model.
-\end{quote}
-
-R-squared: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Intercept: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Slope: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Model p-value: \_\_\_\_\_\_\_\_\_\_\_
-
-Note that the p-value for the model is in the very bottom right of the output.
-
-\hypertarget{multiple-regression-in-r}{%
-\subsection{Multiple regression in R}\label{multiple-regression-in-r}}
-
-Now we can add to the complexity of our model by including another independent variable.
-Suppose we want to predict body mass from both bill length and flipper length.
-Again, assume that all of the assumptions of regression are met; the goal is just to show the R functions at work.
-For multiple regression, the code again looks suspiciously similar to what it does for a two-way ANOVA (note, we should really also consider an interaction between our independent variables in multiple regression too, but for now we will just assume that none exists).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{mult\_regr }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ mass }\SpecialCharTok{\textasciitilde{}}\NormalTok{ bill\_length }\SpecialCharTok{+}\NormalTok{ bill\_depth, }
-                \AttributeTok{data =}\NormalTok{ penguins);}
-\FunctionTok{summary}\NormalTok{(mult\_regr);}
-\end{Highlighting}
-\end{Shaded}
-
-The output above looks similar to that of our simple linear model, but we now have a coefficient and p-value for an additional independent variable (bill depth).
-
-\begin{quote}
-Task 12: Examine the output of the multiple regression from the code above. Find the adjusted R-squared value, and write down the equation of the model.
-\end{quote}
-
-Adjusted R-squared: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Model equation: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-We have now looked at how to run ANOVAs, Chi-square tests, correlation tests, and regression in R.
-These tests rely on assumptions about the data.
-If these assumptions are violated, then we need to run a nonparametric alternative test.
-The next section will demonstrate how to test whether or not data are normally distributed and if groups have equal variances.
-
-\hypertarget{statistical-test-assumptions-in-r}{%
-\section{Statistical test assumptions in R}\label{statistical-test-assumptions-in-r}}
-
-In the one-way ANOVA of \protect\hyperlink{one-way-anova-in-r}{Chapter 39.2.1}, we tested if bill length differed among penguin species.
-An assumption of the ANOVA is that the data are normally distributed and groups have equal variances.
-We can run a Shapiro-Wilk test to check if data are normally distributed using the \texttt{shapiro.test} function in R.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{shapiro.test}\NormalTok{(}\AttributeTok{x =}\NormalTok{ penguins}\SpecialCharTok{$}\NormalTok{bill\_length);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{quote}
-Task 13: Test if penguin bill length is normally distributed.
-\end{quote}
-
-Based on this test, is bill length normally distributed? \_\_\_\_\_\_\_\_\_\_
-
-We can also check to see if species bill lengths have equal variances.
-We can do this using a Levene's test of homogeneity of variances, as we have done in jamovi.
-The base functions of the R programming language do not include a Levene's test.
-We therefore need to download an R package that has a function for the Levene's test.
-Packages in R include code that people have written and made available to other researchers.
-The \href{https://cran.r-project.org/}{Comprehensive R Archive Network} (CRAN) includes thousands of R packages that can be used to run all kinds of different functions.
-The package that we need is called `car', and we can download it from CRAN using the \texttt{install.packages} function.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"car"}\NormalTok{);}
-\FunctionTok{library}\NormalTok{(}\StringTok{"car"}\NormalTok{);}
-\end{Highlighting}
-\end{Shaded}
-
-The \texttt{install.packages("car")} installs the `car' package, and the \texttt{library("car")} loads it into R so that the functions in the package can be used.
-One of these functions is called \texttt{leveneTest}, which we can use to run the Levene's test of homogeneity of variances.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{leveneTest}\NormalTok{(bill\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins);}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{quote}
-Task 14: Use the `car' R package to run a Levene's test, then report the p-value of the test below.
-\end{quote}
-
-P: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-Remember that the Levene's test tests the null hypothesis that group variances are the same.
-Hence, if \(P > 0.05\), we should not reject the null hypothesis of equal variances.
-Nevertheless, from the earlier Shapiro-Wilk test, it appears that the data are not normally distributed.
-Instead of using a one-way ANOVA, we should therefore try the non-parameteric equivalent Kruskall-Wallis H test (\protect\hyperlink{Chapter_26}{Chapter 26}).
-The Kruskall-Wallis H test can be run in R using the \texttt{kruskal.test} function.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{kruskal.test}\NormalTok{(bill\_length }\SpecialCharTok{\textasciitilde{}}\NormalTok{ species, }\AttributeTok{data =}\NormalTok{ penguins);}
-\end{Highlighting}
-\end{Shaded}
-
-Recall from \protect\hyperlink{Chapter_26}{Chapter 26} that the Kruskall-Wallis H test uses a \(\chi^{2}\) test statistic.
-
-\begin{quote}
-Task 15: Run a Kruskall Wallis H test to see if bill length differs among species, then report the \(\chi^{2}\) test statistic of the test below.
-\end{quote}
-
-\(\chi^{2}\): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-
-There is much, much more that we could do in R.
-But once you understand the general idea of how R works, the best thing to do is play around with R code.
-If you want to run a specific statistical test, then it is almost certain that the test can be run in R.
-You might just need to search for the relevant function or R package online.
 
 \hypertarget{appendix-appendix}{%
 \appendix}
