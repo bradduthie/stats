@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-20" />
+<meta name="date" content="2024-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,11 +146,10 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-book-is-important"><i class="fa fa-check"></i>Why this book is important</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#book_chapters"><i class="fa fa-check"></i>Book chapters</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>How this book is structured</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#datasets"><i class="fa fa-check"></i>Datasets used in this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>About the author</a></li>
 </ul></li>
 <li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
 <li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Part I Overview</a></li>
@@ -166,7 +165,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
 <li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
 <li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
@@ -195,7 +194,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> <em>Practical</em>. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -562,58 +561,71 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</h1>
 <p class="author"><em>Brad Duthie</em></p>
-<p class="date"><em>2024-02-20</em></p>
+<p class="date"><em>2024-02-24</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered hasAnchor">
 <h1>Preface<a href="index.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Some text with the preface</p>
-<p>Datasets for all exercises are available here in the Open Science Framework <a href="https://osf.io/dxwyv" class="uri">https://osf.io/dxwyv</a></p>
-<div id="why-this-book-is-important" class="section level2 unnumbered hasAnchor">
-<h2>Why this book is important<a href="index.html#why-this-book-is-important" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Nearly all research in the biological and environmental sciences relies on data analysis of some kind.
 Statistical literacy is therefore important, not just for <em>doing</em> research, but also for <em>understanding</em> and <em>evaluating</em> the research of other scientists.
-Throughout this book, we will illustrate the importance of statistics using examples inspired by, or directly sourced from, real-world projects in the biological and environmental sciences.
-Many of these examples, including those used in lab practicals, will draw from research projects conducted at the University of Stirling.
-Several examples will focus on research that is important for addressing major global challenges in sustainability, food security, conservation, or the spread of disease.
-Other examples will focus on research that addresses fundamental scientific questions about ecology and evolution.
-We hope that you will find topics that interest you, and that this module will inspire you to learn more about statistics.</p>
-<div id="book_chapters" class="section level3 unnumbered hasAnchor">
-<h3>Book chapters<a href="index.html#book_chapters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Book chapters are generally quite short, and longer chapters are broken down into manageable subsections.
-Wherever relevant, links are provided to other chapters and references, and to interactive applications that make concepts easier to visualise.
-These applications will also be embedded into Canvas.</p>
-<blockquote>
-<p><a href="https://bradduthie.shinyapps.io/forest/">Click here</a> for an example interactive application.</p>
-</blockquote>
-<p>Information that is interesting but not critical to know is generally relegated to footnotes.</p>
+This book is an introductory textbook for learning statistics.
+It starts with the very basics and prioritises helping the reader develop a conceptual understanding of statistics and applying the most fundamental statistical tools.
+Mathematical details are generally placed in footnotes, and developing good statistical judgement is embraced over the adherence to rigid protocols.
+Wherever possible, I have tried to introduce new concepts with concrete examples that will likely be familiar to the reader and therefore serve as a useful starting point for understanding the more abstract concepts.
+After reading this book, the reader should be able to understand and communicate fundamental concepts of introductory statistics and apply them in the biological and environmental sciences.</p>
+<p>This book originated as a workbook for the second year university statistics class that I teach for biological and environmental science students at the University of Stirling in Stirling, Scotland.
+I wanted to rebuild the learning content from scratch after switching from a proprietary statistical software to the free and open-source jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+There are a lot of good statistics textbooks (many of which are cited throughout this book), but I could not find anything for biological or environmental science students that used jamovi.
+As a teacher, I have found jamovi to be the ideal tool for teaching introductory statistics.
+Its user friendly interface has made it possible to focus on teaching statistical concepts rather than the details of navigating software.
+It works on Windows, Mac, Linux, or Chrome, and can even be used in a browser (<a href="https://www.jamovi.org/" class="uri">https://www.jamovi.org/</a>), so I know that my students will be able to have access to jamovi after they are done with my class.
+I hope that this book is helpful for teachers wanting to use jamovi in the classroom, and that it is useful for anyone who wants to understand and apply statistical techniques that are widely used across the biological and environmental sciences</p>
+<div id="structure" class="section level2 unnumbered hasAnchor">
+<h2>How this book is structured<a href="index.html#structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This book includes 35 chapters separated into nine parts.
+Parts focuses on a set of (sometimes loosely) related concepts that might be used as one week of material for an introductory statistics class.
+Each part ends with a practical chapter that includes exercises for applying the concepts introduced in previous chapters to datasets in jamovi (the two exceptions are Part I, which uses spreadsheets outwith jamovi, and Part IX, in which the practical chapter is followed by a final chapter on randomisation).
+Answers to questions in practical exercises can be found in <a href="appendexA.html#appendexA">Appendix A</a>.
+Book chapters are generally quite short, and longer chapters are broken down into manageable subsections.
+In several places, there are footnotes with links to interactive applications that I have written in shiny <span class="citation">(<a href="#ref-Rshiny" role="doc-biblioref">Chang et al. 2024</a>; <a href="#ref-Wickham2021" role="doc-biblioref">Wickham 2021</a>)</span>.
+These applications should make it easier to visualise some of the more challenging concepts and reinforce the text.</p>
 </div>
+<div id="datasets" class="section level2 unnumbered hasAnchor">
+<h2>Datasets used in this book<a href="index.html#datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Datasets for all exercises (and code for shiny apps) are freely available to download from Open Science Framework (<a href="https://osf.io/dxwyv" class="uri">https://osf.io/dxwyv</a>).
+They are also stored on GitHub (<a href="https://github.com/bradduthie/stats" class="uri">https://github.com/bradduthie/stats</a>), and can be accessed there using direct links in footnotes.</p>
+<p>Datasets are mostly inspired by, or directly sourced from, real research in the biological and environmental sciences.
+A lot of data were collected from, or based on, my own doctoral work at Iowa State University.
+Other datasets are inspired by projects led by my colleagues at the University of Stirling.
+<strong>These data are for pedagogical purposes only.</strong>
+With some exceptions from my own data collected from the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) system <span class="citation">(see <a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>, all data in this book were constructed solely to illustrate statistical concepts and techniques as effectively as possible.
+Any data introduced in this book should therefore be treated as entirely hypothetical, and the reader will be reminded of this in subsequent chapters.</p>
 </div>
-<div id="jamovi" class="section level2 unnumbered hasAnchor">
-<h2>Jamovi statistical software<a href="index.html#jamovi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a lot of different software packages for running statistical analyses.
-Previous versions of this module have been taught using <a href="https://www.minitab.com/en-us/">Minitab</a> or <a href="https://www.ibm.com/uk-en/products/spss-statistics">SPSS</a>.
-For the foreseeable future, we are using <a href="https://www.jamovi.org/">jamovi</a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-There are a lot of tangible benefits to using <a href="https://www.jamovi.org/">jamovi</a>:</p>
-<ul>
-<li>It is user-friendly, with a point and click interface that is more intuitive than other software.</li>
-<li>It is free and open source, which means that you will be able to use it even after you have finished this module and your degree.</li>
-<li>It is written by a community of statisticians and scientists with a focus on teaching.</li>
-<li>It works on Windows, Mac, Linux, or Chrome, and can even be operated <a href="https://www.jamovi.org/cloud.html">in a browser</a>.</li>
-<li>It is lightweight, and less prone to crashing than other statistical software.</li>
-<li>It is built on top of the <a href="https://www.r-project.org/about.html">R statistical programming language</a>, which makes it easier to transition to learning R.</li>
-</ul>
-<p>In short, jamovi has a lot of advantages that make it the best option for you to learn statistics, apply your learning in future projects, and build on the skills in this module in future course work.</p>
-<p>In the computer labs on campus, you can access jamovi using <a href="https://appsanywhere.stir.ac.uk/">AppsAnywhere</a>.
-For your personal devices, you can <a href="https://www.jamovi.org/download.html">download Jamovi here</a> (recommended).
-You can also run jamovi <a href="https://www.jamovi.org/cloud.html">from a browser</a>, but there are currently some time limitations for doing this (sessions are limited to 45 minutes).</p>
-<p>This module will also introduce R, although we will not really use R by itself until <a href="#Week_11">Week 11</a>.
-Prior to <a href="#Week_11">Week 11</a>, there will be a few R commands scattered throughout lab practicals to ease you into it and accomplish some very specific tasks (e.g., generating random numbers).
-Because jamovi is built on top of R, R can be run directly from within Jamovi to do these tasks.
-Anyone who is especially interested in learning about R and what it can do is welcome to attend fortnightly sessions of <a href="https://stirlingcodingclub.github.io/studyGroup/">Stirling Coding Club</a>, which is run by the module coordinator.
-Sessions are run online using MS Teams and do not require any active participation (i.e., you can just watch; contact the module coordinator if you want to be included in the group).</p>
-<p>The R programming language has become by far the most popular software for doing statistics in biology and environmental sciences (we will see why in <a href="#Week_11">Week 11</a>).
-It is highly flexible and can be used for all kinds of projects.
-This book was entirely written in R using software called “Rmarkdown” and “<a href="https://pandoc.org/">Pandoc</a>”.</p>
+<div id="acknowledgements" class="section level2 unnumbered hasAnchor">
+<h2>Acknowledgements<a href="index.html#acknowledgements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Most of this book was written in the summer and autumn of 2022, and during a busy spring semester of statistics teaching in 2023.
+I am very grateful for the feedback that I have received from undergraduate students in the 2023 and 2024 Statistical Techniques class at the University of Stirling.
+I love teaching this module, and conversations that I have had with students during weekly practical sessions have made the text clearer and corrected numerous typographical errors.
+The book has also benefited from suggestions and corrections from numerous PhD students who served as teaching assistants on the class, including Adam Fell, Adrian Bach, Arianna Chiti, Benjamin Marshall, Chloe Pow, Daniel Atton Beckman, Eleri Kent, Rebecca Metcalf, and Shubham Pawar.
+I am especially grateful to my co-teachers Martina Quaggiotto and Ian Jones.
+Martina and Ian supported my plan to overhaul the learning material for our statistics class and put in a lot of work to fix teaching content that was not actually broken.
+I am also grateful to several colleagues at the University of Stirling who have provided images and inspired me with interesting projects and datasets, including Alan Law, Becky Boulton, Carmen Carmona, David Copplestone, Elisa Fuentes-Montemayor, Izzy Jones, Jens-Arne Subke, Jessica Burrows, Kirsty Park, Lidia De Sousa Teixeira, Matthew Tinsley, Nigel Willby, and Nils Bunnefeld.</p>
+<p>I want to thank CRC Press, and especially Lara Spieker, for making the publishing process such a positive experience.
+This book has benefited from feedback from three anonymous reviewers.
+It was written using Bookdown <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>, <a href="#ref-Xie2016" role="doc-biblioref">2016</a>, <a href="#ref-Xie2023" role="doc-biblioref">2023</a>)</span> within Rstudio <span class="citation">(<a href="#ref-Rstudio" role="doc-biblioref">RStudio Team 2020</a>)</span> in the R programming language <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span> running on the Xubuntu open source operating system (<a href="https://xubuntu.org/" class="uri">https://xubuntu.org/</a>).</p>
+<p>I want to thank my kid, Emrys.
+They are a joy in my life and have taught me so much.
+Lastly, I want to thank my wife Catherine.
+We have supported one another through so many challenges in life, through the uncertainties of career, immigration, and Covid-19.
+Her support has been indispensable for writing this book, and I will always be grateful for it.</p>
+</div>
+<div id="author" class="section level2 unnumbered hasAnchor">
+<h2>About the author<a href="index.html#author" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Brad Duthie (<a href="http://bradduthie.github.io" class="uri">http://bradduthie.github.io</a>) is a Lecturer in Environmental Modelling at the University of Stirling.
+He completed his PhD in Ecology and Evolutionary Biology at Iowa State University with a graduate minor in Statistics.
+His research focuses primarily on theory and modelling in ecology and evolutionary biology with particular interests in evolutionary ecology and community ecology.
+He also contributes to several research projects as a biostatistician and wrote and maintains two R packages for agent-based modelling.
+As an educator, Brad completed a Graduate Student Teaching Certificate at Iowa State University and became a Fellow of the Higher Education Academy while working as a Postdoctoral Research Fellow at the University of Aberdeen.
+He has taught undergraduate classes in statistics, ecology, and evolution at the University of Stirling and is the Programme Director for Biology and Animal Biology.</p>
 
 </div>
 </div>
@@ -622,8 +634,35 @@ This book was entirely written in R using software called “Rmarkdown” and �
 
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Rshiny" class="csl-entry">
+Chang, Winston, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert, and Barbara Borges. 2024. <em>Shiny: Web Application Framework for r</em>. <a href="https://shiny.posit.co/">https://shiny.posit.co/</a>.
+</div>
+<div id="ref-Duthie2015b" class="csl-entry">
+Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
+</div>
+<div id="ref-Duthie2016" class="csl-entry">
+Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in Ficus petiolaris and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em>. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
+</div>
+<div id="ref-Rproject" class="csl-entry">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-Rstudio" class="csl-entry">
+RStudio Team. 2020. <em>RStudio: Integrated Development Environment for r</em>. Boston, MA: RStudio, PBC. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.
+</div>
 <div id="ref-Jamovi2022" class="csl-entry">
 The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+</div>
+<div id="ref-Wickham2021" class="csl-entry">
+———. 2021. <em>Mastering Shiny</em>. O’Reilly Media. <a href="https://mastering-shiny.org/">https://mastering-shiny.org/</a>.
+</div>
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
+</div>
+<div id="ref-Xie2016" class="csl-entry">
+———. 2016. <em>Bookdown: Authoring Books and Technical Documents with <span>R</span> Markdown</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/bookdown">https://bookdown.org/yihui/bookdown</a>.
+</div>
+<div id="ref-Xie2023" class="csl-entry">
+———. 2023. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
 </div>
 </div>
             </section>

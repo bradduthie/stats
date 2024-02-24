@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-20" />
+<meta name="date" content="2024-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,11 +146,10 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-book-is-important"><i class="fa fa-check"></i>Why this book is important</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#book_chapters"><i class="fa fa-check"></i>Book chapters</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>How this book is structured</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#datasets"><i class="fa fa-check"></i>Datasets used in this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>About the author</a></li>
 </ul></li>
 <li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
 <li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Part I Overview</a></li>
@@ -166,7 +165,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
 <li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
 <li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
@@ -195,7 +194,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> <em>Practical</em>. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -563,22 +562,24 @@ div.csl-indent {
 <h1>Part VII Overview<a href="Week8.html#Week8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Part VII introduces ANalysis Of VAriance (ANOVA) and related methods, all of which focus on testing whether or not multiple groups in a dataset have the same mean.
 ANOVA is a very widely used statistical tool, and this part of the book introduces its most well-known applications.
-The concepts here follow from Part VI, but focus more broadly on hypothesis testing when there are more than two groups of continuous data.
-<a href="Chapter_24.html#Chapter_24">Chapter 24</a> introduces the general idea of the ANOVA, how it is calculated, and the F distribution that is used to test the null hypothesis that all groups have the same mean.
+The concepts here follow from Part VI, but focus more broadly on hypothesis testing when there are more than two groups of continuous data.</p>
+<ul>
+<li><p><a href="Chapter_24.html#Chapter_24">Chapter 24</a> introduces the general idea of the ANOVA, how it is calculated, and the F distribution that is used to test the null hypothesis that all groups have the same mean.
 The F distribution, like the t-distribution that was first introduced in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, appears in many places in statistics.
-Chapter 24 also outlines the assumptions of ANOVA.
-<a href="Chapter_25.html#Chapter_25">Chapter 25</a> introduces multiple comparisons tests.
+Chapter 24 also outlines the assumptions of ANOVA.</p></li>
+<li><p><a href="Chapter_25.html#Chapter_25">Chapter 25</a> introduces multiple comparisons tests.
 These tests can be used to find out which group means differ in a dataset when there are more than 2 groups.
-The chapter also explains why not correcting for multiple comparisons can lead to erroneously rejecting a null hypothesis when it is true (i.e., a Type I error) at a higher frequency than desired.
-<a href="Chapter_26.html#Chapter_26">Chapter 26</a> introduces the Kruskall-Wallis H test.
+The chapter also explains why not correcting for multiple comparisons can lead to erroneously rejecting a null hypothesis when it is true (i.e., a Type I error) at a higher frequency than desired.</p></li>
+<li><p><a href="Chapter_26.html#Chapter_26">Chapter 26</a> introduces the Kruskall-Wallis H test.
 This is the non-parametric equivalent of the one-way ANOVA, which can be used when assumptions of the ANOVA are violated.
-The Kruskall-Wallis is an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Chapter 22.5.2</a>
-<a href="Chapter_27.html#Chapter_27">Chapter 27</a> introduces the two-way ANOVA.
+The Kruskall-Wallis is an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Chapter 22.5.2</a></p></li>
+<li><p><a href="Chapter_27.html#Chapter_27">Chapter 27</a> introduces the two-way ANOVA.
 The two-way ANOVA is relevant when there are two types of groups (the chapter uses the example in which insect wing lengths are sampled from both different species and different trees).
-Using the two-way ANOVA, this chapter also introduces how to test multiple null hypotheses with a single test, and it introduces the concept of statistical interactions between variables (e.g., between species and trees).
-Finally, <a href="Chapter_28.html#Chapter_28">Chapter 28</a> demonstrates how to use and correctly interpret the tests that are introduced in chapters 23-26 in jamovi.
+Using the two-way ANOVA, this chapter also introduces how to test multiple null hypotheses with a single test, and it introduces the concept of statistical interactions between variables (e.g., between species and trees).</p></li>
+<li><p><a href="Chapter_28.html#Chapter_28">Chapter 28</a> demonstrates how to use and correctly interpret the tests that are introduced in chapters 23-26 in jamovi.
 It includes five exercises, two that demonstrate how to use a one-way ANOVA, one that demonstrates how to run a test of multiple comparisons, one that demonstrates the Kruskall-Wallis H test, and one that demonstrates a two-way ANOVA in jamovi.
-Exercises focus on a hypothetical example of sampling nutrient concentrations across different sites and soil profiles.</p>
+Exercises focus on a hypothetical example of sampling nutrient concentrations across different sites and soil profiles.</p></li>
+</ul>
 </div>
             </section>
 

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-20" />
+<meta name="date" content="2024-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,11 +146,10 @@ div.csl-indent {
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-book-is-important"><i class="fa fa-check"></i>Why this book is important</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#book_chapters"><i class="fa fa-check"></i>Book chapters</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#jamovi"><i class="fa fa-check"></i>Jamovi statistical software</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure"><i class="fa fa-check"></i>How this book is structured</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#datasets"><i class="fa fa-check"></i>Datasets used in this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#author"><i class="fa fa-check"></i>About the author</a></li>
 </ul></li>
 <li class="part"><span><b>I Background mathematics and data organisation</b></span></li>
 <li class="chapter" data-level="" data-path="Week1.html"><a href="Week1.html"><i class="fa fa-check"></i>Part I Overview</a></li>
@@ -166,7 +165,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.2" data-path="Chapter_2.html"><a href="Chapter_2.html#data-files"><i class="fa fa-check"></i><b>2.2</b> Data files</a></li>
 <li class="chapter" data-level="2.3" data-path="Chapter_2.html"><a href="Chapter_2.html#managing-data-files"><i class="fa fa-check"></i><b>2.3</b> Managing data files</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> Practical: Preparing data</a>
+<li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
 <li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
@@ -195,7 +194,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.1" data-path="Chapter_7.html"><a href="Chapter_7.html#adding-or-subtracting-errors"><i class="fa fa-check"></i><b>7.1</b> Adding or subtracting errors</a></li>
 <li class="chapter" data-level="7.2" data-path="Chapter_7.html"><a href="Chapter_7.html#multiplying-or-dividing-errors"><i class="fa fa-check"></i><b>7.2</b> Multiplying or dividing errors</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> Practical. Introduction to jamovi</a>
+<li class="chapter" data-level="8" data-path="Chapter_8.html"><a href="Chapter_8.html"><i class="fa fa-check"></i><b>8</b> <em>Practical</em>. Introduction to jamovi</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="Chapter_8.html"><a href="Chapter_8.html#summary_statistics_02"><i class="fa fa-check"></i><b>8.1</b> Exercise for summary statistics</a></li>
 <li class="chapter" data-level="8.2" data-path="Chapter_8.html"><a href="Chapter_8.html#transforming_variables_02"><i class="fa fa-check"></i><b>8.2</b> Exercise on transforming variables</a></li>
@@ -563,18 +562,20 @@ div.csl-indent {
 <h1>Part V Overview<a href="Week5.html#Week5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Part V focuses making statistical inferences using confidence intervals (CIs) and introduces the t-interval.
 Confidence intervals calculate two values, an upper and a lower CI, within which we expect a statistic (e.g., the mean) to be contained with some probability.
-They are regularly used to indicate the degree of uncertainty in an estimated statistic.
-<a href="Chapter_18.html#Chapter_18">Chapter 18</a> introduces what confidence intervals are and how to calculate them for normally and binomially distributed variables.
+They are regularly used to indicate the degree of uncertainty in an estimated statistic.</p>
+<ul>
+<li><p><a href="Chapter_18.html#Chapter_18">Chapter 18</a> introduces what confidence intervals are and how to calculate them for normally and binomially distributed variables.
 Understanding CIs builds on the concepts from Parts III and IV, especially the standard error introduced in <a href="Chapter_12.html#Chapter_12">Chapter 12</a> and z-scores introduced in <a href="Chapter_16.html#Chapter_16">Chapter 16</a>.
-Calculating CIs also requires an understanding of mathematical order of operations, which were first introduced in <a href="Chapter_1.html#Chapter_1">Chapter 1</a>.
-<a href="Chapter_19.html#Chapter_19">Chapter 19</a> introduces the t-distribution and explains why this interval is usually necessary for calculating confidence intervals.
+Calculating CIs also requires an understanding of mathematical order of operations, which were first introduced in <a href="Chapter_1.html#Chapter_1">Chapter 1</a>.</p></li>
+<li><p><a href="Chapter_19.html#Chapter_19">Chapter 19</a> introduces the t-distribution and explains why this interval is usually necessary for calculating confidence intervals.
 The t-distribution makes it possible to adjust confidence intervals appropriately given a small sample size.
-The t-distribution also appears in multiple hypothesis tests that are introduced later in this book, most obviously the t-test, but also regression.
-<a href="Chapter_20.html#Chapter_20">Chapter 20</a> guides you through how to calculate confidence intervals in jamovi.
+The t-distribution also appears in multiple hypothesis tests that are introduced later in this book, most obviously the t-test, but also regression.</p></li>
+<li><p><a href="Chapter_20.html#Chapter_20">Chapter 20</a> guides you through how to calculate confidence intervals in jamovi.
 This chapter includes five exercises, all of which involve calculating confidence intervals.
 In addition to working through how to calculate confidence intervals in jamovi, this chapter includes an exercise that shows the importance of the t-distribution for small sample size.
 Exercises use a hypothetical dataset inspired by the Woodland Creation and Ecological Networks (WrEN) project.
-Data include measurements of tree diameters at breast height across different sites.</p>
+Data include measurements of tree diameters at breast height across different sites.</p></li>
+</ul>
 </div>
             </section>
 
