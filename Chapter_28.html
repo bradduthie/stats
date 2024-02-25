@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -534,24 +534,18 @@ What is the p-value of the test, and what conclusion do you make about Nitrogen 
 <p>Now we will use an ANOVA to test if the mean Nitrogen concentration differs between sites.
 Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA compares the variance among groups to the variance within groups, calculating an F statistic and finding where F is in the null F distribution.
 To run an ANOVA, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
-From the ANOVA pulldown, select ‘One-Way ANOVA’ (Figure 28.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-124"></span>
-<img src="img/jamovi_one-way_ANOVA.png" alt="Jamovi toolbar is shown with a button called 'ANOVA' being selected, and a pull-down menu selecting a one-way ANOVA." width="100%" />
-<p class="caption">
-Figure 28.1: Jamovi toolbar in the Analyses tab, which includes an option for running an ANOVA.
-</p>
-</div>
-<p>After selecting the one-way ANOVA, a familiar interface will open up.
+From the ANOVA pulldown, select ‘One-Way ANOVA’.
+After selecting the one-way ANOVA, a familiar interface will open up.
 Place ‘Nitrogen’ in the Dependent Variables box and ‘site’ in the Grouping Variable box.
-Although we have already checked the assumptions of normality and homogeneity of variances when we ran the t-test, check these boxes under <strong>Assumption Checks</strong> too (Figure 28.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-125"></span>
+Although we have already checked the assumptions of normality and homogeneity of variances when we ran the t-test, check these boxes under <strong>Assumption Checks</strong> too (Figure 28.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-112"></span>
 <img src="img/jamovi_one-way_ANOVA_analysis.png" alt="Jamovi interface is shown for running a one-way ANOVA, with a dependent variable of Nitrogen selected split by site. Check boxes indicate an assumption of equal variances between groups and assumption checks of homogeneity of variances and normality." width="100%" />
 <p class="caption">
-Figure 28.2: Jamovi interface for running a one-way ANOVA to test if Nitrogen concentration (ppm) differs among sites in soils of Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.
+Figure 28.1: Jamovi interface for running a one-way ANOVA to test if Nitrogen concentration (ppm) differs among sites in soils of Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.
 </p>
 </div>
 <p>Confirm that the Shapiro-Wilk test of normality and the Levene’s test of homogeneity of variances are consistent with what you concluded when testing the assumptions of the t-test above.
-Since there is no reason to reject the null hypothesis that group variances are equal, we can use the Fisher’s One-Way ANOVA by checking ‘Assume equal (Fisher’s)’ under <strong>Variances</strong> (see Figure 28.3).
+Since there is no reason to reject the null hypothesis that group variances are equal, we can use the Fisher’s One-Way ANOVA by checking ‘Assume equal (Fisher’s)’ under <strong>Variances</strong>.
 A table called ‘One-Way ANOVA’ will appear in the panel on the right.
 Write down the test statistic (F), degrees of freedom, and p-values from this table below.</p>
 <p>F: _______________</p>
@@ -585,7 +579,7 @@ Why might this be?</p>
 In this dataset, there are lower, middle, and upper profiles, which refer to the location along a slope from which soil samples were obtained.
 Using the same approach as the previous Exercise 28.1, we will run a one-way ANOVA with profile as the independent variable instead of site.
 Again, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
-From the ANOVA pulldown, select ‘One-Way ANOVA’ (Figure 28.2).
+From the ANOVA pulldown, select ‘One-Way ANOVA’.
 First check the assumptions of normality and homogeneity of variances.
 What can you conclude?</p>
 <p>Normality conclusion: ___________________________</p>
@@ -618,11 +612,11 @@ To actually test the null hypothesis, the One-Way ANOVA output table is all that
 <p>Finally, note that in the ANOVA pulldown from the jamovi toolbar, the option ‘ANOVA’ is just below the ‘One-way ANOVA’ that we used in this exercise and Exercise 28.1.
 This is just a more general tool for running an ANOVA, which includes the two-way ANOVA that we will use in Exercise 28.5 below.
 For now, give this a try by selecting ‘ANOVA’ from the pull down menu.
-In the ANOVA interface, place ‘Nitrogen’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box (Figure 28.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-126"></span>
+In the ANOVA interface, place ‘Nitrogen’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box (Figure 28.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-113"></span>
 <img src="img/jamovi_ANOVA_input.png" alt="Jamovi interface is shown for running an ANOVA, with a dependent variable of Nitrogen and profile as a fixed factor." width="100%" />
 <p class="caption">
-Figure 28.3: Jamovi interface for running an ANOVA to test if Nitrogen concentration (ppm) differs among soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.
+Figure 28.2: Jamovi interface for running an ANOVA to test if Nitrogen concentration (ppm) differs among soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.
 </p>
 </div>
 <p>The output in the right panel shows an ANOVA table.
@@ -630,7 +624,7 @@ It includes the sum of squares of the among-group (Profile) and within-group (Re
 This is often how ANOVA results are presented in the literature.
 Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and P.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-127">Table 28.1: </span>ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<caption><span id="tab:unnamed-chunk-114">Table 28.1: </span>ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -667,14 +661,8 @@ Fill in the table below (Table 28.1) with the information for degrees of freedom
 <p>In this exercise, we will pick up where we left of in the ANOVA of Exercise 28.2.
 We have established that not all soil profiles have the same mean.
 Next, we will run a post hoc multiple comparisons test to evaluate which, if any, soil profiles have different means.
-In the ANOVA input panel, scroll down to the pulldown option called ‘Post Hoc Tests’ (Figure 28.5).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-128"></span>
-<img src="img/jamovi_multiple_comparisons_input.png" alt="Jamovi interface is shown with a pulldown option of the ANOVA called 'Post Hoc Tests'." width="100%" />
-<p class="caption">
-Figure 28.4: Jamovi interface for running post hoc tests following an ANOVA.
-</p>
-</div>
-<p>Move ‘Profile’ to the box to the right, then select the ‘Tukey’ checkbox under <strong>Correction</strong>, as shown in Figure 28.5.
+In the ANOVA input panel, scroll down to the pulldown option called ‘Post Hoc Tests’.
+Move ‘Profile’ to the box to the right, then select the ‘Tukey’ checkbox under <strong>Correction</strong>.
 Doing this will run the Tukey’s honestly significant difference (HSD) test introduced in <a href="Chapter_25.html#Chapter_25">Chapter 25</a>.
 The output will appear in the panel on the right in a table called ‘Post Hoc Tests’.
 Note that these post-hoc tests use the t-distribution to test for significance.
@@ -738,13 +726,7 @@ From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumpti
 As introduced in <a href="Chapter_26.html#Chapter_26">Chapter 26</a>, the Kruskall-Wallis H test is a non-parametric alternative to a one-way ANOVA.
 Like other non-parametric tests introduced in this book, the Kruskall-Wallis H test uses the ranks of a dataset instead of the actual values.
 To run a Kruskall-Wallis H test, select the Analyses tab, then the ‘ANOVA’ button from the jamovi toolbar.
-In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskall-Wallis’ (second to last one down the list; Figure 28.6).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-129"></span>
-<img src="img/jamovi_Kruskall-Wallis_toolbar.png" alt="Jamovi interface is shown with a pulldown of the ANOVA menu selecting a Kruskall-Wallis test." width="100%" />
-<p class="caption">
-Figure 28.5: Jamovi toolbar for selecting a Kruskall-Wallis test.
-</p>
-</div>
+In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskall-Wallis’.</p>
 <p>The Kruskall-Wallis input is basically the same as the one-way ANOVA input.
 We just need to put ‘Potassium’ in the dependent variable list and ‘Profile’ in the Grouping Variable box.
 The output table includes the test statistic (Jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which we will introduce in <a href="Week9.html#Week9">Part IX</a>, degrees of freedom, and p-value).
@@ -778,7 +760,7 @@ This time, however, there are 4 rows in total.
 The first 2 rows correspond with tests of the main effects of Site and Profile, and the third row tests the interaction between these two variables.
 Fill in Table 28.2 with the relevant information from the two-way ANOVA output.</p>
 <table>
-<caption><span id="tab:unnamed-chunk-130">Table 28.2: </span>Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<caption><span id="tab:unnamed-chunk-115">Table 28.2: </span>Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -838,11 +820,11 @@ Fill in Table 28.2 with the relevant information from the two-way ANOVA output.<
 </code></pre>
 <p>Lastly, we can look at the interaction effect between Site and Profile visually.
 To do this, scroll down to the ‘Estimated Marginal Means’ pulldown option.
-Move ‘Site’ and ‘Profile’ from the box on the left to the ‘Marginal Means’ box on the right (Figure 28.7).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-131"></span>
+Move ‘Site’ and ‘Profile’ from the box on the left to the ‘Marginal Means’ box on the right (Figure 28.3).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-116"></span>
 <img src="img/jamovi_marginal_means.png" alt="Jamovi interface is shown with an ANOVA test being run and a pulldown menu for Estimated Marginal Means." width="100%" />
 <p class="caption">
-Figure 28.6: Jamovi two-way ANOVA test with the pulldown menu for Estimated Marginal Means, which will produce a plot showing the interaction effect of the two-way ANOVA.
+Figure 28.3: Jamovi two-way ANOVA test with the pulldown menu for Estimated Marginal Means, which will produce a plot showing the interaction effect of the two-way ANOVA.
 </p>
 </div>
 <p>In the panel on the right hand side, a plot will appear under the heading ‘Estimated Marginal Means’.

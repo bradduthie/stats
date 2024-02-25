@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -513,7 +513,7 @@ These data can be downloaded online<a href="#fn4" class="footnote-ref" id="fnref
 I collected these data in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Measurements include fig lengths, widths, and heights in centimeters from 4 different fig trees, and the number of seeds in each fruit.
 This dataset can also be downloaded online<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
 <img src="img/fig_data_set.png" alt="Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. Panel A shows a person staring into a microscope in field attire, panel B shows a picture of a wild fig with a fig wasp sitting on top of it, and panel C shows a sliced open fig with seeds along the inside; below the fig is a ruler and above it is a pencil description of the site and date from which the fig was collected." width="100%" />
 <p class="caption">
 Figure 8.1: Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.
@@ -525,46 +525,39 @@ Some of these exercises will be similar those of <a href="Chapter_3.html#Chapter
 <div id="summary_statistics_02" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Exercise for summary statistics<a href="Chapter_8.html#summary_statistics_02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Once jamovi is open, you can import the soil organic carbon dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting ‘Open’ (Figure 8.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
 <img src="img/jamovi_toolbar.png" alt="The jamovi toolbar including tabs for opening files represented by three horizontal lines, Variables, Data, Analyses, and Edit." width="100%" />
 <p class="caption">
 Figure 8.2: The jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right
 </p>
 </div>
 <p>You might need to click ‘Browse’ in the upper right of jamovi to find the file.
-Figure 8.3 below shows how this will look when you browse for a data file.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
-<img src="img/open_soil_organic_carbon.png" alt="The jamovi interface for opening a file with the 'Import' tab selected, 'Downloads' and 'Browse' options at the top of the toolbar, and a separate window that includes two files that can be selected." width="100%" />
-<p class="caption">
-Figure 8.3: The jamovi interface for opening a file with the ‘Import’ tab selected. Options for browsing to a file on the computer are available in the upper right, which opens the window in the foreground.
-</p>
-</div>
-<p>Once the data are imported, you should see two separate columns.
+Once the data are imported, you should see two separate columns.
 The first column will show soil organic carbon values for topsoil samples, and the second column will show soil organic carbon values for subsoil samples.
 These data are not formatted in a tidy way.
 We need to fix this so that each row is a unique observation and each column is a variable (see <a href="Chapter_2.html#Chapter_2">Chapter 2</a>).
 It might be easiest to reorganise the data in a spreadsheet such as LibreOffice Calc or Microsoft Excel.
-But you can also edit the data directly in jamovi by clicking on the ‘Data’ tab in the toolbar (see Figures 8.2 and 8.4).
-The best way to reorganise the data in jamovi is to double-click on the third column of data next to ‘subsoil’ (see Figure 8.4).</p>
+But you can also edit the data directly in jamovi by clicking on the ‘Data’ tab in the toolbar (Figures 8.3).
+The best way to reorganise the data in jamovi is to double-click on the third column of data next to ‘subsoil’ (see Figure 8.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-26"></span>
 <img src="img/jamovi_new_variable.png" alt="The jamovi toolbar is shown with data columns for topsoil and subsoil. In the third column from the right, there is text that says 'Click Here' in red." width="100%" />
 <p class="caption">
-Figure 8.4: The jamovi toolbar is shown with the soil organic carbon dataset. In jamovi, double-clicking above column three where it says ‘CLICK HERE’ will allow you to input a new variable.
+Figure 8.3: The jamovi toolbar is shown with the soil organic carbon dataset. In jamovi, double-clicking above column three where it says ‘CLICK HERE’ will allow you to input a new variable.
 </p>
 </div>
-<p>After double-clicking on the location shown in Figure 8.4, there will be three buttons visible.
+<p>After double-clicking on the location shown in Figure 8.3, there will be three buttons visible.
 You can click the ‘New Data Variable’ to insert a new variable named ‘soil_type’ in place of the default name ‘C’.
 Keep the ‘Measure type’ as ‘Nominal’, but change the ‘Data type’ to ‘text’.
-When you are done, click the <code>&gt;</code> character to the right so that the variable is fixed (Figure 8.5).</p>
+When you are done, click the <code>&gt;</code> character to the right so that the variable is fixed (Figure 8.4).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-27"></span>
 <img src="img/jamovi_set_variable.png" alt="The jamovi toolbar is shown with a box open to insert a new variable. The 'Data Variable' name is 'soil_type', and pulldown boxes indicate that 'Measure type' is set to 'Nominal' and 'Data type' is set to 'Text'. The mouse pointer is hovering over an arrow that says 'Next Variable'." width="100%" />
 <p class="caption">
-Figure 8.5: The jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.
+Figure 8.4: The jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.
 </p>
 </div>
 <p>After typing in the new variable ‘soil_type’, add another variable called ‘organic_carbon’.
 The organic_carbon variable should have a measure type of ‘Continuous’ and a data type of ‘Decimal’.
-After both soil_type and organic_carbon variables have been set, you can click the up arrow with the upper right circle (Figure 8.5) to get the new variable window out of the way.</p>
+After both soil_type and organic_carbon variables have been set, you can click the up arrow with the upper right circle (Figure 8.4) to get the new variable window out of the way.</p>
 <p>With the two new variables created, we can now rearrange the data in a tidy way.
 The first 19 rows of soil_type should be ‘topsoil’, and the remaining 15 rows should be ‘subsoil’.
 To do this quickly, you can write ‘topsoil’ in the first row of soil_type and copy-paste into the remaining rows.
@@ -577,13 +570,7 @@ Do the same for the second column ‘subsoil’.
 Now you should have a tidy data set with two columns of data, one called ‘soil_type’ and one called ‘organic_carbon’.
 You are now ready to calculate some descriptive statistics from the data.</p>
 <p>First, we can calculate the minimum, maximum, and mean of all of the organic carbon values (i.e., the ‘grand’ mean, which includes both soil types).
-To do this, select the ‘Analyses’ tab, then click on the left-most button called ‘Exploration’ in the toolbar (Figure 8.6).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-28"></span>
-<img src="img/jamovi_exploration.png" alt="The jamovi toolbar is shown with a tab called 'Analyses' selected. Underneath the Analyses tab, there are several buttons, and the 'Exploration' button is highlighted. Below the exploration button are the first three rows of soil organic carbon data." width="100%" />
-<p class="caption">
-Figure 8.6: The jamovi toolbar where the tab ‘Analyses’ can be selected at the very top. Below this tab, the button ‘Exploration’ can be clicked to calculate descriptive statistics.
-</p>
-</div>
+To do this, select the ‘Analyses’ tab, then click on the left-most button called ‘Exploration’ in the toolbar.</p>
 <p>After clicking on ‘Exploration’, a pull-down box will appear with an option for ‘Descriptives’.
 Select this option, and you will see a new window with our two columns of data in the left-most box.
 Click once on the ‘organic_carbon’ variable and use the right arrow to move it into the ‘Variables’ box.
@@ -637,14 +624,63 @@ Doing this will make the statistical hypothesis testing that comes later in this
 Open this dataset into jamovi.
 Note that there are 5 columns of data, and all of the data appear to be in a tidy format.
 Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
-The first several rows should look like the below.</p>
-<pre><code>  Tree Length_cm Width_cm Height_cm Seeds
-1    A       1.5      1.8       1.4   238
-2    A       1.7      1.9       1.5   198
-3    A       2.1      2.1       1.6   220
-4    A       1.5      1.6       1.4   188
-5    A       1.6      1.6       1.5   139
-6    A       1.5      1.4       1.5   173</code></pre>
+The first several rows should look like Table 8.1.</p>
+<table>
+<caption><span id="tab:unnamed-chunk-28">Table 8.1: </span>First six rows of the fig fruits dataset.</caption>
+<thead>
+<tr class="header">
+<th align="left">Tree</th>
+<th align="right">Length_cm</th>
+<th align="right">Width_cm</th>
+<th align="right">Height_cm</th>
+<th align="right">Seeds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A</td>
+<td align="right">1.5</td>
+<td align="right">1.8</td>
+<td align="right">1.4</td>
+<td align="right">238</td>
+</tr>
+<tr class="even">
+<td align="left">A</td>
+<td align="right">1.7</td>
+<td align="right">1.9</td>
+<td align="right">1.5</td>
+<td align="right">198</td>
+</tr>
+<tr class="odd">
+<td align="left">A</td>
+<td align="right">2.1</td>
+<td align="right">2.1</td>
+<td align="right">1.6</td>
+<td align="right">220</td>
+</tr>
+<tr class="even">
+<td align="left">A</td>
+<td align="right">1.5</td>
+<td align="right">1.6</td>
+<td align="right">1.4</td>
+<td align="right">188</td>
+</tr>
+<tr class="odd">
+<td align="left">A</td>
+<td align="right">1.6</td>
+<td align="right">1.6</td>
+<td align="right">1.5</td>
+<td align="right">139</td>
+</tr>
+<tr class="even">
+<td align="left">A</td>
+<td align="right">1.5</td>
+<td align="right">1.4</td>
+<td align="right">1.5</td>
+<td align="right">173</td>
+</tr>
+</tbody>
+</table>
 <p>The dataset includes the tree from which the fig was sampled in column 1 (A, B, C, and D), then the length, width, and heights of the fig in cm.
 Finally, the last column shows how many seeds were counted within the fig.
 Use the Descriptives option in jamovi to find the grand (i.e., not split by Tree) mean length, width, and height of figs in the dataset.
@@ -667,11 +703,11 @@ Note that the length, width, and height variables are all recorded in cm to a si
 Suppose we want to transform these variables so that they are represented in mm instead of cm.
 We will start by creating a new column ‘Length_mm’ by transforming the existing ‘Length_cm’ column.
 To do this, click on the ‘Data’ tab at the top of the toolbar again, then click on the ‘Length_cm’ column name to highlight the entire column.
-Your screen should look like the image in Figure 8.7.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30"></span>
+Your screen should look like the image in Figure 8.5.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-29"></span>
 <img src="img/jamovi_transform_fig_length.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath the Data tab, there are several buttons, including 'Setup', 'Compute', and 'Transform'. Below these buttons, four columns of data are shown, with the focal column length in cm highlighted." width="100%" />
 <p class="caption">
-Figure 8.7: The jamovi toolbar where the tab ‘Data’ is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above
+Figure 8.5: The jamovi toolbar where the tab ‘Data’ is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above
 </p>
 </div>
 <p>With the ‘Length_cm’ column highlighted, click on the ‘Transform’ button in the toolbar.
@@ -686,11 +722,11 @@ To change the transform from ‘None’, click the arrow and select ‘Create Ne
 A new box will pop up allowing us to name the transformation.
 It does not matter what we call it (e.g., ‘cm_to_mm’ is fine).
 Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multiply the values of ‘Length_cm’ by 10.
-We can do this by appending a <code>* 10</code> to the lower box of the transform window, so that it reads <code>= $source * 10</code> (Figure 8.8).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-31"></span>
+We can do this by appending a <code>* 10</code> to the lower box of the transform window, so that it reads <code>= $source * 10</code> (Figure 8.6).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30"></span>
 <img src="img/jamovi_transform_cm_to_mm.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'Transform', where the name 'cm to mm' has been typed in. Underneath the box is the code to multiply the column by 10, and below the code is the fig fruits dataset." width="100%" />
 <p class="caption">
-Figure 8.8: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the transform, which has been named ‘cm to mm’. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new ‘Length mm’ column is 10 times the length column.
+Figure 8.6: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the transform, which has been named ‘cm to mm’. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new ‘Length mm’ column is 10 times the length column.
 </p>
 </div>
 <p>When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
@@ -739,15 +775,15 @@ We can do this by clicking on the <span class="math inline">\(f_{x}\)</span> box
 Two new boxes will appear; the first is named ‘Functions’, and the second is named ‘Variables’.
 Ignore the functions box for now, and find ‘Width_mm’ in the list of variables.
 Double click on this to put it into the formula, then divide it by 2.
-You can repeat this two more times to complete the computed variable as shown in Figure 8.9.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-32"></span>
+You can repeat this two more times to complete the computed variable as shown in Figure 8.7.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-31"></span>
 <img src="img/jamovi_compute_new_variable.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'COMPUTED VARIABLE', where the name 'fig volume' has been typed in. Underneath the box is the code for the volume of a sphere and below the code is the fig fruits dataset." width="100%" />
 <p class="caption">
-Figure 8.9: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the new computed variable ‘fig volume’, which has been created by calculating the product of 4/3, 3.14, and Width mm three times.
+Figure 8.7: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the new computed variable ‘fig volume’, which has been created by calculating the product of 4/3, 3.14, and Width mm three times.
 </p>
 </div>
 <p>Note that we can get the cube of ‘Width_mm’ more concisely by using the carrot character (<code>^</code>).
-That is, we would get the same answer shown in Figure 8.9 if we instead typed the below in the function box.</p>
+That is, we would get the same answer shown in Figure 8.7 if we instead typed the below in the function box.</p>
 <pre><code>= (4/3) * 3.14 * (Width_mm/2)^3</code></pre>
 <p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3.
 If we instead had written, <code>Width_mm/2^3</code>, then jamovi would first take the cube of 2 <span class="math inline">\((2 \times 2 \times 2 = 8)\)</span>, then divided <code>Width_mm</code> by this value giving a different and incorrect answer.
@@ -783,15 +819,9 @@ Choose an appropriate name (e.g., ‘chapter_8_exercises.omv’), then save the 
 Like all binary files, an OMV file cannot be opened as plain text.
 Hence, it might be a good idea to save the dataset as a CSV file (note, this will not save any of the analyses or graphs).
 To do this, click on the three horizontal lines in the upper left of the toolbar again, but this time click ‘Export’.
-Give the file an appropriate name (e.g., ‘chapter_8_dataset’), then choose ‘CSV’ from the pulldown menu below (Figure 8.10).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
-<img src="img/export_jamovi.png" alt="A jamovi Export window is open with a file being saved and the pull down menu below selecting 'CSV' as an option" width="100%" />
-<p class="caption">
-Figure 8.10: The jamovi Export menu in which data are be saved as a CSV using the pulldown menu below the filename
-</p>
-</div>
-<p>Make sure to choose a save location that you know you will be able to find again (to navigate through file directories, click ‘Browse’ in the upper right).
-To save, click on ‘Export’ in the upper right (Figure 8.10).</p>
+Give the file an appropriate name (e.g., ‘chapter_8_dataset’), then choose ‘CSV’ from the pulldown menu below.
+Make sure to choose a save location that you know you will be able to find again (to navigate through file directories, click ‘Browse’ in the upper right).
+To save, click on ‘Export’ in the upper right.</p>
 </div>
 <div id="summary-1" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Summary<a href="Chapter_8.html#summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>

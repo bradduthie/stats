@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -556,7 +556,7 @@ The best way to get started is with an instructive example.</p>
 This tree is distributed throughout the Baja peninsula, and in parts of mainland Mexico.
 Fig trees and the wasps that develop inside of them have a fascinating ecology, but for now we will just focus on the morphologies of 2 closely related species as an example.
 The fig wasps in Figure 35.1 are 2 unnamed species of the genus <em>Idarnes</em>, which can refer to simply as ‘Short-ovipositor 1’ (SO1) and ‘Short-ovipositor 2’ (SO2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-170"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-155"></span>
 <img src="img/fig_wasps.jpg" alt="A 2 panel figure is shown, with 2 black wasps under a microscope slide shown side by side, each of which has an ovipositor about twice its body length." width="100%" />
 <p class="caption">
 Figure 35.1: Image of 2 fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’
@@ -565,8 +565,8 @@ Figure 35.1: Image of 2 fig wasp species, roughly 3 mm in length, labelled ‘SO
 <p>The reason that these 2 species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as the ones above.</p>
 <p>Suppose that we have some data on the lengths of the ovipositors from each species.
 We might want to know whether the mean ovipositor length differs between the 2 species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 of the species ‘SO1’, and 15 of the species ‘SO2’.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-171"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-171-1.png" alt="A 2 panel figure showing a histogram in each panel, the left with a histogram of SO1 ovipositor length and the right with another SO2 ovipositor length. Histograms are roughly normally distributed" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-156"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-156-1.png" alt="A 2 panel figure showing a histogram in each panel, the left with a histogram of SO1 ovipositor length and the right with another SO2 ovipositor length. Histograms are roughly normally distributed" width="672" />
 <p class="caption">
 Figure 35.2: Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.
 </p>
@@ -582,8 +582,8 @@ We can therefore calculate <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y
 <p><span class="math display">\[t_{\bar{y}_{SO1} - \bar{y}_{SO2}} = \frac{3.03 - 2.845}{0.077}.\]</span></p>
 <p>After we calculate our t-statistic as <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419, we would use the t-distribution to find the p-value (or, rather, get jamovi to do this for us).
 Figure 35.3 shows the t-distribution for 30 degrees of freedom with an arrow pointing at the value of <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-172"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-172-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around 2.419." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-157"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-157-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around 2.419." width="672" />
 <p class="caption">
 Figure 35.3: A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.
 </p>
@@ -602,18 +602,18 @@ The idea is easiest to see using an interactive application<a href="#fn82" class
 <p>With modern computing power, we do not need to do this randomisation manually.
 A desktop computer can easily reshuffle the species identities and calculate a difference between means thousands of times in less than a second.
 The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 99999 times.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-173"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-173-1.png" alt="A histogram with 120 narrow bars that form a bell shaped distribution around a mean of 0. An arrow points out a value of mean SO1 minus mean SO2" width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-158"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-158-1.png" alt="A histogram with 120 narrow bars that form a bell shaped distribution around a mean of 0. An arrow points out a value of mean SO1 minus mean SO2" width="672" />
 <p class="caption">
 Figure 35.4: A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.
 </p>
 </div>
 <p>Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2052 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2071 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
-<p><span class="math display">\[P = \frac{2052 + 1}{99999 + 1}.\]</span></p>
-<p>When we calculate the above, we get a value of 0.02053.
+<p><span class="math display">\[P = \frac{2071 + 1}{99999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.02072.
 Notice that the calculated value is assigned with a ‘P’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
@@ -654,15 +654,15 @@ To calculate our 95 per cent confidence intervals, we then only need to rank the
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Chapter 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sampled some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>3.178, 3, 3.21, 3.027, 2.817, 3.256, 3.291, 2.976, 3.133, 3.027, 2.976, 2.995, 3.406, 3.256, 3.071, 3.133, 3.133</p>
+<p>3.291, 3.133, 3.133, 3, 3.21, 3.178, 3.406, 2.995, 3.133, 3.256, 3.291, 3.291, 3.071, 2.929, 2.299, 3.133, 2.995</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.111.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.103.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.256, 3.291, 2.995, 2.817, 2.817, 2.976, 3, 3.071, 3.133, 3.027, 3.178, 3.291, 3.133, 3, 2.995, 3.133, 3.256</p>
-<p>The mean of the above sample is 3.081.
+<p>3, 3.256, 3.178, 3.406, 3.256, 2.299, 2.995, 3.21, 3.21, 3.133, 3.133, 3.406, 3.256, 2.995, 3.133, 2.299, 2.929</p>
+<p>The mean of the above sample is 3.064.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-176"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-176-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-161"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-161-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
 <p class="caption">
 Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17 measurements of a fig wasp species collected from Baja, Mexico. A total of 10000 bootstrapped means are shown, and arrows indicate the location of the 2.5 per cent (LCI) and 97.5 per cent (UCI) ranked boostrapped mean values.
 </p>
@@ -670,7 +670,7 @@ Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17
 <p>The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.901 and UCI = 3.142.
+The values using the randomisation approach are LCI = 2.904 and UCI = 3.14.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.</p>
 </div>

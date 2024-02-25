@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -548,7 +548,7 @@ A new window will open up.</p>
 <p>After selecting the option ‘N Outcomes: <span class="math inline">\(\chi^{2}\)</span> Goodness of fit’, a new window will appear called ‘Proportion Test (N Outcomes)’.
 To run a <span class="math inline">\(\chi^{2}\)</span> goodness of fit test on bee survival, move the ‘survived’ variable into the ‘Variable’ box.
 Leave the Counts box empty (Figure 31.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-132"></span>
 <img src="img/jamovi_goodness_of_fit_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for a proportion test, and the 'survived' variable has been placed in the Variable box." width="100%" />
 <p class="caption">
 Figure 31.1: Jamovi interface for running a Chi-square goodness of fit test on bumblebee survival in a dataset.
@@ -599,7 +599,7 @@ What are the null and alternative hypotheses for this test of association?</p>
 <p>To run the <span class="math inline">\(\chi^{2}\)</span> test of association, choose ‘Frequencies’ from the jamovi toolbar, but this time select ‘Independent Samples: <span class="math inline">\(\chi^{2}\)</span> test of association’ from the pulldown menu.
 To test for an association between bee colony and survival, place ‘colony’ in the ‘Rows’ box and ‘survived’ in the ‘Columns’ box.
 Leave the rest of the boxes blank (Figure 31.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-148"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-133"></span>
 <img src="img/jamovi_test_of_association_interface.png" alt="Jamovi interface is shown with boxes of variables to be used for a Chi-square test of association with colony in a 'Rows' box and survived in a 'columns' box." width="100%" />
 <p class="caption">
 Figure 31.2: Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.
@@ -642,7 +642,7 @@ Before running any test, it is a good idea to plot the two variables using a sca
 To do this, select the ‘Exploration’ button from the toolbar in jamovi, but instead of choosing ‘Descriptives’ as usual from the pulldown menu, select ‘Scatterplot’.
 A new window will open up that allows you to build a scatterplot by selecting the variables that you place on the x-axis and the y-axis.
 Put mass on the x-axis and CO_2 on the y-axis, as shown in Figure 31.3.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-149"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-134"></span>
 <img src="img/jamovi_simple_scatterplot.png" alt="Jamovi interface is shown with a variable called 'mass' placed in a box called 'X-Axis', and a variable called 'CO_2' placed in a box called 'Y-axis'." width="100%" />
 <p class="caption">
 Figure 31.3: Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis
@@ -680,7 +680,7 @@ Write these p-values down below.</p>
 </code></pre>
 <p>To run the correlation coefficient test, choose the button in the jamovi toolbar called ‘Regression’, then select the first option ‘Correlation Matrix’ from the pulldown menu.
 The Correlation Matrix option will pull up a new window in jamovi (Figure 31.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-150"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-135"></span>
 <img src="img/jamovi_correlation_interface.png" alt="Jamovi interface is shown with a variables called 'mass' and 'CO_2' placed in a box to the right and a checkbox for 'Pearson' selected" width="100%" />
 <p class="caption">
 Figure 31.4: Jamovi interface for testing correlation coefficients.
@@ -733,7 +733,7 @@ For the ‘survived’ variable, this meant 256 rows of ‘Yes’ or ‘No’.
 But there is a shortcut in jamovi if we do not have a full tidy dataset.
 If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ counts, you could set up the data as a table of counts (Table 31.1).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-151">Table 31.1: </span>Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.</caption>
+<caption><span id="tab:unnamed-chunk-136">Table 31.1: </span>Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.</caption>
 <thead>
 <tr class="header">
 <th align="left">Survived</th>
@@ -753,7 +753,7 @@ If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ coun
 </table>
 <p>Open a new data frame in jamovi, then recreate the small dataset in Table 31.1.
 Column names should be ‘Survived’ and ‘Count’, as shown in Figure 31.5.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-152"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-137"></span>
 <img src="img/jamovi_simple_counts.png" alt="Jamovi spreadsheet showing just 2 rows and 2 columns as 'Survived' and 'Count'." width="100%" />
 <p class="caption">
 Figure 31.5: Jamovi data frame with a simple organisation of count data.
@@ -765,7 +765,7 @@ Notice that you will get the same <span class="math inline">\(\chi^{2}\)</span>,
 <p>We could do the same for a <span class="math inline">\(\chi^{2}\)</span> test of association, although it would be a bit more complicated.
 To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need 3 columns and 8 rows of data (Table 31.2).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-153">Table 31.2: </span>Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.</caption>
+<caption><span id="tab:unnamed-chunk-138">Table 31.2: </span>Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.</caption>
 <thead>
 <tr class="header">
 <th align="left">Survived</th>

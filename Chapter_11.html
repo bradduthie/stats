@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -516,8 +516,8 @@ This book focuses on statistical techniques, not statistical theory, so summary 
 <p>The arithmetic mean (hereafter just <em>the mean</em><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>) of a sample is one of the most commonly reported statistics when communicating information about a dataset.
 The mean is a measure of central tendency, so it is located somewhere in the middle of a distribution.
 Figure 11.1 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-40"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-40-1.png" alt="An example histogram is shown with a somewhat normal shape. The mean of the distribution is indicated with an arrow." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-37"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-37-1.png" alt="An example histogram is shown with a somewhat normal shape. The mean of the distribution is indicated with an arrow." width="100%" />
 <p class="caption">
 Figure 11.1: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico. The mean of the distribution is indicated with an arrow.
 </p>
@@ -542,47 +542,44 @@ One way to get around this is to use ellipses and just show the first and last c
 But it is often necessary to have an even more compact way of indicating the sum over a set of values (i.e., the top of the fraction above).
 To do this, each value can be symbolised by an <span class="math inline">\(x\)</span>, with a unique subscript <span class="math inline">\(i\)</span>, so that <span class="math inline">\(x_{i}\)</span> corresponds to a specific value in the list above.
 The usefulness of this notation, <span class="math inline">\(x_{i}\)</span>, will become clear soon.
-It takes some getting used to, but the table below shows each symbol with its corresponding value to make it more intuitive.</p>
-<table>
+It takes some getting used to, but Table 11.1 shows each symbol with its corresponding value to make it more intuitive.</p>
+<table style="width:100%;">
 <caption>Table 11.1: A sample dataset that includes eight values.</caption>
+<colgroup>
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th>Symbol</th>
-<th>Value</th>
+<th align="center">Symbol</th>
+<th align="center"><span class="math inline">\(x_{1}\)</span></th>
+<th align="center"><span class="math inline">\(x_{2}\)</span></th>
+<th align="center"><span class="math inline">\(x_{3}\)</span></th>
+<th align="center"><span class="math inline">\(x_{4}\)</span></th>
+<th align="center"><span class="math inline">\(x_{5}\)</span></th>
+<th align="center"><span class="math inline">\(x_{6}\)</span></th>
+<th align="center"><span class="math inline">\(x_{7}\)</span></th>
+<th align="center"><span class="math inline">\(x_{8}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(x_{1}\)</span></td>
-<td>4.2</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(x_{2}\)</span></td>
-<td>5.0</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(x_{3}\)</span></td>
-<td>3.1</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(x_{4}\)</span></td>
-<td>4.2</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(x_{5}\)</span></td>
-<td>3.8</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(x_{6}\)</span></td>
-<td>4.6</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(x_{7}\)</span></td>
-<td>4.0</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(x_{8}\)</span></td>
-<td>3.5</td>
+<td align="center">Value</td>
+<td align="center">4.2</td>
+<td align="center">5.0</td>
+<td align="center">3.1</td>
+<td align="center">4.2</td>
+<td align="center">3.8</td>
+<td align="center">4.6</td>
+<td align="center">4.0</td>
+<td align="center">3.5</td>
 </tr>
 </tbody>
 </table>
@@ -621,8 +618,8 @@ Because 4.2 appears most frequently in the dataset, it is the mode of the datase
 <p>Note that it is possible for a dataset to have more than one mode.
 Also, somewhat confusingly, distributions that have more than one peak are often described as multimodal, even if the peaks are not of the same height <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-41"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-41-1.png" alt="An example histogram is shown with a bimodal shape." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-38"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.png" alt="An example histogram is shown with a bimodal shape." width="100%" />
 <p class="caption">
 Figure 11.2: Example histogram of a hypothetical dataset that has a bimodal distribution.
 </p>

@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -518,8 +518,8 @@ As a guide, the histogram, pie chart, barplot, and box-whisker plot below illust
 <p>Histograms illustrate the distribution of <a href="Chapter_5.html#Chapter_5">continuous data</a>.
 They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
 The histogram shown in Figure 10.1 provides an example using the fig fruits data set from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a> (an interactive application<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> shows a step-by-step demonstration of how a histogram is built).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-32"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
 <p class="caption">
 Figure 10.1: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico.
 </p>
@@ -539,8 +539,8 @@ Different distribution shapes will be discussed more in <a href="Week4.html#Week
 <p>While histograms are an effective way of visualising continuous data, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise categorical data.
 For example, in the fig fruits data set from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
 <p class="caption">
 Figure 10.2: Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
 </p>
@@ -554,8 +554,8 @@ At a glance, it is therefore possible to compare different trees and make infere
 That is, pie charts illustrate the percentage of measurements for each category.
 For example, in the case of the fig fruits, it might be useful to visualise what percentage of fruits were sampled from each tree.
 A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-36"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-36-1.png" alt="An example pie chart shows the percentage of fruits collected from four trees labelled A, B, C, and D." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" alt="An example pie chart shows the percentage of fruits collected from four trees labelled A, B, C, and D." width="100%" />
 <p class="caption">
 Figure 10.3: Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
 </p>
@@ -572,31 +572,25 @@ Instead of presenting the full distribution, as in a histogram, a box-whisker pl
 This allows the distribution of data to be represented in a more compact way, but does not show the full shape of a distribution.
 Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4a) with a histogram of fig fruit widths (10.4b).
 In other words, both of the panels (‘a’ and ‘b’) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-37"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-37-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information" width="100%" />
-<p class="caption">
-Figure 10.4: Boxplot (a) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (b) presents the same data as a histogram.
-</p>
-</div>
-<p>To show how the panels of Figure 10.4 correspond to one another more clearly, Figure 10.5 shows them again, but with points indicating where the summary statistics shown in the boxplot (Figure 10.5a) are located in the histogram (Figure 10.5b).
-These summary statistics include the median (black circles of Figure 10.5), quartiles (red squares of Figure 10.5), and the limits of the distribution (i.e., the minimum and maximum values; blue triangles of Figure 10.5).
+<p>To show how the panels of Figure 10.4 correspond to one another more clearly, points indicate where the summary statistics shown in the boxplot (Figure 10.4a) are located in the histogram (Figure 10.4b).
+These summary statistics include the median (black circles), quartiles (red squares), and the limits of the distribution (i.e., the minimum and maximum values; blue triangles).
 Note that in boxplots, if outliers exist, they are presented as separate points.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-38"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-38-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information, with points showing how properties of the two panels match." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information, with points showing how properties of the two panels match." width="100%" />
 <p class="caption">
-Figure 10.5: Boxplot (a) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (b) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (b).
+Figure 10.4: Boxplot (a) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (b) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (b).
 </p>
 </div>
 <p>One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
-For example, the distribution of fig fruit width can be shown for each of the four trees side by side on the same x-axis of a boxplot (Figure 10.6).
+For example, the distribution of fig fruit width can be shown for each of the four trees side by side on the same x-axis of a boxplot (Figure 10.5).
 While it is possible to show histograms side by side, it will quickly take up a lot of space.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-39"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-39-1.png" alt="Example of boxplot showing the distributions of fig fruit width for four different trees." width="100%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-36"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-36-1.png" alt="Example of boxplot showing the distributions of fig fruit width for four different trees." width="100%" />
 <p class="caption">
-Figure 10.6: Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.
+Figure 10.5: Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.
 </p>
 </div>
-<p>The boxplot in Figure 10.6 can be used to quickly compare the distribution of Trees A-D.
+<p>The boxplot in Figure 10.5 can be used to quickly compare the distribution of Trees A-D.
 The point at the bottom of the distribution of Tree A shows an outlier.
 This outlier is an especially low value of fig fruit width compared to the other fruits of Tree A.</p>
 </div>

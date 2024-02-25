@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -512,15 +512,9 @@ Sometimes data from a particular sample, such as a bird nest (Figure 2.1), canno
 Figure 2.1: Dr Becky Boulton collects data from nest boxes in the field (A), then processes nest material in the lab (B).
 </p>
 </div>
-<p>Data are sometimes missing due to circumstances outwith the researcher’s control, and data are usually not collected in a format that is immediately ready for statistical analysis (e.g., Figure 2.2).
-Consequently, we often need to reorganise data from a lab or field book to a spreadsheet on the computer.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
-<img src="img/handwritten_data.jpg" alt="A zoomed-in portion of a lab notebook is shown, which includes handwritten data in pencil observations of mature fig fruits, including date, species, site, tree, and fruit dimensions." width="100%" />
-<p class="caption">
-Figure 2.2: A portion of a lab notebook used to record measurements of fig fruits from different trees in Baja, Mexico, in 2010.
-</p>
-</div>
-<p>Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
+<p>Data are sometimes missing due to circumstances outwith the researcher’s control, and data are usually not collected in a format that is immediately ready for statistical analysis.
+Consequently, we often need to reorganise data from a lab or field book to a spreadsheet on the computer.
+Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
 This chapter introduces the tidy format <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>, which is widely used for structuring data files.
 This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
 <div id="tidy-data" class="section level2 hasAnchor" number="2.1">
@@ -540,16 +534,16 @@ The interface and functions of these programs are very similar, nearly identical
 They can all open and save the same file types (e.g., XLSX, ODS, CSV), and they all have the same overall look, feel, and functionality for data input, so the program used is mostly a matter of personal preference.
 In this text, we will use LibreOffice because it is completely free and open source, and easily available to <a href="https://www.libreoffice.org/download/download-libreoffice/">download</a> at <a href="http://libreoffice.org">http://libreoffice.org</a>.
 Excel and <a href="https://docs.google.com/spreadsheets">Google Sheets</a> are also completely fine to use.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
 <img src="img/wasp_data_spreadsheet.png" alt="A spreadsheet is shown with data collected from different trees being presented with different observations spanning columns and rows." width="100%" />
 <p class="caption">
-Figure 2.3: A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.
+Figure 2.2: A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.
 </p>
 </div>
-<p>Spreadsheets are separated into individual rectangular cells, which are identified by a specific column and row (Figure 2.3).
+<p>Spreadsheets are separated into individual rectangular cells, which are identified by a specific column and row (Figure 2.2).
 Columns are indicated by letters, and rows are indicated by numbers.
 We can refer to a specific cell by its letter and number combination.
-For example, the active cell in Figure 2.3 is F3, which has a value of ‘3’ indicating the value recorded in that specific measurement (in this case, foundress pollinators in a fig fruit).
+For example, the active cell in Figure 2.2 is F3, which has a value of ‘3’ indicating the value recorded in that specific measurement (in this case, foundress pollinators in a fig fruit).
 We will look more at how to interact with the spreadsheet in <a href="Chapter_3.html#Chapter_3">Chapter 3</a>, but for now we will focus on how the data are organised.</p>
 <p>There are a lot of potential ways that data could be organised in a spreadsheet.
 For good statistical analysis, there are a few principles that are helpful to follow.
@@ -625,15 +619,15 @@ For data storage, we will use comma separated value (CSV) files.
 As the name implies, CSV files include plain text separated by commas.
 Each line of the CSV file is a new row, and commas separate information into columns.
 These CSV files can be opened in any text editor, but they are also recognised by nearly all spreadsheet programs and statistical software.
-The data shown in Figure 2.3 are from a CSV file called “wasp_data.csv”.
-Figure 2.4 shows the same data when opened with a text editor.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+The data shown in Figure 2.2 are from a CSV file called “wasp_data.csv”.
+Figure 2.3 shows the same data when opened with a text editor.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="img/wasp_data_csv.png" alt="A plain text file is shown with data collected from different trees being presented with different observations spanning columns and rows." width="100%" />
 <p class="caption">
-Figure 2.4: A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called ‘Mousepad’, but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.
+Figure 2.3: A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called ‘Mousepad’, but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.
 </p>
 </div>
-<p>The data shown in Figure 2.4 are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.
+<p>The data shown in Figure 2.3 are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.
 The information will therefore always look <em>exactly</em> the same, and can be easily recovered by any text editor, even after years pass and old software inevitably becomes obsolete.</p>
 <p><strong>Binary files</strong> are different from text files and contain information besides just plain text.
 This information could include formatted text (e.g., bold, italic), images, sound, or video (basically, anything that can be stored in a file).
@@ -653,43 +647,43 @@ On laptop and desktop computers, it is really important to know <em>where</em> f
 <p>On a computer, files are stored in a series of nested folders.
 You can think of the storage space on a computer, cloud, or network drive, as a big box.
 The big box can contain other smaller boxes (folders, in this analogy), or it can contain items that you need (files, in this analogy).
-Figure 2.5 shows the general idea.
-On this computer, there is a folder called ‘brad’, which has inside it 5 other folders (Figure 2.5A).
+Figure 2.4 shows the general idea.
+On this computer, there is a folder called ‘brad’, which has inside it 5 other folders (Figure 2.4A).
 Each of the 5 inner folders is used to store more folders and files for a specific class from 2006.
 Clicking on the ‘Biostatistics’ folder leads to the sub-folders inside it, and to files saved specifically for a biostatistics class (e.g., homework assignments, lecture notes, and an exam review document).
 Files on a computer therefore have a location that we can find using a particular <strong>path</strong>.
 We can write the path name using slashes to indicate nested folders.
-For example, the file ‘HW9.scx’ in Figure 2.5B would have the path name ‘/home/brad/Spring_2006/Biostatistics/HW9.scx’.
+For example, the file ‘HW9.scx’ in Figure 2.4B would have the path name ‘/home/brad/Spring_2006/Biostatistics/HW9.scx’.
 Each folder is contained within slashes, and the file name itself is after the last slash.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="img/directory_eg.png" alt="Screenshot showing a directory with five folders of various class names on the left panel. In the right panel, there is a second screenshot showing the inside of one of the four folders with files and other folders." width="100%" />
 <p class="caption">
-Figure 2.5: File directory of a computer showing (A) the file organisation of classes taken during spring 2006. Within one folder (B), there are multiple sub-folders and files associated with a biostatistics class.
+Figure 2.4: File directory of a computer showing (A) the file organisation of classes taken during spring 2006. Within one folder (B), there are multiple sub-folders and files associated with a biostatistics class.
 </p>
 </div>
 <p>These path names might look slightly different depending on the computer operating system that you are using.
 But the general idea of files nested within folders is the same.
-Figure 2.6 shows the same folder ‘Spring_2006’ saved in a different location, on OneDrive.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+Figure 2.5 shows the same folder ‘Spring_2006’ saved in a different location, on OneDrive.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
 <img src="img/OneDrive.png" alt="Screenshot showing a OneDrive directory with five folders of various class names on the left panel." width="100%" />
 <p class="caption">
-Figure 2.6: OneDrive file directory showing the file organisation of classes taken during spring 2006.
+Figure 2.5: OneDrive file directory showing the file organisation of classes taken during spring 2006.
 </p>
 </div>
-<p>Windows has the same general file organisation (Figure 2.7).
+<p>Windows has the same general file organisation (Figure 2.6).
 Path names for storing files on the hard drive of a Windows computer look something like “C:\Users\MyName\Desktop\Spring_2006\Biostatistics\HW9.scx”.
 The ‘C:\’ is the root directory of the hard drive; it is called ‘C’ for historical reasons (‘A:\’ and ‘B:\’ used to be for floppy disks; the ‘A:\’ floppy disks had about 1.44 MB of storage, and ‘B:\’ had even less, so these are basically obsolete).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="img/directory_windows.png" alt="Screenshot showing a Windows directory with five folders of various class names on the left panel." width="100%" />
 <p class="caption">
-Figure 2.7: Windows file directory showing the file organisation of classes taken during spring 2006. In this case, the ‘Spring_2006’ folder is located on the desktop; the path to the folder is visible in the toolbar above the folders.
+Figure 2.6: Windows file directory showing the file organisation of classes taken during spring 2006. In this case, the ‘Spring_2006’ folder is located on the desktop; the path to the folder is visible in the toolbar above the folders.
 </p>
 </div>
 <p>The details are not as important as the idea of organising files in a logical way that allows you to know roughly where to find important files on a computer or cloud drive.
 It is usually a good idea to give every unique project or subject (e.g., a university class, a student group, holiday plans, health records) its own folder.
 This makes it much easier to find related files such as datasets, lecture notes, or assignments when necessary.
 It is usually possible to right click somewhere in a directory to create a new folder.
-In Figure 2.7, there is even a ‘New folder’ button in the toolbar with a yellow folder icon above it.
+In Figure 2.6, there is even a ‘New folder’ button in the toolbar with a yellow folder icon above it.
 It takes some time to organise files this way, and to get used to saving files in specific locations, but it is well worth it in the long-term.</p>
 </div>
 </div>

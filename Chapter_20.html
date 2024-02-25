@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -509,27 +509,15 @@ There will be 4 exercises focused on calculating confidence intervals in jamovi.
 To complete the first 2 exercises, you will need the distrACTION module in jamovi.
 If you need to download it again, the instructions to do this are in <a href="Chapter_17.html#Chapter_17">Chapter 17</a> <a href="https://bradduthie.github.io/SCIU4T4/Chapter_17.html#probabilities-from-a-normal-distribution">Exercise 16.2</a> (briefly, go to the Modules option and select ‘jamovi library’, then scroll down until you find the ‘distraACTION’ module).</p>
 <p>The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
-The Wren project is led by University of Stirling researchers Dr Elisa Fuentes-Montemayor, Prof Kevin Watts, and Prof Kirsty Park (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).
-It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-86"></span>
-<img src="img/wren_project.png" alt="Decorative image showing various pictures from a forest, including a woman doing field work, field equipment, a flower, and a tree." width="100%" />
-<p class="caption">
-Figure 20.1: Images from the WrEN project led by the University of Stirling
-</p>
-</div>
-<p>The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
+The Wren project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts <a href="https://www.wren-project.com/">https://www.wren-project.com/</a>.
+It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.
+The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
 Here we will focus on observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.</p>
 <div id="confidence-intervals-with-distraction" class="section level2 hasAnchor" number="20.1">
 <h2><span class="header-section-number">20.1</span> Confidence intervals with distrACTION<a href="Chapter_20.html#confidence-intervals-with-distraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First, it is important to download the disrACTION module if it has not been downloaded already.
-If the distrACTION module has already been downloaded, it should appear in the toolbar of jamovi (Figure 20.2)</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-87"></span>
-<img src="img/jamovi_toolbar_modules_distrACTION.png" alt="Jamovi toolbar is shown, which includes an option on the far right hand side called 'modules' and a button called distrACTION." width="100%" />
-<p class="caption">
-Figure 20.2: Jamovi tool bar, which includes an added module called distrACTION.
-</p>
-</div>
-<p>Once the distrACTION module has been made available, download the WrEN trees dataset<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a> and open it in a spreadsheet.
+If the distrACTION module has already been downloaded (see <a href="Chapter_17.html#Chapter_17">Chapter 17</a>), it should appear in the toolbar of jamovi.
+Once the distrACTION module has been made available, download the WrEN trees dataset<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a> and open it in a spreadsheet.
 Notice that the dataset is not in a tidy format.
 There are 4 different sites represented by different columns in the dataset.
 The numbers under each column are measurements of tree diameter at breast height (DBH) in centimetres.
@@ -551,7 +539,7 @@ Why or why not?</p>
 <p>Grand Mean: ____________________________________</p>
 <p>Grand Standard Deviation: _____________________</p>
 <p>We will use this mean and standard deviation to compute quantiles and obtain 95% z-scores.
-First, click on the distrACTION icon in the toolbar (see Figure 20.2).
+First, click on the distrACTION icon in the toolbar.
 From the distrACTION pulldown menu, select ‘Normal Distribution’.
 To the left, you should see boxes to input parameter values for the mean and standard deviation (SD).
 Below the Parameters options, you should also see different functions for computing probability or quantiles.
@@ -568,14 +556,14 @@ If we wanted to do the same exercise here, we might find the probability of samp
 Instead, we are now going to do the opposite using the Compute quantile(s) function.
 We might want to know, for example, what 75% of DBH values will be less than (i.e., what is the cutoff DBH, below which DBH values will be lower than this cutoff with a probability of 0.75).
 To find this, uncheck the ‘Compute probability’ box and check the ‘Compute quantile(s)’ box.
-Make sure that the ‘cumulative quantile’ radio button is selected, then set p = 0.75 (Figure 20.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-88"></span>
+Make sure that the ‘cumulative quantile’ radio button is selected, then set p = 0.75 (Figure 20.1).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-79"></span>
 <img src="img/jamovi_distrACTION_p75.png" alt="Jamovi window showing with parameters for a normal distribution with a mean of 36.9 and a standard deviatio of 11, and a normal distribution shows a vertical dotted line on an x-axis value of 44.3, below which 75 per cent of values fall." width="100%" />
 <p class="caption">
-Figure 20.3: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
+Figure 20.1: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
 </p>
 </div>
-<p>From Figure 20.3, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 44.3 cm.
+<p>From Figure 20.1, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 44.3 cm.
 Using the same principles, what is the cumulative 0.4 quantile for the DBH data?</p>
 <p>Quantile: _____________________ cm</p>
 <p>We can also use the Compute quantile(s) option in jamovi to compute interval quantiles.
@@ -674,7 +662,7 @@ From the Descriptives tool in jamovi, write the sample sizes for DBH split by si
 <p>Site: ______________</p>
 <p>The next part of this exercise is self-guided.
 In Exercises 20.1 and 20.2, you used different approaches for calculating 95% CIs from the normal and t-distributions.
-Now, fill in the table below reporting 95% CIs calculated using each distribution from the 4 sites using any method you prefer.</p>
+Now, fill in Table 20.1 reporting 95% CIs calculated using each distribution from the 4 sites using any method you prefer.</p>
 <table>
 <caption>Table 20.1: 95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>
@@ -712,7 +700,7 @@ Now, fill in the table below reporting 95% CIs calculated using each distributio
 </tr>
 </tbody>
 </table>
-<p>Next, do the same, but now calculate 99% CIs instead of 95% CIs.</p>
+<p>Next, do the same in Table 20.2, but now calculate 99% CIs instead of 95% CIs.</p>
 <table>
 <caption>Table 20.2: 99 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>

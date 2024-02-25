@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -520,7 +520,7 @@ It is even possible for the sign of the coefficients to change (e.g., from negat
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_32.html#Chapter_32">Chapter 32</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-164">Table 33.1: </span>Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><span id="tab:unnamed-chunk-149">Table 33.1: </span>Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <tbody>
 <tr class="odd">
 <td align="left">Latitude</td>
@@ -555,8 +555,8 @@ Suppose that in addition to latitude, altitude was also measured in metres for e
 </tbody>
 </table>
 <p>We can use a scatterplot to visualise each independent variable on the x-axis against the dependent variable on the y-axis (Figure 33.1).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-165"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-165-1.png" alt="Two scatter plots are shown, one with Latitude on the x-axis and Fruit volume on the y-axis, and another with Altitude on the x-axis and Fruit volume on the y-axis." width="672" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-150"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-150-1.png" alt="Two scatter plots are shown, one with Latitude on the x-axis and Fruit volume on the y-axis, and another with Altitude on the x-axis and Fruit volume on the y-axis." width="672" />
 <p class="caption">
 Figure 33.1: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset.
 </p>
@@ -573,7 +573,7 @@ We now need to run a multiple regression to find the intercept (<span class="mat
 In jamovi, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 32.2 shows an output table, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
 <table>
-<caption><span id="tab:unnamed-chunk-166">Table 33.2: </span>Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<caption><span id="tab:unnamed-chunk-151">Table 33.2: </span>Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
 <thead>
 <tr class="header">
 <th></th>
@@ -631,7 +631,7 @@ We therefore do not reject the null hypothesis that the intercept (<span class="
 But we do reject the null hypothesis that <span class="math inline">\(b_{2} = 0\)</span>, and we can conclude that altitude has an effect on fig fruit volume.</p>
 <p>We can also look at the overall multiple regression model.
 Figure 33.2 shows what this model output looks like reported by jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-167"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-152"></span>
 <img src="img/jamovi_overall_multiple_regression_output.png" alt="An output table is shown with a single row and columns for R squared, Adusted R squared, F, df1, df2, and p." width="100%" />
 <p class="caption">
 Figure 33.2: Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.

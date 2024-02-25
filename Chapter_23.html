@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-24" />
+<meta name="date" content="2024-02-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -512,151 +512,11 @@ Variables in these datasets include student IDs and scores from 3 different test
 <div id="exercise-on-a-simple-one-sample-t-test" class="section level2 hasAnchor" number="23.1">
 <h2><span class="header-section-number">23.1</span> Exercise on a simple one sample t-test<a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First we will consider test data from 2022.
-These data are shown below, but you should be able to download the file in the link above.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-98">Table 23.1: </span>Student test scores from 2022.</caption>
-<thead>
-<tr class="header">
-<th align="left">ID</th>
-<th align="left">Test_1</th>
-<th align="left">Test_2</th>
-<th align="left">Test_3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">202201</td>
-<td align="left">46.9</td>
-<td align="left">58.1</td>
-<td align="left">60.1</td>
-</tr>
-<tr class="even">
-<td align="left">202202</td>
-<td align="left">65.0</td>
-<td align="left">72.4</td>
-<td align="left">51.8</td>
-</tr>
-<tr class="odd">
-<td align="left">202203</td>
-<td align="left">41.1</td>
-<td align="left">53.0</td>
-<td align="left">57.2</td>
-</tr>
-<tr class="even">
-<td align="left">202204</td>
-<td align="left">59.1</td>
-<td align="left">62.5</td>
-<td align="left">58.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202205</td>
-<td align="left">47.6</td>
-<td align="left">63.0</td>
-<td align="left">58.3</td>
-</tr>
-<tr class="even">
-<td align="left">202206</td>
-<td align="left">38.0</td>
-<td align="left">41.5</td>
-<td align="left">54.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202207</td>
-<td align="left">52.9</td>
-<td align="left">66.4</td>
-<td align="left">61.2</td>
-</tr>
-<tr class="even">
-<td align="left">202208</td>
-<td align="left">73.1</td>
-<td align="left">79.9</td>
-<td align="left">57.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202209</td>
-<td align="left">67.9</td>
-<td align="left">78.1</td>
-<td align="left">63.8</td>
-</tr>
-<tr class="even">
-<td align="left">202210</td>
-<td align="left">38.6</td>
-<td align="left">41.8</td>
-<td align="left">56.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202211</td>
-<td align="left">58.9</td>
-<td align="left">67.3</td>
-<td align="left">62.0</td>
-</tr>
-<tr class="even">
-<td align="left">202212</td>
-<td align="left">69.0</td>
-<td align="left">70.9</td>
-<td align="left">67.7</td>
-</tr>
-<tr class="odd">
-<td align="left">202213</td>
-<td align="left">73.5</td>
-<td align="left">84.6</td>
-<td align="left">56.8</td>
-</tr>
-<tr class="even">
-<td align="left">202214</td>
-<td align="left">58.7</td>
-<td align="left">67.2</td>
-<td align="left">61.1</td>
-</tr>
-<tr class="odd">
-<td align="left">202215</td>
-<td align="left">41.1</td>
-<td align="left">41.2</td>
-<td align="left">54.1</td>
-</tr>
-<tr class="even">
-<td align="left">202216</td>
-<td align="left">50.8</td>
-<td align="left">63.3</td>
-<td align="left">77.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202217</td>
-<td align="left">62.3</td>
-<td align="left">69.0</td>
-<td align="left">60.6</td>
-</tr>
-<tr class="even">
-<td align="left">202218</td>
-<td align="left">52.2</td>
-<td align="left">55.7</td>
-<td align="left">52.9</td>
-</tr>
-<tr class="odd">
-<td align="left">202219</td>
-<td align="left">54.3</td>
-<td align="left">63.9</td>
-<td align="left">54.9</td>
-</tr>
-<tr class="even">
-<td align="left">202220</td>
-<td align="left">54.3</td>
-<td align="left">63.4</td>
-<td align="left">71.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202221</td>
-<td align="left">32.1</td>
-<td align="left">50.5</td>
-<td align="left">52.0</td>
-</tr>
-</tbody>
-</table>
-<p>Open this dataset in jamovi.
+Open this dataset in jamovi.
 Before doing any analysis, compute a new column of data called ‘Overall’ that is each student’s mean test score.
 To do this, double click on the fifth column of data, then when a new panel opens up, choose ‘NEW COMPUTED VARIABLE’ from the list of available options.
-Your input should like Figure 23.2.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-99"></span>
+Your input should like Figure 23.1.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
 <img src="img/jamovi_students_overall.png" alt="Jamovi interface is shown with a new computed variable and the formula for calculating the mean of test scores in the function box." width="100%" />
 <p class="caption">
 Figure 23.1: The jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
@@ -693,13 +553,7 @@ A new window will open up.
 In a one sample t-test, there is only 1 dependent variable, which in this case is ‘Overall’.
 Move the variable ‘Overall’ to the Dependent Variables box with the right arrow.
 Below the boxes, find the checkbox options under ‘<strong>Assumption Checks</strong>’.
-Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’ (Figure 23.3).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-100"></span>
-<img src="img/jamovi_one_sample_t-test.png" alt="Jamovi interface is shown with a panel of 4 columns of data to the left and the interface for a One Sample T-Test to the right." width="100%" />
-<p class="caption">
-Figure 23.2: The jamovi interface for running a one sample t-test (right hand side). The variable ‘Overall’ has been brought in the Dependent Variables box, and two different options have been selected to check the assumption of normality (a normality hypothesis test and a Q-Q plot).
-</p>
-</div>
+Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’.</p>
 <p>After checking the box for ‘Normality test’ and ‘Q-Q Plot’, new output will appear in the panel on the right hand side.
 The first output is a table showing the results a Shapiro-Wilk test.
 The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk to see if the assumptions of the t-test are violated or not).
@@ -827,176 +681,18 @@ What is the p-value, and what should you conclude from it?</p>
 <h2><span class="header-section-number">23.4</span> Independent samples t-test<a href="Chapter_23.html#independent-samples-t-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the first 3 exercises, we tested hypotheses using data from 2022.
 In this exercise, we will test the differences in mean test scores between students from 2022 and 2023.
-These data are shown below.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-101">Table 23.2: </span>Student test scores from 2023.</caption>
-<thead>
-<tr class="header">
-<th align="left">ID</th>
-<th align="left">Test_1</th>
-<th align="left">Test_2</th>
-<th align="left">Test_3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">202301</td>
-<td align="left">62.7</td>
-<td align="left">63.5</td>
-<td align="left">81.8</td>
-</tr>
-<tr class="even">
-<td align="left">202302</td>
-<td align="left">57.9</td>
-<td align="left">77.4</td>
-<td align="left">57.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202303</td>
-<td align="left">64.6</td>
-<td align="left">50.7</td>
-<td align="left">57.4</td>
-</tr>
-<tr class="even">
-<td align="left">202304</td>
-<td align="left">56.1</td>
-<td align="left">70.5</td>
-<td align="left">57.0</td>
-</tr>
-<tr class="odd">
-<td align="left">202305</td>
-<td align="left">72.5</td>
-<td align="left">75.2</td>
-<td align="left">57.4</td>
-</tr>
-<tr class="even">
-<td align="left">202306</td>
-<td align="left">51.9</td>
-<td align="left">45.7</td>
-<td align="left">59.5</td>
-</tr>
-<tr class="odd">
-<td align="left">202307</td>
-<td align="left">58.1</td>
-<td align="left">49.1</td>
-<td align="left">63.3</td>
-</tr>
-<tr class="even">
-<td align="left">202308</td>
-<td align="left">59.5</td>
-<td align="left">52.4</td>
-<td align="left">57.2</td>
-</tr>
-<tr class="odd">
-<td align="left">202309</td>
-<td align="left">45.2</td>
-<td align="left">39.3</td>
-<td align="left">57.2</td>
-</tr>
-<tr class="even">
-<td align="left">202310</td>
-<td align="left">61.8</td>
-<td align="left">45.6</td>
-<td align="left">57.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202311</td>
-<td align="left">72.0</td>
-<td align="left">59.4</td>
-<td align="left">57.0</td>
-</tr>
-<tr class="even">
-<td align="left">202312</td>
-<td align="left">58.4</td>
-<td align="left">75.8</td>
-<td align="left">57.9</td>
-</tr>
-<tr class="odd">
-<td align="left">202313</td>
-<td align="left">52.8</td>
-<td align="left">46.0</td>
-<td align="left">65.8</td>
-</tr>
-<tr class="even">
-<td align="left">202314</td>
-<td align="left">71.6</td>
-<td align="left">68.9</td>
-<td align="left">62.7</td>
-</tr>
-<tr class="odd">
-<td align="left">202315</td>
-<td align="left">56.4</td>
-<td align="left">41.7</td>
-<td align="left">57.7</td>
-</tr>
-<tr class="even">
-<td align="left">202316</td>
-<td align="left">66.1</td>
-<td align="left">50.7</td>
-<td align="left">61.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202317</td>
-<td align="left">57.0</td>
-<td align="left">50.4</td>
-<td align="left">57.6</td>
-</tr>
-<tr class="even">
-<td align="left">202318</td>
-<td align="left">57.1</td>
-<td align="left">67.7</td>
-<td align="left">59.5</td>
-</tr>
-<tr class="odd">
-<td align="left">202319</td>
-<td align="left">71.1</td>
-<td align="left">49.8</td>
-<td align="left">58.8</td>
-</tr>
-<tr class="even">
-<td align="left">202320</td>
-<td align="left">66.3</td>
-<td align="left">53.6</td>
-<td align="left">57.3</td>
-</tr>
-<tr class="odd">
-<td align="left">202321</td>
-<td align="left">68.7</td>
-<td align="left">43.9</td>
-<td align="left">57.7</td>
-</tr>
-<tr class="even">
-<td align="left">202322</td>
-<td align="left">61.0</td>
-<td align="left">77.3</td>
-<td align="left">57.6</td>
-</tr>
-<tr class="odd">
-<td align="left">202323</td>
-<td align="left">54.3</td>
-<td align="left">67.7</td>
-<td align="left">57.7</td>
-</tr>
-<tr class="even">
-<td align="left">202324</td>
-<td align="left">56.8</td>
-<td align="left">47.6</td>
-<td align="left">78.9</td>
-</tr>
-</tbody>
-</table>
-<p>As might be expected, the 2022 and 2023 datasets are stored in separate files.
+As might be expected, the 2022 and 2023 datasets are stored in separate files.
 What we need to do first is combine the data into a single tidy dataset.
 To do this, open the Year 2 dataset in a spreadsheet and copy all of the data (but not the column names).
 You can then paste these data directly into jamovi in the next available row (row 22).
 Next, add in a new column for ‘Year’, so that you can differentiate 2022 students from 2023 students in the same dataset.
 To do this, you can right-click on the ‘ID’ column and choose ‘Add Variable’, then ‘Insert’.
 A new column will appear to the left, which you can name ‘Year’.
-Input ‘2022’ for rows 1-21, then ‘2023’ for the remaining rows that you just pasted into jamovi (see Figure 23.4).</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-102"></span>
+Input ‘2022’ for rows 1-21, then ‘2023’ for the remaining rows that you just pasted into jamovi (see Figure 23.2).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
 <img src="img/jamovi_insert_year.png" alt="Jamovi interface is shown with a top panel in which a Data Variable called 'Year' is being inserted, below which data are shown, including the new column with 2022 and 2023 years" width="100%" />
 <p class="caption">
-Figure 23.3: The jamovi interface for inserting a new variable called ‘Year’, and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.
+Figure 23.2: The jamovi interface for inserting a new variable called ‘Year’, and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.
 </p>
 </div>
 <p>Note that Year does not necessarily need to be in the first column.
@@ -1013,16 +709,16 @@ Remember that our objective here is to test whether the means of two groups (202
 We can therefore place the ‘Overall’ variable in the Dependent Variables box, then ‘Year’ in the Grouping Variable box.
 Before running the independent samples t-test, we again need to check our assumptions.
 In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a> that the standard ‘Student’s’ independent samples t-test also assumes that the variances of groups (i.e., the 2022 and 2023 scores) are the same, while the ‘Welch’s’ t-test does not assume equal variances.
-In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 23.5).
+In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 23.3).
 This is called a ‘Levene’s test’, and we can interpret it in a similar way to the Shapiro-Wilk test of normality.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-91"></span>
 <img src="img/jamovi_independent_sample_t-test.png" alt="Jamovi interface is shown with a left panel of data, a middle panel showing an independent samples t-test being set up to test for a difference in Overall score between Years, and output for test assumptions in the right panel." width="100%" />
 <p class="caption">
-Figure 23.4: The jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
+Figure 23.3: The jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
 </p>
 </div>
 <p>If our p-value is sufficiently low (P &lt; 0.05), then we reject the null hypothesis that the groups have the same variances.
-Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 23.5), what can you conclude about the t-test assumptions?</p>
+Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 23.3), what can you conclude about the t-test assumptions?</p>
 <pre><code>
 
 
@@ -1092,11 +788,11 @@ What can you infer from this plot about the normality of the data, and why?</p>
 </code></pre>
 <p>I have not introduced an example in which a transformation (such as a log transformation) is applied to normalise a dataset, as explained in <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a>.
 To do such a transformation, you could create a new computed variable in jamovi and calculate it as the natural log (LN) of a variable (e.g., Test 3).
-Figure 23.6 illustrates what this should look like.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-104"></span>
+Figure 23.4 illustrates what this should look like.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-92"></span>
 <img src="img/jamovi_LN_transform.png" alt="Jamovi interface is shown with a new computed variable being made and the natural log of Test 3 scores being inserted into the function box." width="100%" />
 <p class="caption">
-Figure 23.5: The jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
+Figure 23.4: The jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
 </p>
 </div>
 <p>Lastly, suppose that you wanted to test whether students from 2023 improved their scores from Test 1 to Test 2 more than students from 2022 did.
