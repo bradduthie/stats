@@ -122,7 +122,6 @@
 }
 \makeatother
 \usepackage[misc]{ifsym}
-\usepackage[labelformat=empty]{caption}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -131,7 +130,7 @@
 
 \title{Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi}
 \author{Brad Duthie}
-\date{2024-02-25}
+\date{2024-02-26}
 
 \begin{document}
 \maketitle
@@ -553,13 +552,8 @@ Sometimes data from a particular sample, such as a bird nest (Figure 2.1), canno
 \includegraphics[width=1\linewidth]{img/becky_field} \caption{Dr Becky Boulton collects data from nest boxes in the field (A), then processes nest material in the lab (B).}\label{fig:unnamed-chunk-3}
 \end{figure}
 
-Data are sometimes missing due to circumstances outwith the researcher's control, and data are usually not collected in a format that is immediately ready for statistical analysis (e.g., Figure 2.2).
+Data are sometimes missing due to circumstances outwith the researcher's control, and data are usually not collected in a format that is immediately ready for statistical analysis.
 Consequently, we often need to reorganise data from a lab or field book to a spreadsheet on the computer.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in Baja, Mexico, in 2010.}\label{fig:unnamed-chunk-4}
-\end{figure}
-
 Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
 This chapter introduces the tidy format \citep{Wickham2014}, which is widely used for structuring data files.
 This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in jamovi \citep{Jamovi2022}.
@@ -581,17 +575,17 @@ For the purposes of statistical analysis, spreadsheets are probably most often u
 Commonly used spreadsheet programs are MS Excel, Google Sheets, and LibreOffice Calc.
 The interface and functions of these programs are very similar, nearly identical for most purposes.
 They can all open and save the same file types (e.g., XLSX, ODS, CSV), and they all have the same overall look, feel, and functionality for data input, so the program used is mostly a matter of personal preference.
-In this text, we will use LibreOffice because it is completely free and open source, and easily available to \href{https://www.libreoffice.org/download/download-libreoffice/}{download} at \url{http://libreoffice.org}.
+In this text, we will use LibreOffice because it is completely free and open source, and easily available to \href{https://www.libreoffice.org/download/download-libreoffice/}{download} (\url{http://libreoffice.org}).
 Excel and \href{https://docs.google.com/spreadsheets}{Google Sheets} are also completely fine to use.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/wasp_data_spreadsheet} \caption{A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.}\label{fig:unnamed-chunk-5}
+\includegraphics[width=1\linewidth]{img/wasp_data_spreadsheet} \caption{A LibreOffice spreadsheet showing data from fig fruits collected in 2010. Each row is a unique sample (fruit), and columns record properties of the fruit.}\label{fig:unnamed-chunk-4}
 \end{figure}
 
-Spreadsheets are separated into individual rectangular cells, which are identified by a specific column and row (Figure 2.3).
+Spreadsheets are separated into individual rectangular cells, which are identified by a specific column and row (Figure 2.2).
 Columns are indicated by letters, and rows are indicated by numbers.
 We can refer to a specific cell by its letter and number combination.
-For example, the active cell in Figure 2.3 is F3, which has a value of `3' indicating the value recorded in that specific measurement (in this case, foundress pollinators in a fig fruit).
+For example, the active cell in Figure 2.2 is F3, which has a value of `3' indicating the value recorded in that specific measurement (in this case, foundress pollinators in a fig fruit).
 We will look more at how to interact with the spreadsheet in \protect\hyperlink{Chapter_3}{Chapter 3}, but for now we will focus on how the data are organised.
 
 There are a lot of potential ways that data could be organised in a spreadsheet.
@@ -658,14 +652,14 @@ For data storage, we will use comma separated value (CSV) files.
 As the name implies, CSV files include plain text separated by commas.
 Each line of the CSV file is a new row, and commas separate information into columns.
 These CSV files can be opened in any text editor, but they are also recognised by nearly all spreadsheet programs and statistical software.
-The data shown in Figure 2.3 are from a CSV file called ``wasp\_data.csv''.
-Figure 2.4 shows the same data when opened with a text editor.
+The data shown in Figure 2.2 are from a CSV file called ``wasp\_data.csv''.
+Figure 2.3 shows the same data when opened with a text editor.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/wasp_data_csv} \caption{A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called 'Mousepad', but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.}\label{fig:unnamed-chunk-6}
+\includegraphics[width=1\linewidth]{img/wasp_data_csv} \caption{A plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called 'Mousepad', but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.}\label{fig:unnamed-chunk-5}
 \end{figure}
 
-The data shown in Figure 2.4 are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.
+The data shown in Figure 2.3 are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.
 The information will therefore always look \emph{exactly} the same, and can be easily recovered by any text editor, even after years pass and old software inevitably becomes obsolete.
 
 \textbf{Binary files} are different from text files and contain information besides just plain text.
@@ -688,40 +682,40 @@ On laptop and desktop computers, it is really important to know \emph{where} fil
 On a computer, files are stored in a series of nested folders.
 You can think of the storage space on a computer, cloud, or network drive, as a big box.
 The big box can contain other smaller boxes (folders, in this analogy), or it can contain items that you need (files, in this analogy).
-Figure 2.5 shows the general idea.
-On this computer, there is a folder called `brad', which has inside it 5 other folders (Figure 2.5A).
+Figure 2.4 shows the general idea.
+On this computer, there is a folder called `brad', which has inside it 5 other folders (Figure 2.4A).
 Each of the 5 inner folders is used to store more folders and files for a specific class from 2006.
 Clicking on the `Biostatistics' folder leads to the sub-folders inside it, and to files saved specifically for a biostatistics class (e.g., homework assignments, lecture notes, and an exam review document).
 Files on a computer therefore have a location that we can find using a particular \textbf{path}.
 We can write the path name using slashes to indicate nested folders.
-For example, the file `HW9.scx' in Figure 2.5B would have the path name `/home/brad/Spring\_2006/Biostatistics/HW9.scx'.
+For example, the file `HW9.scx' in Figure 2.4B would have the path name `/home/brad/Spring\_2006/Biostatistics/HW9.scx'.
 Each folder is contained within slashes, and the file name itself is after the last slash.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/directory_eg} \caption{File directory of a computer showing (A) the file organisation of classes taken during spring 2006. Within one folder (B), there are multiple sub-folders and files associated with a biostatistics class.}\label{fig:unnamed-chunk-7}
+\includegraphics[width=1\linewidth]{img/directory_eg} \caption{File directory of a computer showing (A) the file organisation of classes taken during spring 2006. Within one folder (B), there are multiple sub-folders and files associated with a biostatistics class.}\label{fig:unnamed-chunk-6}
 \end{figure}
 
 These path names might look slightly different depending on the computer operating system that you are using.
 But the general idea of files nested within folders is the same.
-Figure 2.6 shows the same folder `Spring\_2006' saved in a different location, on OneDrive.
+Figure 2.5 shows the same folder `Spring\_2006' saved in a different location, on OneDrive.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/OneDrive} \caption{OneDrive file directory showing the file organisation of classes taken during spring 2006.}\label{fig:unnamed-chunk-8}
+\includegraphics[width=1\linewidth]{img/OneDrive} \caption{OneDrive file directory showing the file organisation of classes taken during spring 2006.}\label{fig:unnamed-chunk-7}
 \end{figure}
 
-Windows has the same general file organisation (Figure 2.7).
+Windows has the same general file organisation (Figure 2.6).
 Path names for storing files on the hard drive of a Windows computer look something like ``C:\textbackslash Users\textbackslash MyName\textbackslash Desktop\textbackslash Spring\_2006\textbackslash Biostatistics\textbackslash HW9.scx''.
 The `C:\textbackslash{}' is the root directory of the hard drive; it is called `C' for historical reasons (`A:\textbackslash{}' and `B:\textbackslash{}' used to be for floppy disks; the `A:\textbackslash{}' floppy disks had about 1.44 MB of storage, and `B:\textbackslash{}' had even less, so these are basically obsolete).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/directory_windows} \caption{Windows file directory showing the file organisation of classes taken during spring 2006. In this case, the 'Spring\_2006' folder is located on the desktop; the path to the folder is visible in the toolbar above the folders.}\label{fig:unnamed-chunk-9}
+\includegraphics[width=1\linewidth]{img/directory_windows} \caption{Windows file directory showing the file organisation of classes taken during spring 2006. In this case, the 'Spring\_2006' folder is located on the desktop; the path to the folder is visible in the toolbar above the folders.}\label{fig:unnamed-chunk-8}
 \end{figure}
 
 The details are not as important as the idea of organising files in a logical way that allows you to know roughly where to find important files on a computer or cloud drive.
 It is usually a good idea to give every unique project or subject (e.g., a university class, a student group, holiday plans, health records) its own folder.
 This makes it much easier to find related files such as datasets, lecture notes, or assignments when necessary.
 It is usually possible to right click somewhere in a directory to create a new folder.
-In Figure 2.7, there is even a `New folder' button in the toolbar with a yellow folder icon above it.
+In Figure 2.6, there is even a `New folder' button in the toolbar with a yellow folder icon above it.
 It takes some time to organise files this way, and to get used to saving files in specific locations, but it is well worth it in the long-term.
 
 \hypertarget{Chapter_3}{%
@@ -749,21 +743,23 @@ The goal in this exercise is to tidy the data, then estimate total wasp volume f
 Exercise 1 focuses on data collected from the fruits of fig trees collected from Baja, Mexico in 2010 \citep{Duthie2015b, Duthie2016}.
 Due to the nature of the work, the data needed to be recorded in notebooks and collected in two different locations.
 The first location was the field, where data were collected identifying tree locations and fruit dimensions.
-Baja is hot and sunny; fruit measurements were made with a ruler and recorded in a field notebook.
-These measurements are shown in Figure 3.1.
+Baja is hot and sunny (Figure 3.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Ficus_petiolaris} \caption{A fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.}\label{fig:unnamed-chunk-10}
+\includegraphics[width=1\linewidth]{img/Ficus_petiolaris} \caption{A fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+Fruit measurements were made with a ruler and recorded in a field notebook.
+These measurements are shown in Figure 3.2.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.}\label{fig:unnamed-chunk-10}
 \end{figure}
 
 The second location was in a lab in Iowa, USA.
 Fruits were dried and shipped to Iowa State University so that seeds could be counted under a microscope.
-Counts were originally recorded as tallies in a lab notebook (Figure 3.2).
+Counts were originally recorded as tallies in a lab notebook.
 The goal of Exercise 1 is to get all of this information into a single tidy spreadsheet.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{img/handwritten_data} \caption{A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.}\label{fig:unnamed-chunk-11}
-\end{figure}
 
 The best place to start is with an empty spreadsheet, so open a new one in LibreOffice Calc, MS Excel, or Google Sheets.
 Remember that each row will be a unique observation; in this case, a unique fig fruit from which measurements were recorded.
@@ -790,7 +786,7 @@ All of the species are \emph{Ficus petiolaris}, which is abbreviated to ``F-pet'
 How you choose to write some of this information down is up to you (e.g., the date format, capitalisation of column names), but when finished, the spreadsheet should be organised like the one in Figure 3.3.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Ch1_Ex1a} \caption{A spreadsheet with data organised in a tidy format and nearly ready for analysis.}\label{fig:unnamed-chunk-12}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex1a} \caption{A spreadsheet with data organised in a tidy format and nearly ready for analysis.}\label{fig:unnamed-chunk-11}
 \end{figure}
 
 This leaves us with the data that had to be collected later in the lab.
@@ -920,14 +916,44 @@ Table 3.2 shows the number of different species of wasps counted in 5 different 
 Rows list all of the species and columns list the fruits, with the counts in the middle.
 This is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.
 
-\begin{longtable}[]{@{}lrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-19}An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1389}}@{}}
+\caption{Table 3.2: An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.}\tabularnewline
 \toprule
-Species & Fruit\_1 & Fruit\_2 & Fruit\_3 & Fruit\_4 & Fruit\_5 \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_5
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Species & Fruit\_1 & Fruit\_2 & Fruit\_3 & Fruit\_4 & Fruit\_5 \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Fruit\_5
+\end{minipage} \\
 \midrule
 \endhead
 Het1 & 0 & 0 & 0 & 1 & 0 \\
@@ -941,7 +967,7 @@ SO2 & 1 & 12 & 2 & 0 & 0 \\
 This exercise might be a bit more challenging than Exercise 2.
 The goal is to use the above information to create a tidy dataset.
 Remember that each observation (wasp counts, in this case) should get its own row, and each variable should get its own column.
-Try creating a tidy dataset from the information in Table 3.1, then save the dataset to a CSV file.
+Try creating a tidy dataset from the information in Table 3.2, then save the dataset to a CSV file.
 
 \hypertarget{exercise-4-tidy-data-and-spreadsheet-calculations}{%
 \section{Exercise 4: Tidy data and spreadsheet calculations}\label{exercise-4-tidy-data-and-spreadsheet-calculations}}
@@ -954,7 +980,7 @@ First note that there are multiple sheets in the spreadsheet, which is not allow
 You can see these sheets by looking at the very bottom of the spreadsheet, which will have separating tabs called Het1, Het2, LO1, SO1, and SO2 (Figure 3.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/spreadsheet_tabs} \caption{Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.}\label{fig:unnamed-chunk-20}
+\includegraphics[width=1\linewidth]{img/spreadsheet_tabs} \caption{Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.}\label{fig:unnamed-chunk-19}
 \end{figure}
 
 You can click on all of the different tabs to see the measurements of head length, head width, thorax length, thorax width, abdomen length, and abdomen width for wasps of each of the 5 species.
@@ -1000,10 +1026,10 @@ If the values of \texttt{B2} or \texttt{C2} were to change, then so would the ca
 Also notice that we are using parentheses to make sure that the order of operations is correct.
 We want to add head length and width before dividing by 4, so we type \texttt{((B2+C2)/4)} to ensure with the innermost parentheses that head length and width are added before dividing.
 Once all of this is completed, we raise everything in parentheses to the third power using the \texttt{\^{}3}, so \texttt{((B2+C2)/4)\^{}3}.
-Different mathematical operations can be carried out using the symbols in Table 3.2.
+Different mathematical operations can be carried out using the symbols in Table 3.3.
 
 \begin{longtable}[]{@{}ll@{}}
-\caption{Table 3.2: List of mathematical operations available in a spreadsheet.}\tabularnewline
+\caption{Table 3.3: List of mathematical operations available in a spreadsheet.}\tabularnewline
 \toprule
 Symbol & Operation \\
 \midrule
@@ -1021,7 +1047,7 @@ Symbol & Operation \\
 \bottomrule
 \end{longtable}
 
-The last operation in Table 3.2 is a function that takes the square-root of anything within the parentheses.
+The last operation in Table 3.3 is a function that takes the square-root of anything within the parentheses.
 Other functions are also available that can make calculations across cells (e.g., \texttt{=SUM} or \texttt{=AVERAGE}).
 
 Once head volume is calculated for the first wasp in cell H2, it is very easy to do the rest.
@@ -1030,7 +1056,7 @@ To get the rest of the head volumes, we just need to select the bottom right of 
 There will be a very small square in this bottom right (see Figure 3.5), and if we drag it down, the spreadsheet will do the same calculation for each row (e.g., in H3, it will use B3 and C3 in the formula rather than B2 and C2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Ch1_Ex3_copy_formula} \caption{A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.}\label{fig:unnamed-chunk-21}
+\includegraphics[width=1\linewidth]{img/Ch1_Ex3_copy_formula} \caption{A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.}\label{fig:unnamed-chunk-20}
 \end{figure}
 
 Another way to achieve the same result is to copy the contents of cell H2, highlight cells H3-H27, then paste.
@@ -1168,10 +1194,10 @@ In statistics, population always means the \emph{totality of individual observat
 
 They define a sample to be ``a collection of individual observations selected by a specified procedure'' \citep{Sokal1995}.
 For our purposes, it is not necessary to be able to recite the technical definitions, but it is important to understand the relationship between a population and a sample.
-When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population.
+When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population (Figure 4.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-22}
+\includegraphics[width=1\linewidth]{img/population_vs_sample} \caption{A conceptual figure illustrating how a statistical population relates to a statistical sample. The population is represented by 35 smiling faces enclosed within a dashed box. The sample is represented by a solid box within the dashed box, within which there are 3 smiling faces. Hence, we have a sample of 3 measurements from the total population.}\label{fig:unnamed-chunk-21}
 \end{figure}
 
 \hypertarget{Chapter_5}{%
@@ -1250,7 +1276,7 @@ If, however, the scale measures a different mass each time the object is weighed
 One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)\footnote{This figure was released into the public domain by \href{https://commons.wikimedia.org/wiki/File:Accuracy-vs-precision-nl.svg}{Egon Willighagen} on 8 March 2014.}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-23}
+\includegraphics[width=1\linewidth]{img/accuracy_vs_precision} \caption{A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.}\label{fig:unnamed-chunk-22}
 \end{figure}
 
 Note again that accuracy and precision are not necessarily the same.
@@ -1468,7 +1494,7 @@ Measurements include fig lengths, widths, and heights in centimeters from 4 diff
 This dataset can also be downloaded online\footnote{\url{https://bradduthie.github.io/stats/data/fig_fruits.csv}}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-24}
+\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-23}
 \end{figure}
 
 This lab will use the soil organic carbon dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
@@ -1481,7 +1507,7 @@ Some of these exercises will be similar those of \protect\hyperlink{Chapter_3}{C
 Once jamovi is open, you can import the soil organic carbon dataset by clicking on the three horizontal lines in the upper left corner of the tool bar, then selecting `Open' (Figure 8.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-26}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar} \caption{The jamovi toolbar including tabs for opening files, Variables, Data, Analyses, and Edit. To open a file, select the three horizontal lines in the upper right}\label{fig:unnamed-chunk-25}
 \end{figure}
 
 You might need to click `Browse' in the upper right of jamovi to find the file.
@@ -1494,7 +1520,7 @@ But you can also edit the data directly in jamovi by clicking on the `Data' tab 
 The best way to reorganise the data in jamovi is to double-click on the third column of data next to `subsoil' (see Figure 8.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The jamovi toolbar is shown with the soil organic carbon dataset. In jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-27}
+\includegraphics[width=1\linewidth]{img/jamovi_new_variable} \caption{The jamovi toolbar is shown with the soil organic carbon dataset. In jamovi, double-clicking above column three where it says 'CLICK HERE' will allow you to input a new variable.}\label{fig:unnamed-chunk-26}
 \end{figure}
 
 After double-clicking on the location shown in Figure 8.3, there will be three buttons visible.
@@ -1503,7 +1529,7 @@ Keep the `Measure type' as `Nominal', but change the `Data type' to `text'.
 When you are done, click the \texttt{\textgreater{}} character to the right so that the variable is fixed (Figure 8.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-28}
+\includegraphics[width=1\linewidth]{img/jamovi_set_variable} \caption{The jamovi toolbar is shown with the input for creating a new data variable. The new variable added is to indicate the soil type (topsoil or subsoil), so it needs to be a nominal variable with a data type of text.}\label{fig:unnamed-chunk-27}
 \end{figure}
 
 After typing in the new variable `soil\_type', add another variable called `organic\_carbon'.
@@ -1595,17 +1621,26 @@ In this next exercise, we will work with the fig fruits dataset.
 Open this dataset into jamovi.
 Note that there are 5 columns of data, and all of the data appear to be in a tidy format.
 Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
-The first several rows should look like the below.
+The first several rows should look like Table 8.1.
 
-\begin{verbatim}
-  Tree Length_cm Width_cm Height_cm Seeds
-1    A       1.5      1.8       1.4   238
-2    A       1.7      1.9       1.5   198
-3    A       2.1      2.1       1.6   220
-4    A       1.5      1.6       1.4   188
-5    A       1.6      1.6       1.5   139
-6    A       1.5      1.4       1.5   173
-\end{verbatim}
+\begin{longtable}[]{@{}lrrrr@{}}
+\caption{\label{tab:unnamed-chunk-28}First six rows of the fig fruits dataset.}\tabularnewline
+\toprule
+Tree & Length\_cm & Width\_cm & Height\_cm & Seeds \\
+\midrule
+\endfirsthead
+\toprule
+Tree & Length\_cm & Width\_cm & Height\_cm & Seeds \\
+\midrule
+\endhead
+A & 1.5 & 1.8 & 1.4 & 238 \\
+A & 1.7 & 1.9 & 1.5 & 198 \\
+A & 2.1 & 2.1 & 1.6 & 220 \\
+A & 1.5 & 1.6 & 1.4 & 188 \\
+A & 1.6 & 1.6 & 1.5 & 139 \\
+A & 1.5 & 1.4 & 1.5 & 173 \\
+\bottomrule
+\end{longtable}
 
 The dataset includes the tree from which the fig was sampled in column 1 (A, B, C, and D), then the length, width, and heights of the fig in cm.
 Finally, the last column shows how many seeds were counted within the fig.
@@ -1639,7 +1674,7 @@ To do this, click on the `Data' tab at the top of the toolbar again, then click 
 Your screen should look like the image in Figure 8.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-30}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-29}
 \end{figure}
 
 With the `Length\_cm' column highlighted, click on the `Transform' button in the toolbar.
@@ -1657,7 +1692,7 @@ Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multi
 We can do this by appending a \texttt{*\ 10} to the lower box of the transform window, so that it reads \texttt{=\ \$source\ *\ 10} (Figure 8.6).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-31}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_cm_to_mm} \caption{The jamovi toolbar where the tab 'Data' is selected. The box below shows the transform, which has been named 'cm to mm'. The transformation occurs by multiplying the source (Length mm) by 10. The dataset underneath shows the first few rows with the transformed column highlighted (note that the new 'Length mm' column is 10 times the length column.}\label{fig:unnamed-chunk-30}
 \end{figure}
 
 When we are finished, we can click the down arrow inside the circle in the upper right to get rid of the transform window, then the up arrow inside the circle in the upper right to get rid of the transformed variable window.
@@ -1724,7 +1759,7 @@ Double click on this to put it into the formula, then divide it by 2.
 You can repeat this two more times to complete the computed variable as shown in Figure 8.7.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-32}
+\includegraphics[width=1\linewidth]{img/jamovi_compute_new_variable} \caption{The jamovi toolbar where the tab 'Data' is selected. The box below shows the new computed variable 'fig volume', which has been created by calculating the product of 4/3, 3.14, and Width mm three times.}\label{fig:unnamed-chunk-31}
 \end{figure}
 
 Note that we can get the cube of `Width\_mm' more concisely by using the carrot character (\texttt{\^{}}).
@@ -1924,7 +1959,7 @@ They are especially useful visualisation tools because it is often important to 
 The histogram shown in Figure 10.1 provides an example using the fig fruits data set from the practical in \protect\hyperlink{Chapter_8}{Chapter 8} (an interactive application\footnote{\url{https://bradduthie.shinyapps.io/build_histogram/}} shows a step-by-step demonstration of how a histogram is built).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-33}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-32-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-32}
 \end{figure}
 
 The histogram in Figure 10.1 shows how many fruits there are for different intervals of width, i.e., the frequency with which fruits within some width interval occur in the data.
@@ -1946,7 +1981,7 @@ For example, in the fig fruits data set from \protect\hyperlink{Chapter_8}{Chapt
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-34-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-34}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-33-1} \caption{Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-33}
 \end{figure}
 
 In Figure 10.2, each tree is represented by a separate bar on the x-axis.
@@ -1961,7 +1996,7 @@ For example, in the case of the fig fruits, it might be useful to visualise what
 A pie chart could be used to evaluate this, with pie slices corresponding to different trees and the size of each slice reflecting the percentage of the total sampled fruits that came from each tree (Figure 10.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-35}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-34-1} \caption{Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-34}
 \end{figure}
 
 Pie charts can be useful in some situations, but in the biological and environmental sciences, they are not used as often as barplots.
@@ -1983,7 +2018,7 @@ These summary statistics include the median (black circles), quartiles (red squa
 Note that in boxplots, if outliers exist, they are presented as separate points.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Boxplot (a) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (b) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (b).}\label{fig:unnamed-chunk-36}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-35-1} \caption{Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel (B) presents the same data as a histogram. Points in the boxplot indicate the median (black circle), first and third quartiles (red squares), and the limits of the distribution (blue triangles). Corresponding locations are shown on the histogram in panel (B).}\label{fig:unnamed-chunk-35}
 \end{figure}
 
 One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
@@ -1991,7 +2026,7 @@ For example, the distribution of fig fruit width can be shown for each of the fo
 While it is possible to show histograms side by side, it will quickly take up a lot of space.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-37-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-37}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-36-1} \caption{Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-36}
 \end{figure}
 
 The boxplot in Figure 10.5 can be used to quickly compare the distribution of Trees A-D.
@@ -2018,7 +2053,7 @@ The mean is a measure of central tendency, so it is located somewhere in the mid
 Figure 11.1 shows the same histogram of fig fruit widths shown in Figure 10.1, but with an arrow indicating where the mean of the distribution is located
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-38-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico. The mean of the distribution is indicated with an arrow.}\label{fig:unnamed-chunk-38}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-37-1} \caption{Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico. The mean of the distribution is indicated with an arrow.}\label{fig:unnamed-chunk-37}
 \end{figure}
 
 The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data \citep{Sokal1995}.
@@ -2050,7 +2085,7 @@ This is a more compact, and perfectly acceptable, way to write the sample mean.
 But it is often necessary to have an even more compact way of indicating the sum over a set of values (i.e., the top of the fraction above).
 To do this, each value can be symbolised by an \(x\), with a unique subscript \(i\), so that \(x_{i}\) corresponds to a specific value in the list above.
 The usefulness of this notation, \(x_{i}\), will become clear soon.
-It takes some getting used to, but the table below shows each symbol with its corresponding value to make it more intuitive.
+It takes some getting used to, but Table 11.1 shows each symbol with its corresponding value to make it more intuitive.
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1000}}
@@ -2162,7 +2197,7 @@ Also, somewhat confusingly, distributions that have more than one peak are often
 For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-39-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-39}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-38-1} \caption{Example histogram of a hypothetical dataset that has a bimodal distribution.}\label{fig:unnamed-chunk-38}
 \end{figure}
 
 In very rare cases, data might have a U-shape.
@@ -2539,29 +2574,29 @@ This collecting of 10 water samples is repeated 20 different times.
 Each row is a different sampling effort, and columns report the 10 samples from each effort.
 
 \begin{longtable}[]{@{}lrrrrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-41}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-40}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.64 & 0.68 & 0.76 & 0.88 & 0.69 & 0.78 & 0.65 & 0.66 & 0.69 & 0.91 \\
-Sample\_2 & 0.70 & 0.66 & 0.60 & 0.70 & 0.62 & 0.64 & 0.74 & 0.80 & 0.66 & 0.79 \\
-Sample\_3 & 0.62 & 0.81 & 0.70 & 0.63 & 0.71 & 1.00 & 0.75 & 0.76 & 0.59 & 0.85 \\
-Sample\_4 & 0.72 & 0.68 & 0.74 & 0.60 & 0.68 & 0.75 & 0.88 & 0.42 & 0.78 & 0.72 \\
-Sample\_5 & 0.60 & 0.63 & 0.54 & 0.72 & 0.64 & 0.81 & 0.72 & 0.76 & 0.64 & 0.72 \\
-Sample\_6 & 0.82 & 0.83 & 0.64 & 0.74 & 0.79 & 0.54 & 0.66 & 0.68 & 0.89 & 0.50 \\
-Sample\_7 & 0.63 & 0.84 & 0.84 & 0.66 & 0.81 & 0.70 & 0.73 & 0.81 & 0.70 & 0.73 \\
-Sample\_8 & 0.85 & 0.76 & 0.63 & 0.70 & 0.62 & 0.64 & 0.61 & 0.69 & 0.72 & 0.64 \\
-Sample\_9 & 0.80 & 0.66 & 0.70 & 0.80 & 0.72 & 0.77 & 0.67 & 0.61 & 0.74 & 0.68 \\
-Sample\_10 & 0.79 & 0.69 & 0.77 & 0.75 & 0.73 & 0.63 & 0.71 & 0.92 & 0.63 & 0.70 \\
-Sample\_11 & 0.65 & 0.72 & 0.71 & 0.76 & 0.57 & 0.61 & 0.68 & 0.71 & 0.71 & 0.65 \\
-Sample\_12 & 0.58 & 0.87 & 0.57 & 0.61 & 0.90 & 0.80 & 0.73 & 0.70 & 0.73 & 0.67 \\
-Sample\_13 & 0.66 & 0.60 & 0.69 & 0.70 & 0.54 & 0.64 & 0.78 & 0.63 & 0.72 & 0.70 \\
-Sample\_14 & 0.72 & 0.67 & 0.65 & 0.54 & 0.86 & 0.37 & 0.81 & 0.77 & 0.78 & 0.86 \\
-Sample\_15 & 0.56 & 0.62 & 0.61 & 0.59 & 0.57 & 0.90 & 0.66 & 0.74 & 0.68 & 0.55 \\
-Sample\_16 & 0.68 & 0.93 & 0.64 & 0.78 & 0.62 & 0.74 & 0.72 & 0.71 & 0.72 & 0.75 \\
-Sample\_17 & 0.67 & 0.85 & 0.58 & 0.72 & 0.50 & 0.75 & 0.78 & 0.73 & 0.63 & 0.87 \\
-Sample\_18 & 0.69 & 0.69 & 0.70 & 0.63 & 0.59 & 0.73 & 0.56 & 0.63 & 0.67 & 0.69 \\
-Sample\_19 & 0.56 & 0.71 & 0.64 & 0.56 & 0.67 & 0.47 & 0.79 & 0.71 & 0.78 & 0.70 \\
-Sample\_20 & 0.64 & 0.73 & 0.80 & 0.62 & 0.62 & 0.58 & 0.69 & 0.76 & 0.84 & 0.77 \\
+Sample\_1 & 0.59 & 0.56 & 0.87 & 0.81 & 0.64 & 0.60 & 0.79 & 0.70 & 0.63 & 0.68 \\
+Sample\_2 & 0.66 & 0.60 & 0.55 & 0.66 & 0.72 & 0.85 & 0.85 & 0.68 & 0.72 & 0.76 \\
+Sample\_3 & 0.69 & 0.85 & 0.70 & 0.63 & 0.70 & 0.70 & 0.67 & 0.61 & 0.71 & 0.73 \\
+Sample\_4 & 0.59 & 0.64 & 0.54 & 0.49 & 0.81 & 0.79 & 0.74 & 0.68 & 0.60 & 0.78 \\
+Sample\_5 & 0.65 & 0.73 & 0.78 & 0.62 & 0.78 & 0.77 & 0.78 & 0.77 & 0.89 & 0.63 \\
+Sample\_6 & 0.80 & 0.78 & 0.62 & 0.64 & 0.82 & 0.71 & 0.67 & 0.44 & 0.73 & 0.70 \\
+Sample\_7 & 0.87 & 0.48 & 0.69 & 0.80 & 0.68 & 0.65 & 0.64 & 0.61 & 0.63 & 0.68 \\
+Sample\_8 & 0.53 & 0.85 & 0.65 & 0.79 & 0.82 & 0.61 & 0.69 & 0.56 & 0.61 & 0.71 \\
+Sample\_9 & 0.59 & 0.91 & 0.64 & 0.51 & 0.85 & 0.77 & 0.66 & 0.69 & 0.63 & 0.53 \\
+Sample\_10 & 0.77 & 0.70 & 0.58 & 0.69 & 0.60 & 0.63 & 0.70 & 0.62 & 0.65 & 0.77 \\
+Sample\_11 & 0.73 & 0.59 & 0.95 & 0.74 & 0.86 & 0.75 & 0.78 & 0.55 & 0.87 & 0.94 \\
+Sample\_12 & 0.71 & 0.74 & 0.56 & 0.52 & 0.62 & 0.61 & 0.76 & 0.45 & 0.79 & 0.88 \\
+Sample\_13 & 0.82 & 0.58 & 0.74 & 0.66 & 0.74 & 0.61 & 0.78 & 0.54 & 0.71 & 0.81 \\
+Sample\_14 & 0.64 & 0.73 & 0.79 & 0.53 & 0.89 & 0.89 & 0.62 & 0.76 & 0.58 & 0.68 \\
+Sample\_15 & 0.57 & 0.78 & 0.72 & 0.66 & 0.75 & 0.62 & 0.88 & 0.86 & 0.78 & 0.69 \\
+Sample\_16 & 0.62 & 0.91 & 0.64 & 0.74 & 0.89 & 0.60 & 0.72 & 0.74 & 0.81 & 0.62 \\
+Sample\_17 & 0.60 & 0.68 & 0.73 & 0.66 & 0.84 & 0.67 & 0.91 & 0.70 & 0.59 & 0.60 \\
+Sample\_18 & 0.62 & 0.65 & 0.60 & 0.74 & 0.78 & 0.59 & 0.73 & 0.51 & 0.54 & 0.50 \\
+Sample\_19 & 0.78 & 0.72 & 0.83 & 0.64 & 0.75 & 0.64 & 0.70 & 0.71 & 0.65 & 0.76 \\
+Sample\_20 & 0.82 & 0.61 & 0.82 & 0.74 & 0.60 & 0.58 & 0.77 & 0.60 & 0.85 & 0.62 \\
 \bottomrule
 \end{longtable}
 
@@ -2570,18 +2605,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.734 0.691 0.742 0.697 0.678 0.709 0.745 0.686 0.715 0.732
-[2,] 0.677 0.716 0.666 0.703 0.648 0.729 0.708 0.658 0.659 0.705
+[1,] 0.687 0.705 0.699 0.666 0.740 0.691 0.673 0.682 0.678 0.671
+[2,] 0.776 0.664 0.699 0.711 0.731 0.729 0.698 0.626 0.718 0.701
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0290859.
+The standard deviation of the 20 sample means reported above is 0.0324927.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.0961711.
+The standard deviation of Sample 1 is \(s =\) 0.1043552.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.0961711}{\sqrt{10}} = 0.030412.\]
+\[s = \frac{0.1043552}{\sqrt{10}} = 0.033.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0290859, and the estimate from just using the standard error formula and data from only Sample 1 is 0.030412.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0324927, and the estimate from just using the standard error formula and data from only Sample 1 is 0.033.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{skew-and-kurtosis}{%
@@ -2601,7 +2636,7 @@ When the left tail sticks out as it does in Figure 13.1A, we can describe the di
 When the right tail sticks out as it does in Figure 13.1B, we can describe the distribution as `right skewed' or `positively skewed'.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-43-1} \caption{Histograms showing (A) a distribution that has a negative (i.e., 'left') skew and (B) a distribution that has a positive (i.e., 'right') skew.}\label{fig:unnamed-chunk-43}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-42-1} \caption{Histograms showing (A) a distribution that has a negative (i.e., 'left') skew and (B) a distribution that has a positive (i.e., 'right') skew.}\label{fig:unnamed-chunk-42}
 \end{figure}
 
 When a distribution is skewed, the mean and median of the distribution will be different \citep{Sokal1995}.
@@ -2620,7 +2655,7 @@ If there are more values in the center and tails of the distribution, then the d
 If there are more values between the centre and the tails, the the distribution is described as `platykurtic' (Figure 13.2B).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-44-1} \caption{Histograms showing (A) a leptokurtic distribution and (B) a platykurtic distribution.}\label{fig:unnamed-chunk-44}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-43-1} \caption{Histograms showing (A) a leptokurtic distribution and (B) a platykurtic distribution.}\label{fig:unnamed-chunk-43}
 \end{figure}
 
 The extent to which any given distribution is leptokurtic versus platykurtic is defined relative to the normal distribution, which will be introduced in \protect\hyperlink{Chapter_15}{Chapter 15}.
@@ -2678,7 +2713,7 @@ This is a bit tedious, but it is an important step in the process of data analys
 See Figure 14.1 for how this would look in jamovi.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-46}
+\includegraphics[width=1\linewidth]{img/lilypad_tidy} \caption{Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing 'Add Variable'.}\label{fig:unnamed-chunk-45}
 \end{figure}
 
 Note that to insert a new column in jamovi, we need to right click on an existing column and select `Add Variable' \(\to\) `Insert'.
@@ -2714,7 +2749,7 @@ Choose the `Histogram' option by clicking the checkbox.
 A histogram will open up in the window on the right (you might need to scroll down).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-48}
+\includegraphics[width=1\linewidth]{img/lilypad_histogram} \caption{Jamovi Descriptives toolbar with petiole diameter selected and a histogram produced in the plotting window.}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 Take a look at the histogram to the right (Figure 14.2).
@@ -2821,7 +2856,7 @@ To calculate all of the variables explained in \protect\hyperlink{Chapter_11}{Ch
 When you do this, the Statistics option in jamovi should look like it does in Figure 14.3.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-49}
+\includegraphics[width=1\linewidth]{img/lilypad_summary_statistics} \caption{Jamovi Descriptives toolbar showing the summary statistics available to report.}\label{fig:unnamed-chunk-48}
 \end{figure}
 
 Once you check these boxes, you will see a `Descriptives' table open on the right hand side of jamovi.
@@ -3056,7 +3091,7 @@ We can think about probabilities visually, as a kind of probability space.
 When we have only one trial, then we can express the probability of an event along a line (Figure 15.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/coin1_probability} \caption{Total probability space for flipping a single coin and observing its outcome (heads or tails). Given a fair coin, the probability of heads equals a proportion 0.5 of the total probability space, while the probability of tails equals the remaining 0.5 proportion.}\label{fig:unnamed-chunk-50}
+\includegraphics[width=1\linewidth]{img/coin1_probability} \caption{Total probability space for flipping a single coin and observing its outcome (heads or tails). Given a fair coin, the probability of heads equals a proportion 0.5 of the total probability space, while the probability of tails equals the remaining 0.5 proportion.}\label{fig:unnamed-chunk-49}
 \end{figure}
 
 The total probability space is 1, and `heads' occupies a density of 0.5 of the total space.
@@ -3065,7 +3100,7 @@ When we add a second independent trial, we now need 2 dimensions of probability 
 The probability of heads or tails for coin 1 (the horizontal axis of Figure 15.2) remains unchanged, but we add another axis (vertical this time) to think about the equivalent probability space of coin 2.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/coin2_probability} \caption{Total probability space for flipping two coins and observing their different possible outcomes (heads-heads, heads-tails, tails-heads, and tails-tails). Given two fair coins, the probability of flipping each equals 0.25, which corresponds to the lower left square of the probability space.}\label{fig:unnamed-chunk-51}
+\includegraphics[width=1\linewidth]{img/coin2_probability} \caption{Total probability space for flipping two coins and observing their different possible outcomes (heads-heads, heads-tails, tails-heads, and tails-tails). Given two fair coins, the probability of flipping each equals 0.25, which corresponds to the lower left square of the probability space.}\label{fig:unnamed-chunk-50}
 \end{figure}
 
 Now we can see that the area in which both coin 1 and coin 2 land on heads has a proportion of 0.25 of the total area.
@@ -3113,7 +3148,7 @@ Sampling without replacement means that whatever has been sampled does not get p
 An example makes the distinction between sampling with and without replacement clearer.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/cards} \caption{Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 spades (right).}\label{fig:unnamed-chunk-52}
+\includegraphics[width=1\linewidth]{img/cards} \caption{Playing cards can be useful for illustrating concepts in probability. Here we have 5 hearts (left) and 5 spades (right).}\label{fig:unnamed-chunk-51}
 \end{figure}
 
 Figure 15.3 shows 10 playing cards, 5 hearts and 5 spades.
@@ -3145,7 +3180,7 @@ Here we will move from specific outcomes and consider the \emph{distribution} of
 For example, instead of finding the probability that a flipped coin lands on heads, we might want to consider the distribution of the number of times that it does (in this case, 0 times or 1 time).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-53-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 1 trial.}\label{fig:unnamed-chunk-53}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-52-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 1 trial.}\label{fig:unnamed-chunk-52}
 \end{figure}
 
 This is an extremely simple distribution.
@@ -3163,7 +3198,7 @@ A success in the context of a binomial distribution just means that an outcome \
 If we define a coin flip landing on heads as a success, we could consider the probability distribution of the number of successes over 10 trials (Figure 15.5)
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-54-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 10 trials.}\label{fig:unnamed-chunk-54}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-53-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 10 trials.}\label{fig:unnamed-chunk-53}
 \end{figure}
 
 Figure 15.5 shows that the most probable outcome is that 5 of the 10 coins flipped will land on heads.
@@ -3187,7 +3222,7 @@ Note that a binomial distribution does not need to involve a fair coin with equa
 We can consider again the first example in Section 15.2, in which 1 in 40 people in an area are testing positive for Covid-19, then ask what the probability is that 0-6 people in a small shop would test positive (Figure 14.6).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-55-1} \caption{Probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025.}\label{fig:unnamed-chunk-55}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-54-1} \caption{Probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025.}\label{fig:unnamed-chunk-54}
 \end{figure}
 
 Note that the shape of this binomial distribution is different from the coin flipping trials in Figure 15.5.
@@ -3229,7 +3264,7 @@ This parameter is both the mean and the variance of the Poisson distribution.
 We can therefore get the probability that some number of events (\(x\)) will occur just by knowing \(\lambda\) (Figure 15.7).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-56-1} \caption{Poisson probability distributions given different rate parameter values.}\label{fig:unnamed-chunk-56}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-55-1} \caption{Poisson probability distributions given different rate parameter values.}\label{fig:unnamed-chunk-55}
 \end{figure}
 
 Like the binomial distribution, the Poisson distribution can also be defined mathematically\footnote{A random variable \(X\) has a Poisson distribution if and only if its probability mass function is defined by \citep{Miller2004}, \[p \left(x; \lambda \right) = \frac{\lambda^{x}e^{x}}{x!}.\] Recall from \protect\hyperlink{Chapter_1}{Chapter 1} Euler's number, \(e \approx 2.718282\), and from footnote 18 that the exclamation mark indicates a factorial. In the Poisson probability mass function, \(x\) can take any integer value greater than or equal to 0.}.
@@ -3254,7 +3289,7 @@ For example, suppose that \(\alpha = 1\) and \(\beta = 2.5\).
 In this case, Figure 15.8 shows the probability distribution for sampling some value \(x\).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-57-1} \caption{A continuous uniform distribution in which a random variable X takes a value between 1 and 2.5.}\label{fig:unnamed-chunk-57}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-56-1} \caption{A continuous uniform distribution in which a random variable X takes a value between 1 and 2.5.}\label{fig:unnamed-chunk-56}
 \end{figure}
 
 The height of the distribution in Figure 15.8 is \(1/(\beta - \alpha) = 1/(2.5 - 1) \approx 0.667\).
@@ -3282,7 +3317,7 @@ The mean determines where the peak of the distribution is, and the standard devi
 Note that we are using \(\mu\) for the mean here instead of \(\bar{x}\), and \(\sigma\) for the standard deviation instead of \(s\), to differentiate between the \emph{population} parameters from the \emph{sample} estimates of \protect\hyperlink{Chapter_11}{Chapter 11} and \protect\hyperlink{Chapter_12}{Chapter 12}.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-58-1} \caption{A standard normal probability distribution, which is defined by a mean value of 0 and a standard deviation of 1.}\label{fig:unnamed-chunk-58}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-57-1} \caption{A standard normal probability distribution, which is defined by a mean value of 0 and a standard deviation of 1.}\label{fig:unnamed-chunk-57}
 \end{figure}
 
 The normal distribution shown in Figure 15.9 is called the \textbf{standard normal distribution}, which means that it has a mean of 0 (\(\mu = 0\)) and a standard deviation of 1 (\(\sigma = 1\)).
@@ -3333,10 +3368,10 @@ What would this distribution look like?
 It turns out, it would be a normal distribution!
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-59-1} \caption{A simulated demonstration of the central limit theorem. (a) Recreation of Figure 15.6 showing the probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 100.}\label{fig:unnamed-chunk-59}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-58-1} \caption{A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.6 showing the probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 100.}\label{fig:unnamed-chunk-58}
 \end{figure}
 
-To demonstrate the CLT in action, Figure 15.1 shows the two distributions side-by-side.
+To demonstrate the CLT in action, Figure 16.1 shows the two distributions side-by-side.
 The first (Figure 16.1a) shows the original distribution from Figure 15.6, from which samples are collected and sample means are calculated.
 The second (Figure 16.1b) shows the distribution of 1000 sample means (i.e., \(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)).
 Each mean \(\bar{x}_{i}\) is calculated from a sample of \(N = 100\) from the distribution in Figure 16.1a.
@@ -3347,7 +3382,7 @@ We can try again with an even bigger sample size of \(N = 1000\), this time with
 Figure 16.2 shows this result, with the original Poisson distribution shown in Figure 16.2a, and the corresponding distribution built from 1000 sample means shown in Figure 16.2b.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-60-1} \caption{A simulated demonstration of the central limit theorem. (a) Recreation of Figure 15.7 showing the probability distribution for the number of events occurring in a Poisson distribution with a rate parameter of 1. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 1000.}\label{fig:unnamed-chunk-60}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-59-1} \caption{A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.7 showing the probability distribution for the number of events occurring in a Poisson distribution with a rate parameter of 1. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 1000.}\label{fig:unnamed-chunk-59}
 \end{figure}
 
 Finally, we can try the same approach with the continuous uniform distribution shown in Figure 15.8.
@@ -3355,7 +3390,7 @@ This time, we will use an even larger sample size of \(N = 10000\) to get our 10
 The simulated result is shown in Figure 16.3.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-61-1} \caption{A simulated demonstration of the central limit theorem. (a) Recreation of Figure 15.8 showing a continuous uniform distribution with a minimum of 1 and a maximum of 2.5. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 10000.}\label{fig:unnamed-chunk-61}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-60-1} \caption{A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.8 showing a continuous uniform distribution with a minimum of 1 and a maximum of 2.5. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 10000.}\label{fig:unnamed-chunk-60}
 \end{figure}
 
 In all cases, regardless of the original sampling distribution (binomial, Poisson, or uniform), the distribution of sample \emph{means} has the shape of a normal distribution.
@@ -3371,7 +3406,7 @@ For example, because the normal distribution is symmetric around the mean, the p
 Similarly, about 68.2\% of the normal distribution's probability density lies within 1 standard deviation of the mean (shaded region of Figure 16.4), which means that the probability of randomly sampling a value \(x\) that is greater than \(\mu - \sigma\) but less than \(\mu + \sigma\) is \(P(\mu - \sigma < x < \mu + \sigma) = 0.682\).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-62-1} \caption{A normal distribution in which the shaded region shows the area within one standard deviation of the mean (dotted line); that is, the shaded region starts on the left at the mean minus one standard deviation, then ends at the right at the mean plus one standard deviation. This shaded area encompases 68.2 per cent of the total area under the curve.}\label{fig:unnamed-chunk-62}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-61-1} \caption{A normal distribution in which the shaded region shows the area within one standard deviation of the mean (dotted line); that is, the shaded region starts on the left at the mean minus one standard deviation, then ends at the right at the mean plus one standard deviation. This shaded area encompasses 68.2 per cent of the total area under the curve.}\label{fig:unnamed-chunk-61}
 \end{figure}
 
 Remember that total probability always needs to equal 1.
@@ -3387,7 +3422,7 @@ And about 99.6\% of the probability density in a normal distribution lies betwee
 We could go on mapping percentages to standard deviations like this; for example, about 93.3\% of the probability density in a normal distribution is less than \(\mu + 1.5\sigma\) (i.e., less than 1.5 standard deviations greater than the mean; see Figure 16.5).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-63-1} \caption{A normal distribution in which the shaded region shows the area under 1.5 standard deviations of the mean (dotted line). This shaded area encompases about 93.3 per cent of the total area under the curve.}\label{fig:unnamed-chunk-63}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-62-1} \caption{A normal distribution in which the shaded region shows the area under 1.5 standard deviations of the mean (dotted line). This shaded area encompasses about 93.3 per cent of the total area under the curve.}\label{fig:unnamed-chunk-62}
 \end{figure}
 
 Notice that there are no numbers on the x-axes of Figure 16.4 or 16.5.
@@ -3401,7 +3436,7 @@ With these standard values of \(\mu\) and \(\sigma\), we can start actually putt
 We call these numbers \textbf{standard normal deviates}, or \textbf{z-scores} (Figure 16.6).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-64-1} \caption{A standard normal probability distribution with z-scores shown on the x-axis.}\label{fig:unnamed-chunk-64}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-63-1} \caption{A standard normal probability distribution with z-scores shown on the x-axis.}\label{fig:unnamed-chunk-63}
 \end{figure}
 
 What z-scores allow us to do is map probabilities to deviations from the mean of a standard normal distribution (hence `standard normal deviates').
@@ -3414,7 +3449,7 @@ Nevertheless, we can translate any normally distributed variable into a standard
 We can see what this looks like visually in Figure 16.7.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-65-1} \caption{A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (a) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (b) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (a).}\label{fig:unnamed-chunk-65}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-64-1} \caption{A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (A) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (B) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (A).}\label{fig:unnamed-chunk-64}
 \end{figure}
 
 In Figure 16.7a, we see the standard normal distribution curve represented by the dotted line, centered at \(\mu = 0\) and with a standard deviation of \(\sigma = 1\).
@@ -3487,7 +3522,7 @@ Next, find the check box called `Frequency tables' just under the `Split by' box
 Check this box to get a table of frequencies for Android versus iPhone users.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-66}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies} \caption{Jamovi Descriptives toolbar showing the OS column from the Power Up! dataset selected. The 'Frequency tables' checkbox builds a table of counts and percentages.}\label{fig:unnamed-chunk-65}
 \end{figure}
 
 The table of frequencies shown in Figure 17.1 includes counts of Android versus iPhone users.
@@ -3552,11 +3587,11 @@ Suppose that we wanted to estimate the probability that an Android user will cho
 We could multiply the proportion of Android users times the proportion of players who choose a large dam (i.e., find the probability of Android \emph{and} large dam).
 But this assumes that the two characteristics are independent (i.e., that Android users are not more or less likely than iPhone users to build large dams).
 To estimate the probability that a player chooses a large dam \emph{given} that they are using Android, we can keep Dam\_size in the Variables box, but now put OS in the `Split by' box.
-Figure 16.2 shows the output of jamovi.
+Figure 17.2 shows the output of jamovi.
 A new frequency table breaks down dam choice for each OS.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-67}
+\includegraphics[width=1\linewidth]{img/jamovi_power_up_frequencies2} \caption{Jamovi Descriptives toolbar showing the dam size column from the Power Up! dataset selected as a variable split by OS. The 'Frequency tables' checkbox builds a table of counts for small, medium, and large dam size broken down by Android versus iPhone OS.}\label{fig:unnamed-chunk-66}
 \end{figure}
 
 To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 17.2).
@@ -3602,7 +3637,7 @@ What is the probability that a player scores lower than 100?
 What is the probability that a player scores between 100 and 120?
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-68-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-68}
+\includegraphics[width=1\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-67-1} \caption{Distribution of player scores in the game Power Up! shown in histogram bars. The overlaid curve shows the probability density function for a normal distribution that has the same mean and standard deviation as the sample described by the histogram.}\label{fig:unnamed-chunk-67}
 \end{figure}
 
 Take another look at Figure 17.3, then take a guess at each of these probabilities.
@@ -3653,7 +3688,7 @@ Click the `Install' button to install it into jamovi.
 A new button in the toolbar called `distrACTION' should become visible (Figure 17.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-69}
+\includegraphics[width=1\linewidth]{img/jamovi_toolbar_modules_distrACTION} \caption{Jamovi tool bar, which includes an added module called distrACTION.}\label{fig:unnamed-chunk-68}
 \end{figure}
 
 If the module is not there after installation, then it should be possible to find by again going to Modules and selecting distrACTION from the pulldown menu.
@@ -3668,7 +3703,7 @@ Notice in the panel on the right that the probability is given as \(P = 0.238\).
 This is also represented in the plot of the normal distribution, with the same proportion in the lower part of the distribution shaded (\(P = 0.238\), i.e., about 23.8 per cent).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-70}
+\includegraphics[width=0.8\linewidth]{img/jamovi_normal_distribution} \caption{Jamovi options for the distrACTION module for computing probability for a given normal distribution. The example shown here calculates the probability that a value sampled from the normal distribution of interest is less than 80.}\label{fig:unnamed-chunk-69}
 \end{figure}
 
 To find the probability that a value is greater than 80, we could subtract our answer of 0.238 from 1, 1 - 0.238 = 0.762 (remember that the total area under the normal curve equals 1, so the shaded plus the unshaded region must also equal 1; hence, 1 minus the shaded region gives us the unshaded region).
@@ -3790,7 +3825,7 @@ The \texttt{hist} function plots a histogram of the first variable.
 To run the code, find the green triangle in the upper right (Figure 17.6).
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper right.}\label{fig:unnamed-chunk-72}
+\includegraphics[width=0.8\linewidth]{img/jamovi_RjEditor} \caption{Jamovi interface for the Rj Editor module. Code can be run by clicking on the green triangle in the upper right.}\label{fig:unnamed-chunk-71}
 \end{figure}
 
 When you run the code, the 40 new variables will be created, each variable being made up of 200 random numbers.
@@ -3902,7 +3937,7 @@ Go to `Modules', and from the `Available' tab, download the `clt - Demonstration
 Once it is downloaded, go to the `Demonstrations' button in the jamovi toolbar and select `Central Limit Theorem' from the pulldown menu.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-75}
+\includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-74}
 \end{figure}
 
 To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 17.7).
@@ -3989,7 +4024,7 @@ What does ``with 95\% confidence'' actually mean?
 It means that when we do the calculation to get the interval, the true mean should be somewhere within the interval 95\% of the time that a sample is collected.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/housecats} \caption{Two domestic cats sitting side by side with much different body masses.}\label{fig:unnamed-chunk-76}
+\includegraphics[width=1\linewidth]{img/housecats} \caption{Two domestic cats sitting side by side with much different body masses.}\label{fig:unnamed-chunk-75}
 \end{figure}
 
 In other words, if we were to go back out and collect another sample of 20 cats, and then another, and another (and so forth), calculating 95\% CIs each time, then in 95\% of our samples the true mean will be within our CIs (meaning that 5\% of the time it will be outside the CIs).
@@ -4020,7 +4055,7 @@ For example, about 95\% of the probability density of a standard normal distribu
 Hence, if we use \(z = 1.96\) to calculate LCI and UCI, we would be getting 95\% confidence intervals around our mean (an interactive application\footnote{\url{https://bradduthie.shinyapps.io/zandp/}} helps visualise the relationship between probability intervals and z-scores more generally).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-77-1} \caption{A standard normal probability distribution showing 95 per cent of probability density surrounding the mean.}\label{fig:unnamed-chunk-77}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-76-1} \caption{A standard normal probability distribution showing 95 per cent of probability density surrounding the mean.}\label{fig:unnamed-chunk-76}
 \end{figure}
 
 Now suppose that we want to calculate 95\% CIs around the sample mean of our \(N = 20\) domestic cats from earlier.
@@ -4129,7 +4164,7 @@ In truth, we should have multiplied by -2.093 because we only had a sample size 
 Figure 19.1 shows the difference between the standard normal distribution and the more appropriate t-distribution\footnote{We can define the t-distribution mathematically \citep{Miller2004}, but it is an absolute beast, \[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\] In this equation, \(v\) is the degrees of freedom. The \(\Gamma\left(\right)\) is called a ``gamma function'', which is basically the equivalent of a factorial function, but for any number z (not just integers), such that \(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\) (where \(z > -1\), or, even more technically, the real part of \(z > -1\)). If z is an integer n, then \(\Gamma\left({n + 1}\right) = n!\) \citep{Borowski2005}. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of 2 different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution \citep{Miller2004}. We will look at the Chi-square in \protect\hyperlink{Week_9}{Week 9}. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.}.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-78-1} \caption{A standard normal probability distribution showing 95 per cent of probability density surrounding the mean (grey). On top of the standard normal distribution in grey, red dotted lines show a t-distribution with 19 degrees of freedom. Red shading shows 95 per cent of the probability density of the t-distribution.}\label{fig:unnamed-chunk-78}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-77-1} \caption{A standard normal probability distribution showing 95 per cent of probability density surrounding the mean (grey). On top of the standard normal distribution in grey, red dotted lines show a t-distribution with 19 degrees of freedom. Red shading shows 95 per cent of the probability density of the t-distribution.}\label{fig:unnamed-chunk-77}
 \end{figure}
 
 Note that in Figure 19.1, a t-distribution with 19 degrees of freedom (df) is shown.
@@ -4152,7 +4187,7 @@ This is because a sample size of 20 is already large enough for the t-distributi
 But for lower sample sizes (\(N\)) and therefore fewer degrees of freedom (\(df = N - 1\)), the difference between the shapes of these distributions gets more obvious (Figure 19.2).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-79-1} \caption{A t-distribution with infinite degrees of freedom (df) is shown in black; this distribution is identical to the standard normal distribution. Other t-distributions with the same mean and standard deviation, but different degrees of freedom, are indicated by curves of different colours and line types.}\label{fig:unnamed-chunk-79}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-78-1} \caption{A t-distribution with infinite degrees of freedom (df) is shown in black; this distribution is identical to the standard normal distribution. Other t-distributions with the same mean and standard deviation, but different degrees of freedom, are indicated by curves of different colours and line types.}\label{fig:unnamed-chunk-78}
 \end{figure}
 
 The main point of Figure 19.2 is that as degrees of freedom decreases, the t-distribution becomes wider, with more probability density in the tails.
@@ -4232,13 +4267,13 @@ If we wanted to do the same exercise here, we might find the probability of samp
 Instead, we are now going to do the opposite using the Compute quantile(s) function.
 We might want to know, for example, what 75\% of DBH values will be less than (i.e., what is the cutoff DBH, below which DBH values will be lower than this cutoff with a probability of 0.75).
 To find this, uncheck the `Compute probability' box and check the `Compute quantile(s)' box.
-Make sure that the `cumulative quantile' radio button is selected, then set p = 0.75 (Figure 20.2).
+Make sure that the `cumulative quantile' radio button is selected, then set p = 0.75 (Figure 20.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_distrACTION_p75} \caption{Jamovi interface for the 'distrACTION' module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\label{fig:unnamed-chunk-80}
+\includegraphics[width=1\linewidth]{img/jamovi_distrACTION_p75} \caption{Jamovi interface for the 'distrACTION' module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75 per cent of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected from in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\label{fig:unnamed-chunk-79}
 \end{figure}
 
-From Figure 20.2, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75\% of DBH values in a population will be below 44.3 cm.
+From Figure 20.1, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75\% of DBH values in a population will be below 44.3 cm.
 Using the same principles, what is the cumulative 0.4 quantile for the DBH data?
 
 Quantile: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ cm
@@ -4376,7 +4411,7 @@ Site: \_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 The next part of this exercise is self-guided.
 In Exercises 20.1 and 20.2, you used different approaches for calculating 95\% CIs from the normal and t-distributions.
-Now, fill in the table below reporting 95\% CIs calculated using each distribution from the 4 sites using any method you prefer.
+Now, fill in Table 20.1 reporting 95\% CIs calculated using each distribution from the 4 sites using any method you prefer.
 
 \begin{longtable}[]{@{}llll@{}}
 \caption{Table 20.1: 95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\tabularnewline
@@ -4395,7 +4430,7 @@ Site & N & 95\% CIs (Normal) & 95\% CIs (t-distribution) \\
 \bottomrule
 \end{longtable}
 
-Next, do the same, but now calculate 99\% CIs instead of 95\% CIs.
+Next, do the same in Table 20.2, but now calculate 99\% CIs instead of 95\% CIs.
 
 \begin{longtable}[]{@{}llll@{}}
 \caption{Table 20.2: 99 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\tabularnewline
@@ -4603,7 +4638,7 @@ From \protect\hyperlink{Chapter_15.htmlux5cux23binomial-distribution}{Chapter 15
 The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 21.1).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-81-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the pobabilities associated with this number of flips out of 100 being heads are so low.}\label{fig:unnamed-chunk-81}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-80-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the pobabilities associated with this number of flips out of 100 being heads are so low.}\label{fig:unnamed-chunk-80}
 \end{figure}
 
 The distribution in Figure 21.1 is what we expect to happen if the coin we are flipping 100 times is actually fair.
@@ -4802,7 +4837,7 @@ Our t-statistic is therefore 2.496623 (note that a t-statistic can also be negat
 We can see where this value falls on the t-distribution with 9 degrees of freedom in Figure 22.1.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-82-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.49556 indicated with a downard arrow.}\label{fig:unnamed-chunk-82}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-81-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.49556 indicated with a downard arrow.}\label{fig:unnamed-chunk-81}
 \end{figure}
 
 The t-distribution in Figure 22.1 is the probability distribution if \(H_{0}\) is true (i.e., the student test scores were sampled from a distribution with a mean of \(\mu_{0} = 60\)).
@@ -4883,7 +4918,7 @@ We can calculate \(SE(\bar{y}) = 8.521033\) using the formula for \(s_{p}\) (aga
 As with the one-sample t-test, we can identify the position of \(t_{\bar{y}_{1} - \bar{y}_{2}}\) on the t-distribution (Figure 22.2).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-83-1} \caption{A t-distribution is shown with a calculated t-statistic of 1.348609 indicated with a downward arrow.}\label{fig:unnamed-chunk-83}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-82-1} \caption{A t-distribution is shown with a calculated t-statistic of 1.348609 indicated with a downward arrow.}\label{fig:unnamed-chunk-82}
 \end{figure}
 
 The proportion of t-scores that are higher than \(t_{\bar{y}_{1} - \bar{y}_{2}} = 1.348609\) is about 0.098.
@@ -4908,7 +4943,7 @@ Suppose that the teacher gave these same students (S1-S10) a second test and wan
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-84}Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}
+\caption{\label{tab:unnamed-chunk-83}Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -4926,7 +4961,7 @@ Change & -2.7 & -0.2 & 0.1 & -7.2 & -2.8 & -1.0 & 3.0 & -2.1 & 3.4 & 0.7\\
 In this case, what we are really interested in is the \emph{change} in scores from Test 1 to Test 2.
 We want to test the null hypothesis that this change is zero.
 This is actually the same test as the one-sample t-test.
-We are just substituting the mean difference in values (i.e., `Change' in the table above) for \(\bar{y}\) and setting \(\mu_{0} = 0\).
+We are just substituting the mean difference in values (i.e., `Change' in Table 22.1) for \(\bar{y}\) and setting \(\mu_{0} = 0\).
 We can calculate \(\bar{y} = -0.88\) and \(SE(\bar{y})=0.9760237\), then set up the t-test as before,
 
 \[t_{\bar{y}} = \frac{-0.88 - 0}{0.9760237} = -0.9016175.\]
@@ -4934,7 +4969,7 @@ We can calculate \(\bar{y} = -0.88\) and \(SE(\bar{y})=0.9760237\), then set up 
 Again, we can find the location of our t-statistic \(t_{\bar{y}} = -0.9016175\) on the t-distribution (Figure 22.3).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-85-1} \caption{A t-distribution is shown with a calculated t-statistic of -0.9016175 indicated with a downward arrow.}\label{fig:unnamed-chunk-85}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-84-1} \caption{A t-distribution is shown with a calculated t-statistic of -0.9016175 indicated with a downward arrow.}\label{fig:unnamed-chunk-84}
 \end{figure}
 
 Since this is a two-sided hypothesis, we want to know the probability of getting a t-statistic as extreme as -0.9016175 (i.e., either \(\pm 0.9016175\)) given that the null distribution is true.
@@ -4998,7 +5033,7 @@ For example, in Figure 22.4A below, we have a dataset (sample size \(N = 200\)) 
 Most values are in the same general area, but with some values being especially high.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-86-1} \caption{A set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution (A).}\label{fig:unnamed-chunk-86}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-85-1} \caption{A set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution (A).}\label{fig:unnamed-chunk-85}
 \end{figure}
 
 Using a t-test on the variable X shown in Figure 22.4A is probably not the good idea.
@@ -5081,11 +5116,11 @@ Since this p-value is less than our threshold of \(\alpha = 0.05\), we can rejec
 
 Note that we can also use a Wilcoxon signed rank test as a non-parametric equivalent to a paired t-test.
 In this case, instead of subtracting out the null hypothesis of our median value (e.g., \(H_{0}: M = 60\) in the example above), we just need to subtract the paired values.
-Consider again the example of the 2 different tests introduced for the \protect\hyperlink{paired-sample-t-test}{paired sample t-test} above.
+Consider again the example of the 2 different tests introduced for the \protect\hyperlink{paired-sample-t-test}{paired sample t-test} above (Table 22.2).
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-87}Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}
+\caption{\label{tab:unnamed-chunk-86}Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}
 \centering
 \begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
 \hline
@@ -5100,7 +5135,7 @@ Change & -2.7 & -0.2 & 0.1 & -7.2 & -2.8 & -1.0 & 3.0 & -2.1 & 3.4 & 0.7\\
 \end{tabular}
 \end{table}
 
-If the `Change' values were not normally distributed, then we could apply a Wilcoxon test to test the null hypothesis that the median value of \(Test\:2 - Test\:1 = 0\) (note that a Shapiro-Wilk normality does not reject the null hypothesis that the difference between test scores is normally distributed, so the paired t-test would be preferred in this case).
+If the `Change' values in Table 22.2 were not normally distributed, then we could apply a Wilcoxon test to test the null hypothesis that the median value of \(Test\:2 - Test\:1 = 0\) (note that a Shapiro-Wilk normality does not reject the null hypothesis that the difference between test scores is normally distributed, so the paired t-test would be preferred in this case).
 To do this, we would first note the sign of each value as negative or positive.
 
 \begin{verbatim}
@@ -5150,11 +5185,11 @@ For \(y_{2}\), the ranks are below.
 4, 3, 14, 16, 1, 6, 13, 10, 5
 \end{verbatim}
 
-This might be easier to see if we present it as a table showing the test Year (\(y_{1}\) versus \(y_{2}\)), test Score, and test Rank.
+This might be easier to see if we present it as a table showing the test Year (\(y_{1}\) versus \(y_{2}\)), test Score, and test Rank (Table 22.3).
 
 \begin{table}
 
-\caption{\label{tab:unnamed-chunk-88}Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.}
+\caption{\label{tab:unnamed-chunk-87}Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.}
 \centering
 \begin{tabular}[t]{r|r|r}
 \hline
@@ -5263,7 +5298,7 @@ To do this, double click on the fifth column of data, then when a new panel open
 Your input should like Figure 23.1.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_students_overall} \caption{The jamovi interface for adding a new computed variable called 'Overall' and calculating the mean of the three tests.}\label{fig:unnamed-chunk-90}
+\includegraphics[width=1\linewidth]{img/jamovi_students_overall} \caption{The jamovi interface for adding a new computed variable called 'Overall' and calculating the mean of the three tests.}\label{fig:unnamed-chunk-89}
 \end{figure}
 
 After calculating the overall grade for each student, find the sample size (N), overall sample mean (\(\bar{x}\)), and sample standard deviation (\(s\)).
@@ -5498,7 +5533,7 @@ A new column will appear to the left, which you can name `Year'.
 Input `2022' for rows 1-21, then `2023' for the remaining rows that you just pasted into jamovi (see Figure 23.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_insert_year} \caption{The jamovi interface for inserting a new variable called 'Year', and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.}\label{fig:unnamed-chunk-91}
+\includegraphics[width=1\linewidth]{img/jamovi_insert_year} \caption{The jamovi interface for inserting a new variable called 'Year', and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.}\label{fig:unnamed-chunk-90}
 \end{figure}
 
 Note that Year does not necessarily need to be in the first column.
@@ -5523,7 +5558,7 @@ In addition to the \textbf{Assumption Checks} options `Normality test' and `Q-Q 
 This is called a `Levene's test', and we can interpret it in a similar way to the Shapiro-Wilk test of normality.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_independent_sample_t-test} \caption{The jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).}\label{fig:unnamed-chunk-92}
+\includegraphics[width=1\linewidth]{img/jamovi_independent_sample_t-test} \caption{The jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).}\label{fig:unnamed-chunk-91}
 \end{figure}
 
 If our p-value is sufficiently low (P \textless{} 0.05), then we reject the null hypothesis that the groups have the same variances.
@@ -5631,7 +5666,7 @@ To do such a transformation, you could create a new computed variable in jamovi 
 Figure 23.4 illustrates what this should look like.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_LN_transform} \caption{The jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.}\label{fig:unnamed-chunk-93}
+\includegraphics[width=1\linewidth]{img/jamovi_LN_transform} \caption{The jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.}\label{fig:unnamed-chunk-92}
 \end{figure}
 
 Lastly, suppose that you wanted to test whether students from 2023 improved their scores from Test 1 to Test 2 more than students from 2022 did.
@@ -5696,7 +5731,7 @@ Groups are categorical data (see \protect\hyperlink{Chapter_5}{Chapter 5}).
 In the case of the fig wasp example, the groups are the different species (Table 24.1).
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-94}Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-93}Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
 Het1 & Het2 & LO1 & SO1 & SO2 \\
 \midrule
@@ -5720,7 +5755,7 @@ For the 5 fig wasp species in Table 24.1, there are 10 pair-wise combinations th
 And the number of combinations grows exponentially\footnote{Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, \[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\] The number of combinations therefore increases with increasing group number (g).} with each new group added to the dataset (Table 24.2).
 
 \begin{longtable}[]{@{}lrrrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-95}The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)}\tabularnewline
+\caption{\label{tab:unnamed-chunk-94}The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)}\tabularnewline
 \toprule
 \endhead
 Groups & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
@@ -5773,7 +5808,7 @@ One degree of freedom is needed for Variance 1, and a second degree of freedom i
 Together, these 2 degrees of freedom will determine the shape of the F-distribution (Figure 24.1).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-96-1} \caption{Probability density functions for 3 different F distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).}\label{fig:unnamed-chunk-96}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-95-1} \caption{Probability density functions for 3 different F distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).}\label{fig:unnamed-chunk-95}
 \end{figure}
 
 Figure 24.1 shows an F distribution for 3 different combinations of degrees of freedom.
@@ -5819,7 +5854,7 @@ For example, for Het1,
 We can calculate the means for all 5 fig wasps (Table 24.3).
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-97}Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).}\tabularnewline
+\caption{\label{tab:unnamed-chunk-96}Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).}\tabularnewline
 \toprule
 Het1 & Het2 & LO1 & SO1 & SO2 \\
 \midrule
@@ -5868,7 +5903,7 @@ If we subtract the mean and square each term of the above,
 Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-98}The squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
+\caption{\label{tab:unnamed-chunk-97}The squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
 \toprule
 Het1 & Het2 & LO1 & SO1 & SO2 \\
 \midrule
@@ -5887,7 +5922,7 @@ Het1 & Het2 & LO1 & SO1 & SO2 \\
 If we sum each column (i.e., do what we did for \(SS_{Het1}\) for each species), then we get the SS for each species (Table 24.5).
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-99}The sum of squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
+\caption{\label{tab:unnamed-chunk-98}The sum of squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
 \toprule
 Het1 & Het2 & LO1 & SO1 & SO2 \\
 \midrule
@@ -5927,7 +5962,7 @@ so we need an F distribution with 4 degrees of freedom in the numerator and 15 d
 We can use an interactive app{[}\^{}shiny\_F{]} to get the F-distribution and p-value (Figure 24.2).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-100-1} \caption{F distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.}\label{fig:unnamed-chunk-100}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-99-1} \caption{F distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.}\label{fig:unnamed-chunk-99}
 \end{figure}
 
 The area shaded in grey in Figure 24.2, where F \textgreater{} 3.2443976, is approximately \(P =\) 0.041762.
@@ -5939,7 +5974,7 @@ When running an ANOVA in a statistical program, output includes (at least) the c
 Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.
 
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{img/jamovi_ANOVA_output} \caption{Jamovi output for a one-way ANOVA of wing length measurements in 5 species of fig wasps collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-101}
+\includegraphics[width=0.6\linewidth]{img/jamovi_ANOVA_output} \caption{Jamovi output for a one-way ANOVA of wing length measurements in 5 species of fig wasps collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-100}
 \end{figure}
 
 Jamovi is quite minimalist for a one-way ANOVA \citep{Jamovi2022}, but these 4 statistics (F, df1, df2, and p) are all that is really needed.
@@ -6027,7 +6062,7 @@ Multiple comparisons tests can be run automatically in statistical programs such
 Figure 25.1 shows a post-hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_multiple_comparisons} \caption{Jamovi output showing a table of 10 post hoc comparisons between species mean wing lengths for 5 different species of fig wasps. The last 3 columns show the uncorrected p-value (p), a p-value obtained from a Tukey's test, and a p-value obtained from a Bonferroni correction. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-103}
+\includegraphics[width=1\linewidth]{img/jamovi_multiple_comparisons} \caption{Jamovi output showing a table of 10 post hoc comparisons between species mean wing lengths for 5 different species of fig wasps. The last 3 columns show the uncorrected p-value (p), a p-value obtained from a Tukey's test, and a p-value obtained from a Bonferroni correction. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-102}
 \end{figure}
 
 The column `p' in Figure 25.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
@@ -6053,7 +6088,7 @@ We can again use the example of the fig wasp wing lengths introduced in \protect
 For convenience, Table 24.1 is reproduced here as Table 26.1.
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-104}Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-103}Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
 \toprule
 Het1 & Het2 & LO1 & SO1 & SO2 \\
 \midrule
@@ -6078,7 +6113,7 @@ To do this, we first need to rank all of the values in Table 26.1.
 There are 20 total values, so we rank them from 1 to 20 (Table 26.2).
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-105}Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-104}Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
 Het1 & Het2 & LO1 & SO1 & SO2 \\
 \midrule
@@ -6113,7 +6148,7 @@ Jamovi reports a Chi-square (\(\chi^{2}\)) test statistic, degrees of freedom, a
 Figure 26.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing lengths data.
 
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{img/jamovi_kruskall-wallis_test} \caption{Jamovi output table for a non-parametric Kruskall-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for 5 different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-106}
+\includegraphics[width=0.6\linewidth]{img/jamovi_kruskall-wallis_test} \caption{Jamovi output table for a non-parametric Kruskall-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for 5 different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-105}
 \end{figure}
 
 Given the Kruskall-Wallis H test output (Figure 26.1), we should not reject the null hypothesis that species have different wing lengths because P \textgreater{} 0.05.
@@ -6134,7 +6169,7 @@ Here, to illustrate the key concepts as clearly as possible, we will run an exam
 Table 27.1 shows the fig wasp wing length dataset for the 2 species in a tidy format, which includes columns for 2 group types, species and tree.
 
 \begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-107}Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-106}Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
 Species & Tree & wing\_length \\
 \midrule
@@ -6210,7 +6245,7 @@ And row 4 shows us the variation in the data that cannot be attributed to either
 This is equivalent to the variation within groups in the one-way ANOVA.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_two-way_ANOVA_no_interaction} \caption{Jamovi output table for a two-way ANOVA, which tests for the effects of species (Het1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-108}
+\includegraphics[width=1\linewidth]{img/jamovi_two-way_ANOVA_no_interaction} \caption{Jamovi output table for a two-way ANOVA, which tests for the effects of species (Het1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-107}
 \end{figure}
 
 This is a lot more information than the one-way ANOVA, but it helps to think of each row separately as a test of a different null hypothesis.
@@ -6220,7 +6255,7 @@ In contrast, from the third row, we should not reject the null hypothesis that t
 Figure 27.2 shows the these results visually \citep{Jamovi2022}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/two-way_ANOVA_no_interaction} \caption{An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-109}
+\includegraphics[width=1\linewidth]{img/two-way_ANOVA_no_interaction} \caption{An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-108}
 \end{figure}
 
 In Figure 27.2, there is no interaction between species and tree.
@@ -6236,7 +6271,7 @@ We can run another two-way ANOVA, this time with a different pair of species, SO
 Table 27.2 shows the data.
 
 \begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-110}Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-109}Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
 Species & Tree & wing\_length \\
 \midrule
@@ -6259,7 +6294,7 @@ SO2 & B & 1.378 \\
 If we run the two-way ANOVA in jamovi, then we can see the ANOVA output table (Figure 27.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_two-way_ANOVA_with_interaction} \caption{Jamovi output table for a two-way ANOVA, which tests for the effects of species (SO1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-111}
+\includegraphics[width=1\linewidth]{img/jamovi_two-way_ANOVA_with_interaction} \caption{Jamovi output table for a two-way ANOVA, which tests for the effects of species (SO1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-110}
 \end{figure}
 
 Figure 27.3 shows that the effect of species is not significant (P \textgreater{} 0.05), but the effect of tree is significant (P \textless{} 0.05).
@@ -6270,7 +6305,7 @@ In other words, the effect of tree on wing length will depend on the species.
 Figure 27.4 shows this interaction visually.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/two-way_ANOVA_with_interaction} \caption{An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., SO2 from Tree A in the upper right). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-112}
+\includegraphics[width=1\linewidth]{img/two-way_ANOVA_with_interaction} \caption{An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., SO2 from Tree A in the upper right). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.}\label{fig:unnamed-chunk-111}
 \end{figure}
 
 Note that for SO1, wing length is basically the same for Tree A and B (the 2 left points in Figure 27.4).
@@ -6345,7 +6380,7 @@ Place `Nitrogen' in the Dependent Variables box and `site' in the Grouping Varia
 Although we have already checked the assumptions of normality and homogeneity of variances when we ran the t-test, check these boxes under \textbf{Assumption Checks} too (Figure 28.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_one-way_ANOVA_analysis} \caption{Jamovi interface for running a one-way ANOVA to test if Nitrogen concentration (ppm) differs among sites in soils of Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\label{fig:unnamed-chunk-113}
+\includegraphics[width=1\linewidth]{img/jamovi_one-way_ANOVA_analysis} \caption{Jamovi interface for running a one-way ANOVA to test if Nitrogen concentration (ppm) differs among sites in soils of Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\label{fig:unnamed-chunk-112}
 \end{figure}
 
 Confirm that the Shapiro-Wilk test of normality and the Levene's test of homogeneity of variances are consistent with what you concluded when testing the assumptions of the t-test above.
@@ -6448,7 +6483,7 @@ For now, give this a try by selecting `ANOVA' from the pull down menu.
 In the ANOVA interface, place `Nitrogen' into the `Dependent Variable' box and `Profile' in the `Fixed Factors' box (Figure 28.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_ANOVA_input} \caption{Jamovi interface for running an ANOVA to test if Nitrogen concentration (ppm) differs among soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\label{fig:unnamed-chunk-114}
+\includegraphics[width=1\linewidth]{img/jamovi_ANOVA_input} \caption{Jamovi interface for running an ANOVA to test if Nitrogen concentration (ppm) differs among soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\label{fig:unnamed-chunk-113}
 \end{figure}
 
 The output in the right panel shows an ANOVA table.
@@ -6457,7 +6492,7 @@ This is often how ANOVA results are presented in the literature.
 Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and P.
 
 \begin{longtable}[]{@{}llllll@{}}
-\caption{\label{tab:unnamed-chunk-115}ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-114}ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
 \toprule
 & Sum of Squares & df & Mean Square & F & p \\
 \midrule
@@ -6612,7 +6647,7 @@ The first 2 rows correspond with tests of the main effects of Site and Profile, 
 Fill in Table 28.2 with the relevant information from the two-way ANOVA output.
 
 \begin{longtable}[]{@{}llllll@{}}
-\caption{\label{tab:unnamed-chunk-116}Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-115}Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
 \toprule
 & Sum of Squares & df & Mean Square & F & p \\
 \midrule
@@ -6651,7 +6686,7 @@ To do this, scroll down to the `Estimated Marginal Means' pulldown option.
 Move `Site' and `Profile' from the box on the left to the `Marginal Means' box on the right (Figure 28.3).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_marginal_means} \caption{Jamovi two-way ANOVA test with the pulldown menu for Estimated Marginal Means, which will produce a plot showing the interaction effect of the two-way ANOVA.}\label{fig:unnamed-chunk-117}
+\includegraphics[width=1\linewidth]{img/jamovi_marginal_means} \caption{Jamovi two-way ANOVA test with the pulldown menu for Estimated Marginal Means, which will produce a plot showing the interaction effect of the two-way ANOVA.}\label{fig:unnamed-chunk-116}
 \end{figure}
 
 In the panel on the right hand side, a plot will appear under the heading `Estimated Marginal Means'.
@@ -6770,7 +6805,7 @@ We can therefore ask, if we were to keep sampling 4 standard normal deviates and
 The answer is shown in Figure 29.1.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-118-1} \caption{A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.}\label{fig:unnamed-chunk-118}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-117-1} \caption{A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.}\label{fig:unnamed-chunk-117}
 \end{figure}
 
 Looking at the shape of Figure 29.1, we can see that most of the time, the sum of deviations from the mean of \(\mu = 0\) will be about 2.
@@ -6784,7 +6819,7 @@ This is the same idea as the t-distribution from \protect\hyperlink{Chapter_19}{
 Figure 29.2 shows the different \(\chi^{2}\) probability density distributions for different degrees of freedom.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-119-1} \caption{Probability density functions for 3 different Chi-square distributions, each of which have different degrees of freedom (df).}\label{fig:unnamed-chunk-119}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-118-1} \caption{Probability density functions for 3 different Chi-square distributions, each of which have different degrees of freedom (df).}\label{fig:unnamed-chunk-118}
 \end{figure}
 
 As with the F distribution from \protect\hyperlink{the-f-distribution}{Chapter 24.1}, visualising the \(\chi^{2}\) distribution is easier using an interactive application\footnote{\url{https://bradduthie.shinyapps.io/chi-square/}}.
@@ -6843,7 +6878,7 @@ As it turns out, if the null hypothesis is true, then the probability of observi
 Figure 29.3 shows the appropriate \(\chi^{2}\) distribution plotted, with the area above the test statistic \(\chi^{2} = 1.2\) shaded in grey.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-120-1} \caption{A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.}\label{fig:unnamed-chunk-120}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-119-1} \caption{A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.}\label{fig:unnamed-chunk-119}
 \end{figure}
 
 Because \(P > 0.05\), we do not reject the null hypothesis that there is no significant difference between expected and observed counts of chosen dam sizes.
@@ -6888,7 +6923,7 @@ We can state this as a null and alternative hypothesis.
 Consider the data in Table 29.1, which show counts of Android versus MacOS users and their dam choices.
 
 \begin{longtable}[]{@{}lrrr@{}}
-\caption{\label{tab:unnamed-chunk-121}Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).}\tabularnewline
+\caption{\label{tab:unnamed-chunk-120}Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).}\tabularnewline
 \toprule
 & Small & Medium & Large \\
 \midrule
@@ -6927,7 +6962,7 @@ For example, what is the probability of a player selecting a large dam, regardle
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-122}Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected}\tabularnewline
+\caption{\label{tab:unnamed-chunk-121}Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected}\tabularnewline
 \toprule
 & Small & Medium & Large & \textbf{Probability} \\
 \midrule
@@ -6951,7 +6986,7 @@ The probability of a player using Android \textbf{and} choosing a medium dam is 
 We can fill in all of these joint probabilities in a new Table 29.3.
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-123}Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-122}Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
 \toprule
 & Small & Medium & Large & \textbf{Probability} \\
 \midrule
@@ -6977,7 +7012,7 @@ Table 29.4 fills in all of the expected counts.
 Note that the sum of all the counts equals our sample size of 60.
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-124}Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-123}Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
 \toprule
 & Small & Medium & Large & \textbf{Sum} \\
 \midrule
@@ -7024,7 +7059,7 @@ If we wanted to, we could sum the rows and columns of our original observations.
 Table 29.5 shows the original observations with the sum of each row and column.
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-125}Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!'. The last row and column shows the sum of observed dam sizes and OS users, respectively.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-124}Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!'. The last row and column shows the sum of observed dam sizes and OS users, respectively.}\tabularnewline
 \toprule
 & Small & Medium & Large & \textbf{Sum} \\
 \midrule
@@ -7063,7 +7098,7 @@ In a scatterplot the values of one variable are plotted on the x-axis, and the v
 Consider two fig wasp species of the genus \emph{Heterandrium} (Figure 30.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/heterandrium} \caption{Fig wasps from 2 different species are shown. Wasps were collected from Baja, Mexico.}\label{fig:unnamed-chunk-126}
+\includegraphics[width=1\linewidth]{img/heterandrium} \caption{Fig wasps from 2 different species are shown. Wasps were collected from Baja, Mexico.}\label{fig:unnamed-chunk-125}
 \end{figure}
 
 Both fig wasp species in Figure 30.1 are unnamed.
@@ -7072,7 +7107,7 @@ We might want to collect morphological measurements of fig wasp head, thorax, an
 Table 30.1 shows these measurements for 11 wasps.
 
 \begin{longtable}[]{@{}lrrr@{}}
-\caption{\label{tab:unnamed-chunk-127}Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-126}Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.}\tabularnewline
 \toprule
 Species & Head & Thorax & Abdomen \\
 \midrule
@@ -7101,7 +7136,7 @@ We can check this visually by plotting one variable on the x-axis and the other 
 Figure 30.2 does this for wasp thorax length (x-axis) and abdomen length (y-axis).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-128-1} \caption{An example of a scatterplot in which fig wasp thorax length (x-axis) is plotted against fig wasp abdomen length (y-axis). Each point is a different fig wasp. Wasps were collected in 2010 in Baja, Mexico.}\label{fig:unnamed-chunk-128}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-127-1} \caption{An example of a scatterplot in which fig wasp thorax length (x-axis) is plotted against fig wasp abdomen length (y-axis). Each point is a different fig wasp. Wasps were collected in 2010 in Baja, Mexico.}\label{fig:unnamed-chunk-127}
 \end{figure}
 
 In Figure 30.2, each point is a different wasp from Table 30.1.
@@ -7126,7 +7161,7 @@ Values of zero (or not significantly different from zero, more on this later) in
 Figure 30.3 shows scatterplots for 4 different correlation coefficients between values of \(x\) and \(y\).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-129-1} \caption{Examples of scatterplots with different correlation coefficients (r) between 2 variables (x and y).}\label{fig:unnamed-chunk-129}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-128-1} \caption{Examples of scatterplots with different correlation coefficients (r) between 2 variables (x and y).}\label{fig:unnamed-chunk-128}
 \end{figure}
 
 We will look at 2 types of correlation coefficient, the Pearson product moment correlation coefficient and the Spearman rank correlation coefficient.
@@ -7190,7 +7225,7 @@ We continue this for all rows.
 Table 30.2 shows the thorax length (\(x_{i}\)), abdomen length (\(y_{i}\)), and \(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\) for rows \(i = 1\) to \(i = 11\).
 
 \begin{longtable}[]{@{}rrrr@{}}
-\caption{\label{tab:unnamed-chunk-130}Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-129}Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.}\tabularnewline
 \toprule
 Row (i) & Thorax & Abdomen & Squared Deviation \\
 \midrule
@@ -7234,7 +7269,7 @@ To calculate the Spearman rank correlation coefficient for the fig wasp example 
 Figure 30.3 shows the same 11 fig wasp measurements as Figures 30.1 and 30.2, but with columns added to show the ranks of thorax and abdomen lengths.
 
 \begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-131}Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-130}Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.}\tabularnewline
 \toprule
 Wasp (i) & Thorax & Thorax rank & Abdomen & Abdomen rank \\
 \midrule
@@ -7312,7 +7347,7 @@ In jamovi, the t-score is not even reported as output when using a correlation t
 We only see \(r\) and the p-value (Figure 30.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Jamovi_correlation_output} \caption{Jamovi output for a test of the null hypothesis that thorax length and abdomen length are not significantly correlated in a sample of fig wasps collected in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-132}
+\includegraphics[width=1\linewidth]{img/Jamovi_correlation_output} \caption{Jamovi output for a test of the null hypothesis that thorax length and abdomen length are not significantly correlated in a sample of fig wasps collected in 2010 from Baja, Mexico.}\label{fig:unnamed-chunk-131}
 \end{figure}
 
 From Figure 30.4, we can see that the sample \(r = 0.75858\), and the p-value is \(P = 0.00680\).
@@ -7389,7 +7424,7 @@ To run a \(\chi^{2}\) goodness of fit test on bee survival, move the `survived' 
 Leave the Counts box empty (Figure 31.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_goodness_of_fit_interface} \caption{Jamovi interface for running a Chi-square goodness of fit test on bumblebee survival in a dataset.}\label{fig:unnamed-chunk-133}
+\includegraphics[width=1\linewidth]{img/jamovi_goodness_of_fit_interface} \caption{Jamovi interface for running a Chi-square goodness of fit test on bumblebee survival in a dataset.}\label{fig:unnamed-chunk-132}
 \end{figure}
 
 The \(\chi^{2}\) Goodness of Fit table will appear in the panel to the right.
@@ -7461,7 +7496,7 @@ To test for an association between bee colony and survival, place `colony' in th
 Leave the rest of the boxes blank (Figure 31.2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_test_of_association_interface} \caption{Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.}\label{fig:unnamed-chunk-134}
+\includegraphics[width=1\linewidth]{img/jamovi_test_of_association_interface} \caption{Jamovi interface for running a Chi-square test of association on bumblebee survival versus colony in a dataset.}\label{fig:unnamed-chunk-133}
 \end{figure}
 
 There is a pulldown called `Statistics' below the Contingency Tables input.
@@ -7515,7 +7550,7 @@ A new window will open up that allows you to build a scatterplot by selecting th
 Put mass on the x-axis and CO\_2 on the y-axis, as shown in Figure 31.3.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_simple_scatterplot} \caption{Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis}\label{fig:unnamed-chunk-135}
+\includegraphics[width=1\linewidth]{img/jamovi_simple_scatterplot} \caption{Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis}\label{fig:unnamed-chunk-134}
 \end{figure}
 
 Notice that the scatterplot appears in the panel on the right.
@@ -7564,7 +7599,7 @@ To run the correlation coefficient test, choose the button in the jamovi toolbar
 The Correlation Matrix option will pull up a new window in jamovi (Figure 31.4).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_correlation_interface} \caption{Jamovi interface for testing correlation coefficients.}\label{fig:unnamed-chunk-136}
+\includegraphics[width=1\linewidth]{img/jamovi_correlation_interface} \caption{Jamovi interface for testing correlation coefficients.}\label{fig:unnamed-chunk-135}
 \end{figure}
 
 Notice that the Pearson product moment correlation is selected in the checkbox of Figure 31.4 (`Pearson').
@@ -7635,7 +7670,7 @@ But there is a shortcut in jamovi if we do not have a full tidy dataset.
 If you know that the dataset included 139 `Yes' counts and 117 `No' counts, you could set up the data as a table of counts (Table 31.1).
 
 \begin{longtable}[]{@{}lr@{}}
-\caption{\label{tab:unnamed-chunk-137}Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-136}Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.}\tabularnewline
 \toprule
 Survived & Count \\
 \midrule
@@ -7653,7 +7688,7 @@ Open a new data frame in jamovi, then recreate the small dataset in Table 31.1.
 Column names should be `Survived' and `Count', as shown in Figure 31.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_simple_counts} \caption{Jamovi data frame with a simple organisation of count data.}\label{fig:unnamed-chunk-138}
+\includegraphics[width=1\linewidth]{img/jamovi_simple_counts} \caption{Jamovi data frame with a simple organisation of count data.}\label{fig:unnamed-chunk-137}
 \end{figure}
 
 Next, navigate to the `Analyses' tab and choose `N Outcomes' to do a goodness of fit test.
@@ -7664,7 +7699,7 @@ We could do the same for a \(\chi^{2}\) test of association, although it would b
 To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need 3 columns and 8 rows of data (Table 31.2).
 
 \begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-139}Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-138}Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.}\tabularnewline
 \toprule
 Survived & Radiation & Count \\
 \midrule
@@ -7755,13 +7790,13 @@ A visual example using a scatterplot can illustrate one way to think about regre
 Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume \citep{Duthie2016}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/FigTree2} \caption{Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.}\label{fig:unnamed-chunk-140}
+\includegraphics[width=1\linewidth]{img/FigTree2} \caption{Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico with different fig wasps on the surface (A and B). A full fig tree is shown to the right (C) with the author attempting to collect fig fruits from a branch of the tree.}\label{fig:unnamed-chunk-139}
 \end{figure}
 
 A sample of fig fruits from different latitudes is shown in Table 32.1.
 
 \begin{longtable}[]{@{}lrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-141}Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-140}Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
 \toprule
 \endhead
 Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
@@ -7776,7 +7811,7 @@ Fruit volume is therefore the dependent variable, and we should plot it on the y
 Latitude is our independent variable, and we should plot it on the x-axis (Figure 32.2).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-142-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.}\label{fig:unnamed-chunk-142}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-141-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.}\label{fig:unnamed-chunk-141}
 \end{figure}
 
 In Figure 32.2, each of the 7 points is a different fig fruit.
@@ -7825,7 +7860,7 @@ To map each fruit's latitude to its corresponding volume, we therefore need one 
 This number is the \textbf{residual}, and it describes how far away a point is from the regression line (Figure 32.3).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-143-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point, one of which is highlighted in red.}\label{fig:unnamed-chunk-143}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-142-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point, one of which is highlighted in red.}\label{fig:unnamed-chunk-142}
 \end{figure}
 
 The residual of each of the 7 points is shown with a dashed line in Figure 32.3.
@@ -7878,7 +7913,7 @@ The regression line is defined by its relationship to the residual values.
 Figure 32.4 shows the same regression as in Figures 32.2 and 32.3, but with the values of the residuals written next to each point.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-144-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.}\label{fig:unnamed-chunk-144}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-143-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.}\label{fig:unnamed-chunk-143}
 \end{figure}
 
 Some of the values are positive, and some are negative.
@@ -7917,7 +7952,7 @@ This large \(R^{2}\) means that the model is doing a good job of explaining vari
 Figure 32.5 shows some examples of scatterplots with different \(R^{2}\) values.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-145-1} \caption{Examples of scatterplots with different coefficients of determination (R-squared).}\label{fig:unnamed-chunk-145}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-144-1} \caption{Examples of scatterplots with different coefficients of determination (R-squared).}\label{fig:unnamed-chunk-144}
 \end{figure}
 
 We can calculate the \(R^{2}\) value for our example of fig fruit volumes over a latitudinal gradient.
@@ -7927,7 +7962,7 @@ Now, to get \(SS_{total}\), we just need to get the sum of squares for fruit vol
 We can visualise this as the sum of squared deviations from the mean fruit volume of \(\bar{y} =\) 1930.1 instead of the value predicted by the regression line (Figure 32.6).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-146-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).}\label{fig:unnamed-chunk-146}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-145-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the blue horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (black dashed) and deviations from the mean (blue dotted).}\label{fig:unnamed-chunk-145}
 \end{figure}
 
 The black numbers in Figure 32.6 show the deviations of each point from the regression line, just like in Figure 32.4.
@@ -7971,7 +8006,7 @@ Figure 32.7 shows a classic example of heteroscedasticity.
 Notice that the variance of \(y_{i}\) values around the regression line increases with increasing \(x\).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-147-1} \caption{A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.}\label{fig:unnamed-chunk-147}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-146-1} \caption{A hypothetical dataset in which data show heteroscedasticity, thereby violating an assumption of simple linear regression.}\label{fig:unnamed-chunk-146}
 \end{figure}
 
 Note that even if our assumptions are not perfectly met, this does not completely invalidate the method of linear regression.
@@ -8054,14 +8089,14 @@ This means that the model explains about 61.98 per cent of the total variation i
 We therefore reject the null hypothesis and conclude that the model with latitude as an independent variables fits the data significantly better than a model with just the mean of fruit volume (Figure 32.8).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_output} \caption{Jamovi output table for a simple linear regression in which latitude is an independent variable and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-148}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_output} \caption{Jamovi output table for a simple linear regression in which latitude is an independent variable and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-147}
 \end{figure}
 
 Figure 32.8 reports the \(R^{2}\) value along with with \(F\) statistic, degrees of freedom, and the resulting p-value for the overall model.
 We can also see a table of model coefficients, the intercept (\(b_{0}\)) and slope (\(b_{1}\)) associated with latitude (Figure 32.9).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_coefficients} \caption{Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.}\label{fig:unnamed-chunk-149}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_regression_coefficients} \caption{Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.}\label{fig:unnamed-chunk-148}
 \end{figure}
 
 From the jamovi output shown in Figure 32.9, we can see that the intercept is significant (\(P < 0.05\)), so we reject the null hypothesis that \(b_{0} = 0\).
@@ -8133,7 +8168,7 @@ To illustrate a multiple regression, consider again the fig fruit volume example
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).
 
 \begin{longtable}[]{@{}lrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-150}Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-149}Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
 \toprule
 \endhead
 Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
@@ -8145,7 +8180,7 @@ Volume & 2399.0 & 2941.7 & 2167.2 & 2051.3 & 1686.2 & 937.3 & 1328.2 \\
 We can use a scatterplot to visualise each independent variable on the x-axis against the dependent variable on the y-axis (Figure 33.1).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-151-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset. }\label{fig:unnamed-chunk-151}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-150-1} \caption{Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010, and the relationship between altitude and fruit volume for the same dataset. }\label{fig:unnamed-chunk-150}
 \end{figure}
 
 As with simple regression (\protect\hyperlink{Chapter_32}{Chapter 32}), we can test whether or not the overall model that includes both latitude and altitude as independent variables produces a significantly better fit to the data than just the mean volume.
@@ -8167,7 +8202,7 @@ In jamovi, running a multiple regression is just a matter of including the addit
 Table 32.2 shows an output table, which gives us estimates of \(b_{0}\), \(b_{1}\), and \(b_{2}\) (column `Estimate'), along with p-values for the intercept and each partial regression coefficient (column `Pr(\textgreater\textbar t\textbar)').
 
 \begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:unnamed-chunk-152}Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(\textgreater\textbar t\textbar)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-151}Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(\textgreater\textbar t\textbar)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.}\tabularnewline
 \toprule
 & Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
 \midrule
@@ -8211,7 +8246,7 @@ We can also look at the overall multiple regression model.
 Figure 33.2 shows what this model output looks like reported by jamovi \citep{Jamovi2022}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_overall_multiple_regression_output} \caption{Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-153}
+\includegraphics[width=1\linewidth]{img/jamovi_overall_multiple_regression_output} \caption{Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.}\label{fig:unnamed-chunk-152}
 \end{figure}
 
 As with the simple linear regression output from \protect\hyperlink{simple-regression-output}{Chapter 32.7.4}, the overall model test output table includes columns for \(R^{2}\), F, degrees of freedom, and a p-value for the overall model.
@@ -8304,7 +8339,7 @@ The dependent variable `PyC' should go in the `Dependent Variable' box to the ri
 The independent variable `depth' should go in the `Covariates' box (Figure 34.1).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression} \caption{Jamovi interface for running a linear regression model to predict pyrogenic carbon (PyC) from soil depth (depth).}\label{fig:unnamed-chunk-154}
+\includegraphics[width=1\linewidth]{img/Jamovi_linear_regression} \caption{Jamovi interface for running a linear regression model to predict pyrogenic carbon (PyC) from soil depth (depth).}\label{fig:unnamed-chunk-153}
 \end{figure}
 
 We can check the assumption that the residuals are normally distributed in multiple ways.
@@ -8552,7 +8587,7 @@ Run a multiple regression model with soil depth, fire frequency, and soil pH all
 Fill in the Model Coefficient output in Table 34.1.
 
 \begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-155}Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.}\tabularnewline
+\caption{\label{tab:unnamed-chunk-154}Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.}\tabularnewline
 \toprule
 & Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
 \midrule
@@ -8686,7 +8721,7 @@ Fig trees and the wasps that develop inside of them have a fascinating ecology, 
 The fig wasps in Figure 35.1 are 2 unnamed species of the genus \emph{Idarnes}, which can refer to simply as `Short-ovipositor 1' (SO1) and `Short-ovipositor 2' (SO2).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_wasps} \caption{Image of 2 fig wasp species, roughly 3 mm in length, labelled 'SO1' and 'SO2'}\label{fig:unnamed-chunk-156}
+\includegraphics[width=1\linewidth]{img/fig_wasps} \caption{Image of 2 fig wasp species, roughly 3 mm in length, labelled 'SO1' and 'SO2'}\label{fig:unnamed-chunk-155}
 \end{figure}
 
 The reason that these 2 species are called `SO1' and `SO2' is that there is actually another species that lays its eggs in \emph{F. petiolaris} flowers, one with an ovipositor that is at least twice as long as the ones above.
@@ -8695,7 +8730,7 @@ Suppose that we have some data on the lengths of the ovipositors from each speci
 We might want to know whether the mean ovipositor length differs between the 2 species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 of the species `SO1', and 15 of the species `SO2'.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-157-1} \caption{Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.}\label{fig:unnamed-chunk-157}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-156-1} \caption{Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.}\label{fig:unnamed-chunk-156}
 \end{figure}
 
 To test whether or not mean ovipositor length is different between these 2 fig wasps, our standard approach would be to use an independent samples t-test (see \protect\hyperlink{independent-samples-t-test}{Chapter 22.2}).
@@ -8715,7 +8750,7 @@ After we calculate our t-statistic as \(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\) 2.
 Figure 35.3 shows the t-distribution for 30 degrees of freedom with an arrow pointing at the value of \(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\) 2.419.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-158-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.}\label{fig:unnamed-chunk-158}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-157-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.}\label{fig:unnamed-chunk-157}
 \end{figure}
 
 If the null hypothesis is true, and \(\bar{y}_{SO1}\) and \(\bar{y}_{SO2}\) are actually sampled from a population with the same mean, then the probability of randomly sampling a value more extreme than 2.419 (i.e., greater than 2.419 or less than -2.419) is \(P =\) 0.0218352.
@@ -8736,17 +8771,17 @@ A desktop computer can easily reshuffle the species identities and calculate a d
 The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 99999 times.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-159-1} \caption{A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.}\label{fig:unnamed-chunk-159}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-158-1} \caption{A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.}\label{fig:unnamed-chunk-158}
 \end{figure}
 
 Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2071 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2147 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),
 
-\[P = \frac{2071 + 1}{99999 + 1}.\]
+\[P = \frac{2147 + 1}{99999 + 1}.\]
 
-When we calculate the above, we get a value of 0.02072.
+When we calculate the above, we get a value of 0.02148.
 Notice that the calculated value is assigned with a `P'.
 This is because the value \textbf{is a p-value} (technically, an unbiased estimate of a p-value). Consider how close it is to the value of \(P =\) 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.
@@ -8802,25 +8837,25 @@ Remember from \protect\hyperlink{sampling-with-and-without-replacement}{Chapter 
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.
 
-3.133, 2.817, 3.291, 2.299, 2.817, 3.071, 2.929, 3.071, 3.133, 3.133, 3.406, 2.658, 3.133, 2.817, 3.133, 3, 3.133
+2.817, 3.071, 2.929, 3.027, 3.027, 2.995, 3.406, 2.976, 3.178, 3.133, 2.299, 3.406, 3.133, 3.291, 3.133, 3.178, 3.027
 
 Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 2.998.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.06.
 We can resample another set of numbers to get a new mean.
 
-2.929, 3, 3, 3.071, 3.027, 2.995, 2.817, 2.976, 3.133, 3.178, 3.256, 2.995, 2.299, 3.133, 3.256, 2.299, 3.133
+2.929, 3.071, 2.658, 2.817, 3.071, 2.995, 3.133, 3, 3, 3.406, 2.976, 3.133, 3.133, 3.027, 3.133, 3.133, 3.21
 
-The mean of the above sample is 2.97.
+The mean of the above sample is 3.049.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-162-1} \caption{A distribution of bootstrapped values of ovipositor lengths from 17 measurements of a fig wasp species collected from Baja, Mexico. A total of 10000 bootstrapped means are shown, and arrows indicate the location of the 2.5 per cent (LCI) and 97.5 per cent (UCI) ranked boostrapped mean values.}\label{fig:unnamed-chunk-162}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-161-1} \caption{A distribution of bootstrapped values of ovipositor lengths from 17 measurements of a fig wasp species collected from Baja, Mexico. A total of 10000 bootstrapped means are shown, and arrows indicate the location of the 2.5 per cent (LCI) and 97.5 per cent (UCI) ranked boostrapped mean values.}\label{fig:unnamed-chunk-161}
 \end{figure}
 
 The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.899 and UCI = 3.137.
+The values using the randomisation approach are LCI = 2.903 and UCI = 3.139.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.
 

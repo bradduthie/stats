@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2024-02-25" />
+<meta name="date" content="2024-02-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -532,7 +532,7 @@ It turns out, it would be a normal distribution!</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-58"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-58-1.png" alt="A two panel figure, the first shows a barplot with 7 bars, which correspond to the probability that a given number of people have covid in a shop of 6 when the probability of infection is 0.025. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
 <p class="caption">
-Figure 16.1: A simulated demonstration of the central limit theorem. (a) Recreation of Figure 15.6 showing the probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 100.
+Figure 16.1: A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.6 showing the probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 100.
 </p>
 </div>
 <p>To demonstrate the CLT in action, Figure 16.1 shows the two distributions side-by-side.
@@ -546,7 +546,7 @@ Figure 16.2 shows this result, with the original Poisson distribution shown in F
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-59"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-59-1.png" alt="A two panel figure, the first shows a barplot is shown with 11 bars corresponding to the probability of sampling 0-10 from a Poisson distribution with a rate parameter of 1. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
 <p class="caption">
-Figure 16.2: A simulated demonstration of the central limit theorem. (a) Recreation of Figure 15.7 showing the probability distribution for the number of events occurring in a Poisson distribution with a rate parameter of 1. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 1000.
+Figure 16.2: A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.7 showing the probability distribution for the number of events occurring in a Poisson distribution with a rate parameter of 1. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 1000.
 </p>
 </div>
 <p>Finally, we can try the same approach with the continuous uniform distribution shown in Figure 15.8.
@@ -555,7 +555,7 @@ The simulated result is shown in Figure 16.3.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-60"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-60-1.png" alt="A two panel figure, the first shows a uniform probability distribution with a minimum of 1 and a maximum of 2.5. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
 <p class="caption">
-Figure 16.3: A simulated demonstration of the central limit theorem. (a) Recreation of Figure 15.8 showing a continuous uniform distribution with a minimum of 1 and a maximum of 2.5. (b) The distribution of 1000 means sampled from panel (a), where the sample size is 10000.
+Figure 16.3: A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.8 showing a continuous uniform distribution with a minimum of 1 and a maximum of 2.5. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 10000.
 </p>
 </div>
 <p>In all cases, regardless of the original sampling distribution (binomial, Poisson, or uniform), the distribution of sample <em>means</em> has the shape of a normal distribution.
@@ -571,7 +571,7 @@ Similarly, about 68.2% of the normal distribution’s probability density lies w
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-61"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-61-1.png" alt="A plot of a bell curve, with a range of the curve shaded in grey between negative sigma and positive sigma, symmetrical around the peak of the curve" width="672" />
 <p class="caption">
-Figure 16.4: A normal distribution in which the shaded region shows the area within one standard deviation of the mean (dotted line); that is, the shaded region starts on the left at the mean minus one standard deviation, then ends at the right at the mean plus one standard deviation. This shaded area encompases 68.2 per cent of the total area under the curve.
+Figure 16.4: A normal distribution in which the shaded region shows the area within one standard deviation of the mean (dotted line); that is, the shaded region starts on the left at the mean minus one standard deviation, then ends at the right at the mean plus one standard deviation. This shaded area encompasses 68.2 per cent of the total area under the curve.
 </p>
 </div>
 <p>Remember that total probability always needs to equal 1.
@@ -587,7 +587,7 @@ We could go on mapping percentages to standard deviations like this; for example
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-62"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-62-1.png" alt="A plot of a bell curve, with a range of the curve shaded in grey below an indicated value of 1.5 times sigma" width="672" />
 <p class="caption">
-Figure 16.5: A normal distribution in which the shaded region shows the area under 1.5 standard deviations of the mean (dotted line). This shaded area encompases about 93.3 per cent of the total area under the curve.
+Figure 16.5: A normal distribution in which the shaded region shows the area under 1.5 standard deviations of the mean (dotted line). This shaded area encompasses about 93.3 per cent of the total area under the curve.
 </p>
 </div>
 <p>Notice that there are no numbers on the x-axes of Figure 16.4 or 16.5.
@@ -615,7 +615,7 @@ We can see what this looks like visually in Figure 16.7.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-64"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-64-1.png" alt="A two panel figure, the first shows a curve of the standard normal distribution, to the right of which there is a histogram of data centred at a mean of 5 with a relatively high standard deviation. In the second figure, the histogram data fit nicely within the normal distribution" width="672" />
 <p class="caption">
-Figure 16.7: A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (a) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (b) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (a).
+Figure 16.7: A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (A) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (B) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (A).
 </p>
 </div>
 <p>In Figure 16.7a, we see the standard normal distribution curve represented by the dotted line, centered at <span class="math inline">\(\mu = 0\)</span> and with a standard deviation of <span class="math inline">\(\sigma = 1\)</span>.
