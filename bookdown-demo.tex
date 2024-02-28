@@ -130,7 +130,7 @@
 
 \title{Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi}
 \author{Brad Duthie}
-\date{2024-02-26}
+\date{2024-02-28}
 
 \begin{document}
 \maketitle
@@ -176,7 +176,7 @@ These applications should make it easier to visualise some of the more challengi
 \section*{Datasets used in this book}\label{datasets}}
 \addcontentsline{toc}{section}{Datasets used in this book}
 
-Datasets for all exercises (and code for shiny apps) are freely available to download from Open Science Framework (\url{https://osf.io/dxwyv}).
+Datasets for all exercises (and code for shiny apps) are freely available to download from the Open Science Framework (\url{https://osf.io/dxwyv}).
 They are also stored on GitHub (\url{https://github.com/bradduthie/stats}), and can be accessed there using direct links in footnotes.
 
 Datasets are mostly inspired by, or directly sourced from, real research in the biological and environmental sciences.
@@ -192,7 +192,7 @@ Any data introduced in this book should therefore be treated as entirely hypothe
 
 Most of this book was written in the summer and autumn of 2022, and during a busy spring semester of teaching statistics in 2023.
 I am very grateful for the feedback that I have received from undergraduate students in the 2023 and 2024 Statistical Techniques class at the University of Stirling.
-I love teaching this module, and conversations that I have had with students during weekly practical sessions have made the text clearer and corrected numerous typographical errors.
+I love teaching this class, and conversations that I have had with students during weekly practical sessions have made the text clearer and corrected numerous typographical errors.
 The book has also benefited from suggestions and corrections from numerous PhD students who served as teaching assistants on the class, including Adam Fell, Adrian Bach, Arianna Chiti, Benjamin Marshall, Chloe Pow, Daniel Atton Beckman, Eleri Kent, Rebecca Metcalf, and Shubham Pawar.
 I am especially grateful to my co-teachers Martina Quaggiotto and Ian Jones.
 Martina and Ian supported my plan to overhaul the learning material for our statistics class and put in a lot of work to fix teaching content that was not actually broken.
@@ -278,7 +278,7 @@ These topics will be relevant throughout the book, so it is important to underst
 Calculating statistics and reading statistical output requires some knowledge of numbers and basic mathematical operations.
 This section is a summary of the basic mathematical tools that will be used in introductory statistics.
 Much of this section is inspired by \citet{Courant1996} and chapter 2 of \citet{Pastor2008}.
-This section will be abridged to focus on only the numbers and mathematical operations relevant to this book.
+This section will focus on only the numbers and mathematical operations relevant to this book.
 The objective here is to present some very well-known ideas in an interesting way, and to intermix them with bits of information that might be new and interesting.
 For doing statistics, what you really \emph{need} to know here are the operations and the notation; that is, how operations such as addition, multiplication, and exponents are calculated and represented mathematically.
 
@@ -1494,10 +1494,10 @@ Measurements include fig lengths, widths, and heights in centimeters from 4 diff
 This dataset can also be downloaded online\footnote{\url{https://bradduthie.github.io/stats/data/fig_fruits.csv}}.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three diferent axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-23}
+\includegraphics[width=1\linewidth]{img/fig_data_set} \caption{Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three different axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.}\label{fig:unnamed-chunk-23}
 \end{figure}
 
-This lab will use the soil organic carbon dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
+This chapter will use the soil organic carbon dataset in \protect\hyperlink{02_summary_statistics}{Exercise 8.1} for summary statistics.
 The fig fruits dataset will be used for \protect\hyperlink{02_transforming_variables}{Exercise 8.2} on transforming variables and \protect\hyperlink{02_computing_variables}{Exercise 8.3} on computing a variable.
 Some of these exercises will be similar those of \protect\hyperlink{Chapter_3}{Chapter 3}, but in jamovi rather than a separate spreadsheet.
 
@@ -1536,7 +1536,7 @@ After typing in the new variable `soil\_type', add another variable called `orga
 The organic\_carbon variable should have a measure type of `Continuous' and a data type of `Decimal'.
 After both soil\_type and organic\_carbon variables have been set, you can click the up arrow with the upper right circle (Figure 8.4) to get the new variable window out of the way.
 
-With the two new variables created, we can now rearrange the data in a tidy way.
+With the two new variables created, we can now rearrange the data in a tidy format.
 The first 19 rows of soil\_type should be `topsoil', and the remaining 15 rows should be `subsoil'.
 To do this quickly, you can write `topsoil' in the first row of soil\_type and copy-paste into the remaining rows.
 You can do the same to write `subsoil' in the remaining rows 20-34.
@@ -1674,7 +1674,7 @@ To do this, click on the `Data' tab at the top of the toolbar again, then click 
 Your screen should look like the image in Figure 8.5.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above}\label{fig:unnamed-chunk-29}
+\includegraphics[width=1\linewidth]{img/jamovi_transform_fig_length} \caption{The jamovi toolbar where the tab 'Data' is selected. The length (cm) column is highlighted and will be transformed by clicking on the Transform button in the toolbar above.}\label{fig:unnamed-chunk-29}
 \end{figure}
 
 With the `Length\_cm' column highlighted, click on the `Transform' button in the toolbar.
@@ -1907,14 +1907,14 @@ Make sure that you are confident that you can report your answer to a given numb
 \section{Rounding}\label{rounding}}
 
 Often if you are asked to report a number to a specific number of decimals or significant figures, you will need to round the number.
-Rounding reduces the number of significant digits in a number, which might be necessary if a number that we calculate has more significant digits than we are justified in expressing.
+Rounding reduces the number of significant figures in a number, which might be necessary if a number that we calculate has more significant figures than we are justified in expressing.
 There are different rules for rounding numbers, but this book will follow \citet{Sokal1995}.
 When rounding to the nearest decimal, the last decimal written should not be changed if the number that immediately follows is 0, 1, 2, 3, or 4.
 If the number that immediately follows is 5, 6, 7, 8, or 9, then the last decimal written should be increased by 1.
 
-For example, if we wanted to round the number 3.141593 to 2 significant digits, then we would write it as 3.1 because the digit that immediately follows (i.e., the third digit) is 4.
-If we wanted to round the number to 5 significant digits, then we would write it as 3.1416 because the digit that immediately follows is 9.
-And if we wanted to round 3.141593 to 4 significant digits, then we would write it as 3.142 because the digit that immediately follows is 5.
+For example, if we wanted to round the number 3.141593 to 2 significant figures, then we would write it as 3.1 because the digit that immediately follows (i.e., the third digit) is 4.
+If we wanted to round the number to 5 significant figures, then we would write it as 3.1416 because the digit that immediately follows is 9.
+And if we wanted to round 3.141593 to 4 significant figures, then we would write it as 3.142 because the digit that immediately follows is 5.
 Note that this does not just apply for decimals.
 If we wanted to round 1253 to 3 significant figures, then we would round by writing it as 1250.
 
@@ -2577,26 +2577,26 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 \caption{\label{tab:unnamed-chunk-40}Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.59 & 0.56 & 0.87 & 0.81 & 0.64 & 0.60 & 0.79 & 0.70 & 0.63 & 0.68 \\
-Sample\_2 & 0.66 & 0.60 & 0.55 & 0.66 & 0.72 & 0.85 & 0.85 & 0.68 & 0.72 & 0.76 \\
-Sample\_3 & 0.69 & 0.85 & 0.70 & 0.63 & 0.70 & 0.70 & 0.67 & 0.61 & 0.71 & 0.73 \\
-Sample\_4 & 0.59 & 0.64 & 0.54 & 0.49 & 0.81 & 0.79 & 0.74 & 0.68 & 0.60 & 0.78 \\
-Sample\_5 & 0.65 & 0.73 & 0.78 & 0.62 & 0.78 & 0.77 & 0.78 & 0.77 & 0.89 & 0.63 \\
-Sample\_6 & 0.80 & 0.78 & 0.62 & 0.64 & 0.82 & 0.71 & 0.67 & 0.44 & 0.73 & 0.70 \\
-Sample\_7 & 0.87 & 0.48 & 0.69 & 0.80 & 0.68 & 0.65 & 0.64 & 0.61 & 0.63 & 0.68 \\
-Sample\_8 & 0.53 & 0.85 & 0.65 & 0.79 & 0.82 & 0.61 & 0.69 & 0.56 & 0.61 & 0.71 \\
-Sample\_9 & 0.59 & 0.91 & 0.64 & 0.51 & 0.85 & 0.77 & 0.66 & 0.69 & 0.63 & 0.53 \\
-Sample\_10 & 0.77 & 0.70 & 0.58 & 0.69 & 0.60 & 0.63 & 0.70 & 0.62 & 0.65 & 0.77 \\
-Sample\_11 & 0.73 & 0.59 & 0.95 & 0.74 & 0.86 & 0.75 & 0.78 & 0.55 & 0.87 & 0.94 \\
-Sample\_12 & 0.71 & 0.74 & 0.56 & 0.52 & 0.62 & 0.61 & 0.76 & 0.45 & 0.79 & 0.88 \\
-Sample\_13 & 0.82 & 0.58 & 0.74 & 0.66 & 0.74 & 0.61 & 0.78 & 0.54 & 0.71 & 0.81 \\
-Sample\_14 & 0.64 & 0.73 & 0.79 & 0.53 & 0.89 & 0.89 & 0.62 & 0.76 & 0.58 & 0.68 \\
-Sample\_15 & 0.57 & 0.78 & 0.72 & 0.66 & 0.75 & 0.62 & 0.88 & 0.86 & 0.78 & 0.69 \\
-Sample\_16 & 0.62 & 0.91 & 0.64 & 0.74 & 0.89 & 0.60 & 0.72 & 0.74 & 0.81 & 0.62 \\
-Sample\_17 & 0.60 & 0.68 & 0.73 & 0.66 & 0.84 & 0.67 & 0.91 & 0.70 & 0.59 & 0.60 \\
-Sample\_18 & 0.62 & 0.65 & 0.60 & 0.74 & 0.78 & 0.59 & 0.73 & 0.51 & 0.54 & 0.50 \\
-Sample\_19 & 0.78 & 0.72 & 0.83 & 0.64 & 0.75 & 0.64 & 0.70 & 0.71 & 0.65 & 0.76 \\
-Sample\_20 & 0.82 & 0.61 & 0.82 & 0.74 & 0.60 & 0.58 & 0.77 & 0.60 & 0.85 & 0.62 \\
+Sample\_1 & 0.73 & 0.57 & 0.71 & 0.82 & 0.66 & 0.64 & 0.67 & 0.66 & 0.82 & 0.62 \\
+Sample\_2 & 0.73 & 0.74 & 0.58 & 0.74 & 0.59 & 0.83 & 0.76 & 0.71 & 0.61 & 0.84 \\
+Sample\_3 & 0.44 & 0.69 & 0.56 & 0.71 & 0.74 & 0.76 & 0.35 & 0.91 & 0.86 & 0.64 \\
+Sample\_4 & 0.52 & 0.63 & 0.66 & 0.53 & 0.63 & 0.79 & 0.73 & 0.68 & 0.86 & 0.79 \\
+Sample\_5 & 0.66 & 0.67 & 0.63 & 0.64 & 0.80 & 0.60 & 0.59 & 0.86 & 0.59 & 0.71 \\
+Sample\_6 & 0.64 & 0.80 & 0.64 & 0.86 & 0.76 & 0.67 & 0.70 & 0.64 & 0.69 & 0.73 \\
+Sample\_7 & 0.66 & 0.67 & 0.66 & 0.88 & 0.69 & 0.49 & 0.72 & 0.62 & 0.75 & 0.65 \\
+Sample\_8 & 0.83 & 0.76 & 0.81 & 0.64 & 0.76 & 0.78 & 0.73 & 0.78 & 0.63 & 0.75 \\
+Sample\_9 & 0.74 & 0.52 & 0.73 & 0.84 & 0.72 & 0.79 & 0.67 & 0.73 & 0.74 & 0.69 \\
+Sample\_10 & 0.90 & 0.73 & 0.67 & 0.84 & 0.79 & 0.72 & 0.69 & 0.60 & 0.65 & 0.68 \\
+Sample\_11 & 0.84 & 0.70 & 0.63 & 0.77 & 0.68 & 0.61 & 0.72 & 0.53 & 0.68 & 0.64 \\
+Sample\_12 & 0.81 & 0.50 & 0.59 & 0.55 & 0.64 & 0.97 & 0.71 & 0.43 & 0.96 & 0.70 \\
+Sample\_13 & 0.71 & 0.51 & 0.71 & 0.83 & 0.80 & 0.58 & 0.58 & 0.81 & 0.60 & 0.78 \\
+Sample\_14 & 0.73 & 0.73 & 0.67 & 0.82 & 0.79 & 0.58 & 0.63 & 0.73 & 0.57 & 0.63 \\
+Sample\_15 & 0.80 & 0.84 & 0.72 & 0.68 & 0.81 & 0.78 & 0.59 & 0.69 & 0.62 & 0.67 \\
+Sample\_16 & 0.83 & 0.76 & 0.58 & 0.67 & 0.64 & 0.83 & 0.77 & 0.56 & 0.60 & 0.90 \\
+Sample\_17 & 0.65 & 0.80 & 0.78 & 0.78 & 0.79 & 0.71 & 0.70 & 0.67 & 0.57 & 0.67 \\
+Sample\_18 & 0.73 & 0.66 & 0.82 & 0.55 & 0.75 & 0.66 & 0.70 & 0.61 & 0.64 & 0.77 \\
+Sample\_19 & 0.66 & 0.80 & 0.48 & 0.77 & 0.69 & 0.65 & 0.87 & 0.57 & 0.67 & 0.46 \\
+Sample\_20 & 0.70 & 0.75 & 0.68 & 0.51 & 0.77 & 0.50 & 0.91 & 0.58 & 0.65 & 0.55 \\
 \bottomrule
 \end{longtable}
 
@@ -2604,19 +2604,19 @@ We can calculate the mean of each sample by calculating the mean of each row.
 These 20 means are reported below.
 
 \begin{verbatim}
-      [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.687 0.705 0.699 0.666 0.740 0.691 0.673 0.682 0.678 0.671
-[2,] 0.776 0.664 0.699 0.711 0.731 0.729 0.698 0.626 0.718 0.701
+     [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
+[1,] 0.69 0.713 0.666 0.682 0.675 0.713 0.679 0.747 0.717 0.727
+[2,] 0.68 0.686 0.691 0.688 0.720 0.714 0.712 0.689 0.662 0.660
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0324927.
+The standard deviation of the 20 sample means reported above is 0.0235539.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.1043552.
+The standard deviation of Sample 1 is \(s =\) 0.0815135.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.1043552}{\sqrt{10}} = 0.033.\]
+\[s = \frac{0.0815135}{\sqrt{10}} = 0.0257768.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0324927, and the estimate from just using the standard error formula and data from only Sample 1 is 0.033.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0235539, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0257768.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{skew-and-kurtosis}{%
@@ -2800,7 +2800,7 @@ Instead of one histogram of petiole diameters, you will now see 7 different hist
 This might be useful, but all of these histograms together are a bit busy.
 Instead, we can use a box-whisker plot to compare the distributions of petiole diameters across different sites.
 
-To create a box plot, simply check `Box plot' from the Plots options (you might want to uncheck `Histogram', but it is not necessary).
+To create a boxplot, simply check `Box plot' from the Plots options (you might want to uncheck `Histogram', but it is not necessary).
 You should now see all of the different sites on the x-axis of the newly created boxplot and a summary of the petiole diameters on the y-axis.
 Based on the boxplot, which site appears to have the highest and lowest median petiole diameter?
 
@@ -3466,7 +3466,7 @@ Since we almost never know what the true population mean (\(\mu\)) and standard 
 \[z = \frac{x - \bar{x}}{s}.\]
 
 We could then use \citep{Jamovi2022}, an interactive application, or an old-fashioned z-table\footnote{Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map \(z\) scores to probabilities was using a \href{https://www.z-table.com/}{z table}. The table would have rows and columns mapping to different \(z\) values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The text \citet{Sokal1995} comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.} to find that only about 2\% of values are expected to be higher than \(x = 9.1\) in our original dataset.
-These z scores will become especially useful for calculating confidence intervals in \protect\hyperlink{Chapter_18}{Chapter 18}.
+These z-scores will become especially useful for calculating confidence intervals in \protect\hyperlink{Chapter_18}{Chapter 18}.
 They can also be useful for comparing values from variables or statistics measured on different scales \citep{Sokal1995, Cheadle2003, Adams2016}.
 
 \hypertarget{Chapter_17}{%
@@ -3767,11 +3767,10 @@ To demonstrate the central limit theorem, we need to download and install anothe
 This time, go to `Modules', and from the `Available' tab, scroll down until you find `Rj' in the jamovi library.
 Install `Rj', then a new button `R' should become available in the toolbar.
 This will allow us to run a bit of script using the coding language R.
-We will introduce R again in \protect\hyperlink{Chapter_36}{Chapter 36}, but for now you will not need to do anymore than copying and pasting.
 Click on the new `R' button in the toolbar and select `Rj Editor' from the pulldown menu.
 You will see an open editor; this is where the code will go.
 If it has some code in it already (e.g., \texttt{\#\ summary(data{[}1:3{]})}), just delete it so that we can start with a clean slate.
-Copy and paste the following lines into the Rjeditor.
+Copy and paste the following lines into the Rj editor.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3940,7 +3939,7 @@ Once it is downloaded, go to the `Demonstrations' button in the jamovi toolbar a
 \includegraphics[width=0.8\linewidth]{img/jamovi_clt} \caption{Jamovi interface for the 'Demonstrations' module, which allows users to randomly generate data from a specific source distribution (normal, uniform, geometric, lognormal, and binary), sample size, and number of trials (i.e., variables)}\label{fig:unnamed-chunk-74}
 \end{figure}
 
-To replicate what we did in the Rjeditor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 17.7).
+To replicate what we did in the Rj editor above, we just need to set the `Source distribution' to `uniform' using the pulldown menu, set the sample size to 200, and set the number of trials to 40 (Figure 17.7).
 Try doing this, then look at the histogram generated to the lower right.
 It should look similar, but not identical, to the histogram produced with the R code.
 Now try increasing the number of trials to 200.
@@ -4096,7 +4095,7 @@ It is useful to see what these different intervals actually look like when calcu
 Unfortunately, the CI calculations from the this section are a bit of an idealised situation.
 We assumed that the sample means are normally distributed around the population mean.
 While we know that this \emph{should} be the case as our sample size increases, it is not quite true when our sample is small.
-In practice, what this means is that our z-scores are usually not going to be the best values to use when calculating CIs, although they are often good enough when a sample size is large\footnote{What defines a `small' or a `large' sample is a bit arbitrary. A popular suggestion \citep[e.g.,][ page 145]{Sokal1995} is that any \(N < 30\) is too small to use z-scores, but any cut-off \(N\) is going to be somewhat arbitrary. Technically, the z score is not \textbf{completely} accurate until \(N \to \infty\), but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in \protect\hyperlink{Chapter_19}{Chapter 19}.}.
+In practice, what this means is that our z-scores are usually not going to be the best values to use when calculating CIs, although they are often good enough when a sample size is large\footnote{What defines a `small' or a `large' sample is a bit arbitrary. A popular suggestion \citep[e.g.,][ page 145]{Sokal1995} is that any \(N < 30\) is too small to use z-scores, but any cut-off \(N\) is going to be somewhat arbitrary. Technically, the z-score is not \textbf{completely} accurate until \(N \to \infty\), but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in \protect\hyperlink{Chapter_19}{Chapter 19}.}.
 We will see what to do about this in \protect\hyperlink{Chapter_19}{Chapter 19}, but first we turn to the special case of how to calculate CIs from binomial proportions.
 
 \hypertarget{binomial-distribution-cis}{%
@@ -4124,7 +4123,7 @@ Similarly, to calculate the upper 95\% CI,
 \[UCI_{95\%} = 0.55 + 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.704.\]
 
 Our conclusion is that, based on our sample, 95\% of the time we flip a coin 40 times, the true mean \(p\) will be somewhere between 0.396 and 0.704.
-These are quite wide CIs, which suggests that our flip of \(\hat{p} = 0.55\) would not be particularly remarkable even if the coin was fair (\(p = 0.5\)).\footnote{You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of \(p\) too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the \(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\). The problem arises when the sample size is low, or when \(p\) is close to 0 or 1, and we are trying to map the z score to probability density. For this reason, it is best to stick with \(\sqrt{\hat{p}(1-\hat{p})/N}\). There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.}
+These are quite wide CIs, which suggests that our flip of \(\hat{p} = 0.55\) would not be particularly remarkable even if the coin was fair (\(p = 0.5\)).\footnote{You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of \(p\) too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the \(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\). The problem arises when the sample size is low, or when \(p\) is close to 0 or 1, and we are trying to map the z-score to probability density. For this reason, it is best to stick with \(\sqrt{\hat{p}(1-\hat{p})/N}\). There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.}
 This CI is called the Wald interval.
 It is easy to calculate, and is instructive for showing another way that CIs can be calculated.
 But it does not actually do a very good job of accurately producing 95\% CIs around a proportion, especially when our proportion is very low or high \citep{Schilling2014, Andersson2023}.
@@ -4156,12 +4155,12 @@ Instead of using the standard normal distribution, we need to use a t-distributi
 The difference between the standard normal distribution and t-distribution depends on our sample size, \(N\).
 As \(N\) increases, we become more confident that the sample variance will be close to the true population variance (i.e., the deviation of \(s^{2}\) from \(\sigma^{2}\) decreases).
 At low \(N\), our t-distribution is much wider and flatter than the standard normal distribution.
-As \(N\) becomes large\footnote{How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as \(N \to \infty\), but \citet{Sokal1995} suggest that they are indistinguishable for all intents and purposes once \(N > 30\). It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as jamovi or R will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.}, the t-distribution becomes basically indistinguishable from the standard normal distribution.
+As \(N\) becomes large\footnote{How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as \(N \to \infty\), but \citet{Sokal1995} suggest that they are indistinguishable for all intents and purposes once \(N > 30\). It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as jamovi will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.}, the t-distribution becomes basically indistinguishable from the standard normal distribution.
 For calculating CIs from a sample, especially for small sample sizes, it is therefore best to use t-scores instead of z-scores.
 The idea is the same; we are just multiplying the standard errors by a different constant to get our CIs.
 For example, in \protect\hyperlink{Chapter_18}{Chapter 18}, we multiplied the standard error of 20 cat masses by \(z = 1.96\) because 95\% of the probability density lies between \(z = -1.96\) and \(z = 1.96\) in the standard normal distribution.
 In truth, we should have multiplied by -2.093 because we only had a sample size of \(N = 20\).
-Figure 19.1 shows the difference between the standard normal distribution and the more appropriate t-distribution\footnote{We can define the t-distribution mathematically \citep{Miller2004}, but it is an absolute beast, \[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\] In this equation, \(v\) is the degrees of freedom. The \(\Gamma\left(\right)\) is called a ``gamma function'', which is basically the equivalent of a factorial function, but for any number z (not just integers), such that \(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\) (where \(z > -1\), or, even more technically, the real part of \(z > -1\)). If z is an integer n, then \(\Gamma\left({n + 1}\right) = n!\) \citep{Borowski2005}. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of 2 different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution \citep{Miller2004}. We will look at the Chi-square in \protect\hyperlink{Week_9}{Week 9}. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.}.
+Figure 19.1 shows the difference between the standard normal distribution and the more appropriate t-distribution\footnote{We can define the t-distribution mathematically \citep{Miller2004}, but it is an absolute beast, \[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\] In this equation, \(v\) is the degrees of freedom. The \(\Gamma\left(\right)\) is called a ``gamma function'', which is basically the equivalent of a factorial function, but for any number z (not just integers), such that \(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\) (where \(z > -1\), or, even more technically, the real part of \(z > -1\)). If z is an integer n, then \(\Gamma\left({n + 1}\right) = n!\) \citep{Borowski2005}. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of 2 different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution \citep{Miller2004}. We will look at the Chi-square in \protect\hyperlink{Week_8}{Parv VIII}. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.}.
 
 \begin{figure}
 \includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-77-1} \caption{A standard normal probability distribution showing 95 per cent of probability density surrounding the mean (grey). On top of the standard normal distribution in grey, red dotted lines show a t-distribution with 19 degrees of freedom. Red shading shows 95 per cent of the probability density of the t-distribution.}\label{fig:unnamed-chunk-77}
@@ -4207,10 +4206,10 @@ This chapter focuses on applying the concepts from \protect\hyperlink{Chapter_18
 Specifically, we will practice calculating confidence intervals (CIs).
 There will be 4 exercises focused on calculating confidence intervals in jamovi.
 To complete the first 2 exercises, you will need the distrACTION module in jamovi.
-If you need to download it again, the instructions to do this are in \protect\hyperlink{Chapter_17}{Chapter 17} \href{https://bradduthie.github.io/SCIU4T4/Chapter_17.html\#probabilities-from-a-normal-distribution}{Exercise 16.2} (briefly, go to the Modules option and select `jamovi library', then scroll down until you find the `distraACTION' module).
+If you need to download it again, the instructions to do this are in the second exercise of \protect\hyperlink{Chapter_17}{Chapter 17} (briefly, go to the Modules option and select `jamovi library', then scroll down until you find the `distraACTION' module).
 
-The data for this lab are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project \citep{Fuentes-Montemayor2022, Fuentes-Montemayor2022a}.
-The Wren project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts \url{https://www.wren-project.com/}.
+The data for this chapter are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project \citep{Fuentes-Montemayor2022, Fuentes-Montemayor2022a}.
+The Wren project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts (\url{https://www.wren-project.com/}).
 It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.
 The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
 Here we will focus on observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.
@@ -4218,7 +4217,7 @@ Here we will focus on observations of tree diameter at breast height (DBH) and g
 \hypertarget{confidence-intervals-with-distraction}{%
 \section{Confidence intervals with distrACTION}\label{confidence-intervals-with-distraction}}
 
-First, it is important to download the disrACTION module if it has not been downloaded already.
+First, it is important to download the distrACTION module if it has not been downloaded already.
 If the distrACTION module has already been downloaded (see \protect\hyperlink{Chapter_17}{Chapter 17}), it should appear in the toolbar of jamovi.
 Once the distrACTION module has been made available, download the WrEN trees dataset\footnote{\url{https://bradduthie.github.io/stats/data/wren_trees.xlsx}} and open it in a spreadsheet.
 Notice that the dataset is not in a tidy format.
@@ -4380,7 +4379,7 @@ Lower 95\% CI: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 Upper 95\% CI: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 How similar are the estimates for lower and upper CIs when using z- versus t-scores.
-Reflect on any similarities or differences that you see in all of these different ways of calculating confidence intervals
+Reflect on any similarities or differences that you see in all of these different ways of calculating confidence intervals.
 
 \begin{verbatim}
 
@@ -4414,7 +4413,7 @@ In Exercises 20.1 and 20.2, you used different approaches for calculating 95\% C
 Now, fill in Table 20.1 reporting 95\% CIs calculated using each distribution from the 4 sites using any method you prefer.
 
 \begin{longtable}[]{@{}llll@{}}
-\caption{Table 20.1: 95 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\tabularnewline
+\caption{Table 20.1: 95 per cent confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\tabularnewline
 \toprule
 Site & N & 95\% CIs (Normal) & 95\% CIs (t-distribution) \\
 \midrule
@@ -4433,7 +4432,7 @@ Site & N & 95\% CIs (Normal) & 95\% CIs (t-distribution) \\
 Next, do the same in Table 20.2, but now calculate 99\% CIs instead of 95\% CIs.
 
 \begin{longtable}[]{@{}llll@{}}
-\caption{Table 20.2: 99 per cent Confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\tabularnewline
+\caption{Table 20.2: 99 per cent confidence intervals calculated for tree diameter at breast height (DBH) in cm. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.}\tabularnewline
 \toprule
 Site & N & 99\% CIs (Normal) & 99\% CIs (t-distribution) \\
 \midrule
@@ -4610,7 +4609,7 @@ The three chapters in this part of the book explain the fundamental concepts of 
   The concepts and terminology in this chapter are essential for understanding the more advanced tests in later chapters.
 \item
   \protect\hyperlink{Chapter_22}{Chapter 22} introduces the t-test and its non-parametric alternatives.
-  These tests include the one sample t-test, the independent samples t-test, the paired sample t-test, the Wilcoxon test, and the Mann-Whitney U test.
+  Tests include the one sample t-test, the independent samples t-test, the paired samples t-test, the Wilcoxon test, and the Mann-Whitney U test.
   The chapter also explains the assumptions underlying these different tests.
 \item
   \protect\hyperlink{Chapter_23}{Chapter 23} is a guide for using jamovi to run the statistical tests that are introduced in Chapter 22.
@@ -4638,7 +4637,7 @@ From \protect\hyperlink{Chapter_15.htmlux5cux23binomial-distribution}{Chapter 15
 The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 21.1).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-80-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the pobabilities associated with this number of flips out of 100 being heads are so low.}\label{fig:unnamed-chunk-80}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-80-1} \caption{Probability distribution for the number of times that a flipped coin lands on heads in 100 trials. Note that some areas of parameter space on the x-axis are cut off because the probabilities associated with this number of flips out of 100 being heads are so low.}\label{fig:unnamed-chunk-80}
 \end{figure}
 
 The distribution in Figure 21.1 is what we expect to happen if the coin we are flipping 100 times is actually fair.
@@ -4736,7 +4735,7 @@ A p-value specifically \emph{assumes that the null hypothesis is true}, then ask
 In the case of our coin flipping example, we cannot really know the probability that the coin is fair or unfair (depending on your philosophy of statistics, this might not even make conceptual sense).
 But we can say that \textbf{if} the coin \textbf{is} fair, then an observation of \(\leq 45\) would occur with a probability of \(P = 0.0967\).
 
-Before actually calculating a p-value, we typically set a threshold level (\(\alpha\)) below which we will conclude that our p-value is \textbf{statistically significant}\footnote{Like p-values, setting thresholds below which we consider \(P\) to be significant is at least somewhat controversial \citep{McShane2019, Mayo2021}. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this lab workbook (it is important to understand them and interpret them).}.
+Before actually calculating a p-value, we typically set a threshold level (\(\alpha\)) below which we will conclude that our p-value is \textbf{statistically significant}\footnote{Like p-values, setting thresholds below which we consider \(P\) to be significant is at least somewhat controversial \citep{McShane2019, Mayo2021}. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this book (it is important to understand them and interpret them).}.
 As mentioned in \protect\hyperlink{how-ridiculous-is-our-hypothesis}{section 21.1}, we traditionally set \(\alpha= 0.05\) in the biological and environmental sciences (although rarely \(\alpha = 0.01\) is used).
 This means that if \(P \leq 0.05\), then we reject \(H_{0}\) and conclude that our observation is statistically significant.
 It also means that even when \(H_{0}\) really is true (e.g., the coin is really fair), we will mistakenly reject \(H_{0}\) with a probability of 0.05 (i.e., 5\% of the time).
@@ -4837,7 +4836,7 @@ Our t-statistic is therefore 2.496623 (note that a t-statistic can also be negat
 We can see where this value falls on the t-distribution with 9 degrees of freedom in Figure 22.1.
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-81-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.49556 indicated with a downard arrow.}\label{fig:unnamed-chunk-81}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-81-1} \caption{A t-distribution is shown with a calculated t-statistic of 2.49556 indicated with a downward arrow.}\label{fig:unnamed-chunk-81}
 \end{figure}
 
 The t-distribution in Figure 22.1 is the probability distribution if \(H_{0}\) is true (i.e., the student test scores were sampled from a distribution with a mean of \(\mu_{0} = 60\)).
@@ -4927,11 +4926,11 @@ Because this p-value exceeds our critical value of \(\alpha = 0.05\), we do not 
 We therefore should conclude that the mean of test scores from the current year (\(\bar{y}_{1}\)) is not significantly different from the mean of test scores in the previous year (\(\bar{y}_{2}\)).
 The biology teacher in our example might therefore conclude that mean test results have not improved from the previous year.
 
-\hypertarget{paired-sample-t-test}{%
-\section{Paired sample t-test}\label{paired-sample-t-test}}
+\hypertarget{paired-samples-t-test}{%
+\section{paired samples t-test}\label{paired-samples-t-test}}
 
 There is one more type of t-test to consider.
-The paired sample t-test is applied when the data points in one sample can be naturally paired with those in another sample.
+The paired samples t-test is applied when the data points in one sample can be naturally paired with those in another sample.
 In this case, data points between samples are not independent.
 For example, we can consider the student test scores (\(y_{1}\)) yet again.
 
@@ -5012,7 +5011,7 @@ There really is not a definitive answer to this question, and the truth is that 
 
 In this book, we will take the traditional approach of running a statistical test called the Shapiro-Wilk test to test the null hypothesis that data are normally distributed.
 If we reject the null hypothesis (when \(P < 0.05\)), then we will conclude that the assumption of normality is violated and the t-test is not appropriate.
-The details of how the Shaprio-Wilk test work are not important for now, but the test can be easily run using jamovi \citep{Jamovi2022}.
+The details of how the Shapiro-Wilk test work are not important for now, but the test can be easily run using jamovi \citep{Jamovi2022}.
 If we reject the null hypothesis that the data are normally distributed, then we can use one of two methods to run our statistical test.
 
 \begin{enumerate}
@@ -5021,11 +5020,11 @@ If we reject the null hypothesis that the data are normally distributed, then we
 \item
   Transform the data in some way (e.g., take the log of all values) to improve normality.
 \item
-  Use a non-parameteric alternative test.
+  Use a non-parametric alternative test.
 \end{enumerate}
 
-The word `non-parameteric' in this context just means that there are no assumptions (or very few) about the shape of the distribution \citep{Dytham2011}.
-We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent sample t-test (Mann-Whitney U test) in the next section.
+The word `non-parametric' in this context just means that there are no assumptions (or very few) about the shape of the distribution \citep{Dytham2011}.
+We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent samples t-test (Mann-Whitney U test) in the next section.
 But first, we can show how transformations can be used to improve the fit of the data to model assumptions.
 
 Often data will have a skewed distribution (see \protect\hyperlink{Chapter_13}{Chapter 13}).
@@ -5055,7 +5054,7 @@ These alternatives include the Wilcoxon test and the Mann-Whitney U test.
 The Wilcoxon test (also called the Wilcoxon signed-rank test) is the non-parametric alternative to a one sample t-test (or a paired t-test).
 Instead of using the actual data, the Wilcoxon test ranks all of the values in the dataset, then sums up their signs (either positive or negative).
 The general idea is that we can compare the sum of the \emph{ranks} of the actual data with what would be predicted by the null hypothesis.
-It tests the null hypothesis that the \emph{median} (\(M\)) is significantly different from some given value\footnote{Actually, the Wilcoxon signed-rank test technically tests the null hypothesis that two distributions are identical, not just that the medians are identical \citep{Johnson1995, Lumley2002}. Note that if one distribution has a higher variance than another, or is differently skewed, it will also affect the ranks. In other words, if we want to compare medians, then we need to assume that the distributions have the same shape \citep{Lumley2002}. Because of this, and because the central limit theorem ensures that means will be normally distributed given a sufficiently high sample size (in which case, t-test assumptions are more likely to be satisfied), some researchers suggest that nonparametric statistics such as the Wilcoxon signed rank test should be used with caution \citep{Johnson1995}.}.
+It tests the null hypothesis that the \emph{median} (\(M\)) is significantly different from some given value\footnote{Actually, the Wilcoxon signed-rank test technically tests the null hypothesis that two distributions are identical, not just that the medians are identical \citep{Johnson1995, Lumley2002}. Note that if one distribution has a higher variance than another, or is differently skewed, it will also affect the ranks. In other words, if we want to compare medians, then we need to assume that the distributions have the same shape \citep{Lumley2002}. Because of this, and because the central limit theorem ensures that means will be normally distributed given a sufficiently high sample size (in which case, t-test assumptions are more likely to be satisfied), some researchers suggest that non-parametric statistics such as the Wilcoxon signed rank test should be used with caution \citep{Johnson1995}.}.
 An example will make it easier to see how it works.
 We can use the same hypothetical dataset on student test scores.
 
@@ -5116,7 +5115,7 @@ Since this p-value is less than our threshold of \(\alpha = 0.05\), we can rejec
 
 Note that we can also use a Wilcoxon signed rank test as a non-parametric equivalent to a paired t-test.
 In this case, instead of subtracting out the null hypothesis of our median value (e.g., \(H_{0}: M = 60\) in the example above), we just need to subtract the paired values.
-Consider again the example of the 2 different tests introduced for the \protect\hyperlink{paired-sample-t-test}{paired sample t-test} above (Table 22.2).
+Consider again the example of the 2 different tests introduced for the \protect\hyperlink{paired-sample-t-test}{paired samples t-test} above (Table 22.2).
 
 \begin{table}
 
@@ -5257,8 +5256,8 @@ From the above example of test scores,
 \[U_{2} = 72 - \frac{9\left(9 + 1 \right)}{2} = 27.\]
 
 Whichever of \(U_{1}\) or \(U_{2}\) is lower\footnote{Note that you could also take the higher of the two values \citep{Sokal1995}, which is what the statistical programming language R uses \citep{Rproject}; jamovi uses the lower of the two \citep{Jamovi2022}. The null distribution from which the p-value would be calculate would just be different in this case.} is set to \(U\), so for our example, \(U = 27\).
-Note that if \(y_{1}\) and \(y_{2}\) have similar medians, then \(U\) will be relatively low.
-But if \(y_{1}\) and \(y_{2}\) have much different medians, then \(U\) will be relatively high.
+Note that if \(y_{1}\) and \(y_{2}\) have similar medians, then \(U\) will be relatively high.
+But if \(y_{1}\) and \(y_{2}\) have much different medians, then \(U\) will be relatively low.
 One way to think about this is that if \(y_{1}\) and \(y_{2}\) are very different, then one of the two samples should have very low ranks, and the other should have very high ranks \citep{Sokal1995}.
 But if \(y_{1}\) and \(y_{2}\) are very similar, then their summed ranks should be nearly the same.
 Hence, if the deviation of \(U\) is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of \(y_{1}\) and \(y_{2}\) are identical, the we can reject \(H_{0}\).
@@ -5276,14 +5275,14 @@ In general, the first step in approaching these tests is to determine if the dat
 In a one sample test, the objective is to test the null hypothesis that the mean (or median) equals a specific value.
 In an independent samples test, there are two different groups, and the objective is to test the null hypothesis that the groups have the same mean (or median).
 In a paired samples test, there are two groups, but individual values are naturally paired between each group, and the objective is to test the null hypothesis that the difference between paired values is zero\footnote{Note, you could also test the null hypothesis that the difference between paired values is some value other than zero, but this is quite rare in practice.}.
-If assumptions of the t-test are violated, then it might be necessary to use a data transformation or a non-parametric test such as the Wilcoxon test (in place of a one sample or paired sample t-test) or a Mann-Whitney U test (in place of an independent samples t-test).
+If assumptions of the t-test are violated, then it might be necessary to use a data transformation or a non-parametric test such as the Wilcoxon test (in place of a one sample or paired samples t-test) or a Mann-Whitney U test (in place of an independent samples t-test).
 
 \hypertarget{Chapter_23}{%
 \chapter{\texorpdfstring{\emph{Practical}. Hypothesis testing and t-tests}{Practical. Hypothesis testing and t-tests}}\label{Chapter_23}}
 
-This lab focuses on applying the concepts about hypothesis testing from \protect\hyperlink{Chapter_21}{Chapter 21} and the statistical tests from \protect\hyperlink{Chapter_22}{Chapter 22} in jamovi \citep{Jamovi2022}.
+This chapter focuses on applying the concepts about hypothesis testing from \protect\hyperlink{Chapter_21}{Chapter 21} and the statistical tests from \protect\hyperlink{Chapter_22}{Chapter 22} in jamovi \citep{Jamovi2022}.
 There will be 5 exercises in total, which will focus on using t-tests and their non-parametric equivalents.
-The data for this lab focus on an example of biology and environmental sciences education.
+The data for this chapter focus on an example of biology and environmental sciences education.
 Similar to the example in \protect\hyperlink{Chapter_22}{Chapter 22}, it uses datasets of student test scores (note that these data are entirely fictional; we have not used scores from real students).
 We will use test data from 2022\footnote{\url{https://bradduthie.github.io/stats/data/student_scores_year_1.csv}} and 2023\footnote{\url{https://bradduthie.github.io/stats/data/student_scores_year_2.csv}}.
 Variables in these datasets include student IDs and scores from 3 different tests.
@@ -5468,7 +5467,7 @@ Consequently, what should our alternative hypothesis (\(H_{A}\)) be?
 
 Use the same procedure that you did in Exercise 1 to test this new hypothesis concerning Test 3 scores.
 First, check the assumption that the Test 3 scores are normally distributed.
-What is the p-value of the Shaprio-Wilk test this time?
+What is the p-value of the Shapiro-Wilk test this time?
 
 P = \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -5481,7 +5480,7 @@ Do the points fall along the diagonal line?
 
 \end{verbatim}
 
-Based on the Shaprio-Wilk test and Q-Q plot, is it safe to assume that the Test 3 scores are normally distributed?
+Based on the Shapiro-Wilk test and Q-Q plot, is it safe to assume that the Test 3 scores are normally distributed?
 
 \begin{verbatim}
 
@@ -5696,8 +5695,8 @@ The concepts here follow from Part VI, but focus more broadly on hypothesis test
 
 \begin{itemize}
 \item
-  \protect\hyperlink{Chapter_24}{Chapter 24} introduces the general idea of the ANOVA, how it is calculated, and the F distribution that is used to test the null hypothesis that all groups have the same mean.
-  The F distribution, like the t-distribution that was first introduced in \protect\hyperlink{Chapter_19}{Chapter 19}, appears in many places in statistics.
+  \protect\hyperlink{Chapter_24}{Chapter 24} introduces the general idea of the ANOVA, how it is calculated, and the F-distribution that is used to test the null hypothesis that all groups have the same mean.
+  The F-distribution, like the t-distribution that was first introduced in \protect\hyperlink{Chapter_19}{Chapter 19}, appears in many places in statistics.
   Chapter 24 also outlines the assumptions of ANOVA.
 \item
   \protect\hyperlink{Chapter_25}{Chapter 25} introduces multiple comparisons tests.
@@ -5799,7 +5798,7 @@ For example, the ratio of the variances for samples 1 and 2 is \citep{Sokal1995}
 
 Note that if the variances of samples 1 and 2 are the exact same, then F = 1.
 If the variances are very different, then F is either very low (if Variance 1 \textless{} Variance 2) or very high (if Variance 1 \textgreater{} Variance 2).
-To test the null hypothesis that samples 1 and 2 have the same variance, we therefore need to map the calculated F to the probability density of the F distribution.
+To test the null hypothesis that samples 1 and 2 have the same variance, we therefore need to map the calculated F to the probability density of the F-distribution.
 Again, the general idea is the same as comparing a t-score to the t-distribution in \protect\hyperlink{one-sample-t-test}{Chapter 22.1}.
 Recall that the shape of the t-distribution is slightly different for different degrees of freedom (df).
 As df increases, the t-distribution starts to resemble the normal distribution.
@@ -5808,13 +5807,13 @@ One degree of freedom is needed for Variance 1, and a second degree of freedom i
 Together, these 2 degrees of freedom will determine the shape of the F-distribution (Figure 24.1).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-95-1} \caption{Probability density functions for 3 different F distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).}\label{fig:unnamed-chunk-95}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-95-1} \caption{Probability density functions for 3 different F-distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).}\label{fig:unnamed-chunk-95}
 \end{figure}
 
-Figure 24.1 shows an F distribution for 3 different combinations of degrees of freedom.
-The F distribution changes its shape considerably given different df values (visualising this is easier with an interactive application\footnote{\url{https://bradduthie.shinyapps.io/f_distribution/}}).
+Figure 24.1 shows an F-distribution for 3 different combinations of degrees of freedom.
+The F-distribution changes its shape considerably given different df values (visualising this is easier with an interactive application\footnote{\url{https://bradduthie.shinyapps.io/f_distribution/}}).
 
-It is not necessary to memorise how the F distribution changes with different degrees of freedom.
+It is not necessary to memorise how the F-distribution changes with different degrees of freedom.
 The point is that the probability distribution changes given different degrees of freedom, and that the relationship between probability and the value on the x-axis (F) works like other distributions such as the normal or t-distribution.
 The entire area under the curve must sum to 1, and we can calculate the area above and below any F value (rather, we can get jamovi to do this for us).
 Consequently, we can use the F-distribution as the null distribution for the ratio of two variances.
@@ -5850,7 +5849,8 @@ First, note that the \textbf{grand mean} (i.e., the mean across all species) is 
 We can also get the sample mean values of each group, individually.
 For example, for Het1,
 
-\[\bar{x}_{Het1} = \frac{2.122 + 1.938 + 1.765 + 1.7}{4} = 1.88125\]
+\[\bar{x}_{Het1} = \frac{2.122 + 1.938 + 1.765 + 1.7}{4} = 1.88125.\]
+
 We can calculate the means for all 5 fig wasps (Table 24.3).
 
 \begin{longtable}[]{@{}rrrrr@{}}
@@ -5956,13 +5956,13 @@ To calculate F, we just need to divide \(MS_{among}\) by \(MS_{within}\),
 \[F = \frac{0.0912967}{0.0281398} = 3.2443976.\]
 
 Remember that if the mean variance among groups is the same as the mean variance within groups (i.e., \(MS_{among} = MS_{within}\)), then F = 1.
-We can test the null hypothesis that \(MS_{among} = MS_{within}\) against the alternative hypothesis that there is more variation among groups than within groups (\(H_{A}: MS_{among} > MS_{within}\)) using the F distribution (note that this is a one-tailed test).
+We can test the null hypothesis that \(MS_{among} = MS_{within}\) against the alternative hypothesis that there is more variation among groups than within groups (\(H_{A}: MS_{among} > MS_{within}\)) using the F-distribution (note that this is a one-tailed test).
 In the example of 5 fig wasp species, \(df_{among} = 4\) and \(df_{within} = 15\),
-so we need an F distribution with 4 degrees of freedom in the numerator and 15 degrees of freedom in the denominator\footnote{Note that \(df_{among} = 4\) and \(df_{within} = 15\) sum to 19, which is the total df of the entire dataset (\(N - 1 = 20 - 1 = 19\)). This is always the case for the ANOVA; the overall df constrains the degrees of freedom among and within groups.}.
+so we need an F-distribution with 4 degrees of freedom in the numerator and 15 degrees of freedom in the denominator\footnote{Note that \(df_{among} = 4\) and \(df_{within} = 15\) sum to 19, which is the total df of the entire dataset (\(N - 1 = 20 - 1 = 19\)). This is always the case for the ANOVA; the overall df constrains the degrees of freedom among and within groups.}.
 We can use an interactive app{[}\^{}shiny\_F{]} to get the F-distribution and p-value (Figure 24.2).
 
 \begin{figure}
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-99-1} \caption{F distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.}\label{fig:unnamed-chunk-99}
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-99-1} \caption{F-distribution with df = 4 for the numerator and df = 15 for the denominator. The arrow indicates an F value calculated from fig wasp species wing length measurements for 5 different species and 4 measurements per species. Fig wasp wing lengths were collected from a site near La Paz in Baja, Mexico 2010.}\label{fig:unnamed-chunk-99}
 \end{figure}
 
 The area shaded in grey in Figure 24.2, where F \textgreater{} 3.2443976, is approximately \(P =\) 0.041762.
@@ -6049,16 +6049,16 @@ Nevertheless, we need some way to correct for the Type I error problem explained
 That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (P \textless{} 0.05) where none really exists.
 A way to avoid this inflated Type I error rate is to set our significance threshold to be lower than the usual \(\alpha = 0.05\).
 We can, for example, divide our \(\alpha\) value by the total number of pair-wise t-tests tests that we run.
-This is called a Bonferonni correction \citep{Dytham2011}, and it is an especially cautious approach to post hoc comparisons between groups \citep{Narum2006}.
+This is called a Bonferroni correction \citep{Dytham2011}, and it is an especially cautious approach to post hoc comparisons between groups \citep{Narum2006}.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the 5 species.
-This means that if we were to apply a Bonferonni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when \(P < 0.005\) instead of \(P < 0.05\).
+This means that if we were to apply a Bonferroni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when \(P < 0.005\) instead of \(P < 0.05\).
 
 Another approach to correcting for multiple comparisons is a Tukey's honestly significant difference test (Tukey's HSD, or just a `Tukey's test').
-The general idea of a Tukey's test is the same as the Bonferonni.
+The general idea of a Tukey's test is the same as the Bonferroni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at \(\alpha = 0.05\)).
 The Tukey's test does this by using a modified t-test, with a t-distribution called the ``studentised range distribution'' that applies the range of mean group values (i.e., \(max(\bar{x}) - min(\bar{x})\)) and uses the sample variance across the groups with the highest and lowest sample means \citep{Tukey1949, Box1978}.
 
-Multiple comparisons tests can be run automatically in statistical programs such as jamovi and R.
+Multiple comparisons tests can be run automatically in statistical programs such as jamovi.
 Figure 25.1 shows a post-hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.
 
 \begin{figure}
@@ -6066,10 +6066,10 @@ Figure 25.1 shows a post-hoc comparisons table for all pair-wise combinations of
 \end{figure}
 
 The column `p' in Figure 25.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
-The columns \(p_{tukey}\) and \(p_{bonferonni}\) show corrected p-values for the Tukey's test and Bonferroni corrected t-test, respectively.
-We can interpret these p-values as usual, concluding that two species have different means if \(P < 0.05\) (i.e., jamovi does the correction for us; we do not need to divide \(\alpha = 0.05\) to figure out what the significance threshold should be given the Bonferonni correction).
+The columns \(p_{tukey}\) and \(p_{Bonferroni}\) show corrected p-values for the Tukey's test and Bonferroni corrected t-test, respectively.
+We can interpret these p-values as usual, concluding that two species have different means if \(P < 0.05\) (i.e., jamovi does the correction for us; we do not need to divide \(\alpha = 0.05\) to figure out what the significance threshold should be given the Bonferroni correction).
 
-Note that from Figure 25.1, it appears that both the Tukey's test and the Bonferonni correction fail to find that any pair of species have significantly different means.
+Note that from Figure 25.1, it appears that both the Tukey's test and the Bonferroni correction fail to find that any pair of species have significantly different means.
 This does not mean that we have done the test incorrectly.
 The multiple comparisons tests are asking a slightly different question than the one-way ANOVA.
 The multiple comparisons tests are testing the null hypothesis that two \emph{particular} species have the same mean wing lengths.
@@ -6336,7 +6336,7 @@ The data for this chapter are inspired by the doctoral work of Dr Lidia De Sousa
 This work included a nutrient analysis of agricultural soil in different regions of Angola.
 Measuring soil nutrient concentrations is essential for assessing soil quality, and these data include measurements of Nitrogen (N), Phosphorus (P), and Potassium (K) concentrations.
 Here we will focus on testing whether or not the concentrations of N, P, and K differ among 2 different sites and 3 soil profiles (upper, middle, and lower).
-This lab uses the Angola soils dataset\footnote{\href{https://bradduthie.github.io/stats/data/Angola_soils.csv}{https://bradduthie.github.io/stats/data/Angoal\_soils.csv}}.
+This chapter uses the Angola soils dataset\footnote{\href{https://bradduthie.github.io/stats/data/Angola_soils.csv}{https://bradduthie.github.io/stats/data/Angoal\_soils.csv}}.
 All concentrations of Nitrogen, Phosphorus, and Potassium are given in parts per million (ppm).
 
 \hypertarget{one-way-anova-site}{%
@@ -6353,7 +6353,7 @@ What are the null (\(H_{0}\)) and alternative (\(H_{A}\)) hypotheses for the t-t
 \(H_{A}:\) \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Before running a t-test, remember that we need to check the assumptions of a t-test to see if any of them are violated (\protect\hyperlink{assumptions-of-t-tests}{see Chapter 22.4}).
-Use the \textbf{Assumption Checks} in jamovi as we did in (\protect\hyperlink{independent-samples-t-test-1}{Chapter 23.4}) to test for normality and homogeneity of variances in Nitrogen concentration.
+Use the \textbf{Assumption Checks} in jamovi as we did in \protect\hyperlink{independent-samples-t-test-1}{Chapter 23.4} to test for normality and homogeneity of variances in Nitrogen concentration.
 What can you conclude from these 2 tests?
 
 Normality conclusion: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
@@ -6372,7 +6372,7 @@ What is the p-value of the test, and what conclusion do you make about Nitrogen 
 Conclusion: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 Now we will use an ANOVA to test if the mean Nitrogen concentration differs between sites.
-Remember from \protect\hyperlink{Chapter_24}{Chapter 24} that the ANOVA compares the variance among groups to the variance within groups, calculating an F statistic and finding where F is in the null F distribution.
+Remember from \protect\hyperlink{Chapter_24}{Chapter 24} that the ANOVA compares the variance among groups to the variance within groups, calculating an F statistic and finding where F is in the null F-distribution.
 To run an ANOVA, navigate to the `Analyses' tab in jamovi, then select the `ANOVA' button in the toolbar.
 From the ANOVA pulldown, select `One-Way ANOVA'.
 After selecting the one-way ANOVA, a familiar interface will open up.
@@ -6396,8 +6396,8 @@ df2: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 \(P\): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Remember from \protect\hyperlink{Chapter_24}{Chapter 24} that the ANOVA calculates an F statistic (mean variance among groups divided by mean variance withing groups).
-This F statistic is then compared to the null F distribution with the correct degrees of freedom to calculate the p-value.
+Remember from \protect\hyperlink{Chapter_24}{Chapter 24} that the ANOVA calculates an F-statistic (mean variance among groups divided by mean variance withing groups).
+This F statistic is then compared to the null F-distribution with the correct degrees of freedom to calculate the p-value.
 Use the \href{https://bradduthie.shinyapps.io/f_distribution/}{interactive app} to visualise this from the above jamovi output\footnote{\url{https://bradduthie.shinyapps.io/f_distribution/}}.
 To do this, move the `Variance 1' slider in the app until it is approximately equal to F, then change df1 and df2 to the values above.
 From the \href{https://bradduthie.shinyapps.io/f_distribution/}{interactive app}, what is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F?
@@ -6535,19 +6535,19 @@ From this output, what can we conclude about the difference among soil profiles?
 
 \end{verbatim}
 
-Next, instead of running a Tukey's HSD test, we will use a series of t-tests with a Bonferonni correction.
-Check the box for `Bonferonni' in the ANOVA Post Hoc Tests input panel, then find the p-values for the Bonferonni correction (\(p_{bonferonni}\)).
+Next, instead of running a Tukey's HSD test, we will use a series of t-tests with a Bonferroni correction.
+Check the box for `Bonferroni' in the ANOVA Post Hoc Tests input panel, then find the p-values for the Bonferroni correction (\(p_{Bonferroni}\)).
 Note that we do not need to change the \(\alpha\) threshold ourselves (i.e., we do not need to see if P is less than \(\alpha = 0.05/3 = 0.016667\) instead of \(\alpha = 0.05\)).
-Jamovi modifies the p-values appropriately for the Bonferonni correction (we can see the difference by clicking the checkbox for `No correction' in the Post Hocs Tests input panel).
-Report the p-values for the Bonferonni correction below.
+Jamovi modifies the p-values appropriately for the Bonferroni correction (we can see the difference by clicking the checkbox for `No correction' in the Post Hocs Tests input panel).
+Report the p-values for the Bonferroni correction below.
 
-Bonferonni Lower - Middle: P = \_\_\_\_\_\_\_\_\_\_\_\_\_
+Bonferroni Lower - Middle: P = \_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Bonferonni Lower - Upper: P = \_\_\_\_\_\_\_\_\_\_\_\_\_
+Bonferroni Lower - Upper: P = \_\_\_\_\_\_\_\_\_\_\_\_\_
 
-Bonferonni Middle - Upper: P = \_\_\_\_\_\_\_\_\_\_\_\_\_
+Bonferroni Middle - Upper: P = \_\_\_\_\_\_\_\_\_\_\_\_\_
 
-In general, how are the p-values different between the Tukey's HSD and the Boneferroni correction?
+In general, how are the p-values different between the Tukey's HSD and the Bonferroni correction?
 Are they about the same, higher, or lower?
 
 \begin{verbatim}
@@ -6582,7 +6582,7 @@ Do the data appear to be normally distributed?
 
 \end{verbatim}
 
-We can test the assumption of normality using a Shaprio-Wilk test.
+We can test the assumption of normality using a Shapiro-Wilk test.
 This can be done in the Descriptives panel of jamovi, or we can do it in the One-Way ANOVA panel.
 To do it in the one-way ANOVA panel, first select `ANOVA' from the pull down menu as we did at the end of Exercise 28.2.
 In the ANOVA interface, place `Potassium' into the `Dependent Variable' box and `Profile' in the `Fixed Factors' box.
@@ -6731,7 +6731,7 @@ This part of the book is broken down into chapters focused on counts and correla
   Count data are defined by natural numbers of discrete entities (e.g., the number of trees or birds in a site).
   We can test statistical hypotheses on count data using a Chi-square (\(\chi^{2}\)) distribution, which is introduced in the first part of the chapter.
   Like the t-distribution and F-distribution, the Chi-square distribution also appears in many places in statistics.
-  In this chapter, applications of the Chi-squared distribution are the Chi-squared goodness of fit test, which tests if observed counts are significant different from some expectation, and the Chi-square test of association, which tests if counts of two different categories are associated.
+  In this chapter, applications of the Chi-squared distribution are the Chi-square goodness of fit test, which tests if observed counts are significant different from some expectation, and the Chi-square test of association, which tests if counts of two different categories are associated.
 \item
   \protect\hyperlink{Chapter_30}{Chapter 30} focuses on continuous data.
   Continuous data can take any real value (e.g., body length or mass).
@@ -6766,7 +6766,7 @@ By this logic, if we were to collect 100 flowers at random from the field, we wo
 If we actually went out and collected 100 flowers at random, but found 46 to be red and 54 to be blue, would this be sufficiently different from our expectation to reject the null hypothesis that the probability of sampling a red versus blue flower is the same?
 We could test this null hypothesis using a Chi-square goodness of fit test (\protect\hyperlink{the-chi-square-distribution}{Chapter 29.1}).
 Similarly, we might want to test if 2 different count variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
-We could test this kind of hypothesis using a Chi-squared test of association (\protect\hyperlink{Chapter_31}{Chapter 31}).
+We could test this kind of hypothesis using a Chi-square test of association (\protect\hyperlink{Chapter_31}{Chapter 31}).
 
 Before introducing the Chi-square goodness of fit test or the Chi-square test of association, it makes sense to first introduce the Chi-square (\(\chi^{2}\)) distribution.
 The general motivation for introducing the Chi-square distribution is the same as it was for the t-distribution (\protect\hyperlink{Chapter_19}{Chapter 19}) or F-distribution (\protect\hyperlink{the-f-distribution}{Chapter 24.1}).
@@ -6833,8 +6833,8 @@ The \(\chi^{2}\) distribution is in fact a useful approximation for testing coun
 Nevertheless, we can use the \(\chi^{2}\) distribution as a tool for testing whether observed counts are significantly different from expected counts.
 The first test that we will look at is the goodness of fit test.
 
-\hypertarget{chi-squared-goodness-of-fit}{%
-\section{Chi-squared goodness of fit}\label{chi-squared-goodness-of-fit}}
+\hypertarget{chi-square-goodness-of-fit}{%
+\section{Chi-square goodness of fit}\label{chi-square-goodness-of-fit}}
 
 The first kind of test that we will consider for count data is the goodness of fit test.
 In this test, we have some number of counts that we expect to observe (e.g., expected counts of red versus blue flowers), then compare this expectation to the counts that we actually observe.
@@ -6896,8 +6896,8 @@ For \(n\) categories, the more general equation for the \(\chi^{2}\) statistic i
 We can therefore use this general equation to calculate a \(\chi^{2}\) for any number of categories (\(n\)).
 Next, we will look at testing associations between counts in different types of categories.
 
-\hypertarget{chi-squared-test-of-association}{%
-\section{Chi-squared test of association}\label{chi-squared-test-of-association}}
+\hypertarget{chi-square-test-of-association}{%
+\section{Chi-square test of association}\label{chi-square-test-of-association}}
 
 The second kind of test that we will consider for count data is the Chi-square test of association.
 While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on 2 different categorical variables.
@@ -6943,9 +6943,9 @@ Medium dams are the most popular choice for Android users, but they are the leas
 Nevertheless, could this just be due to chance?
 If it were due to chance, then how unlikely are the counts in Table 29.1?
 In other words, if Android and MacOS users in the whole population really do choose dam sizes at the same frequencies, then what is the probability of getting a sample of 60 players in which the choices are as or more unbalanced as this?
-This is what we want to answer with our Chi-squared test of association.
+This is what we want to answer with our Chi-square test of association.
 
-The general idea is the same as with the Chi-squared goodness of fit test.
+The general idea is the same as with the Chi-square goodness of fit test.
 We have our observed values (Table 29.1).
 We now need to find the expected values to calculate a \(\chi^{2}\) value.
 But the expected values are now a bit more complicated.
@@ -7083,8 +7083,8 @@ This works for all of combinations of rows and columns, so we could do it to fin
 \chapter{Correlation}\label{Chapter_30}}
 
 This chapter focuses on the association between \protect\hyperlink{Chapter_5}{types of variables} that are quantitative (i.e., represented by numbers).
-It is similar to the \protect\hyperlink{chi-squared-test-of-association}{Chi-squared test of association} from \protect\hyperlink{Chapter_29}{Chapter 29} in the sense that it is about how variables are associated.
-The focus of the \protect\hyperlink{chi-squared-test-of-association}{Chi-squared test of association} was on the association when data were categorical (e.g., `Android' or `MacOS' operating system).
+It is similar to the \protect\hyperlink{chi-squared-test-of-association}{Chi-square test of association} from \protect\hyperlink{Chapter_29}{Chapter 29} in the sense that it is about how variables are associated.
+The focus of the \protect\hyperlink{chi-squared-test-of-association}{Chi-square test of association} was on the association when data were categorical (e.g., `Android' or `MacOS' operating system).
 Here we focus instead on the association when data are numeric.
 But the concept is generally the same; are variables independent, or does knowing something about one variable tell us something about the other variable?
 For example, does knowing something about the latitude of a location tell us something about its average yearly temperature?
@@ -7164,8 +7164,8 @@ Figure 30.3 shows scatterplots for 4 different correlation coefficients between 
 \includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-128-1} \caption{Examples of scatterplots with different correlation coefficients (r) between 2 variables (x and y).}\label{fig:unnamed-chunk-128}
 \end{figure}
 
-We will look at 2 types of correlation coefficient, the Pearson product moment correlation coefficient and the Spearman rank correlation coefficient.
-The 2 are basically the same; the Spearman rank correlation coefficient is just a correlation of the ranks of values instead of the actual values.
+We will look at 2 types of correlation coefficient, the Pearson product moment correlation coefficient and the Spearman's rank correlation coefficient.
+The 2 are basically the same; the Spearman's rank correlation coefficient is just a correlation of the ranks of values instead of the actual values.
 
 \hypertarget{pearson-product-moment-correlation-coefficient}{%
 \subsection{Pearson product moment correlation coefficient}\label{pearson-product-moment-correlation-coefficient}}
@@ -7258,14 +7258,14 @@ Our final value is \(r_{x, y} = 0.7556784\).
 As suggested by the scatterplot in Figure 30.2, thorax and abdomen lengths are highly correlated.
 We will test whether or not this value of \(r\) is statistically significant in \protect\hyperlink{correlation-hypothesis-testing}{Chapter 24.3} below, but first we will introduce the Spearman's rank correlation coefficient.
 
-\hypertarget{spearman-rank-correlation-coefficient}{%
-\subsection{Spearman rank correlation coefficient}\label{spearman-rank-correlation-coefficient}}
+\hypertarget{spearmans-rank-correlation-coefficient}{%
+\subsection{Spearman's rank correlation coefficient}\label{spearmans-rank-correlation-coefficient}}
 
 We have seen how the \emph{ranks} of data can be substituted in place of the actual values.
 This has been useful when data violate the assumptions of a statistical test, and we need a non-parametric test instead (e.g., the \protect\hyperlink{wilcoxon-test-1}{Wilcoxon signed rank test}, the \protect\hyperlink{mann-whitney-u-test-1}{Mann-Whitney U test}, or the \protect\hyperlink{Chapter_26}{Kruskall-Wallis H test}).
 We can use the same trick for the correlation coefficient.
-The Spearman rank correlation coefficient is calculated the exact same way as the Pearson product moment correlation coefficient, except on the ranks of values.
-To calculate the Spearman rank correlation coefficient for the fig wasp example in \protect\hyperlink{pearson-product-moment-correlation-coefficient}{the previous section}, we just need to rank the thorax and abdomen lengths from 1 to 11, then calculate \(r\) using the rank values instead of the actual measurements of length.
+The Spearman's rank correlation coefficient is calculated the exact same way as the Pearson product moment correlation coefficient, except on the ranks of values.
+To calculate the Spearman's rank correlation coefficient for the fig wasp example in \protect\hyperlink{pearson-product-moment-correlation-coefficient}{the previous section}, we just need to rank the thorax and abdomen lengths from 1 to 11, then calculate \(r\) using the rank values instead of the actual measurements of length.
 Figure 30.3 shows the same 11 fig wasp measurements as Figures 30.1 and 30.2, but with columns added to show the ranks of thorax and abdomen lengths.
 
 \begin{longtable}[]{@{}rrrrr@{}}
@@ -7295,7 +7295,7 @@ Wasp (i) & Thorax & Thorax rank & Abdomen & Abdomen rank \\
 Note from Table 30.3 that the lowest value of Thorax is 0.621, so it gets a rank of 1.
 The highest value of Thorax is 0.852, so it gets a rank of 11.
 We do the same for abdomen ranks.
-To get the Spearman rank correlation coefficient, we just calculate \(r\) using the ranks.
+To get the Spearman's rank correlation coefficient, we just calculate \(r\) using the ranks.
 The ranks number from 1 to 11 for both variables, so the mean rank is 6 and the standard deviation is 3.317 for both thorax and abdomen ranks.
 We can then go through each row and calculate \(\left(x_{i} - \bar{x} \right) \times \left(y_{i} - \bar{y} \right)\) using the ranks.
 For the first row, this gives us \(\left(4 - 6 \right) \left(9 - 6 \right) = -6\).
@@ -7304,9 +7304,9 @@ To calculate \(r\),
 
 \[r_{rank(x),rank(y)} = \frac{6.4}{3.317 \times 3.317}\]
 
-Our Spearman rank correlation coefficient is therefore \(r = 0.582\), which is a bit lower than our Pearson product moment correlation was.
+Our Spearman's rank correlation coefficient is therefore \(r = 0.582\), which is a bit lower than our Pearson product moment correlation was.
 The key point here is that the definition of the correlation coefficient has not changed; we are just using the ranks of our measurements instead of the measurements themselves.
-The reason why we might want to use the Spearman rank correlation coefficient instead of the Pearson product moment correlation coefficient is explained in the next section.
+The reason why we might want to use the Spearman's rank correlation coefficient instead of the Pearson product moment correlation coefficient is explained in the next section.
 
 \hypertarget{correlation-hypothesis-testing}{%
 \section{Correlation hypothesis testing}\label{correlation-hypothesis-testing}}
@@ -7327,7 +7327,7 @@ Note that \(H_{A}\) above is for a two-tailed test, in which we do not care abou
 We could also use a one-tailed test if our \(H_{A}\) is that the correlation coefficient is greater than (or less than) zero.
 
 How do we actually test the null hypothesis?
-As it turns out, the sample correlation coefficient (\(r\)) will be approximately t-distributed around a true mean (\(\rho\)) with a t-score defined by \(r - \rho\) divided by its standard error (\(SE(r)\))\footnote{We can calculate the standard error of r as \citep{Rahman1968}, \[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\] But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.},
+As it turns out, the sample correlation coefficient (\(r\)) will be approximately t-distributed around a true correlation (\(\rho\)) with a t-score defined by \(r - \rho\) divided by its standard error (\(SE(r)\))\footnote{We can calculate the standard error of r as \citep{Rahman1968}, \[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\] But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.},
 
 \[t = \frac{r - \rho}{SE(r)}.\]
 
@@ -7336,12 +7336,12 @@ Jamovi will use this equation to test whether or not the correlation coefficient
 The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
 In \protect\hyperlink{one-sample-t-test}{Chapter 22.1}, we saw that the one sample t-test defined \(t\) as the deviation of the sample mean from the true mean, divided by the standard error.
 Here we are doing the same for the correlation coefficient.
-One consequence of this is that, like the one sample t-test, the test of the correlation coefficient assumes that \(r\) will be normally distributed around the true mean \(\rho\).
+One consequence of this is that, like the one sample t-test, the test of the correlation coefficient assumes that \(r\) will be normally distributed around the true correlation \(\rho\).
 If this is not the case, and the assumption of normality is violated, then the test might have a misleading Type I error rate.
 
 To be cautious, we should check whether or not the variables that we are correlating are normally distributed (especially if the sample size is small).
 If they are normally distributed, then we can use the Pearson's product moment correlation to test the null hypothesis.
-If the assumption of normality is violated, then we might consider using the nonparametric Spearman rank correlation coefficient instead.
+If the assumption of normality is violated, then we might consider using the nonparametric Spearman's rank correlation coefficient instead.
 The fig wasp thorax and abdomen lengths from Table 30.1 are normally distributed, so we can use the Pearson product moment correlation coefficient to test whether or not the correlation between these two variables is significant.
 In jamovi, the t-score is not even reported as output when using a correlation test.
 We only see \(r\) and the p-value (Figure 30.4).
@@ -7356,13 +7356,13 @@ Since our p-value is less than 0.05, we can reject the null hypothesis that fig 
 \hypertarget{Chapter_31}{%
 \chapter{\texorpdfstring{\emph{Practical}. Analysis of counts and correlations}{Practical. Analysis of counts and correlations}}\label{Chapter_31}}
 
-This lab focuses on applying the concepts from \protect\hyperlink{Chapter_29}{Chapter 29} and \protect\hyperlink{Chapter_30}{Chapter 30} in jamovi \citep{Jamovi2022}.
-Exercises in this practical will use the \protect\hyperlink{chi-squared-goodness-of-fit}{Chi-squared goodness of fit} test, the \protect\hyperlink{chi-squared-test-of-association}{Chi-squared test of association},
+This chapter focuses on applying the concepts from \protect\hyperlink{Chapter_29}{Chapter 29} and \protect\hyperlink{Chapter_30}{Chapter 30} in jamovi \citep{Jamovi2022}.
+Exercises in this chapter will use the \protect\hyperlink{chi-squared-goodness-of-fit}{Chi-square goodness of fit} test, the \protect\hyperlink{chi-squared-test-of-association}{Chi-square test of association},
 and the \protect\hyperlink{correlation-hypothesis-testing}{correlation coefficient}.
-For all of these examples, this practical will use a dataset inspired by \citet{Burrows2022}.
+For all of these examples, this chapter will use a dataset inspired by \citet{Burrows2022}.
 This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies.
 
-The practical will use the bumblebee dataset\footnote{\url{https://bradduthie.github.io/stats/data/bumblebee.csv}}.
+The chapter will use the bumblebee dataset\footnote{\url{https://bradduthie.github.io/stats/data/bumblebee.csv}}.
 This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30 day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (\(CO_2\)) in micromoles per minute, and the daily volume of nectar consumed by the be in ml (nectar).
 
 \hypertarget{survival-goodness-of-fit}{%
@@ -7474,11 +7474,11 @@ From this output, what can you conclude about how bees were taken from the colon
 
 \end{verbatim}
 
-Note that the distrACTION module in jamovi includes a \(\chi^{2}\) distribution (called `x2-Distribution'), which you can use to compute probabilities and quantiles in the same way as we did for previous distributions in the module.
+Note that the distrACTION module in jamovi includes a \(\chi^{2}\) distribution (called `x2-Distribution'), which you can use to compute probabilities and quantiles in the same way as we did for previous distributions in the book.
 Next, we will move on to a \(\chi^{2}\) test of association between colony and survival.
 
-\hypertarget{chi-square-test-of-association}{%
-\section{Chi-Square test of association}\label{chi-square-test-of-association}}
+\hypertarget{chi-square-test-of-association-1}{%
+\section{Chi-Square test of association}\label{chi-square-test-of-association-1}}
 
 Suppose we want to know if there is an association between bee colony and bee survival.
 We can use a \(\chi^{2}\) test of association to investigate this question.
@@ -7579,7 +7579,7 @@ What are the null and alternative hypotheses of this test?
 Before we test whether or not the correlation coefficient (\(r\)) is significant, we need to know which correlation coefficient to use.
 Remember from \protect\hyperlink{correlation-hypothesis-testing}{Chapter 30.3} that a test of the Pearson product moment correlation assumes that the sample \(r\) is normally distributed around the true correlation coefficient.
 If both of our variables (mass and \(CO_{2}\)) are normally distributed, then we can be confident that this assumption will not be violated.
-But if one or both variables are not normally distributed, then we should consider using the Spearman rank correlation coefficient instead.
+But if one or both variables are not normally distributed, then we should consider using the Spearman's rank correlation coefficient instead.
 To test if mass and \(CO_{2}\) are normally distributed, navigate to the Descriptives panel in jamovi (where we usually find the summary statistics of variables).
 Place mass and \(CO_{2}\) in the `Variables' box, then scroll down and notice that there is a checkbox under \textbf{Normality} for `Shapiro-Wilk'.
 Check this box, then find the p-values for the Shapiro-Wilk test of normality in the panel to the right.
@@ -7603,7 +7603,7 @@ The Correlation Matrix option will pull up a new window in jamovi (Figure 31.4).
 \end{figure}
 
 Notice that the Pearson product moment correlation is selected in the checkbox of Figure 31.4 (`Pearson').
-Immediately below this checkbox is a box called `Spearman', which would report the Spearman rank correlation coefficient test.
+Immediately below this checkbox is a box called `Spearman', which would report the Spearman's rank correlation coefficient test.
 Below the \textbf{Correlation Coefficients} options, there are options for \textbf{Hypothesis}.
 Remember that we are interested in the alternative hypothesis that mass and \(CO_{2}\) are negatively correlated, so we should select the radio button `Correlated negatively'.
 
@@ -7652,7 +7652,7 @@ Based on these results, should we reject or not reject the null hypothesis?
 
 \(H_{0}\): \_\_\_\_\_\_\_\_\_\_\_\_
 
-Suppose that we had used the Pearson product moment correlation coefficient instead of the Spearman rank correlation coefficient.
+Suppose that we had used the Pearson product moment correlation coefficient instead of the Spearman's rank correlation coefficient.
 Would we have made the same conclusion about the correlation (or lack thereof) between bee mass and nectar consumption?
 Why or why not?
 
@@ -7749,7 +7749,7 @@ The variables used to predict are, in contrast, called `independent' variables.
   This chapter explains what happens when multiple independent variables are included in a linear regression model, and especially how to interpret (partial) regression coefficients in multiple regression, and why they differ from the regression coefficients calculated in simple linear regression.
   The chapter then concludes by introducing a coefficient of determination that adjusts for multiple independent variables.
 \item
-  \protect\hyperlink{Chapter_34}{\#Chapter 34} demonstrates how to run simple and multiple linear regression models in jamovi.
+  \protect\hyperlink{Chapter_34}{Chapter 34} demonstrates how to run simple and multiple linear regression models in jamovi.
   This chapter includes five exercises and uses a dataset that is inspired by ongoing work to understand how pyrogenic carbon is stored in soils.
   Pyrogenic carbon is produced when biomass is burned and becomes sequestered in soil.
   Exercises in this chapter test whether or not environmental variables (e.g., rainfall and soil depth) are significant for predicting the concentration of pyrogenic carbon in soils.
@@ -7822,6 +7822,7 @@ How this line is calculated will be explained later, but for now there are 2 imp
 First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
 For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
 At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 \(mm^{3}\).
+
 This leads to the second important concept to takeaway from Figure 32.2.
 In the absence of any other information (including latitude), our best guess of what any given fruit's volume will be is just the mean (\(\bar{y} =\) 1930.1).
 A key aim of regression is to test if the regression line can do a significantly better job of predicting what fruit volume will be.
@@ -8276,7 +8277,7 @@ This attempts to account for the inevitable tendency of \(R^{2}\) to increase wi
 \hypertarget{Chapter_34}{%
 \chapter{\texorpdfstring{\emph{Practical}. Using regression}{Practical. Using regression}}\label{Chapter_34}}
 
-This lab focuses on practical exercises to apply the concepts in \protect\hyperlink{Chapter_32}{Chapter 32} and \protect\hyperlink{Chapter_33}{Chapter 33} in jamovi \citep{Jamovi2022}.
+This chapter focuses on practical exercises to apply the concepts in \protect\hyperlink{Chapter_32}{Chapter 32} and \protect\hyperlink{Chapter_33}{Chapter 33} in jamovi \citep{Jamovi2022}.
 The 5 exercises in this practical will apply simple linear regression (Exercises 34.1, 34.2, and 34.5) or multiple regression (34.3 and 34.4).
 The dataset used in this practical is inspired by the work of Dr Carmen Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke\footnote{Please note that the data in this practical are for educational purposes only. They are not the data that were actually collected by the researchers.}.
 Their work focuses on carbon storage in Gabon.
@@ -8545,7 +8546,7 @@ Which one is most appropriate to use for interpreting the multiple regression?
 
 \end{verbatim}
 
-What is the null hypothesis tested with the F value and the P value shown in the Model Fit Measures table?
+What is the null hypothesis tested with the F value and the p-value shown in the Model Fit Measures table?
 
 \(H_{0}\): \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
@@ -8664,10 +8665,9 @@ We calculate some test statistic, then compare this test statistic to a pre-dete
 This chapter introduces a different approach.
 Instead of using a pre-determined null distribution, we will build the null distribution using our data.
 This approach is not one that it is often introduced in introductory statistics texts.
-It is included here for 3 reasons.
+It is included here for two reasons.
 First, randomisation presents a different way of thinking statistically without introducing an entirely different philosophical or methodological approach such as likelihood \citep{Edwards1972} or Bayesian statistics \citep{Lee1997}.
 Second, it helps reinforce the concept of what null hypothesis testing is and what p-values are.
-Third, it introduces one of many motivations for learning a bit of coding in R (see \protect\hyperlink{Chapter_36}{Chapter 36}), which is the statistical programming language on which jamovi is built \citep{Jamovi2022, Rproject}.
 Before explaining the randomisation approach, it is useful to summarise the parametric hypothesis tests introduced in earlier chapters.
 
 \hypertarget{summary-of-parametric-hypothesis-testing}{%
@@ -8699,7 +8699,7 @@ The reason that we use these distributions in statistical hypothesis testing is 
 But this is not always the case.
 Recall that sometimes the assumptions of a particular statistical test were not met.
 In this case, a non-parametric alternative was introduced.
-The non-parameteric test used the ranks of data instead of the actual values (e.g., the \protect\hyperlink{wilcoxon-test}{Wilcoxon}, \protect\hyperlink{mann-whitney-u-test}{Mann-Whitney U}, \protect\hyperlink{Chapter_26}{Kruskall-Wallis H}, and \protect\hyperlink{spearman-rank-correlation-coefficient}{Spearman rank correlation coefficient} tests).
+The non-parametric test used the ranks of data instead of the actual values (e.g., the \protect\hyperlink{wilcoxon-test}{Wilcoxon}, \protect\hyperlink{mann-whitney-u-test}{Mann-Whitney U}, \protect\hyperlink{Chapter_26}{Kruskall-Wallis H}, and \protect\hyperlink{spearman-rank-correlation-coefficient}{Spearman's rank correlation coefficient} tests).
 Randomisation uses a different approach.
 
 \hypertarget{randomisation-approach}{%
@@ -8776,12 +8776,12 @@ The histogram below shows the distribution of the difference between species mea
 
 Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2147 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2058 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),
 
-\[P = \frac{2147 + 1}{99999 + 1}.\]
+\[P = \frac{2058 + 1}{99999 + 1}.\]
 
-When we calculate the above, we get a value of 0.02148.
+When we calculate the above, we get a value of 0.02059.
 Notice that the calculated value is assigned with a `P'.
 This is because the value \textbf{is a p-value} (technically, an unbiased estimate of a p-value). Consider how close it is to the value of \(P =\) 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.
@@ -8829,7 +8829,7 @@ Keeping in mind the formula for standard error \(s/\sqrt{N}\), we can calculate,
 Calculating the above gives us values of LCI = 2.896 and UCI = 3.164.
 
 Again, randomisation uses a different approach to get an estimate of the same confidence intervals.
-Instead of calculating the standard error and multiplying it by a z score or t score to encompass a particular interval of probability density, we can instead resample the data we have with replacement many times, calculating the mean each time we resample.
+Instead of calculating the standard error and multiplying it by a z-score or t-score to encompass a particular interval of probability density, we can instead resample the data we have with replacement many times, calculating the mean each time we resample.
 The general idea is that this process of resampling approximates what would happen if we were to go back and resample new data from our original population many times, thereby giving us the distribution of means from all of these hypothetical resampling events \citep{Manly2007}.
 To calculate our 95 per cent confidence intervals, we then only need to rank the calculated means and find the mean closest to the lowest 2.5 per cent and the highest 97.5 per cent.
 
@@ -8837,15 +8837,15 @@ Remember from \protect\hyperlink{sampling-with-and-without-replacement}{Chapter 
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.
 
-2.817, 3.071, 2.929, 3.027, 3.027, 2.995, 3.406, 2.976, 3.178, 3.133, 2.299, 3.406, 3.133, 3.291, 3.133, 3.178, 3.027
+3.133, 2.929, 3.406, 3.133, 2.929, 3.406, 2.929, 3.133, 3.071, 3.133, 3, 2.658, 3.21, 3.071, 3, 2.658, 2.299
 
 Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.06.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.006.
 We can resample another set of numbers to get a new mean.
 
-2.929, 3.071, 2.658, 2.817, 3.071, 2.995, 3.133, 3, 3, 3.406, 2.976, 3.133, 3.133, 3.027, 3.133, 3.133, 3.21
+2.817, 2.658, 2.658, 2.658, 3.133, 3.133, 2.817, 3.133, 2.817, 2.658, 2.976, 3.406, 3.406, 3.027, 3.133, 2.817, 3.071
 
-The mean of the above sample is 3.049.
+The mean of the above sample is 2.96.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.
 
 \begin{figure}
@@ -8855,7 +8855,7 @@ We can continue doing this process until we have a high number of random samples
 The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.903 and UCI = 3.139.
+The values using the randomisation approach are LCI = 2.902 and UCI = 3.14.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.
 
@@ -9166,7 +9166,7 @@ Now suppose that 3 new players arrive and decide to play the game. What is the p
 
 What is the probability that the first player chooses a small dam, the second player chooses a medium dam, and the third player chooses a large dam?
 
-\textbf{To get this probability, calculate the probability of choosing small dam, times a medium dam, times a large dam: P(Player 1 = small, Player 2 = medium, Player 3 = large) = 0.541 \(\times\) 0.176 \$\times 0.284 = 0.027}
+\textbf{To get this probability, calculate the probability of choosing small dam, times a medium dam, times a large dam: P(Player 1 = small, Player 2 = medium, Player 3 = large) = 0.541 \(\times\) 0.176 \(\times\) 0.284 = 0.027}
 
 Imagine that you randomly choose one of the 74 players with equal probability (i.e., every player is equally likely to be chosen). What is the probability that you choose player 20?
 
@@ -9987,7 +9987,7 @@ What are the null and alternative hypotheses of this test?
 \(H_{O}\): \textbf{The correlation coefficient between bee mass and nectar consumption is zero.}
 \(H_{A}\): \textbf{The correlation coefficient between bee mass and nectar consumption is not zero.}
 
-Based on the output of these tests, what kind of correlation coefficient should we use for testing the null hypothesis? \textbf{Spearman rank correlation coefficient}
+Based on the output of these tests, what kind of correlation coefficient should we use for testing the null hypothesis? \textbf{Spearman's rank correlation coefficient}
 
 What is the correlation coefficient and p-value from this test?
 
@@ -10000,7 +10000,7 @@ Based on these results, should we reject or not reject the null hypothesis?
 
 Would we have made the same conclusion about the correlation (or lack thereof) between bee mass and nectar consumption? Why or why not?
 
-\textbf{If we had used a Pearson product moment correlation coefficient instead of the Spearman rank correlation coefficient, we would have calculated r = 0.12729 and a p-value of P = 0.04186. Because our p-value would have been less than 0.05, we would have incorrectly rejected the null hypothesis.}
+\textbf{If we had used a Pearson product moment correlation coefficient instead of the Spearman's rank correlation coefficient, we would have calculated r = 0.12729 and a p-value of P = 0.04186. Because our p-value would have been less than 0.05, we would have incorrectly rejected the null hypothesis.}
 
 \hypertarget{chapter-34}{%
 \section{Chapter 34}\label{chapter-34}}
