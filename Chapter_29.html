@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -623,28 +623,34 @@ We can state this as a null and alternative hypothesis.</p>
 <li><span class="math inline">\(H_{A}\)</span>: There is an association between OS and dam size choice.</li>
 </ul>
 <p>Consider the data in Table 29.1, which show counts of Android versus MacOS users and their dam choices.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-120">Table 29.1: </span><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).</caption>
+<table style="width:56%;">
+<caption><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).</caption>
+<colgroup>
+<col width="19%" />
+<col width="11%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="right">Small</th>
-<th align="right">Medium</th>
-<th align="right">Large</th>
+<th align="center"> </th>
+<th align="center">Small</th>
+<th align="center">Medium</th>
+<th align="center">Large</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Android</td>
-<td align="right">8</td>
-<td align="right">16</td>
-<td align="right">6</td>
+<td align="center"><strong>Android</strong></td>
+<td align="center">8</td>
+<td align="center">16</td>
+<td align="center">6</td>
 </tr>
 <tr class="even">
-<td>MacOS</td>
-<td align="right">10</td>
-<td align="right">8</td>
-<td align="right">12</td>
+<td align="center"><strong>MacOS</strong></td>
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">12</td>
 </tr>
 </tbody>
 </table>
@@ -669,38 +675,45 @@ If dam size is not associated with OS, then we would predict that the relative f
 <p>To find the expected counts of each variable combination (e.g., Android and Small, or MacOS and Large), we need to get the probability that each category is selected independently.
 For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1</p>
-<table>
-<caption><span id="tab:unnamed-chunk-121">Table 29.2: </span><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
+<table style="width:85%;">
+<caption><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
+<colgroup>
+<col width="25%" />
+<col width="11%" />
+<col width="12%" />
+<col width="11%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="left">Small</th>
-<th align="left">Medium</th>
-<th align="left">Large</th>
-<th align="left"><strong>Probability</strong></th>
+<th align="center"> </th>
+<th align="center">Small</th>
+<th align="center">Medium</th>
+<th align="center">Large</th>
+<th align="center"><strong>Probability</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Android</td>
-<td align="left">8</td>
-<td align="left">16</td>
-<td align="left">6</td>
-<td align="left">0.5</td>
+<td align="center"><strong>Android</strong></td>
+<td align="center">8</td>
+<td align="center">16</td>
+<td align="center">6</td>
+<td align="center">0.5</td>
 </tr>
 <tr class="even">
-<td>MacOS</td>
-<td align="left">10</td>
-<td align="left">8</td>
-<td align="left">12</td>
-<td align="left">0.5</td>
+<td align="center"><strong>MacOS</strong></td>
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">12</td>
+<td align="center">0.5</td>
 </tr>
 <tr class="odd">
-<td><strong>Probability</strong></td>
-<td align="left">0.3</td>
-<td align="left">0.4</td>
-<td align="left">0.3</td>
-<td align="left">–</td>
+<td align="center"><strong>Probability</strong></td>
+<td align="center">0.3</td>
+<td align="center">0.4</td>
+<td align="center">0.3</td>
+<td align="center">–</td>
 </tr>
 </tbody>
 </table>
@@ -711,38 +724,45 @@ If these probabilities combine independently<a href="#fn68" class="footnote-ref"
 For example, the probability of a player using Android is 0.5 and choosing a small dam is 0.3, so the probability of a player having both Android <strong>and</strong> a small dam is <span class="math inline">\(0.5 \times 0.3 = 0.15\)</span> (see <a href="Chapter_16.html#Chapter_16">Chapter 16</a> for an introduction to probability models).
 The probability of a player using Android <strong>and</strong> choosing a medium dam is <span class="math inline">\(0.5 \times 0.4 = 0.2\)</span>.
 We can fill in all of these joint probabilities in a new Table 29.3.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-122">Table 29.3: </span><strong>TABLE 29.3</strong> Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<table style="width:85%;">
+<caption><strong>TABLE 29.3</strong> Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<colgroup>
+<col width="25%" />
+<col width="11%" />
+<col width="12%" />
+<col width="11%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="left">Small</th>
-<th align="left">Medium</th>
-<th align="left">Large</th>
-<th align="left"><strong>Probability</strong></th>
+<th align="center"> </th>
+<th align="center">Small</th>
+<th align="center">Medium</th>
+<th align="center">Large</th>
+<th align="center"><strong>Probability</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Android</td>
-<td align="left">0.15</td>
-<td align="left">0.2</td>
-<td align="left">0.15</td>
-<td align="left">0.5</td>
+<td align="center"><strong>Android</strong></td>
+<td align="center">0.15</td>
+<td align="center">0.2</td>
+<td align="center">0.15</td>
+<td align="center">0.5</td>
 </tr>
 <tr class="even">
-<td>MacOS</td>
-<td align="left">0.15</td>
-<td align="left">0.2</td>
-<td align="left">0.15</td>
-<td align="left">0.5</td>
+<td align="center"><strong>MacOS</strong></td>
+<td align="center">0.15</td>
+<td align="center">0.2</td>
+<td align="center">0.15</td>
+<td align="center">0.5</td>
 </tr>
 <tr class="odd">
-<td><strong>Probability</strong></td>
-<td align="left">0.3</td>
-<td align="left">0.4</td>
-<td align="left">0.3</td>
-<td align="left">–</td>
+<td align="center"><strong>Probability</strong></td>
+<td align="center">0.3</td>
+<td align="center">0.4</td>
+<td align="center">0.3</td>
+<td align="center">–</td>
 </tr>
 </tbody>
 </table>
@@ -753,38 +773,45 @@ Note that all of these probabilities sum to 1.</p>
 For example, the expected count of players who use Android and choose a small dam will be <span class="math inline">\(0.15 \times 60 = 9\)</span>.
 Table 29.4 fills in all of the expected counts.
 Note that the sum of all the counts equals our sample size of 60.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-123">Table 29.4: </span><strong>TABLE 29.4</strong> Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<table style="width:68%;">
+<caption><strong>TABLE 29.4</strong> Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<colgroup>
+<col width="19%" />
+<col width="11%" />
+<col width="12%" />
+<col width="11%" />
+<col width="13%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="left">Small</th>
-<th align="left">Medium</th>
-<th align="left">Large</th>
-<th align="left"><strong>Sum</strong></th>
+<th align="center"> </th>
+<th align="center">Small</th>
+<th align="center">Medium</th>
+<th align="center">Large</th>
+<th align="center"><strong>Sum</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Android</td>
-<td align="left">9</td>
-<td align="left">12</td>
-<td align="left">9</td>
-<td align="left">30</td>
+<td align="center"><strong>Android</strong></td>
+<td align="center">9</td>
+<td align="center">12</td>
+<td align="center">9</td>
+<td align="center">30</td>
 </tr>
 <tr class="even">
-<td>MacOS</td>
-<td align="left">9</td>
-<td align="left">12</td>
-<td align="left">9</td>
-<td align="left">30</td>
+<td align="center"><strong>MacOS</strong></td>
+<td align="center">9</td>
+<td align="center">12</td>
+<td align="center">9</td>
+<td align="center">30</td>
 </tr>
 <tr class="odd">
-<td><strong>Sum</strong></td>
-<td align="left">18</td>
-<td align="left">24</td>
-<td align="left">18</td>
-<td align="left">–</td>
+<td align="center"><strong>Sum</strong></td>
+<td align="center">18</td>
+<td align="center">24</td>
+<td align="center">18</td>
+<td align="center">–</td>
 </tr>
 </tbody>
 </table>
@@ -810,38 +837,45 @@ To do this, it is necessary to input the categorical data (e.g., Android, MacOS)
 There is another way of getting these expected values that is a bit faster (and more widely taught), but does not demonstrate the logic of expected counts as clearly.
 If we wanted to, we could sum the rows and columns of our original observations.
 Table 29.5 shows the original observations with the sum of each row and column.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-124">Table 29.5: </span><strong>TABLE 29.5</strong> Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
+<table style="width:68%;">
+<caption><strong>TABLE 29.5</strong> Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
+<colgroup>
+<col width="19%" />
+<col width="11%" />
+<col width="12%" />
+<col width="11%" />
+<col width="13%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="left">Small</th>
-<th align="left">Medium</th>
-<th align="left">Large</th>
-<th align="left"><strong>Sum</strong></th>
+<th align="center"> </th>
+<th align="center">Small</th>
+<th align="center">Medium</th>
+<th align="center">Large</th>
+<th align="center"><strong>Sum</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Android</td>
-<td align="left">8</td>
-<td align="left">16</td>
-<td align="left">6</td>
-<td align="left">30</td>
+<td align="center"><strong>Android</strong></td>
+<td align="center">8</td>
+<td align="center">16</td>
+<td align="center">6</td>
+<td align="center">30</td>
 </tr>
 <tr class="even">
-<td>MacOS</td>
-<td align="left">10</td>
-<td align="left">8</td>
-<td align="left">12</td>
-<td align="left">30</td>
+<td align="center"><strong>MacOS</strong></td>
+<td align="center">10</td>
+<td align="center">8</td>
+<td align="center">12</td>
+<td align="center">30</td>
 </tr>
 <tr class="odd">
-<td><strong>Sum</strong></td>
-<td align="left">18</td>
-<td align="left">24</td>
-<td align="left">18</td>
-<td align="left">–</td>
+<td align="center"><strong>Sum</strong></td>
+<td align="center">18</td>
+<td align="center">24</td>
+<td align="center">18</td>
+<td align="center">–</td>
 </tr>
 </tbody>
 </table>

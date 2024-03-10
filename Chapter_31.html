@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -712,22 +712,26 @@ Why or why not?</p>
 For the ‘survived’ variable, this meant 256 rows of ‘Yes’ or ‘No’.
 But there is a shortcut in jamovi if we do not have a full tidy dataset.
 If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ counts, you could set up the data as a table of counts (Table 31.1).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-136">Table 31.1: </span><strong>TABLE 31.1</strong> Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.</caption>
+<table style="width:26%;">
+<caption><strong>TABLE 31.1</strong> Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.</caption>
+<colgroup>
+<col width="15%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Survived</th>
-<th align="right">Count</th>
+<th align="center">Survived</th>
+<th align="center">Count</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">No</td>
-<td align="right">117</td>
+<td align="center">No</td>
+<td align="center">117</td>
 </tr>
 <tr class="even">
-<td align="left">Yes</td>
-<td align="right">139</td>
+<td align="center">Yes</td>
+<td align="center">139</td>
 </tr>
 </tbody>
 </table>
@@ -744,55 +748,60 @@ Place ‘Survived’ in the Variable box, then place ‘Count’ in the Counts (
 Notice that you will get the same <span class="math inline">\(\chi^{2}\)</span>, df, and p values in the output table as you did in Exercise 31.1</p>
 <p>We could do the same for a <span class="math inline">\(\chi^{2}\)</span> test of association, although it would be a bit more complicated.
 To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need 3 columns and 8 rows of data (Table 31.2).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-138">Table 31.2: </span><strong>TABLE 31.2</strong> Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.</caption>
+<table style="width:43%;">
+<caption><strong>TABLE 31.2</strong> Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.</caption>
+<colgroup>
+<col width="15%" />
+<col width="16%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Survived</th>
-<th align="left">Radiation</th>
-<th align="right">Count</th>
+<th align="center">Survived</th>
+<th align="center">Radiation</th>
+<th align="center">Count</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">No</td>
-<td align="left">None</td>
-<td align="right">12</td>
+<td align="center">No</td>
+<td align="center">None</td>
+<td align="center">12</td>
 </tr>
 <tr class="even">
-<td align="left">Yes</td>
-<td align="left">Low</td>
-<td align="right">52</td>
+<td align="center">Yes</td>
+<td align="center">Low</td>
+<td align="center">52</td>
 </tr>
 <tr class="odd">
-<td align="left">No</td>
-<td align="left">Medium</td>
-<td align="right">29</td>
+<td align="center">No</td>
+<td align="center">Medium</td>
+<td align="center">29</td>
 </tr>
 <tr class="even">
-<td align="left">Yes</td>
-<td align="left">High</td>
-<td align="right">35</td>
+<td align="center">Yes</td>
+<td align="center">High</td>
+<td align="center">35</td>
 </tr>
 <tr class="odd">
-<td align="left">No</td>
-<td align="left">None</td>
-<td align="right">39</td>
+<td align="center">No</td>
+<td align="center">None</td>
+<td align="center">39</td>
 </tr>
 <tr class="even">
-<td align="left">Yes</td>
-<td align="left">Low</td>
-<td align="right">25</td>
+<td align="center">Yes</td>
+<td align="center">Low</td>
+<td align="center">25</td>
 </tr>
 <tr class="odd">
-<td align="left">No</td>
-<td align="left">Medium</td>
-<td align="right">37</td>
+<td align="center">No</td>
+<td align="center">Medium</td>
+<td align="center">37</td>
 </tr>
 <tr class="even">
-<td align="left">Yes</td>
-<td align="left">High</td>
-<td align="right">27</td>
+<td align="center">Yes</td>
+<td align="center">High</td>
+<td align="center">27</td>
 </tr>
 </tbody>
 </table>

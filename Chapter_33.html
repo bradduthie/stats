@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -499,38 +499,48 @@ Since multiple regression investigates the effect of each independent variable i
 It is even possible for the sign of the coefficients to change (e.g., from negative to positive).</p>
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_32.html#Chapter_32">Chapter 32</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-149">Table 33.1: </span><strong>TABLE 33.1</strong> Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<table style="width:97%;">
+<caption><strong>TABLE 33.1</strong> Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<colgroup>
+<col width="20%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">Latitude</td>
-<td align="right">23.7</td>
-<td align="right">24.0</td>
-<td align="right">27.6</td>
-<td align="right">27.2</td>
-<td align="right">29.3</td>
-<td align="right">28.2</td>
-<td align="right">28.3</td>
+<td align="center"><strong>Latitude</strong></td>
+<td align="center">23.7</td>
+<td align="center">24</td>
+<td align="center">27.6</td>
+<td align="center">27.2</td>
+<td align="center">29.3</td>
+<td align="center">28.2</td>
+<td align="center">28.3</td>
 </tr>
 <tr class="even">
-<td align="left">Altitude</td>
-<td align="right">218.5</td>
-<td align="right">163.5</td>
-<td align="right">330.1</td>
-<td align="right">542.3</td>
-<td align="right">656.0</td>
-<td align="right">901.3</td>
-<td align="right">709.6</td>
+<td align="center"><strong>Altitude</strong></td>
+<td align="center">218.5</td>
+<td align="center">163.5</td>
+<td align="center">330.1</td>
+<td align="center">542.3</td>
+<td align="center">656</td>
+<td align="center">901.3</td>
+<td align="center">709.6</td>
 </tr>
 <tr class="odd">
-<td align="left">Volume</td>
-<td align="right">2399.0</td>
-<td align="right">2941.7</td>
-<td align="right">2167.2</td>
-<td align="right">2051.3</td>
-<td align="right">1686.2</td>
-<td align="right">937.3</td>
-<td align="right">1328.2</td>
+<td align="center"><strong>Volume</strong></td>
+<td align="center">2399</td>
+<td align="center">2942</td>
+<td align="center">2167</td>
+<td align="center">2051</td>
+<td align="center">1686</td>
+<td align="center">937.3</td>
+<td align="center">1328</td>
 </tr>
 </tbody>
 </table>
@@ -552,38 +562,45 @@ We can also find partial regression coefficients for latitude (<span class="math
 We now need to run a multiple regression to find the intercept (<span class="math inline">\(b_{0}\)</span>) and partial regression coefficients describing the partial effects of latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>) on volume.
 In jamovi, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 32.2 shows an output table, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-151">Table 33.2: </span><strong>TABLE 33.2</strong> Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<table style="width:88%;">
+<caption><strong>TABLE 33.2</strong> Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<colgroup>
+<col width="25%" />
+<col width="15%" />
+<col width="18%" />
+<col width="13%" />
+<col width="15%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="right">Estimate</th>
-<th align="right">Std. Error</th>
-<th align="right">t value</th>
-<th align="right">Pr(&gt;|t|)</th>
+<th align="center"> </th>
+<th align="center">Estimate</th>
+<th align="center">Std. Error</th>
+<th align="center">t value</th>
+<th align="center">Pr(&gt;|t|)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>(Intercept)</td>
-<td align="right">2988.245389</td>
-<td align="right">1697.5587030</td>
-<td align="right">1.7603193</td>
-<td align="right">0.1531597</td>
+<td align="center"><strong>(Intercept)</strong></td>
+<td align="center">2988</td>
+<td align="center">1698</td>
+<td align="center">1.76</td>
+<td align="center">0.1532</td>
 </tr>
 <tr class="even">
-<td>Latitude</td>
-<td align="right">5.587834</td>
-<td align="right">71.4880645</td>
-<td align="right">0.0781646</td>
-<td align="right">0.9414511</td>
+<td align="center"><strong>Latitude</strong></td>
+<td align="center">5.588</td>
+<td align="center">71.49</td>
+<td align="center">0.07816</td>
+<td align="center">0.9415</td>
 </tr>
 <tr class="odd">
-<td>Altitude</td>
-<td align="right">-2.402240</td>
-<td align="right">0.5688147</td>
-<td align="right">-4.2232377</td>
-<td align="right">0.0134427</td>
+<td align="center"><strong>Altitude</strong></td>
+<td align="center">-2.402</td>
+<td align="center">0.5688</td>
+<td align="center">-4.223</td>
+<td align="center">0.01344</td>
 </tr>
 </tbody>
 </table>

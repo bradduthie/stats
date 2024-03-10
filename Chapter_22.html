@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -601,62 +601,75 @@ In this case, data points between samples are not independent.
 For example, we can consider the student test scores (<span class="math inline">\(y_{1}\)</span>) yet again.</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
 <p>Suppose that the teacher gave these same students (S1-S10) a second test and wanted to see if the mean student score changed from one test to the next (i.e., a two-sided hypothesis).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-83">Table 22.1: </span><strong>TABLE 22.1</strong> Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
+<table style="width:100%;">
+<caption><strong>TABLE 22.1</strong> Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left"></th>
-<th align="right">S1</th>
-<th align="right">S2</th>
-<th align="right">S3</th>
-<th align="right">S4</th>
-<th align="right">S5</th>
-<th align="right">S6</th>
-<th align="right">S7</th>
-<th align="right">S8</th>
-<th align="right">S9</th>
-<th align="right">S10</th>
+<th align="center"> </th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
+<th align="center">S5</th>
+<th align="center">S6</th>
+<th align="center">S7</th>
+<th align="center">S8</th>
+<th align="center">S9</th>
+<th align="center">S10</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Test 1</td>
-<td align="right">49.3</td>
-<td align="right">62.9</td>
-<td align="right">73.7</td>
-<td align="right">65.5</td>
-<td align="right">69.6</td>
-<td align="right">70.7</td>
-<td align="right">61.5</td>
-<td align="right">73.4</td>
-<td align="right">61.1</td>
-<td align="right">78.1</td>
+<td align="center"><strong>Test 1</strong></td>
+<td align="center">49.3</td>
+<td align="center">62.9</td>
+<td align="center">73.7</td>
+<td align="center">65.5</td>
+<td align="center">69.6</td>
+<td align="center">70.7</td>
+<td align="center">61.5</td>
+<td align="center">73.4</td>
+<td align="center">61.1</td>
+<td align="center">78.1</td>
 </tr>
 <tr class="even">
-<td align="left">Test 2</td>
-<td align="right">46.6</td>
-<td align="right">62.7</td>
-<td align="right">73.8</td>
-<td align="right">58.3</td>
-<td align="right">66.8</td>
-<td align="right">69.7</td>
-<td align="right">64.5</td>
-<td align="right">71.3</td>
-<td align="right">64.5</td>
-<td align="right">78.8</td>
+<td align="center"><strong>Test 2</strong></td>
+<td align="center">46.6</td>
+<td align="center">62.7</td>
+<td align="center">73.8</td>
+<td align="center">58.3</td>
+<td align="center">66.8</td>
+<td align="center">69.7</td>
+<td align="center">64.5</td>
+<td align="center">71.3</td>
+<td align="center">64.5</td>
+<td align="center">78.8</td>
 </tr>
 <tr class="odd">
-<td align="left">Change</td>
-<td align="right">-2.7</td>
-<td align="right">-0.2</td>
-<td align="right">0.1</td>
-<td align="right">-7.2</td>
-<td align="right">-2.8</td>
-<td align="right">-1.0</td>
-<td align="right">3.0</td>
-<td align="right">-2.1</td>
-<td align="right">3.4</td>
-<td align="right">0.7</td>
+<td align="center"><strong>Change</strong></td>
+<td align="center">-2.7</td>
+<td align="center">-0.2</td>
+<td align="center">0.1</td>
+<td align="center">-7.2</td>
+<td align="center">-2.8</td>
+<td align="center">-1</td>
+<td align="center">3</td>
+<td align="center">-2.1</td>
+<td align="center">3.4</td>
+<td align="center">0.7</td>
 </tr>
 </tbody>
 </table>
@@ -772,62 +785,75 @@ Since this p-value is less than our threshold of <span class="math inline">\(\al
 <p>Note that we can also use a Wilcoxon signed rank test as a non-parametric equivalent to a paired t-test.
 In this case, instead of subtracting out the null hypothesis of our median value (e.g., <span class="math inline">\(H_{0}: M = 60\)</span> in the example above), we just need to subtract the paired values.
 Consider again the example of the 2 different tests introduced for the <a href="#paired-sample-t-test">paired samples t-test</a> above (Table 22.2).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-86">Table 22.2: </span><strong>TABLE 22.2</strong> Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
+<table style="width:100%;">
+<caption><strong>TABLE 22.2</strong> Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.</caption>
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left"></th>
-<th align="right">S1</th>
-<th align="right">S2</th>
-<th align="right">S3</th>
-<th align="right">S4</th>
-<th align="right">S5</th>
-<th align="right">S6</th>
-<th align="right">S7</th>
-<th align="right">S8</th>
-<th align="right">S9</th>
-<th align="right">S10</th>
+<th align="center"> </th>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
+<th align="center">S5</th>
+<th align="center">S6</th>
+<th align="center">S7</th>
+<th align="center">S8</th>
+<th align="center">S9</th>
+<th align="center">S10</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Test 1</td>
-<td align="right">49.3</td>
-<td align="right">62.9</td>
-<td align="right">73.7</td>
-<td align="right">65.5</td>
-<td align="right">69.6</td>
-<td align="right">70.7</td>
-<td align="right">61.5</td>
-<td align="right">73.4</td>
-<td align="right">61.1</td>
-<td align="right">78.1</td>
+<td align="center"><strong>Test 1</strong></td>
+<td align="center">49.3</td>
+<td align="center">62.9</td>
+<td align="center">73.7</td>
+<td align="center">65.5</td>
+<td align="center">69.6</td>
+<td align="center">70.7</td>
+<td align="center">61.5</td>
+<td align="center">73.4</td>
+<td align="center">61.1</td>
+<td align="center">78.1</td>
 </tr>
 <tr class="even">
-<td align="left">Test 2</td>
-<td align="right">46.6</td>
-<td align="right">62.7</td>
-<td align="right">73.8</td>
-<td align="right">58.3</td>
-<td align="right">66.8</td>
-<td align="right">69.7</td>
-<td align="right">64.5</td>
-<td align="right">71.3</td>
-<td align="right">64.5</td>
-<td align="right">78.8</td>
+<td align="center"><strong>Test 2</strong></td>
+<td align="center">46.6</td>
+<td align="center">62.7</td>
+<td align="center">73.8</td>
+<td align="center">58.3</td>
+<td align="center">66.8</td>
+<td align="center">69.7</td>
+<td align="center">64.5</td>
+<td align="center">71.3</td>
+<td align="center">64.5</td>
+<td align="center">78.8</td>
 </tr>
 <tr class="odd">
-<td align="left">Change</td>
-<td align="right">-2.7</td>
-<td align="right">-0.2</td>
-<td align="right">0.1</td>
-<td align="right">-7.2</td>
-<td align="right">-2.8</td>
-<td align="right">-1.0</td>
-<td align="right">3.0</td>
-<td align="right">-2.1</td>
-<td align="right">3.4</td>
-<td align="right">0.7</td>
+<td align="center"><strong>Change</strong></td>
+<td align="center">-2.7</td>
+<td align="center">-0.2</td>
+<td align="center">0.1</td>
+<td align="center">-7.2</td>
+<td align="center">-2.8</td>
+<td align="center">-1</td>
+<td align="center">3</td>
+<td align="center">-2.1</td>
+<td align="center">3.4</td>
+<td align="center">0.7</td>
 </tr>
 </tbody>
 </table>
@@ -857,110 +883,115 @@ For <span class="math inline">\(y_{1}\)</span>, the ranks are below.</p>
 <p>For <span class="math inline">\(y_{2}\)</span>, the ranks are below.</p>
 <pre><code>4, 3, 14, 16, 1, 6, 13, 10, 5</code></pre>
 <p>This might be easier to see if we present it as a table showing the test Year (<span class="math inline">\(y_{1}\)</span> versus <span class="math inline">\(y_{2}\)</span>), test Score, and test Rank (Table 22.3).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-87">Table 22.3: </span><strong>TABLE 22.3</strong> Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.</caption>
+<table style="width:32%;">
+<caption><strong>TABLE 22.3</strong> Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.</caption>
+<colgroup>
+<col width="9%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Year</th>
-<th align="right">Score</th>
-<th align="right">Rank</th>
+<th align="center">Year</th>
+<th align="center">Score</th>
+<th align="center">Rank</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1</td>
-<td align="right">49.3</td>
-<td align="right">2</td>
+<td align="center">1</td>
+<td align="center">49.3</td>
+<td align="center">2</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="right">62.9</td>
-<td align="right">9</td>
+<td align="center">1</td>
+<td align="center">62.9</td>
+<td align="center">9</td>
 </tr>
 <tr class="odd">
-<td align="right">1</td>
-<td align="right">73.7</td>
-<td align="right">18</td>
+<td align="center">1</td>
+<td align="center">73.7</td>
+<td align="center">18</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="right">65.5</td>
-<td align="right">11</td>
+<td align="center">1</td>
+<td align="center">65.5</td>
+<td align="center">11</td>
 </tr>
 <tr class="odd">
-<td align="right">1</td>
-<td align="right">69.6</td>
-<td align="right">12</td>
+<td align="center">1</td>
+<td align="center">69.6</td>
+<td align="center">12</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="right">70.7</td>
-<td align="right">15</td>
+<td align="center">1</td>
+<td align="center">70.7</td>
+<td align="center">15</td>
 </tr>
 <tr class="odd">
-<td align="right">1</td>
-<td align="right">61.5</td>
-<td align="right">8</td>
+<td align="center">1</td>
+<td align="center">61.5</td>
+<td align="center">8</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="right">73.4</td>
-<td align="right">17</td>
+<td align="center">1</td>
+<td align="center">73.4</td>
+<td align="center">17</td>
 </tr>
 <tr class="odd">
-<td align="right">1</td>
-<td align="right">61.1</td>
-<td align="right">7</td>
+<td align="center">1</td>
+<td align="center">61.1</td>
+<td align="center">7</td>
 </tr>
 <tr class="even">
-<td align="right">1</td>
-<td align="right">78.1</td>
-<td align="right">19</td>
+<td align="center">1</td>
+<td align="center">78.1</td>
+<td align="center">19</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
-<td align="right">57.4</td>
-<td align="right">4</td>
+<td align="center">2</td>
+<td align="center">57.4</td>
+<td align="center">4</td>
 </tr>
 <tr class="even">
-<td align="right">2</td>
-<td align="right">52.4</td>
-<td align="right">3</td>
+<td align="center">2</td>
+<td align="center">52.4</td>
+<td align="center">3</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
-<td align="right">70.5</td>
-<td align="right">14</td>
+<td align="center">2</td>
+<td align="center">70.5</td>
+<td align="center">14</td>
 </tr>
 <tr class="even">
-<td align="right">2</td>
-<td align="right">71.6</td>
-<td align="right">16</td>
+<td align="center">2</td>
+<td align="center">71.6</td>
+<td align="center">16</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
-<td align="right">46.1</td>
-<td align="right">1</td>
+<td align="center">2</td>
+<td align="center">46.1</td>
+<td align="center">1</td>
 </tr>
 <tr class="even">
-<td align="right">2</td>
-<td align="right">60.4</td>
-<td align="right">6</td>
+<td align="center">2</td>
+<td align="center">60.4</td>
+<td align="center">6</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
-<td align="right">70.0</td>
-<td align="right">13</td>
+<td align="center">2</td>
+<td align="center">70</td>
+<td align="center">13</td>
 </tr>
 <tr class="even">
-<td align="right">2</td>
-<td align="right">64.5</td>
-<td align="right">10</td>
+<td align="center">2</td>
+<td align="center">64.5</td>
+<td align="center">10</td>
 </tr>
 <tr class="odd">
-<td align="right">2</td>
-<td align="right">58.8</td>
-<td align="right">5</td>
+<td align="center">2</td>
+<td align="center">58.8</td>
+<td align="center">5</td>
 </tr>
 </tbody>
 </table>

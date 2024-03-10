@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -603,34 +603,42 @@ Figure 28.2: Jamovi interface for running an ANOVA to test if Nitrogen concentra
 It includes the sum of squares of the among-group (Profile) and within-group (Residuals) sum of squares and mean square.
 This is often how ANOVA results are presented in the literature.
 Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and P.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-114">Table 28.1: </span><strong>TABLE 28.1</strong> ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<table style="width:83%;">
+<caption><strong>TABLE 28.1</strong> ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<colgroup>
+<col width="22%" />
+<col width="23%" />
+<col width="6%" />
+<col width="19%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="left">Sum of Squares</th>
-<th align="left">df</th>
-<th align="left">Mean Square</th>
-<th align="left">F</th>
-<th align="left">p</th>
+<th align="center"> </th>
+<th align="center">Sum of Squares</th>
+<th align="center">df</th>
+<th align="center">Mean Square</th>
+<th align="center">F</th>
+<th align="center">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Profile</td>
-<td align="left">16888.18606</td>
-<td align="left"></td>
-<td align="left">8444.09303</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="center"><strong>Profile</strong></td>
+<td align="center">16888.18606</td>
+<td align="center"></td>
+<td align="center">8444.09303</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="even">
-<td>Residuals</td>
-<td align="left">118092.02927</td>
-<td align="left"></td>
-<td align="left">2460.25061</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="center"><strong>Residuals</strong></td>
+<td align="center">118092.02927</td>
+<td align="center"></td>
+<td align="center">2460.25061</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -739,50 +747,58 @@ From the assumption checks output tables, is there any reason to be concerned ab
 This time, however, there are 4 rows in total.
 The first 2 rows correspond with tests of the main effects of Site and Profile, and the third row tests the interaction between these two variables.
 Fill in Table 28.2 with the relevant information from the two-way ANOVA output.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-115">Table 28.2: </span><strong>TABLE 28.2</strong> Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<table style="width:90%;">
+<caption><strong>TABLE 28.2</strong> Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<colgroup>
+<col width="29%" />
+<col width="23%" />
+<col width="6%" />
+<col width="19%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th align="left">Sum of Squares</th>
-<th align="left">df</th>
-<th align="left">Mean Square</th>
-<th align="left">F</th>
-<th align="left">p</th>
+<th align="center"> </th>
+<th align="center">Sum of Squares</th>
+<th align="center">df</th>
+<th align="center">Mean Square</th>
+<th align="center">F</th>
+<th align="center">p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Site</td>
-<td align="left">21522.18384</td>
-<td align="left"></td>
-<td align="left">21522.18384</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="center"><strong>Site</strong></td>
+<td align="center">21522.18384</td>
+<td align="center"></td>
+<td align="center">21522.18384</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="even">
-<td>Profile</td>
-<td align="left">22811.1368</td>
-<td align="left"></td>
-<td align="left">11405.5684</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="center"><strong>Profile</strong></td>
+<td align="center">22811.1368</td>
+<td align="center"></td>
+<td align="center">11405.5684</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="odd">
-<td>Site * Profile</td>
-<td align="left">16209.13035</td>
-<td align="left"></td>
-<td align="left">8104.56517</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="center"><strong>Site * Profile</strong></td>
+<td align="center">16209.13035</td>
+<td align="center"></td>
+<td align="center">8104.56517</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="even">
-<td>Residuals</td>
-<td align="left">80497.68348</td>
-<td align="left"></td>
-<td align="left">1788.83741</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="center"><strong>Residuals</strong></td>
+<td align="center">80497.68348</td>
+<td align="center"></td>
+<td align="center">1788.83741</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -489,45 +489,52 @@ Like the Mann-Whitney U test, it uses the <em>ranks</em> of values instead of th
 The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (H) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
 For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-103">Table 26.1: </span><strong>TABLE 26.1</strong> Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<table style="width:56%;">
+<caption><strong>TABLE 26.1</strong> Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Het1</th>
-<th align="right">Het2</th>
-<th align="right">LO1</th>
-<th align="right">SO1</th>
-<th align="right">SO2</th>
+<th align="center">Het1</th>
+<th align="center">Het2</th>
+<th align="center">LO1</th>
+<th align="center">SO1</th>
+<th align="center">SO2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">2.122</td>
-<td align="right">1.810</td>
-<td align="right">1.869</td>
-<td align="right">1.557</td>
-<td align="right">1.635</td>
+<td align="center">2.122</td>
+<td align="center">1.81</td>
+<td align="center">1.869</td>
+<td align="center">1.557</td>
+<td align="center">1.635</td>
 </tr>
 <tr class="even">
-<td align="right">1.938</td>
-<td align="right">1.821</td>
-<td align="right">1.957</td>
-<td align="right">1.493</td>
-<td align="right">1.700</td>
+<td align="center">1.938</td>
+<td align="center">1.821</td>
+<td align="center">1.957</td>
+<td align="center">1.493</td>
+<td align="center">1.7</td>
 </tr>
 <tr class="odd">
-<td align="right">1.765</td>
-<td align="right">1.653</td>
-<td align="right">1.589</td>
-<td align="right">1.470</td>
-<td align="right">1.407</td>
+<td align="center">1.765</td>
+<td align="center">1.653</td>
+<td align="center">1.589</td>
+<td align="center">1.47</td>
+<td align="center">1.407</td>
 </tr>
 <tr class="even">
-<td align="right">1.700</td>
-<td align="right">1.547</td>
-<td align="right">1.430</td>
-<td align="right">1.541</td>
-<td align="right">1.378</td>
+<td align="center">1.7</td>
+<td align="center">1.547</td>
+<td align="center">1.43</td>
+<td align="center">1.541</td>
+<td align="center">1.378</td>
 </tr>
 </tbody>
 </table>
@@ -538,45 +545,52 @@ But a Levene’s test of homogeneity of variances convincingly rejects the null 
 Consequently, we should probably have used the non-parametric Kruskall-Wallis H test instead.
 To do this, we first need to rank all of the values in Table 26.1.
 There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-104">Table 26.2: </span><strong>TABLE 26.2</strong> Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<table style="width:46%;">
+<caption><strong>TABLE 26.2</strong> Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Het1</th>
-<th align="right">Het2</th>
-<th align="right">LO1</th>
-<th align="right">SO1</th>
-<th align="right">SO2</th>
+<th align="center">Het1</th>
+<th align="center">Het2</th>
+<th align="center">LO1</th>
+<th align="center">SO1</th>
+<th align="center">SO2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">20.0</td>
-<td align="right">15</td>
-<td align="right">17</td>
-<td align="right">8</td>
-<td align="right">10.0</td>
+<td align="center">20</td>
+<td align="center">15</td>
+<td align="center">17</td>
+<td align="center">8</td>
+<td align="center">10</td>
 </tr>
 <tr class="even">
-<td align="right">18.0</td>
-<td align="right">16</td>
-<td align="right">19</td>
-<td align="right">5</td>
-<td align="right">12.5</td>
+<td align="center">18</td>
+<td align="center">16</td>
+<td align="center">19</td>
+<td align="center">5</td>
+<td align="center">12.5</td>
 </tr>
 <tr class="odd">
-<td align="right">14.0</td>
-<td align="right">11</td>
-<td align="right">9</td>
-<td align="right">4</td>
-<td align="right">2.0</td>
+<td align="center">14</td>
+<td align="center">11</td>
+<td align="center">9</td>
+<td align="center">4</td>
+<td align="center">2</td>
 </tr>
 <tr class="even">
-<td align="right">12.5</td>
-<td align="right">7</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">1.0</td>
+<td align="center">12.5</td>
+<td align="center">7</td>
+<td align="center">3</td>
+<td align="center">6</td>
+<td align="center">1</td>
 </tr>
 </tbody>
 </table>

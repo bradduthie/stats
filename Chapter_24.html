@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -492,45 +492,52 @@ For example, we might want to know if mean wing length is the same for 5 species
 What follows is an explanation of why this can be done by looking at the variance within and between groups (note, ‘groups’ are also sometimes called ‘factors’ or ‘levels’).
 Groups are categorical data (see <a href="Chapter_5.html#Chapter_5">Chapter 5</a>).
 In the case of the fig wasp example, the groups are the different species (Table 24.1).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-93">Table 24.1: </span><strong>TABLE 24.1</strong> Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<table style="width:56%;">
+<caption><strong>TABLE 24.1</strong> Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Het1</th>
-<th align="right">Het2</th>
-<th align="right">LO1</th>
-<th align="right">SO1</th>
-<th align="right">SO2</th>
+<th align="center">Het1</th>
+<th align="center">Het2</th>
+<th align="center">LO1</th>
+<th align="center">SO1</th>
+<th align="center">SO2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">2.122</td>
-<td align="right">1.810</td>
-<td align="right">1.869</td>
-<td align="right">1.557</td>
-<td align="right">1.635</td>
+<td align="center">2.122</td>
+<td align="center">1.81</td>
+<td align="center">1.869</td>
+<td align="center">1.557</td>
+<td align="center">1.635</td>
 </tr>
 <tr class="even">
-<td align="right">1.938</td>
-<td align="right">1.821</td>
-<td align="right">1.957</td>
-<td align="right">1.493</td>
-<td align="right">1.700</td>
+<td align="center">1.938</td>
+<td align="center">1.821</td>
+<td align="center">1.957</td>
+<td align="center">1.493</td>
+<td align="center">1.7</td>
 </tr>
 <tr class="odd">
-<td align="right">1.765</td>
-<td align="right">1.653</td>
-<td align="right">1.589</td>
-<td align="right">1.470</td>
-<td align="right">1.407</td>
+<td align="center">1.765</td>
+<td align="center">1.653</td>
+<td align="center">1.589</td>
+<td align="center">1.47</td>
+<td align="center">1.407</td>
 </tr>
 <tr class="even">
-<td align="right">1.700</td>
-<td align="right">1.547</td>
-<td align="right">1.430</td>
-<td align="right">1.541</td>
-<td align="right">1.378</td>
+<td align="center">1.7</td>
+<td align="center">1.547</td>
+<td align="center">1.43</td>
+<td align="center">1.541</td>
+<td align="center">1.378</td>
 </tr>
 </tbody>
 </table>
@@ -540,32 +547,44 @@ There are a couple problems with this approach.
 First, there are a lot of group combinations to compare (Het1 vs Het2, Het1 vs LO1, Het1 vs SO1, etc.).
 For the 5 fig wasp species in Table 24.1, there are 10 pair-wise combinations that would need to be tested.
 And the number of combinations grows exponentially<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a> with each new group added to the dataset (Table 24.2).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-94">Table 24.2: </span><strong>TABLE 24.2</strong> The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
+<table style="width:76%;">
+<caption><strong>TABLE 24.2</strong> The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
+<colgroup>
+<col width="18%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+</colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">Groups</td>
-<td align="right">2</td>
-<td align="right">3</td>
-<td align="right">4</td>
-<td align="right">5</td>
-<td align="right">6</td>
-<td align="right">7</td>
-<td align="right">8</td>
-<td align="right">9</td>
-<td align="right">10</td>
+<td align="center"><strong>Groups</strong></td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+<td align="center">8</td>
+<td align="center">9</td>
+<td align="center">10</td>
 </tr>
 <tr class="even">
-<td align="left">Tests</td>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">6</td>
-<td align="right">10</td>
-<td align="right">15</td>
-<td align="right">21</td>
-<td align="right">28</td>
-<td align="right">36</td>
-<td align="right">45</td>
+<td align="center"><strong>Tests</strong></td>
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">6</td>
+<td align="center">10</td>
+<td align="center">15</td>
+<td align="center">21</td>
+<td align="center">28</td>
+<td align="center">36</td>
+<td align="center">45</td>
 </tr>
 </tbody>
 </table>
@@ -639,24 +658,31 @@ We can also get the sample mean values of each group, individually.
 For example, for Het1,</p>
 <p><span class="math display">\[\bar{x}_{Het1} = \frac{2.122 + 1.938 + 1.765 + 1.7}{4} = 1.88125.\]</span></p>
 <p>We can calculate the means for all 5 fig wasps (Table 24.3).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-96">Table 24.3: </span><strong>TABLE 24.3</strong> Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).</caption>
+<table style="width:56%;">
+<caption><strong>TABLE 24.3</strong> Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).</caption>
+<colgroup>
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Het1</th>
-<th align="right">Het2</th>
-<th align="right">LO1</th>
-<th align="right">SO1</th>
-<th align="right">SO2</th>
+<th align="center">Het1</th>
+<th align="center">Het2</th>
+<th align="center">LO1</th>
+<th align="center">SO1</th>
+<th align="center">SO2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1.88125</td>
-<td align="right">1.70775</td>
-<td align="right">1.71125</td>
-<td align="right">1.51525</td>
-<td align="right">1.53</td>
+<td align="center">1.881</td>
+<td align="center">1.708</td>
+<td align="center">1.711</td>
+<td align="center">1.515</td>
+<td align="center">1.53</td>
 </tr>
 </tbody>
 </table>
@@ -688,67 +714,81 @@ For example, for Het1, we calculate,</p>
               0.0135141 +
               0.0328516 = 0.1075467.\]</span></p>
 <p>Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-97">Table 24.4: </span><strong>TABLE 24.4</strong> The squared deviations from species means for each wing length presented in Table 24.1</caption>
+<table style="width:78%;">
+<caption><strong>TABLE 24.4</strong> The squared deviations from species means for each wing length presented in Table 24.1</caption>
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="13%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Het1</th>
-<th align="right">Het2</th>
-<th align="right">LO1</th>
-<th align="right">SO1</th>
-<th align="right">SO2</th>
+<th align="center">Het1</th>
+<th align="center">Het2</th>
+<th align="center">LO1</th>
+<th align="center">SO1</th>
+<th align="center">SO2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.0579606</td>
-<td align="right">0.0104551</td>
-<td align="right">0.0248851</td>
-<td align="right">0.0017431</td>
-<td align="right">0.011025</td>
+<td align="center">0.05796</td>
+<td align="center">0.01046</td>
+<td align="center">0.02489</td>
+<td align="center">0.001743</td>
+<td align="center">0.01102</td>
 </tr>
 <tr class="even">
-<td align="right">0.0032206</td>
-<td align="right">0.0128256</td>
-<td align="right">0.0603931</td>
-<td align="right">0.0004951</td>
-<td align="right">0.028900</td>
+<td align="center">0.003221</td>
+<td align="center">0.01283</td>
+<td align="center">0.06039</td>
+<td align="center">0.0004951</td>
+<td align="center">0.0289</td>
 </tr>
 <tr class="odd">
-<td align="right">0.0135141</td>
-<td align="right">0.0029976</td>
-<td align="right">0.0149451</td>
-<td align="right">0.0020476</td>
-<td align="right">0.015129</td>
+<td align="center">0.01351</td>
+<td align="center">0.002998</td>
+<td align="center">0.01495</td>
+<td align="center">0.002048</td>
+<td align="center">0.01513</td>
 </tr>
 <tr class="even">
-<td align="right">0.0328516</td>
-<td align="right">0.0258406</td>
-<td align="right">0.0791016</td>
-<td align="right">0.0006631</td>
-<td align="right">0.023104</td>
+<td align="center">0.03285</td>
+<td align="center">0.02584</td>
+<td align="center">0.0791</td>
+<td align="center">0.0006631</td>
+<td align="center">0.0231</td>
 </tr>
 </tbody>
 </table>
 <p>If we sum each column (i.e., do what we did for <span class="math inline">\(SS_{Het1}\)</span> for each species), then we get the SS for each species (Table 24.5).</p>
-<table>
-<caption><span id="tab:unnamed-chunk-98">Table 24.5: </span><strong>TABLE 24.5</strong> The sum of squared deviations from species means for each wing length presented in Table 24.1</caption>
+<table style="width:69%;">
+<caption><strong>TABLE 24.5</strong> The sum of squared deviations from species means for each wing length presented in Table 24.1</caption>
+<colgroup>
+<col width="12%" />
+<col width="13%" />
+<col width="12%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="right">Het1</th>
-<th align="right">Het2</th>
-<th align="right">LO1</th>
-<th align="right">SO1</th>
-<th align="right">SO2</th>
+<th align="center">Het1</th>
+<th align="center">Het2</th>
+<th align="center">LO1</th>
+<th align="center">SO1</th>
+<th align="center">SO2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">0.1075467</td>
-<td align="right">0.0521188</td>
-<td align="right">0.1793248</td>
-<td align="right">0.0049487</td>
-<td align="right">0.078158</td>
+<td align="center">0.1075</td>
+<td align="center">0.05212</td>
+<td align="center">0.1793</td>
+<td align="center">0.004949</td>
+<td align="center">0.07816</td>
 </tr>
 </tbody>
 </table>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-09" />
+<meta name="date" content="2024-03-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -491,55 +491,60 @@ If, for whatever reason, fig wasps on different trees have different wing length
 Because we would then have 2 group types (species and tree), we would need a two-way ANOVA<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just 2 of the 5 species (Het1 and SO2).
 Table 27.1 shows the fig wasp wing length dataset for the 2 species in a tidy format, which includes columns for 2 group types, species and tree.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-106">Table 27.1: </span><strong>TABLE 27.1</strong> Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<table style="width:43%;">
+<caption><strong>TABLE 27.1</strong> Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<colgroup>
+<col width="13%" />
+<col width="9%" />
+<col width="19%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Species</th>
-<th align="left">Tree</th>
-<th align="right">wing_length</th>
+<th align="center">Species</th>
+<th align="center">Tree</th>
+<th align="center">wing_length</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Het1</td>
-<td align="left">A</td>
-<td align="right">2.122</td>
+<td align="center">Het1</td>
+<td align="center">A</td>
+<td align="center">2.122</td>
 </tr>
 <tr class="even">
-<td align="left">Het1</td>
-<td align="left">A</td>
-<td align="right">1.938</td>
+<td align="center">Het1</td>
+<td align="center">A</td>
+<td align="center">1.938</td>
 </tr>
 <tr class="odd">
-<td align="left">Het1</td>
-<td align="left">B</td>
-<td align="right">1.765</td>
+<td align="center">Het1</td>
+<td align="center">B</td>
+<td align="center">1.765</td>
 </tr>
 <tr class="even">
-<td align="left">Het1</td>
-<td align="left">B</td>
-<td align="right">1.700</td>
+<td align="center">Het1</td>
+<td align="center">B</td>
+<td align="center">1.7</td>
 </tr>
 <tr class="odd">
-<td align="left">SO2</td>
-<td align="left">A</td>
-<td align="right">1.635</td>
+<td align="center">SO2</td>
+<td align="center">A</td>
+<td align="center">1.635</td>
 </tr>
 <tr class="even">
-<td align="left">SO2</td>
-<td align="left">A</td>
-<td align="right">1.700</td>
+<td align="center">SO2</td>
+<td align="center">A</td>
+<td align="center">1.7</td>
 </tr>
 <tr class="odd">
-<td align="left">SO2</td>
-<td align="left">B</td>
-<td align="right">1.407</td>
+<td align="center">SO2</td>
+<td align="center">B</td>
+<td align="center">1.407</td>
 </tr>
 <tr class="even">
-<td align="left">SO2</td>
-<td align="left">B</td>
-<td align="right">1.378</td>
+<td align="center">SO2</td>
+<td align="center">B</td>
+<td align="center">1.378</td>
 </tr>
 </tbody>
 </table>
@@ -606,55 +611,60 @@ If the slopes of the two lines were significantly different, then this would be 
 <p>What would Figure 27.2 look like if there was an interaction effect between species and tree?
 We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
 Table 27.2 shows the data.</p>
-<table>
-<caption><span id="tab:unnamed-chunk-109">Table 27.2: </span><strong>TABLE 27.2</strong> Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<table style="width:43%;">
+<caption><strong>TABLE 27.2</strong> Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<colgroup>
+<col width="13%" />
+<col width="9%" />
+<col width="19%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left">Species</th>
-<th align="left">Tree</th>
-<th align="right">wing_length</th>
+<th align="center">Species</th>
+<th align="center">Tree</th>
+<th align="center">wing_length</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">SO1</td>
-<td align="left">A</td>
-<td align="right">1.557</td>
+<td align="center">SO1</td>
+<td align="center">A</td>
+<td align="center">1.557</td>
 </tr>
 <tr class="even">
-<td align="left">SO1</td>
-<td align="left">A</td>
-<td align="right">1.493</td>
+<td align="center">SO1</td>
+<td align="center">A</td>
+<td align="center">1.493</td>
 </tr>
 <tr class="odd">
-<td align="left">SO1</td>
-<td align="left">B</td>
-<td align="right">1.470</td>
+<td align="center">SO1</td>
+<td align="center">B</td>
+<td align="center">1.47</td>
 </tr>
 <tr class="even">
-<td align="left">SO1</td>
-<td align="left">B</td>
-<td align="right">1.541</td>
+<td align="center">SO1</td>
+<td align="center">B</td>
+<td align="center">1.541</td>
 </tr>
 <tr class="odd">
-<td align="left">SO2</td>
-<td align="left">A</td>
-<td align="right">1.635</td>
+<td align="center">SO2</td>
+<td align="center">A</td>
+<td align="center">1.635</td>
 </tr>
 <tr class="even">
-<td align="left">SO2</td>
-<td align="left">A</td>
-<td align="right">1.700</td>
+<td align="center">SO2</td>
+<td align="center">A</td>
+<td align="center">1.7</td>
 </tr>
 <tr class="odd">
-<td align="left">SO2</td>
-<td align="left">B</td>
-<td align="right">1.407</td>
+<td align="center">SO2</td>
+<td align="center">B</td>
+<td align="center">1.407</td>
 </tr>
 <tr class="even">
-<td align="left">SO2</td>
-<td align="left">B</td>
-<td align="right">1.378</td>
+<td align="center">SO2</td>
+<td align="center">B</td>
+<td align="center">1.378</td>
 </tr>
 </tbody>
 </table>
