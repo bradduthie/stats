@@ -180,7 +180,7 @@
 
 \title{Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi}
 \author{A. Bradley Duthie}
-\date{2024-03-10}
+\date{2024-03-11}
 
 \begin{document}
 \maketitle
@@ -1417,7 +1417,7 @@ Notice above how the \(kg\) on the top and bottom of the fraction cancel each ot
 \hypertarget{Chapter_7}{%
 \chapter{Uncertainty propagation}\label{Chapter_7}}
 
-Nothing can be measured with perfect \index{accuracy}, meaning that every measurement has some associated error.
+Nothing can be measured with perfect \index{accuracy}{accuracy}, meaning that every measurement has some associated error.
 The measurement error might be caused by random noise in the measuring environment, or by mistakes made by the person doing the measuring.
 The measurement error might also be caused by limitations or imperfections associated with a measuring device.
 The device might be limited in its measurement precision, or perhaps it is biased in its measurements due to improper calibration, manufacture, or damage from previous use.
@@ -1626,14 +1626,39 @@ Note that there are 5 columns of data, and all of the data appear to be in a tid
 Each row represents a separate fig fruit, while each column represents a measured variable associated with the fruit.
 The first several rows should look like Table 8.1.
 
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:unnamed-chunk-28}\textbf{TABLE 8.1} First six rows of the fig fruits dataset.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 8.1} First six rows of the fig fruits dataset.}\tabularnewline
 \toprule
-Tree & Length\_cm & Width\_cm & Height\_cm & Seeds \\
+\begin{minipage}[b]{\linewidth}\centering
+Tree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Length\_cm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Width\_cm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Height\_cm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Seeds
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Tree & Length\_cm & Width\_cm & Height\_cm & Seeds \\
+\begin{minipage}[b]{\linewidth}\centering
+Tree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Length\_cm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Width\_cm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Height\_cm
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Seeds
+\end{minipage} \\
 \midrule
 \endhead
 A & 1.5 & 1.8 & 1.4 & 238 \\
@@ -1833,7 +1858,7 @@ This chapter focuses on correctly interpreting the decimal places and significan
 \hypertarget{decimal-places-and-significant-figures}{%
 \section{Decimal places and significant figures}\label{decimal-places-and-significant-figures}}
 
-A higher number of digits communicates a greater level of \index{accuracy}.
+A higher number of digits communicates a greater level of accuracy.
 For example, the number 2.718 expresses a higher precision than 2.7 does.
 Reporting 2.718 implies that we know the value is somewhere between 2.7175 and 2.1785, but reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 \citep{Sokal1995}.
 These numbers therefore have a different number of \emph{decimal places} and a different number of \emph{significant figures}.
@@ -1842,11 +1867,11 @@ Decimal places and significant figures are related, but not the same.
 \textbf{Decimal places} are conceptually easier to understand. These are just the number of digits to the right of the decimal point. For example, 2.718 has 3 decimal places, and 2.7 has 1 decimal place.
 
 \textbf{Significant figures} are a bit more challenging.
-These are the number of digits that you need to infer the \index{accuracy} of a value.
+These are the number of digits that you need to infer the accuracy of a value.
 For example, the number 2.718 has 4 significant figures and 2.7 has 2 significant figures. This sounds straightforward, but it can get confusing when numbers start or end with zeros.
 For example, the number 0.045 has only 2 significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy).
-In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of \index{accuracy} than just 0.045 would (i.e., we know the value is somewhere between 0.44995 and 0.45005, not just 0.0445 and 0.0455).
-Lastly, the measurement 4500 has only 2 significant figures because the last 2 zeros are only serving as a placeholder to indicate magnitude, not \index{accuracy} (if we wanted to represent 4500 with 4 significant figures, we could use scientific notation and express it as \(4.500 \times 10^3\)).
+In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.44995 and 0.45005, not just 0.0445 and 0.0455).
+Lastly, the measurement 4500 has only 2 significant figures because the last 2 zeros are only serving as a placeholder to indicate magnitude, not accuracy (if we wanted to represent 4500 with 4 significant figures, we could use scientific notation and express it as \(4.500 \times 10^3\)).
 
 Table 9.1 shows some examples of numbers, their decimal places, and their significant figures.
 
@@ -2069,7 +2094,7 @@ It takes some getting used to, but Table 11.1 shows each symbol with its corresp
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1125}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1125}}
   >{\centering\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1125}}@{}}
-\caption{Table 11.1: A sample dataset that includes eight values.}\tabularnewline
+\caption{\textbf{TABLE 11.1} A sample dataset that includes eight values.}\tabularnewline
 \toprule
 \begin{minipage}[b]{\linewidth}\centering
 Symbol
@@ -2545,30 +2570,41 @@ In Table 12.1, we simulate the process of going out and collecting 10 water samp
 This collecting of 10 water samples is repeated 20 different times.
 Each row is a different sampling effort, and columns report the 10 samples from each effort.
 
-\begin{longtable}[]{@{}lrrrrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-40}\textbf{TABLE 12.1} Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.1860}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0814}}@{}}
+\caption{\textbf{TABLE 12.1} Simulated samples of nitrogen content from water samples of Airthrey Loch. Values are sampled from a normal distribution with a mean of 0.7 and a standard deviation 0.1.}\tabularnewline
 \toprule
 \endhead
-Sample\_1 & 0.56 & 0.71 & 0.63 & 0.73 & 0.77 & 0.72 & 0.86 & 0.79 & 0.80 & 0.57 \\
-Sample\_2 & 0.75 & 0.81 & 0.62 & 0.93 & 0.74 & 0.57 & 0.64 & 0.68 & 0.95 & 0.65 \\
-Sample\_3 & 0.76 & 0.76 & 0.71 & 0.75 & 0.66 & 0.63 & 0.61 & 0.58 & 0.58 & 0.71 \\
-Sample\_4 & 0.81 & 0.72 & 0.70 & 0.64 & 0.71 & 0.71 & 0.68 & 0.79 & 0.74 & 0.83 \\
-Sample\_5 & 0.72 & 0.62 & 0.82 & 0.82 & 0.61 & 0.66 & 0.68 & 0.53 & 0.68 & 0.79 \\
-Sample\_6 & 0.65 & 0.66 & 0.71 & 0.82 & 0.71 & 0.60 & 0.81 & 0.59 & 0.65 & 0.67 \\
-Sample\_7 & 0.80 & 0.73 & 0.59 & 0.83 & 0.85 & 0.61 & 0.72 & 0.77 & 0.73 & 0.54 \\
-Sample\_8 & 0.64 & 0.63 & 0.75 & 0.68 & 0.72 & 0.91 & 0.83 & 0.56 & 0.71 & 0.67 \\
-Sample\_9 & 0.78 & 0.61 & 0.61 & 0.74 & 0.55 & 0.49 & 0.57 & 0.65 & 0.69 & 0.65 \\
-Sample\_10 & 0.50 & 0.62 & 0.77 & 0.58 & 0.56 & 0.72 & 0.70 & 0.85 & 0.70 & 0.68 \\
-Sample\_11 & 0.72 & 0.77 & 0.71 & 0.55 & 0.53 & 0.76 & 0.69 & 0.80 & 0.67 & 0.68 \\
-Sample\_12 & 0.78 & 0.67 & 0.65 & 0.45 & 0.88 & 0.68 & 0.65 & 0.56 & 0.75 & 0.52 \\
-Sample\_13 & 0.66 & 0.77 & 0.52 & 0.95 & 0.69 & 0.80 & 0.70 & 0.81 & 0.64 & 0.92 \\
-Sample\_14 & 0.61 & 0.57 & 0.69 & 0.70 & 0.85 & 0.82 & 0.58 & 0.96 & 0.77 & 0.73 \\
-Sample\_15 & 0.70 & 0.78 & 0.65 & 0.53 & 0.88 & 0.63 & 0.64 & 0.86 & 0.71 & 0.75 \\
-Sample\_16 & 0.62 & 0.79 & 0.70 & 0.68 & 0.73 & 0.76 & 0.72 & 0.69 & 0.68 & 0.68 \\
-Sample\_17 & 0.67 & 0.72 & 0.66 & 0.75 & 0.58 & 0.83 & 0.57 & 0.56 & 0.69 & 0.78 \\
-Sample\_18 & 0.69 & 0.77 & 0.85 & 0.73 & 0.64 & 0.81 & 0.65 & 0.59 & 0.64 & 0.62 \\
-Sample\_19 & 0.74 & 0.48 & 0.70 & 0.52 & 0.47 & 0.76 & 0.67 & 0.56 & 0.78 & 0.72 \\
-Sample\_20 & 0.74 & 0.83 & 0.51 & 0.74 & 0.75 & 0.65 & 0.87 & 0.70 & 0.71 & 0.75 \\
+\textbf{Sample\_1} & 0.74 & 0.8 & 0.74 & 0.77 & 0.76 & 0.71 & 0.8 & 0.58 & 0.66 & 0.97 \\
+\textbf{Sample\_2} & 0.84 & 0.69 & 0.8 & 0.56 & 0.51 & 0.66 & 0.7 & 0.73 & 0.74 & 0.7 \\
+\textbf{Sample\_3} & 0.67 & 0.62 & 0.51 & 0.58 & 0.66 & 0.69 & 0.71 & 0.83 & 0.71 & 0.95 \\
+\textbf{Sample\_4} & 0.78 & 0.55 & 0.71 & 0.9 & 0.68 & 0.83 & 0.81 & 0.76 & 0.73 & 0.69 \\
+\textbf{Sample\_5} & 0.79 & 0.63 & 0.75 & 0.56 & 0.66 & 0.71 & 0.81 & 0.65 & 0.8 & 0.84 \\
+\textbf{Sample\_6} & 0.66 & 0.79 & 0.71 & 0.62 & 0.69 & 0.8 & 0.52 & 0.65 & 0.74 & 0.68 \\
+\textbf{Sample\_7} & 0.73 & 0.78 & 0.67 & 0.78 & 0.54 & 0.6 & 0.66 & 0.55 & 0.58 & 0.64 \\
+\textbf{Sample\_8} & 0.68 & 0.8 & 0.67 & 0.75 & 0.72 & 0.69 & 0.71 & 0.59 & 0.74 & 0.73 \\
+\textbf{Sample\_9} & 0.9 & 0.74 & 0.65 & 0.62 & 0.8 & 0.54 & 0.68 & 0.51 & 0.74 & 0.66 \\
+\textbf{Sample\_10} & 0.74 & 0.69 & 0.63 & 0.55 & 0.66 & 0.83 & 0.75 & 0.85 & 0.57 & 0.68 \\
+\textbf{Sample\_11} & 0.63 & 0.69 & 0.58 & 0.89 & 0.67 & 0.7 & 0.69 & 0.67 & 0.62 & 0.72 \\
+\textbf{Sample\_12} & 0.79 & 0.79 & 0.65 & 0.64 & 0.81 & 0.75 & 0.82 & 0.64 & 0.79 & 0.72 \\
+\textbf{Sample\_13} & 0.68 & 0.67 & 0.7 & 0.58 & 0.74 & 0.64 & 0.75 & 0.77 & 0.45 & 0.85 \\
+\textbf{Sample\_14} & 0.8 & 0.68 & 0.66 & 0.65 & 0.65 & 0.53 & 0.8 & 0.71 & 0.55 & 0.64 \\
+\textbf{Sample\_15} & 0.75 & 0.69 & 0.63 & 0.62 & 0.59 & 0.6 & 0.77 & 0.82 & 0.6 & 0.89 \\
+\textbf{Sample\_16} & 0.87 & 0.67 & 0.74 & 0.69 & 0.64 & 0.77 & 0.74 & 0.65 & 0.72 & 0.72 \\
+\textbf{Sample\_17} & 0.58 & 0.84 & 0.61 & 0.72 & 0.67 & 0.56 & 0.48 & 0.67 & 0.6 & 0.64 \\
+\textbf{Sample\_18} & 0.57 & 0.65 & 0.76 & 0.65 & 0.81 & 0.87 & 0.6 & 0.62 & 0.79 & 0.74 \\
+\textbf{Sample\_19} & 0.75 & 0.55 & 0.7 & 0.57 & 0.82 & 0.81 & 0.61 & 0.7 & 1.04 & 0.61 \\
+\textbf{Sample\_20} & 0.69 & 0.75 & 0.76 & 0.81 & 0.62 & 0.7 & 0.71 & 0.7 & 0.79 & 0.85 \\
 \bottomrule
 \end{longtable}
 
@@ -2577,18 +2613,18 @@ These 20 means are reported below.
 
 \begin{verbatim}
       [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.714 0.734 0.675 0.733 0.693 0.687 0.717 0.710 0.634 0.668
-[2,] 0.688 0.659 0.746 0.728 0.713 0.705 0.681 0.699 0.640 0.725
+[1,] 0.753 0.693 0.693 0.744 0.720 0.686 0.653 0.708 0.684 0.695
+[2,] 0.686 0.740 0.683 0.667 0.696 0.721 0.637 0.706 0.716 0.738
 \end{verbatim}
 
-The standard deviation of the 20 sample means reported above is 0.0311439.
+The standard deviation of the 20 sample means reported above is 0.0301845.
 Now suppose that we only had Sample 1 (i.e., the top row of data).
-The standard deviation of Sample 1 is \(s =\) 0.0996884.
+The standard deviation of Sample 1 is \(s =\) 0.1014396.
 We can calculate the standard error from these sample values below,
 
-\[s = \frac{0.0996884}{\sqrt{10}} = 0.0315242.\]
+\[s = \frac{0.1014396}{\sqrt{10}} = 0.032078.\]
 
-The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0311439, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0315242.
+The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0301845, and the estimate from just using the standard error formula and data from only Sample 1 is 0.032078.
 These are reasonably close, and would be even closer if we had either a larger sample size in each sample (i.e., higher \(N\)) or a larger number of samples.
 
 \hypertarget{skew-and-kurtosis}{%
@@ -4810,7 +4846,7 @@ We therefore should conclude that the mean of test scores from the current year 
 The biology teacher in our example might therefore conclude that mean test results have not improved from the previous year.
 
 \hypertarget{paired-samples-t-test}{%
-\section{paired samples t-test}\label{paired-samples-t-test}}
+\section{Paired samples t-test}\label{paired-samples-t-test}}
 
 There is one more type of t-test to consider.
 The paired samples t-test is applied when the data points in one sample can be naturally paired with those in another sample.
@@ -4823,22 +4859,76 @@ For example, we can consider the student test scores (\(y_{1}\)) yet again.
 
 Suppose that the teacher gave these same students (S1-S10) a second test and wanted to see if the mean student score changed from one test to the next (i.e., a two-sided hypothesis).
 
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-83}**TABLE 22.1** Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}
-\centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
-\hline
-  & S1 & S2 & S3 & S4 & S5 & S6 & S7 & S8 & S9 & S10\\
-\hline
-Test 1 & 49.3 & 62.9 & 73.7 & 65.5 & 69.6 & 70.7 & 61.5 & 73.4 & 61.1 & 78.1\\
-\hline
-Test 2 & 46.6 & 62.7 & 73.8 & 58.3 & 66.8 & 69.7 & 64.5 & 71.3 & 64.5 & 78.8\\
-\hline
-Change & -2.7 & -0.2 & 0.1 & -7.2 & -2.8 & -1.0 & 3.0 & -2.1 & 3.4 & 0.7\\
-\hline
-\end{tabular}
-\end{table}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.1566}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}@{}}
+\caption{\textbf{TABLE 22.1} Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S10
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S10
+\end{minipage} \\
+\midrule
+\endhead
+\textbf{Test 1} & 49.3 & 62.9 & 73.7 & 65.5 & 69.6 & 70.7 & 61.5 & 73.4 & 61.1 & 78.1 \\
+\textbf{Test 2} & 46.6 & 62.7 & 73.8 & 58.3 & 66.8 & 69.7 & 64.5 & 71.3 & 64.5 & 78.8 \\
+\textbf{Change} & -2.7 & -0.2 & 0.1 & -7.2 & -2.8 & -1 & 3 & -2.1 & 3.4 & 0.7 \\
+\bottomrule
+\end{longtable}
 
 In this case, what we are really interested in is the \emph{change} in scores from Test 1 to Test 2.
 We want to test the null hypothesis that this change is zero.
@@ -5000,22 +5090,76 @@ Note that we can also use a Wilcoxon signed rank test as a non-parametric equiva
 In this case, instead of subtracting out the null hypothesis of our median value (e.g., \(H_{0}: M = 60\) in the example above), we just need to subtract the paired values.
 Consider again the example of the 2 different tests introduced for the \protect\hyperlink{paired-sample-t-test}{paired samples t-test} above (Table 22.2).
 
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-86}**TABLE 22.2** Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}
-\centering
-\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r|r}
-\hline
-  & S1 & S2 & S3 & S4 & S5 & S6 & S7 & S8 & S9 & S10\\
-\hline
-Test 1 & 49.3 & 62.9 & 73.7 & 65.5 & 69.6 & 70.7 & 61.5 & 73.4 & 61.1 & 78.1\\
-\hline
-Test 2 & 46.6 & 62.7 & 73.8 & 58.3 & 66.8 & 69.7 & 64.5 & 71.3 & 64.5 & 78.8\\
-\hline
-Change & -2.7 & -0.2 & 0.1 & -7.2 & -2.8 & -1.0 & 3.0 & -2.1 & 3.4 & 0.7\\
-\hline
-\end{tabular}
-\end{table}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.1566}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}
+  >{\centering\arraybackslash}p{(\columnwidth - 20\tabcolsep) * \real{0.0843}}@{}}
+\caption{\textbf{TABLE 22.2} Test scores from 10 students (S1-S10) for 2 different tests in a hypothetical biology education example.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S10
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+S10
+\end{minipage} \\
+\midrule
+\endhead
+\textbf{Test 1} & 49.3 & 62.9 & 73.7 & 65.5 & 69.6 & 70.7 & 61.5 & 73.4 & 61.1 & 78.1 \\
+\textbf{Test 2} & 46.6 & 62.7 & 73.8 & 58.3 & 66.8 & 69.7 & 64.5 & 71.3 & 64.5 & 78.8 \\
+\textbf{Change} & -2.7 & -0.2 & 0.1 & -7.2 & -2.8 & -1 & 3 & -2.1 & 3.4 & 0.7 \\
+\bottomrule
+\end{longtable}
 
 If the `Change' values in Table 22.2 were not normally distributed, then we could apply a Wilcoxon test to test the null hypothesis that the median value of \(Test\:2 - Test\:1 = 0\) (note that a Shapiro-Wilk normality does not reject the null hypothesis that the difference between test scores is normally distributed, so the paired t-test would be preferred in this case).
 To do this, we would first note the sign of each value as negative or positive.
@@ -5069,54 +5213,52 @@ For \(y_{2}\), the ranks are below.
 
 This might be easier to see if we present it as a table showing the test Year (\(y_{1}\) versus \(y_{2}\)), test Score, and test Rank (Table 22.3).
 
-\begin{table}
-
-\caption{\label{tab:unnamed-chunk-87}**TABLE 22.3** Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.}
-\centering
-\begin{tabular}[t]{r|r|r}
-\hline
-Year & Score & Rank\\
-\hline
-1 & 49.3 & 2\\
-\hline
-1 & 62.9 & 9\\
-\hline
-1 & 73.7 & 18\\
-\hline
-1 & 65.5 & 11\\
-\hline
-1 & 69.6 & 12\\
-\hline
-1 & 70.7 & 15\\
-\hline
-1 & 61.5 & 8\\
-\hline
-1 & 73.4 & 17\\
-\hline
-1 & 61.1 & 7\\
-\hline
-1 & 78.1 & 19\\
-\hline
-2 & 57.4 & 4\\
-\hline
-2 & 52.4 & 3\\
-\hline
-2 & 70.5 & 14\\
-\hline
-2 & 71.6 & 16\\
-\hline
-2 & 46.1 & 1\\
-\hline
-2 & 60.4 & 6\\
-\hline
-2 & 70.0 & 13\\
-\hline
-2 & 64.5 & 10\\
-\hline
-2 & 58.8 & 5\\
-\hline
-\end{tabular}
-\end{table}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 22.3} Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.}\tabularnewline
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Year
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Rank
+\end{minipage} \\
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{\linewidth}\centering
+Year
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Rank
+\end{minipage} \\
+\midrule
+\endhead
+1 & 49.3 & 2 \\
+1 & 62.9 & 9 \\
+1 & 73.7 & 18 \\
+1 & 65.5 & 11 \\
+1 & 69.6 & 12 \\
+1 & 70.7 & 15 \\
+1 & 61.5 & 8 \\
+1 & 73.4 & 17 \\
+1 & 61.1 & 7 \\
+1 & 78.1 & 19 \\
+2 & 57.4 & 4 \\
+2 & 52.4 & 3 \\
+2 & 70.5 & 14 \\
+2 & 71.6 & 16 \\
+2 & 46.1 & 1 \\
+2 & 60.4 & 6 \\
+2 & 70 & 13 \\
+2 & 64.5 & 10 \\
+2 & 58.8 & 5 \\
+\bottomrule
+\end{longtable}
 
 What we need to do now is sum the ranks for \(y_{1}\) and \(y_{2}\).
 If we add up the \(y_{1}\) ranks, then we get a value of \(R_{1}=\) 118.
@@ -5572,20 +5714,45 @@ What follows is an explanation of why this can be done by looking at the varianc
 Groups are categorical data (see \protect\hyperlink{Chapter_5}{Chapter 5}).
 In the case of the fig wasp example, the groups are the different species (Table 24.1).
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-93}\textbf{TABLE 24.1} Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 24.1} Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endhead
-2.122 & 1.810 & 1.869 & 1.557 & 1.635 \\
-1.938 & 1.821 & 1.957 & 1.493 & 1.700 \\
-1.765 & 1.653 & 1.589 & 1.470 & 1.407 \\
-1.700 & 1.547 & 1.430 & 1.541 & 1.378 \\
+2.122 & 1.81 & 1.869 & 1.557 & 1.635 \\
+1.938 & 1.821 & 1.957 & 1.493 & 1.7 \\
+1.765 & 1.653 & 1.589 & 1.47 & 1.407 \\
+1.7 & 1.547 & 1.43 & 1.541 & 1.378 \\
 \bottomrule
 \end{longtable}
 
@@ -5596,12 +5763,22 @@ First, there are a lot of group combinations to compare (Het1 vs Het2, Het1 vs L
 For the 5 fig wasp species in Table 24.1, there are 10 pair-wise combinations that would need to be tested.
 And the number of combinations grows exponentially\footnote{Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, \[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\] The number of combinations therefore increases with increasing group number (g).} with each new group added to the dataset (Table 24.2).
 
-\begin{longtable}[]{@{}lrrrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-94}\textbf{TABLE 24.2} The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1806}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0556}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0556}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0556}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0694}}@{}}
+\caption{\textbf{TABLE 24.2} The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)}\tabularnewline
 \toprule
 \endhead
-Groups & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
-Tests & 1 & 3 & 6 & 10 & 15 & 21 & 28 & 36 & 45 \\
+\textbf{Groups} & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\textbf{Tests} & 1 & 3 & 6 & 10 & 15 & 21 & 28 & 36 & 45 \\
 \bottomrule
 \end{longtable}
 
@@ -5634,7 +5811,7 @@ This is relevant because the test statistic calculated in an ANOVA is called an 
 If we want to test whether or not 2 variances are the same, then we need to know what the null distribution should be if 2 different samples came from a population with the same variance.
 The general idea is the same as it was for the distributions introduced in \protect\hyperlink{probability-distributions}{Chapter 15.4}.
 For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when \(P(Heads) = 0.5\) and \(N = 10\) (see \protect\hyperlink{binomial-distribution}{Chapter 15.4.1} Figure 15.5).
-To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function\footnote{The F-distribution was originally discovered in the context of the ratio of random variables with chi-square distributions, with each variable being divided by its own degree of freedom \citep{Miller2004}. We will look at the Chi-square distribution in \protect\hyperlink{Chapter_29}{Chapter 29}.}.
+To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function\footnote{The F-distribution was originally discovered in the context of the ratio of random variables with Chi-square distributions, with each variable being divided by its own degree of freedom \citep{Miller2004}. We will look at the Chi-square distribution in \protect\hyperlink{Chapter_29}{Chapter 29}.}.
 For example, the ratio of the variances for samples 1 and 2 is \citep{Sokal1995},
 
 \[F = \frac{Variance\:1}{Variance\:2}.\]
@@ -5696,17 +5873,42 @@ For example, for Het1,
 
 We can calculate the means for all 5 fig wasps (Table 24.3).
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-96}\textbf{TABLE 24.3} Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 24.3} Mean wing lengths (mm) from 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from 4 wasps (N = 4).}\tabularnewline
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endhead
-1.88125 & 1.70775 & 1.71125 & 1.51525 & 1.53 \\
+1.881 & 1.708 & 1.711 & 1.515 & 1.53 \\
 \bottomrule
 \end{longtable}
 
@@ -5746,36 +5948,86 @@ If we subtract the mean and square each term of the above,
 
 Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-97}\textbf{TABLE 24.4} The squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}@{}}
+\caption{\textbf{TABLE 24.4} The squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endhead
-0.0579606 & 0.0104551 & 0.0248851 & 0.0017431 & 0.011025 \\
-0.0032206 & 0.0128256 & 0.0603931 & 0.0004951 & 0.028900 \\
-0.0135141 & 0.0029976 & 0.0149451 & 0.0020476 & 0.015129 \\
-0.0328516 & 0.0258406 & 0.0791016 & 0.0006631 & 0.023104 \\
+0.05796 & 0.01046 & 0.02489 & 0.001743 & 0.01102 \\
+0.003221 & 0.01283 & 0.06039 & 0.0004951 & 0.0289 \\
+0.01351 & 0.002998 & 0.01495 & 0.002048 & 0.01513 \\
+0.03285 & 0.02584 & 0.0791 & 0.0006631 & 0.0231 \\
 \bottomrule
 \end{longtable}
 
 If we sum each column (i.e., do what we did for \(SS_{Het1}\) for each species), then we get the SS for each species (Table 24.5).
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-98}\textbf{TABLE 24.5} The sum of squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}@{}}
+\caption{\textbf{TABLE 24.5} The sum of squared deviations from species means for each wing length presented in Table 24.1}\tabularnewline
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endhead
-0.1075467 & 0.0521188 & 0.1793248 & 0.0049487 & 0.078158 \\
+0.1075 & 0.05212 & 0.1793 & 0.004949 & 0.07816 \\
 \bottomrule
 \end{longtable}
 
@@ -5931,20 +6183,45 @@ The idea is to rank all values in the dataset, ignoring group, then calculate a 
 We can again use the example of the fig wasp wing lengths introduced in \protect\hyperlink{Chapter_24}{Chapter 24}.
 For convenience, Table 24.1 is reproduced here as Table 26.1.
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-103}\textbf{TABLE 26.1} Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 26.1} Reproduction of Table 23.1. Wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.}\tabularnewline
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endhead
-2.122 & 1.810 & 1.869 & 1.557 & 1.635 \\
-1.938 & 1.821 & 1.957 & 1.493 & 1.700 \\
-1.765 & 1.653 & 1.589 & 1.470 & 1.407 \\
-1.700 & 1.547 & 1.430 & 1.541 & 1.378 \\
+2.122 & 1.81 & 1.869 & 1.557 & 1.635 \\
+1.938 & 1.821 & 1.957 & 1.493 & 1.7 \\
+1.765 & 1.653 & 1.589 & 1.47 & 1.407 \\
+1.7 & 1.547 & 1.43 & 1.541 & 1.378 \\
 \bottomrule
 \end{longtable}
 
@@ -5956,20 +6233,45 @@ Consequently, we should probably have used the non-parametric Kruskall-Wallis H 
 To do this, we first need to rank all of the values in Table 26.1.
 There are 20 total values, so we rank them from 1 to 20 (Table 26.2).
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-104}\textbf{TABLE 26.2} Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0833}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0972}}@{}}
+\caption{\textbf{TABLE 26.2} Ranks of wing lengths (mm) measured for 5 unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Het1 & Het2 & LO1 & SO1 & SO2 \\
+\begin{minipage}[b]{\linewidth}\centering
+Het1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Het2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+LO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+SO2
+\end{minipage} \\
 \midrule
 \endhead
-20.0 & 15 & 17 & 8 & 10.0 \\
-18.0 & 16 & 19 & 5 & 12.5 \\
-14.0 & 11 & 9 & 4 & 2.0 \\
-12.5 & 7 & 3 & 6 & 1.0 \\
+20 & 15 & 17 & 8 & 10 \\
+18 & 16 & 19 & 5 & 12.5 \\
+14 & 11 & 9 & 4 & 2 \\
+12.5 & 7 & 3 & 6 & 1 \\
 \bottomrule
 \end{longtable}
 
@@ -6012,22 +6314,37 @@ Because we would then have 2 group types (species and tree), we would need a two
 Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just 2 of the 5 species (Het1 and SO2).
 Table 27.1 shows the fig wasp wing length dataset for the 2 species in a tidy format, which includes columns for 2 group types, species and tree.
 
-\begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-106}\textbf{TABLE 27.1} Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1944}}@{}}
+\caption{\textbf{TABLE 27.1} Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
-Species & Tree & wing\_length \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Tree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+wing\_length
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Species & Tree & wing\_length \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Tree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+wing\_length
+\end{minipage} \\
 \midrule
 \endhead
 Het1 & A & 2.122 \\
 Het1 & A & 1.938 \\
 Het1 & B & 1.765 \\
-Het1 & B & 1.700 \\
+Het1 & B & 1.7 \\
 SO2 & A & 1.635 \\
-SO2 & A & 1.700 \\
+SO2 & A & 1.7 \\
 SO2 & B & 1.407 \\
 SO2 & B & 1.378 \\
 \bottomrule
@@ -6114,22 +6431,37 @@ What would Figure 27.2 look like if there was an interaction effect between spec
 We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
 Table 27.2 shows the data.
 
-\begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-109}\textbf{TABLE 27.2} Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1944}}@{}}
+\caption{\textbf{TABLE 27.2} Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.}\tabularnewline
 \toprule
-Species & Tree & wing\_length \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Tree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+wing\_length
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Species & Tree & wing\_length \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Tree
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+wing\_length
+\end{minipage} \\
 \midrule
 \endhead
 SO1 & A & 1.557 \\
 SO1 & A & 1.493 \\
-SO1 & B & 1.470 \\
+SO1 & B & 1.47 \\
 SO1 & B & 1.541 \\
 SO2 & A & 1.635 \\
-SO2 & A & 1.700 \\
+SO2 & A & 1.7 \\
 SO2 & B & 1.407 \\
 SO2 & B & 1.378 \\
 \bottomrule
@@ -6335,18 +6667,48 @@ It includes the sum of squares of the among-group (Profile) and within-group (Re
 This is often how ANOVA results are presented in the literature.
 Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and P.
 
-\begin{longtable}[]{@{}llllll@{}}
-\caption{\label{tab:unnamed-chunk-114}\textbf{TABLE 28.1} ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2361}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0556}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0556}}@{}}
+\caption{\textbf{TABLE 28.1} ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
 \toprule
-& Sum of Squares & df & Mean Square & F & p \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Sum of Squares
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+df
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Mean Square
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+F
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+p
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Sum of Squares & df & Mean Square & F & p \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Sum of Squares
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+df
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Mean Square
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+F
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+p
+\end{minipage} \\
 \midrule
 \endhead
-Profile & 16888.18606 & & 8444.09303 & & \\
-Residuals & 118092.02927 & & 2460.25061 & & \\
+\textbf{Profile} & 16888.18606 & & 8444.09303 & & \\
+\textbf{Residuals} & 118092.02927 & & 2460.25061 & & \\
 \bottomrule
 \end{longtable}
 
@@ -6490,20 +6852,50 @@ This time, however, there are 4 rows in total.
 The first 2 rows correspond with tests of the main effects of Site and Profile, and the third row tests the interaction between these two variables.
 Fill in Table 28.2 with the relevant information from the two-way ANOVA output.
 
-\begin{longtable}[]{@{}llllll@{}}
-\caption{\label{tab:unnamed-chunk-115}\textbf{TABLE 28.2} Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2917}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2361}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0694}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0556}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0556}}@{}}
+\caption{\textbf{TABLE 28.2} Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.}\tabularnewline
 \toprule
-& Sum of Squares & df & Mean Square & F & p \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Sum of Squares
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+df
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Mean Square
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+F
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+p
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Sum of Squares & df & Mean Square & F & p \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Sum of Squares
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+df
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Mean Square
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+F
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+p
+\end{minipage} \\
 \midrule
 \endhead
-Site & 21522.18384 & & 21522.18384 & & \\
-Profile & 22811.1368 & & 11405.5684 & & \\
-Site * Profile & 16209.13035 & & 8104.56517 & & \\
-Residuals & 80497.68348 & & 1788.83741 & & \\
+\textbf{Site} & 21522.18384 & & 21522.18384 & & \\
+\textbf{Profile} & 22811.1368 & & 11405.5684 & & \\
+\textbf{Site * Profile} & 16209.13035 & & 8104.56517 & & \\
+\textbf{Residuals} & 80497.68348 & & 1788.83741 & & \\
 \bottomrule
 \end{longtable}
 
@@ -6733,18 +7125,38 @@ We can state this as a null and alternative hypothesis.
 
 Consider the data in Table 29.1, which show counts of Android versus MacOS users and their dam choices.
 
-\begin{longtable}[]{@{}lrrr@{}}
-\caption{\label{tab:unnamed-chunk-120}\textbf{TABLE 29.1} Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1250}}@{}}
+\caption{\textbf{TABLE 29.1} Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).}\tabularnewline
 \toprule
-& Small & Medium & Large \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Small & Medium & Large \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} \\
 \midrule
 \endhead
-Android & 8 & 16 & 6 \\
-MacOS & 10 & 8 & 12 \\
+\textbf{Android} & 8 & 16 & 6 \\
+\textbf{MacOS} & 10 & 8 & 12 \\
 \bottomrule
 \end{longtable}
 
@@ -6772,18 +7184,43 @@ To find the expected counts of each variable combination (e.g., Android and Smal
 For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1
 
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-121}\textbf{TABLE 29.2} Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}@{}}
+\caption{\textbf{TABLE 29.2} Counts (N = 60) from a mobile game called `Power Up!', in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected}\tabularnewline
 \toprule
-& Small & Medium & Large & \textbf{Probability} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Probability}
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Small & Medium & Large & \textbf{Probability} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Probability}
+\end{minipage} \\
 \midrule
 \endhead
-Android & 8 & 16 & 6 & 0.5 \\
-MacOS & 10 & 8 & 12 & 0.5 \\
+\textbf{Android} & 8 & 16 & 6 & 0.5 \\
+\textbf{MacOS} & 10 & 8 & 12 & 0.5 \\
 \textbf{Probability} & 0.3 & 0.4 & 0.3 & -- \\
 \bottomrule
 \end{longtable}
@@ -6796,18 +7233,43 @@ For example, the probability of a player using Android is 0.5 and choosing a sma
 The probability of a player using Android \textbf{and} choosing a medium dam is \(0.5 \times 0.4 = 0.2\).
 We can fill in all of these joint probabilities in a new Table 29.3.
 
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-122}\textbf{TABLE 29.3} Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}@{}}
+\caption{\textbf{TABLE 29.3} Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
 \toprule
-& Small & Medium & Large & \textbf{Probability} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Probability}
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Small & Medium & Large & \textbf{Probability} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Probability}
+\end{minipage} \\
 \midrule
 \endhead
-Android & 0.15 & 0.2 & 0.15 & 0.5 \\
-MacOS & 0.15 & 0.2 & 0.15 & 0.5 \\
+\textbf{Android} & 0.15 & 0.2 & 0.15 & 0.5 \\
+\textbf{MacOS} & 0.15 & 0.2 & 0.15 & 0.5 \\
 \textbf{Probability} & 0.3 & 0.4 & 0.3 & -- \\
 \bottomrule
 \end{longtable}
@@ -6822,18 +7284,43 @@ For example, the expected count of players who use Android and choose a small da
 Table 29.4 fills in all of the expected counts.
 Note that the sum of all the counts equals our sample size of 60.
 
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-123}\textbf{TABLE 29.4} Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1389}}@{}}
+\caption{\textbf{TABLE 29.4} Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!', assuming that variables are independent of one another.}\tabularnewline
 \toprule
-& Small & Medium & Large & \textbf{Sum} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Sum}
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Small & Medium & Large & \textbf{Sum} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Sum}
+\end{minipage} \\
 \midrule
 \endhead
-Android & 9 & 12 & 9 & 30 \\
-MacOS & 9 & 12 & 9 & 30 \\
+\textbf{Android} & 9 & 12 & 9 & 30 \\
+\textbf{MacOS} & 9 & 12 & 9 & 30 \\
 \textbf{Sum} & 18 & 24 & 18 & -- \\
 \bottomrule
 \end{longtable}
@@ -6869,18 +7356,43 @@ There is another way of getting these expected values that is a bit faster (and 
 If we wanted to, we could sum the rows and columns of our original observations.
 Table 29.5 shows the original observations with the sum of each row and column.
 
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-124}\textbf{TABLE 29.5} Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!'. The last row and column shows the sum of observed dam sizes and OS users, respectively.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1389}}@{}}
+\caption{\textbf{TABLE 29.5} Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game `Power Up!'. The last row and column shows the sum of observed dam sizes and OS users, respectively.}\tabularnewline
 \toprule
-& Small & Medium & Large & \textbf{Sum} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Sum}
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Small & Medium & Large & \textbf{Sum} \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\textbf{Sum}
+\end{minipage} \\
 \midrule
 \endhead
-Android & 8 & 16 & 6 & 30 \\
-MacOS & 10 & 8 & 12 & 30 \\
+\textbf{Android} & 8 & 16 & 6 & 30 \\
+\textbf{MacOS} & 10 & 8 & 12 & 30 \\
 \textbf{Sum} & 18 & 24 & 18 & -- \\
 \bottomrule
 \end{longtable}
@@ -6917,14 +7429,34 @@ We can call the species in Figure 30.1A `Het1' and the species in Figure 30.1B `
 We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these 2 species \citep{Duthie2015b}.
 Table 30.1 shows these measurements for 11 wasps.
 
-\begin{longtable}[]{@{}lrrr@{}}
-\caption{\label{tab:unnamed-chunk-126}\textbf{TABLE 30.1} Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1389}}@{}}
+\caption{\textbf{TABLE 30.1} Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.}\tabularnewline
 \toprule
-Species & Head & Thorax & Abdomen \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Head
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Species & Head & Thorax & Abdomen \\
+\begin{minipage}[b]{\linewidth}\centering
+Species
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Head
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen
+\end{minipage} \\
 \midrule
 \endhead
 Het1 & 0.566 & 0.767 & 1.288 \\
@@ -6934,10 +7466,10 @@ Het1 & 0.479 & 0.766 & 1.242 \\
 Het1 & 0.545 & 0.828 & 1.367 \\
 Het1 & 0.525 & 0.852 & 1.408 \\
 Het2 & 0.497 & 0.781 & 1.248 \\
-Het2 & 0.450 & 0.696 & 1.092 \\
-Het2 & 0.557 & 0.792 & 1.240 \\
+Het2 & 0.45 & 0.696 & 1.092 \\
+Het2 & 0.557 & 0.792 & 1.24 \\
 Het2 & 0.519 & 0.814 & 1.221 \\
-Het2 & 0.430 & 0.621 & 1.034 \\
+Het2 & 0.43 & 0.621 & 1.034 \\
 \bottomrule
 \end{longtable}
 
@@ -7035,14 +7567,34 @@ For row 2, \(\left(0.784 - 0.770\right) \left(1.059 - 1.210\right) = -0.002114.\
 We continue this for all rows.
 Table 30.2 shows the thorax length (\(x_{i}\)), abdomen length (\(y_{i}\)), and \(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\) for rows \(i = 1\) to \(i = 11\).
 
-\begin{longtable}[]{@{}rrrr@{}}
-\caption{\label{tab:unnamed-chunk-129}\textbf{TABLE 30.2} Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2778}}@{}}
+\caption{\textbf{TABLE 30.2} Measurements of 11 fig wasp thorax and abdomen lengths (mm). The fourth column shows the product of the deviations of each measurement from the mean, where mean thorax length is 0.770 and mean abdomen length is 1.210.}\tabularnewline
 \toprule
-Row (i) & Thorax & Abdomen & Squared Deviation \\
+\begin{minipage}[b]{\linewidth}\centering
+Row (i)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Squared Deviation
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Row (i) & Thorax & Abdomen & Squared Deviation \\
+\begin{minipage}[b]{\linewidth}\centering
+Row (i)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Squared Deviation
+\end{minipage} \\
 \midrule
 \endhead
 1 & 0.767 & 1.288 & -0.000234 \\
@@ -7050,12 +7602,12 @@ Row (i) & Thorax & Abdomen & Squared Deviation \\
 3 & 0.769 & 1.107 & 0.000103 \\
 4 & 0.766 & 1.242 & -0.000128 \\
 5 & 0.828 & 1.367 & 0.009106 \\
-6 & 0.852 & 1.408 & 0.016236 \\
+6 & 0.852 & 1.408 & 0.01624 \\
 7 & 0.781 & 1.248 & 0.000418 \\
 8 & 0.696 & 1.092 & 0.008732 \\
-9 & 0.792 & 1.240 & 0.000660 \\
+9 & 0.792 & 1.24 & 0.00066 \\
 10 & 0.814 & 1.221 & 0.000484 \\
-11 & 0.621 & 1.034 & 0.026224 \\
+11 & 0.621 & 1.034 & 0.02622 \\
 \bottomrule
 \end{longtable}
 
@@ -7077,16 +7629,41 @@ This has been useful when data violate the assumptions of a statistical test, an
 We can use the same trick for the correlation coefficient.
 The Spearman's rank correlation coefficient is calculated the exact same way as the Pearson product moment correlation coefficient, except on the ranks of values.
 To calculate the Spearman's rank correlation coefficient for the fig wasp example in \protect\hyperlink{pearson-product-moment-correlation-coefficient}{the previous section}, we just need to rank the thorax and abdomen lengths from 1 to 11, then calculate \(r\) using the rank values instead of the actual measurements of length.
-Figure 30.3 shows the same 11 fig wasp measurements as Figures 30.1 and 30.2, but with columns added to show the ranks of thorax and abdomen lengths.
+Table 30.3 shows the same 11 fig wasp measurements as Tables 30.1 and 30.2, but with columns added to show the ranks of thorax and abdomen lengths.
 
-\begin{longtable}[]{@{}rrrrr@{}}
-\caption{\label{tab:unnamed-chunk-130}\textbf{TABLE 30.3} Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1944}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2083}}@{}}
+\caption{\textbf{TABLE 30.3} Measurements of 11 fig wasp thorax and abdomen lengths (mm) and their ranks.}\tabularnewline
 \toprule
-Wasp (i) & Thorax & Thorax rank & Abdomen & Abdomen rank \\
+\begin{minipage}[b]{\linewidth}\centering
+Wasp (i)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax rank
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen rank
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Wasp (i) & Thorax & Thorax rank & Abdomen & Abdomen rank \\
+\begin{minipage}[b]{\linewidth}\centering
+Wasp (i)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Thorax rank
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Abdomen rank
+\end{minipage} \\
 \midrule
 \endhead
 1 & 0.767 & 4 & 1.288 & 9 \\
@@ -7097,7 +7674,7 @@ Wasp (i) & Thorax & Thorax rank & Abdomen & Abdomen rank \\
 6 & 0.852 & 11 & 1.408 & 11 \\
 7 & 0.781 & 6 & 1.248 & 8 \\
 8 & 0.696 & 2 & 1.092 & 3 \\
-9 & 0.792 & 8 & 1.240 & 6 \\
+9 & 0.792 & 8 & 1.24 & 6 \\
 10 & 0.814 & 9 & 1.221 & 5 \\
 11 & 0.621 & 1 & 1.034 & 1 \\
 \bottomrule
@@ -7480,14 +8057,24 @@ For the `survived' variable, this meant 256 rows of `Yes' or `No'.
 But there is a shortcut in jamovi if we do not have a full tidy dataset.
 If you know that the dataset included 139 `Yes' counts and 117 `No' counts, you could set up the data as a table of counts (Table 31.1).
 
-\begin{longtable}[]{@{}lr@{}}
-\caption{\label{tab:unnamed-chunk-136}\textbf{TABLE 31.1} Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 31.1} Counts of bees that did not survive (No) or did survive (Yes) in an experiment involving radiation.}\tabularnewline
 \toprule
-Survived & Count \\
+\begin{minipage}[b]{\linewidth}\centering
+Survived
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Count
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Survived & Count \\
+\begin{minipage}[b]{\linewidth}\centering
+Survived
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Count
+\end{minipage} \\
 \midrule
 \endhead
 No & 117 \\
@@ -7509,14 +8096,29 @@ Notice that you will get the same \(\chi^{2}\), df, and p values in the output t
 We could do the same for a \(\chi^{2}\) test of association, although it would be a bit more complicated.
 To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need 3 columns and 8 rows of data (Table 31.2).
 
-\begin{longtable}[]{@{}llr@{}}
-\caption{\label{tab:unnamed-chunk-138}\textbf{TABLE 31.2} Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 31.2} Counts of bees that did not survive (No) or did survive (Yes) for different levels of radiation.}\tabularnewline
 \toprule
-Survived & Radiation & Count \\
+\begin{minipage}[b]{\linewidth}\centering
+Survived
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Radiation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Count
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-Survived & Radiation & Count \\
+\begin{minipage}[b]{\linewidth}\centering
+Survived
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Radiation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Count
+\end{minipage} \\
 \midrule
 \endhead
 No & None & 12 \\
@@ -7566,12 +8168,20 @@ Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), an
 
 A sample of fig fruits from different latitudes is shown in Table 32.1.
 
-\begin{longtable}[]{@{}lrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-140}\textbf{TABLE 32.1} Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2083}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 32.1} Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
 \toprule
 \endhead
-Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
-Volume & 2399.0 & 2941.7 & 2167.2 & 2051.3 & 1686.2 & 937.3 & 1328.2 \\
+\textbf{Latitude} & 23.7 & 24 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
+\textbf{Volume} & 2399 & 2942 & 2167 & 2051 & 1686 & 937.3 & 1328 \\
 \bottomrule
 \end{longtable}
 
@@ -7939,13 +8549,21 @@ It is even possible for the sign of the coefficients to change (e.g., from negat
 To illustrate a multiple regression, consider again the fig fruit volume example from \protect\hyperlink{Chapter_32}{Chapter 32} \citep{Duthie2016}.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).
 
-\begin{longtable}[]{@{}lrrrrrrr@{}}
-\caption{\label{tab:unnamed-chunk-149}\textbf{TABLE 33.1} Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.2083}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.0972}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1111}}@{}}
+\caption{\textbf{TABLE 33.1} Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.}\tabularnewline
 \toprule
 \endhead
-Latitude & 23.7 & 24.0 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
-Altitude & 218.5 & 163.5 & 330.1 & 542.3 & 656.0 & 901.3 & 709.6 \\
-Volume & 2399.0 & 2941.7 & 2167.2 & 2051.3 & 1686.2 & 937.3 & 1328.2 \\
+\textbf{Latitude} & 23.7 & 24 & 27.6 & 27.2 & 29.3 & 28.2 & 28.3 \\
+\textbf{Altitude} & 218.5 & 163.5 & 330.1 & 542.3 & 656 & 901.3 & 709.6 \\
+\textbf{Volume} & 2399 & 2942 & 2167 & 2051 & 1686 & 937.3 & 1328 \\
 \bottomrule
 \end{longtable}
 
@@ -7973,19 +8591,44 @@ We now need to run a multiple regression to find the intercept (\(b_{0}\)) and p
 In jamovi, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 32.2 shows an output table, which gives us estimates of \(b_{0}\), \(b_{1}\), and \(b_{2}\) (column `Estimate'), along with p-values for the intercept and each partial regression coefficient (column `Pr(\textgreater\textbar t\textbar)').
 
-\begin{longtable}[]{@{}lrrrr@{}}
-\caption{\label{tab:unnamed-chunk-151}\textbf{TABLE 33.2} Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(\textgreater\textbar t\textbar)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1806}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1389}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}@{}}
+\caption{\textbf{TABLE 33.2} Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(\textgreater\textbar t\textbar)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.}\tabularnewline
 \toprule
-& Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Estimate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Std. Error
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pr(\textgreater\textbar t\textbar)
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Estimate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Std. Error
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pr(\textgreater\textbar t\textbar)
+\end{minipage} \\
 \midrule
 \endhead
-(Intercept) & 2988.245389 & 1697.5587030 & 1.7603193 & 0.1531597 \\
-Latitude & 5.587834 & 71.4880645 & 0.0781646 & 0.9414511 \\
-Altitude & -2.402240 & 0.5688147 & -4.2232377 & 0.0134427 \\
+\textbf{(Intercept)} & 2988 & 1698 & 1.76 & 0.1532 \\
+\textbf{Latitude} & 5.588 & 71.49 & 0.07816 & 0.9415 \\
+\textbf{Altitude} & -2.402 & 0.5688 & -4.223 & 0.01344 \\
 \bottomrule
 \end{longtable}
 
@@ -8358,20 +9001,45 @@ Suppose that as scientists we hypothesise that soil depth, fire frequency, and s
 Run a multiple regression model with soil depth, fire frequency, and soil pH all as independent variables and pyrogenic carbon as a dependent variable.
 Fill in the Model Coefficient output in Table 34.1.
 
-\begin{longtable}[]{@{}lllll@{}}
-\caption{\label{tab:unnamed-chunk-154}\textbf{TABLE 34.1} Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.}\tabularnewline
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2500}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1806}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1528}}@{}}
+\caption{\textbf{TABLE 34.1} Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.}\tabularnewline
 \toprule
-& Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Estimate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Std. Error
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pr(\textgreater\textbar t\textbar)
+\end{minipage} \\
 \midrule
 \endfirsthead
 \toprule
-& Estimate & Std. Error & t value & Pr(\textgreater\textbar t\textbar) \\
+\begin{minipage}[b]{\linewidth}\centering
+~
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Estimate
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Std. Error
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+t value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pr(\textgreater\textbar t\textbar)
+\end{minipage} \\
 \midrule
 \endhead
-(Intercept) & & 0.34591 & 2.85888 & \\
-depth & & 8e-04 & -0.07411 & \\
-fire\_freq & & 0.00394 & 14.42303 & \\
-pH & & 0.05679 & -0.27886 & \\
+\textbf{(Intercept)} & & 0.34591 & 2.85888 & \\
+\textbf{depth} & & 8e-04 & -0.07411 & \\
+\textbf{fire\_freq} & & 0.00394 & 14.42303 & \\
+\textbf{pH} & & 0.05679 & -0.27886 & \\
 \bottomrule
 \end{longtable}
 
@@ -8547,12 +9215,12 @@ The histogram below shows the distribution of the difference between species mea
 
 Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2114 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2092 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),
 
-\[P = \frac{2114 + 1}{99999 + 1}.\]
+\[P = \frac{2092 + 1}{99999 + 1}.\]
 
-When we calculate the above, we get a value of 0.02115.
+When we calculate the above, we get a value of 0.02093.
 Notice that the calculated value is assigned with a `P'.
 This is because the value \textbf{is a p-value} (technically, an unbiased estimate of a p-value). Consider how close it is to the value of \(P =\) 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.
@@ -8608,15 +9276,15 @@ Remember from \protect\hyperlink{sampling-with-and-without-replacement}{Chapter 
 If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.
 
-2.817, 3.071, 3.133, 3.256, 3.027, 3.071, 3.21, 3.133, 2.976, 2.299, 3.133, 3.178, 3.256, 3.071, 3.406, 3.178, 2.658
+2.299, 2.658, 3.133, 3.133, 3.291, 3.406, 2.817, 2.817, 3.178, 3.21, 2.658, 3.178, 3.133, 3.133, 3.133, 2.658, 3.406
 
 Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.051.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.014.
 We can resample another set of numbers to get a new mean.
 
-2.817, 3, 2.299, 2.995, 3.027, 3.178, 2.817, 3.133, 3.071, 2.976, 2.658, 2.976, 2.995, 3.133, 3.256, 3.133, 2.976
+3.178, 3.291, 3.027, 3.027, 3.027, 3.071, 3.256, 2.658, 3.133, 3, 3.21, 3.133, 2.658, 2.817, 2.929, 2.817, 2.976
 
-The mean of the above sample is 2.967.
+The mean of the above sample is 3.012.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.
 
 \begin{figure}
@@ -8626,7 +9294,7 @@ We can continue doing this process until we have a high number of random samples
 The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.902 and UCI = 3.139.
+The values using the randomisation approach are LCI = 2.9 and UCI = 3.139.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.
 
