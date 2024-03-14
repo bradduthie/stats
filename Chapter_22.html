@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-13" />
+<meta name="date" content="2024-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -559,10 +559,11 @@ Differences between <span class="math inline">\(\bar{y}_{1}\)</span> and <span c
 <p>What is <span class="math inline">\(SE(\bar{y})\)</span> in this case?
 After all, there are two different samples <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>, so could the two samples not have <em>different</em> standard errors?
 This could indeed be the case, and how we actually conduct the independent samples t-test depends on whether or not we are willing to assume that the two samples came from populations with the same variance (i.e., <span class="math inline">\(\sigma_{1} = \sigma_{2}\)</span>).
-If we are willing to make this assumption, then we can pool the variances (<span class="math inline">\(s^{2}_{p}\)</span>) together to get a combined (more accurate) estimate of the standard error <span class="math inline">\(SE(\bar{y})\)</span> from both samples<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a><span class="math inline">\(^{,}\)</span><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.</p>
+If we are willing to make this assumption, then we can pool the variances (<span class="math inline">\(s^{2}_{p}\)</span>) together to get a combined (more accurate) estimate of the standard error <span class="math inline">\(SE(\bar{y})\)</span> from both samples<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a><span class="math inline">\(^{,}\)</span><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.
+This version of the independent samples t-test is called the “Student’s t-test”.</p>
 <p>If we are unwilling to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance, then we need to use an alternative version of the independent samples t-test.
 This alternative version is called the Welch’s t-test <span class="citation">(<a href="#ref-Welch1938" role="doc-biblioref">Welch 1938</a>)</span>, also known as the unequal variances t-test <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>.
-In contrast to the standard independent t-test (also called the ‘Students independent t-test’), the Welch’s t-test does not pool the variances of the samples together<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
+In contrast to the standard independent t-test (also called the “Student’s independent t-test”), the Welch’s t-test does not pool the variances of the samples together<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
 While there are some mathematical differences between the Student’s and Welch’s independent samples t-tests, the general concept is the same.</p>
 <p>This raises the question, when is it acceptable to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance?
 The sample variance of <span class="math inline">\(s^{2}_{1} = 69.46\)</span> and <span class="math inline">\(s^{2}_{2} = 76.15\)</span>.

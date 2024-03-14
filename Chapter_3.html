@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-13" />
+<meta name="date" content="2024-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -486,7 +486,7 @@ div.csl-indent {
 <p>In this chapter, we will use a spreadsheet to organise datasets following the tidy approach explained in <a href="Chapter_2.html#Chapter_2">Chapter 2</a>, then save these datasets as CSV files to be opened in jamovi statistical software <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The data organisation in this chapter can be completed using <a href="https://www.libreoffice.org/discover/calc/">LibreOffice Calc</a>, MS Excel, or <a href="https://docs.google.com/spreadsheets/">Google Sheets</a>.
 The screenshots below will mostly be of LibreOffice Calc, but the instructions provided will work on any of the three aforementioned spreadsheet programs.</p>
-<p>There are 4 data exercises in this chapter.
+<p>There are four data exercises in this chapter.
 All of these exercises will focus on organising data into a tidy format.
 Exercise 1 uses handwritten field data that need to be entered into a spreadsheet in a tidy format.
 These data include information shown in Figure 2.2, plus tallies of seed counts.
@@ -566,7 +566,7 @@ Small seeds needed to be meticulously separated from other material in the fig f
  ᚎ ᚎ ᚎ ᚎ ᚎ ᚎ ᚎ 𝍬</code></pre>
 <p>Fortunately, the summed tallies have been written next to the site, tree, and fruit, which makes inputting them into a spreadsheet easier.
 But it is important to also recognise this step as a potential source of human error in data collection.
-It is possible that the tallies were counted inaccurately, meaning that the tallies on the left do not sum to the numbers in the right margins.
+It is possible that the tallies were counted inaccurately, meaning that the tallies do not sum to the numbers reported above.
 It is always good to be able to go back and check.
 There are at least two other potential sources of human error in counting seeds and inputting them into the spreadsheet, one before, and one after counting the tallies.
 Fill in 1 and 3 below with potential causes of error.</p>
@@ -580,7 +580,7 @@ Fill in the seed counts for each of the six rows.
 The end result will be a tidy dataset that is ready to be saved as a CSV.</p>
 <p>What you do next depends on the spreadsheet program that you are using and how you are using it.
 If you are using LibreOffice Calc or MS Excel on a your computer, then you should be able to simply save your file as something like “Fig_fruits.csv”, and the program will recognise that you intend to save as a CSV file (in MS Excel, you might need to find the pulldown box for ‘Save as type:’ under the ‘File name:’ box and choose ‘CSV’).
-If you are using Google Sheets, you can navigate in the toolbar to <code>File &gt; Download &gt; Comma-separated values (.csv)</code>, which will start a download of your spreadsheet in CSV format.
+If you are using Google Sheets, you can navigate in the toolbar to “File <span class="math inline">\(\to\)</span> Download <span class="math inline">\(\to\)</span> Comma-separated values (.csv)”, which will start a download of your spreadsheet in CSV format.
 If you are using MS Excel in a browser online, then it is a bit more tedious.
 At the time of writing, the online version of MS Excel does not allow users to save or export to a CSV.
 It will therefore be necessary to save as an XLSX, then convert to CSV later in another spreadsheet program (either a local version of MS Excel, LibreOffice Calc, or Google Sheets).</p>
@@ -716,7 +716,7 @@ For a helpful hint, it might be most efficient to open a new spreadsheet and cop
 <h2><span class="header-section-number">3.3</span> Exercise 3: Making data tidy again<a href="Chapter_3.html#exercise-3-making-data-tidy-again" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Exercise 3, like Exercise 2, is self-guided.
 The data are presented in a fairly common, but untidy, format, and the challenge is to reorganise them into a tidy dataset that is ready for statistical analysis.
-Table 3.2 shows the number of different species of wasps counted in 5 different fig fruits.
+Table 3.2 shows the number of different species of wasps counted in five different fig fruits.
 Rows list all of the species and columns list the fruits, with the counts in the middle.
 This is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.</p>
 <table style="width:83%;">
@@ -832,8 +832,8 @@ When you hit ‘Enter’, the spreadsheet will make the calculation for you, and
 To see the equation again, you just need to double-click on the cell.</p>
 <p>To get an estimate of head volume into the dataset, we can create a new column of data.
 To calculate <span class="math inline">\(V_{head}\)</span> for the first wasp in row 2 of the spreadsheet, we could select the spreadsheet cell H2 and type the code, <code>=(4/3)*(3.14)*((B2+C2)/4)^3</code>.
-Notice that the code recognises <code>B2</code> and <code>C2</code> as spreadsheet cells, and takes the values from these cells when doing these calculations.
-If the values of <code>B2</code> or <code>C2</code> were to change, then so would the calculated value in H2.
+Notice that the code recognises B2 and C2 as spreadsheet cells, and takes the values from these cells when doing these calculations.
+If the values of B2 or C2 were to change, then so would the calculated value in H2.
 Also notice that we are using parentheses to make sure that the order of operations is correct.
 We want to add head length and width before dividing by 4, so we type <code>((B2+C2)/4)</code> to ensure with the innermost parentheses that head length and width are added before dividing.
 Once all of this is completed, we raise everything in parentheses to the third power using the <code>^3</code>, so <code>((B2+C2)/4)^3</code>.
