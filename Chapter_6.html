@@ -178,12 +178,6 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
 <li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
 <li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
-<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
-<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
-<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propagation</a>
 <ul>
@@ -483,7 +477,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_6" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Accuracy, precision, and units<a href="Chapter_6.html#Chapter_6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The science of measurements is called “metrology”, which, among other topics, focuses on measurement accuracy, precision, and units <span class="citation">(<a href="#ref-Rabinovich2013" role="doc-biblioref">Rabinovich 2013</a>)</span>.
+<p>The science of measurements is called ‘metrology’, which, among other topics, focuses on measurement accuracy, precision, and units <span class="citation">(<a href="#ref-Rabinovich2013" role="doc-biblioref">Rabinovich 2013</a>)</span>.
 We will not consider these topics in depth, but they are important for statistical techniques because measurement, in the broadest sense of the word, is the foundation of data collection.
 When collecting data, we want measurements to be accurate, precise, and clearly defined.</p>
 <div id="accuracy" class="section level2 hasAnchor" number="6.1">
@@ -507,7 +501,7 @@ If, however, the scale measures a different mass each time the object is weighed
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
 <img src="img/accuracy_vs_precision.png" alt="Four targets, A, B, C, and D, are shown side-by-side, wach with five points scatter on top of them. Points in A are close together and near the centre, points in B are far apart but around the center, points in C are close together but away from the centre, and points in D are far apart and away from the centre." width="100%" />
 <p class="caption">
-Figure 6.1: A conceptual figure illustrating the difference between accuracy and precision. Points in (A) are both accurate and precise, points in (B) are accurate, but not precise, points in (C) are precise but not accurate, and points in (D) are neither accurate nor precise.
+Figure 6.1: A conceptual figure illustrating the difference between accuracy and precision. Points in A are both accurate and precise, points in B are accurate, but not precise, points in C are precise but not accurate, and points in D are neither accurate nor precise.
 </p>
 </div>
 <p>Note again that accuracy and precision are not necessarily the same.
@@ -554,24 +548,9 @@ We will use these units throughout the book.</p>
 <td><span class="math inline">\(s\)</span></td>
 </tr>
 <tr class="even">
-<td>Electric current</td>
-<td>ampere</td>
-<td><span class="math inline">\(A\)</span></td>
-</tr>
-<tr class="odd">
 <td>Temperature</td>
 <td>kelvin</td>
 <td><span class="math inline">\(K\)</span></td>
-</tr>
-<tr class="even">
-<td>Amount of a substance</td>
-<td>mole</td>
-<td><span class="math inline">\(mol\)</span></td>
-</tr>
-<tr class="odd">
-<td>Luminous intensity</td>
-<td>candela</td>
-<td><span class="math inline">\(cd\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -624,53 +603,14 @@ Again, you do not need to memorise these units, but it is good to be aware of th
 <td><span class="math inline">\(m^{-2}\)</span> <span class="math inline">\(kg\)</span> <span class="math inline">\(s^{-3}\)</span></td>
 <td><span class="math inline">\(J\)</span> <span class="math inline">\(s^{-1}\)</span></td>
 </tr>
-<tr class="odd">
-<td>Frequency</td>
-<td>Hertz</td>
-<td><span class="math inline">\(Hz\)</span></td>
-<td><span class="math inline">\(s^{-1}\)</span></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Radioactivity</td>
-<td>Becquerel</td>
-<td><span class="math inline">\(Bq\)</span></td>
-<td><span class="math inline">\(s^{-1}\)</span></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <p>When numbers are associated with units, it is important to recognise that the units must be carried through and combined when calculating an equation.
 As a very simple example, if we want to know the speed at which an object is moving, and we find that it has moved 10 metres in 20 seconds, then we calculate the speed and report the correct units as below,</p>
 <p><span class="math display">\[speed = \frac{10\:m}{20\:s} = 0.5\:m/s = 0.5\:m\:s^{-1}.\]</span></p>
-<p>Notice that the final units are in metres per second, which can be written as <span class="math inline">\(m/s\)</span> or <span class="math inline">\(m\:s^{-1}\)</span> (remember that raising <span class="math inline">\(s\)</span> to the <span class="math inline">\(-1\)</span> power is the same as <span class="math inline">\(1/s\)</span>; see <a href="Chapter_1.html#Chapter_1">Chapter 1</a> for a quick reminder about superscripts).
+<p>Notice that the final units are in metres per second, which can be written as <span class="math inline">\(m/s\)</span> or <span class="math inline">\(m\:s^{-1}\)</span> (remember that raising <span class="math inline">\(s\)</span> to the <span class="math inline">\(-1\)</span> power is the same as <span class="math inline">\(1/s\)</span>; see <a href="Chapter_1.html#Chapter_1">Chapter 1</a> for a reminder about superscripts).
 It is a common error to calculate just the numeric components of a calculation and ignore the associated units.
 Recognising that units are also part of calculations is important.</p>
-</div>
-<div id="other-examples-of-units" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Other examples of units<a href="Chapter_6.html#other-examples-of-units" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Remember that an exponent (indicated by a superscript, e.g., the 3 in <span class="math inline">\(m^{3}\)</span>) indicates the number of times to multiply a base by itself, so <span class="math inline">\(m^{3} = m \times m \times m\)</span>.</p>
-<div id="units-of-density" class="section level3 hasAnchor" number="6.4.1">
-<h3><span class="header-section-number">6.4.1</span> Units of density<a href="Chapter_6.html#units-of-density" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Density (<span class="math inline">\(\rho\)</span>) is calculated by,</p>
-<p><span class="math display">\[\rho = \frac{mass}{volume} = \frac{kg}{m^{3}}.\]</span></p>
-<p>The units of density are therefore mass per unit volume, <span class="math inline">\(kg\:m^{-3}\)</span>.</p>
-</div>
-<div id="mass-of-metal-discharged-from-a-catchment" class="section level3 hasAnchor" number="6.4.2">
-<h3><span class="header-section-number">6.4.2</span> Mass of metal discharged from a catchment<a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The mass of metal carried by a stream per unit time (<span class="math inline">\(M\)</span>) is given by multiplying the concentration of metal per unit volume (<span class="math inline">\(C\)</span>) of water by the volume of water discharged per unit time (<span class="math inline">\(V\)</span>),</p>
-<p><span class="math display">\[M = C \times V.\]</span>
-This equation is useful in showing how units can cancel each other out.
-If we calculate the above with just the units (ignoring numbers for <span class="math inline">\(C\)</span> and <span class="math inline">\(V\)</span>),</p>
-<p><span class="math display">\[M = \frac{mg}{l} \times \frac{l}{s} = \frac{mg}{s}.\]</span></p>
-<p>Notice above how the <span class="math inline">\(l\)</span> units on the top and bottom of the equation cancel each other out, so we are left with just <span class="math inline">\(mg/s\)</span>.</p>
-</div>
-<div id="soil-carbon-inventories" class="section level3 hasAnchor" number="6.4.3">
-<h3><span class="header-section-number">6.4.3</span> Soil carbon inventories<a href="Chapter_6.html#soil-carbon-inventories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>For one final example, the inventory of carbon <span class="math inline">\(I\)</span> within a soil is given by the specific carbon concentration <span class="math inline">\(C\)</span> (<span class="math inline">\(g\)</span> of carbon per <span class="math inline">\(kg\)</span> of soil), multiplied by the depth of soil analysed (<span class="math inline">\(D\)</span>, measured in <span class="math inline">\(m\)</span>), and by the density (<span class="math inline">\(\rho\)</span>, measured in <span class="math inline">\(kg\:m^{-3}\)</span>),</p>
-<p><span class="math display">\[I = C \times D \times \rho = \frac{g\times m \times kg}{kg \times m^{3}} = \frac{g}{m^{2}} = g\:m^{-2}.\]</span>
-Notice above how the <span class="math inline">\(kg\)</span> on the top and bottom of the fraction cancel each other out, and how one <span class="math inline">\(m\)</span> on the top cancels out one <span class="math inline">\(m\)</span> on the bottom, so that what we are left with is grams per metre squared (<span class="math inline">\(g\:m^{-2}\)</span>).</p>
-</div>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>

@@ -178,12 +178,6 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
 <li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
 <li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
-<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
-<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
-<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propagation</a>
 <ul>
@@ -485,7 +479,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 1</span> Background mathematics<a href="Chapter_1.html#Chapter_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>There are at least two types of mathematical challenges that come with first learning statistics.
 The first challenge is simply knowing the background mathematics upon which many statistical tools rely.
-Fortunately, while the <em>theory</em> underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991" role="doc-biblioref">Mclean, Sanders, and Stroup 1991</a>; <a href="#ref-Rencher2000" role="doc-biblioref">Rencher 2000</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, the <em>application</em> of standard statistical tools to data usually does not.
+Fortunately, while the <em>theory</em> underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991" role="doc-biblioref">Mclean, Sanders, and Stroup 1991</a>; <a href="#ref-Rencher2000" role="doc-biblioref">Rencher 2000</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, the <em>application</em> of standard statistical tools usually does not.
 This book focuses on the application of statistical techniques, so all that is required is a background in some fundamental mathematical concepts such as mathematical operations (addition, subtraction, multiplication, division, and exponents), simple algebra, and probability.
 This chapter will review these operations and the mathematical symbols used to communicate them.</p>
 <p>The second mathematical challenge that students face when learning statistics for the first time is a bit more subtle.
@@ -539,8 +533,8 @@ For example,</p>
 But we can represent this sum more easily using the operation of multiplication,</p>
 <p><span class="math display">\[2 \times 6 = 12.\]</span>
 The 6 in the equation just represents the number of times that 2 is being added up.
-The equation can also be written as <span class="math inline">\(2(6) = 12\)</span>, or sometimes, <code>2*6 = 12</code> (i.e., the asterisk is sometimes used to indicate multiplication).
-Parentheses indicate multiplication when no other symbol separates them from a number.
+The equation can also be written as <span class="math inline">\(2(6) = 12\)</span>, or sometimes, 2<code>*</code>6 = 12 (i.e., the asterisk is sometimes used to indicate multiplication).
+Parentheses (i.e., round brackets) indicate multiplication when no other symbol separates them from a number.
 This rule also applies to numbers that come immediately before variables.
 For example, <span class="math inline">\(2x\)</span> can be interpreted as <em>two times x</em>.
 When multiplying integers, we always get another integer.
@@ -568,7 +562,7 @@ For example, we might want to multiply the number 2 by itself 4 times,</p>
 <p>We can represent this more compactly using an <strong>exponent</strong>, which is written as a superscript,</p>
 <p><span class="math display">\[2^{4} = 16.\]</span></p>
 <p>The 4 in the equation above indicates that the 2 should be multiplied 4 times to get 16.
-Sometimes this is also represented by a carrot in writing or code, such that 2^4 = 16.
+Sometimes this is also represented by a caret in writing or code, such that 2^4 = 16.
 Very occasionally, some authors will use two asterisks in a row, 2**4 = 16, probably because this is how exponents are represented in some statistical software and programming languages.
 One quick note that can be confusing at first is that a negative in the exponent indicates a reciprocal.
 For example,</p>
@@ -637,7 +631,7 @@ Figure 1.2: Natural logarithm of global carbon dioxide emissions from 1750-2021.
 <p>It appears from the logged data in Figure 1.2 that global CO<span class="math inline">\(_{2}\)</span> emissions were indeed increasing from 1750-1850.
 Note that Figure 1.2 presents the <em>natural logarithm</em> of CO<span class="math inline">\(_{2}\)</span> emissions on the y-axis.
 The natural logarithm uses Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, as a base.
-Euler’s number <span class="math inline">\(e\)</span> is an irrational number (like <span class="math inline">\(\pi\)</span>), which corresponds to the intrinsic rate of increase of a population’s size in ecology <span class="citation">(<a href="#ref-Gotelli2001" role="doc-biblioref">Gotelli 2001</a>)</span>, or, in banking, interest compounded continually (like <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
+Euler’s number <span class="math inline">\(e\)</span> is an irrational number (like <span class="math inline">\(\pi\)</span>), which corresponds to the intrinsic rate of increase of a population’s size in ecology <span class="citation">(<a href="#ref-Gotelli2001" role="doc-biblioref">Gotelli 2001</a>)</span>, or, in banking, interest compounded continuously (like <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
 We probably could have just as easily used 10 as a base, but <span class="math inline">\(e\)</span> is usually the default base to use in science (bases 10 or 2 are also often used).
 Note that we can convert back to the non-logged scale by raising numbers to the power of <span class="math inline">\(e\)</span>.
 For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span class="math inline">\(e^{-2} \approx 0.135\)</span>, <span class="math inline">\(e^{0} = 1\)</span>, and <span class="math inline">\(e^{2} = 7.390\)</span>.</p>
@@ -647,7 +641,7 @@ For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span cl
 <p>Every once in a while, a maths problem like the one below seems to go viral online,</p>
 <p><span class="math display">\[x = 8 \div 2\left(2+2\right).\]</span></p>
 <p>Depending on the order in which calculations are made, some people will conclude that <span class="math inline">\(x = 16\)</span>, while others conclude that <span class="math inline">\(x = 1\)</span> <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>.
-The confusion is not caused by the above calculation being difficult, but by peoples’ differences in interpreting the rules for what order calculations should be carried out.
+The confusion is not caused by the above calculation being difficult, but by peoples’ differences in interpreting the rules for the order by which calculations should be carried out.
 If we first divide 8/2 to get 4, then multiply by (2 + 2), we get 16.
 If we first multiply 2 by (2 + 2) to get 8, then divide, we get 1.
 The truth is that even if there is a ‘right’ answer here <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>, the equation could be written more clearly.

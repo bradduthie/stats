@@ -178,12 +178,6 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
 <li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
 <li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
-<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
-<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
-<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propagation</a>
 <ul>
@@ -503,7 +497,7 @@ How this error propagates differs depending on if they are being added or subtra
 <h2><span class="header-section-number">7.1</span> Adding or subtracting errors<a href="Chapter_7.html#adding-or-subtracting-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the case of our egg masses, we can assign the mass of the first egg to the variable <span class="math inline">\(X\)</span> and the mass of the second egg to the variable <span class="math inline">\(Y\)</span>.
 We can assign the total mass to the variable <span class="math inline">\(Z\)</span>, where <span class="math inline">\(Z = X + Y\)</span>.
-The errors associated with the variables <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> can be indicated by <span class="math inline">\(E_{X}\)</span>, <span class="math inline">\(E_{Y}\)</span>, and <span class="math inline">\(E_{Z}\)</span>, respectively.
+The measurement errors associated with the variables <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> can be indicated by <span class="math inline">\(E_{X}\)</span>, <span class="math inline">\(E_{Y}\)</span>, and <span class="math inline">\(E_{Z}\)</span>, respectively.
 In general, if the variable <span class="math inline">\(Z\)</span> is calculated by adding (or subtracting) 2 or more values together, then this is the formula for calculating <span class="math inline">\(E_{Z}\)</span>,</p>
 <p><span class="math display">\[E_{Z} = \sqrt{E^{2}_{X} + E^{2}_{Y}}.\]</span></p>
 <p>Hence, for the egg masses, the error of the combined masses (<span class="math inline">\(E_{Z}\)</span>) equals the square root of the error associated with the mass of egg 1 squared (<span class="math inline">\(E^{2}_{X}\)</span>) plus the error associated with the mass of egg 2 squared (<span class="math inline">\(E^{2}_{Y}\)</span>).
@@ -529,7 +523,7 @@ If length and width measurements have associated errors of <span class="math inl
 To avoid confusion, the general formula for multiplying or dividing errors is below, with the variables <span class="math inline">\(L\)</span>, <span class="math inline">\(W\)</span>, and <span class="math inline">\(A\)</span> replaced with <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>, respectively, to match the case of addition and subtraction explained above,</p>
 <p><span class="math display">\[E_{Z} = Z \sqrt{\left(\frac{E_{X}}{X} \right)^{2} + \left(\frac{E_{Y}}{Y} \right)^{2}}.\]</span></p>
 <p>Note that the structure of the equation is the exact same, just with different letters used as variables.
-It is necessary to be able to apply these equations correctly to estimate combined error.
+It is necessary to be able to apply these equations correctly to estimate combined measurement error.
 It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in <a href="uncertainty_derivation.html#uncertainty_derivation">Appendix B</a> for the curious.</p>
 </div>
 </div>

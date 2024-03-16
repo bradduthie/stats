@@ -178,12 +178,6 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="Chapter_6.html"><a href="Chapter_6.html#accuracy"><i class="fa fa-check"></i><b>6.1</b> Accuracy</a></li>
 <li class="chapter" data-level="6.2" data-path="Chapter_6.html"><a href="Chapter_6.html#precision"><i class="fa fa-check"></i><b>6.2</b> Precision</a></li>
 <li class="chapter" data-level="6.3" data-path="Chapter_6.html"><a href="Chapter_6.html#systems-of-units"><i class="fa fa-check"></i><b>6.3</b> Systems of units</a></li>
-<li class="chapter" data-level="6.4" data-path="Chapter_6.html"><a href="Chapter_6.html#other-examples-of-units"><i class="fa fa-check"></i><b>6.4</b> Other examples of units</a>
-<ul>
-<li class="chapter" data-level="6.4.1" data-path="Chapter_6.html"><a href="Chapter_6.html#units-of-density"><i class="fa fa-check"></i><b>6.4.1</b> Units of density</a></li>
-<li class="chapter" data-level="6.4.2" data-path="Chapter_6.html"><a href="Chapter_6.html#mass-of-metal-discharged-from-a-catchment"><i class="fa fa-check"></i><b>6.4.2</b> Mass of metal discharged from a catchment</a></li>
-<li class="chapter" data-level="6.4.3" data-path="Chapter_6.html"><a href="Chapter_6.html#soil-carbon-inventories"><i class="fa fa-check"></i><b>6.4.3</b> Soil carbon inventories</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="Chapter_7.html"><a href="Chapter_7.html"><i class="fa fa-check"></i><b>7</b> Uncertainty propagation</a>
 <ul>
@@ -534,7 +528,7 @@ But there are a few points to keep in mind:</p>
 <li>The date is written in an American style of month-day-year, which might get confusing. It might be better to have separate columns for year, month, and day, and to write out the full year (2010).</li>
 </ol>
 <p>The column names in Figure 3.2 are (1) Date, (2) Species, (3) Site number, (4) Tree number, (5) Fruit length in mm, (6) Fruit width in mm, and (7) Fruit height in mm.
-All of the species are <em>Ficus petiolaris</em>, which is abbreviated to “F-pet” in the field notebook.
+All of the species are <em>Ficus petiolaris</em>, which is abbreviated to ‘F-pet’ in the field notebook.
 How you choose to write some of this information down is up to you (e.g., the date format, capitalisation of column names), but when finished, the spreadsheet should be organised like the one in Figure 3.3.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="img/Ch1_Ex1a.png" alt="A screenshot of a spreadsheet with 7 columns and 6 rows of data on fig fruit dimensions." width="100%" />
@@ -575,12 +569,12 @@ Fill in 1 and 3 below with potential causes of error.</p>
 <li>Tallies are not counted correctly in the lab notebook</li>
 <li></li>
 </ol>
-<p>Next, create a new column in the spreadsheet and call it “Seeds” (use column K).
+<p>Next, create a new column in the spreadsheet and call it ‘Seeds’ (use column K).
 Fill in the seed counts for each of the six rows.
 The end result will be a tidy dataset that is ready to be saved as a CSV.</p>
 <p>What you do next depends on the spreadsheet program that you are using and how you are using it.
-If you are using LibreOffice Calc or MS Excel on a your computer, then you should be able to simply save your file as something like “Fig_fruits.csv”, and the program will recognise that you intend to save as a CSV file (in MS Excel, you might need to find the pulldown box for ‘Save as type:’ under the ‘File name:’ box and choose ‘CSV’).
-If you are using Google Sheets, you can navigate in the toolbar to “File <span class="math inline">\(\to\)</span> Download <span class="math inline">\(\to\)</span> Comma-separated values (.csv)”, which will start a download of your spreadsheet in CSV format.
+If you are using LibreOffice Calc or MS Excel on a your computer, then you should be able to simply save your file as something like ‘Fig_fruits.csv’, and the program will recognise that you intend to save as a CSV file (in MS Excel, you might need to find the pulldown box for ‘Save as type:’ under the ‘File name:’ box and choose ‘CSV’).
+If you are using Google Sheets, you can navigate in the toolbar to ‘File <span class="math inline">\(\to\)</span> Download <span class="math inline">\(\to\)</span> Comma-separated values (.csv)’, which will start a download of your spreadsheet in CSV format.
 If you are using MS Excel in a browser online, then it is a bit more tedious.
 At the time of writing, the online version of MS Excel does not allow users to save or export to a CSV.
 It will therefore be necessary to save as an XLSX, then convert to CSV later in another spreadsheet program (either a local version of MS Excel, LibreOffice Calc, or Google Sheets).</p>
@@ -720,7 +714,7 @@ Table 3.2 shows the number of different species of wasps counted in five differe
 Rows list all of the species and columns list the fruits, with the counts in the middle.
 This is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.</p>
 <table style="width:83%;">
-<caption><strong>TABLE 3.2</strong> An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from 5 different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
+<caption><strong>TABLE 3.2</strong> An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from five different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
 <colgroup>
 <col width="13%" />
 <col width="13%" />
@@ -790,10 +784,10 @@ Try creating a tidy dataset from the information in Table 3.2, then save the dat
 <div id="exercise-4-tidy-data-and-spreadsheet-calculations" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Exercise 4: Tidy data and spreadsheet calculations<a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Exercise 4 requires some restructuring and calculations.
-The dataset that will be used in this exercise includes morphological measurements from five species of fig wasps, the same species used in Exercise 2.
+The dataset that will be used in this exercise includes morphological measurements from five species of fig wasps, the same species used in Exercises 2 and 3.
 The dataset for this exercise can be downloaded online<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.
 This dataset is about as untidy as it gets.
-First note that there are multiple sheets in the spreadsheet, which is not allowed in a tidy CSV file.
+First note that there are multiple sheets in the spreadsheet, which is not allowed in a CSV file.
 You can see these sheets by looking at the very bottom of the spreadsheet, which will have separating tabs called Het1, Het2, LO1, SO1, and SO2 (Figure 3.4).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
 <img src="img/spreadsheet_tabs.png" alt="A screenshot the tabs found at the bottom of a spreadsheet." width="100%" />
@@ -827,7 +821,7 @@ Calculate the head volume of each wasp using the following formula,</p>
 You can replace <span class="math inline">\(\pi\)</span> with the approximation <span class="math inline">\(\pi \approx 3.14\)</span>.
 To make this calculation in your spreadsheet, find the cell in which you want to put the head volume.
 By typing in the <code>=</code> sign, the spreadsheet will know to start a new calculation or function in that cell.
-Try this with an empty cell by typing “<code>= 5 + 4</code>” in it (without quotes).
+Try this with an empty cell by typing ‘= 5 + 4’ in it (without quotes).
 When you hit ‘Enter’, the spreadsheet will make the calculation for you, and the number in the new cell will be 9.
 To see the equation again, you just need to double-click on the cell.</p>
 <p>To get an estimate of head volume into the dataset, we can create a new column of data.
@@ -878,11 +872,11 @@ Other functions are also available that can make calculations across cells (e.g.
 <p>Once head volume is calculated for the first wasp in cell H2, it is very easy to do the rest.
 One nice feature of a spreadsheet is that it can usually recognise when the cells need to change (B2 and C2, in this case).
 To get the rest of the head volumes, we just need to select the bottom right of the H2 cell.
-There will be a very small square in this bottom right (see Figure 3.5), and if we drag it down, the spreadsheet will do the same calculation for each row (e.g., in H3, it will use B3 and C3 in the formula rather than B2 and C2).</p>
+There will be a very small square in this bottom right (see Figure 3.5), and if we click and drag it down, the spreadsheet will do the same calculation for each row (e.g., in H3, it will use B3 and C3 in the formula rather than B2 and C2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
 <img src="img/Ch1_Ex3_copy_formula.png" alt="A screenshot of a spreadsheet with the H2 cell selected." width="100%" />
 <p class="caption">
-Figure 3.5: A dataset of wasp morphological measurements from 5 species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.
+Figure 3.5: A dataset of wasp morphological measurements from five species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.
 </p>
 </div>
 <p>Another way to achieve the same result is to copy the contents of cell H2, highlight cells H3-H27, then paste.
@@ -890,7 +884,7 @@ However you do it, you should now have a new column of calculated head volume.</
 <p>Next, suppose that we want to calculate thorax and abdomen volumes for all wasps.
 Unlike wasp heads, wasp thoraxes and abdomens are clearly not spheres.
 But it is perhaps not entirely unreasonable to model them as ellipses.
-To calculate wasp thorax and abdomen volumes assuming an ellipse, we can use the formula,</p>
+To calculate wasp thorax and abdomen volumes assuming an ellipse shape, we can use the formula,</p>
 <p><span class="math display">\[V_{thorax} = \frac{4}{3}\pi \left(\frac{Thorax_{L}}{2}\right)\left(\frac{Thorax_{W}}{2}\right)^{2}.\]</span>
 In the equation above, <span class="math inline">\(Thorax_{L}\)</span> is thorax length (mm) and <span class="math inline">\(Thorax_{W}\)</span> is thorax width.
 Substitute <span class="math inline">\(Abdomen_{L}\)</span> and <span class="math inline">\(Abdomen_{W}\)</span> to instead calculate abdomen volume (<span class="math inline">\(V_{abdomen}\)</span>).
