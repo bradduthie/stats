@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-14" />
+<meta name="date" content="2024-03-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,11 +223,11 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
-<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
-<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
@@ -310,7 +310,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
 <li class="chapter" data-level="24.2.2" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>24.2.2</b> ANOVA mean variance within groups</a></li>
-<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F statistic calculation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F-statistic calculation</a></li>
 </ul></li>
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
@@ -347,7 +347,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>31.2</b> Colony goodness of fit</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#chi-square-test-of-association-1"><i class="fa fa-check"></i><b>31.3</b> Chi-Square test of association</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>31.4</b> Pearson product moment correlation test</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearmans-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman’s rank correlation test</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>31.6</b> Untidy goodness of fit</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Simple linear regression</a>
@@ -638,9 +638,9 @@ If the null hypothesis that the 2 variances are the same is true (i.e., F = 1), 
 <div id="one-way-anova" class="section level2 hasAnchor" number="24.2">
 <h2><span class="header-section-number">24.2</span> One-way ANOVA<a href="Chapter_24.html#one-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can use the F-distribution to test the null hypothesis mentioned at the beginning of the chapter (that fig wasp species have the same mean wing length).
-The general idea is to compare the mean variance among groups to the mean variance within groups, so our F value (i.e., “F statistic”) is calculated,</p>
+The general idea is to compare the mean variance among groups to the mean variance within groups, so our F value (i.e., “F-statistic”) is calculated,</p>
 <p><span class="math display">\[F = \frac{Mean\:variance\:among\:\:groups}{Mean\:variance\:within\:\:groups}.\]</span></p>
-<p>The rest of this section works through the details of how to calculate this F statistic.
+<p>The rest of this section works through the details of how to calculate this F-statistic.
 It is easy to get lost in these details, but the calculations that follow do not need to be done by hand.
 As usual, jamovi will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The reason for going through the ANOVA step-by-step is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in ANOVA output actually mean.</p>
@@ -798,7 +798,7 @@ We lose a degree of freedom for each of the 5 species (because we had to calcula
 To get the mean variance within groups (denominator of F), we calculate <span class="math inline">\(MS_{within} = SS_{within} / df_{within} =\)</span> 0.0281398.</p>
 </div>
 <div id="anova-f-statistic-calculation" class="section level3 hasAnchor" number="24.2.3">
-<h3><span class="header-section-number">24.2.3</span> ANOVA F statistic calculation<a href="Chapter_24.html#anova-f-statistic-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">24.2.3</span> ANOVA F-statistic calculation<a href="Chapter_24.html#anova-f-statistic-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>From <a href="Chapter_24.html#anova-mean-variance-among-groups">Chapter 24.2.1</a>, we have the mean variance among groups,</p>
 <p><span class="math display">\[MS_{among} = 0.0912967.\]</span></p>
 <p>From <a href="Chapter_24.html#anova-mean-variance-among-groups">Chapter 24.2.2</a>, we have the mean variance within groups,</p>
@@ -820,7 +820,7 @@ Figure 24.2: F-distribution with df = 4 for the numerator and df = 15 for the de
 This is our p-value.
 Since <span class="math inline">\(P &lt; 0.05\)</span>, we can reject the null hypothesis that all mean species wing lengths are the same because the variance among species wing lengths is significantly higher than the variance within species wing lengths.
 Note that the critical value of F (i.e., for which <span class="math inline">\(P = 0.05\)</span>) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19), we would reject <span class="math inline">\(H_{0}\)</span>.</p>
-<p>When running an ANOVA in a statistical program, output includes (at least) the calculated F statistic, degrees of freedom, and the p-value.
+<p>When running an ANOVA in a statistical program, output includes (at least) the calculated F-statistic, degrees of freedom, and the p-value.
 Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-100"></span>
 <img src="img/jamovi_ANOVA_output.png" alt="Jamovi output is shown with a table called 'One-Way ANOVA', which includes a single measurement for F, df1, df2, and p." width="60%" />

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-14" />
+<meta name="date" content="2024-03-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,11 +223,11 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
-<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
-<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
@@ -310,7 +310,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
 <li class="chapter" data-level="24.2.2" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>24.2.2</b> ANOVA mean variance within groups</a></li>
-<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F statistic calculation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F-statistic calculation</a></li>
 </ul></li>
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
@@ -347,7 +347,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>31.2</b> Colony goodness of fit</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#chi-square-test-of-association-1"><i class="fa fa-check"></i><b>31.3</b> Chi-Square test of association</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>31.4</b> Pearson product moment correlation test</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearmans-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman’s rank correlation test</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>31.6</b> Untidy goodness of fit</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Simple linear regression</a>
@@ -499,7 +499,7 @@ The general idea of a Tukey’s test is the same as the Bonferroni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
 The Tukey’s test does this by using a modified t-test, with a t-distribution called the “studentised range distribution” that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.</p>
 <p>Multiple comparisons tests can be run automatically in statistical programs such as jamovi.
-Figure 25.1 shows a post-hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
+Figure 25.1 shows a post hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-102"></span>
 <img src="img/jamovi_multiple_comparisons.png" alt="Jamovi output is shown with a large table called 'Post Hoc Comparisons', which reports statistics for 10 pair-wise combinations of 5 species." width="100%" />
 <p class="caption">

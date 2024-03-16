@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-14" />
+<meta name="date" content="2024-03-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,11 +223,11 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
-<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
-<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
@@ -310,7 +310,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
 <li class="chapter" data-level="24.2.2" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>24.2.2</b> ANOVA mean variance within groups</a></li>
-<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F statistic calculation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F-statistic calculation</a></li>
 </ul></li>
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
@@ -347,7 +347,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>31.2</b> Colony goodness of fit</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#chi-square-test-of-association-1"><i class="fa fa-check"></i><b>31.3</b> Chi-Square test of association</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>31.4</b> Pearson product moment correlation test</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearmans-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman’s rank correlation test</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>31.6</b> Untidy goodness of fit</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Simple linear regression</a>
@@ -512,7 +512,7 @@ What is the p-value of the test, and what conclusion do you make about Nitrogen 
 <p><span class="math inline">\(P\)</span>: _________________</p>
 <p>Conclusion: ____________________</p>
 <p>Now we will use an ANOVA to test if the mean Nitrogen concentration differs between sites.
-Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA compares the variance among groups to the variance within groups, calculating an F statistic and finding where F is in the null F-distribution.
+Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA compares the variance among groups to the variance within groups, calculating an F-statistic and finding where F is in the null F-distribution.
 To run an ANOVA, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
 From the ANOVA pulldown, select ‘One-Way ANOVA’.
 After selecting the one-way ANOVA, a familiar interface will open up.
@@ -533,7 +533,7 @@ Write down the test statistic (F), degrees of freedom, and p-values from this ta
 <p>df2: _______________</p>
 <p><span class="math inline">\(P\)</span>: _______________</p>
 <p>Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA calculates an F-statistic (mean variance among groups divided by mean variance withing groups).
-This F statistic is then compared to the null F-distribution with the correct degrees of freedom to calculate the p-value.
+This F-statistic is then compared to the null F-distribution with the correct degrees of freedom to calculate the p-value.
 Use the interactive app to visualise this from the above jamovi output<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
 To do this, move the ‘Variance 1’ slider in the app until it is approximately equal to F, then change df1 and df2 to the values above.
 From the interactive app, what is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F?</p>
@@ -574,7 +574,7 @@ What are the output statistics in the One-Way ANOVA table?</p>
 <p><span class="math inline">\(P\)</span>: _______________</p>
 <p>From these statistics, what do you conclude about the difference in Nitrogen concentration among profiles?</p>
 <p>Conclusion: _____________________</p>
-<p>In the previous Exercise 28.1, we used an <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a> to visualise the relationship between the F statistic and the p-value.
+<p>In the previous Exercise 28.1, we used an <a href="https://bradduthie.shinyapps.io/f_distribution/">interactive app</a> to visualise the relationship between the F-statistic and the p-value.
 We can do the same thing with the distrACTION module in jamovi.
 To do this, go to the distrACTION option in the jamovi toolbar and select ‘F-Distribution’ from the pulldown menu.
 Place the df1 and df2 from the One-Way ANOVA table into the df1 and df2 boxes under <strong>Parameters</strong> (ignore <span class="math inline">\(\lambda\)</span>).
@@ -653,7 +653,7 @@ In the ANOVA input panel, scroll down to the pulldown option called ‘Post Hoc 
 Move ‘Profile’ to the box to the right, then select the ‘Tukey’ checkbox under <strong>Correction</strong>.
 Doing this will run the Tukey’s honestly significant difference (HSD) test introduced in <a href="Chapter_25.html#Chapter_25">Chapter 25</a>.
 The output will appear in the panel on the right in a table called ‘Post Hoc Tests’.
-Note that these post-hoc tests use the t-distribution to test for significance.
+Note that these post hoc tests use the t-distribution to test for significance.
 Find the p-values associated with the Tukey’s HSD (<span class="math inline">\(P_{tukey}\)</span>) for each profile pairing.
 Report these below.</p>
 <p>Tukey’s HSD Lower - Middle: P = _____________</p>
@@ -682,7 +682,7 @@ In other words, based on this output, are we more likely to make a Type I error 
 
 </code></pre>
 <p>Note that we ran the Tukey’s HSD test and the Bonferroni test separately.
-This is because, when doing a post-hoc test, we should choose which test to use in advance.
+This is because, when doing a post hoc test, we should choose which test to use in advance.
 This will avoid biasing our results to get the conclusion that we <em>want</em> rather than the conclusion that is <em>accurate</em>.
 If, for example, we first decided to use a Bonferroni correction, but then found that none of our p-values were below 0.05, it would not be okay to try a Tukey’s HSD test instead in hopes of changing this result.
 This kind of practice is colloquially called ‘p-hacking’ (or ‘data dredging’), and it causes an elevated risk of Type I error and a potential for bias in scientific results.

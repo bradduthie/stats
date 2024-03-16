@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-14" />
+<meta name="date" content="2024-03-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,11 +223,11 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
-<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
-<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
@@ -310,7 +310,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
 <li class="chapter" data-level="24.2.2" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>24.2.2</b> ANOVA mean variance within groups</a></li>
-<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F statistic calculation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F-statistic calculation</a></li>
 </ul></li>
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
@@ -347,7 +347,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>31.2</b> Colony goodness of fit</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#chi-square-test-of-association-1"><i class="fa fa-check"></i><b>31.3</b> Chi-Square test of association</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>31.4</b> Pearson product moment correlation test</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearmans-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman’s rank correlation test</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>31.6</b> Untidy goodness of fit</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Simple linear regression</a>
@@ -492,8 +492,8 @@ The use of all of these tests in jamovi will be demonstrated in <a href="Chapter
 <p>Suppose that a biology teacher has created a new approach to teaching and wants to test whether or not their new approach results in student test scores that are higher than the reported national average of 60.
 This teacher should first define their null and alternative hypotheses.</p>
 <ul>
-<li><span class="math inline">\(H_{0}\)</span>: Student test scores equal 60</li>
-<li><span class="math inline">\(H_{A}\)</span>: Student test scores are greater than 60</li>
+<li><span class="math inline">\(H_{0}\)</span>: The mean of student test scores equals 60</li>
+<li><span class="math inline">\(H_{A}\)</span>: The mean of student test scores is greater than 60</li>
 </ul>
 <p>Note that this is a one-sided hypothesis.
 The teacher is not interested in whether or not the mean test score of their students is below 60.
@@ -727,7 +727,7 @@ If we reject the null hypothesis that the data are normally distributed, then we
 <p>The word ‘non-parametric’ in this context just means that there are no assumptions (or very few) about the shape of the distribution <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
 We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent samples t-test (Mann-Whitney U test) in the next section.
 But first, we can show how transformations can be used to improve the fit of the data to model assumptions.</p>
-<p>Often data will have a skewed distribution (see <a href="#Chapter_13">Chapter 13</a>).
+<p>Often data will have a skewed distribution (see <a href="Chapter_13.html#Chapter_13">Chapter 13</a>).
 For example, in Figure 22.4A below, we have a dataset (sample size <span class="math inline">\(N = 200\)</span>) with a large positive skew (i.e., it is right skewed).
 Most values are in the same general area, but with some values being especially high.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-85"></span>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-14" />
+<meta name="date" content="2024-03-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -223,11 +223,11 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
-<li class="chapter" data-level="13.2" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
-<li class="chapter" data-level="13.3" data-path="skew-and-kurtosis.html"><a href="skew-and-kurtosis.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
+<li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
+<li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
+<li class="chapter" data-level="13.3" data-path="Chapter_13.html"><a href="Chapter_13.html#moments"><i class="fa fa-check"></i><b>13.3</b> Moments</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="Chapter_14.html"><a href="Chapter_14.html"><i class="fa fa-check"></i><b>14</b> <em>Practical</em>. Plotting and statistical summaries in jamovi</a>
 <ul>
@@ -310,7 +310,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
 <li class="chapter" data-level="24.2.2" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-within-groups"><i class="fa fa-check"></i><b>24.2.2</b> ANOVA mean variance within groups</a></li>
-<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F statistic calculation</a></li>
+<li class="chapter" data-level="24.2.3" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-f-statistic-calculation"><i class="fa fa-check"></i><b>24.2.3</b> ANOVA F-statistic calculation</a></li>
 </ul></li>
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
@@ -347,7 +347,7 @@ div.csl-indent {
 <li class="chapter" data-level="31.2" data-path="Chapter_31.html"><a href="Chapter_31.html#colony-goodness-of-fit"><i class="fa fa-check"></i><b>31.2</b> Colony goodness of fit</a></li>
 <li class="chapter" data-level="31.3" data-path="Chapter_31.html"><a href="Chapter_31.html#chi-square-test-of-association-1"><i class="fa fa-check"></i><b>31.3</b> Chi-Square test of association</a></li>
 <li class="chapter" data-level="31.4" data-path="Chapter_31.html"><a href="Chapter_31.html#pearson-product-moment-correlation-test"><i class="fa fa-check"></i><b>31.4</b> Pearson product moment correlation test</a></li>
-<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearman-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman rank correlation test</a></li>
+<li class="chapter" data-level="31.5" data-path="Chapter_31.html"><a href="Chapter_31.html#spearmans-rank-correlation-test"><i class="fa fa-check"></i><b>31.5</b> Spearman’s rank correlation test</a></li>
 <li class="chapter" data-level="31.6" data-path="Chapter_31.html"><a href="Chapter_31.html#untidy-goodness-of-fit"><i class="fa fa-check"></i><b>31.6</b> Untidy goodness of fit</a></li>
 </ul></li>
 <li class="chapter" data-level="32" data-path="Chapter_32.html"><a href="Chapter_32.html"><i class="fa fa-check"></i><b>32</b> Simple linear regression</a>
@@ -584,8 +584,8 @@ This is more for readability of the data; jamovi will not care about the order o
 <h2><span class="header-section-number">2.2</span> Data files<a href="Chapter_2.html#data-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Data can be saved using many different file types.
 File type is typically indicated by an extension following the name of a file and a full stop.
-For example, “photo.png” would indicate a PNG image file named “photo”.
-A peer-reviewed journal article might be saved as a PDF, e.g., “Wickham2014.pdf”.
+For example, ‘photo.png’ would indicate a PNG image file named ‘photo’.
+A peer-reviewed journal article might be saved as a PDF, e.g., ‘Wickham2014.pdf’.
 A file’s type affects what programs can be used to open it.
 One relevant distinction to make is between text files and binary files.</p>
 <p><strong>Text files</strong> are generally very simple.
@@ -599,7 +599,7 @@ For data storage, we will use comma separated value (CSV) files.
 As the name implies, CSV files include plain text separated by commas.
 Each line of the CSV file is a new row, and commas separate information into columns.
 These CSV files can be opened in any text editor, but they are also recognised by nearly all spreadsheet programs and statistical software.
-The data shown in Figure 2.2 are from a CSV file called “wasp_data.csv”.
+The data shown in Figure 2.2 are from a CSV file called ‘wasp_data.csv’.
 Figure 2.3 shows the same data when opened with a text editor.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
 <img src="img/wasp_data_csv.png" alt="A plain text file is shown with data collected from different trees being presented with different observations spanning columns and rows." width="100%" />
@@ -651,7 +651,7 @@ Figure 2.5: OneDrive file directory showing the file organisation of classes tak
 </p>
 </div>
 <p>Windows has the same general file organisation (Figure 2.6).
-Path names for storing files on the hard drive of a Windows computer look something like “C:\Users\MyName\Desktop\Spring_2006\Biostatistics\HW9.scx”.
+Path names for storing files on the hard drive of a Windows computer look something like ‘C:\Users\MyName\Desktop\Spring_2006\Biostatistics\HW9.scx’.
 The ‘C:\’ is the root directory of the hard drive; it is called ‘C’ for historical reasons (‘A:\’ and ‘B:\’ used to be for floppy disks; the ‘A:\’ floppy disks had about 1.44 MB of storage, and ‘B:\’ had even less, so these are basically obsolete).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
 <img src="img/directory_windows.png" alt="Screenshot showing a Windows directory with five folders of various class names on the left panel." width="100%" />
