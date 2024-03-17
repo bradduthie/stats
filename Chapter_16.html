@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-16" />
+<meta name="date" content="2024-03-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -510,13 +510,13 @@ Figure 16.1: A simulated demonstration of the central limit theorem. (A) Recreat
 </p>
 </div>
 <p>To demonstrate the CLT in action, Figure 16.1 shows the two distributions side-by-side.
-The first (Figure 16.1a) shows the original distribution from Figure 15.6, from which samples are collected and sample means are calculated.
-The second (Figure 16.1b) shows the distribution of 1000 sample means (i.e., <span class="math inline">\(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)</span>).
-Each mean <span class="math inline">\(\bar{x}_{i}\)</span> is calculated from a sample of <span class="math inline">\(N = 100\)</span> from the distribution in Figure 16.1a.
+The first (Figure 16.1A) shows the original distribution from Figure 15.6, from which samples are collected and sample means are calculated.
+The second (Figure 16.1B) shows the distribution of 1000 sample means (i.e., <span class="math inline">\(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)</span>).
+Each mean <span class="math inline">\(\bar{x}_{i}\)</span> is calculated from a sample of <span class="math inline">\(N = 100\)</span> from the distribution in Figure 16.1A.
 Sampling is simulated using a random number generator on the computer (<a href="Chapter_17.html#Chapter_17">Chapter 17</a> shows an example of how to do this in jamovi).</p>
-<p>The distribution of sample means shown in Figure 16.1b is not perfectly normal.
+<p>The distribution of sample means shown in Figure 16.1B is not perfectly normal.
 We can try again with an even bigger sample size of <span class="math inline">\(N = 1000\)</span>, this time with a Poisson distribution where <span class="math inline">\(\lambda = 1\)</span> in Figure 15.7.
-Figure 16.2 shows this result, with the original Poisson distribution shown in Figure 16.2a, and the corresponding distribution built from 1000 sample means shown in Figure 16.2b.</p>
+Figure 16.2 shows this result, with the original Poisson distribution shown in Figure 16.2A, and the corresponding distribution built from 1000 sample means shown in Figure 16.2B.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-59"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-59-1.png" alt="A two panel figure, the first shows a barplot is shown with 11 bars corresponding to the probability of sampling 0-10 from a Poisson distribution with a rate parameter of 1. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
 <p class="caption">
@@ -592,9 +592,9 @@ We can see what this looks like visually in Figure 16.7.</p>
 Figure 16.7: A visual representation of what happens when we subtract the sample mean from a dataset, then divide by its standard deviation. (A) A histogram (grey bars) show 10000 normally distributed values with a mean of 5 and a standard deviation of 2; the curved dotted line shows the standard normal distribution with a mean of 0 and standard deviation of 1. (B) Histogram after subtracting 5, then dividing by 2, from all values shown in panel (A).
 </p>
 </div>
-<p>In Figure 16.7a, we see the standard normal distribution curve represented by the dotted line, centered at <span class="math inline">\(\mu = 0\)</span> and with a standard deviation of <span class="math inline">\(\sigma = 1\)</span>.
+<p>In Figure 16.7A, we see the standard normal distribution curve represented by the dotted line, centered at <span class="math inline">\(\mu = 0\)</span> and with a standard deviation of <span class="math inline">\(\sigma = 1\)</span>.
 To the right of this normal distribution we have 10000 values randomly sampled from a normal distribution with a mean of 5 and a standard deviation of 2 (note that the histogram peaks around 5 and is wider than the standard normal distribution because the standard deviation is higher).
-After subtracting 5 from all of the values in the histogram of Figure 16.7a, then dividing by 2, the data fit nicely within the standard normal curve, as shown in Figure 16.7b.
+After subtracting 5 from all of the values in the histogram of Figure 16.7A, then dividing by 2, the data fit nicely within the standard normal curve, as shown in Figure 16.7B.
 By doing this transformation on the original dataset, z-scores can now be used with the data.
 Mathematically, here is how the calculation is made,</p>
 <p><span class="math display">\[z = \frac{x - \mu}{\sigma}.\]</span></p>
