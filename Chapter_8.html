@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -703,7 +703,7 @@ To change the transform from ‘None’, click the arrow and select ‘Create Ne
 A new box will pop up allowing us to name the transformation.
 It does not matter what we call it (e.g., ‘cm_to_mm’ is fine).
 Note that there are 10 mm in 1 cm, so to convert from cm to mm, we need to multiply the values of ‘Length_cm’ by 10.
-We can do this by appending a <code>* 10</code> to the lower box of the transform window, so that it reads <code>= $source * 10</code> (Figure 8.6).</p>
+We can do this by appending a ‘<code>* 10</code>’ to the lower box of the transform window, so that it reads ‘<code>= $source * 10</code>’ (Figure 8.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-30"></span>
 <img src="img/jamovi_transform_cm_to_mm.png" alt="The jamovi toolbar is shown with a tab called 'Data' selected. Underneath is a box called 'Transform', where the name 'cm to mm' has been typed in. Underneath the box is the code to multiply the column by 10, and below the code is the fig fruits dataset." width="100%" />
 <p class="caption">
@@ -763,7 +763,7 @@ You can repeat this two more times to complete the computed variable as shown in
 Figure 8.7: The jamovi toolbar where the tab ‘Data’ is selected. The box below shows the new computed variable ‘fig volume’, which has been created by calculating the product of 4/3, 3.14, and Width mm three times.
 </p>
 </div>
-<p>Note that we can get the cube of ‘Width_mm’ more concisely by using the carrot character (<code>^</code>).
+<p>Note that we can get the cube of ‘Width_mm’ more concisely by using the caret character (<code>^</code>).
 That is, we would get the same answer shown in Figure 8.7 if we instead typed the below in the function box.</p>
 <pre><code>= (4/3) * 3.14 * (Width_mm/2)^3</code></pre>
 <p>Note that the order of operations is important here, which is why there are parentheses around <code>Width_mm/2</code>. This calculation needs to be done before taking the value to the power of 3.

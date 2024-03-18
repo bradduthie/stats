@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -484,7 +484,7 @@ This chapter focuses on 4 types of graphs: (1) histograms, (2) pie charts, (3) b
 Visualisation can often highlight important and obvious properties of a dataset more efficiently than inspecting raw data, calculating summary statistics, or running statistical tests.
 When making graphs to communicate data visually, it is important to ensure that the person reading the graph has a clear understanding of what is being presented.
 In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descriptive caption, and indicating what any graph symbols mean.
-In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or unnecessary distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher and Wagener 2011</a>)</span>.
+In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher and Wagener 2011</a>)</span>.
 It is also important to ensure that graphs are as accessible as possible, e.g., by providing strong colour contrast and appropriate colour combinations <span class="citation">(<a href="#ref-Elavsky2022" role="doc-biblioref">Elavsky, Bennett, and Moritz 2022</a>)</span>, and alternative text for images where possible.
 As a guide, the histogram, pie chart, barplot, and box-whisker plot below illustrate good practice when making graphs.</p>
 <div id="histograms" class="section level2 hasAnchor" number="10.1">
@@ -511,17 +511,17 @@ Different distribution shapes will be discussed more in <a href="Chapter_15.html
 <div id="barplots-and-pie-charts" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Barplots and pie charts<a href="Chapter_10.html#barplots-and-pie-charts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While histograms are an effective way of visualising continuous data, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise categorical data.
-For example, in the fig fruits data set from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from 4 different trees (A, B, C, and D).
+For example, in the fig fruits data set from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from four different trees (A, B, C, and D).
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
 <p class="caption">
-Figure 10.2: Example bar plot showing how many fruits were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
+Figure 10.2: Example bar plot showing how many fruits were collected from each of four trees (78 collected in total) in 2010 from Baja, Mexico.
 </p>
 </div>
 <p>In Figure 10.2, each tree is represented by a separate bar on the x-axis.
 Unlike a histogram, the bars do not touch each other, which reinforces the idea that different categories of data are being shown (in this case, different trees).
-The height of a bar indicates how many fruits were sampled for each tree.
+The height of a bar indicates how many fruits were sampled from each tree.
 For example, 14 fruits were sampled from tree A, and 22 fruits were sampled from tree B.
 At a glance, it is therefore possible to compare different trees and make inferences about how they differ in sampled fruits.</p>
 <p>Pie charts are similar to barplots in that both present categorical data, but pie charts are more effective for visualising the relative quantity for each category.
@@ -531,11 +531,11 @@ A pie chart could be used to evaluate this, with pie slices corresponding to dif
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-34"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-34-1.png" alt="An example pie chart shows the percentage of fruits collected from four trees labelled A, B, C, and D." width="100%" />
 <p class="caption">
-Figure 10.3: Example pie plot showing the percentage of fruits that were collected from each of 4 trees (78 collected in total) in 2010 from Baja, Mexico.
+Figure 10.3: Example pie chart showing the percentage of fruits that were collected from each of four trees (78 collected in total) in 2010 from Baja, Mexico.
 </p>
 </div>
 <p>Pie charts can be useful in some situations, but in the biological and environmental sciences, they are not used as often as barplots.
-In contrast to pie charts, barplots present the absolute quantities (in Figure 10.2, e.g., the actual number of fruits sampled per tree), and it is still possible with barplots to infer the percentage each category contributes to the total from the relative sizes of the bars.
+In contrast to pie charts, barplots present absolute quantities (in Figure 10.2, e.g., the actual number of fruits sampled per tree), and it is still possible with barplots to infer the percentage each category contributes to the total from the relative sizes of the bars.
 Pie charts, in contrast, only illustrate relative percentages unless numbers are used to indicate absolute quantities.
 Unless percentage alone is important, barplots are often the preferred way to communicate categorical data.</p>
 </div>
@@ -545,14 +545,14 @@ Unless percentage alone is important, barplots are often the preferred way to co
 Instead of presenting the full distribution, as in a histogram, a box-whisker plot shows where summary statistics are located (summary statistics are explained in <a href="Chapter_11.html#Chapter_11">Chapter 11</a> and <a href="Chapter_12.html#Chapter_12">Chapter 12</a>).
 This allows the distribution of data to be represented in a more compact way, but does not show the full shape of a distribution.
 Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histogram of fig fruit widths (10.4B).
-In other words, both of the panels (‘A’ and ‘B’) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).</p>
+In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).</p>
 <p>To show how the panels of Figure 10.4 correspond to one another more clearly, points indicate where the summary statistics shown in the boxplot (Figure 10.4A) are located in the histogram (Figure 10.4B).
 These summary statistics include the median (circles), quartiles (squares), and the limits of the distribution (i.e., the minimum and maximum values; triangles).
 Note that in boxplots, if outliers exist, they are presented as separate points.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information, with points showing how properties of the two panels match." width="100%" />
 <p class="caption">
-Figure 10.4: Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel B presents the same data as a histogram. Points in the boxplot indicate the median (circle), first and third quartiles (squares), and the limits of the distribution (triangles). Corresponding locations are shown on the histogram in panel B.
+Figure 10.4: Boxplot (A) of fig fruit widths (cm) for 78 fig fruits collected in 2010 in Baja, Mexico. Panel A presents the same data as a histogram. Points in the boxplot indicate the median (circle), first and third quartiles (squares), and the limits of the distribution (triangles). Corresponding locations are shown on the histogram in panel B.
 </p>
 </div>
 <p>One benefit of a boxplot is that it is possible to show the distribution of multiple variables simultaneously.
@@ -561,7 +561,7 @@ While it is possible to show histograms side by side, it will quickly take up a 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-36"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-36-1.png" alt="Example of boxplot showing the distributions of fig fruit width for four different trees." width="100%" />
 <p class="caption">
-Figure 10.5: Boxplot of fig fruit widths (cm) collected from 4 separate trees sampled in 2010 from Baja, Mexico.
+Figure 10.5: Boxplot of fig fruit widths (cm) collected from four separate trees sampled in 2010 from Baja, Mexico.
 </p>
 </div>
 <p>The boxplot in Figure 10.5 can be used to quickly compare the distribution of Trees A-D.

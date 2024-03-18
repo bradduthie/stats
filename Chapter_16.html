@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -513,7 +513,7 @@ Figure 16.1: A simulated demonstration of the central limit theorem. (A) Recreat
 The first (Figure 16.1A) shows the original distribution from Figure 15.6, from which samples are collected and sample means are calculated.
 The second (Figure 16.1B) shows the distribution of 1000 sample means (i.e., <span class="math inline">\(\bar{x}_{1}, \bar{x}_{2}, ..., \bar{x}_{999}, \bar{x}_{1000}\)</span>).
 Each mean <span class="math inline">\(\bar{x}_{i}\)</span> is calculated from a sample of <span class="math inline">\(N = 100\)</span> from the distribution in Figure 16.1A.
-Sampling is simulated using a random number generator on the computer (<a href="Chapter_17.html#Chapter_17">Chapter 17</a> shows an example of how to do this in jamovi).</p>
+Sampling is simulated using a random number generator on a computer (<a href="Chapter_17.html#Chapter_17">Chapter 17</a> shows an example of how to do this in jamovi).</p>
 <p>The distribution of sample means shown in Figure 16.1B is not perfectly normal.
 We can try again with an even bigger sample size of <span class="math inline">\(N = 1000\)</span>, this time with a Poisson distribution where <span class="math inline">\(\lambda = 1\)</span> in Figure 15.7.
 Figure 16.2 shows this result, with the original Poisson distribution shown in Figure 16.2A, and the corresponding distribution built from 1000 sample means shown in Figure 16.2B.</p>
@@ -523,7 +523,7 @@ Figure 16.2 shows this result, with the original Poisson distribution shown in F
 Figure 16.2: A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.7 showing the probability distribution for the number of events occurring in a Poisson distribution with a rate parameter of 1. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 1000.
 </p>
 </div>
-<p>Finally, we can try the same approach with the continuous uniform distribution shown in Figure 15.8.
+<p>We can try the same approach with the continuous uniform distribution shown in Figure 15.8.
 This time, we will use an even larger sample size of <span class="math inline">\(N = 10000\)</span> to get our 1000 sample means.
 The simulated result is shown in Figure 16.3.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-60"></span>
@@ -581,7 +581,7 @@ Figure 16.6: A standard normal probability distribution with z-scores shown on t
 </div>
 <p>What z-scores allow us to do is map probabilities to deviations from the mean of a standard normal distribution (hence ‘standard normal deviates’).
 We can say, e.g., that about 95% of the probability density lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span>, or that about 99% lies between <span class="math inline">\(z = -2.58\)</span> and <span class="math inline">\(z = 2.58\)</span> (this will become relevant later).
-An interactive application<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> helps show how probability density changes with changing z-score.</p>
+An interactive application<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a> can help show how probability density changes with changing z-score.</p>
 <p>Of course, most variables that we measure in the biological and environmental sciences will not fit the standard normal distribution.
 Almost all variables will have a different mean and standard deviation, even if they are normally distributed.
 Nevertheless, we can translate any normally distributed variable into a standard normal distribution by subtracting its mean and dividing by its standard deviation.
@@ -598,10 +598,10 @@ After subtracting 5 from all of the values in the histogram of Figure 16.7A, the
 By doing this transformation on the original dataset, z-scores can now be used with the data.
 Mathematically, here is how the calculation is made,</p>
 <p><span class="math display">\[z = \frac{x - \mu}{\sigma}.\]</span></p>
-<p>For example, if we had a value of <span class="math inline">\(x = 9.1\)</span> in our simulated dataset, in which <span class="math inline">\(\mu = 5\)</span> and <span class="math inline">\(\sigma = 2\)</span>, then we could calculate <span class="math inline">\(z = (9.1 - 5) / 2 = 2.05\)</span>.
+<p>For example, if we had a value of <span class="math inline">\(x = 9.1\)</span> in our simulated dataset, in which <span class="math inline">\(\mu = 5\)</span> and <span class="math inline">\(\sigma = 2\)</span>, then we would calculate <span class="math inline">\(z = (9.1 - 5) / 2 = 2.05\)</span>.
 Since we almost never know what the true population mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) are, we usually need to use the estimates made from our sample,</p>
 <p><span class="math display">\[z = \frac{x - \bar{x}}{s}.\]</span></p>
-<p>We could then use <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>, an interactive application, or an old-fashioned z-table<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
+<p>We could then use jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>, an interactive application, or an old-fashioned z-table<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
 These z-scores will become especially useful for calculating confidence intervals in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.
 They can also be useful for comparing values from variables or statistics measured on different scales <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Cheadle2003" role="doc-biblioref">Cheadle et al. 2003</a>; <a href="#ref-Adams2016" role="doc-biblioref">Adams and Collyer 2016</a>)</span>.</p>
 </div>
@@ -632,7 +632,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <ol start="21">
 <li id="fn21"><p>For those interested, a mathematical proof of the CLT can be found in <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>. Here we will demonstrate the CLT by simulation. As an aside, the CLT also applies to the sum of sample values, which will also have a distribution that approaches normality as <span class="math inline">\(N \to \infty\)</span>.<a href="Chapter_16.html#fnref21" class="footnote-back">↩︎</a></p></li>
 <li id="fn22"><p><a href="https://bradduthie.shinyapps.io/zandp/" class="uri">https://bradduthie.shinyapps.io/zandp/</a><a href="Chapter_16.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map <span class="math inline">\(z\)</span> scores to probabilities was using a <a href="https://www.z-table.com/">z table</a>. The table would have rows and columns mapping to different <span class="math inline">\(z\)</span> values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The text <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.<a href="Chapter_16.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map <span class="math inline">\(z\)</span> scores to probabilities was using a z table (<a href="https://www.z-table.com/" class="uri">https://www.z-table.com/</a>). The table would have rows and columns mapping to different <span class="math inline">\(z\)</span> values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The textbook <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> comes with a nearly 200 page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.<a href="Chapter_16.html#fnref23" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

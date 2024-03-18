@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -477,17 +477,17 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_14" class="section level1 hasAnchor" number="14">
 <h1><span class="header-section-number">Chapter 14</span> <em>Practical</em>. Plotting and statistical summaries in jamovi<a href="Chapter_14.html#Chapter_14" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This practical focuses on applying the concepts from Chapters 9-13 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-The data that we will work with in this practical were inspired by <span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span>.
-<span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span> focused on beaver reintroduction in Scottish habitats and its consequences for the white water lily, <em>Nymphaea alba</em>, which beavers regularly consume.</p>
-<p>This chapter will analyse data on the petiole diameter (mm) from <em>N. alba</em> collected from 7 different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
+<p>This chapter focuses on applying the concepts from Chapters 9-13 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+The data that we will work with in this chapter were inspired by <span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span>.
+<span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span> focused on beaver reintroduction in Scottish habitats and investigated its consequences for the white water lily, <em>Nymphaea alba</em>, which beavers regularly consume.</p>
+<p>This chapter will analyse data on the petiole diameter (mm) from <em>N. alba</em> collected from seven different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
 The <em>N. alba</em> dataset is available online<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.
-The data are not in a tidy format, so it is important to first reorganise the data so that they can be analysed in jamovi (14.1).
-Once the data are properly organised, we will use jamovi to plot them (14.2), calculate summary statistics (14.3), apply appropriate decimals, significant figures, and rounding (14.4), and compare petiole diameters across sites (14.5).</p>
+The data are not in a tidy format, so it is important to first reorganise the data so that they can be analysed in jamovi.
+Once the data are properly organised, we will use jamovi to plot them, calculate summary statistics, apply appropriate decimals, significant figures, and rounding, and compare petiole diameters across sites.</p>
 <div id="reorganise-the-dataset-into-a-tidy-format" class="section level2 hasAnchor" number="14.1">
 <h2><span class="header-section-number">14.1</span> Reorganise the dataset into a tidy format<a href="Chapter_14.html#reorganise-the-dataset-into-a-tidy-format" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <em>N. alba</em> dataset is not in a tidy format.
-All of the numbers from this dataset are measurements of petiole diameter in mm from <em>N. alba</em>, but each row contains 7 samples because each column shows a different site.</p>
+All of the numbers from this dataset are measurements of petiole diameter in mm from <em>N. alba</em>, but each row contains seven samples because each column shows a different site.</p>
 <p>Remember that to make these data tidy and usable in jamovi, we need each row to be a unique observation.
 What we really want then is a dataset with two columns of data.
 The first column should indicate the site, and the second column should indicate the petiole diameter.
@@ -500,7 +500,7 @@ See Figure 14.1 for how this would look in jamovi.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-45"></span>
 <img src="img/lilypad_tidy.png" alt="Jamovi interface is shown with new columns being added to the dataset." width="100%" />
 <p class="caption">
-Figure 14.1: Tidying the raw data of petiole diameters from lily pad measurements across 7 sites in Scotland. A new column of data is created by right clicking on an existing column and choosing ‘Add Variable’.
+Figure 14.1: Tidying the raw data of petiole diameters from lily pad measurements across seven sites in Scotland. A new column of data is created by right clicking on an existing column and choosing ‘Add Variable’.
 </p>
 </div>
 <p>Note that to insert a new column in jamovi, we need to right click on an existing column and select ‘Add Variable’ <span class="math inline">\(\to\)</span> ‘Insert’.
@@ -570,7 +570,7 @@ You can save it as a PDF, PNG, SVG, or EPS (if in doubt, PNG is probably the eas
 <p>In the first example, we looked at petiole diameters across the entire dataset, but suppose that we want to see how the data are distributed for each site individually.
 To do this, we just need to go back to the Descriptives box (Figure 14.2) and put the ‘Site’ variable into the box on the lower right called ‘Split by’.
 Do this by selecting ‘Site’ then using the lower <span class="math inline">\(\to\)</span> arrow to bring it to the ‘Split by’ box.
-Instead of one histogram of petiole diameters, you will now see 7 different histograms, one for each site, all stacked on top of each other.
+Instead of one histogram of petiole diameters, you will now see seven different histograms, one for each site, all stacked on top of each other.
 This might be useful, but all of these histograms together are a bit busy.
 Instead, we can use a box-whisker plot to compare the distributions of petiole diameters across different sites.</p>
 <p>To create a boxplot, simply check ‘Box plot’ from the Plots options (you might want to uncheck ‘Histogram’, but it is not necessary).
@@ -592,7 +592,7 @@ Think about where the points are in relation to the box and whiskers of the plot
 <h2><span class="header-section-number">14.3</span> Calculate summary statistics<a href="Chapter_14.html#calculate-summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can calculate the summary statistics using the ‘Descriptives’ option in jamovi, just as we did with the histogram and box-whisker plots.
 Before doing anything else, again place the petiole diameter variable in the box of variables, but do not split the dataset by site just yet because we first want summary statistics across the entire dataset.
-Below the box of variables, but above the Plots options, there are options for selecting different summary statistics.
+Below the box of variables, but above the ‘Plots’ options, there are options for selecting different summary statistics.
 Open up this new box and have a look at the different summary statistics that can be calculated.
 To calculate all of the variables explained in <a href="Chapter_11.html#Chapter_11">Chapter 11</a> and <a href="Chapter_12.html#Chapter_12">Chapter 12</a>, check the following 11 boxes:</p>
 <ul>
@@ -620,10 +620,10 @@ This table will report all of the summary statistics that you have checked.
 Write down the values for the summary statistics next to the corresponding bullet points above.</p>
 <p>Next split these summary statistics up by site.
 Notice the very large table that is now produced on the right hand side of jamovi.
-Which of the 7 sites in the data set has the highest mean petiole diameter, and what is its mean?</p>
+Which of the seven sites in the data set has the highest mean petiole diameter, and what is its mean?</p>
 <p>Site: ______________________________</p>
 <p>Mean: ______________________________</p>
-<p>Which of the 7 sites has the lowest variance in petiole diameter, and what is its variance?</p>
+<p>Which of the seven sites has the lowest variance in petiole diameter, and what is its variance?</p>
 <p>Site: ______________________________</p>
 <p>Variance: ______________________________</p>
 <p>Make sure that you are able to find and interpret these summary statistics in jamovi.
@@ -700,7 +700,7 @@ Do these sites appear to have very different mean petiole diameters?</p>
 
 </code></pre>
 <p>There were 20 total petiole diameters sampled from each site.
-If we were to go back out to these 7 sites and sample another 20 petiole diameters, could we <strong>really</strong> expect to get the exact same site means?
+If we were to go back out to these seven sites and sample another 20 petiole diameters, could we <strong>really</strong> expect to get the exact same site means?
 Assuming the site means would be at least a bit different for our new sample, is it possible that the sites with the highest or lowest petiole diameters might also be different in our new sample?
 If so, then what does this say about our ability to make conclusions about the differences in petiole diameter among sites?</p>
 <pre><code>

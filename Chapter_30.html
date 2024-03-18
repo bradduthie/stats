@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -486,21 +486,21 @@ For example, does knowing something about the latitude of a location tell us som
 <div id="scatterplots" class="section level2 hasAnchor" number="30.1">
 <h2><span class="header-section-number">30.1</span> Scatterplots<a href="Chapter_30.html#scatterplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The easiest way to visualise the concept of a correlation is by using a scatterplot.
-Scatterplots are useful for visualising the association between 2 quantitative variables.
+Scatterplots are useful for visualising the association between two quantitative variables.
 In a scatterplot the values of one variable are plotted on the x-axis, and the values of a second variable are plotted on the y-axis.
 Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 30.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-125"></span>
 <img src="img/heterandrium.png" alt="Two small black iridescent wasps are shown side by side with wings facing upwards." width="100%" />
 <p class="caption">
-Figure 30.1: Fig wasps from 2 different species are shown. Wasps were collected from Baja, Mexico.
+Figure 30.1: Fig wasps from two differentspecies are shown. Wasps were collected from Baja, Mexico.
 </p>
 </div>
 <p>Both fig wasp species in Figure 30.1 are unnamed.
 We can call the species in Figure 30.1A ‘Het1’ and the species in Figure 30.1B ‘Het2’.
-We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these 2 species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
+We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these two species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
 Table 30.1 shows these measurements for 11 wasps.</p>
 <table style="width:51%;">
-<caption><strong>TABLE 30.1</strong> Body segment length measurements (mm) from fig wasps of 2 species. Data were collected from Baja, Mexico.</caption>
+<caption><strong>TABLE 30.1</strong> Body segment length measurements (mm) from fig wasps of two species. Data were collected from Baja, Mexico.</caption>
 <colgroup>
 <col width="13%" />
 <col width="11%" />
@@ -599,27 +599,27 @@ For example, in the last row of Table 30.1, there is a wasp with a particularly 
 In the scatterplot, we can see this wasp represented by the point that is lowest and furthest to the left (Figure 30.2).</p>
 <p>There is a clear association between thorax length and abdomen length in Figure 30.2.
 Fig wasps that have low thorax lengths also tend to have low abdomen lengths, and wasps that high thorax lengths also tend to have high abdomen lengths.
-In this sense, the 2 variables are associated.
+In this sense, the two variables are associated.
 More specifically, they are positively correlated.
 As thorax length increases, so does abdomen length.</p>
 </div>
 <div id="the-correlation-coefficient" class="section level2 hasAnchor" number="30.2">
 <h2><span class="header-section-number">30.2</span> The correlation coefficient<a href="Chapter_30.html#the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <strong>correlation coefficient</strong> formalises the association described in the previous section.
-It gives us a single number that defines how 2 variables are correlated.
+It gives us a single number that defines how two variables are correlated.
 We represent this number with the letter ‘<span class="math inline">\(r\)</span>’, which can range from values of -1 to 1<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a>.
-Positive values indicate that 2 variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
-Negative values indicate that 2 variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
-Values of zero (or not significantly different from zero, more on this later) indicate that 2 variables are uncorrelated (i.e., independent of one another).
-Figure 30.3 shows scatterplots for 4 different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+Positive values indicate that two variables are positively correlated, such that a higher value of one variable is associated with higher values of the other variable (as was the case with fig wasp thorax and abdomen measurements).
+Negative values indicate that two variables are negatively correlated, such that a higher values of one variable are associated with lower values of the other variable.
+Values of zero (or not significantly different from zero, more on this later) indicate that two variables are uncorrelated (i.e., independent of one another).
+Figure 30.3 shows scatterplots for four different correlation coefficients between values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-128"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-128-1.png" alt="Four scatter plots are shown in a 2 by 2 grid with different correlations between x and y variables." width="480" />
 <p class="caption">
-Figure 30.3: Examples of scatterplots with different correlation coefficients (r) between 2 variables (x and y).
+Figure 30.3: Examples of scatterplots with different correlation coefficients (r) between two variables (x and y).
 </p>
 </div>
-<p>We will look at 2 types of correlation coefficient, the Pearson product moment correlation coefficient and the Spearman’s rank correlation coefficient.
-The 2 are basically the same; the Spearman’s rank correlation coefficient is just a correlation of the ranks of values instead of the actual values.</p>
+<p>We will look at two types of correlation coefficient, the Pearson product moment correlation coefficient and the Spearman’s rank correlation coefficient.
+The two are basically the same; the Spearman’s rank correlation coefficient is just a correlation of the ranks of values instead of the actual values.</p>
 <div id="pearson-product-moment-correlation-coefficient" class="section level3 hasAnchor" number="30.2.1">
 <h3><span class="header-section-number">30.2.1</span> Pearson product moment correlation coefficient<a href="Chapter_30.html#pearson-product-moment-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To understand the correlation coefficient, we need to first understand covariance.
@@ -632,7 +632,7 @@ The covariance (<span class="math inline">\(cov_{x,y}\)</span>) describes how a 
 <p>The <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the means of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, respectively.
 Note that if <span class="math inline">\(x_{i} = y_{i}\)</span>, then the equation for <span class="math inline">\(cov_{x,y}\)</span> is identical to the equation for <span class="math inline">\(s^{2}\)</span> because <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(x_{i} - \bar{x} \right) = \left(x_{i} - \bar{x} \right)^{2}\)</span>.</p>
 <p>What the equation for <span class="math inline">\(cov_{x,y}\)</span> is describing is how the variation in <span class="math inline">\(x\)</span> relates to variation in <span class="math inline">\(y\)</span>.
-If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, and a value of <span class="math inline">\(y_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially high because we will be multiplying 2 large positive numbers together.
+If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, and a value of <span class="math inline">\(y_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially high because we will be multiplying two large positive numbers together.
 If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, but the corresponding <span class="math inline">\(y_{i}\)</span> is much lower than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially low because we will be multiplying a large positive number and a large negative number.
 Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(y_{i}\)</span> tend to deviate from their means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> in a consistent way, we get either high or low values of <span class="math inline">\(cov_{x,y}\)</span>.
 If there is no such relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, then we will get <span class="math inline">\(cov_{x,y}\)</span> values closer to zero.</p>
@@ -641,7 +641,7 @@ How low or high it is will depend on the magnitudes of <span class="math inline"
 To get the Pearson product moment correlation coefficient<a href="#fn71" class="footnote-ref" id="fnref71"><sup>71</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
 We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{y}\)</span>),</p>
 <p><span class="math display">\[r = \frac{cov_{x,y}}{s_{x} \times s_{y}}.\]</span></p>
-<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the 2 variables, and the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger than this total.
+<p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the two variables, and the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger than this total.
 We can again think about the special case in which <span class="math inline">\(x = y\)</span>.
 Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom and <span class="math inline">\(r = 1\)</span> (i.e., <span class="math inline">\(x\)</span> is completely correlated with itself).</p>
 <p>We can expand <span class="math inline">\(cov_{x,y}\)</span>, <span class="math inline">\(s_{x}\)</span>, and <span class="math inline">\(s_{y}\)</span> to see the details of the equation for <span class="math inline">\(r\)</span>,</p>
@@ -878,7 +878,7 @@ The reason why we might want to use the Spearman’s rank correlation coefficien
 </div>
 <div id="correlation-hypothesis-testing" class="section level2 hasAnchor" number="30.3">
 <h2><span class="header-section-number">30.3</span> Correlation hypothesis testing<a href="Chapter_30.html#correlation-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We often want to test if 2 variables are correlated.
+<p>We often want to test if two variables are correlated.
 In other words, is <span class="math inline">\(r\)</span> significantly different from zero?
 We therefore want to test the null hypothesis that <span class="math inline">\(r\)</span> is not significantly different from zero.</p>
 <ul>
@@ -933,7 +933,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <ol start="70">
 <li id="fn70"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref70" class="footnote-back">↩︎</a></p></li>
 <li id="fn71"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref71" class="footnote-back">↩︎</a></p></li>
-<li id="fn72"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose 2 degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
+<li id="fn72"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (N - 2), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
 <li id="fn73"><p><a href="https://bradduthie.shinyapps.io/corr_click/" class="uri">https://bradduthie.shinyapps.io/corr_click/</a><a href="Chapter_30.html#fnref73" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

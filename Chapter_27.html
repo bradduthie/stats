@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -478,15 +478,15 @@ div.csl-indent {
 <div id="Chapter_27" class="section level1 hasAnchor" number="27">
 <h1><span class="header-section-number">Chapter 27</span> Two-way ANOVA<a href="Chapter_27.html#Chapter_27" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The one-way ANOVA tested the null hypothesis that all group means are the same.
-But we might also have a dataset in which there is more than 1 type of group.
-For example, suppose we know that the fig wasps used in Chapters 24-26 actually came from 2 different trees (Tree A and Tree B).
+But we might also have a dataset in which there is more than one type of group.
+For example, suppose we know that the fig wasps used in Chapters 24-26 actually came from two different trees (Tree A and Tree B).
 This would mean that there could be a confounding variable affecting wing length, violating assumption 2 from <a href="Chapter_24.html#assumptions-of-anova">Chapter 24.3</a>.
 If, for whatever reason, fig wasps on different trees have different wing lengths, then we should include tree as an explanatory variable in the ANOVA.
-Because we would then have 2 group types (species and tree), we would need a two-way ANOVA<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
-Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just 2 of the 5 species (Het1 and SO2).
-Table 27.1 shows the fig wasp wing length dataset for the 2 species in a tidy format, which includes columns for 2 group types, species and tree.</p>
+Because we would then have two group types (species and tree), we would need a two-way ANOVA<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
+Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just two of the five species (Het1 and SO2).
+Table 27.1 shows the fig wasp wing length dataset for the two species in a tidy format, which includes columns for two group types, species and tree.</p>
 <table style="width:43%;">
-<caption><strong>TABLE 27.1</strong> Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<caption><strong>TABLE 27.1</strong> Wing lengths (mm) measured for two unnamed species of non-pollinating fig wasps collected from two fig trees in 2010 near La Paz in Baja, Mexico.</caption>
 <colgroup>
 <col width="13%" />
 <col width="9%" />
@@ -552,7 +552,7 @@ Working out a two-way ANOVA by hand requires similar, albeit more laborious, cal
 But the general concept is the same.
 The idea is to calculate the amount of the total variation attributable to different groups, or the interaction among group types.
 Note that the assumptions for the two-way ANOVA are the same as for the one-way ANOVA.</p>
-<p>Unlike previous statistical tests in this book, we can actually test 3 separate null hypotheses with a two-way ANOVA.
+<p>Unlike previous statistical tests in this book, we can actually test three separate null hypotheses with a two-way ANOVA.
 The first test is the same as the one-way ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, which focuses on mean species wing lengths:</p>
 <ul>
 <li><span class="math inline">\(H_{0}:\)</span> Mean wing lengths are the same for both species</li>
@@ -570,10 +570,10 @@ The third hypothesis addresses the interaction effect:</p>
 <li><span class="math inline">\(H_{0}:\)</span> There is no interaction between species and tree</li>
 <li><span class="math inline">\(H_{A}:\)</span> There is an interaction between species and tree</li>
 </ul>
-<p>Interaction effects are difficult to understand at first, so we will look at 2 concrete examples of two-way ANOVAs.
+<p>Interaction effects are difficult to understand at first, so we will look at two concrete examples of two-way ANOVAs.
 The first will use the Table 27.1 data in which no interaction effect exists.
 The second will use a different species pairing in which an interaction does exist.</p>
-<p>In a two-way ANOVA, the output (Figure 27.1) appears similar to that of a one-way ANOVA (see <a href="Chapter_24.html#anova-f-statistic-calculation">Chapter 24.2.3</a>), but there are 4 rows of output.
+<p>In a two-way ANOVA, the output (Figure 27.1) appears similar to that of a one-way ANOVA (see <a href="Chapter_24.html#anova-f-statistic-calculation">Chapter 24.2.3</a>), but there are four rows of output.
 Rows 1 and 2 test the null hypotheses associated with the main effects of species and tree, respectively.
 Row 3 tests the interaction effect.
 And row 4 shows us the variation in the data that cannot be attributed to either the main effects or the interaction (i.e., the residual variation).
@@ -606,7 +606,7 @@ If the slopes of the two lines were significantly different, then this would be 
 We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
 Table 27.2 shows the data.</p>
 <table style="width:43%;">
-<caption><strong>TABLE 27.2</strong> Wing lengths (mm) measured for 2 unnamed species of non-pollinating fig wasps collected from 2 fig trees in 2010 near La Paz in Baja, Mexico.</caption>
+<caption><strong>TABLE 27.2</strong> Wing lengths (mm) measured for two unnamed species of non-pollinating fig wasps collected from two fig trees in 2010 near La Paz in Baja, Mexico.</caption>
 <colgroup>
 <col width="13%" />
 <col width="9%" />
@@ -681,7 +681,7 @@ Figure 27.4 shows this interaction visually.</p>
 Figure 27.4: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., SO2 from Tree A in the upper right). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Note that for SO1, wing length is basically the same for Tree A and B (the 2 left points in Figure 27.4).
+<p>Note that for SO1, wing length is basically the same for Tree A and B (the two left points in Figure 27.4).
 In contrast, for SO2, tree has a very noticeable effect on wing length!
 Fig wasps in species SO2 clearly have higher wing lengths on Tree A than they do on Tree B.
 <em>Overall</em>, however, the mean wing length for SO2 appears to be about the same as it is for SO1 (i.e., the mid-way point between the blue and orange points for SO2 is at about the same wing length as it is for SO1, around 1.5 mm).
@@ -690,14 +690,14 @@ But species <em>does</em> have a clear effect if you also take tree into account
 In other words, to predict how tree will affect wing length (not at all for SO1, or a lot for SO2), it is necessary to know what species of fig wasp is being considered.
 This is how interactions work in ANOVA, and more generally in statistics.</p>
 <p>There is one last point that is relevant to make for the two-way ANOVA.
-Recall that we tested 3 null hypotheses simultaneously.
+Recall that we tested three null hypotheses simultaneously.
 Should we not then apply some kind of correction for multiple comparisons, as we did in <a href="Chapter_25.html#Chapter_25">Chapter 25</a>?
 This is actually not necessary.
 The reason is subtle.
 With the multiple t-tests, we wanted to know if <em>any</em> of the pair-wise differences between groups were significant.
 Each t-test was not really a separate question in this case.
 We just tried all possible combinations in search of a pair of species with significantly different wing lengths.
-With the two-way ANOVA, we are asking 3 separate questions, and accepting a Type I error rate of 0.05 for each of them, individually.</p>
+With the two-way ANOVA, we are asking three separate questions, and accepting a Type I error rate of 0.05 for each of them, individually.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">

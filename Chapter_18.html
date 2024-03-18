@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -483,7 +483,7 @@ In this chapter, we will see how to apply this knowledge to calculating interval
 Our best estimate of <span class="math inline">\(\mu\)</span> is the mean that we have calculated from a <em>sample</em>, <span class="math inline">\(\bar{x}\)</span> (see <a href="Chapter_4.html#Chapter_4">Chapter 4</a> for a review of the difference between populations and samples).
 But how good of an estimate is <span class="math inline">\(\bar{x}\)</span> of <span class="math inline">\(\mu\)</span>, really?
 Since we cannot know <span class="math inline">\(\mu\)</span>, one way of answering this question is to find an interval that expresses a degree of confidence about the value of <span class="math inline">\(\mu\)</span>.
-The idea is to calculate 2 numbers that we can say with some degree of confidence that <span class="math inline">\(\mu\)</span> is between (i.e., a lower confidence interval and an upper confidence interval).
+The idea is to calculate two numbers that we can say with some degree of confidence that <span class="math inline">\(\mu\)</span> is between (i.e., a lower confidence interval and an upper confidence interval).
 The wider this interval is, the more confident that we can be that the true mean <span class="math inline">\(\mu\)</span> is somewhere within it.
 The narrower the interval is, the less confident we can be that our confidence intervals (CIs) contain <span class="math inline">\(\mu\)</span>.</p>
 <p>Confidence intervals are notoriously easy to misunderstand.
@@ -515,7 +515,7 @@ First we will look at CIs assuming a normal distribution, then the special case 
 Also from <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, we know that we can calculate the probability associated with any interval of values in a normal distribution.
 For example, we saw that about 68.2% of the probability density of a normal distribution is contained within one standard deviation of the mean.
 We can use this knowledge from <a href="Chapter_16.html#Chapter_16">Chapter 16</a> to set confidence intervals for any percentage of values around the sample mean (<span class="math inline">\(\bar{x}\)</span>) using a standard error (SE) and z-score (z).
-Confidence intervals include 2 numbers.
+Confidence intervals include two numbers.
 The <strong>lower confidence interval</strong> (LCI) is below the mean, and the <strong>upper confidence interval</strong> (UCI) is above the mean.
 Here is how they are calculated,</p>
 <p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
@@ -540,7 +540,7 @@ Our lower 95% confidence interval is therefore,</p>
 <p>Our 95% CIs are therefore <span class="math inline">\(LCI = 3.837\)</span> and <span class="math inline">\(UCI = 4.363\)</span>.
 We can now come back to the statistical concept of what this actually means.
 If we were to go out and repeatedly collect new samples of 20 cats, and do the above calculations each time, then 95% of the time our true mean cat body mass would be somewhere between the LCI and UCI.</p>
-<p>Ninety-five per cent confidence intervals are the most commonly used in biological and environmental sciences.
+<p>Ninety-five per cent confidence intervals are the most commonly used in the biological and environmental sciences.
 In other words, we accept that about 5% of the time (1 in 20 times), our confidence intervals will not contain the true mean that we are trying to estimate.
 Suppose, however, that we wanted to be a bit more cautious.
 We could calculate 99% CIs; that is, CIs that contain the true mean in 99% of samples.
@@ -551,7 +551,7 @@ Consequently, the upper 99% confidence interval for our example of cat body mass
 <p>Our upper 99% confidence interval is,</p>
 <p><span class="math display">\[UCI_{99\%} = 4.1 + \left(2.58 \times \frac{0.6}{\sqrt{20}}\right) = 4.446\]</span></p>
 <p>Notice that the confidence intervals became wider around the sample mean.
-The 99% CI is now 3.754-4.446, while the 95% CI was 3.837-4.363
+The 99% CI is now 3.754-4.446, while the 95% CI was 3.837-4.363.
 This is because if we want to be more confident about our interval containing the true mean, we need to make a bigger interval.</p>
 <p>We could make CIs using any percentage that we want, but in practice it is very rare to see anything other than 90% (<span class="math inline">\(z = 1.65\)</span>), 95% (<span class="math inline">\(z = 1.96\)</span>), or 99% (<span class="math inline">\(z = 2.58\)</span>).
 It is useful to see what these different intervals actually look like when calculated from actual data (an interactive application<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> illustrates CIs on a histogram).
@@ -620,14 +620,14 @@ Thulin, Måns. 2014. <span>“<span class="nocase">The cost of using exact confi
 <div class="footnotes">
 <hr />
 <ol start="25">
-<li id="fn25"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called “credible intervals” rather than “confidence intervals” <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective; i.e., based in some way on the subjective opinion of the individual researcher.<a href="Chapter_18.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called ‘credible intervals’ rather than ‘confidence intervals’ <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective; i.e., based in some way on the subjective opinion of the individual researcher.<a href="Chapter_18.html#fnref25" class="footnote-back">↩︎</a></p></li>
 <li id="fn26"><p><a href="https://bradduthie.shinyapps.io/zandp/" class="uri">https://bradduthie.shinyapps.io/zandp/</a><a href="Chapter_18.html#fnref26" class="footnote-back">↩︎</a></p></li>
 <li id="fn27"><p>While it is always important to be careful when searching, typing “z score 99 percent confidence interval” will almost always get the intended result.<a href="Chapter_18.html#fnref27" class="footnote-back">↩︎</a></p></li>
 <li id="fn28"><p><a href="https://bradduthie.shinyapps.io/CI_hist_app/" class="uri">https://bradduthie.shinyapps.io/CI_hist_app/</a><a href="Chapter_18.html#fnref28" class="footnote-back">↩︎</a></p></li>
 <li id="fn29"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z-score is not <strong>completely</strong> accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.<a href="Chapter_18.html#fnref29" class="footnote-back">↩︎</a></p></li>
-<li id="fn30"><p>The hat over the P, (<span class="math inline">\(\hat{P}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="Chapter_18.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p>The hat over the p, (<span class="math inline">\(\hat{p}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="Chapter_18.html#fnref30" class="footnote-back">↩︎</a></p></li>
 <li id="fn31"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>; i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="Chapter_18.html#fnref31" class="footnote-back">↩︎</a></p></li>
-<li id="fn32"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z-score to probability density. For this reason, it is best to stick with <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N}\)</span>. There are other methods that attempt to give even better estimates (the one we are using is called the Wald method), but we will not consider these here.<a href="Chapter_18.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z-score to probability density.<a href="Chapter_18.html#fnref32" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

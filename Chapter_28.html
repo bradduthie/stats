@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -478,17 +478,17 @@ div.csl-indent {
 <div id="Chapter_28" class="section level1 hasAnchor" number="28">
 <h1><span class="header-section-number">Chapter 28</span> <em>Practical</em>. ANOVA and associated tests<a href="Chapter_28.html#Chapter_28" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This chapter focuses on applying the concepts from <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, <a href="Chapter_25.html#Chapter_25">Chapter 25</a>, <a href="Chapter_26.html#Chapter_26">Chapter 26</a>, and <a href="Chapter_27.html#Chapter_27">Chapter 27</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-The focus will be on ANOVA and associated tests, with 5 exercises in total.
+The focus will be on ANOVA and associated tests, with five exercises in total.
 The data for this chapter are inspired by the doctoral work of Dr Lidia De Sousa Teixeira at the University of Stirling.
 This work included a nutrient analysis of agricultural soil in different regions of Angola.
 Measuring soil nutrient concentrations is essential for assessing soil quality, and these data include measurements of Nitrogen (N), Phosphorus (P), and Potassium (K) concentrations.
-Here we will focus on testing whether or not the concentrations of N, P, and K differ among 2 different sites and 3 soil profiles (upper, middle, and lower).
+Here we will focus on testing whether or not the concentrations of N, P, and K differ among two different sites and three soil profiles (upper, middle, and lower).
 This chapter uses the Angola soils dataset<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
 All concentrations of Nitrogen, Phosphorus, and Potassium are given in parts per million (ppm).</p>
 <div id="one-way-anova-site" class="section level2 hasAnchor" number="28.1">
 <h2><span class="header-section-number">28.1</span> One-way ANOVA (site)<a href="Chapter_28.html#one-way-anova-site" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose that we first want to test whether or not mean Nitrogen concentration is the same in different sites.
-Notice that there are only 2 sites in the dataset, Funda and Bailundo.
+Notice that there are only two sites in the dataset, Funda and Bailundo.
 We could therefore also use an Independent samples t-test.
 We will do this first, then compare the t-test output to the ANOVA output.
 What are the null (<span class="math inline">\(H_{0}\)</span>) and alternative (<span class="math inline">\(H_{A}\)</span>) hypotheses for the t-test.</p>
@@ -496,7 +496,7 @@ What are the null (<span class="math inline">\(H_{0}\)</span>) and alternative (
 <p><span class="math inline">\(H_{A}:\)</span> ____________________</p>
 <p>Before running a t-test, remember that we need to check the assumptions of a t-test to see if any of them are violated (<a href="Chapter_22.html#assumptions-of-t-tests">see Chapter 22.4</a>).
 Use the <strong>Assumption Checks</strong> in jamovi as we did in <a href="Chapter_23.html#independent-samples-t-test-1">Chapter 23.4</a> to test for normality and homogeneity of variances in Nitrogen concentration.
-What can you conclude from these 2 tests?</p>
+What can you conclude from these two tests?</p>
 <p>Normality conclusion: ___________________________</p>
 <p>Homogeneity of variances conclusion: ______________</p>
 <p>Given the conclusions from the checks of normality and homogeneity of variances above, what kind of test should you use to see if the mean Nitrogen concentration is significantly different in Funda versus Bailundo?</p>
@@ -598,7 +598,7 @@ It includes the sum of squares of the among-group (Profile) and within-group (Re
 This is often how ANOVA results are presented in the literature.
 Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and P.</p>
 <table style="width:83%;">
-<caption><strong>TABLE 28.1</strong> ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across 3 different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<caption><strong>TABLE 28.1</strong> ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across three different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
 <colgroup>
 <col width="22%" />
 <col width="23%" />
@@ -698,7 +698,7 @@ Do the data appear to be normally distributed?</p>
 This can be done in the Descriptives panel of jamovi, or we can do it in the One-Way ANOVA panel.
 To do it in the one-way ANOVA panel, first select ‘ANOVA’ from the pull down menu as we did at the end of Exercise 28.2.
 In the ANOVA interface, place ‘Potassium’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box.
-Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all 3 options.
+Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all three options.
 From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumptions of ANOVA might be violated?</p>
 <pre><code>
 
@@ -726,23 +726,23 @@ We will not use the Dwass-Steel-Critchlow-Fligner pairwise comparisons, but the 
 <p>Since we have two types of categorical variables (site and profile), we might want to know if either has a significant effect on the concentration of an element, and if there is any interaction between site and profile.
 The two-way ANOVA was introduced in <a href="Chapter_27.html#Chapter_27">Chapter 27</a> with an example of fig wasp wing lengths.
 Here we will test the effects of site, profile, and their interaction on Nitrogen concentration.
-Recall from <a href="Chapter_27.html#Chapter_27">Chapter 27</a> that a two-way ANOVA actually tests 3 separate null hypotheses.
+Recall from <a href="Chapter_27.html#Chapter_27">Chapter 27</a> that a two-way ANOVA actually tests three separate null hypotheses.
 Write these null hypotheses down below (the order does not matter).</p>
 <p>First <span class="math inline">\(H_{0}\)</span>: ___________________________________</p>
 <p>Second <span class="math inline">\(H_{0}\)</span>: ___________________________________</p>
 <p>Third <span class="math inline">\(H_{0}\)</span>: ___________________________________</p>
 <p>To test these null hypotheses again select ‘ANOVA’ from the pull down menu as we did at the end of Exercise 28.2.
 In the ANOVA interface, place ‘Nitrogen’ into the ‘Dependent Variable’ box and both ‘Site’ and ‘Profile’ in the ‘Fixed Factors’ box.
-Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all 3 options.
+Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all three options.
 From the assumption checks output tables, is there any reason to be concerned about using the two-way ANOVA?</p>
 <pre><code>
 </code></pre>
 <p>In the two-way ANOVA output, we see the same ANOVA table as in Exercise 28.2 (Table 28.1).
 This time, however, there are 4 rows in total.
-The first 2 rows correspond with tests of the main effects of Site and Profile, and the third row tests the interaction between these two variables.
+The first two rows correspond with tests of the main effects of Site and Profile, and the third row tests the interaction between these two variables.
 Fill in Table 28.2 with the relevant information from the two-way ANOVA output.</p>
 <table style="width:90%;">
-<caption><strong>TABLE 28.2</strong> Two-way ANOVA output testing the effects of 2 sites and 3 different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
+<caption><strong>TABLE 28.2</strong> Two-way ANOVA output testing the effects of two sites and three different soil profiles on soil Nitrogen concentration in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia De Sousa Teixeira.</caption>
 <colgroup>
 <col width="29%" />
 <col width="23%" />

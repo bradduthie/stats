@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -477,11 +477,11 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_32" class="section level1 hasAnchor" number="32">
 <h1><span class="header-section-number">Chapter 32</span> Simple linear regression<a href="Chapter_32.html#Chapter_32" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Linear regression focuses on the association between 2 or more quantitative variables.
-In the case of simple linear regression, which is the focus of this chapter, there are only 2 variables to consider.
+<p>Linear regression focuses on the association between two or more quantitative variables.
+In the case of simple linear regression, which is the focus of this chapter, there are only two variables to consider.
 At first, this might sound similar to correlation, which was introduced in <a href="Chapter_30.html#Chapter_30">Chapter 30</a>.
 Simple linear regression and correlation are indeed similar, both conceptually and mathematically, and the two are frequently confused.
-Both methods focus on 2 quantitative variables, but the general aim of regression is different from correlation.
+Both methods focus on two quantitative variables, but the general aim of regression is different from correlation.
 The aim of correlation is to describe how the variance of one variable is associated with the variance of another variable.
 In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 But there is no attempt to predict what the value of one variable will be based on the other.</p>
@@ -539,21 +539,21 @@ Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico
 </tbody>
 </table>
 <p>How much does fruit volume change with latitude?
-To start answering this question, we can plot the relationship between the 2 variables.
+To start answering this question, we can plot the relationship between the two variables.
 We want to predict fruit volume from latitude, meaning that fruit volume <em>depends on</em> latitude.
 Fruit volume is therefore the dependent variable, and we should plot it on the y-axis.
 Latitude is our independent variable, and we should plot it on the x-axis (Figure 32.2). </p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-141"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-141-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; a thin dotted line is horizontal across the plot." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-141-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards; a thin dotted line is horizontal across the plot." width="672" />
 <p class="caption">
-Figure 32.2: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.
+Figure 32.2: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the thin dotted line shows the mean of fruit volume.
 </p>
 </div>
-<p>In Figure 32.2, each of the 7 points is a different fig fruit.
+<p>In Figure 32.2, each of the seven points is a different fig fruit.
 The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in <span class="math inline">\(mm^{3}\)</span>.
-The thin dotted line shows the mean fruit volume for the 7 fruits, <span class="math inline">\(\bar{y} =\)</span> 1930.1.
+The thin dotted line shows the mean fruit volume for the seven fruits, <span class="math inline">\(\bar{y} =\)</span> 1930.1.
 The thick black line trending downwards in Figure 32.2 is the regression line, also called the line of best fit.
-How this line is calculated will be explained later, but for now there are 2 important concepts to takeaway from Figure 32.2.
+How this line is calculated will be explained later, but for now there are two important concepts to takeaway from Figure 32.2.
 First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
 For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
 At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 <span class="math inline">\(mm^{3}\)</span>.</p>
@@ -565,8 +565,8 @@ Before answering this question, a few new terms are needed.</p>
 </div>
 <div id="intercepts-slopes-and-residuals" class="section level2 hasAnchor" number="32.2">
 <h2><span class="header-section-number">32.2</span> Intercepts, slopes, and residuals<a href="Chapter_32.html#intercepts-slopes-and-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Given the latitude of each fruit (i.e., each point in Figure 32.2), we can predict its volume from 3 numbers.
-These 3 numbers are the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
+<p>Given the latitude of each fruit (i.e., each point in Figure 32.2), we can predict its volume from three numbers.
+These three numbers are the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
 The intercept is the point on the regression line where <span class="math inline">\(x = 0\)</span>, i.e., where latitude is 0 in the example of fig fruit volumes.
 This point is not actually visible in Figure 32.2 because the lowest latitude on the x-axis is 23.
 At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 <span class="math inline">\(mm^{3}\)</span>.
@@ -583,20 +583,20 @@ For example, we can predict how fruit volume will change for any amount of chang
 If latitude increases by 2 degrees, then we would predict a 2 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> -485.4 <span class="math inline">\(mm^{3}\)</span> change in fruit volume (i.e., a decrease of 485.4).
 If latitude decreases by 3 degrees, then we would predict a -3 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> 728.1 <span class="math inline">\(mm^{3}\)</span> change in fruit volume (i.e., an increase of 728.1).</p>
 <p>We can describe the regression line using just the intercept and the slope.
-For the example in Figure 31.2, this means that we can predict fruit volume for any given latitude with just these 2 numbers.
+For the example in Figure 31.2, this means that we can predict fruit volume for any given latitude with just these two numbers.
 But prediction almost always comes with some degree of uncertainty.
 For example, if we could perfectly predict fruit volume from latitude, then all of the points in Figure 32.2 would fall exactly on the regression line.
 But this is not the case.
-None of the 7 points in Figure 32.2 fall exactly on the line, so there is some unexplained variation (i.e., some error) in predicting fruit volume from latitude.
+None of the seven points in Figure 32.2 fall exactly on the line, so there is some unexplained variation (i.e., some error) in predicting fruit volume from latitude.
 To map each fruit’s latitude to its corresponding volume, we therefore need one more number.
 This number is the <strong>residual</strong>, and it describes how far away a point is from the regression line (Figure 32.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-142"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-142-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit, and one point is highlighted in red." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-142-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit, and one point is highlighted in red." width="672" />
 <p class="caption">
-Figure 32.3: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
+Figure 32.3: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
 </p>
 </div>
-<p>The residual of each of the 7 points is shown with a dashed line in Figure 32.3.
+<p>The residual of each of the seven points is shown with a dashed line in Figure 32.3.
 Residual values are positive when they are higher than the value predicted by the regression line, and they are negative when they are lower than the value predicted by the regression line.
 In the example of Figure 32.3, the residual in red indicated by the arrow, at a latitude of 24, is 307.8 because the volume of the fig fruit collected from this latitude deviates from the predicted volume on the regression line by 307.8.
 For the point just to the left where the latitude from which the fruit was sampled is 23.7 degrees, the residual is -307.7.
@@ -633,9 +633,9 @@ The next section explains how the regression line is actually calculated.</p>
 <p>The regression line is defined by its relationship to the residual values.
 Figure 32.4 shows the same regression as in Figures 32.2 and 32.3, but with the values of the residuals written next to each point.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-143"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-143-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-143-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
 <p class="caption">
-Figure 32.4: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
+Figure 32.4: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
 </p>
 </div>
 <p>Some of the values are positive, and some are negative.
@@ -675,9 +675,9 @@ From the previous section, we have already found that <span class="math inline">
 Now, to get <span class="math inline">\(SS_{total}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Chapter 12.3</a>).
 We can visualise this as the sum of squared deviations from the mean fruit volume of <span class="math inline">\(\bar{y} =\)</span> 1930.1 instead of the value predicted by the regression line (Figure 32.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-145-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are 7 points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-145-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
 <p class="caption">
-Figure 32.6: Relationship between latitude and fruit volume for 7 fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (dashed) and deviations from the mean (dotted).
+Figure 32.6: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (dashed) and deviations from the mean (dotted).
 </p>
 </div>
 <p>The black numbers in Figure 32.6 show the deviations of each point from the regression line, just like in Figure 32.4.
@@ -692,7 +692,7 @@ In other words, about 62 per cent of the variation in fruit volume is explained 
 <div id="regression-assumptions" class="section level2 hasAnchor" number="32.6">
 <h2><span class="header-section-number">32.6</span> Regression assumptions<a href="Chapter_32.html#regression-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is important to be aware of the assumptions underlying linear regression.
-There are 4 key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><p>Measurement of the independent variable (<span class="math inline">\(x\)</span>) is completely accurate. In other words, there is no measurement error for the independent variable.
 Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see <a href="Chapter_6.html#accuracy">Chapter 6.1</a> and <a href="Chapter_7.html#Chapter_7">Chapter 7</a>).</p></li>
@@ -721,7 +721,7 @@ In reality, linear regression is often robust to minor deviations from the above
 <div id="regression-hypothesis-testing" class="section level2 hasAnchor" number="32.7">
 <h2><span class="header-section-number">32.7</span> Regression hypothesis testing<a href="Chapter_32.html#regression-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We typically want to know if our regression model is useful for predicting the dependent variable given the independent variable.
-There are 3 specific null hypotheses that we can test, which tell us the significance of (1) the overall model, (2) the intercept, and (3) the slope.
+There are three specific null hypotheses that we can test, which tell us the significance of (1) the overall model, (2) the intercept, and (3) the slope.
 We will go through each of these null hypotheses.</p>
 <div id="overall-model-significance" class="section level3 hasAnchor" number="32.7.1">
 <h3><span class="header-section-number">32.7.1</span> Overall model significance<a href="Chapter_32.html#overall-model-significance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -781,7 +781,7 @@ Figure 32.8: Jamovi output table for a simple linear regression in which latitud
 <p>Figure 32.8 reports the <span class="math inline">\(R^{2}\)</span> value along with with <span class="math inline">\(F\)</span> statistic, degrees of freedom, and the resulting p-value for the overall model.
 We can also see a table of model coefficients, the intercept (<span class="math inline">\(b_{0}\)</span>) and slope (<span class="math inline">\(b_{1}\)</span>) associated with latitude (Figure 32.9).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-148"></span>
-<img src="img/jamovi_overall_regression_coefficients.png" alt="An output table is shown with a 2 rows and columns for Predictor, Estimate, SE, t, and p." width="100%" />
+<img src="img/jamovi_overall_regression_coefficients.png" alt="An output table is shown with a two rows and columns for Predictor, Estimate, SE, t, and p." width="100%" />
 <p class="caption">
 Figure 32.9: Jamovi output table for a simple linear regression showing model coefficients and their statistical significance.
 </p>
@@ -848,7 +848,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <li id="fn75"><p>Biologically, a fruit volume of 8458.3 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_32.html#fnref75" class="footnote-back">↩︎</a></p></li>
 <li id="fn76"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_32.html#fnref76" class="footnote-back">↩︎</a></p></li>
 <li id="fn77"><p><a href="https://bradduthie.shinyapps.io/regr_click/">https://bradduthie.shinyapps.io/regr_click/</a><a href="Chapter_32.html#fnref77" class="footnote-back">↩︎</a></p></li>
-<li id="fn78"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when 2 variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref78" class="footnote-back">↩︎</a></p></li>
+<li id="fn78"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when two variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref78" class="footnote-back">↩︎</a></p></li>
 <li id="fn79"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721718\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1687069\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034649\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1687069/1 = 1687069\)</span> and <span class="math inline">\(MS_{residual} = 1034649/5 = 206929.8\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1687069 / 206929.8 = 8.152857\)</span>.<a href="Chapter_32.html#fnref79" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

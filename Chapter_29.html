@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -493,7 +493,7 @@ In other words, <span class="math inline">\(Pr(flower = red) = 0.5\)</span> and 
 By this logic, if we were to collect 100 flowers at random from the field, we would expect 50 to be red and 50 to be blue.
 If we actually went out and collected 100 flowers at random, but found 46 to be red and 54 to be blue, would this be sufficiently different from our expectation to reject the null hypothesis that the probability of sampling a red versus blue flower is the same?
 We could test this null hypothesis using a Chi-square goodness of fit test (<a href="Chapter_29.html#the-chi-square-distribution">Chapter 29.1</a>).
-Similarly, we might want to test if 2 different count variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
+Similarly, we might want to test if two differentcount variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
 We could test this kind of hypothesis using a Chi-square test of association (<a href="Chapter_31.html#Chapter_31">Chapter 31</a>).</p>
 <p>Before introducing the Chi-square goodness of fit test or the Chi-square test of association, it makes sense to first introduce the Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution.
 The general motivation for introducing the Chi-square distribution is the same as it was for the t-distribution (<a href="Chapter_19.html#Chapter_19">Chapter 19</a>) or F-distribution (<a href="Chapter_24.html#the-f-distribution">Chapter 24.1</a>).
@@ -504,7 +504,7 @@ We then compare this null distribution to our test statistic to find the probabi
 <p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
 There is a lot to unpack in the previous sentence, so we can go through it step by step.
 First, we can take another look at the standard normal distribution from <a href="Chapter_15.html#normal-distribution">Chapter 15.4.4</a> (Figure 15.9).
-Suppose that we randomly sampled 4 values from the standard normal distribution.</p>
+Suppose that we randomly sampled four values from the standard normal distribution.</p>
 <ul>
 <li><span class="math inline">\(x_{1} = -1.244\)</span></li>
 <li><span class="math inline">\(x_{2} = 0.162\)</span></li>
@@ -516,27 +516,27 @@ Suppose that we randomly sampled 4 values from the standard normal distribution.
 <p>Note that <span class="math inline">\(\chi^{2}\)</span> cannot be negative because when we square a number that is either positive or negative, we always end up with a positive value (e.g., <span class="math inline">\(-2^{2} = 4\)</span>, see <a href="Chapter_1.html#numbers-and-operations">Chapter 1.1</a>).
 The final value is <span class="math inline">\(\chi^{2} = 10.76462\)</span>.
 Of course, this <span class="math inline">\(\chi^{2}\)</span> value would have been different if our <span class="math inline">\(x_{i}\)</span> values (<span class="math inline">\(x_{1}\)</span>, <span class="math inline">\(x_{2}\)</span>, <span class="math inline">\(x_{3}\)</span>, and <span class="math inline">\(x_{4}\)</span>) had been different.
-And if we are sampling randomly from the normal distribution, we should not expect to get the same <span class="math inline">\(\chi^{2}\)</span> value from 4 new random standard normal deviates.
-We can therefore ask, if we were to keep sampling 4 standard normal deviates and calculating new <span class="math inline">\(\chi^{2}\)</span> values, what would be the distribution of these <span class="math inline">\(\chi^{2}\)</span> values?
+And if we are sampling randomly from the normal distribution, we should not expect to get the same <span class="math inline">\(\chi^{2}\)</span> value from four new random standard normal deviates.
+We can therefore ask, if we were to keep sampling four standard normal deviates and calculating new <span class="math inline">\(\chi^{2}\)</span> values, what would be the distribution of these <span class="math inline">\(\chi^{2}\)</span> values?
 The answer is shown in Figure 29.1.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-117"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-117-1.png" alt="Plot of a curved distribution that rapidly increases to a maximum at around 2 then slowly decreases." width="672" />
 <p class="caption">
-Figure 29.1: A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.
+Figure 29.1: A Chi-square distribution, which is the expected sum of four squared standard normal deviates, i.e., the sum of four values sampled from a standard normal distribution and squared.
 </p>
 </div>
 <p>Looking at the shape of Figure 29.1, we can see that most of the time, the sum of deviations from the mean of <span class="math inline">\(\mu = 0\)</span> will be about 2.
 But sometimes we will get a much lower or higher value of <span class="math inline">\(\chi^{2}\)</span> by chance, if we sample particularly low or high values of <span class="math inline">\(x_{i}\)</span>.</p>
 <p>If we summed a different number of squared <span class="math inline">\(x_{i}\)</span> values, then we would expect the distribution of <span class="math inline">\(\chi^{2}\)</span> to change.
-Had we sampled fewer than 4 <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be lower just because we are adding up fewer numbers.
-Similarly, had we sampled more than 4 <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be higher just because we are adding up more numbers.
+Had we sampled fewer than four <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be lower just because we are adding up fewer numbers.
+Similarly, had we sampled more than four <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be higher just because we are adding up more numbers.
 The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(N\)</span>), or more specifically the degrees of freedom (df, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = N - 1\)</span>.
 This is the same idea as the t-distribution from <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, which also changed shape depending on the degrees of freedom.
 Figure 29.2 shows the different <span class="math inline">\(\chi^{2}\)</span> probability density distributions for different degrees of freedom.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-118"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-118-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different Chi-square distributions with different degrees of freedom." width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-118-1.png" alt="A plot is shown with three different curve lines, which show three different Chi-square distributions with different degrees of freedom." width="672" />
 <p class="caption">
-Figure 29.2: Probability density functions for 3 different Chi-square distributions, each of which have different degrees of freedom (df).
+Figure 29.2: Probability density functions for three different Chi-square distributions, each of which have different degrees of freedom (df).
 </p>
 </div>
 <p>As with the F distribution from <a href="Chapter_24.html#the-f-distribution">Chapter 24.1</a>, visualising the <span class="math inline">\(\chi^{2}\)</span> distribution is easier using an interactive application<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
@@ -557,7 +557,7 @@ If the expected and observed counts differ by a lot, then we will get a large te
 A simple concrete example will make this a bit more clear.</p>
 <p>Recall the practical in <a href="Chapter_17.html#Chapter_17">Chapter 17</a>, in which players of the mobile app game “Power Up!” chose a small, medium, or large dam at the start of the game.
 Suppose that we are interested in the size of dam that policy-makers choose to build when playing the game, so we find 60 such people in Scotland and ask them to play the game.
-Perhaps we do not think that the policy-makers will have any preference for a particular dam size (and therefore just pick 1 of the 3 dam sizes at random).
+Perhaps we do not think that the policy-makers will have any preference for a particular dam size (and therefore just pick one of the three dam sizes at random).
 We would therefore expect an equal number of small, medium, and large dams to be selected among the 60 players.
 That is, for our expected counts of each dam size (<span class="math inline">\(E_{size}\)</span>), we expect 20 small (<span class="math inline">\(E_{small} = 20\)</span>), 20 medium (<span class="math inline">\(E_{medium} = 20\)</span>), and 20 large (<span class="math inline">\(E_{large} = 20\)</span>) dams in total (because <span class="math inline">\(60/3 = 20\)</span>).</p>
 <p>Of course, even if our players have no preference for a particular dam size, the number of small, medium, and large dams will not always be <em>exactly</em> the same.
@@ -573,7 +573,7 @@ What we want to test is the null hypothesis that there is no significant differe
 <p>We can calculate the values in the numerator.
 Note that all of these numbers must be positive (e.g., <span class="math inline">\(18 - 20 = -2\)</span>, but <span class="math inline">\(-2^{2} = 4\)</span>),</p>
 <p><span class="math display">\[\chi^{2} = \frac{4}{20} + \frac{16}{20} + \frac{4}{20}.\]</span></p>
-<p>When we sum the 3 terms, we get a value of <span class="math inline">\(\chi^{2} = 1.2\)</span>.
+<p>When we sum the three terms, we get a value of <span class="math inline">\(\chi^{2} = 1.2\)</span>.
 Note that if all of our observed values had been the same as the expected values (i.e., 20 small, medium, and large dams actually chosen), then we would get a <span class="math inline">\(\chi^{2}\)</span> value of 0.
 The more the observed values differ from the expectation of 20, the higher the <span class="math inline">\(\chi^{2}\)</span> will be.
 We can now check to see if the test statistic <span class="math inline">\(\chi^{2} = 1.2\)</span> is sufficiently large to reject the null hypothesis that our policy-makers have no preference for small, medium, or large dams.
@@ -583,7 +583,7 @@ Figure 29.3 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-119-1.png" alt="Plot of curved distribution that starts around 0.5 and decreases, asymptoting toward 0." width="672" />
 <p class="caption">
-Figure 29.3: A Chi-square distribution, which is the expected sum of 4 squared standard normal deviates, i.e., the sum of 4 values sampled from a standard normal distribution and squared.
+Figure 29.3: A Chi-square distribution, which is the expected sum of four squared standard normal deviates, i.e., the sum of four values sampled from a standard normal distribution and squared.
 </p>
 </div>
 <p>Because <span class="math inline">\(P &gt; 0.05\)</span>, we do not reject the null hypothesis that there is no significant difference between expected and observed counts of chosen dam sizes.</p>
@@ -601,14 +601,14 @@ Next, we will look at testing associations between counts in different types of 
 <div id="chi-square-test-of-association" class="section level2 hasAnchor" number="29.3">
 <h2><span class="header-section-number">29.3</span> Chi-square test of association<a href="Chapter_29.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The second kind of test that we will consider for count data is the Chi-square test of association.
-While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on 2 different categorical variables.
-What we want to know is whether or not the 2 categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.
+While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on two differentcategorical variables.
+What we want to know is whether or not the two categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.
 In other words, does knowing something about one variable tell us anything about the other variable?
 A concrete example will make it easier to explain.
 We can again make use of the <a href="Chapter_17.html#Chapter_17">Chapter 17</a> game “Power Up!”.
 As mentioned in the <a href="#chi-squared-goodness-of-fit">previous section</a>, game players choose a small, medium, or large dam at the start of the game.
 Players can play the game on either an Android or MacOS mobile device.
-We therefore have 2 categorical variables, dam size and OS type.
+We therefore have two categorical variables, dam size and OS type.
 We might want to know, do Android users choose the same dam sizes as MacOS users?
 In other words, are dam size and OS type associated?
 We can state this as a null and alternative hypothesis.</p>
@@ -618,7 +618,7 @@ We can state this as a null and alternative hypothesis.</p>
 </ul>
 <p>Consider the data in Table 29.1, which show counts of Android versus MacOS users and their dam choices.</p>
 <table style="width:56%;">
-<caption><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large).</caption>
+<caption><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two types of Operating System (Android or MacOS) and build one of three types of dam in the game (Small, Medium, or Large).</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -648,7 +648,7 @@ We can state this as a null and alternative hypothesis.</p>
 </tr>
 </tbody>
 </table>
-<p>Just looking at the counts in Table 29.1, it appears that there might be an association between the 2 variables.
+<p>Just looking at the counts in Table 29.1, it appears that there might be an association between the two variables.
 For example, Android users appear to be more likely to choose a medium dam than MacOS users.
 Medium dams are the most popular choice for Android users, but they are the least popular choice for MacOS users.
 Nevertheless, could this just be due to chance?
@@ -660,7 +660,7 @@ We have our observed values (Table 29.1).
 We now need to find the expected values to calculate a <span class="math inline">\(\chi^{2}\)</span> value.
 But the expected values are now a bit more complicated.
 With the goodness of fit test in <a href="#chi-squared-goodness-of-fit">Chapter 29.2</a>, we just assumed that all categories were equally likely (i.e., the probability of choosing each size dam was the same).
-There were 60 players and 3 dam sizes, so the expected frequency of each dam choice was 60/3 = 20.
+There were 60 players and three dam sizes, so the expected frequency of each dam choice was 60/3 = 20.
 Now it is different.
 We are not testing if dam sizes or OS choices are the same.
 We want to know of they are <em>associated</em> with one another.
@@ -670,7 +670,7 @@ If dam size is not associated with OS, then we would predict that the relative f
 For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1</p>
 <table style="width:85%;">
-<caption><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use 1 of 2 types of Operating System (Android or MacOS) and build one of 3 types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
+<caption><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two types of Operating System (Android or MacOS) and build one of three types of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected</caption>
 <colgroup>
 <col width="25%" />
 <col width="11%" />
@@ -812,15 +812,15 @@ Note that the sum of all the counts equals our sample size of 60.</p>
 <p>We now have both the observed (Table 29.2) and expected (Table 29.4) counts (remember that the expected counts do not <em>need</em> to be integers).
 To get our <span class="math inline">\(\chi^{2}\)</span> test statistic, we use the same formula as in <a href="#chi-squared-goodness-of-fit">Chapter 29.2</a>,</p>
 <p><span class="math display">\[\chi^{2} = \sum_{i = 1}^{n} \frac{\left(O_{i} - E_{i}\right)^{2}}{E_{i}}.\]</span></p>
-<p>There are 6 total combinations of OS and dam size, so there are <span class="math inline">\(n = 6\)</span> values to sum up,</p>
+<p>There are six total combinations of OS and dam size, so there are <span class="math inline">\(n = 6\)</span> values to sum up,</p>
 <p><span class="math display">\[\chi^{2} = \frac{(8-9)^2}{9} + \frac{(16 - 12)^{2}}{12} + ... + \frac{(16 - 12)^{2}}{12} + \frac{(8-9)^2}{9}.\]</span></p>
-<p>If we sum all of the 6 terms, we get a value of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
+<p>If we sum all of the six terms, we get a value of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
 We can compare this to the null <span class="math inline">\(\chi^{2}\)</span> distribution as we did in the <a href="#chi-squared-goodness-of-fit">Chapter 29.2</a> goodness of fit test, but we need to know the correct degrees of freedom.
 The correct degrees of freedom<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a> is the number of categories in variable 1 (<span class="math inline">\(n_{1}\)</span>) minus 1, times the number of categories in variable 2 (<span class="math inline">\(n_{2}\)</span>) minus 1,</p>
 <p><span class="math display">\[df = (n_{1} - 1) \times (n_{2} - 1).\]</span></p>
 <p>In our example, the degrees of freedom equals the number of dam types minus 1 (<span class="math inline">\(n_{dam} = 3 - 1)\)</span> times the number of operating systems minus 1 (<span class="math inline">\(n_{OS} = 2 - 1\)</span>).
 The correct degrees of freedom is therefore <span class="math inline">\(df = 2 \times 1 = 2\)</span>.
-We now just need to find the p-value for a Chi-square distribution with 2 degrees of freedom and a test statistic of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
+We now just need to find the p-value for a Chi-square distribution with two degrees of freedom and a test statistic of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
 We get a value of about <span class="math inline">\(P = 0.0868\)</span>.
 In other words, if <span class="math inline">\(H_{0}\)</span> is true, then the probability of getting a <span class="math inline">\(\chi^{2}\)</span> of 4.889 or higher is <span class="math inline">\(P = 0.0868\)</span>.
 Consequently, because <span class="math inline">\(P &gt; 0.05\)</span>, we would not reject the null hypothesis.
@@ -907,7 +907,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <li id="fn66"><p><a href="https://bradduthie.shinyapps.io/chi-square/" class="uri">https://bradduthie.shinyapps.io/chi-square/</a><a href="Chapter_29.html#fnref66" class="footnote-back">↩︎</a></p></li>
 <li id="fn67"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="Chapter_29.html#fnref67" class="footnote-back">↩︎</a></p></li>
 <li id="fn68"><p>We can call these the ‘marginal probabilities’.<a href="Chapter_29.html#fnref68" class="footnote-back">↩︎</a></p></li>
-<li id="fn69"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract 1 degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but 1 probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the “Power Up!” example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="Chapter_29.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<li id="fn69"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract one degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but one probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the “Power Up!” example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="Chapter_29.html#fnref69" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

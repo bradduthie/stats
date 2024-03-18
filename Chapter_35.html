@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-17" />
+<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -491,13 +491,13 @@ Before explaining the randomisation approach, it is useful to summarise the para
 <h2><span class="header-section-number">35.1</span> Summary of parametric hypothesis testing<a href="Chapter_35.html#summary-of-parametric-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the parameteric tests introduced in previous chapters, null distributions included the t-distribution, F distribution, and <span class="math inline">\(\chi^{2}\)</span> distribution.
 For the t-tests in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, the test statistic was the t-statistic, which we compared to a t-distribution.
-The <a href="Chapter_22.html#one-sample-t-test">one-sample t-test</a> compared the mean of some variable (<span class="math inline">\(\bar{x}\)</span>) to a specific number (<span class="math inline">\(\mu_{0}\)</span>), the <a href="Chapter_22.html#independent-samples-t-test">independent samples t-test</a> compared 2 group means, and the <a href="#paired-sample-t-test">paired sample t-test</a> compared the mean difference between 2 paired groups.
+The <a href="Chapter_22.html#one-sample-t-test">one-sample t-test</a> compared the mean of some variable (<span class="math inline">\(\bar{x}\)</span>) to a specific number (<span class="math inline">\(\mu_{0}\)</span>), the <a href="Chapter_22.html#independent-samples-t-test">independent samples t-test</a> compared two group means, and the <a href="#paired-sample-t-test">paired sample t-test</a> compared the mean difference between two paired groups.
 All of these tests used the t-distribution and calculated some value of t.
 Very low or high values of t at the extreme ends of the t-distribution are unlikely if the null hypothesis is true, so, in a two-tailed test, these are associated with low p-values that lead us to reject the null hypothesis.</p>
-<p>For the analysis of variance (ANOVA) tests of <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, the relevant test statistic was the F statistic, with the F-distribution being the null distribution expected if 2 variances are equal.
-The <a href="Chapter_24.html#one-way-anova">one-way ANOVA</a> used the within and among group variances of 2 or more groups to test the null hypothesis that all group means are equal.
+<p>For the analysis of variance (ANOVA) tests of <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, the relevant test statistic was the F statistic, with the F-distribution being the null distribution expected if two variances are equal.
+The <a href="Chapter_24.html#one-way-anova">one-way ANOVA</a> used the within and among group variances of two or more groups to test the null hypothesis that all group means are equal.
 The two-way ANOVA of <a href="Chapter_27.html#Chapter_27">Chapter 27</a> extended the framework of the one-way ANOVA, allowing for a second variable of groups.
-This made it possible to simultaneously test whether or not the means of 2 different group types were the same, and whether or not there was an interaction between group types.
+This made it possible to simultaneously test whether or not the means of two different group types were the same, and whether or not there was an interaction between group types.
 All of these ANOVA tests calculated some value of F and compared it to the F distribution with an appropriate degrees of freedom.
 Sufficiently high F values were associated with a low p-value and therefore the rejection of the null hypothesis.</p>
 <p>The Chi-square tests introduced in <a href="Chapter_29.html#Chapter_29">Chapter 29</a> were used to test the frequencies of categorical observations and determine if they matched some expected frequencies (<a href="#chi-squared-goodness-of-fit">Chi-square goodness of fit</a> test) or were associated in some way with the frequencies of another variable (<a href="#chi-squared-test-of-association">Chi-square test of association</a>).
@@ -527,30 +527,30 @@ The best way to get started is with an instructive example.</p>
 <h2><span class="header-section-number">35.3</span> Randomisation for hypothesis testing<a href="Chapter_35.html#randomisation-for-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As in several previous chapters, the data set used here is inspired by the many species of wasps that lay their eggs in the flowers of the Sonoran Desert rock fig (<em>Ficus petiolaris</em>).
 This tree is distributed throughout the Baja peninsula, and in parts of mainland Mexico.
-Fig trees and the wasps that develop inside of them have a fascinating ecology, but for now we will just focus on the morphologies of 2 closely related species as an example.
-The fig wasps in Figure 35.1 are 2 unnamed species of the genus <em>Idarnes</em>, which can refer to simply as ‘Short-ovipositor 1’ (SO1) and ‘Short-ovipositor 2’ (SO2).</p>
+Fig trees and the wasps that develop inside of them have a fascinating ecology, but for now we will just focus on the morphologies of two closely related species as an example.
+The fig wasps in Figure 35.1 are two unnamed species of the genus <em>Idarnes</em>, which can refer to simply as ‘Short-ovipositor 1’ (SO1) and ‘Short-ovipositor 2’ (SO2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-155"></span>
-<img src="img/fig_wasps.jpg" alt="A 2 panel figure is shown, with 2 black wasps under a microscope slide shown side by side, each of which has an ovipositor about twice its body length." width="100%" />
+<img src="img/fig_wasps.jpg" alt="A two panel figure is shown, with two black wasps under a microscope slide shown side by side, each of which has an ovipositor about twice its body length." width="100%" />
 <p class="caption">
-Figure 35.1: Image of 2 fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’
+Figure 35.1: Image of two fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’
 </p>
 </div>
-<p>The reason that these 2 species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as the ones above.</p>
+<p>The reason that these two species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as the ones above.</p>
 <p>Suppose that we have some data on the lengths of the ovipositors from each species.
-We might want to know whether the mean ovipositor length differs between the 2 species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 of the species ‘SO1’, and 15 of the species ‘SO2’.</p>
+We might want to know whether the mean ovipositor length differs between the two species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 of the species ‘SO1’, and 15 of the species ‘SO2’.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-156"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-156-1.png" alt="A 2 panel figure showing a histogram in each panel, the left with a histogram of SO1 ovipositor length and the right with another SO2 ovipositor length. Histograms are roughly normally distributed" width="672" />
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-156-1.png" alt="A two panel figure showing a histogram in each panel, the left with a histogram of SO1 ovipositor length and the right with another SO2 ovipositor length. Histograms are roughly normally distributed" width="672" />
 <p class="caption">
 Figure 35.2: Ovipositor length distributions for two unnamed species of fig wasps SO1 (A) and SO2 (B) collected from Baja, Mexico.
 </p>
 </div>
-<p>To test whether or not mean ovipositor length is different between these 2 fig wasps, our standard approach would be to use an independent samples t-test (see <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a>).
-The null hypothesis would be that the 2 means are the same, and the alternative (two-sided) hypothesis would be that the 2 means are not the same.
+<p>To test whether or not mean ovipositor length is different between these two fig wasps, our standard approach would be to use an independent samples t-test (see <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a>).
+The null hypothesis would be that the two means are the same, and the alternative (two-sided) hypothesis would be that the two means are not the same.
 We would need to check the assumption that the data are normally distributed, and that both samples have similar variances.
 Assuming that the assumption of normality is not violated (in which case we would need to consider a Mann Whitney test), and that both groups had similar variances (if not, we would use the Welch’s t-test), we could proceed with calculating our t-statistic for pooled sample variance,</p>
 <p><span class="math display">\[t_{\bar{y}_{SO1} - \bar{y}_{SO2}} = \frac{\bar{y}_{SO1} - \bar{y}_{SO2}}{s_{p}}.\]</span></p>
 <p>The <span class="math inline">\(s_{p}\)</span> is just being used as a short-hand to indicate the pooled standard deviation.
-For the 2 species of fig wasps, <span class="math inline">\(\bar{y}_{SO1} =\)</span> 3.0301176, <span class="math inline">\(\bar{y}_{SO2} =\)</span> 2.8448667, and <span class="math inline">\(s_{p} =\)</span> 0.0765801.
+For the two species of fig wasps, <span class="math inline">\(\bar{y}_{SO1} =\)</span> 3.0301176, <span class="math inline">\(\bar{y}_{SO2} =\)</span> 2.8448667, and <span class="math inline">\(s_{p} =\)</span> 0.0765801.
 We can therefore calculate <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}}\)</span>,</p>
 <p><span class="math display">\[t_{\bar{y}_{SO1} - \bar{y}_{SO2}} = \frac{3.03 - 2.845}{0.077}.\]</span></p>
 <p>After we calculate our t-statistic as <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419, we would use the t-distribution to find the p-value (or, rather, get jamovi to do this for us).
@@ -578,15 +578,15 @@ The histogram below shows the distribution of the difference between species mea
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-158"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-158-1.png" alt="A histogram with 120 narrow bars that form a bell shaped distribution around a mean of 0. An arrow points out a value of mean SO1 minus mean SO2" width="672" />
 <p class="caption">
-Figure 35.4: A distribution of the difference between mean species ovipositor lengths in 2 different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.
+Figure 35.4: A distribution of the difference between mean species ovipositor lengths in two different species of fig wasps when species identity is randomly shuffled. The true difference between sampled mean SO1 and SO2 ovipositor lengths is pointed out with the black arrow at 0.185. Ovipositor lengths were collected from wasps in Baja, Mexico in 2010.
 </p>
 </div>
 <p>Given this distribution of random mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2110 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2043 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
-<p><span class="math display">\[P = \frac{2110 + 1}{99999 + 1}.\]</span></p>
-<p>When we calculate the above, we get a value of 0.02111.
+<p><span class="math display">\[P = \frac{2043 + 1}{99999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.02044.
 Notice that the calculated value is assigned with a ‘P’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
@@ -625,14 +625,14 @@ Instead of calculating the standard error and multiplying it by a z-score or t-s
 The general idea is that this process of resampling approximates what would happen if we were to go back and resample new data from our original population many times, thereby giving us the distribution of means from all of these hypothetical resampling events <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>.
 To calculate our 95 per cent confidence intervals, we then only need to rank the calculated means and find the mean closest to the lowest 2.5 per cent and the highest 97.5 per cent.</p>
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Chapter 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sampled some values, but not remove them from the pool of possible values after they are sampled.
-If we resample the numbers above with replacement, we might therefore sample some values 2 or more times by chance, and other values might not be sampled at all.
+If we resample the numbers above with replacement, we might therefore sample some values two or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>3, 2.976, 2.817, 2.817, 3, 3.133, 3.291, 3.071, 2.658, 2.976, 3.133, 2.817, 3.133, 3.133, 3.406, 2.817, 3.133</p>
+<p>3.071, 3.133, 2.976, 3.071, 3.256, 3.071, 3.406, 3.133, 3.027, 3.133, 2.929, 3, 2.976, 3.133, 3.291, 3.256, 2.658</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, this new resampled data has a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.018.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.089.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.291, 3.027, 2.299, 3.178, 3.291, 2.995, 3.133, 2.299, 2.658, 3.027, 3.291, 3.133, 2.299, 2.929, 3.133, 2.976, 2.995</p>
-<p>The mean of the above sample is 2.938.
+<p>3.21, 3.256, 2.658, 2.299, 3.133, 2.817, 3.291, 3.21, 3, 3.133, 3, 2.299, 2.817, 3.133, 3.071, 3.291, 3.178</p>
+<p>The mean of the above sample is 2.988.
 We can continue doing this process until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-161"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-161-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
@@ -643,7 +643,7 @@ Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17
 <p>The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.899 and UCI = 3.141.
+The values using the randomisation approach are LCI = 2.902 and UCI = 3.139.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.</p>
 </div>
