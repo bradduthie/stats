@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 28 Practical. ANOVA and associated tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 28 Practical. ANOVA and associated tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -477,9 +477,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_28" class="section level1 hasAnchor" number="28">
 <h1><span class="header-section-number">Chapter 28</span> <em>Practical</em>. ANOVA and associated tests<a href="Chapter_28.html#Chapter_28" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts from <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, <a href="Chapter_25.html#Chapter_25">Chapter 25</a>, <a href="Chapter_26.html#Chapter_26">Chapter 26</a>, and <a href="Chapter_27.html#Chapter_27">Chapter 27</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This chapter focuses on applying the concepts from Chapters 24-27 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 The focus will be on ANOVA and associated tests, with five exercises in total.
-The data for this chapter are inspired by the doctoral work of Dr Lidia De Sousa Teixeira at the University of Stirling.
+The data for this chapter are inspired by the doctoral work of Dr Lidia De Sousa Teixeira at the University of Stirling <span class="citation">(<a href="#ref-Teixeira2022" role="doc-biblioref">de Sousa Teixeira 2022</a>)</span>.
 This work included a nutrient analysis of agricultural soil in different regions of Angola.
 Measuring soil nutrient concentrations is essential for assessing soil quality, and these data include measurements of Nitrogen (N), Phosphorus (P), and Potassium (K) concentrations.
 Here we will focus on testing whether or not the concentrations of N, P, and K differ among two different sites and three soil profiles (upper, middle, and lower).
@@ -491,7 +491,7 @@ All concentrations of Nitrogen, Phosphorus, and Potassium are given in parts per
 Notice that there are only two sites in the dataset, Funda and Bailundo.
 We could therefore also use an Independent samples t-test.
 We will do this first, then compare the t-test output to the ANOVA output.
-What are the null (<span class="math inline">\(H_{0}\)</span>) and alternative (<span class="math inline">\(H_{A}\)</span>) hypotheses for the t-test.</p>
+What are the null (<span class="math inline">\(H_{0}\)</span>) and alternative (<span class="math inline">\(H_{A}\)</span>) hypotheses for the t-test?</p>
 <p><span class="math inline">\(H_{0}:\)</span> ____________________</p>
 <p><span class="math inline">\(H_{A}:\)</span> ____________________</p>
 <p>Before running a t-test, remember that we need to check the assumptions of a t-test to see if any of them are violated (<a href="Chapter_22.html#assumptions-of-t-tests">see Chapter 22.4</a>).
@@ -528,7 +528,7 @@ Write down the test statistic (F), degrees of freedom, and p-values from this ta
 <p><span class="math inline">\(P\)</span>: _______________</p>
 <p>Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA calculates an F-statistic (mean variance among groups divided by mean variance withing groups).
 This F-statistic is then compared to the null F-distribution with the correct degrees of freedom to calculate the p-value.
-Use the interactive app to visualise this from the above jamovi output<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
+You can use the interactive app to visualise this from the above jamovi output<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
 To do this, move the ‘Variance 1’ slider in the app until it is approximately equal to F, then change df1 and df2 to the values above.
 From the interactive app, what is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F?</p>
 <p><span class="math inline">\(P\)</span>: _________________</p>
@@ -659,7 +659,7 @@ Report these below.</p>
 
 </code></pre>
 <p>Next, instead of running a Tukey’s HSD test, we will use a series of t-tests with a Bonferroni correction.
-Check the box for ‘Bonferroni’ in the ANOVA Post Hoc Tests input panel, then find the p-values for the Bonferroni correction (<span class="math inline">\(p_{Bonferroni}\)</span>).
+Check the box for ‘Bonferroni’ in the ANOVA Post Hoc Tests input panel, then find the p-values for the Bonferroni correction (<span class="math inline">\(p_{bonferroni}\)</span>).
 Note that we do not need to change the <span class="math inline">\(\alpha\)</span> threshold ourselves (i.e., we do not need to see if P is less than <span class="math inline">\(\alpha = 0.05/3 = 0.016667\)</span> instead of <span class="math inline">\(\alpha = 0.05\)</span>).
 Jamovi modifies the p-values appropriately for the Bonferroni correction (we can see the difference by clicking the checkbox for ‘No correction’ in the Post Hocs Tests input panel).
 Report the p-values for the Bonferroni correction below.</p>
@@ -711,14 +711,14 @@ To run a Kruskall-Wallis H test, select the Analyses tab, then the ‘ANOVA’ b
 In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskall-Wallis’.</p>
 <p>The Kruskall-Wallis input is basically the same as the one-way ANOVA input.
 We just need to put ‘Potassium’ in the dependent variable list and ‘Profile’ in the Grouping Variable box.
-The output table includes the test statistic (Jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which we will introduce in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>, degrees of freedom, and p-value).
+The output table includes the test statistic (jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which we will introduce in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>, degrees of freedom, and p-value).
 Report these values below.</p>
 <p><span class="math inline">\(\chi^{2}:\)</span> _____________</p>
 <p>df: _____________</p>
 <p><span class="math inline">\(P\)</span>: ____________</p>
 <p>From the above output, should we reject or not reject our null hypothesis?</p>
 <p><span class="math inline">\(H_{0}:\)</span> _____________________</p>
-<p>Note that the Kruskall-Wallis test in jamovi also includes a type of multiple comparisons tests (DSCF pairwise comparisons checkbox).
+<p>Note that the Kruskall-Wallis test in jamovi also includes a type of multiple comparisons test (DSCF pairwise comparisons checkbox).
 We will not use the Dwass-Steel-Critchlow-Fligner pairwise comparisons, but the general idea is the same as the Tukey’s HSD test for post hoc multiple comparisons in the ANOVA.</p>
 </div>
 <div id="two-way-anova" class="section level2 hasAnchor" number="28.5">
@@ -797,9 +797,9 @@ Fill in Table 28.2 with the relevant information from the two-way ANOVA output.<
 </tbody>
 </table>
 <p>From this output table, should you reject or not reject your null hypotheses?</p>
-<p>Reject First <span class="math inline">\(H_{0}\)</span>?: ___________________________________</p>
-<p>Reject Second <span class="math inline">\(H_{0}\)</span>?: ___________________________________</p>
-<p>Reject Third <span class="math inline">\(H_{0}\)</span>?: ___________________________________</p>
+<p>First <span class="math inline">\(H_{0}\)</span>?: ___________________________________</p>
+<p>Second <span class="math inline">\(H_{0}\)</span>?: ___________________________________</p>
+<p>Third <span class="math inline">\(H_{0}\)</span>?: ___________________________________</p>
 <p>In non-technical language, what should you conclude from this two-way ANOVA?</p>
 <pre><code>
 
@@ -841,6 +841,9 @@ Based on the ANOVA output, what can you conclude?</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Teixeira2022" class="csl-entry">
+de Sousa Teixeira, Lídia Paula. 2022. <span>“Geochemical, Textural and Micromorphological Properties of Angolan Agroecosystem Soils in Relation Toregion,landscapepositionand Land Management.”</span> PhD thesis, Stirling, UK: University of Stirling.
+</div>
 <div id="ref-Head2015" class="csl-entry">
 Head, Megan L, Luke Holman, Rob Lanfear, Andrew T Kahn, and Michael D Jennions. 2015. <span>“<span class="nocase">The extent and consequences of p-hacking in science</span>.”</span> <em>PLoS Biology</em> 13 (3): e1002106. <a href="https://doi.org/10.1371/journal.pbio.1002106">https://doi.org/10.1371/journal.pbio.1002106</a>.
 </div>

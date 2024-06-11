@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 26 Kruskall-Wallis H test | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 26 Kruskall-Wallis H test | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -484,7 +484,7 @@ The idea is to rank all values in the dataset, ignoring group, then calculate a 
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
 For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
 <table style="width:56%;">
-<caption><strong>TABLE 26.1</strong> Reproduction of Table 23.1. Wing lengths (mm) measured for five unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
+<caption><strong>TABLE 26.1</strong> Reproduction of Table 24.1. Wing lengths (mm) measured for five unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Note, for readability, this table is not presented in a tidy format.</caption>
 <colgroup>
 <col width="11%" />
 <col width="11%" />
@@ -536,7 +536,7 @@ For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
 But we had not actually tested the assumptions of the one-way ANOVA before running the test!
 If we had tested the ANOVA assumptions, we would not reject the null hypothesis that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
 But a Levene’s test of homogeneity of variances convincingly rejects the null hypothesis that the group variances are equal (P = 0.008).
-Consequently, we should probably have used the non-parametric Kruskall-Wallis H test instead.
+Consequently, we should probably have considered the non-parametric Kruskall-Wallis H test instead.
 To do this, we first need to rank all of the values in Table 26.1.
 There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 <table style="width:46%;">
@@ -605,7 +605,7 @@ Figure 26.1 shows the output of a Kruskall-Wallis H test on the fig wasp wing le
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-105"></span>
 <img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskall-Wallis H test." width="60%" />
 <p class="caption">
-Figure 26.1: Jamovi output table for a non-parametric Kruskall-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for 5 different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+Figure 26.1: Jamovi output table for a non-parametric Kruskall-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for five different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
 <p>Given the Kruskall-Wallis H test output (Figure 26.1), we should not reject the null hypothesis that species have different wing lengths because P &gt; 0.05.

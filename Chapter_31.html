@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 31 Practical. Analysis of counts and correlations | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 31 Practical. Analysis of counts and correlations | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -599,7 +599,7 @@ Explain your conclusion as if you were reporting the results of the test to some
 
 
 </code></pre>
-<p>Lastly, did the order which you placed the two variables matter?
+<p>Lastly, did the order in which you placed the two variables matter?
 What if you switched Rows and Columns?
 In other words, put ‘survived’ in the Rows box and ‘radiation’ in the Columns box.
 Does this give you the same answer?</p>
@@ -619,7 +619,7 @@ Put mass on the x-axis and CO_2 on the y-axis, as shown in Figure 31.3.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-134"></span>
 <img src="img/jamovi_simple_scatterplot.png" alt="Jamovi interface is shown with a variable called 'mass' placed in a box called 'X-Axis', and a variable called 'CO_2' placed in a box called 'Y-axis'." width="100%" />
 <p class="caption">
-Figure 31.3: Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and nectar consumption on the y-axis
+Figure 31.3: Jamovi interface for building a scatterplot with bumblebee mass on the x-axis and carbon dioxide output on the y-axis
 </p>
 </div>
 <p>Notice that the scatterplot appears in the panel on the right.
@@ -702,7 +702,7 @@ Why or why not?</p>
 </div>
 <div id="untidy-goodness-of-fit" class="section level2 hasAnchor" number="31.6">
 <h2><span class="header-section-number">31.6</span> Untidy goodness of fit<a href="Chapter_31.html#untidy-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In Exercise 31.1, we ran a <span class="math inline">\(\chi^{2}\)</span> test using data in a tidy format, in which each row corresponded to a single observation and categorical data were listed over <span class="math inline">\(N = 256\)</span> rows.
+<p>In Exercise 31.1, we ran a <span class="math inline">\(\chi^{2}\)</span> test using data in a tidy format, in which each row corresponded to a single observation, and categorical data were listed over <span class="math inline">\(N = 256\)</span> rows.
 For the ‘survived’ variable, this meant 256 rows of ‘Yes’ or ‘No’.
 But there is a shortcut in jamovi if we do not have a full tidy dataset.
 If you know that the dataset included 139 ‘Yes’ counts and 117 ‘No’ counts, you could set up the data as a table of counts (Table 31.1).</p>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 29 Frequency and count data | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 29 Frequency and count data | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -479,7 +479,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 29</span> Frequency and count data<a href="Chapter_29.html#Chapter_29" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this book, we have introduced hypothesis testing as a tool to determine if variables were sampled from a population with a specific mean (one sample t-test in <a href="Chapter_22.html#one-sample-t-test">Chapter 22.1</a>), or if different groups of variables were sampled from a population with the same mean (the independent samples t-test in <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a> and ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>).
 In these tests, the variables for which we calculated the means were always continuous (e.g., fig wasp wing lengths, nitrogen concentration in parts per million).
-That is, the variables of the t-test and ANOVA could always, at least in theory, take any real value (i.e., any decimal).
+That is, the dependent variables of the t-test and ANOVA could always, at least in theory, take any real value (i.e., any decimal).
 And the comparison was always between the means of categorical groups (e.g., fig wasp species or study sites).
 But not every variable that we measure will be continuous.
 For example, in <a href="Chapter_5.html#Chapter_5">Chapter 5</a>, we also introduced discrete variables, which can only take discrete counts (1, 2, 3, 4, and so forth).
@@ -493,8 +493,8 @@ In other words, <span class="math inline">\(Pr(flower = red) = 0.5\)</span> and 
 By this logic, if we were to collect 100 flowers at random from the field, we would expect 50 to be red and 50 to be blue.
 If we actually went out and collected 100 flowers at random, but found 46 to be red and 54 to be blue, would this be sufficiently different from our expectation to reject the null hypothesis that the probability of sampling a red versus blue flower is the same?
 We could test this null hypothesis using a Chi-square goodness of fit test (<a href="Chapter_29.html#the-chi-square-distribution">Chapter 29.1</a>).
-Similarly, we might want to test if two differentcount variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
-We could test this kind of hypothesis using a Chi-square test of association (<a href="Chapter_31.html#Chapter_31">Chapter 31</a>).</p>
+Similarly, we might want to test if two different count variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
+We could test this kind of hypothesis using a Chi-square test of association.</p>
 <p>Before introducing the Chi-square goodness of fit test or the Chi-square test of association, it makes sense to first introduce the Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution.
 The general motivation for introducing the Chi-square distribution is the same as it was for the t-distribution (<a href="Chapter_19.html#Chapter_19">Chapter 19</a>) or F-distribution (<a href="Chapter_24.html#the-f-distribution">Chapter 24.1</a>).
 We need some probability density distribution that is our null distribution, which is what we predict if our null hypothesis is true.
@@ -530,7 +530,7 @@ But sometimes we will get a much lower or higher value of <span class="math inli
 <p>If we summed a different number of squared <span class="math inline">\(x_{i}\)</span> values, then we would expect the distribution of <span class="math inline">\(\chi^{2}\)</span> to change.
 Had we sampled fewer than four <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be lower just because we are adding up fewer numbers.
 Similarly, had we sampled more than four <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be higher just because we are adding up more numbers.
-The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(N\)</span>), or more specifically the degrees of freedom (df, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = N - 1\)</span>.
+The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(n\)</span>), or more specifically the degrees of freedom (df, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = n - 1\)</span>.
 This is the same idea as the t-distribution from <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, which also changed shape depending on the degrees of freedom.
 Figure 29.2 shows the different <span class="math inline">\(\chi^{2}\)</span> probability density distributions for different degrees of freedom.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-118"></span>
@@ -577,7 +577,7 @@ Note that all of these numbers must be positive (e.g., <span class="math inline"
 Note that if all of our observed values had been the same as the expected values (i.e., 20 small, medium, and large dams actually chosen), then we would get a <span class="math inline">\(\chi^{2}\)</span> value of 0.
 The more the observed values differ from the expectation of 20, the higher the <span class="math inline">\(\chi^{2}\)</span> will be.
 We can now check to see if the test statistic <span class="math inline">\(\chi^{2} = 1.2\)</span> is sufficiently large to reject the null hypothesis that our policy-makers have no preference for small, medium, or large dams.
-There are <span class="math inline">\(N = 3\)</span> categories of counts (small, medium, and large), meaning that there are <span class="math inline">\(df = 3 - 1 = 2\)</span> degrees of freedom.
+There are <span class="math inline">\(n = 3\)</span> categories of counts (small, medium, and large), meaning that there are <span class="math inline">\(df = 3 - 1 = 2\)</span> degrees of freedom.
 As it turns out, if the null hypothesis is true, then the probability of observing a value of <span class="math inline">\(\chi^{2} = 1.2\)</span> or higher (i.e., the p-value) is <span class="math inline">\(P = 0.5488\)</span>.
 Figure 29.3 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> distribution plotted, with the area above the test statistic <span class="math inline">\(\chi^{2} = 1.2\)</span> shaded in grey.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
@@ -588,7 +588,7 @@ Figure 29.3: A Chi-square distribution, which is the expected sum of four square
 </div>
 <p>Because <span class="math inline">\(P &gt; 0.05\)</span>, we do not reject the null hypothesis that there is no significant difference between expected and observed counts of chosen dam sizes.</p>
 <p>Note that this was a simple example.
-For a goodness of fit test, we can have any number of different count categories (at least, any number greater than 2).
+For a goodness of fit test, we can have any number of different count categories (at least, any number greater than 1).
 The expectations also do not need to be integers.
 For example, if we only managed to find 59 policy makers instead of 60, then our expected counts would have been <span class="math inline">\(59/3 = 19.33\)</span> instead of <span class="math inline">\(60/3 = 20\)</span>.
 The expectations also do not <em>need</em> to be the same.
@@ -601,7 +601,7 @@ Next, we will look at testing associations between counts in different types of 
 <div id="chi-square-test-of-association" class="section level2 hasAnchor" number="29.3">
 <h2><span class="header-section-number">29.3</span> Chi-square test of association<a href="Chapter_29.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The second kind of test that we will consider for count data is the Chi-square test of association.
-While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on two differentcategorical variables.
+While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on two different categorical variables.
 What we want to know is whether or not the two categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.
 In other words, does knowing something about one variable tell us anything about the other variable?
 A concrete example will make it easier to explain.

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 21 What is hypothesis testing? | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 21 What is hypothesis testing? | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -560,7 +560,7 @@ Table 21.1 below presents some null and alternative hypotheses that might be rel
 </tr>
 </tbody>
 </table>
-<p>Notice that alternative hypotheses can indicate direction (e.g., amphibian body size will increase, or nitrogen content will be lower in non-agricultural fields), or they can be non-directional (e.g., mortality will be different based on life-history stage).
+<p>Notice that alternative hypotheses can indicate direction (e.g., amphibian body size will increase with latitude, or nitrogen content will be lower in non-agricultural fields), or they can be non-directional (e.g., mortality will be different based on life-history stage).
 When our alternative hypothesis indicates direction, we say that the hypothesis is <strong>one-sided</strong>.
 This is because we are looking at one side of the null distribution.
 In the case of our coin example, a one-sided <span class="math inline">\(H_{A}\)</span> might be that the probability of flipping heads is less than 0.5, meaning that we reject <span class="math inline">\(H_{0}\)</span> only given numbers on the left side of the distribution in Figure 21.1 (where the number of flips heads are fewer than 50).
@@ -594,12 +594,12 @@ That is, we might mistakenly conclude that there is no evidence to reject the nu
 This is called a <strong>Type II error</strong>.
 The probability that we commit a Type II error, i.e., that we fail to reject the null hypothesis when it is false, is given the symbol <span class="math inline">\(\beta\)</span>.
 Since <span class="math inline">\(\beta\)</span> is the probability that we fail to reject <span class="math inline">\(H_{0}\)</span> when it is false, <span class="math inline">\(1 - \beta\)</span> is the probability that that we <em>do</em> reject <span class="math inline">\(H_{0}\)</span> when it is false.
-This <span class="math inline">\(1 - \beta\)</span> is the <strong>statistical power</strong> of a statistical test.
+This <span class="math inline">\(1 - \beta\)</span> is the <strong>statistical power</strong> of a test.
 Note that <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are not necessarily related to each other.
 Our <span class="math inline">\(\alpha\)</span> is whatever we set it to be (e.g., <span class="math inline">\(\alpha = 0.05\)</span>).
-But statistical power will depend on the size of the effect that we are measuring (e.g., how much bias their is in a coin if we are testing whether or not it is fair), and on the size of our sample.
+But statistical power will depend on the size of the effect that we are measuring (e.g., how much bias there is in a coin if we are testing whether or not it is fair), and on the size of our sample.
 Increasing our sample size will always increase our statistical power, i.e., our ability to reject the null hypothesis when it is really false.
-Table 21.2 below illustrates the relationship between whether or not <span class="math inline">\(H_{0}\)</span> is true, and whether or not we reject it.</p>
+Table 21.2 illustrates the relationship between whether or not <span class="math inline">\(H_{0}\)</span> is true, and whether or not we reject it.</p>
 <table>
 <caption><strong>TABLE 21.2</strong> Summary of Type I and Type II errors in relation to a null hypothesis (<span class="math inline">\(H_{0}\)</span>).</caption>
 <thead>
@@ -668,10 +668,10 @@ Wasserstein, Ronald L., and Nicole A. Lazar. 2016. <span>“<span class="nocase"
 <hr />
 <ol start="40">
 <li id="fn40"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="Chapter_21.html#fnref40" class="footnote-back">↩︎</a></p></li>
-<li id="fn41"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref41" class="footnote-back">↩︎</a></p></li>
-<li id="fn42"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
 <li id="fn43"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-McShane2019" role="doc-biblioref">McShane et al. 2019</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this book (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref43" class="footnote-back">↩︎</a></p></li>
-<li id="fn44"><p>Note that we might, for non-statistical reasons conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>Note that we might, for non-statistical reasons, conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref44" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

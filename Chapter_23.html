@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Practical. Hypothesis testing and t-tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Practical. Hypothesis testing and t-tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -480,11 +480,11 @@ div.csl-indent {
 <p>This chapter focuses on applying the concepts about hypothesis testing from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> and the statistical tests from <a href="Chapter_22.html#Chapter_22">Chapter 22</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 There will be five exercises in total, which will focus on using t-tests and their non-parametric equivalents.
 The data for this chapter focus on an example of biology and environmental sciences education.
-Similar to the example in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, it uses datasets of student test scores (note that these data are entirely fictional; we have not used scores from real students).
+Similar to the example in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, it uses datasets of student test scores (note that these data are entirely fictional; I have not used scores from real students).
 We will use test data from 2022<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> and 2023<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
-Variables in these datasets include student IDs and scores from three different tests.</p>
-<div id="exercise-on-a-simple-one-sample-t-test" class="section level2 hasAnchor" number="23.1">
-<h2><span class="header-section-number">23.1</span> Exercise on a simple one sample t-test<a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+Variables in these datasets include scores from three different tests.</p>
+<div id="one-sample-t-test-1" class="section level2 hasAnchor" number="23.1">
+<h2><span class="header-section-number">23.1</span> One sample t-test<a href="Chapter_23.html#one-sample-t-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First we will consider test data from 2022.
 Open this dataset in jamovi.
 Before doing any analysis, compute a new column of data called ‘Overall’ that is each student’s mean test score.
@@ -510,7 +510,7 @@ What kind(s) of statistical test would be most appropriate to use in this case, 
 <p>What is the alternative hypothesis (<span class="math inline">\(H_{A}\)</span>), and should you use a one or two-tailed test?</p>
 <p><span class="math inline">\(H_{A}\)</span>: _______________________</p>
 <p>One or two tailed? __________________________</p>
-<p>To test if the mean of overall student scores in your class is significantly different from <span class="math inline">\(\mu_{0} = 60.1\)</span> (technically, that your student’s scores were sampled from a population with a mean lower than 60.1), we might use a one-tailed, one sample t-test.
+<p>To test if the mean of overall student scores in your class is significantly lower than <span class="math inline">\(\mu_{0} = 60.1\)</span> (technically, that your student’s scores were sampled from a population with a mean lower than 60.1), we might use a one-tailed, one sample t-test.
 Recall from <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a> the assumptions underlying a t-test:</p>
 <ul>
 <li>Data are continuous (i.e., not count or categorical data)</li>
@@ -529,15 +529,15 @@ Move the variable ‘Overall’ to the Dependent Variables box with the right ar
 Below the boxes, find the checkbox options under ‘<strong>Assumption Checks</strong>’.
 Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’.</p>
 <p>After checking the box for ‘Normality test’ and ‘Q-Q Plot’, new output will appear in the panel on the right hand side.
-The first output is a table showing the results a Shapiro-Wilk test.
-The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk to see if the assumptions of the t-test are violated or not).
+The first output is a table showing the results of a Shapiro-Wilk test.
+The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk test to see if the assumptions of the t-test are violated or not).
 If we reject the null hypothesis, then we will conclude that the data are <strong>not</strong> normally distributed.
 If we do not reject the null hypothesis, then we will will assume that the data <strong>are</strong> normally distributed.
 From the Normality Test table, what is the p-value of the Shapiro-Wilk test?</p>
 <p>P = _____________________</p>
 <p>Based on this p-value, should we reject the null hypothesis? ______________</p>
 <p>Now have a look at the Q-Q plot.
-We will learn about the details of how this plot works later, but for now, you just need to know that this plot can be used to assess whether or not the data are normally distributed.
+This plot can be used to assess whether or not the data are normally distributed.
 If the data are normally distributed, then the points in the Q-Q plot should fall roughly along the diagonal black line.
 These plots take some practice to read and interpret, but for now, just have a look at the Q-Q plot and think about how it relates to the results of the Shapiro-Wilk test of normality.
 It might be useful to plot a histogram of the overall scores too in order to judge whether or not they are normally distributed (most researchers will use both a visual inspection of the data and a normality test to evaluate whether or not the assumption of normality is satisfied)</p>
@@ -576,8 +576,8 @@ Why or why not?</p>
 </code></pre>
 <p>We will now test whether students in this dataset improved their test scores from Test 1 to Test 2.</p>
 </div>
-<div id="exercise-on-a-paired-t-test" class="section level2 hasAnchor" number="23.2">
-<h2><span class="header-section-number">23.2</span> Exercise on a paired t-test<a href="Chapter_23.html#exercise-on-a-paired-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="paired-t-test" class="section level2 hasAnchor" number="23.2">
+<h2><span class="header-section-number">23.2</span> Paired t-test<a href="Chapter_23.html#paired-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose we want to test whether or not students in this dataset improved their grades from Test 1 to Test 2.
 In this case, we are interested in the variables ‘Test_1’ and ‘Test_2’, but we are not just interested in whether or not the means of the two test scores are the same.
 Instead, we want to know if the scores of individual students increased or not.
@@ -630,7 +630,7 @@ Do the points fall along the diagonal line?</p>
 <pre><code>
 
 </code></pre>
-<p>Since the Test 3 scores are not normally distributed (and an assumption of the t-test is therefore potentially violated), we can use the non-parametric Wilcoxon signed-rank test instead, as was introduced in <a href="Chapter_22.html#wilcoxon-test">Chapter 22.5.1</a>.
+<p>Since the Test 3 scores are not normally distributed (and an assumption of the t-test is therefore violated), we can use the non-parametric Wilcoxon signed-rank test instead, as was introduced in <a href="Chapter_22.html#wilcoxon-test">Chapter 22.5.1</a>.
 To apply the Wilcoxon test, check the box ‘Wilcoxon rank’ under the <strong>Tests</strong> option.
 Next, make sure to set the ‘Test value’ to 62 under the <strong>Hypothesis</strong> option.
 What are the null and alternative hypotheses of this test?</p>
@@ -671,8 +671,8 @@ Figure 23.2: The jamovi interface for inserting a new variable called ‘Year’
 </div>
 <p>Note that Year does not necessarily need to be in the first column.
 You could have added it in as the second column, or as the last (i.e., the location of the column will not affect any analyses).</p>
-<p>With the new data now included in jamovi, we can now compare student test scores between years.
-Suppose that we first want to test the null hypothesis that the overall student scores have the same mean, <span class="math inline">\(\mu_{2022} = \mu_{2023}\)</span>, with the alternative hypothesis that <span class="math inline">\(\mu_{2022} \neq \mu_{2023}\)</span>.
+<p>With the new data now included in jamovi, we can compare student test scores between years.
+Suppose that we first want to test the null hypothesis that the overall student scores have the same mean, <span class="math inline">\(\mu_{2022} = \mu_{2023}\)</span>, against the alternative hypothesis that <span class="math inline">\(\mu_{2022} \neq \mu_{2023}\)</span>.
 Is this a one or a two tailed hypothesis?</p>
 <p>One or two tailed? _________________</p>
 <p>It is generally a good idea to plot and summarise your data before running any statistical tests.
@@ -682,7 +682,7 @@ This will give you a sense of what to expect when running your test diagnostics 
 Remember that our objective here is to test whether the means of two groups (2022 versus 2023) are the same.
 We can therefore place the ‘Overall’ variable in the Dependent Variables box, then ‘Year’ in the Grouping Variable box.
 Before running the independent samples t-test, we again need to check our assumptions.
-In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a> that the standard ‘Student’s’ independent samples t-test also assumes that the variances of groups (i.e., the 2022 and 2023 scores) are the same, while the ‘Welch’s’ t-test does not assume equal variances.
+In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a> that the standard Student’s independent samples t-test also assumes that the variances of groups (i.e., the 2022 and 2023 scores) are the same, while the Welch’s t-test does not assume equal variances.
 In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 23.3).
 This is called a ‘Levene’s test’, and we can interpret it in a similar way to the Shapiro-Wilk test of normality.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-91"></span>

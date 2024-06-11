@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 30 Correlation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 30 Correlation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -487,12 +487,12 @@ For example, does knowing something about the latitude of a location tell us som
 <h2><span class="header-section-number">30.1</span> Scatterplots<a href="Chapter_30.html#scatterplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The easiest way to visualise the concept of a correlation is by using a scatterplot.
 Scatterplots are useful for visualising the association between two quantitative variables.
-In a scatterplot the values of one variable are plotted on the x-axis, and the values of a second variable are plotted on the y-axis.
+In a scatterplot, the values of one variable are plotted on the x-axis, and the values of a second variable are plotted on the y-axis.
 Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 30.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-125"></span>
 <img src="img/heterandrium.png" alt="Two small black iridescent wasps are shown side by side with wings facing upwards." width="100%" />
 <p class="caption">
-Figure 30.1: Fig wasps from two differentspecies are shown. Wasps were collected from Baja, Mexico.
+Figure 30.1: Fig wasps from two different species are shown. Wasps were collected from Baja, Mexico.
 </p>
 </div>
 <p>Both fig wasp species in Figure 30.1 are unnamed.
@@ -638,12 +638,12 @@ Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="m
 If there is no such relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, then we will get <span class="math inline">\(cov_{x,y}\)</span> values closer to zero.</p>
 <p>The covariance can, at least in theory, be any real number.
 How low or high it is will depend on the magnitudes of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, just like <a href="Chapter_12.html#the-variance">the variance</a>.
-To get the Pearson product moment correlation coefficient<a href="#fn71" class="footnote-ref" id="fnref71"><sup>71</sup></a>: (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
+To get the Pearson product moment correlation coefficient<a href="#fn71" class="footnote-ref" id="fnref71"><sup>71</sup></a> (<span class="math inline">\(r\)</span>), we need to standardise the covariance so that the minimum possible value of <span class="math inline">\(r\)</span> is -1 and the maximum possible value of <span class="math inline">\(r\)</span> is 1.
 We can do this by dividing <span class="math inline">\(cov_{x,y}\)</span> by the product of the standard deviation of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}\)</span>) and the standard deviation of <span class="math inline">\(y\)</span> (<span class="math inline">\(s_{y}\)</span>),</p>
 <p><span class="math display">\[r = \frac{cov_{x,y}}{s_{x} \times s_{y}}.\]</span></p>
 <p>This works because <span class="math inline">\(s_{x} \times s_{y}\)</span> describes the total variation between the two variables, and the absolute value of <span class="math inline">\(cov_{x,y}\)</span> cannot be larger than this total.
 We can again think about the special case in which <span class="math inline">\(x = y\)</span>.
-Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom and <span class="math inline">\(r = 1\)</span> (i.e., <span class="math inline">\(x\)</span> is completely correlated with itself).</p>
+Since the covariance between <span class="math inline">\(x\)</span> and itself is just the variance of <span class="math inline">\(x\)</span> (<span class="math inline">\(s_{x}^{2}\)</span>), and <span class="math inline">\(s_{x} \times s_{x} = s^{2}_{x}\)</span>, we end up with the same value on the top and bottom, and <span class="math inline">\(r = 1\)</span> (i.e., <span class="math inline">\(x\)</span> is completely correlated with itself).</p>
 <p>We can expand <span class="math inline">\(cov_{x,y}\)</span>, <span class="math inline">\(s_{x}\)</span>, and <span class="math inline">\(s_{y}\)</span> to see the details of the equation for <span class="math inline">\(r\)</span>,</p>
 <p><span class="math display">\[r = \frac{\frac{1}{N - 1} \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
 <p>This looks like a lot, but we can clean the equation up a bit because the <span class="math inline">\(1 / (N-1)\)</span> expressions cancel on the top and bottom of the equation,</p>
@@ -713,7 +713,7 @@ Table 30.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>),
 <td align="center">6</td>
 <td align="center">0.852</td>
 <td align="center">1.408</td>
-<td align="center">0.01624</td>
+<td align="center">0.016236</td>
 </tr>
 <tr class="odd">
 <td align="center">7</td>
@@ -743,7 +743,7 @@ Table 30.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>),
 <td align="center">11</td>
 <td align="center">0.621</td>
 <td align="center">1.034</td>
-<td align="center">0.02622</td>
+<td align="center">0.026224</td>
 </tr>
 </tbody>
 </table>
@@ -753,7 +753,7 @@ We now have all of the values we need to calculate <span class="math inline">\(r
 <p><span class="math display">\[r_{x,y} = \frac{0.0059487}{0.064 \times 0.123}.\]</span></p>
 <p>Our final value is <span class="math inline">\(r_{x, y} = 0.7556784\)</span>.
 As suggested by the scatterplot in Figure 30.2, thorax and abdomen lengths are highly correlated.
-We will test whether or not this value of <span class="math inline">\(r\)</span> is statistically significant in <a href="Chapter_30.html#correlation-hypothesis-testing">Chapter 24.3</a> below, but first we will introduce the Spearman’s rank correlation coefficient.</p>
+We will test whether or not this value of <span class="math inline">\(r\)</span> is statistically significant in <a href="Chapter_30.html#correlation-hypothesis-testing">Chapter 30.3</a> below, but first we will introduce the Spearman’s rank correlation coefficient.</p>
 </div>
 <div id="spearmans-rank-correlation-coefficient" class="section level3 hasAnchor" number="30.2.2">
 <h3><span class="header-section-number">30.2.2</span> Spearman’s rank correlation coefficient<a href="Chapter_30.html#spearmans-rank-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h3>

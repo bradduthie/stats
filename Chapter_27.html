@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 27 Two-way ANOVA | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 27 Two-way ANOVA | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -573,7 +573,7 @@ The third hypothesis addresses the interaction effect:</p>
 <p>Interaction effects are difficult to understand at first, so we will look at two concrete examples of two-way ANOVAs.
 The first will use the Table 27.1 data in which no interaction effect exists.
 The second will use a different species pairing in which an interaction does exist.</p>
-<p>In a two-way ANOVA, the output (Figure 27.1) appears similar to that of a one-way ANOVA (see <a href="Chapter_24.html#anova-f-statistic-calculation">Chapter 24.2.3</a>), but there are four rows of output.
+<p>In a two-way ANOVA, the jamovi output (Figure 27.1) appears similar to that of a one-way ANOVA (see <a href="Chapter_24.html#anova-f-statistic-calculation">Chapter 24.2.3</a>), but there are four rows of output.
 Rows 1 and 2 test the null hypotheses associated with the main effects of species and tree, respectively.
 Row 3 tests the interaction effect.
 And row 4 shows us the variation in the data that cannot be attributed to either the main effects or the interaction (i.e., the residual variation).
@@ -587,20 +587,20 @@ Figure 27.1: Jamovi output table for a two-way ANOVA, which tests for the effect
 <p>This is a lot more information than the one-way ANOVA, but it helps to think of each row separately as a test of a different null hypothesis.
 From the first row, given the high F = 45.75 and the low P = 0.002, we can reject the null hypothesis that species mean wing lengths are the same.
 Similarly, from the second row, we can reject the null hypothesis that wing lengths are the same in both trees (F = 30.39; P = 0.005).
-In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and trees (F = 0.05, P = 0.839).
-Figure 27.2 shows the these results visually <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
+In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and tree (F = 0.05, P = 0.839).
+Figure 27.2 shows these results visually <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-108"></span>
 <img src="img/two-way_ANOVA_no_interaction.png" alt="A plot is shown in jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines run in parallel at a downward angle." width="100%" />
 <p class="caption">
-Figure 27.2: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+Figure 27.2: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the four species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
 <p>In Figure 27.2, there is no interaction between species and tree.
 How can we infer this from Figure 27.2?
-Wing length is always significantly higher in Tree A than it is in Tree B, regardless of the species of wasp.
-Similarly, wing length is always higher for Het1 than it is for SO2, regardless of tree.
+Wing length is always consistently higher in Tree A than it is in Tree B, regardless of the species of wasp.
+Similarly, wing length is consistently higher for Het1 than it is for SO2, regardless of tree.
 Consequently, while wasp species is important for predicting wing length, as is the tree from which the wasp was collected, we do not need to consider one variable to know the effect of the other.
-This is reflected in the orange and blue lines having a similar slope, or, more technically, slopes that are not significantly different from one another.
+This is reflected in the lines having a similar slope, or, more technically, slopes that are not significantly different from one another.
 If the slopes of the two lines were significantly different, then this would be evidence for an interaction between species and tree.</p>
 <p>What would Figure 27.2 look like if there was an interaction effect between species and tree?
 We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
@@ -678,10 +678,10 @@ Figure 27.4 shows this interaction visually.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-111"></span>
 <img src="img/two-way_ANOVA_with_interaction.png" alt="A plot is shown in jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines have different angles, one increasing from SO1 to SO2 (blue), and the other decreasing (orange)." width="100%" />
 <p class="caption">
-Figure 27.4: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the 4 species and tree combinations (e.g., SO2 from Tree A in the upper right). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+Figure 27.4: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the four species and tree combinations (e.g., SO2 from Tree A in the upper right). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Note that for SO1, wing length is basically the same for Tree A and B (the two left points in Figure 27.4).
+<p>Note that for SO1, wing length is basically the same for Trees A and B (the two left points in Figure 27.4).
 In contrast, for SO2, tree has a very noticeable effect on wing length!
 Fig wasps in species SO2 clearly have higher wing lengths on Tree A than they do on Tree B.
 <em>Overall</em>, however, the mean wing length for SO2 appears to be about the same as it is for SO1 (i.e., the mid-way point between the blue and orange points for SO2 is at about the same wing length as it is for SO1, around 1.5 mm).

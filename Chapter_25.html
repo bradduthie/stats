@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 25 Multiple comparisons | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 25 Multiple comparisons | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -488,22 +488,22 @@ We can, for example, divide our <span class="math inline">\(\alpha\)</span> valu
 This is called a Bonferroni correction <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006" role="doc-biblioref">Narum 2006</a>)</span>.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the five species.
 This means that if we were to apply a Bonferroni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when <span class="math inline">\(P &lt; 0.005\)</span> instead of <span class="math inline">\(P &lt; 0.05\)</span>.</p>
-<p>Another approach to correcting for multiple comparisons is a Tukey’s honestly significant difference test (Tukey’s HSD, or just a ‘Tukey’s test’).
-The general idea of a Tukey’s test is the same as the Bonferroni.
+<p>Another approach to correcting for multiple comparisons is a Tukey’s honestly significant difference test (Tukey’s HSD, or just a ‘Tukey test’).
+The general idea of a Tukey test is the same as the Bonferroni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
-The Tukey’s test does this by using a modified t-test, with a t-distribution called the “studentised range distribution” that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.</p>
-<p>Multiple comparisons tests can be run automatically in statistical programs such as jamovi.
+The Tukey test does this by using a modified t-test, with a t-distribution called the “studentised range distribution” that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.</p>
+<p>Multiple comparisons tests can be run automatically in jamovi.
 Figure 25.1 shows a post hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-102"></span>
 <img src="img/jamovi_multiple_comparisons.png" alt="Jamovi output is shown with a large table called 'Post Hoc Comparisons', which reports statistics for 10 pair-wise combinations of five species." width="100%" />
 <p class="caption">
-Figure 25.1: Jamovi output showing a table of 10 post hoc comparisons between species mean wing lengths for five different species of fig wasps. The last three columns show the uncorrected p-value (p), a p-value obtained from a Tukey’s test, and a p-value obtained from a Bonferroni correction. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+Figure 25.1: Jamovi output showing a table of 10 post hoc comparisons between species mean wing lengths for five different species of fig wasps. The last three columns show the uncorrected p-value (p), a p-value obtained from a Tukey test, and a p-value obtained from a Bonferroni correction. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
 <p>The column ‘p’ in Figure 25.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
-The columns <span class="math inline">\(p_{tukey}\)</span> and <span class="math inline">\(p_{Bonferroni}\)</span> show corrected p-values for the Tukey’s test and Bonferroni corrected t-test, respectively.
+The columns <span class="math inline">\(p_{tukey}\)</span> and <span class="math inline">\(p_{bonferroni}\)</span> show corrected p-values for the Tukey test and Bonferroni corrected t-test, respectively.
 We can interpret these p-values as usual, concluding that two species have different means if <span class="math inline">\(P &lt; 0.05\)</span> (i.e., jamovi does the correction for us; we do not need to divide <span class="math inline">\(\alpha = 0.05\)</span> to figure out what the significance threshold should be given the Bonferroni correction).</p>
-<p>Note that from Figure 25.1, it appears that both the Tukey’s test and the Bonferroni correction fail to find that any pair of species have significantly different means.
+<p>Note that from Figure 25.1, it appears that both the Tukey test and the Bonferroni correction fail to find that any pair of species have significantly different means.
 This does not mean that we have done the test incorrectly.
 The multiple comparisons tests are asking a slightly different question than the one-way ANOVA.
 The multiple comparisons tests are testing the null hypothesis that two <em>particular</em> species have the same mean wing lengths.

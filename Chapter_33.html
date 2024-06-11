@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 33 Multiple regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 33 Multiple regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -493,16 +493,16 @@ Since multiple regression investigates the effect of each independent variable i
 It is even possible for the sign of the coefficients to change (e.g., from negative to positive).</p>
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_32.html#Chapter_32">Chapter 32</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).</p>
-<table style="width:97%;">
+<table>
 <caption><strong>TABLE 33.1</strong> Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <colgroup>
-<col width="20%" />
+<col width="19%" />
+<col width="10%" />
 <col width="11%" />
 <col width="11%" />
 <col width="11%" />
 <col width="11%" />
-<col width="9%" />
-<col width="11%" />
+<col width="10%" />
 <col width="11%" />
 </colgroup>
 <tbody>
@@ -529,12 +529,12 @@ Suppose that in addition to latitude, altitude was also measured in metres for e
 <tr class="odd">
 <td align="center"><strong>Volume</strong></td>
 <td align="center">2399</td>
-<td align="center">2942</td>
-<td align="center">2167</td>
-<td align="center">2051</td>
-<td align="center">1686</td>
+<td align="center">2941.7</td>
+<td align="center">2167.2</td>
+<td align="center">2051.3</td>
+<td align="center">1686.2</td>
 <td align="center">937.3</td>
-<td align="center">1328</td>
+<td align="center">1328.2</td>
 </tr>
 </tbody>
 </table>
@@ -549,20 +549,20 @@ Figure 33.1: Relationship between latitude and fruit volume for seven fig fruits
 We can also find partial regression coefficients for latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>), and test whether or not these coefficients are significantly different from 0.</p>
 <p>In <a href="Chapter_32.html#Chapter_32">Chapter 32</a>, we found that a simple regression of latitude against fruit volume had an intercept of <span class="math inline">\(b_{0} = 3592.36\)</span> and a regression coefficient of <span class="math inline">\(b_{1} = -242.68\)</span>,</p>
 <p><span class="math display">\[Volume = 3592.36 - 242.68(Latitude).\]</span></p>
-<p>The slope of the regression line (<span class="math inline">\(b_{1}\)</span>) was not significantly different from zero (<span class="math inline">\(P = 0.22287\)</span>).</p>
+<p>The slope of the regression line (<span class="math inline">\(b_{1}\)</span>) was significantly different from zero (<span class="math inline">\(P = 0.03562\)</span>).</p>
 <p>A multiple regression can be used with latitude and altitude as independent variables to predict volume,</p>
 <p><span class="math display">\[Volume = b_{0} + b_{1}(Latitude) + b_{2}(Altitude).\]</span></p>
 <p>We have the values of volume, latitude, and altitude in Table 33.1.
 We now need to run a multiple regression to find the intercept (<span class="math inline">\(b_{0}\)</span>) and partial regression coefficients describing the partial effects of latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>) on volume.
 In jamovi, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 32.2 shows an output table, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
-<table style="width:88%;">
-<caption><strong>TABLE 33.2</strong> Output showing intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<table style="width:89%;">
+<caption><strong>TABLE 33.2</strong> Output showing the intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
 <colgroup>
 <col width="25%" />
 <col width="15%" />
 <col width="18%" />
-<col width="13%" />
+<col width="15%" />
 <col width="15%" />
 </colgroup>
 <thead>
@@ -577,24 +577,24 @@ Table 32.2 shows an output table, which gives us estimates of <span class="math 
 <tbody>
 <tr class="odd">
 <td align="center"><strong>(Intercept)</strong></td>
-<td align="center">2988</td>
-<td align="center">1698</td>
-<td align="center">1.76</td>
-<td align="center">0.1532</td>
+<td align="center">2988.2</td>
+<td align="center">1697.6</td>
+<td align="center">1.7603</td>
+<td align="center">0.15316</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>Latitude</strong></td>
-<td align="center">5.588</td>
-<td align="center">71.49</td>
-<td align="center">0.07816</td>
-<td align="center">0.9415</td>
+<td align="center">5.5878</td>
+<td align="center">71.488</td>
+<td align="center">0.078165</td>
+<td align="center">0.94145</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>Altitude</strong></td>
-<td align="center">-2.402</td>
-<td align="center">0.5688</td>
-<td align="center">-4.223</td>
-<td align="center">0.01344</td>
+<td align="center">-2.4022</td>
+<td align="center">0.56881</td>
+<td align="center">-4.2232</td>
+<td align="center">0.013443</td>
 </tr>
 </tbody>
 </table>
@@ -604,7 +604,7 @@ This is because we assume that these sample coefficients (<span class="math inli
 In other words, if we were to go back out and repeatedly collect many new datasets (sampling volume, latitude, and altitude <em>ad infinitum</em>), then the distribution of <span class="math inline">\(b\)</span> sample coefficients calculated from these datasets would be normally distributed around the true <span class="math inline">\(\beta\)</span> population coefficients.
 The t-distribution, which accounts for uncertainty that is attributable to a finite sample size (see <a href="Chapter_19.html#Chapter_19">Chapter 19</a>), is therefore the correct one to use when testing the significance of coefficients.</p>
 <p>Second, the intercept has changed from what it was in the simple linear regression model.
-In the simple linear regression, it was 3592.36, but in the multiple regression it is <span class="math inline">\(b_{0} = 2989.02\)</span>.
+In the simple linear regression, it was 8458.30961, but in the multiple regression it is <span class="math inline">\(b_{0} = 2989.02\)</span>.
 The p-value of the intercept has also changed.
 In the simple linear model, the p-value was significant (P = 0.0142).
 But in the multiple regression model, it is not significant (P = 0.1532).</p>
@@ -643,7 +643,7 @@ Hence, even if newly added independent variables are bad predictors, they might 
 To help account for this spurious improvement of fit, we can use an adjusted R squared (<span class="math inline">\(R^{2}_{adj}\)</span>).
 The <span class="math inline">\(R^{2}_{adj}\)</span> takes into account the <span class="math inline">\(R^{2}\)</span>, the sample size (<span class="math inline">\(N\)</span>), and the number of independent variables (<span class="math inline">\(k\)</span>),</p>
 <p><span class="math display">\[R^{2}_{adj} = 1 - \left(1 - R^{2}\right)\left(\frac{N - 1}{N - k - 1}\right).\]</span></p>
-<p>As <span class="math inline">\(k\)</span> increases, the fraction above <span class="math inline">\((N-1)/(N-k-1)\)</span> gets bigger.
+<p>As <span class="math inline">\(k\)</span> increases, the value of <span class="math inline">\((N-1)/(N-k-1)\)</span> gets bigger.
 And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}_{adj}\)</span> decreases.
 Consequently, more independent variables (k) cause a decrease in the adjusted R-squared value.
 This attempts to account for the inevitable tendency of <span class="math inline">\(R^{2}\)</span> to increase with <span class="math inline">\(k\)</span>.</p>

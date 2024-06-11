@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 34 Practical. Using regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 34 Practical. Using regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -483,7 +483,7 @@ The dataset used in this practical is inspired by the work of Dr Carmen Carmona,
 Their work focuses on carbon storage in Gabon.</p>
 <p>When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of it remains sequestered in the soil due to incomplete combustion <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>)</span>.
 This pyrogenic organic carbon can persist in the soil for long periods of time and has positive effects on soil properties <span class="citation">(<a href="#ref-Reisser2016" role="doc-biblioref">Reisser et al. 2016</a>)</span>.
-In this practical, we will look at how environmental data might be used to test what factors affect the concentration of pyrogenic carbon in the soil.
+In this chapter, we will look at how environmental data might be used to test what factors affect the concentration of pyrogenic carbon in the soil.
 We will use the fire carbon dataset<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>.
 This dataset includes variables for soil depth (cm), fire frequency (total number of years in which a fire occurred during the past 20 years), mean yearly temperature (degrees Celsius), mean monthly rainfall (mm per squared meter per year, <span class="math inline">\(mm\:m^{-2}\:yr^{-1}\)</span>), total soil organic carbon (SOC, as percentage of soil by weight), pyrogenic carbon (PyC, as percentage of soil organic carbon by weight), and soil pH.</p>
 <div id="predicting-pyrogenic-carbon-from-soil-depth" class="section level2 hasAnchor" number="34.1">
@@ -536,7 +536,7 @@ Output will appear in the jamovi panel to the right.
 The first assumption check will be a table providing the results of a Shapiro-Wilk test of normality on the <em>residuals</em> (see <a href="Chapter_32.html#intercepts-slopes-and-residuals">Chapter 32.2</a>) of the linear regression model.
 In your own words, what is this test doing?
 That is, what are we actually testing is or is not normally distributed?
-Drawing a picture might be helping to explain.</p>
+Drawing a picture might help to explain.</p>
 <pre><code>
 
 
@@ -695,7 +695,7 @@ Based on what you know about the difference between simple linear regression and
 </div>
 <div id="large-multiple-regression" class="section level2 hasAnchor" number="34.4">
 <h2><span class="header-section-number">34.4</span> Large multiple regression<a href="Chapter_34.html#large-multiple-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that as scientists we hypothesise that soil depth, fire frequency, and soil pH will all affect pyrogenic carbon storage.
+<p>Suppose that as scientists, we hypothesise that soil depth, fire frequency, and soil pH will all affect pyrogenic carbon storage.
 Run a multiple regression model with soil depth, fire frequency, and soil pH all as independent variables and pyrogenic carbon as a dependent variable.
 Fill in the Model Coefficient output in Table 34.1.</p>
 <table style="width:89%;">

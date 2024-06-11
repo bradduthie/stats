@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 32 Simple linear regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi</title>
   <meta name="description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 32 Simple linear regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2024-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,8 +291,8 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="23" data-path="Chapter_23.html"><a href="Chapter_23.html"><i class="fa fa-check"></i><b>23</b> <em>Practical</em>. Hypothesis testing and t-tests</a>
 <ul>
-<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-simple-one-sample-t-test"><i class="fa fa-check"></i><b>23.1</b> Exercise on a simple one sample t-test</a></li>
-<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#exercise-on-a-paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Exercise on a paired t-test</a></li>
+<li class="chapter" data-level="23.1" data-path="Chapter_23.html"><a href="Chapter_23.html#one-sample-t-test-1"><i class="fa fa-check"></i><b>23.1</b> One sample t-test</a></li>
+<li class="chapter" data-level="23.2" data-path="Chapter_23.html"><a href="Chapter_23.html#paired-t-test"><i class="fa fa-check"></i><b>23.2</b> Paired t-test</a></li>
 <li class="chapter" data-level="23.3" data-path="Chapter_23.html"><a href="Chapter_23.html#wilcoxon-test-1"><i class="fa fa-check"></i><b>23.3</b> Wilcoxon test</a></li>
 <li class="chapter" data-level="23.4" data-path="Chapter_23.html"><a href="Chapter_23.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>23.4</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="23.5" data-path="Chapter_23.html"><a href="Chapter_23.html#mann-whitney-u-test-1"><i class="fa fa-check"></i><b>23.5</b> Mann-Whitney U Test</a></li>
@@ -503,17 +503,17 @@ Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico
 </p>
 </div>
 <p>A sample of fig fruits from different latitudes is shown in Table 32.1.</p>
-<table style="width:92%;">
+<table>
 <caption><strong>TABLE 32.1</strong> Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <colgroup>
 <col width="20%" />
 <col width="9%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
-<col width="9%" />
-<col width="11%" />
-<col width="11%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="10%" />
+<col width="12%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -529,12 +529,12 @@ Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico
 <tr class="even">
 <td align="center"><strong>Volume</strong></td>
 <td align="center">2399</td>
-<td align="center">2942</td>
-<td align="center">2167</td>
-<td align="center">2051</td>
-<td align="center">1686</td>
+<td align="center">2941.7</td>
+<td align="center">2167.2</td>
+<td align="center">2051.3</td>
+<td align="center">1686.2</td>
 <td align="center">937.3</td>
-<td align="center">1328</td>
+<td align="center">1328.2</td>
 </tr>
 </tbody>
 </table>
@@ -553,11 +553,11 @@ Figure 32.2: Relationship between latitude and fruit volume for seven fig fruits
 The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in <span class="math inline">\(mm^{3}\)</span>.
 The thin dotted line shows the mean fruit volume for the seven fruits, <span class="math inline">\(\bar{y} =\)</span> 1930.1.
 The thick black line trending downwards in Figure 32.2 is the regression line, also called the line of best fit.
-How this line is calculated will be explained later, but for now there are two important concepts to takeaway from Figure 32.2.
+How this line is calculated will be explained later, but for now there are two important concepts to take away from Figure 32.2.
 First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
 For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
 At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 <span class="math inline">\(mm^{3}\)</span>.</p>
-<p>This leads to the second important concept to takeaway from Figure 32.2.
+<p>This leads to the second important concept to take away from Figure 32.2.
 In the absence of any other information (including latitude), our best guess of what any given fruit’s volume will be is just the mean (<span class="math inline">\(\bar{y} =\)</span> 1930.1).
 A key aim of regression is to test if the regression line can do a significantly better job of predicting what fruit volume will be.
 In other words, is the solid line of Figure 32.2 really doing that much better than the horizontal dotted line?
@@ -598,31 +598,31 @@ Figure 32.3: Relationship between latitude and fruit volume for seven fig fruits
 </div>
 <p>The residual of each of the seven points is shown with a dashed line in Figure 32.3.
 Residual values are positive when they are higher than the value predicted by the regression line, and they are negative when they are lower than the value predicted by the regression line.
-In the example of Figure 32.3, the residual in red indicated by the arrow, at a latitude of 24, is 307.8 because the volume of the fig fruit collected from this latitude deviates from the predicted volume on the regression line by 307.8.
+In the example of Figure 32.3, the residual indicated by the arrow, at a latitude of 24, is 307.8 because the volume of the fig fruit collected from this latitude deviates from the predicted volume on the regression line by 307.8.
 For the point just to the left where the latitude from which the fruit was sampled is 23.7 degrees, the residual is -307.7.
 For any fig fruit <span class="math inline">\(i\)</span>, we can therefore find its volume using the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual value (<span class="math inline">\(\epsilon_{i}\)</span>).
-Next, we will show how these different values relate to one another mathematically.</p>
+Next, we will see how these different values relate to one another mathematically.</p>
 </div>
 <div id="regression-coefficients" class="section level2 hasAnchor" number="32.3">
 <h2><span class="header-section-number">32.3</span> Regression coefficients<a href="Chapter_32.html#regression-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Simple linear regression predicts the dependent variable (<span class="math inline">\(y\)</span>) from the independent variable (<span class="math inline">\(x\)</span>) using the intercept (<span class="math inline">\(b_{0}\)</span>) and the slope (<span class="math inline">\(b_{1}\)</span>),</p>
 <p><span class="math display">\[y = b_{0} + b_{1}x.\]</span></p>
 <p>The equation for <span class="math inline">\(y\)</span> mathematically describes the regression line in Figures 32.2 and 32.3.
-This gives us the expected value of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>
+This gives us the expected value of <span class="math inline">\(y\)</span> for any value of <span class="math inline">\(x\)</span>.
 In other words, the equation tells us what <span class="math inline">\(y\)</span> will be <em>on average</em> for any given <span class="math inline">\(x\)</span>.
 Sometimes different letters are used to represent the same mathematical relationship, such as <span class="math inline">\(y = a + bx\)</span> or <span class="math inline">\(y = mx + b\)</span>, but the symbols used are not really important<a href="#fn76" class="footnote-ref" id="fnref76"><sup>76</sup></a>.
 Here, <span class="math inline">\(b_{0}\)</span> and <span class="math inline">\(b_{1}\)</span> are used to make the transition to multiple regression in <a href="Chapter_33.html#Chapter_33">Chapter 33</a> clearer.</p>
 <p>For any specific value of <span class="math inline">\(x_{i}\)</span>, the corresponding <span class="math inline">\(y_{i}\)</span> can be described more generally,</p>
 <p><span class="math display">\[y_{i} = b_{0} + b_{1}x_{i} + \epsilon_{i}.\]</span></p>
 <p>For example, for any fig fruit <span class="math inline">\(i\)</span>, we can find its <em>exact</em> volume (<span class="math inline">\(y_{i}\)</span>) from its latitude (<span class="math inline">\(x_{i}\)</span>) using the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
-We can do this for the residual shown in red and indicated by the arrow in Figure 32.3.
+We can do this for the residual indicated by the arrow in Figure 32.3.
 The latitude at which this fruit was sampled was <span class="math inline">\(x_{i} =\)</span> 24, its volume is <span class="math inline">\(y_{i} =\)</span> 2941.7, and its residual value is 307.8.
 From the previous section, we know that <span class="math inline">\(b_{0} =\)</span> 8458.3 and <span class="math inline">\(b_{1} =\)</span> -242.7.
 If we substitute all of these values,</p>
 <p><span class="math display">\[2941.7 = 8458.3 - 242.68(24) + 307.84.\]</span></p>
 <p>Note that if we remove the residual 307.84, then we get the expected volume for our fig fruit at 24 degrees latitude,</p>
 <p><span class="math display">\[2633.98 = 8458.3 - 242.68(24).\]</span></p>
-<p>Visually, this is where the red dotted line meets the solid black regression line in Figure 32.3.</p>
+<p>Visually, this is where the dotted line meets the solid regression line in Figure 32.3.</p>
 <p>This explains the relationship between the independent and dependent variables using the intercept, slope, and residuals.
 But how do we actually define the line of best fit?
 In other words, what makes the regression line in this example better than some other line that we might use instead?
@@ -648,7 +648,7 @@ There is only one line that fits.</p>
 In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,</p>
 <p><span class="math display">\[SS_{residual} = (-307.6)^{2} + (307.7)^2 + ... + (338.5)^{2}.\]</span></p>
 <p>For the regression in Figure 32.4, <span class="math inline">\(SS_{residual} =\)</span> 1034690.
-Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a> in which a random set of points are placed on scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
+Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a> in which a random set of points are placed on a scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
 <p>We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
 The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.</p>
 </div>
@@ -657,7 +657,7 @@ The next section focuses on the coefficient of determination, which describes ho
 <p>We often want to know how well a regression line fits the data.
 In other words, are most of the data near the regression line (indicating a good fit), or are most far away from the regression line?
 How closely the data fit to the regression line is described by the <strong>coefficient of determination</strong> (<span class="math inline">\(R^{2}\)</span>).
-More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression equation<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>,</p>
+More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression line<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>,</p>
 <p><span class="math display">\[R^{2} = 1 - \frac{SS_{residual}}{SS_{total}}.\]</span></p>
 <p>Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model (<span class="math inline">\(SS_{residual}\)</span>) to what the sum of squared residuals would be had we just used the mean value of <span class="math inline">\(y\)</span> (<span class="math inline">\(SS_{total}\)</span>).
 If <span class="math inline">\(SS_{residual}\)</span> is very small compared to <span class="math inline">\(SS_{total}\)</span>, then subtracting <span class="math inline">\(SS_{residual}/SS_{total}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
@@ -680,8 +680,8 @@ We can visualise this as the sum of squared deviations from the mean fruit volum
 Figure 32.6: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (dashed) and deviations from the mean (dotted).
 </p>
 </div>
-<p>The black numbers in Figure 32.6 show the deviations of each point from the regression line, just like in Figure 32.4.
-Blue numbers have been added to Figure 32.6 to show the deviation of each point from the mean fruit volume.
+<p>The numbers in Figure 32.6 show the deviations of each point from the regression line, just like in Figure 32.4.
+New numbers have been added to Figure 32.6 to show the deviation of each point from the mean fruit volume.
 Summing the squared values of residuals from the regression line gives a value of 1034567.
 Summing the squared deviations of values from the mean <span class="math inline">\(\bar{y} =\)</span> 1930.1 gives a value of 2721718.
 To calculate <span class="math inline">\(R^{2}\)</span>,</p>
@@ -692,7 +692,7 @@ In other words, about 62 per cent of the variation in fruit volume is explained 
 <div id="regression-assumptions" class="section level2 hasAnchor" number="32.6">
 <h2><span class="header-section-number">32.6</span> Regression assumptions<a href="Chapter_32.html#regression-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is important to be aware of the assumptions underlying linear regression.
-There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li><p>Measurement of the independent variable (<span class="math inline">\(x\)</span>) is completely accurate. In other words, there is no measurement error for the independent variable.
 Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see <a href="Chapter_6.html#accuracy">Chapter 6.1</a> and <a href="Chapter_7.html#Chapter_7">Chapter 7</a>).</p></li>
