@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-11" />
+<meta name="date" content="2024-06-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -556,13 +556,13 @@ We can also find partial regression coefficients for latitude (<span class="math
 We now need to run a multiple regression to find the intercept (<span class="math inline">\(b_{0}\)</span>) and partial regression coefficients describing the partial effects of latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>) on volume.
 In jamovi, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 32.2 shows an output table, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
-<table style="width:89%;">
+<table style="width:88%;">
 <caption><strong>TABLE 33.2</strong> Output showing the intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
 <colgroup>
 <col width="25%" />
 <col width="15%" />
 <col width="18%" />
-<col width="15%" />
+<col width="13%" />
 <col width="15%" />
 </colgroup>
 <thead>
@@ -577,24 +577,24 @@ Table 32.2 shows an output table, which gives us estimates of <span class="math 
 <tbody>
 <tr class="odd">
 <td align="center"><strong>(Intercept)</strong></td>
-<td align="center">2988.2</td>
-<td align="center">1697.6</td>
-<td align="center">1.7603</td>
-<td align="center">0.15316</td>
+<td align="center">2988</td>
+<td align="center">1698</td>
+<td align="center">1.76</td>
+<td align="center">0.1532</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>Latitude</strong></td>
-<td align="center">5.5878</td>
-<td align="center">71.488</td>
-<td align="center">0.078165</td>
-<td align="center">0.94145</td>
+<td align="center">5.588</td>
+<td align="center">71.49</td>
+<td align="center">0.07816</td>
+<td align="center">0.9415</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>Altitude</strong></td>
-<td align="center">-2.4022</td>
-<td align="center">0.56881</td>
-<td align="center">-4.2232</td>
-<td align="center">0.013443</td>
+<td align="center">-2.402</td>
+<td align="center">0.5688</td>
+<td align="center">-4.223</td>
+<td align="center">0.01344</td>
 </tr>
 </tbody>
 </table>
