@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-16" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,14 +309,14 @@ div.csl-indent {
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-site"><i class="fa fa-check"></i><b>28.1</b> One-way ANOVA (site)</a></li>
 <li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-profile"><i class="fa fa-check"></i><b>28.2</b> One-way ANOVA (profile)</a></li>
 <li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#multiple-comparisons"><i class="fa fa-check"></i><b>28.3</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskal-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="28.5" data-path="Chapter_28.html"><a href="Chapter_28.html#two-way-anova"><i class="fa fa-check"></i><b>28.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Frequency and count data</a>
@@ -860,13 +860,13 @@ In general, ANOVA is reasonably robust to deviations from homogeneity, especiall
 This means that the Type I error rate is about what we want it to be (usually <span class="math inline">\(\alpha = 0.05\)</span>), even when the assumption of homogeneity of variances is violated.
 In other words, we are not rejecting the null hypothesis when it is true more frequently than we intend!
 We can test the assumption that group variances are the same using a Levene’s test in the same way that we did for the independent samples t-test in <a href="Chapter_23.html#independent-samples-t-test-1">Chapter 23</a>.
-If we reject the null hypothesis that groups have the same variance, then we should potentially consider a non-parametric alternative test such as the Kruskall-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
+If we reject the null hypothesis that groups have the same variance, then we should potentially consider a non-parametric alternative test such as the Kruskal-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
 <p>Assumption 4 is the equivalent of the t-test assumption from <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a> that sample means are normally distributed around the true mean.
 What the assumption means is that if we were to repeatedly resample data from a population, the sample means that we calculate would be normally distributed.
 For the fig wasp wing measurements, this means that if we were to go back out and repeatedly collect four fig wasps from each of the five species, then sample means of species wing length and overall wing length would be normally distributed around the true means.
 Due to the central limit theorem (see <a href="Chapter_16.html#Chapter_16">Chapter 16</a>), this assumption becomes less problematic with increasing sample size.
 We can test if the sample data are normally distributed using a Q-Q plot or Shapiro-Wilk test (the same procedure used for the t-test).
-Fortunately, the ANOVA is quite robust to deviations from normality <span class="citation">(<a href="#ref-Schmider2010" role="doc-biblioref">Schmider et al. 2010</a>)</span>, but if data are not normally distributed, we should again consider a non-parametric alternative test such as the Kruskall-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
+Fortunately, the ANOVA is quite robust to deviations from normality <span class="citation">(<a href="#ref-Schmider2010" role="doc-biblioref">Schmider et al. 2010</a>)</span>, but if data are not normally distributed, we should again consider a non-parametric alternative test such as the Kruskal-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>

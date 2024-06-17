@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-16" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,14 +309,14 @@ div.csl-indent {
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-site"><i class="fa fa-check"></i><b>28.1</b> One-way ANOVA (site)</a></li>
 <li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-profile"><i class="fa fa-check"></i><b>28.2</b> One-way ANOVA (profile)</a></li>
 <li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#multiple-comparisons"><i class="fa fa-check"></i><b>28.3</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskal-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="28.5" data-path="Chapter_28.html"><a href="Chapter_28.html#two-way-anova"><i class="fa fa-check"></i><b>28.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Frequency and count data</a>
@@ -683,9 +683,9 @@ This kind of practice is colloquially called ‘p-hacking’ (or ‘data dredgin
 Put more simply, trying to game the system to get results in which <span class="math inline">\(P &lt; 0.05\)</span> can lead to mistakes in science <span class="citation">(<a href="#ref-Head2015" role="doc-biblioref">Head et al. 2015</a>)</span>.
 Specifically, p-hacking can lead us to believe that there are patterns in nature where none really exist, which is definitely something that we want to avoid!</p>
 </div>
-<div id="kruskall-wallis-h-test" class="section level2 hasAnchor" number="28.4">
-<h2><span class="header-section-number">28.4</span> Kruskall-Wallis H test<a href="Chapter_28.html#kruskall-wallis-h-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this exercise, we will apply the non-parametric equivalent of the one-way ANOVA, the Kruskall-Wallis H test.
+<div id="kruskal-wallis-h-test" class="section level2 hasAnchor" number="28.4">
+<h2><span class="header-section-number">28.4</span> Kruskal-Wallis H test<a href="Chapter_28.html#kruskal-wallis-h-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this exercise, we will apply the non-parametric equivalent of the one-way ANOVA, the Kruskal-Wallis H test.
 Suppose that we now want to know if Potassium concentration differs among soil profiles.
 We therefore want to test the null hypothesis that the mean Potassium concentration is the same for all soil profiles.
 Before opening the ANOVA input panel, have a look at a histogram of Potassium concentration.
@@ -705,11 +705,11 @@ From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumpti
 
 </code></pre>
 <p>Given the violation of ANOVA assumptions, we should consider a non-parametric option.
-As introduced in <a href="Chapter_26.html#Chapter_26">Chapter 26</a>, the Kruskall-Wallis H test is a non-parametric alternative to a one-way ANOVA.
-Like other non-parametric tests introduced in this book, the Kruskall-Wallis H test uses the ranks of a dataset instead of the actual values.
-To run a Kruskall-Wallis H test, select the Analyses tab, then the ‘ANOVA’ button from the jamovi toolbar.
-In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskall-Wallis’.</p>
-<p>The Kruskall-Wallis input is basically the same as the one-way ANOVA input.
+As introduced in <a href="Chapter_26.html#Chapter_26">Chapter 26</a>, the Kruskal-Wallis H test is a non-parametric alternative to a one-way ANOVA.
+Like other non-parametric tests introduced in this book, the Kruskal-Wallis H test uses the ranks of a dataset instead of the actual values.
+To run a Kruskal-Wallis H test, select the Analyses tab, then the ‘ANOVA’ button from the jamovi toolbar.
+In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskal-Wallis’.</p>
+<p>The Kruskal-Wallis input is basically the same as the one-way ANOVA input.
 We just need to put ‘Potassium’ in the dependent variable list and ‘Profile’ in the Grouping Variable box.
 The output table includes the test statistic (jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which we will introduce in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>, degrees of freedom, and p-value).
 Report these values below.</p>
@@ -718,7 +718,7 @@ Report these values below.</p>
 <p><span class="math inline">\(P\)</span>: ____________</p>
 <p>From the above output, should we reject or not reject our null hypothesis?</p>
 <p><span class="math inline">\(H_{0}:\)</span> _____________________</p>
-<p>Note that the Kruskall-Wallis test in jamovi also includes a type of multiple comparisons test (DSCF pairwise comparisons checkbox).
+<p>Note that the Kruskal-Wallis test in jamovi also includes a type of multiple comparisons test (DSCF pairwise comparisons checkbox).
 We will not use the Dwass-Steel-Critchlow-Fligner pairwise comparisons, but the general idea is the same as the Tukey’s HSD test for post hoc multiple comparisons in the ANOVA.</p>
 </div>
 <div id="two-way-anova" class="section level2 hasAnchor" number="28.5">

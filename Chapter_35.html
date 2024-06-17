@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-16" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,14 +309,14 @@ div.csl-indent {
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-site"><i class="fa fa-check"></i><b>28.1</b> One-way ANOVA (site)</a></li>
 <li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-profile"><i class="fa fa-check"></i><b>28.2</b> One-way ANOVA (profile)</a></li>
 <li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#multiple-comparisons"><i class="fa fa-check"></i><b>28.3</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskal-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="28.5" data-path="Chapter_28.html"><a href="Chapter_28.html#two-way-anova"><i class="fa fa-check"></i><b>28.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Frequency and count data</a>
@@ -511,7 +511,7 @@ The reason that we use these distributions in statistical hypothesis testing is 
 But this is not always the case.
 Recall that sometimes the assumptions of a particular statistical test were not met.
 In this case, a non-parametric alternative was introduced.
-The non-parametric test used the ranks of data instead of the actual values (e.g., the <a href="Chapter_22.html#wilcoxon-test">Wilcoxon</a>, <a href="Chapter_22.html#mann-whitney-u-test">Mann-Whitney U</a>, <a href="Chapter_26.html#Chapter_26">Kruskall-Wallis H</a>, and <a href="#spearman-rank-correlation-coefficient">Spearman’s rank correlation coefficient</a> tests).
+The non-parametric test used the ranks of data instead of the actual values (e.g., the <a href="Chapter_22.html#wilcoxon-test">Wilcoxon</a>, <a href="Chapter_22.html#mann-whitney-u-test">Mann-Whitney U</a>, <a href="Chapter_26.html#Chapter_26">Kruskal-Wallis H</a>, and <a href="#spearman-rank-correlation-coefficient">Spearman’s rank correlation coefficient</a> tests).
 Randomisation uses a different approach.</p>
 </div>
 <div id="randomisation-approach" class="section level2 hasAnchor" number="35.2">
@@ -583,10 +583,10 @@ Figure 35.4: A distribution of the difference between mean species ovipositor le
 </div>
 <p>Given this distribution of randomised mean differences between species ovipositor lengths, the observed difference of 0.185 appears to be fairly extreme.
 We can quantify how extreme by figuring out the proportion of mean differences in the above histogram that are more extreme than our observed difference (i.e., greater than 0.185 or less than -0.185).
-It turns out that only 2025 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
+It turns out that only 2145 out of 99999 random mean differences between ovipositor lengths were as or more extreme than our observed difference of 0.185.
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
-<p><span class="math display">\[P = \frac{2025 + 1}{99999 + 1}.\]</span></p>
-<p>When we calculate the above, we get a value of 0.02026.
+<p><span class="math display">\[P = \frac{2145 + 1}{99999 + 1}.\]</span></p>
+<p>When we calculate the above, we get a value of 0.02146.
 Notice that the calculated value is assigned with a ‘P’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
@@ -627,12 +627,12 @@ To calculate our 95 per cent confidence intervals, we then only need to rank the
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Chapter 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sample some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values two or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>2.995, 3.291, 3.21, 3.133, 3.178, 3.133, 3.256, 3.133, 3.406, 3.256, 3, 3.256, 3.406, 2.929, 3.071, 2.995, 2.299</p>
+<p>2.995, 3.21, 2.817, 3.071, 3.027, 2.299, 3.178, 3.178, 3.291, 3.406, 3.133, 2.817, 2.976, 3.21, 2.299, 3.21, 3.21</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original data set are no longer present after resampling with replacement. Consequently, these new resampled data have a different mean than the original.
-The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.115.
+The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 3.019.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.406, 3.027, 2.995, 2.658, 2.299, 3.178, 3.133, 3.256, 2.976, 3.256, 3.133, 3.133, 3.178, 3.21, 2.929, 2.817, 3.133</p>
-<p>The mean of the above sample is 3.042.
+<p>3.178, 2.817, 3.027, 2.299, 3.291, 3.178, 2.658, 3.071, 3.291, 3, 2.976, 2.929, 3.133, 3.256, 3.291, 2.817, 3.071</p>
+<p>The mean of the above sample is 3.017.
 We can continue doing this until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-161"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-161-1.png" alt="A histogram is shown with a mostly bell shape but skewing slightly to the left; x-axis values range from about 2.8 to 3.2." width="672" />
@@ -643,7 +643,7 @@ Figure 35.5: A distribution of bootstrapped values of ovipositor lengths from 17
 <p>The arrows show the locations of the 2.5 per cent and 97.5 per cent ranked values of the bootstrapped means.
 Note that it does not matter if the above distribution is not normal (it appears a bit skewed).
 The bootstrap still works.
-The values using the randomisation approach are LCI = 2.898 and UCI = 3.14.
+The values using the randomisation approach are LCI = 2.902 and UCI = 3.14.
 These values are quite similar to those calculated with the traditional approach because we are doing the same thing, conceptually.
 But instead of finding confidence intervals of the sample means around the true mean using the t-distribution, we are actually simulating the process of resampling from the population and calculating sample means many times.</p>
 </div>

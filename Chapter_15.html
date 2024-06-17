@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-16" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,14 +309,14 @@ div.csl-indent {
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-site"><i class="fa fa-check"></i><b>28.1</b> One-way ANOVA (site)</a></li>
 <li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-profile"><i class="fa fa-check"></i><b>28.2</b> One-way ANOVA (profile)</a></li>
 <li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#multiple-comparisons"><i class="fa fa-check"></i><b>28.3</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskal-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="28.5" data-path="Chapter_28.html"><a href="Chapter_28.html#two-way-anova"><i class="fa fa-check"></i><b>28.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Frequency and count data</a>
@@ -565,11 +565,11 @@ This is 0.5 (i.e., 50%) of the total probability space.</p>
 In fact, probability is extremely relevant in nearly all areas of the natural sciences.
 The following are just 2 hypothetical examples where the calculations in the previous section might be usefully applied:</p>
 <ol style="list-style-type: decimal">
-<li><p>From a recent report online, suppose you learn that 1 in 40 people in your local area is testing positive for Covid-19. You find yourself in a small shop with 6 other people. What is the probability that at least 1 of these 6 other people would test positive for Covid-19? To calculate this, note that the probability that any given person has Covid-19 is <span class="math inline">\(1/40 = 0.025\)</span>, which means that the probability that a person does <strong>not</strong> must be <span class="math inline">\(1 - 0.025 = 0.975\)</span> (they either do or do not, and the probabilities must sum to 1). The probability that <strong>all</strong> 6 people <em>do not</em> have Covid-19 is therefore <span class="math inline">\((0.975)^6 = 0.859\)</span>. Consequently, the probability that at least 1 of the 6 people <strong>does</strong> have Covid-19 is <span class="math inline">\(1 - 0.859 = 0.141\)</span>, or <span class="math inline">\(14.1\%\)</span>.</p></li>
+<li><p>From a recent report online, suppose you learn that 1 in 40 people in your local area is testing positive for COVID-19. You find yourself in a small shop with 6 other people. What is the probability that at least 1 of these 6 other people would test positive for COVID-19? To calculate this, note that the probability that any given person has COVID-19 is <span class="math inline">\(1/40 = 0.025\)</span>, which means that the probability that a person does <strong>not</strong> must be <span class="math inline">\(1 - 0.025 = 0.975\)</span> (they either do or do not, and the probabilities must sum to 1). The probability that <strong>all</strong> 6 people <em>do not</em> have COVID-19 is therefore <span class="math inline">\((0.975)^6 = 0.859\)</span>. Consequently, the probability that at least 1 of the 6 people <strong>does</strong> have COVID-19 is <span class="math inline">\(1 - 0.859 = 0.141\)</span>, or <span class="math inline">\(14.1\%\)</span>.</p></li>
 <li><p>Imagine you are studying a population of sexually reproducing, diploid (i.e., 2 sets of chromosomes), animals, and you find that a particular genetic locus has 3 alleles with frequencies <span class="math inline">\(P(A_{1}) = 0.40\)</span>, <span class="math inline">\(P(A_{2}) = 0.45\)</span>, and <span class="math inline">\(P(A_{3}) = 0.15\)</span>. What is the probability that a randomly sampled animal will be heterozygous with 1 copy of the <span class="math inline">\(A_{1}\)</span> allele and 1 copy of the <span class="math inline">\(A_{3}\)</span> allele? Note that there are 2 ways for <span class="math inline">\(A_{1}\)</span> and <span class="math inline">\(A_{3}\)</span> to arise in an individual, just like there were 2 ways to get a heads and tails coin in the section 14.1 example (see Figure 14.2). The individual could either get an <span class="math inline">\(A_{1}\)</span> in the first position and <span class="math inline">\(A_{3}\)</span> in the second position, or an <span class="math inline">\(A_{3}\)</span> in the first position and <span class="math inline">\(A_{1}\)</span> in the second position. We can therefore calculate the probability as, <span class="math inline">\(P(A_{1}) \times P(A_{3}) + P(A_{3}) \times P(A_{1})\)</span>, which is <span class="math inline">\((0.40 \times 0.15) + (0.15 \times 0.4) = 0.12\)</span>, or 12% (in population genetics, we might use the notation <span class="math inline">\(p = P(A_{1})\)</span> and <span class="math inline">\(r = P(A_{3})\)</span>, then note that <span class="math inline">\(2pr = 0.12\)</span>).</p></li>
 </ol>
 <p>In both of these examples, we made some assumptions, which might or might not be problematic.
-In the first example, we assumed that the 6 people in our shop were a random and independent sample from the local area (i.e., people with Covid-19 are not more or less likely to be in the shop, and the 6 people in the shop were not associated in a way that would affect their individual probabilities of having Covid-19).
+In the first example, we assumed that the 6 people in our shop were a random and independent sample from the local area (i.e., people with COVID-19 are not more or less likely to be in the shop, and the 6 people in the shop were not associated in a way that would affect their individual probabilities of having COVID-19).
 In the second example, we assumed that individuals mate randomly, and that there is no mutation, migration, or selection on genotypes <span class="citation">(<a href="#ref-Hardy1908" role="doc-biblioref">Hardy 1908</a>)</span>.
 It is important to recognise these assumptions when we are making them because violations of assumptions could affect the probabilities of events!</p>
 </div>
@@ -645,11 +645,11 @@ Would you still believe that the coin is fair after these 10 trials?
 How many, or how few, heads would it take to convince you that the coin was not fair?
 This question gets to the heart of a lot of hypothesis-testing in statistics, and we will see it more in <a href="Chapter_21.html#Chapter_21">Chapter 21</a>.</p>
 <p>Note that a binomial distribution does not need to involve a fair coin with equal probability of success and failure.
-We can consider again the first example in Section 15.2, in which 1 in 40 people in an area are testing positive for Covid-19, then ask what the probability is that 0-6 people in a small shop would test positive (Figure 14.6).</p>
+We can consider again the first example in Section 15.2, in which 1 in 40 people in an area are testing positive for COVID-19, then ask what the probability is that 0-6 people in a small shop would test positive (Figure 14.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-54"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-54-1.png" alt="A barplot is shown with 7 bars, which correspond to the probability that a given number of people have covid in a shop of 6 when the probability of infection is 0.025." width="672" />
 <p class="caption">
-Figure 15.6: Probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025.
+Figure 15.6: Probability distribution for the number of people who have COVID-19 in a shop of 6 when the probability of testing positive is 0.025.
 </p>
 </div>
 <p>Note that the shape of this binomial distribution is different from the coin flipping trials in Figure 15.5.

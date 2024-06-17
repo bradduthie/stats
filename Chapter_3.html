@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-16" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,14 +309,14 @@ div.csl-indent {
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-site"><i class="fa fa-check"></i><b>28.1</b> One-way ANOVA (site)</a></li>
 <li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-profile"><i class="fa fa-check"></i><b>28.2</b> One-way ANOVA (profile)</a></li>
 <li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#multiple-comparisons"><i class="fa fa-check"></i><b>28.3</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskal-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="28.5" data-path="Chapter_28.html"><a href="Chapter_28.html#two-way-anova"><i class="fa fa-check"></i><b>28.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Frequency and count data</a>
@@ -500,7 +500,7 @@ Baja is hot and sunny (Figure 3.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
 <img src="img/Ficus_petiolaris.jpg" alt="A large tree is shown in the desert with a person dressed in tan clothes in the foreground" width="100%" />
 <p class="caption">
-Figure 3.1: A fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.
+Figure 3.1: Fully grown Sonoran Desert Rock Fig in the desert of Baja, Mexico.
 </p>
 </div>
 <p>Fruit measurements were made with a ruler and recorded in a field notebook.
@@ -508,7 +508,7 @@ These measurements are shown in Figure 3.2.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
 <img src="img/handwritten_data.jpg" alt="A zoomed-in portion of a lab notebook is shown, which includes handwritten data in pencil observations of mature fig fruits, including date, species, site, tree, and fruit dimensions." width="100%" />
 <p class="caption">
-Figure 3.2: A portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.
+Figure 3.2: Portion of a lab notebook used to record measurements of fig fruits from different trees in 2010.
 </p>
 </div>
 <p>The second location was in a lab in Iowa, USA.
@@ -524,16 +524,16 @@ But there are a few points to keep in mind:</p>
 <ol style="list-style-type: decimal">
 <li>It is important to start in column A and row 1; do not leave any empty rows or columns because when we get to the statistical analysis in jamovi, jamovi will assume that these empty rows and columns signify missing data.</li>
 <li>There is no need to include any formatting (e.g., bold, underline, colour) because it will not be saved in the CSV or recognised by jamovi.</li>
-<li>Missing information, such as the empty boxes for the fruit dimensions in row 4 in the notebook (Figure 3.2) should be indicated with an ‘<code>NA</code>’ (capital letters, but without the quotes). This will let jamovi know that these data are missing.</li>
+<li>Missing information, such as the empty boxes for the fruit dimensions in row 4 in the notebook (Figure 3.2), should be indicated with an ‘<code>NA</code>’ (capital letters, but without the quotes). This will let jamovi know that these data are missing.</li>
 <li>The date is written in an American style of month-day-year, which might get confusing. It might be better to have separate columns for year, month, and day, and to write out the full year (2010).</li>
 </ol>
 <p>The column names in Figure 3.2 are (1) Date, (2) Species, (3) Site number, (4) Tree number, (5) Fruit length in mm, (6) Fruit width in mm, and (7) Fruit height in mm.
 All of the species are <em>Ficus petiolaris</em>, which is abbreviated to ‘F-pet’ in the field notebook.
-How you choose to write some of this information down is up to you (e.g., the date format, capitalisation of column names), but when finished, the spreadsheet should be organised like the one in Figure 3.3.</p>
+How you choose to write some of this information down is up to you (e.g., date format, capitalisation of column names), but when finished, the spreadsheet should be organised like the one in Figure 3.3.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="img/Ch1_Ex1a.png" alt="A screenshot of a spreadsheet with 7 columns and 6 rows of data on fig fruit dimensions." width="100%" />
 <p class="caption">
-Figure 3.3: A spreadsheet with data organised in a tidy format and nearly ready for analysis.
+Figure 3.3: Spreadsheet with data organised in a tidy format and nearly ready for analysis.
 </p>
 </div>
 <p>This leaves us with the data that had to be collected later in the lab.
@@ -573,11 +573,11 @@ Fill in 1 and 3 below with potential causes of error.</p>
 Fill in the seed counts for each of the six rows.
 The end result will be a tidy dataset that is ready to be saved as a CSV.</p>
 <p>What you do next depends on the spreadsheet program that you are using and how you are using it.
-If you are using LibreOffice Calc or MS Excel on a your computer, then you should be able to simply save your file as something like ‘Fig_fruits.csv’, and the program will recognise that you intend to save as a CSV file (in MS Excel, you might need to find the pulldown box for ‘Save as type:’ under the ‘File name:’ box and choose ‘CSV’).
+If you are using LibreOffice Calc or MS Excel on your computer, then you should be able to simply save your file as something like ‘Fig_fruits.csv’, and the program will recognise that you intend to save as a CSV file (in MS Excel, you might need to find the pull-down box for ‘Save as type:’ under the ‘File name:’ box and choose ‘CSV’).
 If you are using Google Sheets, you can navigate in the toolbar to ‘File <span class="math inline">\(\to\)</span> Download <span class="math inline">\(\to\)</span> Comma-separated values (.csv)’, which will start a download of your spreadsheet in CSV format.
 If you are using MS Excel in a browser online, then it is a bit more tedious.
 At the time of writing, the online version of MS Excel does not allow users to save or export to a CSV.
-It will therefore be necessary to save as an XLSX, then convert to CSV later in another spreadsheet program (either a local version of MS Excel, LibreOffice Calc, or Google Sheets).</p>
+It will therefore be necessary to save as an XLSX, then convert to CSV later in another spreadsheet program (local version of MS Excel, LibreOffice Calc, or Google Sheets).</p>
 <p>Save your file in a location where you know that you can find it again.
 It might be a good idea to create a new folder on your computer or your cloud storage online for files in this book.
 This will ensure that you always know where your data files are located and can access them easily.</p>
@@ -589,7 +589,7 @@ After reading <a href="Chapter_2.html#Chapter_2">Chapter 2</a> and completing Ex
 Here we will work with a dataset that includes counts of the number of eggs collected from fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers <span class="citation">(<a href="#ref-Weiblen2002" role="doc-biblioref">Weiblen 2002</a>)</span>.
 You can download this dataset online<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> or recreate it from Table 3.1.</p>
 <table>
-<caption><strong>TABLE 3.1</strong> An untidy dataset of egg loads from fig wasps of five different species, including two unnamed species of the genus <em>Heterandrium</em> (Het1 and Het2) and three unnamed species of the genus <em>Idarnes</em> (LO1, SO1, and SO2).</caption>
+<caption><strong>TABLE 3.1</strong> Untidy dataset of egg loads from fig wasps of five different species, including two unnamed species of the genus <em>Heterandrium</em> (Het1 and Het2) and three unnamed species of the genus <em>Idarnes</em> (LO1, SO1, and SO2).</caption>
 <thead>
 <tr class="header">
 <th align="center">Het1</th>
@@ -714,7 +714,7 @@ Table 3.2 shows the number of different species of wasps counted in five differe
 Rows list all of the species and columns list the fruits, with the counts in the middle.
 This is an efficient way to present the data so that they are all easy to see, but this will not work for running statistical analysis.</p>
 <table style="width:83%;">
-<caption><strong>TABLE 3.2</strong> An efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from five different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
+<caption><strong>TABLE 3.2</strong> Efficient but untidy way to present count data. Counts of different species of fig wasps (rows) are from five different fig fruits (columns). Data were originally collected from Baja, Mexico in 2010.</caption>
 <colgroup>
 <col width="13%" />
 <col width="13%" />
@@ -795,13 +795,13 @@ You can see these sheets by looking at the very bottom of the spreadsheet, which
 Figure 3.4: Spreadsheets can include multiple sheets. This image shows that the spreadsheet containing information for fig wasp morphology includes five separate sheets, one for each species.
 </p>
 </div>
-<p>You can click on all of the different tabs to see the measurements of head length, head width, thorax length, thorax width, abdomen length, and abdomen width for wasps of each of the 5 species.
-All of the measurements are collected in millimeters.
-Note that the individual sheets contain text formatting (titles highlighted, and in bold), and there is a picture of each wasp in its respective sheet.
+<p>You can click on all of the different tabs to see the measurements of head length, head width, thorax length, thorax width, abdomen length, and abdomen width for wasps of each of the five species.
+All of the measurements are collected in millimetres.
+Note that the individual sheets contain text formatting (titles highlighted and in bold), and there is a picture of each wasp in its respective sheet.
 The formatting and pictures are a nice touch for providing some context, but they cannot be used in statistical analysis.
 The first task is to create a tidy version of this dataset.
 Probably the best way to do this is to create a new spreadsheet entirely and copy-paste information from the old.
-It is good idea to think about how the tidy dataset will look before getting started.
+It is a good idea to think about how the tidy dataset will look before getting started.
 What columns should this new dataset include? Write your answer below.</p>
 <pre><code>
 
@@ -876,10 +876,10 @@ There will be a very small square in this bottom right (see Figure 3.5), and if 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
 <img src="img/Ch1_Ex3_copy_formula.png" alt="A screenshot of a spreadsheet with the H2 cell selected." width="100%" />
 <p class="caption">
-Figure 3.5: A dataset of wasp morphological measurements from five species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.
+Figure 3.5: Dataset of wasp morphological measurements from five species of fig wasps collected from Baja, Mexico in 2010. Head volume (column H) has been calculated for row 2, and to calculate it for the remaining rows, the small black square in the bottom right of the highlighted cell H2 can be clicked and dragged down to H27.
 </p>
 </div>
-<p>Another way to achieve the same result is to copy the contents of cell H2, highlight cells H3-H27, then paste.
+<p>Another way to achieve the same result is to copy the contents of cell H2, highlight cells H3–H27, then paste.
 However you do it, you should now have a new column of calculated head volume.</p>
 <p>Next, suppose that we want to calculate thorax and abdomen volumes for all wasps.
 Unlike wasp heads, wasp thoraxes and abdomens are clearly not spheres.
@@ -897,11 +897,11 @@ Keep in mind the order of operations indicated in the equation above.</p>
 
 </code></pre>
 <p>Now fill in the columns for thorax volume and abdomen volume.
-You should now have 3 new columns of data from calculations of the volumes of the head, thorax, and abdomen of each wasp.
-Lastly, add 1 final column of data for total volume, which is the sum of the 3 segments.</p>
+You should now have three new columns of data from calculations of the volumes of the head, thorax, and abdomen of each wasp.
+Lastly, add one final column of data for total volume, which is the sum of the three segments.</p>
 <p>There are a lot of potential sources of error and uncertainty in these final volumes.
 What are some reasons that we might want to be cautious about our calculated wasp volumes?
-Explain in 2-3 sentences.</p>
+Explain in 2–3 sentences.</p>
 <pre><code>
 
 
@@ -915,7 +915,7 @@ You should now be comfortable formatting tidy datasets for use in jamovi.</p>
 <div id="summary" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Summary<a href="Chapter_3.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Completing this practical should give you the skills that you need to prepare datasets for statistical analysis.
-There are many additional features of spreadsheets that were not introduced (mainly because we will do them in jamovi), but could be useful to learn.
+There are many additional features of spreadsheets that were not introduced (mainly because we will do them in jamovi) but could be useful to learn.
 For example, if we wanted to calculate the sum of all head lengths, we could use the function <code>=sum(B2:B27)</code> in any spreadsheet cell (where B2 is the head length of the first wasp, and B27 is the head length of the last wasp).
 Other functions such as <code>=count()</code>, <code>=min()</code>, <code>=max()</code>, or <code>=average()</code> can be similarly used for calculations.</p>
 

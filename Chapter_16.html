@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-16" />
+<meta name="date" content="2024-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -309,14 +309,14 @@ div.csl-indent {
 <li class="chapter" data-level="24.3" data-path="Chapter_24.html"><a href="Chapter_24.html#assumptions-of-anova"><i class="fa fa-check"></i><b>24.3</b> Assumptions of ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="25" data-path="Chapter_25.html"><a href="Chapter_25.html"><i class="fa fa-check"></i><b>25</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="26" data-path="Chapter_26.html"><a href="Chapter_26.html"><i class="fa fa-check"></i><b>26</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="27" data-path="Chapter_27.html"><a href="Chapter_27.html"><i class="fa fa-check"></i><b>27</b> Two-way ANOVA</a></li>
 <li class="chapter" data-level="28" data-path="Chapter_28.html"><a href="Chapter_28.html"><i class="fa fa-check"></i><b>28</b> <em>Practical</em>. ANOVA and associated tests</a>
 <ul>
 <li class="chapter" data-level="28.1" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-site"><i class="fa fa-check"></i><b>28.1</b> One-way ANOVA (site)</a></li>
 <li class="chapter" data-level="28.2" data-path="Chapter_28.html"><a href="Chapter_28.html#one-way-anova-profile"><i class="fa fa-check"></i><b>28.2</b> One-way ANOVA (profile)</a></li>
 <li class="chapter" data-level="28.3" data-path="Chapter_28.html"><a href="Chapter_28.html#multiple-comparisons"><i class="fa fa-check"></i><b>28.3</b> Multiple comparisons</a></li>
-<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskall-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskall-Wallis H test</a></li>
+<li class="chapter" data-level="28.4" data-path="Chapter_28.html"><a href="Chapter_28.html#kruskal-wallis-h-test"><i class="fa fa-check"></i><b>28.4</b> Kruskal-Wallis H test</a></li>
 <li class="chapter" data-level="28.5" data-path="Chapter_28.html"><a href="Chapter_28.html#two-way-anova"><i class="fa fa-check"></i><b>28.5</b> Two-way ANOVA</a></li>
 </ul></li>
 <li class="chapter" data-level="29" data-path="Chapter_29.html"><a href="Chapter_29.html"><i class="fa fa-check"></i><b>29</b> Frequency and count data</a>
@@ -486,12 +486,12 @@ It states that if we sample values from <strong>any</strong> distribution and ca
 This statement is busy and potentially confusing at first, partly because it refers to two separate distributions, the sampling distribution and the distribution of the sample mean.
 We can take this step by step, starting with the sampling distribution.</p>
 <p>The sampling distribution could be any of the 4 distributions introduced in <a href="Chapter_15.html#Chapter_15">Chapter 15</a> (binomial, Poisson, uniform, or normal).
-Suppose that we sample the binomial distribution from Figure 15.6, the one showing the number of people out of 6 who would test positive for Covid-19 if the probability of testing positive was 0.025.
+Suppose that we sample the binomial distribution from Figure 15.6, the one showing the number of people out of 6 who would test positive for COVID-19 if the probability of testing positive was 0.025.
 Assume that we sample a value from this distribution (i.e., a number from 0 to 6) 100 times (i.e., <span class="math inline">\(N = 100\)</span>).
 If it helps, we can imagine going to 100 different shops, all of which are occupied by 6 people.
 From these 100 samples, we can calculate the sample mean <span class="math inline">\(\bar{x}\)</span>.
-This would be the mean number of people in a shop who would test positive for Covid-19.
-If we were just collecting data to try to estimate the mean number of people with Covid-19 in shops of 6, this is where our calculations might stop.
+This would be the mean number of people in a shop who would test positive for COVID-19.
+If we were just collecting data to try to estimate the mean number of people with COVID-19 in shops of 6, this is where our calculations might stop.
 But here is where the second distribution becomes relevant.</p>
 <p>Suppose that we could somehow go back out to collect <em>another</em> 100 samples from 100 completely different shops.
 We could then get the mean of this new sample of <span class="math inline">\(N = 100\)</span> shops.
@@ -506,7 +506,7 @@ It turns out, it would be a normal distribution!</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-58"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-58-1.png" alt="A two panel figure, the first shows a barplot with 7 bars, which correspond to the probability that a given number of people have covid in a shop of 6 when the probability of infection is 0.025. The second panel shows a normal distribution with data comprised of means sampled from the first panel." width="672" />
 <p class="caption">
-Figure 16.1: A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.6 showing the probability distribution for the number of people who have Covid-19 in a shop of 6 when the probability of testing positive is 0.025. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 100.
+Figure 16.1: A simulated demonstration of the central limit theorem. (A) Recreation of Figure 15.6 showing the probability distribution for the number of people who have COVID-19 in a shop of 6 when the probability of testing positive is 0.025. (B) The distribution of 1000 means sampled from panel (A), where the sample size is 100.
 </p>
 </div>
 <p>To demonstrate the CLT in action, Figure 16.1 shows the two distributions side-by-side.
