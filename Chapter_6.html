@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,7 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and kurtosis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
@@ -487,7 +487,7 @@ We might, for example, want to know the number of seedlings in an area of forest
 To get this information, we need to make measurements.
 Some measurements can be collected by simple observation (e.g., counting seedlings), while others will require measuring devices such as a thermometer (for measuring temperature) or scale (for measuring mass).
 All of these measurements are subject to error.
-The <em>true</em> value of whatever it is that we are trying to measure (called the “measurand”) can differ from what we record when collecting data.
+The <em>true</em> value of whatever it is that we are trying to measure (called the ‘measurand’) can differ from what we record when collecting data.
 This is true even for simple observations (e.g., we might miscount seedlings), so it is important to recognise that the data we collect comes with some uncertainty.
 The <strong>accuracy</strong> of a measurement is defined by how close the measurement is to the <em>true</em> value of what we are trying to measure <span class="citation">(<a href="#ref-Rabinovich2013" role="doc-biblioref">Rabinovich 2013</a>)</span>.</p>
 </div>
@@ -501,7 +501,7 @@ If, however, the scale measures a different mass each time the object is weighed
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
 <img src="img/accuracy_vs_precision.png" alt="Four targets, A, B, C, and D, are shown side-by-side, wach with five points scatter on top of them. Points in A are close together and near the centre, points in B are far apart but around the center, points in C are close together but away from the centre, and points in D are far apart and away from the centre." width="100%" />
 <p class="caption">
-Figure 6.1: A conceptual figure illustrating the difference between accuracy and precision. Points in A are both accurate and precise, points in B are accurate, but not precise, points in C are precise but not accurate, and points in D are neither accurate nor precise.
+Figure 6.1: Conceptual figure illustrating the difference between accuracy and precision. Points in A are both accurate and precise, points in B are accurate but not precise, points in C are precise but not accurate, and points in D are neither accurate nor precise.
 </p>
 </div>
 <p>Note again that accuracy and precision are not necessarily the same <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
@@ -513,11 +513,11 @@ Measurement can be accurate but not precise (Figure 6.1B) or precise but not acc
 Having standardised units of measurement is highly important to ensure measurement accuracy <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
 Originally, these units were often defined in terms of physical artefacts.
 For example, the kilogram (kg) was once defined by a physical cylinder of metal housed in the Bureau International des Poids et Mesures (BIPM).
-In other words, the mass of a metal sitting at the BIPM <em>defined</em> what a kg was, with the mass of every other measurement being based on this physical object <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>; <a href="#ref-Freedman2011" role="doc-biblioref">Freedman, Pisani, and Purves 2011</a>)</span>.
-This can potentially present a problem if the mass of that one object changes over time, thereby causing a change in how a kg is defined.
+In other words, the mass of a metal sitting at the BIPM <em>defined</em> what a kilogram was, with the mass of every other measurement being based on this physical object <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>; <a href="#ref-Freedman2011" role="doc-biblioref">Freedman, Pisani, and Purves 2011</a>)</span>.
+This can potentially present a problem if the mass of that one object changes over time, thereby causing a change in how a kilogram is defined.
 Where possible, it is therefore preferable to define units in terms of fundamental constants of nature.
-In 2019, for example, the kg was redefined in terms of the Planck constant, a specific atomic transition frequency, and the speed of light <span class="citation">(<a href="#ref-Stock2019" role="doc-biblioref">Stock et al. 2019</a>)</span>.
-This ensures that measurements of mass remain accurate over time because what a kg represents in terms of mass cannot change.</p>
+In 2019, for example, the kilogram was redefined in terms of the Planck constant, a specific atomic transition frequency, and the speed of light <span class="citation">(<a href="#ref-Stock2019" role="doc-biblioref">Stock et al. 2019</a>)</span>.
+This ensures that measurements of mass remain accurate over time because what a kilogram represents in terms of mass cannot change.</p>
 <p>We can separate units into base units and derived units.
 Table 6.1 below lists some common base units for convenience <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
 You do not need to memorise these units, but it is good to be familiar with them.
@@ -526,8 +526,8 @@ We will use these units throughout the book.</p>
 <caption><strong>TABLE 6.1</strong> Base units of SI measurements. For details see <span class="citation">Quinn (<a href="#ref-Quinn1995" role="doc-biblioref">1995</a>)</span>.</caption>
 <thead>
 <tr class="header">
-<th><strong>Measured Quantity</strong></th>
-<th><strong>Name of SI unit</strong></th>
+<th>Measured Quantity</th>
+<th>Name of SI Unit</th>
 <th>Symbol</th>
 </tr>
 </thead>
@@ -582,10 +582,10 @@ Again, you do not need to memorise these units, but it is good to be aware of th
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Measured Quantity</strong></th>
-<th><strong>Name of unit</strong></th>
-<th><strong>Symbol</strong></th>
-<th><strong>Definition in SI units</strong></th>
+<th>Measured Quantity</th>
+<th>Name of Unit</th>
+<th>Symbol</th>
+<th>Definition in SI Units</th>
 </tr>
 </thead>
 <tbody>

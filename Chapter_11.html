@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,7 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and kurtosis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
@@ -477,9 +477,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_11" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">Chapter 11</span> Measures of central tendency<a href="Chapter_11.html#Chapter_11" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Summary statistics describe properties of data in a single number (e.g., the mean), or a set of numbers (e.g., quartiles).
+<p>Summary statistics describe properties of data in a single number (e.g., mean), or a set of numbers (e.g., quartiles).
 This chapter focuses on summary statistics that describe the centre of a distribution.
-It also introduces quantiles, which divide a distribution into different percentages of the data (e.g., the lowest 50% or highest 75%).
+It also introduces quantiles, which divide a distribution into different percentages of the data (e.g., lowest 50% or highest 75%).
 Throughout this section, verbal and mathematical explanations of summary statistics will be presented alongside histograms or boxplots that convey the same information.
 The point of doing this is to help connect the two ways of summarising the data.
 All of the summary statistics that follow describe calculations for a <em>sample</em> and are therefore estimates of the true values in a <em>population</em>.
@@ -513,12 +513,12 @@ If we had a sample size of 80 or 800, then there is no way that we could write d
 One way to get around this is to use ellipses and just show the first and last couple of numbers,</p>
 <p><span class="math display">\[\bar{x} = \frac{4.2 + 5.0 + ... + 4.0 + 3.5}{8}.\]</span></p>
 <p>This is a more compact, and perfectly acceptable, way to write the sample mean.
-But it is often necessary to have an even more compact way of indicating the sum over a set of values (i.e., the top of the fraction above).
+But it is often necessary to have an even more compact way of indicating the sum over a set of values (i.e., top of the fraction above).
 To do this, each value can be symbolised by an <span class="math inline">\(x\)</span>, with a unique subscript <span class="math inline">\(i\)</span>, so that <span class="math inline">\(x_{i}\)</span> corresponds to a specific value in the list above.
 The usefulness of this notation, <span class="math inline">\(x_{i}\)</span>, will become clear soon.
 It takes some getting used to, but Table 11.1 shows each symbol with its corresponding value to make it more intuitive.</p>
 <table style="width:100%;">
-<caption><strong>TABLE 11.1</strong> A sample dataset that includes eight values.</caption>
+<caption><strong>TABLE 11.1</strong> Sample dataset that includes eight values.</caption>
 <colgroup>
 <col width="9%" />
 <col width="11%" />
@@ -615,13 +615,13 @@ It gets more complicated for an even number of values, such as the sample datase
 <p>Again, there is no middle value here.
 But we can find a value that has the same number of lower and higher values.
 To do this, we just need to find the mean of the middle 2 numbers, in this case 4.0 and 4.2, which are in positions 4 and 5, respectively.
-The mean of 4.0 and 4.2 is, <span class="math inline">\((4.0 + 4.2)/2 = 4.1\)</span>, so 4.1 is the median value.</p>
+The mean of 4.0 and 4.2 is <span class="math inline">\((4.0 + 4.2)/2 = 4.1\)</span>, so 4.1 is the median value.</p>
 <p>The median is a type of quantile.
 A quantile divides a sorted dataset into different percentages that are lower or higher than it.
 Hence, the median could also be called the 50% quantile because 50% of values are lower than the median and 50% of values are higher than it.
 Two other quantiles besides the median are also noteworthy.
-The first quartile (also called the “lower quartile”) defines the value for which 25% of values are lower and 75% of values are higher.
-The third quartile (also called the “upper quartile”) defines the value for which 75% of values are lower and 25% of values are higher.
+The first quartile (also called the ‘lower quartile’) defines the value for which 25% of values are lower and 75% of values are higher.
+The third quartile (also called the ‘upper quartile’) defines the value for which 75% of values are lower and 25% of values are higher.
 Sometimes this is easy to calculate.
 For example, if there are only five values in a dataset, then the lower quartile is the number in the second position when the data are sorted because 1 value (25%) is below it and 3 values (75%) are above it.
 For example, for the values {1, 3, 4, 8, 9}, the value 3 is the first quartile and 8 is the third quartile.</p>

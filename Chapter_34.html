@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,7 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and kurtosis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
@@ -496,7 +496,7 @@ Before doing this, what is the independent variable, and what is the dependent v
 <p>N:________________</p>
 <p>Before running any statistical test, it is always a good idea to plot the data.
 Recall from <a href="Chapter_31.html#pearson-product-moment-correlation-test">Chapter 31.4</a> how to build a scatterplot in jamovi.
-Navigate to the ‘Exploration’ button from the jamovi toolbar, then choose the ‘Scatterplot’ option from the pulldown menu.
+Navigate to the ‘Exploration’ button from the jamovi toolbar, then choose the ‘Scatterplot’ option from the pull-down menu.
 Place the independent variable that you identified above on the x-axis, and place the dependent variable on the y-axis.
 To get the line of best fit, choose ‘Linear’ under the options below under <strong>Regression line</strong>.
 Describe the scatterplot that is produced in the jamovi panel to the right.</p>
@@ -520,7 +520,7 @@ In other words, does the variance change along the range of the independent vari
 </code></pre>
 <p>Assuming that these two assumptions are not violated, we can now check the last assumption that the residual values are normally distributed around the regression line.
 To do this, we need to build the linear regression.
-From the ‘Analyses’ tab of jamovi, select the ‘Regression’ button, then choose ‘Linear regression’ from the pulldown menu.
+From the ‘Analyses’ tab of jamovi, select the ‘Regression’ button, then choose ‘Linear regression’ from the pull-down menu.
 A new panel called ‘Linear regression’ will open.
 The dependent variable ‘PyC’ should go in the ‘Dependent Variable’ box to the right.
 The independent variable ‘depth’ should go in the ‘Covariates’ box (Figure 34.1).</p>
@@ -531,7 +531,7 @@ Figure 34.1: Jamovi interface for running a linear regression model to predict p
 </p>
 </div>
 <p>We can check the assumption that the residuals are normally distributed in multiple ways.
-To do this, find the pulldown menu called ‘Assumption Checks’ in the left panel of jamovi, and check boxes for ‘Normality test’, ‘Q-Q plot of residuals’, and ‘Residual plots’.
+To do this, find the pull-down menu called ‘Assumption Checks’ in the left panel of jamovi, and check boxes for ‘Normality test’, ‘Q-Q plot of residuals’, and ‘Residual plots’.
 Output will appear in the jamovi panel to the right.
 The first assumption check will be a table providing the results of a Shapiro-Wilk test of normality on the <em>residuals</em> (see <a href="Chapter_32.html#intercepts-slopes-and-residuals">Chapter 32.2</a>) of the linear regression model.
 In your own words, what is this test doing?
@@ -556,7 +556,7 @@ What this tells us is the relationship between the PyC values that are predicted
 Visually, this is the equivalent of taking the line of best fit from the first scatterplot that you made and moving it (and the points around it) so that it is horizontal at y = 0.
 It is good to try to take a few moments to understand this because it will help reinforce the concept of residual values, but in practice we can base our conclusion about residual normality on the Shapiro-Wilk test as done above.</p>
 <p>Having checked all of the assumptions of a linear regression model, we can finally test whether or not our model is statistically significant.
-Find the pulldown called ‘Model Fit’ underneath the linear regression panel, then make sure that the boxes for <span class="math inline">\(R^{2}\)</span> and ‘F test’ are checked.
+Find the pull-down called ‘Model Fit’ underneath the linear regression panel, then make sure that the boxes for <span class="math inline">\(R^{2}\)</span> and ‘F test’ are checked.
 A new table will open up in the right panel called ‘Model Fit Measures’.
 Write the output statistics from this table below:</p>
 <p><span class="math inline">\(R^{2}\)</span>: ________________</p>
@@ -630,7 +630,7 @@ How do you know?</p>
 
 </code></pre>
 <p>One final note for this exercise.
-In the Linear Regression panel of jamovi, scroll all the way down to the last pulldown menu called ‘Save’.
+In the Linear Regression panel of jamovi, scroll all the way down to the last pull-down menu called ‘Save’.
 Check the boxes for ‘Predicted values’ and ‘Residuals’.
 When you return to the ‘Data’ tab in jamovi, you will see two new columns of data that jamovi has inserted.
 One column will be the predicted values for the model, i.e., the value that the model predicts for PyC given the fire frequency in the observation (i.e., row).

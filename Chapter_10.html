@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,7 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and kurtosis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
@@ -479,7 +479,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 10</span> Graphs<a href="Chapter_10.html#Chapter_10" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Graphs are useful tools for visualising and communicating data.
 Graphs come in many different types, and different types of graphs are effective for different types of data.
-This chapter focuses on 4 types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.</p>
+This chapter focuses on four types of graphs: (1) histograms, (2) pie charts, (3) barplots, and (4) box-whisker plots.</p>
 <p>After collecting or obtaining a new dataset, it is almost always a good idea to plot the data in some way.
 Visualisation can often highlight important and obvious properties of a dataset more efficiently than inspecting raw data, calculating summary statistics, or running statistical tests.
 When making graphs to communicate data visually, it is important to ensure that the person reading the graph has a clear understanding of what is being presented.
@@ -491,7 +491,7 @@ As a guide, the histogram, pie chart, barplot, and box-whisker plot below illust
 <h2><span class="header-section-number">10.1</span> Histograms<a href="Chapter_10.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Histograms illustrate the distribution of <a href="Chapter_5.html#Chapter_5">continuous data</a>.
 They are especially useful visualisation tools because it is often important to assess data at a glance and make a decision about how to proceed with a statistical analysis.
-The histogram shown in Figure 10.1 provides an example using the fig fruits data set from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a> (an interactive application<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> shows a step-by-step demonstration of how a histogram is built).</p>
+The histogram shown in Figure 10.1 provides an example using the fig fruits dataset from the practical in <a href="Chapter_8.html#Chapter_8">Chapter 8</a> (an interactive application<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a> shows a step-by-step demonstration of how a histogram is built).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-32"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-32-1.png" alt="An example histogram is shown with a somewhat normal shape" width="100%" />
 <p class="caption">
@@ -502,7 +502,7 @@ Figure 10.1: Example histogram fig fruit width (cm) using data from 78 fig fruit
 For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
 In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
 The bars of the histogram touch each other, which reinforces the idea that the data are continuous <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
-<p>It is especially important to be able to read and understand information from a histogram because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
+<p>It is especially important to be able to read and understand information from a histogram, because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
 For example, the <em>shape</em> of the distribution of fig fruit widths might be important for performing a particular test.
 For the purposes of this chapter, the <em>shape</em> of the distribution just means what the data look like when plotted like this in a histogram.
 In this case, there is a peak toward the centre of the distribution, with fewer low and high values (this kind of distribution is quite common).
@@ -511,12 +511,12 @@ Different distribution shapes will be discussed more in <a href="Chapter_15.html
 <div id="barplots-and-pie-charts" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Barplots and pie charts<a href="Chapter_10.html#barplots-and-pie-charts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>While histograms are an effective way of visualising continuous data, barplots (also known as ‘bar charts’ or ‘bar graphs’) and pie charts can be used to visualise categorical data.
-For example, in the fig fruits data set from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from four different trees (A, B, C, and D).
+For example, in the fig fruits dataset from <a href="Chapter_8.html#Chapter_8">Chapter 8</a>, 78 fig fruits were collected from four different trees (A, B, C, and D).
 A barplot could be used to show how many samples were collected from each tree (see Figure 10.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-33"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-33-1.png" alt="An example barplot shows the total number of fruits collected from four trees labelled A, B, C, and D." width="100%" />
 <p class="caption">
-Figure 10.2: Example bar plot showing how many fruits were collected from each of four trees (78 collected in total) in 2010 from Baja, Mexico.
+Figure 10.2: Example barplot showing how many fruits were collected from each of four trees (78 collected in total) in 2010 from Baja, Mexico.
 </p>
 </div>
 <p>In Figure 10.2, each tree is represented by a separate bar on the x-axis.
@@ -547,7 +547,7 @@ This allows the distribution of data to be represented in a more compact way, bu
 Figure 10.4 compares a box-whisker plot of fig fruit widths (10.4A) with a histogram of fig fruit widths (10.4B).
 In other words, both of the panels (A and B) in Figure 10.4 show the same information in two different ways (note that these are the same data as presented in Figure 10.1).</p>
 <p>To show how the panels of Figure 10.4 correspond to one another more clearly, points indicate where the summary statistics shown in the boxplot (Figure 10.4A) are located in the histogram (Figure 10.4B).
-These summary statistics include the median (circles), quartiles (squares), and the limits of the distribution (i.e., the minimum and maximum values; triangles).
+These summary statistics include the median (circles), quartiles (squares), and the limits of the distribution (i.e., minimum and maximum values; triangles).
 Note that in boxplots, if outliers exist, they are presented as separate points.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-35"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="Example of a simple boxplot shown to the left of a histogram, each showing the same information, with points showing how properties of the two panels match." width="100%" />

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-17" />
+<meta name="date" content="2024-06-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -217,7 +217,7 @@ div.csl-indent {
 <li class="chapter" data-level="12.5" data-path="Chapter_12.html"><a href="Chapter_12.html#the-coefficient-of-variation"><i class="fa fa-check"></i><b>12.5</b> The coefficient of variation</a></li>
 <li class="chapter" data-level="12.6" data-path="Chapter_12.html"><a href="Chapter_12.html#the-standard-error"><i class="fa fa-check"></i><b>12.6</b> The standard error</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and Kurtosis</a>
+<li class="chapter" data-level="13" data-path="Chapter_13.html"><a href="Chapter_13.html"><i class="fa fa-check"></i><b>13</b> Skew and kurtosis</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="Chapter_13.html"><a href="Chapter_13.html#skew"><i class="fa fa-check"></i><b>13.1</b> Skew</a></li>
 <li class="chapter" data-level="13.2" data-path="Chapter_13.html"><a href="Chapter_13.html#kurtosis"><i class="fa fa-check"></i><b>13.2</b> Kurtosis</a></li>
@@ -508,7 +508,7 @@ What is the p-value of the test, and what conclusion do you make about Nitrogen 
 <p>Now we will use an ANOVA to test if the mean Nitrogen concentration differs between sites.
 Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA compares the variance among groups to the variance within groups, calculating an F-statistic and finding where F is in the null F-distribution.
 To run an ANOVA, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
-From the ANOVA pulldown, select ‘One-Way ANOVA’.
+From the ANOVA pull-down, select ‘One-Way ANOVA’.
 After selecting the one-way ANOVA, a familiar interface will open up.
 Place ‘Nitrogen’ in the Dependent Variables box and ‘site’ in the Grouping Variable box.
 Although we have already checked the assumptions of normality and homogeneity of variances when we ran the t-test, check these boxes under <strong>Assumption Checks</strong> too (Figure 28.1).</p>
@@ -553,7 +553,7 @@ Why might this be?</p>
 In this dataset, there are lower, middle, and upper profiles, which refer to the location along a slope from which soil samples were obtained.
 Using the same approach as the previous Exercise 28.1, we will run a one-way ANOVA with profile as the independent variable instead of site.
 Again, navigate to the ‘Analyses’ tab in jamovi, then select the ‘ANOVA’ button in the toolbar.
-From the ANOVA pulldown, select ‘One-Way ANOVA’.
+From the ANOVA pull-down, select ‘One-Way ANOVA’.
 First check the assumptions of normality and homogeneity of variances.
 What can you conclude?</p>
 <p>Normality conclusion: ___________________________</p>
@@ -570,7 +570,7 @@ What are the output statistics in the One-Way ANOVA table?</p>
 <p>Conclusion: _____________________</p>
 <p>In the previous Exercise 28.1, we used an <a href="https://bradduthie.github.io/stats/app/f_distribution/">interactive app</a> to visualise the relationship between the F-statistic and the p-value.
 We can do the same thing with the distrACTION module in jamovi.
-To do this, go to the distrACTION option in the jamovi toolbar and select ‘F-Distribution’ from the pulldown menu.
+To do this, go to the distrACTION option in the jamovi toolbar and select ‘F-Distribution’ from the pull-down menu.
 Place the df1 and df2 from the One-Way ANOVA table into the df1 and df2 boxes under <strong>Parameters</strong> (ignore <span class="math inline">\(\lambda\)</span>).
 Under <strong>Function</strong>, select ‘Compute probability’, then place the F value from the One-Way ANOVA table in the box for x1.
 We want the upper tail of the F probability distribution, so choose <span class="math inline">\(P(X \geq x1)\)</span> from the radio buttons below.
@@ -583,7 +583,7 @@ From the Results table, what is the critical F value (‘Quantile’), above whi
 <p>Critical F value: ________________</p>
 <p>Note that the objective of working this out in the distrACTION module (and with the interactive app) is to help explain what these different values in the One-Way ANOVA table actually mean.
 To actually test the null hypothesis, the One-Way ANOVA output table is all that we really need.</p>
-<p>Finally, note that in the ANOVA pulldown from the jamovi toolbar, the option ‘ANOVA’ is just below the ‘One-way ANOVA’ that we used in this exercise and Exercise 28.1.
+<p>Finally, note that in the ANOVA pull-down from the jamovi toolbar, the option ‘ANOVA’ is just below the ‘One-way ANOVA’ that we used in this exercise and Exercise 28.1.
 This is just a more general tool for running an ANOVA, which includes the two-way ANOVA that we will use in Exercise 28.5 below.
 For now, give this a try by selecting ‘ANOVA’ from the pull down menu.
 In the ANOVA interface, place ‘Nitrogen’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box (Figure 28.2).</p>
@@ -643,7 +643,7 @@ Fill in the table below (Table 28.1) with the information for degrees of freedom
 <p>In this exercise, we will pick up where we left of in the ANOVA of Exercise 28.2.
 We have established that not all soil profiles have the same mean.
 Next, we will run a post hoc multiple comparisons test to evaluate which, if any, soil profiles have different means.
-In the ANOVA input panel, scroll down to the pulldown option called ‘Post Hoc Tests’.
+In the ANOVA input panel, scroll down to the pull-down option called ‘Post Hoc Tests’.
 Move ‘Profile’ to the box to the right, then select the ‘Tukey’ checkbox under <strong>Correction</strong>.
 Doing this will run the Tukey’s honestly significant difference (HSD) test introduced in <a href="Chapter_25.html#Chapter_25">Chapter 25</a>.
 The output will appear in the panel on the right in a table called ‘Post Hoc Tests’.
@@ -698,7 +698,7 @@ Do the data appear to be normally distributed?</p>
 This can be done in the Descriptives panel of jamovi, or we can do it in the One-Way ANOVA panel.
 To do it in the one-way ANOVA panel, first select ‘ANOVA’ from the pull down menu as we did at the end of Exercise 28.2.
 In the ANOVA interface, place ‘Potassium’ into the ‘Dependent Variable’ box and ‘Profile’ in the ‘Fixed Factors’ box.
-Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all three options.
+Next, scroll down to the ‘Assumption Checks’ pull-down menu and select all three options.
 From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumptions of ANOVA might be violated?</p>
 <pre><code>
 
@@ -708,7 +708,7 @@ From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumpti
 As introduced in <a href="Chapter_26.html#Chapter_26">Chapter 26</a>, the Kruskal-Wallis H test is a non-parametric alternative to a one-way ANOVA.
 Like other non-parametric tests introduced in this book, the Kruskal-Wallis H test uses the ranks of a dataset instead of the actual values.
 To run a Kruskal-Wallis H test, select the Analyses tab, then the ‘ANOVA’ button from the jamovi toolbar.
-In the pulldown ANOVA menu, choose ‘One-Way ANOVA: Kruskal-Wallis’.</p>
+In the pull-down ANOVA menu, choose ‘One-Way ANOVA: Kruskal-Wallis’.</p>
 <p>The Kruskal-Wallis input is basically the same as the one-way ANOVA input.
 We just need to put ‘Potassium’ in the dependent variable list and ‘Profile’ in the Grouping Variable box.
 The output table includes the test statistic (jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which we will introduce in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>, degrees of freedom, and p-value).
@@ -733,7 +733,7 @@ Write these null hypotheses down below (the order does not matter).</p>
 <p>Third <span class="math inline">\(H_{0}\)</span>: ___________________________________</p>
 <p>To test these null hypotheses again select ‘ANOVA’ from the pull down menu as we did at the end of Exercise 28.2.
 In the ANOVA interface, place ‘Nitrogen’ into the ‘Dependent Variable’ box and both ‘Site’ and ‘Profile’ in the ‘Fixed Factors’ box.
-Next, scroll down to the ‘Assumption Checks’ pulldown menu and select all three options.
+Next, scroll down to the ‘Assumption Checks’ pull-down menu and select all three options.
 From the assumption checks output tables, is there any reason to be concerned about using the two-way ANOVA?</p>
 <pre><code>
 </code></pre>
@@ -809,12 +809,12 @@ Fill in Table 28.2 with the relevant information from the two-way ANOVA output.<
 
 </code></pre>
 <p>Lastly, we can look at the interaction effect between Site and Profile visually.
-To do this, scroll down to the ‘Estimated Marginal Means’ pulldown option.
+To do this, scroll down to the ‘Estimated Marginal Means’ pull-down option.
 Move ‘Site’ and ‘Profile’ from the box on the left to the ‘Marginal Means’ box on the right (Figure 28.3).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-116"></span>
-<img src="img/jamovi_marginal_means.png" alt="Jamovi interface is shown with an ANOVA test being run and a pulldown menu for Estimated Marginal Means." width="100%" />
+<img src="img/jamovi_marginal_means.png" alt="Jamovi interface is shown with an ANOVA test being run and a pull-down menu for Estimated Marginal Means." width="100%" />
 <p class="caption">
-Figure 28.3: Jamovi two-way ANOVA test with the pulldown menu for Estimated Marginal Means, which will produce a plot showing the interaction effect of the two-way ANOVA.
+Figure 28.3: Jamovi two-way ANOVA test with the pull-down menu for Estimated Marginal Means, which will produce a plot showing the interaction effect of the two-way ANOVA.
 </p>
 </div>
 <p>In the panel on the right hand side, a plot will appear under the heading ‘Estimated Marginal Means’.
