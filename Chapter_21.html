@@ -488,7 +488,7 @@ The most instructive way to explain the general idea is with the example of coin
 <h2><span class="header-section-number">21.1</span> How ridiculous is our hypothesis?<a href="Chapter_21.html#how-ridiculous-is-our-hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Imagine that a coin is flipped 100 times.
 We are told that the coin is fair, meaning that there is an equal probability of it landing on heads or tails (i.e., the probability is 0.5 for both heads and tails in any given flip).
-From <a href="#Chapter_15.html#binomial-distribution">Chapter 15.4.1</a>, recall that the number of times out of 100 that the coin flip comes up heads will be described by a binomial distribution.
+From <a href="#Chapter_15.html#binomial-distribution">Section 15.4.1</a>, recall that the number of times out of 100 that the coin flip comes up heads will be described by a binomial distribution.
 The most probable outcome will be 50 heads and 50 tails, but frequencies that deviate from this perfect 50:50 ratio (e.g., 48 heads and 52 tails) are also expected to be fairly common (Figure 21.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-80-1.png" alt="A barplot is shown with 101 bars, which correspond to the number of times a coin flip lands on heads; the distribution takes a humped shape." width="672" />
@@ -507,7 +507,7 @@ This seems a bit ridiculous!
 Do we <em>really</em> believe that the coin is fair if the probability of getting a result this extreme is so low?</p>
 <p>Getting 30 head flips is maybe a bit extreme.
 What if we flip the coin 100 times and get 45 heads?
-In this case, if the coin is fair, then we would predict this number heads or fewer with a probability of about <span class="math inline">\(P = 0.0967\)</span> (i.e., about 9.67% of the time, we would expect to get 45 or fewer heads).
+In this case, if the coin is fair, then we would predict this number of heads or fewer with a probability of about <span class="math inline">\(P = 0.0967\)</span> (i.e., about 9.67% of the time, we would expect to get 45 or fewer heads).
 And we would predict a deviation as extreme as 5 from the 50:50 ratio of heads to tails with a probability of about <span class="math inline">\(P = 0.193\)</span> (i.e., about 19.3% of the time, we would get 45 heads or fewer, or 55 heads or more).
 This does not sound nearly so unrealistic.
 If a fair coin will give us this much of a deviation from the expected 50 heads and 50 tails about 20% of the time, then perhaps our hypothesis is not so ridiculous, and we can conclude the coin is indeed fair.</p>
@@ -541,8 +541,8 @@ Table 21.1 below presents some null and alternative hypotheses that might be rel
 </colgroup>
 <thead>
 <tr class="header">
-<th>Null hypothesis <span class="math inline">\(H_{0}\)</span></th>
-<th>Alternative hypothesis <span class="math inline">\(H_{A}\)</span></th>
+<th>Null Hypothesis <span class="math inline">\(H_{0}\)</span></th>
+<th>Alternative Hypothesis <span class="math inline">\(H_{A}\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -563,7 +563,7 @@ Table 21.1 below presents some null and alternative hypotheses that might be rel
 <p>Notice that alternative hypotheses can indicate direction (e.g., amphibian body size will increase with latitude, or nitrogen content will be lower in non-agricultural fields), or they can be non-directional (e.g., mortality will be different based on life-history stage).
 When our alternative hypothesis indicates direction, we say that the hypothesis is <strong>one-sided</strong>.
 This is because we are looking at one side of the null distribution.
-In the case of our coin example, a one-sided <span class="math inline">\(H_{A}\)</span> might be that the probability of flipping heads is less than 0.5, meaning that we reject <span class="math inline">\(H_{0}\)</span> only given numbers on the left side of the distribution in Figure 21.1 (where the number of flips heads are fewer than 50).
+In the case of our coin example, a one-sided <span class="math inline">\(H_{A}\)</span> might be that the probability of flipping heads is less than 0.5, meaning that we reject <span class="math inline">\(H_{0}\)</span> only given numbers on the left side of the distribution in Figure 21.1 (where the number of times a coin flip is heads is fewer than 50).
 A different one-sided <span class="math inline">\(H_{A}\)</span> would be that the probability of flipping heads is greater than 0.5, in which case we would reject <span class="math inline">\(H_{0}\)</span> only given numbers on the right side of the distribution.
 In contrast, when our alternative hypothesis does not indicate direction, we say that the hypothesis is <strong>two-sided</strong>.
 This is because we are looking at both sides of the null distribution.
@@ -572,7 +572,7 @@ In this case, we reject <span class="math inline">\(H_{0}\)</span> at both extre
 </div>
 <div id="p-values-false-positives-and-power" class="section level2 hasAnchor" number="21.3">
 <h2><span class="header-section-number">21.3</span> P-values, false positives, and power<a href="Chapter_21.html#p-values-false-positives-and-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In our hypothetical coin flipping example, we used <span class="math inline">\(P\)</span> to indicate the probability of getting a particular number of heads out of 100 total flips if our coin was fair.
+<p>In our hypothetical coin-flipping example, we used <span class="math inline">\(P\)</span> to indicate the probability of getting a particular number of heads out of 100 total flips if our coin was fair.
 This <span class="math inline">\(P\)</span> (sometimes denoted with a lower-case <span class="math inline">\(p\)</span>) is what we call a ‘p-value’.</p>
 <blockquote>
 <p><strong>A p-value is the probability of getting a result as or more extreme than the one observed assuming <span class="math inline">\(H_{0}\)</span> is true.<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a></strong></p>
@@ -584,16 +584,16 @@ A p-value specifically <em>assumes that the null hypothesis is true</em>, then a
 In the case of our coin flipping example, we cannot really know the probability that the coin is fair or unfair (depending on your philosophy of statistics, this might not even make conceptual sense).
 But we can say that <strong>if</strong> the coin <strong>is</strong> fair, then an observation of <span class="math inline">\(\leq 45\)</span> would occur with a probability of <span class="math inline">\(P = 0.0967\)</span>.</p>
 <p>Before actually calculating a p-value, we typically set a threshold level (<span class="math inline">\(\alpha\)</span>) below which we will conclude that our p-value is <strong>statistically significant</strong><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.
-As mentioned in <a href="Chapter_21.html#how-ridiculous-is-our-hypothesis">section 21.1</a>, we traditionally set <span class="math inline">\(\alpha= 0.05\)</span> in the biological and environmental sciences (although rarely <span class="math inline">\(\alpha = 0.01\)</span> is used).
+As mentioned in <a href="Chapter_21.html#how-ridiculous-is-our-hypothesis">Section 21.1</a>, we traditionally set <span class="math inline">\(\alpha= 0.05\)</span> in the biological and environmental sciences (although rarely <span class="math inline">\(\alpha = 0.01\)</span> is used).
 This means that if <span class="math inline">\(P \leq 0.05\)</span>, then we reject <span class="math inline">\(H_{0}\)</span> and conclude that our observation is statistically significant.
 It also means that even when <span class="math inline">\(H_{0}\)</span> really is true (e.g., the coin is really fair), we will mistakenly reject <span class="math inline">\(H_{0}\)</span> with a probability of 0.05 (i.e., 5% of the time).
-This is called a <strong>Type I error</strong> (i.e., a false positive), and it typically means that we will infer a pattern of some kind (e.g., a difference between groups, or a relationship between variables) where none really exists.
+This is called a <strong>Type I error</strong> (i.e., false positive), and it typically means that we will infer a pattern of some kind (e.g., difference between groups, or relationship between variables) where none really exists.
 This is obviously an error that we want to avoid, which is why we set <span class="math inline">\(\alpha\)</span> to a low value.</p>
 <p>In contrast, we can also fail to reject <span class="math inline">\(H_{0}\)</span> when <span class="math inline">\(H_{A}\)</span> is actually true.
 That is, we might mistakenly conclude that there is no evidence to reject the null hypothesis when the null hypothesis really is false.
 This is called a <strong>Type II error</strong>.
 The probability that we commit a Type II error, i.e., that we fail to reject the null hypothesis when it is false, is given the symbol <span class="math inline">\(\beta\)</span>.
-Since <span class="math inline">\(\beta\)</span> is the probability that we fail to reject <span class="math inline">\(H_{0}\)</span> when it is false, <span class="math inline">\(1 - \beta\)</span> is the probability that that we <em>do</em> reject <span class="math inline">\(H_{0}\)</span> when it is false.
+Since <span class="math inline">\(\beta\)</span> is the probability that we fail to reject <span class="math inline">\(H_{0}\)</span> when it is false, <span class="math inline">\(1 - \beta\)</span> is the probability that we <em>do</em> reject <span class="math inline">\(H_{0}\)</span> when it is false.
 This <span class="math inline">\(1 - \beta\)</span> is the <strong>statistical power</strong> of a test.
 Note that <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are not necessarily related to each other.
 Our <span class="math inline">\(\alpha\)</span> is whatever we set it to be (e.g., <span class="math inline">\(\alpha = 0.05\)</span>).
@@ -605,7 +605,7 @@ Table 21.2 illustrates the relationship between whether or not <span class="math
 <thead>
 <tr class="header">
 <th></th>
-<th>Do not reject <span class="math inline">\(H_{0}\)</span></th>
+<th>Do Not Reject <span class="math inline">\(H_{0}\)</span></th>
 <th>Reject <span class="math inline">\(H_{0}\)</span></th>
 </tr>
 </thead>
@@ -630,7 +630,7 @@ But even if we fail to reject <span class="math inline">\(H_{0}\)</span>, this d
 What if we instead tested the null hypothesis that our coin was <em>very slightly</em> biased, such that <span class="math inline">\(H_{0}:\:P(heads) = 0.4999\)</span>?
 If we failed to reject the null hypothesis that <span class="math inline">\(P(heads) = 0.5\)</span>, then we would probably also fail to reject a <span class="math inline">\(H_{0}\)</span> that <span class="math inline">\(P(heads) = 0.4999\)</span>.
 There is no way to meaningfully distinguish between these two potential null hypotheses by just testing one of them.
-We therefore cannot conclude that a <span class="math inline">\(H_{0}\)</span> is correct; we can only find evidence to reject it.
+We therefore cannot conclude that <span class="math inline">\(H_{0}\)</span> is correct; we can only find evidence to reject it.
 In contrast, we can reasonably accept an alternative hypothesis <span class="math inline">\(H_{A}\)</span> when we reject <span class="math inline">\(H_{0}\)</span>.</p>
 </div>
 </div>
@@ -669,7 +669,7 @@ Wasserstein, Ronald L., and Nicole A. Lazar. 2016. <span>“<span class="nocase"
 <ol start="40">
 <li id="fn40"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="Chapter_21.html#fnref40" class="footnote-back">↩︎</a></p></li>
 <li id="fn41"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref41" class="footnote-back">↩︎</a></p></li>
-<li id="fn42"><p>In fact, the p-value is so easy to mis-interpret and so widely mis-used, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>In fact, the p-value is so easy to misinterpret and so widely misused, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein and Lazar 2016</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes, De Freitas, and De Sales Dambros 2014</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Deborah G. Mayo 2019</a>)</span>.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
 <li id="fn43"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-McShane2019" role="doc-biblioref">McShane et al. 2019</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this book (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref43" class="footnote-back">↩︎</a></p></li>
 <li id="fn44"><p>Note that we might, for non-statistical reasons, conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref44" class="footnote-back">↩︎</a></p></li>
 </ol>

@@ -481,19 +481,19 @@ div.csl-indent {
 There will be five exercises in total, which will focus on using t-tests and their non-parametric equivalents.
 The data for this chapter focus on an example of biology and environmental sciences education.
 Similar to the example in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, it uses datasets of student test scores (note that these data are entirely fictional; I have not used scores from real students).
-We will use test data from 2022<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> and 2023<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
+We will use 2022 test data<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> and 2023 test data<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.
 Variables in these datasets include scores from three different tests.</p>
 <div id="one-sample-t-test-1" class="section level2 hasAnchor" number="23.1">
 <h2><span class="header-section-number">23.1</span> One sample t-test<a href="Chapter_23.html#one-sample-t-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>First we will consider test data from 2022.
+<p>First, we will consider test data from 2022.
 Open this dataset in jamovi.
 Before doing any analysis, compute a new column of data called ‘Overall’ that is each student’s mean test score.
-To do this, double click on the fifth column of data, then when a new panel opens up, choose ‘NEW COMPUTED VARIABLE’ from the list of available options.
-Your input should like Figure 23.1.</p>
+To do this, double-click on the fifth column of data, then when a new panel opens up, choose ‘NEW COMPUTED VARIABLE’ from the list of available options.
+Your input should look like Figure 23.1.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-89"></span>
 <img src="img/jamovi_students_overall.png" alt="Jamovi interface is shown with a new computed variable and the formula for calculating the mean of test scores in the function box." width="100%" />
 <p class="caption">
-Figure 23.1: The jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
+Figure 23.1: Jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
 </p>
 </div>
 <p>After calculating the overall grade for each student, find the sample size (N), overall sample mean (<span class="math inline">\(\bar{x}\)</span>), and sample standard deviation (<span class="math inline">\(s\)</span>).
@@ -507,11 +507,11 @@ You decide to test whether or not your students’ scores really are lower than 
 What kind(s) of statistical test would be most appropriate to use in this case, and what is the null hypothesis (<span class="math inline">\(H_{0}\)</span>) of the test?</p>
 <p>Test to use: ___________________________</p>
 <p><span class="math inline">\(H_{0}\)</span>: _______________________</p>
-<p>What is the alternative hypothesis (<span class="math inline">\(H_{A}\)</span>), and should you use a one or two-tailed test?</p>
+<p>What is the alternative hypothesis (<span class="math inline">\(H_{A}\)</span>), and should you use a one- or two-tailed test?</p>
 <p><span class="math inline">\(H_{A}\)</span>: _______________________</p>
-<p>One or two tailed? __________________________</p>
+<p>One- or two-tailed? __________________________</p>
 <p>To test if the mean of overall student scores in your class is significantly lower than <span class="math inline">\(\mu_{0} = 60.1\)</span> (technically, that your student’s scores were sampled from a population with a mean lower than 60.1), we might use a one-tailed, one sample t-test.
-Recall from <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a> the assumptions underlying a t-test:</p>
+Recall from <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a> the assumptions underlying a t-test:</p>
 <ul>
 <li>Data are continuous (i.e., not count or categorical data)</li>
 <li>Sample observations are a random sample from the population</li>
@@ -524,23 +524,23 @@ A sufficient condition to fulfil this assumption is that the sample data are nor
 We can test whether or not the overall mean student scores are normally distributed.
 In the jamovi toolbar, find the button that says ‘T-Tests’ (second from the left), then choose ‘One Sample T-test’ from the pull-down menu.
 A new window will open up.
-In a one sample t-test, there is only 1 dependent variable, which in this case is ‘Overall’.
+In a one sample t-test, there is only one dependent variable, which in this case is ‘Overall’.
 Move the variable ‘Overall’ to the Dependent Variables box with the right arrow.
 Below the boxes, find the checkbox options under ‘<strong>Assumption Checks</strong>’.
 Check both ‘Normality test’ (this is a Shapiro-Wilk test of normality) and ‘Q-Q Plot’.</p>
-<p>After checking the box for ‘Normality test’ and ‘Q-Q Plot’, new output will appear in the panel on the right hand side.
+<p>After checking the box for ‘Normality test’ and ‘Q-Q Plot’, new output will appear in the panel on the right-hand side.
 The first output is a table showing the results of a Shapiro-Wilk test.
 The Shapiro-Wilk test tests the null hypothesis that the dependent variable is normally distributed (note, this is <em>not</em> our t-test yet; we use the Shapiro-Wilk test to see if the assumptions of the t-test are violated or not).
 If we reject the null hypothesis, then we will conclude that the data are <strong>not</strong> normally distributed.
-If we do not reject the null hypothesis, then we will will assume that the data <strong>are</strong> normally distributed.
+If we do not reject the null hypothesis, then we will assume that the data <strong>are</strong> normally distributed.
 From the Normality Test table, what is the p-value of the Shapiro-Wilk test?</p>
-<p>P = _____________________</p>
+<p><span class="math inline">\(P\)</span> = _____________________</p>
 <p>Based on this p-value, should we reject the null hypothesis? ______________</p>
 <p>Now have a look at the Q-Q plot.
 This plot can be used to assess whether or not the data are normally distributed.
 If the data are normally distributed, then the points in the Q-Q plot should fall roughly along the diagonal black line.
 These plots take some practice to read and interpret, but for now, just have a look at the Q-Q plot and think about how it relates to the results of the Shapiro-Wilk test of normality.
-It might be useful to plot a histogram of the overall scores too in order to judge whether or not they are normally distributed (most researchers will use both a visual inspection of the data and a normality test to evaluate whether or not the assumption of normality is satisfied)</p>
+It might be useful to plot a histogram of the overall scores too in order to judge whether or not they are normally distributed (most researchers will use both a visual inspection of the data and a normality test to evaluate whether or not the assumption of normality is satisfied).</p>
 <p>Assuming that we have not rejected our null hypothesis, we can proceed with our one sample t-test.
 To do this, make sure the variable ‘Overall’ is still in the Dependent Variables box, then make sure the check box ‘Student’s’ is checked below <strong>Tests</strong>.
 Underneath <strong>Hypothesis</strong>, change the test value to 60.1 (because <span class="math inline">\(\mu_{0} = 60.1\)</span>) and put the radio button to ‘&lt; Test value’ to test the null hypothesis that the mean overall score of students is the same as <span class="math inline">\(\mu_{0}\)</span> against the alternative hypothesis that it is less than <span class="math inline">\(\mu_{0}\)</span>.
@@ -618,7 +618,7 @@ Consequently, what should our alternative hypothesis (<span class="math inline">
 <p>Use the same procedure that you did in Exercise 1 to test this new hypothesis concerning Test 3 scores.
 First, check the assumption that the Test 3 scores are normally distributed.
 What is the p-value of the Shapiro-Wilk test this time?</p>
-<p>P = ____________________</p>
+<p><span class="math inline">\(P\)</span> = ____________________</p>
 <p>What inference can you make from the Q-Q plot?
 Do the points fall along the diagonal line?</p>
 <pre><code>
@@ -630,7 +630,7 @@ Do the points fall along the diagonal line?</p>
 <pre><code>
 
 </code></pre>
-<p>Since the Test 3 scores are not normally distributed (and an assumption of the t-test is therefore violated), we can use the non-parametric Wilcoxon signed-rank test instead, as was introduced in <a href="Chapter_22.html#wilcoxon-test">Chapter 22.5.1</a>.
+<p>Since the Test 3 scores are not normally distributed (and an assumption of the t-test is therefore violated), we can use the non-parametric Wilcoxon signed-rank test instead, as was introduced in <a href="Chapter_22.html#wilcoxon-test">Section 22.5.1</a>.
 To apply the Wilcoxon test, check the box ‘Wilcoxon rank’ under the <strong>Tests</strong> option.
 Next, make sure to set the ‘Test value’ to 62 under the <strong>Hypothesis</strong> option.
 What are the null and alternative hypotheses of this test?</p>
@@ -639,7 +639,7 @@ What are the null and alternative hypotheses of this test?</p>
 <p>The results of the Wilcoxon signed-rank test will appear in the ‘One Sample T-Test’ table in the right panel of jamovi in a row called ‘Wilcoxon W’.
 What is the test statistic (not the p-value) for the Wilcoxon test?</p>
 <p>Test statistic: __________________</p>
-<p>Based on what you learnt in <a href="Chapter_22.html#wilcoxon-test">Chapter 22.5.1</a>, what does this test statistic actually mean?</p>
+<p>Based on what you learnt in <a href="Chapter_22.html#wilcoxon-test">Section 22.5.1</a>, what does this test statistic actually mean?</p>
 <pre><code>
 
 
@@ -647,7 +647,7 @@ What is the test statistic (not the p-value) for the Wilcoxon test?</p>
 </code></pre>
 <p>Now look at the p-value for the Wilcoxon test.
 What is the p-value, and what should you conclude from it?</p>
-<p>P: _______________</p>
+<p><span class="math inline">\(P\)</span> = _______________</p>
 <p>Conclusion: ___________________</p>
 <p>Next, we will introduce a new dataset to test hypotheses concerning the means of two different groups.</p>
 </div>
@@ -662,19 +662,19 @@ You can then paste these data directly into jamovi in the next available row (ro
 Next, add in a new column for ‘Year’, so that you can differentiate 2022 students from 2023 students in the same dataset.
 To do this, you can right-click on the ‘ID’ column and choose ‘Add Variable’, then ‘Insert’.
 A new column will appear to the left, which you can name ‘Year’.
-Input ‘2022’ for rows 1-21, then ‘2023’ for the remaining rows that you just pasted into jamovi (see Figure 23.2).</p>
+Input ‘2022’ for rows 1–21, then ‘2023’ for the remaining rows that you just pasted into jamovi (see Figure 23.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
 <img src="img/jamovi_insert_year.png" alt="Jamovi interface is shown with a top panel in which a Data Variable called 'Year' is being inserted, below which data are shown, including the new column with 2022 and 2023 years" width="100%" />
 <p class="caption">
-Figure 23.2: The jamovi interface for inserting a new variable called ‘Year’, and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the Year column.
+Figure 23.2: Jamovi interface for inserting a new variable called ‘Year’, and the value 2022 pasted into the first 21 rows. The value 2023 has been pasted into the remaining rows of the ‘Year’ column.
 </p>
 </div>
-<p>Note that Year does not necessarily need to be in the first column.
+<p>Note that ‘Year’ does not necessarily need to be in the first column.
 You could have added it in as the second column, or as the last (i.e., the location of the column will not affect any analyses).</p>
 <p>With the new data now included in jamovi, we can compare student test scores between years.
 Suppose that we first want to test the null hypothesis that the overall student scores have the same mean, <span class="math inline">\(\mu_{2022} = \mu_{2023}\)</span>, against the alternative hypothesis that <span class="math inline">\(\mu_{2022} \neq \mu_{2023}\)</span>.
-Is this a one or a two tailed hypothesis?</p>
-<p>One or two tailed? _________________</p>
+Is this a one- or a two-tailed hypothesis?</p>
+<p>One- or two-tailed? _________________</p>
 <p>It is generally a good idea to plot and summarise your data before running any statistical tests.
 If you have time, have a look at histograms of the Overall student scores from each year, and look at some summary statistics from the Descriptives output.
 This will give you a sense of what to expect when running your test diagnostics (e.g., tests of normality) and might alert you to any problems before actually running the analysis (e.g., major outliers that do not make sense, such as a student having an overall score of over 1000 due to a data input error).</p>
@@ -682,13 +682,13 @@ This will give you a sense of what to expect when running your test diagnostics 
 Remember that our objective here is to test whether the means of two groups (2022 versus 2023) are the same.
 We can therefore place the ‘Overall’ variable in the Dependent Variables box, then ‘Year’ in the Grouping Variable box.
 Before running the independent samples t-test, we again need to check our assumptions.
-In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a> that the standard Student’s independent samples t-test also assumes that the variances of groups (i.e., the 2022 and 2023 scores) are the same, while the Welch’s t-test does not assume equal variances.
+In addition to the assumption of normality that we checked for in the previous exercises, recall from <a href="Chapter_22.html#independent-samples-t-test">Section 22.2</a> that the standard Student’s independent samples t-test also assumes that the variances of groups (i.e., 2022 and 2023 scores) are the same, while the Welch’s t-test does not assume equal variances.
 In addition to the <strong>Assumption Checks</strong> options ‘Normality test’ and ‘Q-Q plot’, there is also now a test called ‘Homogeneity test’, which will test the null hypothesis that groups have the same variances (Figure 23.3).
 This is called a ‘Levene’s test’, and we can interpret it in a similar way to the Shapiro-Wilk test of normality.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-91"></span>
 <img src="img/jamovi_independent_sample_t-test.png" alt="Jamovi interface is shown with a left panel of data, a middle panel showing an independent samples t-test being set up to test for a difference in Overall score between Years, and output for test assumptions in the right panel." width="100%" />
 <p class="caption">
-Figure 23.3: The jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
+Figure 23.3: Jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
 </p>
 </div>
 <p>If our p-value is sufficiently low (P &lt; 0.05), then we reject the null hypothesis that the groups have the same variances.
@@ -702,7 +702,7 @@ Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 23.3), wha
 <p>What is the p-value for the Levene’s test?</p>
 <p><span class="math inline">\(P\)</span> = _________________</p>
 <p>It appears from our test of assumptions that we do not reject the null hypothesis that the data are normally distributed, but we should reject the null hypothesis that the groups have equal variances.
-Based on what you learnt in <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a>, what is the appropriate test to run in this case?</p>
+Based on what you learnt in <a href="Chapter_22.html#independent-samples-t-test">Section 22.2</a>, what is the appropriate test to run in this case?</p>
 <p>Test: ____________________</p>
 <p>Note that the appropriate test should be available as a check box underneath the <strong>Tests</strong> options.
 Check the box for the correct test, then report the test statistic and p-value from the table that appears in the right panel.</p>
@@ -724,14 +724,14 @@ Consequently, in this exercise, Test 3 will be our Dependent Variable and Year w
 Below, summarise the hypotheses for this new test.</p>
 <p><span class="math inline">\(H_{0}:\)</span> ________________</p>
 <p><span class="math inline">\(H_{A}:\)</span> ________________</p>
-<p>Is this a one or two tailed test? _____________</p>
+<p>Is this a one- or two-tailed test? _____________</p>
 <p>Next, begin a new Independent Samples T-Test in jamovi and check the assumptions underlying the t-test.
 Do the variances appear to be the same for Test 3 scores in 2022 versus 2023?
 How can you make this conclusion?</p>
 <pre><code>
 
 </code></pre>
-<p>Next check to see if the data are normally distributed.
+<p>Next, check to see if the data are normally distributed.
 What is the p-value of the Shapiro-Wilk test?</p>
 <p><span class="math inline">\(P\)</span> = ________________</p>
 <p>Now, have a look at the Q-Q plot.
@@ -747,7 +747,7 @@ What can you infer from this plot about the normality of the data, and why?</p>
 <p>Run the above test in jamovi, then report the test statistic and p-value below.</p>
 <p>Test statistic: ____________</p>
 <p>p-value: ___________</p>
-<p>Based on what you learnt in <a href="Chapter_22.html#mann-whitney-u-test">Chapter 22.5.2</a>, what does this test statistic actually mean?</p>
+<p>Based on what you learnt in <a href="Chapter_22.html#mann-whitney-u-test">Section 22.5.2</a>, what does this test statistic actually mean?</p>
 <pre><code>
 
 
@@ -760,13 +760,13 @@ What can you infer from this plot about the normality of the data, and why?</p>
 
 
 </code></pre>
-<p>I have not introduced an example in which a transformation (such as a log transformation) is applied to normalise a dataset, as explained in <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a>.
+<p>I have not introduced an example in which a transformation (such as a log transformation) is applied to normalise a dataset, as explained in <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a>.
 To do such a transformation, you could create a new computed variable in jamovi and calculate it as the natural log (LN) of a variable (e.g., Test 3).
 Figure 23.4 illustrates what this should look like.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-92"></span>
 <img src="img/jamovi_LN_transform.png" alt="Jamovi interface is shown with a new computed variable being made and the natural log of Test 3 scores being inserted into the function box." width="100%" />
 <p class="caption">
-Figure 23.4: The jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
+Figure 23.4: Jamovi interface for creating a new computed variable that is the natural logarithm of Test 3 data scores in a fictional dataset of student grades.
 </p>
 </div>
 <p>Lastly, suppose that you wanted to test whether students from 2023 improved their scores from Test 1 to Test 2 more than students from 2022 did.

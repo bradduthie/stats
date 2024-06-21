@@ -478,7 +478,7 @@ div.csl-indent {
 <div id="Chapter_22" class="section level1 hasAnchor" number="22">
 <h1><span class="header-section-number">Chapter 22</span> The t-test<a href="Chapter_22.html#Chapter_22" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A t-test is a simple and widely used statistical hypothesis test that relies on the t-distribution introduced in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.
-In this chapter, we will look at 3 types of t-tests, (1) the one sample t-test, (2) the independent samples t-test, and (3) the paired samples t-test.
+In this chapter, we will look at three types of t-tests: (1) the one sample t-test, (2) the independent samples t-test, and (3) the paired samples t-test.
 We will also look at non-parametric alternatives to t-tests (Wilcoxon and Mann-Whitney tests), which become relevant when the assumptions of t-tests are violated.
 The use of all of these tests in jamovi will be demonstrated in <a href="Chapter_23.html#Chapter_23">Chapter 23</a>.</p>
 <div id="one-sample-t-test" class="section level2 hasAnchor" number="22.1">
@@ -502,9 +502,9 @@ At low N, when we need to estimate the true standard deviation (<span class="mat
 The logic here is to use the t-distribution as the null distribution for <span class="math inline">\(\bar{y}\)</span>.
 If we subtract <span class="math inline">\(\mu_{0}\)</span> from <span class="math inline">\(\bar{y}\)</span>, then we can centre the mean of the null distribution at 0.
 We can then divide by the standard error of test scores so that we can compare the deviation of <span class="math inline">\(\bar{y}\)</span> from <span class="math inline">\(\mu_{0}\)</span> in terms of the t-distribution.
-This is the same idea as calculating a z-score from <a href="Chapter_16.html#probability-and-z-scores">Chapter 16.2</a>.
+This is the same idea as calculating a z-score from <a href="Chapter_16.html#probability-and-z-scores">Section 16.2</a>.
 In fact, the equations look almost the same,</p>
-<p><span class="math display">\[t_{\bar{y}} = \frac{\bar{y} - \mu_{0}}{SE(\bar{y})}\]</span></p>
+<p><span class="math display">\[t_{\bar{y}} = \frac{\bar{y} - \mu_{0}}{SE(\bar{y})}.\]</span></p>
 <p>In the above equation, <span class="math inline">\(SE(\bar{y})\)</span> is the standard error of <span class="math inline">\(\bar{y}\)</span>.</p>
 <p>If the sample mean of test scores is really the same as the population mean <span class="math inline">\(\mu_{0} = 60\)</span>, then <span class="math inline">\(\bar{y}\)</span> should have a t-distribution.
 Consequently, values of <span class="math inline">\(t_{\bar{y}}\)</span> far from zero would suggest that the sample mean is improbable given the null distribution predicted if <span class="math inline">\(H_{0}: \mu_{0} = \bar{y}\)</span> is true.
@@ -530,7 +530,7 @@ Consequently, because our p-value is less than 0.05, we reject our null hypothes
 <div id="independent-samples-t-test" class="section level2 hasAnchor" number="22.2">
 <h2><span class="header-section-number">22.2</span> Independent samples t-test<a href="Chapter_22.html#independent-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Perhaps the biology teacher is not actually interested in comparing their students’ test results with those of the reported national average.
-After all, there might be many reasons for why their students score differently from the national average that have nothing to do with their new approach to teaching.
+After all, there might be many reasons their students score differently from the national average that have nothing to do with their new approach to teaching.
 To see if their new approach is working, the teacher might instead decide that a better hypothesis to test is whether or not the mean test score from the current year is higher than the mean test score from the class that they taught in the previous year.
 We can use <span class="math inline">\(\bar{y}_{1}\)</span> to denote the mean of test scores from the current year, and <span class="math inline">\(\bar{y}_{2}\)</span> to denote the mean of test scores from the previous year.
 The test scores of the current year (<span class="math inline">\(y_{1}\)</span>) therefore remain the same as in the example of the one sample t-test from the previous section.</p>
@@ -547,16 +547,16 @@ In both cases, we want to calculate a t-statistic, then see where it falls along
 In this case, our t-statistic (<span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}}\)</span>) is calculated slightly differently,</p>
 <p><span class="math display">\[t_{\bar{y}_{1} - \bar{y}_{2}} = \frac{\bar{y}_{1} - \bar{y}_{2}}{SE(\bar{y})}\]</span></p>
 <p>The logic is the same as the one sample t-test.
-If <span class="math inline">\(\mu_{2} = \mu_{1}\)</span>, then we also would expected <span class="math inline">\(\bar{y}_{1} = \bar{y}_{2}\)</span> (i.e., <span class="math inline">\(\bar{y}_{1} - \bar{y}_{2} = 0\)</span>).
+If <span class="math inline">\(\mu_{2} = \mu_{1}\)</span>, then we also would expect <span class="math inline">\(\bar{y}_{1} = \bar{y}_{2}\)</span> (i.e., <span class="math inline">\(\bar{y}_{1} - \bar{y}_{2} = 0\)</span>).
 Differences between <span class="math inline">\(\bar{y}_{1}\)</span> and <span class="math inline">\(\bar{y}_{2}\)</span> cause the t-statistic to be either above or below 0, and we can map this deviation of <span class="math inline">\(t_{\bar{y}_{1} - \bar{y}_{2}}\)</span> from 0 to the probability density of the t-distribution after standardising by the standard error (<span class="math inline">\(SE(\bar{y})\)</span>).</p>
 <p>What is <span class="math inline">\(SE(\bar{y})\)</span> in this case?
 After all, there are two different samples <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>, so could the two samples not have <em>different</em> standard errors?
 This could indeed be the case, and how we actually conduct the independent samples t-test depends on whether or not we are willing to assume that the two samples came from populations with the same variance (i.e., <span class="math inline">\(\sigma_{1} = \sigma_{2}\)</span>).
 If we are willing to make this assumption, then we can pool the variances (<span class="math inline">\(s^{2}_{p}\)</span>) together to get a combined (more accurate) estimate of the standard error <span class="math inline">\(SE(\bar{y})\)</span> from both samples<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a><span class="math inline">\(^{,}\)</span><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.
-This version of the independent samples t-test is called the “Student’s t-test”.</p>
+This version of the independent samples t-test is called the ‘Student’s t-test’.</p>
 <p>If we are unwilling to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance, then we need to use an alternative version of the independent samples t-test.
 This alternative version is called the Welch’s t-test <span class="citation">(<a href="#ref-Welch1938" role="doc-biblioref">Welch 1938</a>)</span>, also known as the unequal variances t-test <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>.
-In contrast to the standard independent t-test (also called the “Student’s independent t-test”), the Welch’s t-test does not pool the variances of the samples together<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
+In contrast to the standard independent t-test (also called the ‘Student’s independent t-test’), the Welch’s t-test does not pool the variances of the samples together<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
 While there are some mathematical differences between the Student’s and Welch’s independent samples t-tests, the general concept is the same.</p>
 <p>This raises the question, when is it acceptable to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance?
 The sample variance of <span class="math inline">\(s^{2}_{1} = 69.46\)</span> and <span class="math inline">\(s^{2}_{2} = 76.15\)</span>.
@@ -594,9 +594,9 @@ The paired samples t-test is applied when the data points in one sample can be n
 In this case, data points between samples are not independent.
 For example, we can consider the student test scores (<span class="math inline">\(y_{1}\)</span>) yet again.</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
-<p>Suppose that the teacher gave these same 10 students (S1-S10) a second test and wanted to see if the mean student score changed from one test to the next (i.e., a two-sided hypothesis).</p>
+<p>Suppose that the teacher gave these same 10 students (S1–S10) a second test and wanted to see if the mean student score changed from one test to the next (i.e., a two-sided hypothesis).</p>
 <table style="width:100%;">
-<caption><strong>TABLE 22.1</strong> Test scores from 10 students (S1-S10) for two different tests in a hypothetical biology education example.</caption>
+<caption><strong>TABLE 22.1</strong> Test scores from 10 students (S1–S10) for two different tests in a hypothetical biology education example.</caption>
 <colgroup>
 <col width="15%" />
 <col width="8%" />
@@ -677,10 +677,10 @@ We can calculate <span class="math inline">\(\bar{y} = -0.88\)</span> and <span 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-84"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-84-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around -0.9." width="672" />
 <p class="caption">
-Figure 22.3: A t-distribution is shown with a calculated t-statistic of -0.9016175 indicated with a downward arrow.
+Figure 22.3: A t-distribution is shown with a calculated t-statistic of <span class="math inline">\(-0.9016175\)</span> indicated with a downward arrow.
 </p>
 </div>
-<p>Since this is a two-sided hypothesis, we want to know the probability of getting a t-statistic as extreme as -0.9016175 (i.e., either <span class="math inline">\(\pm 0.9016175\)</span>) given that the null distribution is true.
+<p>Since this is a two-sided hypothesis, we want to know the probability of getting a t-statistic as extreme as <span class="math inline">\(-0.9016175\)</span> (i.e., either <span class="math inline">\(\pm 0.9016175\)</span>) given that the null distribution is true.
 In the above t-distribution, 95% of the probability density lies between <span class="math inline">\(t = -2.26\)</span> and <span class="math inline">\(t = 2.26\)</span>.
 Consequently, our calculated <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> is not sufficiently extreme to reject the null hypothesis.
 The p-value associated with <span class="math inline">\(t_{\bar{y}} = -0.9016175\)</span> is <span class="math inline">\(P = 0.391\)</span>.
@@ -711,7 +711,7 @@ So when is a sample size large enough, or close enough to being normally distrib
 There really is not a definitive answer to this question, and the truth is that most statisticians will prefer to use a histogram (or some other visualisation approach) and their best judgement to decide if the assumption of normality is likely to be violated.</p>
 <p>This book will take the traditional approach of running a statistical test called the Shapiro-Wilk test to test the null hypothesis that data are normally distributed.
 If we reject the null hypothesis (when <span class="math inline">\(P &lt; 0.05\)</span>), then we will conclude that the assumption of normality is violated, and the t-test is not appropriate.
-The details of how the Shapiro-Wilk test work are not important for now, but the test can be easily run using jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+The details of how the Shapiro-Wilk test works are not important for now, but the test can be easily run using jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 If we reject the null hypothesis that the data are normally distributed, then we can use one of two methods to run our statistical test.</p>
 <ol style="list-style-type: decimal">
 <li>Transform the data in some way (e.g., take the log of all values) to improve normality.</li>
@@ -721,12 +721,12 @@ If we reject the null hypothesis that the data are normally distributed, then we
 We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent samples t-test (Mann-Whitney U test) in the next section.
 But first, we can show how transformations can be used to improve the fit of the data to satisfy model assumptions.</p>
 <p>Often data will have a skewed distribution (see <a href="Chapter_13.html#Chapter_13">Chapter 13</a>).
-For example, in Figure 22.4A, we have a dataset (sample size <span class="math inline">\(N = 200\)</span>) with a large positive skew (i.e., it is right skewed).
+For example, in Figure 22.4A, we have a dataset (sample size <span class="math inline">\(N = 200\)</span>) with a large positive skew (i.e., it is right-skewed).
 Most values are in the same general area, but with some values being especially high.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-85"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-85-1.png" alt="A two paneled figure in which a histogram with a skewed distribution is shown to the left and a histogram with a normal distribution is shown to the right." width="672" />
 <p class="caption">
-Figure 22.4: A set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution (B).
+Figure 22.4: Set of values with a high positive skew (A), which, when log-transformed (i.e., when we take the natural log of all values), have a normal distribution (B).
 </p>
 </div>
 <p>Using a t-test on the variable X shown in Figure 22.4A is probably not a good idea.
@@ -761,14 +761,14 @@ We can use the same hypothetical dataset on student test scores.</p>
 Now, we can calculate the sum of the negative ranks (<span class="math inline">\(W^{-}\)</span>), and the positive ranks <span class="math inline">\(W^{+}\)</span>.
 In this case, the negative ranks are easy; there is only one value (the first one), so the sum is just 6.5,</p>
 <p><span class="math display">\[W^{-} = 6.5\]</span></p>
-<p>The positive ranks are in positions 2-10, and the rank values in these positions are 3, 9, 4, 5, 6.5, 2, 8, 1, and 10.
+<p>The positive ranks are in positions 2–10, and the rank values in these positions are 3, 9, 4, 5, 6.5, 2, 8, 1, and 10.
 The sum of our positive ranks is therefore,</p>
 <p><span class="math display">\[W^{+} = 3.0 + 9.0 + 4.0 + 5.0 + 6.5 + 2.0 + 8.0 + 1.0 + 10.0 = 48.5\]</span></p>
 <p>Note that <span class="math inline">\(W^{-}\)</span> plus <span class="math inline">\(W^{+}\)</span> (i.e., 6.5 + 48.5 = 55 in the example here) will always be the same for a given sample size <span class="math inline">\(N\)</span> (in this case, <span class="math inline">\(N = 10\)</span>),</p>
 <p><span class="math display">\[W = \frac{N \left(N + 1 \right)}{2}.\]</span></p>
 <p>What the Wilcoxon test is doing is calculating the probability of getting a value of <span class="math inline">\(W^{+}\)</span> as or more extreme than would be the case if the null hypothesis is true.
 Note that if, e.g., there are an equal number of values above and below the median, then both <span class="math inline">\(W^{-}\)</span> and <span class="math inline">\(W^{+}\)</span> will be relatively low and about the same value.
-This is because the ranks of the values below 0 (which we multiply by -1) and above 0 (which we multiply by 1) will be about the same.
+This is because the ranks of the values below 0 (which we multiply by <span class="math inline">\(-1\)</span>) and above 0 (which we multiply by 1) will be about the same.
 But if there are a lot more values above the median than expected (as with the example above), then <span class="math inline">\(W^{+}\)</span> will be relatively high.
 And if there are a lot more values below the median than expected, then <span class="math inline">\(W^{+}\)</span> will be relatively low.</p>
 <p>To find the probability of <span class="math inline">\(W^{+}\)</span> being as low or high as it is given that the null hypothesis is true (i.e., the p-value), we need to compare the test statistic <span class="math inline">\(W^{+}\)</span> to its distribution under the null hypothesis (note that we can also conduct a one-tailed hypothesis, in which case we are testing if <span class="math inline">\(W^{+}\)</span> is either higher or lower than expected given <span class="math inline">\(H_{0}\)</span>).
@@ -780,7 +780,7 @@ Since this p-value is less than our threshold of <span class="math inline">\(\al
 In this case, instead of subtracting out the null hypothesis of our median value (e.g., <span class="math inline">\(H_{0}: M = 60\)</span> in the example above), we just need to subtract the paired values.
 Consider again the example of the two different tests introduced for the <a href="#paired-sample-t-test">paired samples t-test</a> above (Table 22.2).</p>
 <table style="width:100%;">
-<caption><strong>TABLE 22.2</strong> Test scores from 10 students (S1-S10) for two different tests in a hypothetical biology education example.</caption>
+<caption><strong>TABLE 22.2</strong> Test scores from 10 students (S1–S10) for two different tests in a hypothetical biology education example.</caption>
 <colgroup>
 <col width="15%" />
 <col width="8%" />
@@ -878,7 +878,7 @@ For <span class="math inline">\(y_{1}\)</span>, the ranks are below.</p>
 <pre><code>4, 3, 14, 16, 1, 6, 13, 10, 5</code></pre>
 <p>This might be easier to see if we present it as a table showing the test Year (<span class="math inline">\(y_{1}\)</span> versus <span class="math inline">\(y_{2}\)</span>), test Score, and test Rank (Table 22.3).</p>
 <table style="width:32%;">
-<caption><strong>TABLE 22.3</strong> Test scores from different students across two years, and the overall rank of each test score, in a hypothetical biology education example.</caption>
+<caption><strong>TABLE 22.3</strong> Test scores from different students across 2 years, and the overall rank of each test score, in a hypothetical biology education example.</caption>
 <colgroup>
 <col width="9%" />
 <col width="11%" />
@@ -1006,7 +1006,7 @@ Note that if <span class="math inline">\(y_{1}\)</span> and <span class="math in
 But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have much different medians, then <span class="math inline">\(U\)</span> will be relatively low.
 One way to think about this is that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very different, then one of the two samples should have very low ranks, and the other should have very high ranks <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
 But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very similar, then their summed ranks should be nearly the same.
-Hence, if the deviation of <span class="math inline">\(U\)</span> is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are identical, the we can reject <span class="math inline">\(H_{0}\)</span>.</p>
+Hence, if the deviation of <span class="math inline">\(U\)</span> is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are identical, then we can reject <span class="math inline">\(H_{0}\)</span>.</p>
 <p>As with the <a href="Chapter_22.html#wilcoxon-test">Wilcoxon test</a>, we could compare our <span class="math inline">\(U\)</span> test statistic to a critical value from a <a href="#mann-whitney-u-critical-values">table</a>, but jamovi will also just give us the test statistic <span class="math inline">\(U\)</span> and associated p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
 In our example above, <span class="math inline">\(U = 27\)</span>, <span class="math inline">\(N_{1} = 10\)</span>, and <span class="math inline">\(N_{2} = 9\)</span> has a p-value of <span class="math inline">\(P = 0.156\)</span>, so we do not reject the null hypothesis.
 We therefore conclude that there is no evidence that there is a difference in the median test scores of the two years.</p>
