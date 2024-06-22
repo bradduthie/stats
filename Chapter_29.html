@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-21" />
+<meta name="date" content="2024-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -299,7 +299,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="24" data-path="Chapter_24.html"><a href="Chapter_24.html"><i class="fa fa-check"></i><b>24</b> Analysis of variance</a>
 <ul>
-<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#the-f-distribution"><i class="fa fa-check"></i><b>24.1</b> The F-distribution</a></li>
+<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#f-distribution"><i class="fa fa-check"></i><b>24.1</b> F-distribution</a></li>
 <li class="chapter" data-level="24.2" data-path="Chapter_24.html"><a href="Chapter_24.html#one-way-anova"><i class="fa fa-check"></i><b>24.2</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
@@ -496,7 +496,7 @@ We could test this null hypothesis using a Chi-square goodness of fit test (<a h
 Similarly, we might want to test if two different count variables (e.g., flower colour and flower species) are associated with one another (e.g., if blue flowers are more common in one species than another species).
 We could test this kind of hypothesis using a Chi-square test of association.</p>
 <p>Before introducing the Chi-square goodness of fit test or the Chi-square test of association, it makes sense to first introduce the Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution.
-The general motivation for introducing the Chi-square distribution is the same as it was for the t-distribution (<a href="Chapter_19.html#Chapter_19">Chapter 19</a>) or F-distribution (<a href="Chapter_24.html#the-f-distribution">Chapter 24.1</a>).
+The general motivation for introducing the Chi-square distribution is the same as it was for the t-distribution (<a href="Chapter_19.html#Chapter_19">Chapter 19</a>) or F-distribution (<a href="#the-f-distribution">Chapter 24.1</a>).
 We need some probability density distribution that is our null distribution, which is what we predict if our null hypothesis is true.
 We then compare this null distribution to our test statistic to find the probability of sampling a test statistic as or more extreme if the null hypothesis is really true (i.e., a p-value).</p>
 <div id="the-chi-square-distribution" class="section level2 hasAnchor" number="29.1">
@@ -539,7 +539,7 @@ Figure 29.2 shows the different <span class="math inline">\(\chi^{2}\)</span> pr
 Figure 29.2: Probability density functions for three different Chi-square distributions, each of which have different degrees of freedom (df).
 </p>
 </div>
-<p>As with the F distribution from <a href="Chapter_24.html#the-f-distribution">Chapter 24.1</a>, visualising the <span class="math inline">\(\chi^{2}\)</span> distribution is easier using an interactive application<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
+<p>As with the F distribution from <a href="#the-f-distribution">Chapter 24.1</a>, visualising the <span class="math inline">\(\chi^{2}\)</span> distribution is easier using an interactive application<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
 And as with the F distribution, it is not necessary to memorise how the <span class="math inline">\(\chi^{2}\)</span> distribution changes with different degrees of freedom.
 The important point is that the distribution changes with different degrees of freedom, and we can map probabilities to the <span class="math inline">\(\chi^{2}\)</span> value on the x-axis in the same way as any other distribution.</p>
 <p>What does any of this have to do with count data? It actually is a bit messy.

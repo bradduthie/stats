@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-21" />
+<meta name="date" content="2024-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -299,7 +299,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="24" data-path="Chapter_24.html"><a href="Chapter_24.html"><i class="fa fa-check"></i><b>24</b> Analysis of variance</a>
 <ul>
-<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#the-f-distribution"><i class="fa fa-check"></i><b>24.1</b> The F-distribution</a></li>
+<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#f-distribution"><i class="fa fa-check"></i><b>24.1</b> F-distribution</a></li>
 <li class="chapter" data-level="24.2" data-path="Chapter_24.html"><a href="Chapter_24.html#one-way-anova"><i class="fa fa-check"></i><b>24.2</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
@@ -479,7 +479,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 24</span> Analysis of variance<a href="Chapter_24.html#Chapter_24" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>An ANalysis Of VAriance (ANOVA) is, as the name implies, a method for analysing variances in a dataset.
 This is confusing, at first, because the most common application of an ANOVA is to test for differences among group <em>means</em>.
-That is, an ANOVA can be used to test the same null hypothesis as the independent samples student’s t-test introduced <a href="Chapter_22.html#independent-samples-t-test">Chapter 22.2</a>; are two groups sampled from a population that has the same mean?
+That is, an ANOVA can be used to test the same null hypothesis as the independent samples student’s t-test introduced in <a href="Chapter_22.html#independent-samples-t-test">Section 22.2</a>; are two groups sampled from a population that has the same mean?
 The t-test works fine when we have only two groups, but it does not work when there are three or more groups, and we want to know if the groups all have the same mean.
 An ANOVA can be used to test the null hypothesis that <em>all</em> groups in a dataset are sampled from a population with the same mean.
 For example, we might want to know if mean wing length is the same for five species of fig wasps sampled from the same area <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
@@ -537,12 +537,12 @@ In the case of the fig wasp example, the groups are the different species (Table
 </table>
 <p>Why is any of this necessary?
 If we want to know if the five species of fig wasps in Table 24.1 have the same mean wing length, can we not just use t-tests to compare the means between each species?
-There are a couple problems with this approach.
+There are a couple of problems with this approach.
 First, there are a lot of group combinations to compare (Het1 vs Het2, Het1 vs LO1, Het1 vs SO1, etc.).
 For the five fig wasp species in Table 24.1, there are 10 pair-wise combinations that would need to be tested.
 And the number of combinations grows exponentially<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a> with each new group added to the dataset (Table 24.2).</p>
 <table style="width:76%;">
-<caption><strong>TABLE 24.2</strong> The number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2-10 species)</caption>
+<caption><strong>TABLE 24.2</strong> Number of individual t-tests that would need to be run to compare the means given different numbers of groups (e.g., if a dataset had measurements from 2–10 species).</caption>
 <colgroup>
 <col width="18%" />
 <col width="5%" />
@@ -583,7 +583,7 @@ And the number of combinations grows exponentially<a href="#fn54" class="footnot
 </tbody>
 </table>
 <p>Aside from the tedium of testing every possible combination of group means, there is a more serious problem having to do with the Type I error.
-Recall from <a href="Chapter_21.html#p-values-false-positives-and-power">Chapter 21.3</a> that a Type I error occurs when we rejected the null hypothesis (<span class="math inline">\(H_{0}\)</span>) and erroneously conclude that <span class="math inline">\(H_{0}\)</span> is false when it is actually true (i.e., a false positive).
+Recall from <a href="Chapter_21.html#p-values-false-positives-and-power">Section 21.3</a> that a Type I error occurs when we rejected the null hypothesis (<span class="math inline">\(H_{0}\)</span>) and erroneously conclude that <span class="math inline">\(H_{0}\)</span> is false when it is actually true (i.e., a false positive).
 If we reject <span class="math inline">\(H_{0}\)</span> at a threshold level of <span class="math inline">\(\alpha = 0.05\)</span> (i.e., reject <span class="math inline">\(H_{0}\)</span> when <span class="math inline">\(P &lt; 0.05\)</span>, as usual), then we will erroneously reject the null hypothesis about 5% of the time that we run a statistical test and <span class="math inline">\(H_{0}\)</span> is true.
 But if we run 10 separate t-tests to see if the fig wasp species in Table 24.1 have different mean wing lengths, then the probability of making an error increases considerably.
 The probability of erroneously rejecting <strong>at least 1</strong> of the 10 null hypotheses increases from 0.05 to about 0.40.
@@ -598,18 +598,18 @@ If we reject <span class="math inline">\(H_{0}\)</span>, then we can start compa
 <p>How do we test the above <span class="math inline">\(H_{0}\)</span> by looking at <em>variances</em> instead of <em>means</em>?
 Before getting into the details of how an ANOVA works, we will first look at the F-distribution.
 This is relevant because the test statistic calculated in an ANOVA is called an F-statistic, which is compared to an F-distribution in the same way that a t-statistic is compared to a t-distribution for a t-test (see <a href="Chapter_22.html#Chapter_22">Chapter 22</a>).</p>
-<div id="the-f-distribution" class="section level2 hasAnchor" number="24.1">
-<h2><span class="header-section-number">24.1</span> The F-distribution<a href="Chapter_24.html#the-f-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="f-distribution" class="section level2 hasAnchor" number="24.1">
+<h2><span class="header-section-number">24.1</span> F-distribution<a href="Chapter_24.html#f-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If we want to test whether or not two variances are the same, then we need to know what the null distribution should be if two different samples came from a population with the same variance.
-The general idea is the same as it was for the distributions introduced in <a href="Chapter_15.html#probability-distributions">Chapter 15.4</a>.
-For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when <span class="math inline">\(P(Heads) = 0.5\)</span> and <span class="math inline">\(N = 10\)</span> (see <a href="Chapter_15.html#binomial-distribution">Chapter 15.4.1</a> Figure 15.5).
+The general idea is the same as it was for the distributions introduced in <a href="Chapter_15.html#probability-distributions">Section 15.4</a>.
+For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when <span class="math inline">\(P(Heads) = 0.5\)</span> and <span class="math inline">\(N = 10\)</span> (see <a href="Chapter_15.html#binomial-distribution">Section 15.4.1</a> and Figure 15.5).
 To test variances, we will calculate the ratio of variances (F), then compare it to the F probability density function<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>.
 For example, the ratio of the variances for two samples, 1 and 2, is <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>,</p>
 <p><span class="math display">\[F = \frac{Variance\:1}{Variance\:2}.\]</span></p>
 <p>Note that if the variances of samples 1 and 2 are the exact same, then F = 1.
 If the variances are very different, then F is either very low (if Variance 1 &lt; Variance 2) or very high (if Variance 1 &gt; Variance 2).
 To test the null hypothesis that samples 1 and 2 have the same variance, we therefore need to map the calculated F to the probability density of the F-distribution.
-Again, the general idea is the same as comparing a t-score to the t-distribution in <a href="Chapter_22.html#one-sample-t-test">Chapter 22.1</a>.
+Again, the general idea is the same as comparing a t-score to the t-distribution in <a href="Chapter_22.html#one-sample-t-test">Section 22.1</a>.
 Recall that the shape of the t-distribution is slightly different for different degrees of freedom (df).
 As df increases, the t-distribution starts to resemble the normal distribution.
 For the F-distribution, there are actually two degrees of freedom to consider.
@@ -618,7 +618,7 @@ Together, these two degrees of freedom will determine the shape of the F-distrib
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-95"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-95-1.png" alt="A plot is shown with 3 different curve lines, which show 3 different F-distributions with different degrees of freedom." width="672" />
 <p class="caption">
-Figure 24.1: Probability density functions for three different F-distributions, each of which have different degrees of freedom for the variances in the numerator (df1) and denominator (df2).
+Figure 24.1: Probability density functions for three different F-distributions, each of which has different degrees of freedom for the variances in the numerator (df1) and denominator (df2).
 </p>
 </div>
 <p>Figure 24.1 shows an F-distribution for three different combinations of degrees of freedom.
@@ -632,18 +632,18 @@ If the null hypothesis that the two variances are the same is true (i.e., F = 1)
 <div id="one-way-anova" class="section level2 hasAnchor" number="24.2">
 <h2><span class="header-section-number">24.2</span> One-way ANOVA<a href="Chapter_24.html#one-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We can use the F-distribution to test the null hypothesis mentioned at the beginning of the chapter (that fig wasp species have the same mean wing length).
-The general idea is to compare the mean variance among groups to the mean variance within groups, so our F value (i.e., “F-statistic”) is calculated,</p>
+The general idea is to compare the mean variance among groups to the mean variance within groups, so our F value (i.e., ‘F-statistic’) is calculated,</p>
 <p><span class="math display">\[F = \frac{Mean\:variance\:among\:\:groups}{Mean\:variance\:within\:\:groups}.\]</span></p>
 <p>The rest of this section works through the details of how to calculate this F-statistic.
 It is easy to get lost in these details, but the calculations that follow do not need to be done by hand.
 As usual, jamovi will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-The reason for going through the ANOVA step-by-step is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in an ANOVA output actually mean.</p>
+The reason for going through the ANOVA step-by-step process is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in an ANOVA output actually mean.</p>
 <div id="anova-mean-variance-among-groups" class="section level3 hasAnchor" number="24.2.1">
 <h3><span class="header-section-number">24.2.1</span> ANOVA mean variance among groups<a href="Chapter_24.html#anova-mean-variance-among-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To get the mean variance among groups (i.e., mean squares; <span class="math inline">\(MS_{among}\)</span>), we need to use the sum of squares (SS).
-The SS was introduced to show how the variance is calculated in <a href="Chapter_12.html#the-variance">Chapter 12.3</a>,</p>
+The SS was introduced to show how the variance is calculated in <a href="Chapter_12.html#the-variance">Section 12.3</a>,</p>
 <p><span class="math display">\[SS = \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}.\]</span></p>
-<p>Instead of dividing SS by N - 1 (i.e., the total df), as we would do to get a sample variance, we will need to divide it by the df <em>among groups</em> (<span class="math inline">\(df_{among}\)</span>) and df within groups (<span class="math inline">\(df_{within}\)</span>).
+<p>Instead of dividing SS by <span class="math inline">\(N - 1\)</span> (i.e., the total df), as we would do to get a sample variance, we will need to divide it by the df <em>among groups</em> (<span class="math inline">\(df_{among}\)</span>) and df within groups (<span class="math inline">\(df_{within}\)</span>).
 We can then use these <span class="math inline">\(SS_{among}/df_{among}\)</span> and <span class="math inline">\(SS_{within}/df_{within}\)</span> values to calculate our F<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>.</p>
 <p>This all sounds a bit abstract at first, so an example will be helpful.
 We can again consider the wing length measurements from the five species of fig wasps shown in Table 24.1.
@@ -709,7 +709,7 @@ For example, for Het1, we calculate,</p>
               0.0328516 = 0.1075467.\]</span></p>
 <p>Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.</p>
 <table style="width:78%;">
-<caption><strong>TABLE 24.4</strong> The squared deviations from species means for each wing length presented in Table 24.1</caption>
+<caption><strong>TABLE 24.4</strong> Squared deviations from species means for each wing length presented in Table 24.1.</caption>
 <colgroup>
 <col width="15%" />
 <col width="15%" />
@@ -759,7 +759,7 @@ For example, for Het1, we calculate,</p>
 </table>
 <p>If we sum each column (i.e., do what we did for <span class="math inline">\(SS_{Het1}\)</span> for each species), then we get the SS for each species (Table 24.5).</p>
 <table style="width:69%;">
-<caption><strong>TABLE 24.5</strong> The sum of squared deviations from species means for each wing length presented in Table 24.1</caption>
+<caption><strong>TABLE 24.5</strong> Sum of squared deviations from species means for each wing length presented in Table 24.1.</caption>
 <colgroup>
 <col width="12%" />
 <col width="13%" />
@@ -793,9 +793,9 @@ To get the mean variance within groups (denominator of F), we calculate <span cl
 </div>
 <div id="anova-f-statistic-calculation" class="section level3 hasAnchor" number="24.2.3">
 <h3><span class="header-section-number">24.2.3</span> ANOVA F-statistic calculation<a href="Chapter_24.html#anova-f-statistic-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>From <a href="Chapter_24.html#anova-mean-variance-among-groups">Chapter 24.2.1</a>, we have the mean variance among groups,</p>
+<p>From <a href="Chapter_24.html#anova-mean-variance-among-groups">Section 24.2.1</a>, we have the mean variance among groups,</p>
 <p><span class="math display">\[MS_{among} = 0.0912967.\]</span></p>
-<p>From <a href="Chapter_24.html#anova-mean-variance-among-groups">Chapter 24.2.2</a>, we have the mean variance within groups,</p>
+<p>From <a href="Chapter_24.html#anova-mean-variance-among-groups">Section 24.2.2</a>, we have the mean variance within groups,</p>
 <p><span class="math display">\[MS_{within} = 0.0281398.\]</span></p>
 <p>To calculate F, we just need to divide <span class="math inline">\(MS_{among}\)</span> by <span class="math inline">\(MS_{within}\)</span>,</p>
 <p><span class="math display">\[F = \frac{0.0912967}{0.0281398} = 3.2443976.\]</span></p>
@@ -803,7 +803,7 @@ To get the mean variance within groups (denominator of F), we calculate <span cl
 We can test the null hypothesis that <span class="math inline">\(MS_{among} = MS_{within}\)</span> against the alternative hypothesis that there is more variation among groups than within groups (<span class="math inline">\(H_{A}: MS_{among} &gt; MS_{within}\)</span>) using the F-distribution (note that this is a one-tailed test).
 In the example of five fig wasp species, <span class="math inline">\(df_{among} = 4\)</span> and <span class="math inline">\(df_{within} = 15\)</span>,
 so we need an F-distribution with four degrees of freedom in the numerator and 15 degrees of freedom in the denominator<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
-We can use an interactive app (see footnote 57) to get the F-distribution and p-value (Figure 24.2).</p>
+We can use an interactive app (see <a href="Chapter_24.html#f-distribution">Section 24.1</a>) to get the F-distribution and p-value (Figure 24.2).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-99"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-99-1.png" alt="A plot is shown with an F probabilty density distribution and values on the x-axis from 0-4. The area under the curve where F &gt; 3.244 is shaded in grey, and F = 3.244 is indicated with an arrow." width="672" />
 <p class="caption">
@@ -812,7 +812,7 @@ Figure 24.2: F-distribution with df = 4 for the numerator and df = 15 for the de
 </div>
 <p>The area shaded in grey in Figure 24.2, where F &gt; 3.2443976, is approximately <span class="math inline">\(P =\)</span> 0.041762.
 This is our p-value.
-Since <span class="math inline">\(P &lt; 0.05\)</span>, we can reject the null hypothesis that all mean species wing lengths are the same because the variance among species wing lengths is significantly higher than the variance within species wing lengths.
+Since <span class="math inline">\(P &lt; 0.05\)</span>, we can reject the null hypothesis that all mean species wing lengths are the same, because the variance among species wing lengths is significantly higher than the variance within species wing lengths.
 Note that the critical value of F (i.e., for which <span class="math inline">\(P = 0.05\)</span>) is 3.0555683, so for any F value above this (for df1 = 5 and df2 = 19), we would reject <span class="math inline">\(H_{0}\)</span>.</p>
 <p>When running an ANOVA in a statistical program, output includes (at least) the calculated F-statistic, degrees of freedom, and the p-value.
 Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths in jamovi.</p>
@@ -838,7 +838,7 @@ We can also get this information from jamovi if we want it (see <a href="Chapter
 </div>
 <div id="assumptions-of-anova" class="section level2 hasAnchor" number="24.3">
 <h2><span class="header-section-number">24.3</span> Assumptions of ANOVA<a href="Chapter_24.html#assumptions-of-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As with the t-test (see <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a>), there are some important assumptions that we make when using an ANOVA.
+<p>As with the t-test (see <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a>), there are some important assumptions that we make when using an ANOVA.
 Violating these assumptions will mean that our Type I error rate (<span class="math inline">\(\alpha\)</span>) is, again, potentially misleading.
 Assumptions of ANOVA include the following <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>:</p>
 <ol style="list-style-type: decimal">
@@ -854,14 +854,13 @@ For example, if all of the Het1 wasps came from one fig tree, and all of the Het
 In this case, we could not attribute differences in mean wing length to species.
 The differences could instead be attributable to wasps being sampled from different trees (more on this in <a href="Chapter_27.html#Chapter_27">Chapter 27</a>).</p>
 <p>Assumption 3 is fairly self-explanatory.
-The ANOVA assumes that all of the groups in the dataset (e.g., species in the case of the fig wasp wing measurements) have the same variance.
-That is, we assume homogeneity of variances (as opposed to heterogeneity of variances).
+The ANOVA assumes that all of the groups in the dataset (e.g., species in the case of the fig wasp wing measurements) have the same variance, that is, we assume homogeneity of variances (as opposed to heterogeneity of variances).
 In general, ANOVA is reasonably robust to deviations from homogeneity, especially if groups have similar sample sizes <span class="citation">(<a href="#ref-Blanca2018" role="doc-biblioref">Blanca et al. 2018</a>)</span>.
 This means that the Type I error rate is about what we want it to be (usually <span class="math inline">\(\alpha = 0.05\)</span>), even when the assumption of homogeneity of variances is violated.
 In other words, we are not rejecting the null hypothesis when it is true more frequently than we intend!
 We can test the assumption that group variances are the same using a Levene’s test in the same way that we did for the independent samples t-test in <a href="Chapter_23.html#independent-samples-t-test-1">Chapter 23</a>.
 If we reject the null hypothesis that groups have the same variance, then we should potentially consider a non-parametric alternative test such as the Kruskal-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
-<p>Assumption 4 is the equivalent of the t-test assumption from <a href="Chapter_22.html#assumptions-of-t-tests">Chapter 22.4</a> that sample means are normally distributed around the true mean.
+<p>Assumption 4 is the equivalent of the t-test assumption from <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a> that sample means are normally distributed around the true mean.
 What the assumption means is that if we were to repeatedly resample data from a population, the sample means that we calculate would be normally distributed.
 For the fig wasp wing measurements, this means that if we were to go back out and repeatedly collect four fig wasps from each of the five species, then sample means of species wing length and overall wing length would be normally distributed around the true means.
 Due to the central limit theorem (see <a href="Chapter_16.html#Chapter_16">Chapter 16</a>), this assumption becomes less problematic with increasing sample size.
@@ -900,10 +899,10 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <hr />
 <ol start="54">
 <li id="fn54"><p>Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, <span class="math display">\[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\]</span> The number of combinations therefore increases with increasing group number (g).<a href="Chapter_24.html#fnref54" class="footnote-back">↩︎</a></p></li>
-<li id="fn55"><p>To get the 0.4, we can first calculate the probability that we (correctly) do not reject <span class="math inline">\(H_{0}\)</span> for all 10 pair-wise species combinations <span class="math inline">\((1 - 0.05)^{10} \approx 0.60\)</span>, then subtract from 1, <span class="math inline">\(P(Do\:not\:reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\)</span>. That is, we find the probability of there not being a Type I error in the first test (1 - 0.05), <strong>and</strong> the second test (1 - 0.05), and so forth, thereby multiplying (1 - 0.05) by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least 1 Type I error is 1 minus this probability.<a href="Chapter_24.html#fnref55" class="footnote-back">↩︎</a></p></li>
+<li id="fn55"><p>To get the 0.4, we can first calculate the probability that we (correctly) do not reject <span class="math inline">\(H_{0}\)</span> for all 10 pair-wise species combinations <span class="math inline">\((1 - 0.05)^{10} \approx 0.60\)</span>, then subtract from 1, <span class="math inline">\(P(Do\:not\:reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\)</span>. That is, we find the probability of there not being a Type I error in the first test <span class="math inline">\((1 - 0.05)\)</span>, <strong>and</strong> the second test <span class="math inline">\((1 - 0.05)\)</span>, and so forth, thereby multiplying <span class="math inline">\((1 - 0.05)\)</span> by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least 1 Type I error is 1 minus this probability.<a href="Chapter_24.html#fnref55" class="footnote-back">↩︎</a></p></li>
 <li id="fn56"><p>The F-distribution was originally discovered in the context of the ratio of random variables with Chi-square distributions, with each variable being divided by its own degree of freedom <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square distribution in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>.<a href="Chapter_24.html#fnref56" class="footnote-back">↩︎</a></p></li>
 <li id="fn57"><p><a href="https://bradduthie.github.io/stats/app/f_distribution/" class="uri">https://bradduthie.github.io/stats/app/f_distribution/</a><a href="Chapter_24.html#fnref57" class="footnote-back">↩︎</a></p></li>
-<li id="fn58"><p>Note that the SS divided by the degrees of freedom (N - 1) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{Het1}\)</span>, <span class="math inline">\(s^{2}_{Het2}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref58" class="footnote-back">↩︎</a></p></li>
+<li id="fn58"><p>Note that the SS divided by the degrees of freedom (<span class="math inline">\(N - 1\)</span>) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{Het1}\)</span>, <span class="math inline">\(s^{2}_{Het2}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref58" class="footnote-back">↩︎</a></p></li>
 <li id="fn59"><p>In this case, weighing by sample size is not so important because each species has the same number of samples. But when different groups have different numbers of samples, we need to multiply by sample number so that each group contributes proportionally to the SS.<a href="Chapter_24.html#fnref59" class="footnote-back">↩︎</a></p></li>
 <li id="fn60"><p>Note that <span class="math inline">\(df_{among} = 4\)</span> and <span class="math inline">\(df_{within} = 15\)</span> sum to 19, which is the total df of the entire dataset (<span class="math inline">\(N - 1 = 20 - 1 = 19\)</span>). This is always the case for the ANOVA; the overall df constrains the degrees of freedom among and within groups.<a href="Chapter_24.html#fnref60" class="footnote-back">↩︎</a></p></li>
 </ol>

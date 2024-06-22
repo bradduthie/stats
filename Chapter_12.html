@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-21" />
+<meta name="date" content="2024-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -299,7 +299,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="24" data-path="Chapter_24.html"><a href="Chapter_24.html"><i class="fa fa-check"></i><b>24</b> Analysis of variance</a>
 <ul>
-<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#the-f-distribution"><i class="fa fa-check"></i><b>24.1</b> The F-distribution</a></li>
+<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#f-distribution"><i class="fa fa-check"></i><b>24.1</b> F-distribution</a></li>
 <li class="chapter" data-level="24.2" data-path="Chapter_24.html"><a href="Chapter_24.html#one-way-anova"><i class="fa fa-check"></i><b>24.2</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
@@ -717,277 +717,277 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 <tbody>
 <tr class="odd">
 <td align="center"><strong>S1</strong></td>
-<td align="center">0.68</td>
-<td align="center">0.49</td>
-<td align="center">0.61</td>
+<td align="center">0.74</td>
 <td align="center">0.7</td>
-<td align="center">0.7</td>
-<td align="center">0.73</td>
+<td align="center">0.78</td>
+<td align="center">0.63</td>
+<td align="center">0.69</td>
+<td align="center">0.85</td>
+<td align="center">0.58</td>
+<td align="center">0.67</td>
 <td align="center">0.79</td>
-<td align="center">0.72</td>
-<td align="center">0.73</td>
-<td align="center">0.6</td>
+<td align="center">0.58</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S2</strong></td>
-<td align="center">0.66</td>
-<td align="center">0.89</td>
+<td align="center">0.6</td>
+<td align="center">0.63</td>
+<td align="center">0.78</td>
+<td align="center">0.62</td>
 <td align="center">0.71</td>
+<td align="center">0.67</td>
+<td align="center">0.72</td>
+<td align="center">0.77</td>
 <td align="center">0.83</td>
-<td align="center">0.65</td>
-<td align="center">0.81</td>
-<td align="center">0.76</td>
-<td align="center">0.81</td>
-<td align="center">0.81</td>
-<td align="center">0.61</td>
+<td align="center">0.78</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S3</strong></td>
+<td align="center">0.62</td>
 <td align="center">0.71</td>
-<td align="center">0.61</td>
-<td align="center">0.73</td>
-<td align="center">0.81</td>
-<td align="center">0.81</td>
+<td align="center">0.58</td>
+<td align="center">0.74</td>
 <td align="center">0.75</td>
-<td align="center">0.75</td>
-<td align="center">0.76</td>
-<td align="center">0.76</td>
-<td align="center">0.92</td>
+<td align="center">0.62</td>
+<td align="center">0.62</td>
+<td align="center">0.71</td>
+<td align="center">0.71</td>
+<td align="center">0.74</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S4</strong></td>
-<td align="center">0.62</td>
-<td align="center">0.78</td>
-<td align="center">0.69</td>
-<td align="center">0.79</td>
-<td align="center">0.79</td>
+<td align="center">0.67</td>
+<td align="center">0.56</td>
 <td align="center">0.87</td>
-<td align="center">0.74</td>
-<td align="center">0.71</td>
-<td align="center">0.68</td>
-<td align="center">0.73</td>
+<td align="center">0.87</td>
+<td align="center">0.62</td>
+<td align="center">0.72</td>
+<td align="center">0.61</td>
+<td align="center">0.63</td>
+<td align="center">0.77</td>
+<td align="center">0.72</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S5</strong></td>
-<td align="center">0.74</td>
-<td align="center">0.54</td>
-<td align="center">0.8</td>
-<td align="center">0.74</td>
-<td align="center">0.64</td>
-<td align="center">0.88</td>
-<td align="center">0.87</td>
-<td align="center">0.68</td>
 <td align="center">0.75</td>
-<td align="center">0.84</td>
+<td align="center">0.65</td>
+<td align="center">0.55</td>
+<td align="center">0.59</td>
+<td align="center">0.87</td>
+<td align="center">0.69</td>
+<td align="center">0.83</td>
+<td align="center">0.64</td>
+<td align="center">0.54</td>
+<td align="center">0.61</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S6</strong></td>
-<td align="center">0.58</td>
-<td align="center">0.8</td>
-<td align="center">0.54</td>
-<td align="center">0.76</td>
-<td align="center">0.66</td>
-<td align="center">0.69</td>
-<td align="center">0.88</td>
-<td align="center">0.67</td>
+<td align="center">0.78</td>
+<td align="center">0.55</td>
 <td align="center">0.79</td>
-<td align="center">0.74</td>
+<td align="center">0.76</td>
+<td align="center">0.75</td>
+<td align="center">0.55</td>
+<td align="center">0.73</td>
+<td align="center">0.83</td>
+<td align="center">0.7</td>
+<td align="center">0.6</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S7</strong></td>
-<td align="center">0.83</td>
-<td align="center">0.68</td>
-<td align="center">0.83</td>
-<td align="center">0.65</td>
-<td align="center">0.66</td>
-<td align="center">0.68</td>
-<td align="center">0.61</td>
-<td align="center">0.74</td>
-<td align="center">0.81</td>
-<td align="center">0.67</td>
+<td align="center">0.58</td>
+<td align="center">0.75</td>
+<td align="center">0.52</td>
+<td align="center">0.53</td>
+<td align="center">0.72</td>
+<td align="center">0.91</td>
+<td align="center">0.93</td>
+<td align="center">0.85</td>
+<td align="center">0.56</td>
+<td align="center">0.59</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S8</strong></td>
-<td align="center">0.66</td>
-<td align="center">0.84</td>
-<td align="center">0.68</td>
 <td align="center">0.79</td>
-<td align="center">0.64</td>
-<td align="center">0.65</td>
-<td align="center">0.91</td>
-<td align="center">0.68</td>
+<td align="center">0.74</td>
 <td align="center">0.64</td>
 <td align="center">0.59</td>
+<td align="center">0.66</td>
+<td align="center">0.65</td>
+<td align="center">0.64</td>
+<td align="center">0.59</td>
+<td align="center">0.62</td>
+<td align="center">0.83</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S9</strong></td>
-<td align="center">0.71</td>
-<td align="center">0.63</td>
-<td align="center">0.67</td>
-<td align="center">0.64</td>
+<td align="center">0.54</td>
+<td align="center">0.87</td>
+<td align="center">0.68</td>
+<td align="center">0.75</td>
 <td align="center">0.77</td>
-<td align="center">0.82</td>
-<td align="center">0.56</td>
 <td align="center">0.69</td>
-<td align="center">0.79</td>
-<td align="center">0.79</td>
+<td align="center">0.69</td>
+<td align="center">0.72</td>
+<td align="center">0.8</td>
+<td align="center">0.94</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S10</strong></td>
+<td align="center">0.6</td>
 <td align="center">0.9</td>
-<td align="center">0.87</td>
-<td align="center">0.62</td>
-<td align="center">0.84</td>
-<td align="center">0.72</td>
-<td align="center">0.66</td>
-<td align="center">0.65</td>
-<td align="center">0.69</td>
-<td align="center">0.68</td>
-<td align="center">0.84</td>
+<td align="center">0.75</td>
+<td align="center">0.86</td>
+<td align="center">0.71</td>
+<td align="center">0.75</td>
+<td align="center">0.73</td>
+<td align="center">0.67</td>
+<td align="center">0.85</td>
+<td align="center">0.6</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S11</strong></td>
-<td align="center">0.88</td>
+<td align="center">0.87</td>
+<td align="center">0.5</td>
+<td align="center">0.79</td>
+<td align="center">0.82</td>
+<td align="center">0.84</td>
 <td align="center">0.52</td>
-<td align="center">0.66</td>
-<td align="center">0.61</td>
-<td align="center">0.86</td>
-<td align="center">0.67</td>
-<td align="center">0.72</td>
-<td align="center">0.74</td>
-<td align="center">0.58</td>
-<td align="center">0.6</td>
+<td align="center">0.71</td>
+<td align="center">0.95</td>
+<td align="center">0.71</td>
+<td align="center">0.81</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S12</strong></td>
-<td align="center">0.74</td>
-<td align="center">0.61</td>
-<td align="center">0.7</td>
-<td align="center">0.74</td>
-<td align="center">0.81</td>
-<td align="center">0.72</td>
-<td align="center">0.53</td>
+<td align="center">0.68</td>
+<td align="center">0.71</td>
 <td align="center">0.65</td>
-<td align="center">0.53</td>
 <td align="center">0.69</td>
+<td align="center">0.64</td>
+<td align="center">0.7</td>
+<td align="center">0.79</td>
+<td align="center">0.64</td>
+<td align="center">0.83</td>
+<td align="center">0.6</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S13</strong></td>
-<td align="center">0.59</td>
-<td align="center">0.71</td>
-<td align="center">0.77</td>
-<td align="center">0.73</td>
-<td align="center">0.61</td>
+<td align="center">0.7</td>
+<td align="center">0.62</td>
+<td align="center">0.78</td>
+<td align="center">0.91</td>
 <td align="center">0.75</td>
-<td align="center">0.65</td>
+<td align="center">0.55</td>
+<td align="center">0.87</td>
+<td align="center">0.68</td>
 <td align="center">0.85</td>
-<td align="center">0.69</td>
-<td align="center">0.73</td>
+<td align="center">0.68</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S14</strong></td>
+<td align="center">0.75</td>
 <td align="center">0.76</td>
-<td align="center">0.66</td>
-<td align="center">0.7</td>
+<td align="center">0.73</td>
 <td align="center">0.77</td>
-<td align="center">0.76</td>
-<td align="center">0.59</td>
-<td align="center">0.86</td>
-<td align="center">0.66</td>
-<td align="center">0.68</td>
-<td align="center">0.85</td>
+<td align="center">0.57</td>
+<td align="center">0.73</td>
+<td align="center">0.83</td>
+<td align="center">0.61</td>
+<td align="center">0.56</td>
+<td align="center">0.6</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S15</strong></td>
-<td align="center">0.72</td>
-<td align="center">0.73</td>
-<td align="center">0.81</td>
+<td align="center">0.63</td>
+<td align="center">0.78</td>
+<td align="center">0.68</td>
+<td align="center">0.62</td>
+<td align="center">0.57</td>
+<td align="center">0.68</td>
 <td align="center">0.67</td>
+<td align="center">0.7</td>
+<td align="center">0.65</td>
 <td align="center">0.58</td>
-<td align="center">0.74</td>
-<td align="center">0.64</td>
-<td align="center">0.89</td>
-<td align="center">0.82</td>
-<td align="center">0.6</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S16</strong></td>
-<td align="center">0.69</td>
-<td align="center">0.64</td>
-<td align="center">0.79</td>
-<td align="center">0.59</td>
-<td align="center">0.9</td>
+<td align="center">0.84</td>
+<td align="center">0.78</td>
 <td align="center">0.73</td>
-<td align="center">0.66</td>
-<td align="center">0.77</td>
-<td align="center">0.6</td>
+<td align="center">0.76</td>
+<td align="center">0.78</td>
+<td align="center">0.71</td>
 <td align="center">0.7</td>
+<td align="center">0.71</td>
+<td align="center">0.67</td>
+<td align="center">0.66</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S17</strong></td>
-<td align="center">0.58</td>
-<td align="center">0.64</td>
-<td align="center">0.68</td>
+<td align="center">0.65</td>
+<td align="center">0.83</td>
+<td align="center">0.91</td>
+<td align="center">0.65</td>
+<td align="center">0.71</td>
+<td align="center">0.72</td>
 <td align="center">0.81</td>
-<td align="center">0.62</td>
-<td align="center">0.69</td>
-<td align="center">0.76</td>
-<td align="center">0.76</td>
-<td align="center">0.88</td>
-<td align="center">0.69</td>
+<td align="center">0.6</td>
+<td align="center">0.67</td>
+<td align="center">0.74</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S18</strong></td>
+<td align="center">0.61</td>
 <td align="center">0.8</td>
-<td align="center">0.82</td>
-<td align="center">0.75</td>
-<td align="center">0.73</td>
-<td align="center">0.65</td>
-<td align="center">0.69</td>
-<td align="center">0.71</td>
 <td align="center">0.83</td>
-<td align="center">0.57</td>
+<td align="center">0.43</td>
+<td align="center">0.64</td>
+<td align="center">0.84</td>
+<td align="center">0.66</td>
 <td align="center">0.77</td>
+<td align="center">0.78</td>
+<td align="center">0.88</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S19</strong></td>
-<td align="center">0.66</td>
-<td align="center">0.68</td>
-<td align="center">0.52</td>
-<td align="center">0.49</td>
-<td align="center">0.8</td>
-<td align="center">0.55</td>
-<td align="center">0.74</td>
-<td align="center">0.69</td>
-<td align="center">0.75</td>
-<td align="center">0.61</td>
+<td align="center">0.86</td>
+<td align="center">0.63</td>
+<td align="center">0.7</td>
+<td align="center">0.54</td>
+<td align="center">0.81</td>
+<td align="center">0.58</td>
+<td align="center">0.79</td>
+<td align="center">0.56</td>
+<td align="center">0.58</td>
+<td align="center">0.48</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S20</strong></td>
-<td align="center">0.49</td>
-<td align="center">0.72</td>
-<td align="center">0.86</td>
-<td align="center">0.74</td>
-<td align="center">0.67</td>
-<td align="center">0.41</td>
-<td align="center">0.94</td>
-<td align="center">0.84</td>
-<td align="center">0.8</td>
+<td align="center">0.66</td>
 <td align="center">0.73</td>
+<td align="center">0.83</td>
+<td align="center">0.71</td>
+<td align="center">0.77</td>
+<td align="center">0.63</td>
+<td align="center">0.79</td>
+<td align="center">0.53</td>
+<td align="center">0.77</td>
+<td align="center">0.76</td>
 </tr>
 </tbody>
 </table>
 <p>We can calculate the mean of each sample by calculating the mean of each row.
 These 20 means are reported below.</p>
 <pre><code>      [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.675 0.754 0.761 0.740 0.748 0.711 0.716 0.708 0.707 0.747
-[2,] 0.684 0.672 0.708 0.729 0.720 0.707 0.711 0.732 0.649 0.720</code></pre>
-<p>The standard deviation of the 20 sample means reported above is 0.02896.
+[1,] 0.701 0.711 0.680 0.704 0.672 0.704 0.694 0.675 0.745 0.742
+[2,] 0.752 0.693 0.739 0.691 0.656 0.734 0.729 0.724 0.653 0.718</code></pre>
+<p>The standard deviation of the 20 sample means reported above is 0.0294695.
 Now suppose that we only had Sample 1 (i.e., top row of data).
-The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.0860555.
+The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.0902404.
 We can calculate the standard error from these sample values below,</p>
-<p><span class="math display">\[s = \frac{0.0860555}{\sqrt{10}} = 0.0272132.\]</span></p>
-<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.02896, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0272132.
+<p><span class="math display">\[s = \frac{0.0902404}{\sqrt{10}} = 0.0285365.\]</span></p>
+<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0294695, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0285365.
 These are reasonably close, and they would be even closer if we had either a larger sample size in each sample (i.e., higher <span class="math inline">\(N\)</span>) or a larger number of samples.</p>
 </div>
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-06-21" />
+<meta name="date" content="2024-06-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -299,7 +299,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="24" data-path="Chapter_24.html"><a href="Chapter_24.html"><i class="fa fa-check"></i><b>24</b> Analysis of variance</a>
 <ul>
-<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#the-f-distribution"><i class="fa fa-check"></i><b>24.1</b> The F-distribution</a></li>
+<li class="chapter" data-level="24.1" data-path="Chapter_24.html"><a href="Chapter_24.html#f-distribution"><i class="fa fa-check"></i><b>24.1</b> F-distribution</a></li>
 <li class="chapter" data-level="24.2" data-path="Chapter_24.html"><a href="Chapter_24.html#one-way-anova"><i class="fa fa-check"></i><b>24.2</b> One-way ANOVA</a>
 <ul>
 <li class="chapter" data-level="24.2.1" data-path="Chapter_24.html"><a href="Chapter_24.html#anova-mean-variance-among-groups"><i class="fa fa-check"></i><b>24.2.1</b> ANOVA mean variance among groups</a></li>
@@ -478,13 +478,13 @@ div.csl-indent {
 <div id="Chapter_27" class="section level1 hasAnchor" number="27">
 <h1><span class="header-section-number">Chapter 27</span> Two-way ANOVA<a href="Chapter_27.html#Chapter_27" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The one-way ANOVA tested the null hypothesis that all group means are the same.
-But we might also have a dataset in which there is more than one type of group.
-For example, suppose we know that the fig wasps used in Chapters 24-26 actually came from two different trees (Tree A and Tree B).
-This would mean that there could be a confounding variable affecting wing length, violating assumption 2 from <a href="Chapter_24.html#assumptions-of-anova">Chapter 24.3</a>.
+But, we might also have a dataset in which there is more than one type of group.
+For example, suppose we know that the fig wasps used in Chapters 24–26 actually came from two different trees (Tree A and Tree B).
+This would mean that there could be a confounding variable affecting wing length, violating assumption 2 from <a href="Chapter_24.html#assumptions-of-anova">Section 24.3</a>.
 If, for whatever reason, fig wasps on different trees have different wing lengths, then we should include tree as an explanatory variable in the ANOVA.
 Because we would then have two group types (species and tree), we would need a two-way ANOVA<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 Here, to illustrate the key concepts as clearly as possible, we will run an example of a two-way ANOVA with just two of the five species (Het1 and SO2).
-Table 27.1 shows the fig wasp wing length dataset for the two species in a tidy format, which includes columns for two group types, species and tree.</p>
+Table 27.1 shows the fig wasp wing length dataset for the two species in a tidy format, which includes columns for two group types: species and tree.</p>
 <table style="width:43%;">
 <caption><strong>TABLE 27.1</strong> Wing lengths (mm) measured for two unnamed species of non-pollinating fig wasps collected from two fig trees in 2010 near La Paz in Baja, Mexico.</caption>
 <colgroup>
@@ -548,7 +548,7 @@ We can also see if there is any synergistic effect between groups, which is call
 For example, if Het1 fig wasps had longer wing lengths than SO1 on Tree A, but shorter wing lengths than SO1 on Tree B, then we would say that there is an interaction between species and tree.
 Given this kind of interaction effect, it would not make sense to say that Het1 fig wasps have longer or shorter wings than SO1 because this would depend on the tree!</p>
 <p>This chapter will not delve into the mathematics of the two-way ANOVA<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
-Working out a two-way ANOVA by hand requires similar, albeit more laborious, calculations of sum of squares and degrees of freedom than is needed for the one-way ANOVA in <a href="Chapter_24.html#one-way-anova">Chapter 24.2</a>.
+Working out a two-way ANOVA by hand requires similar, albeit more laborious, calculations of sum of squares and degrees of freedom than is needed for the one-way ANOVA in <a href="Chapter_24.html#one-way-anova">Section 24.2</a>.
 But the general concept is the same.
 The idea is to calculate the amount of the total variation attributable to different groups, or the interaction among group types.
 Note that the assumptions for the two-way ANOVA are the same as for the one-way ANOVA.</p>
@@ -573,10 +573,10 @@ The third hypothesis addresses the interaction effect:</p>
 <p>Interaction effects are difficult to understand at first, so we will look at two concrete examples of two-way ANOVAs.
 The first will use the Table 27.1 data in which no interaction effect exists.
 The second will use a different species pairing in which an interaction does exist.</p>
-<p>In a two-way ANOVA, the jamovi output (Figure 27.1) appears similar to that of a one-way ANOVA (see <a href="Chapter_24.html#anova-f-statistic-calculation">Chapter 24.2.3</a>), but there are four rows of output.
+<p>In a two-way ANOVA, the jamovi output (Figure 27.1) appears similar to that of a one-way ANOVA (see <a href="Chapter_24.html#anova-f-statistic-calculation">Section 24.2.3</a>), but there are four rows of output.
 Rows 1 and 2 test the null hypotheses associated with the main effects of species and tree, respectively.
 Row 3 tests the interaction effect.
-And row 4 shows us the variation in the data that cannot be attributed to either the main effects or the interaction (i.e., the residual variation).
+And row 4 shows us the variation in the data that cannot be attributed to either the main effects or the interaction (i.e., residual variation).
 This is equivalent to the variation within groups in the one-way ANOVA.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-107"></span>
 <img src="img/jamovi_two-way_ANOVA_no_interaction.png" alt="Jamovi output is shown with a small table that includes 4 rows and 5 columns from a two-way ANOVA." width="100%" />
@@ -592,7 +592,7 @@ Figure 27.2 shows these results visually <span class="citation">(<a href="#ref-J
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-108"></span>
 <img src="img/two-way_ANOVA_no_interaction.png" alt="A plot is shown in jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines run in parallel at a downward angle." width="100%" />
 <p class="caption">
-Figure 27.2: An interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the four species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
+Figure 27.2: Interaction plot for a two-way ANOVA of fig wasp wing measurements as affected by species and tree. Points show mean values for the four species and tree combinations (e.g., Het1 from Tree A in the upper left). Error bars show standard errors around the means. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
 <p>In Figure 27.2, there is no interaction between species and tree.
@@ -603,7 +603,7 @@ Consequently, while wasp species is important for predicting wing length, as is 
 This is reflected in the lines having a similar slope, or, more technically, slopes that are not significantly different from one another.
 If the slopes of the two lines were significantly different, then this would be evidence for an interaction between species and tree.</p>
 <p>What would Figure 27.2 look like if there was an interaction effect between species and tree?
-We can run another two-way ANOVA, this time with a different pair of species, SO1 and SO2.
+We can run another two-way ANOVA, this time with a different pair of species: SO1 and SO2.
 Table 27.2 shows the data.</p>
 <table style="width:43%;">
 <caption><strong>TABLE 27.2</strong> Wing lengths (mm) measured for two unnamed species of non-pollinating fig wasps collected from two fig trees in 2010 near La Paz in Baja, Mexico.</caption>
