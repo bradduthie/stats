@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 27 Two-way ANOVA | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 27 Two-way ANOVA | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -588,7 +592,7 @@ Figure 27.1: Jamovi output table for a two-way ANOVA, which tests for the effect
 From the first row, given the high F = 45.75 and the low P = 0.002, we can reject the null hypothesis that species mean wing lengths are the same.
 Similarly, from the second row, we can reject the null hypothesis that wing lengths are the same in both trees (F = 30.39; P = 0.005).
 In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and tree (F = 0.05, P = 0.839).
-Figure 27.2 shows these results visually <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
+Figure 27.2 shows these results visually <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-109"></span>
 <img src="img/two-way_ANOVA_no_interaction.png" alt="A plot is shown in jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines run in parallel at a downward angle." width="100%" />
 <p class="caption">
@@ -700,19 +704,19 @@ We just tried all possible combinations in search of a pair of species with sign
 With the two-way ANOVA, we are asking three separate questions, and accepting a Type I error rate of 0.05 for each of them, individually.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="61">
 <li id="fn61"><p>Yes, it is possible to have a three-way or a four-way ANOVA, but having so many group types can get very messy very quickly, especially if we want to look at interactions between group types.<a href="Chapter_27.html#fnref61" class="footnote-back">↩︎</a></p></li>
-<li id="fn62"><p>For those interested, chapter 11 of <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> works all of this out step by step.<a href="Chapter_27.html#fnref62" class="footnote-back">↩︎</a></p></li>
+<li id="fn62"><p>For those interested, chapter 11 of <span class="citation">Sokal &amp; Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> works all of this out step by step.<a href="Chapter_27.html#fnref62" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 35 Randomisation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 35 Randomisation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -484,7 +488,7 @@ This chapter introduces a different approach.
 Instead of using a pre-determined null distribution, we will build the null distribution using our data.
 This approach is not one that is often introduced in introductory statistics texts.
 It is included here for two reasons.
-First, randomisation presents a different way of thinking statistically without introducing an entirely different philosophical or methodological approach such as likelihood <span class="citation">(<a href="#ref-Edwards1972" role="doc-biblioref">Edwards 1972</a>)</span> or Bayesian statistics <span class="citation">(<a href="#ref-Lee1997" role="doc-biblioref">Lee 1997</a>)</span>.
+First, randomisation presents a different way of thinking statistically without introducing an entirely different philosophical or methodological approach such as likelihood <span class="citation">(<a href="#ref-Edwards1972" role="doc-biblioref">Edwards, 1972</a>)</span> or Bayesian statistics <span class="citation">(<a href="#ref-Lee1997" role="doc-biblioref">Lee, 1997</a>)</span>.
 Second, it helps reinforce the concept of what null hypothesis testing is and what p-values are.
 Before explaining the randomisation approach, it is useful to summarise the parametric hypothesis tests introduced in earlier chapters.</p>
 <div id="summary-of-parametric-hypothesis-testing" class="section level2 hasAnchor" number="35.1">
@@ -506,7 +510,7 @@ High <span class="math inline">\(\chi^{2}\)</span> values were associated with l
 <p>For testing the significance of correlation coefficients (see <a href="Chapter_30.html#Chapter_30">Chapter 30</a>) and linear regression coefficients (see <a href="Chapter_32.html#Chapter_32">Chapter 32</a>), a t-distribution was used.
 And an F distribution was used to test for the overall significance of linear regression models.</p>
 <p>For these tests, the approach to hypothesis testing was therefore always to use the t-distribution, F distribution, or <span class="math inline">\(\chi^{2}\)</span> distribution in some way.
-These distributions are more formally defined in mathematical statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, a field of study that uses mathematics to derive the probability distributions that arise from an outcome of random events (e.g., the coin-flipping of <a href="#an-instructive-example">Section 15.1</a>).
+These distributions are more formally defined in mathematical statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, a field of study that uses mathematics to derive the probability distributions that arise from an outcome of random events (e.g., the coin-flipping of <a href="#an-instructive-example">Section 15.1</a>).
 The reason that we use these distributions in statistical hypothesis testing is that they are often quite good at describing the outcomes that we expect when we collect a sample from a population.
 But this is not always the case.
 Recall that sometimes the assumptions of a particular statistical test were not met.
@@ -518,7 +522,7 @@ Randomisation uses a different approach.</p>
 <h2><span class="header-section-number">35.2</span> Randomisation approach<a href="Chapter_35.html#randomisation-approach" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Randomisation takes a different approach to null hypothesis testing.
 Instead of assuming a theoretical null distribution against which we compare our test statistic, we ask, ‘if the ordering of the data we collected was actually random, then what is the probability of getting a test statistic as or more extreme than the one that we actually did’.
-Rather than using a null distribution derived from mathematical statistics, we will build the null distribution by randomising our data in some useful way <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>.
+Rather than using a null distribution derived from mathematical statistics, we will build the null distribution by randomising our data in some useful way <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly, 2007</a>)</span>.
 Conceptually, this is often easier to understand because randomisation approaches make it easier to see why the null distribution exists and what it is doing.
 Unfortunately, these methods are more challenging to implement in practice because using them usually requires knowing a bit of coding.
 The best way to get started is with an instructive example.</p>
@@ -535,7 +539,7 @@ The fig wasps in Figure 35.1 are two unnamed species of the genus <em>Idarnes</e
 Figure 35.1: Two fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’. Modified from Duthie, Abbott, and Nason (2015).
 </p>
 </div>
-<p>The reason that these two species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as those in Figure 35.1 <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.</p>
+<p>The reason that these two species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as those in Figure 35.1 <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>)</span>.</p>
 <p>Suppose that we have some data on the lengths of the ovipositors from each species.
 We might want to know whether the mean ovipositor length differs between the two species. Figure 35.2 shows histograms of ovipositor lengths collected from 32 fig wasps, 17 SO1s and 15 SO2s.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-157"></span>
@@ -604,7 +608,7 @@ Because the randomisation method does not assume that the data are a random samp
 This is not necessarily a problem in practice.
 It is only relevant in terms of the formal assumptions of the model.
 Once we run our randomisation test, it might be entirely reasonable to argue verbally that the results of our randomisation test can generalise to our population of interest.
-In other words, we can argue that the difference between groups in the sample reflects a difference in the populations from which the sample came <span class="citation">(<a href="#ref-Ludbrook1998" role="doc-biblioref">Ludbrook and Dudley 1998</a>; <a href="#ref-Ernst2004" role="doc-biblioref">Ernst 2004</a>)</span>.</p>
+In other words, we can argue that the difference between groups in the sample reflects a difference in the populations from which the sample came <span class="citation">(<a href="#ref-Ernst2004" role="doc-biblioref">Ernst, 2004</a>; <a href="#ref-Ludbrook1998" role="doc-biblioref">Ludbrook &amp; Dudley, 1998</a>)</span>.</p>
 </div>
 <div id="bootstrapping" class="section level2 hasAnchor" number="35.5">
 <h2><span class="header-section-number">35.5</span> Bootstrapping<a href="Chapter_35.html#bootstrapping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -622,7 +626,7 @@ Keeping in mind the formula for standard error <span class="math inline">\(s/\sq
 <p>Calculating the above gives us values of LCI = 2.896 and UCI = 3.164.</p>
 <p>Again, randomisation uses a different approach to get an estimate of the same confidence intervals.
 Instead of calculating the standard error and multiplying it by a z-score or t-score to encompass a particular interval of probability density, we can instead resample the data we have with replacement many times, calculating the mean each time we resample.
-The general idea is that this process of resampling approximates what would happen if we were to go back and resample new data from our original population many times, thereby giving us the distribution of means from all of these hypothetical resampling events <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>.
+The general idea is that this process of resampling approximates what would happen if we were to go back and resample new data from our original population many times, thereby giving us the distribution of means from all of these hypothetical resampling events <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly, 2007</a>)</span>.
 To calculate our 95% confidence intervals, we then only need to rank the calculated means and find the mean closest to the lowest 2.5% and the highest 97.5%.</p>
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Section 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sample some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values two or more times by chance, and other values might not be sampled at all.
@@ -650,12 +654,12 @@ But instead of finding confidence intervals of the sample means around the true 
 <div id="randomisation-conclusions" class="section level2 hasAnchor" number="35.6">
 <h2><span class="header-section-number">35.6</span> Randomisation conclusions<a href="Chapter_35.html#randomisation-conclusions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The examples demonstrated in this chapter are just a small set of what is possible using randomisation approaches.
-Randomisation and bootstrapping are highly flexible tools that can be used in a variety of ways <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>.
+Randomisation and bootstrapping are highly flexible tools that can be used in a variety of ways <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly, 2007</a>)</span>.
 They could be used as substitutes (or complements) to any of the hypothesis tests that we have used in this book.
 For example, to use a randomisation approach for testing whether or not a correlation coefficient is significantly different from 0, we could randomly shuffle the values of one variable 9999 times.
 After each shuffle, we would calculate the Pearson product moment correlation coefficient, then use the 9999 randomised correlations as a null distribution to compare against the observed correlation coefficient.
 This would give us a plot like the one shown in Figure 35.4, but showing the null distribution of the correlation coefficient instead of the difference between group means.
-Similar approaches could be used for ANOVA or linear regression <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly 2007</a>)</span>.</p>
+Similar approaches could be used for ANOVA or linear regression <span class="citation">(<a href="#ref-Manly2007" role="doc-biblioref">Manly, 2007</a>)</span>.</p>
 
 </div>
 </div>
@@ -663,27 +667,27 @@ Similar approaches could be used for ANOVA or linear regression <span class="cit
 
 
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Duthie2015b" class="csl-entry">
-Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
+Duthie, A. B., Abbott, K. C., &amp; Nason, J. D. (2015). <span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>. <em>American Naturalist</em>, <em>186</em>(1), 151–158. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>
 </div>
 <div id="ref-Edwards1972" class="csl-entry">
-Edwards, A W F. 1972. <em><span class="nocase">Likelihood: An account of the statistical concept of likelihood and its application to scientific inference</span></em>. Cambridge: Cambridge University Press.
+Edwards, A. W. F. (1972). <em><span class="nocase">Likelihood: An account of the statistical concept of likelihood and its application to scientific inference</span></em> (p. 235). Cambridge University Press, Cambridge, UK.
 </div>
 <div id="ref-Ernst2004" class="csl-entry">
-Ernst, Michael D. 2004. <span>“<span class="nocase">Permutation methods: A basis for exact inference</span>.”</span> <em>Statistical Science</em> 19 (4): 676–85. <a href="https://doi.org/10.1214/088342304000000396">https://doi.org/10.1214/088342304000000396</a>.
+Ernst, M. D. (2004). <span class="nocase">Permutation methods: A basis for exact inference</span>. <em>Statistical Science</em>, <em>19</em>(4), 676–685. <a href="https://doi.org/10.1214/088342304000000396">https://doi.org/10.1214/088342304000000396</a>
 </div>
 <div id="ref-Lee1997" class="csl-entry">
-Lee, PM. 1997. <span>“Bayesian Statistics: An Introduction, 344 Pp.”</span> <em>Edward Arnold, London</em>.
+Lee, P. (1997). <em>Bayesian statistics: An introduction, 344 pp</em>. Edward Arnold, London.
 </div>
 <div id="ref-Ludbrook1998" class="csl-entry">
-Ludbrook, John, and Hugh Dudley. 1998. <span>“<span class="nocase">Why Permutation Tests Are Superior to t and F Tests in Biomedical Research</span>.”</span> <em>American Statistician</em> 52 (2): 127–32.
+Ludbrook, J., &amp; Dudley, H. (1998). Why permutation tests are superior to t and <span>F</span> tests in biomedical research. <em>American Statistician</em>, <em>52</em>(2), 127–132.
 </div>
 <div id="ref-Manly2007" class="csl-entry">
-Manly, Bryan F J. 2007. <em><span class="nocase">Randomization, Bootstrap and Monte Carlo Methods in Biology</span></em>. 3rd ed. Boca Raton, FL: Chapman &amp; Hall/CRC.
+Manly, B. F. J. (2007). <em><span class="nocase">Randomization, Bootstrap and Monte Carlo Methods in Biology</span></em> (3rd ed.). Chapman &amp; Hall/CRC, Boca Raton, USA.
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 </div>
 <div class="footnotes">

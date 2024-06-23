@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 16 Central Limit Theorem | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 16 Central Limit Theorem | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -482,7 +486,7 @@ This chapter focuses on the normal distribution in more detail and explains why 
 <div id="the-distribution-of-means-is-normal" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> The distribution of means is normal<a href="Chapter_16.html#the-distribution-of-means-is-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The central limit theorem (CLT) is one of the most important theorems in statistics.
-It states that if we sample values from <strong>any</strong> distribution and calculate the mean, as we increase our sample size <span class="math inline">\(N\)</span>, the distribution <em>of the mean</em> gets closer and closer to a normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>; <a href="#ref-Spiegelhalter2019" role="doc-biblioref">Spiegelhalter 2019</a>)</span>.<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>
+It states that if we sample values from <strong>any</strong> distribution and calculate the mean, as we increase our sample size <span class="math inline">\(N\)</span>, the distribution <em>of the mean</em> gets closer and closer to a normal distribution <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>; <a href="#ref-Spiegelhalter2019" role="doc-biblioref">Spiegelhalter, 2019</a>)</span>.<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>
 This statement is busy and potentially confusing at first, partly because it refers to two separate distributions: the sampling distribution and the distribution of the sample mean.
 We can take this step by step, starting with the sampling distribution.</p>
 <p>The sampling distribution could be any of the four distributions introduced in <a href="Chapter_15.html#Chapter_15">Chapter 15</a> (binomial, Poisson, uniform, or normal).
@@ -534,7 +538,7 @@ Figure 16.3: Simulated demonstration of the central limit theorem. (A) Recreatio
 </div>
 <p>In all cases, regardless of the original sampling distribution (binomial, Poisson, or uniform), the distribution of sample <em>means</em> has the shape of a normal distribution.
 This normal distribution of sample means has important implications for statistical hypothesis testing.
-The CLT allows us to make inferences about the means of non-normally distributed distributions <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, to create confidence intervals around sample means, and to apply statistical hypothesis tests that would otherwise not be possible.
+The CLT allows us to make inferences about the means of non-normally distributed distributions <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, to create confidence intervals around sample means, and to apply statistical hypothesis tests that would otherwise not be possible.
 We will look at these statistical tools in future chapters.</p>
 </div>
 <div id="probability-and-z-scores" class="section level2 hasAnchor" number="16.2">
@@ -554,7 +558,7 @@ Consequently, the area under the curve of the normal distribution (i.e., under t
 When we say that the probability of sampling a value within 1 standard deviation of the mean is 0.682, this also means that the <em>area</em> of this region under the curve equals 0.682 (i.e., the shaded area in Figure 16.4).
 And, again, because the whole area under the curve sums to 1, that must mean that the unshaded area of Figure 16.4 (where <span class="math inline">\(x &lt; \mu -\sigma\)</span> or <span class="math inline">\(x &gt; \mu + \sigma\)</span>) has an area equal to <span class="math inline">\(1 - 0.682 = 0.318\)</span>.
 That is, the probability of randomly sampling a value <span class="math inline">\(x\)</span> in this region is <span class="math inline">\(P(x &lt; \mu - \sigma \: \cup \: x &gt; \mu + \sigma) = 0.318\)</span>, or 31.8% (note that the <span class="math inline">\(\cup\)</span>, is just a fancy way of saying ‘or’, in this case; technically, the <em>union</em> of two sets).</p>
-<p>We can calculate other percentages using standard deviations too <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+<p>We can calculate other percentages using standard deviations too <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 For example, about 95.4% of the probability density in a normal distribution lies between 2 standard deviations of the mean, i.e., <span class="math inline">\(P(\mu - 2\sigma &lt; x &lt; \mu + 2\sigma) = 0.954\)</span>.
 And about 99.6% of the probability density in a normal distribution lies between 3 standard deviations of the mean, i.e., <span class="math inline">\(P(\mu - 3\sigma &lt; x &lt; \mu + 3\sigma) = 0.996\)</span>.
 We could go on mapping percentages to standard deviations like this; for example, about 93.3% of the probability density in a normal distribution is less than <span class="math inline">\(\mu + 1.5\sigma\)</span> (i.e., less than 1.5 standard deviations greater than the mean; see Figure 16.5).</p>
@@ -601,38 +605,38 @@ Mathematically, here is how the calculation is made,</p>
 <p>For example, if we had a value of <span class="math inline">\(x = 9.1\)</span> in our simulated dataset, in which <span class="math inline">\(\mu = 5\)</span> and <span class="math inline">\(\sigma = 2\)</span>, then we would calculate <span class="math inline">\(z = (9.1 - 5) / 2 = 2.05\)</span>.
 Since we almost never know what the true population mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) are, we usually need to use the estimates made from our sample,</p>
 <p><span class="math display">\[z = \frac{x - \bar{x}}{s}.\]</span></p>
-<p>We could then use jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>, an interactive application, or an old-fashioned z-table<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
+<p>We could then use jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>, an interactive application, or an old-fashioned z-table<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a> to find that only about 2% of values are expected to be higher than <span class="math inline">\(x = 9.1\)</span> in our original dataset.
 These z-scores will become especially useful for calculating confidence intervals in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.
-They can also be useful for comparing values from variables or statistics measured on different scales <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Cheadle2003" role="doc-biblioref">Cheadle et al. 2003</a>; <a href="#ref-Adams2016" role="doc-biblioref">Adams and Collyer 2016</a>)</span>.</p>
+They can also be useful for comparing values from variables or statistics measured on different scales <span class="citation">(<a href="#ref-Adams2016" role="doc-biblioref">Adams &amp; Collyer, 2016</a>; <a href="#ref-Cheadle2003" role="doc-biblioref">Cheadle et al., 2003</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Adams2016" class="csl-entry">
-Adams, Dean C, and Michael L Collyer. 2016. <span>“<span class="nocase">On the comparison of the strength of morphological integration across morphometric datasets</span>.”</span> <em>Evolution</em> 70 (11): 2623–31. <a href="https://doi.org/10.1111/evo.13045">https://doi.org/10.1111/evo.13045</a>.
+Adams, D. C., &amp; Collyer, M. L. (2016). <span class="nocase">On the comparison of the strength of morphological integration across morphometric datasets</span>. <em>Evolution</em>, <em>70</em>(11), 2623–2631. <a href="https://doi.org/10.1111/evo.13045">https://doi.org/10.1111/evo.13045</a>
 </div>
 <div id="ref-Cheadle2003" class="csl-entry">
-Cheadle, Chris, Marquis P Vawter, William J Freed, and Kevin G Becker. 2003. <span>“<span class="nocase">Analysis of microarray data using Z score transformation</span>.”</span> <em>Journal of Molecular Diagnostics</em> 5 (2): 73–81. <a href="https://doi.org/10.1016/S1525-1578(10)60455-2">https://doi.org/10.1016/S1525-1578(10)60455-2</a>.
+Cheadle, C., Vawter, M. P., Freed, W. J., &amp; Becker, K. G. (2003). <span class="nocase">Analysis of microarray data using Z score transformation</span>. <em>Journal of Molecular Diagnostics</em>, <em>5</em>(2), 73–81. <a href="https://doi.org/10.1016/S1525-1578(10)60455-2">https://doi.org/10.1016/S1525-1578(10)60455-2</a>
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Spiegelhalter2019" class="csl-entry">
-Spiegelhalter, David. 2019. <em><span class="nocase">The Art of Statistics Learning from Data</span></em>. Penguin UK.
+Spiegelhalter, D. (2019). <em><span class="nocase">The Art of Statistics Learning from Data</span></em> (p. 426). Penguin, Milton Keynes, UK.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="21">
-<li id="fn21"><p>For those interested, a mathematical proof of the CLT can be found in <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>. Here we will demonstrate the CLT by simulation. As an aside, the CLT also applies to the sum of sample values, which will also have a distribution that approaches normality as <span class="math inline">\(N \to \infty\)</span>.<a href="Chapter_16.html#fnref21" class="footnote-back">↩︎</a></p></li>
+<li id="fn21"><p>For those interested, a mathematical proof of the CLT can be found in <span class="citation">Miller &amp; Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>. Here we will demonstrate the CLT by simulation. As an aside, the CLT also applies to the sum of sample values, which will also have a distribution that approaches normality as <span class="math inline">\(N \to \infty\)</span>.<a href="Chapter_16.html#fnref21" class="footnote-back">↩︎</a></p></li>
 <li id="fn22"><p><a href="https://bradduthie.github.io/stats/app/zandp/" class="uri">https://bradduthie.github.io/stats/app/zandp/</a><a href="Chapter_16.html#fnref22" class="footnote-back">↩︎</a></p></li>
-<li id="fn23"><p>Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map z-scores to probabilities was using a z-table (<a href="https://www.z-table.com/" class="uri">https://www.z-table.com/</a>). The table would have rows and columns mapping to different z-values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The textbook by <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> comes with a nearly 200-page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.<a href="Chapter_16.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Before the widespread availability of computers, which can easily be used to calculate probability densities on a normal distribution, the way to map z-scores to probabilities was using a z-table (<a href="https://www.z-table.com/" class="uri">https://www.z-table.com/</a>). The table would have rows and columns mapping to different z-values, which could be used to find the appropriate probability densities. Such tables would be used for many different distributions, not just the normal distribution. The textbook by <span class="citation">Sokal &amp; Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> comes with a nearly 200-page supplemental book that is just statistical tables. These tables are more or less obsolete nowadays, but some people still use them.<a href="Chapter_16.html#fnref23" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

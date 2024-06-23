@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 30 Correlation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 30 Correlation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -497,7 +501,7 @@ Figure 30.1: Fig wasps from two different species, (A) Het1 and (B) Het2. Wasps 
 </div>
 <p>Both fig wasp species in Figure 30.1 are unnamed.
 We can call the species in Figure 30.1A ‘Het1’ and the species in Figure 30.1B ‘Het2’.
-We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these two species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
+We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these two species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>)</span>.
 Table 30.1 shows these measurements for 11 wasps.</p>
 <table style="width:51%;">
 <caption><strong>TABLE 30.1</strong> Body segment length measurements (mm) from fig wasps of two species. Data were collected from Baja, Mexico.</caption>
@@ -649,8 +653,8 @@ Since the covariance between <span class="math inline">\(x\)</span> and itself i
 <p>This looks like a lot, but we can clean the equation up a bit because the <span class="math inline">\(1 / (N-1)\)</span> expressions cancel on the top and bottom of the equation,</p>
 <p><span class="math display">\[r = \frac{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
 <p>As with other statistics defined in this book, it is almost never necessary to calculate <span class="math inline">\(r\)</span> by hand.
-Jamovi will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988" role="doc-biblioref">Rodgers and Nicewander 1988</a>)</span>.
+Jamovi will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
+The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988" role="doc-biblioref">Rodgers &amp; Nicewander, 1988</a>)</span>.
 To make this link a bit more clear, we can calculate the correlation coefficient of thorax and abdomen length from Table 30.1.
 We can set thorax to be the <span class="math inline">\(x\)</span> variable and abdomen to be the <span class="math inline">\(y\)</span> variable.
 Mean thorax length is <span class="math inline">\(\bar{x} = 0.770\)</span>, and mean abdomen length is <span class="math inline">\(\bar{y} = 1.210\)</span>.
@@ -891,7 +895,7 @@ We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</
 As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true correlation (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>,</p>
 <p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
 <p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
-Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
 In <a href="Chapter_22.html#one-sample-t-test">Section 22.1</a>, we saw that the one sample t-test defined <span class="math inline">\(t\)</span> as the deviation of the sample mean from the true mean, divided by the standard error.
 Here we are doing the same for the correlation coefficient.
@@ -914,18 +918,18 @@ Since our p-value is less than 0.05, we can reject the null hypothesis that fig 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Duthie2015b" class="csl-entry">
-Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
+Duthie, A. B., Abbott, K. C., &amp; Nason, J. D. (2015). <span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>. <em>American Naturalist</em>, <em>186</em>(1), 151–158. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>
 </div>
 <div id="ref-Rahman1968" class="csl-entry">
-Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
+Rahman, N. A. (1968). <em><span class="nocase">A Course in Theoretical Statistics</span></em> (p. 542). Charles Griffin &amp; Company, London.
 </div>
 <div id="ref-Rodgers1988" class="csl-entry">
-Rodgers, Joseph Lee, and WA Nicewander. 1988. <span>“<span class="nocase">Thirteen ways to look at the correlation coefficient</span>.”</span> <em>American Statistician</em> 42 (1): 59–66.
+Rodgers, J. L., &amp; Nicewander, W. (1988). <span class="nocase">Thirteen ways to look at the correlation coefficient</span>. <em>American Statistician</em>, <em>42</em>(1), 59–66.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">
@@ -933,7 +937,7 @@ The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href=
 <ol start="70">
 <li id="fn70"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref70" class="footnote-back">↩︎</a></p></li>
 <li id="fn71"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref71" class="footnote-back">↩︎</a></p></li>
-<li id="fn72"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (<span class="math inline">\(N - 2\)</span>), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
+<li id="fn72"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (<span class="math inline">\(N - 2\)</span>), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
 <li id="fn73"><p><a href="https://bradduthie.github.io/stats/app/corr_click/" class="uri">https://bradduthie.github.io/stats/app/corr_click/</a><a href="Chapter_30.html#fnref73" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

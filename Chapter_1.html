@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 1 Background mathematics | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 1 Background mathematics | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -479,7 +483,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 1</span> Background mathematics<a href="Chapter_1.html#Chapter_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>There are at least two types of mathematical challenges that come with first learning statistics.
 The first challenge is simply knowing the background mathematics upon which many statistical tools rely.
-Fortunately, while the <em>theory</em> underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991" role="doc-biblioref">Mclean, Sanders, and Stroup 1991</a>; <a href="#ref-Rencher2000" role="doc-biblioref">Rencher 2000</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, the <em>application</em> of standard statistical tools usually does not.
+Fortunately, while the <em>theory</em> underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991" role="doc-biblioref">Mclean et al., 1991</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>; <a href="#ref-Rencher2000" role="doc-biblioref">Rencher, 2000</a>)</span>, the <em>application</em> of standard statistical tools usually does not.
 This book focuses on the application of statistical techniques, so all that is required is a background in some fundamental mathematical concepts such as mathematical operations (addition, subtraction, multiplication, division, and exponents), simple algebra, and probability.
 This chapter will review these operations and the mathematical symbols used to communicate them.</p>
 <p>The second mathematical challenge that students face when learning statistics for the first time is a bit more subtle.
@@ -498,7 +502,7 @@ These topics will be relevant throughout the book, so it is important to underst
 <h2><span class="header-section-number">1.1</span> Numbers and operations<a href="Chapter_1.html#numbers-and-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Calculating statistics and reading statistical output requires some knowledge of numbers and basic mathematical operations.
 This section is a summary of the basic mathematical tools that will be used in introductory statistics.
-Much of this section is inspired by <span class="citation">Courant, Robbins, and Stewart (<a href="#ref-Courant1996" role="doc-biblioref">1996</a>)</span> and chapter 2 of <span class="citation">Pastor (<a href="#ref-Pastor2008" role="doc-biblioref">2008</a>)</span>.
+Much of this section is inspired by <span class="citation">Courant et al. (<a href="#ref-Courant1996" role="doc-biblioref">1996</a>)</span> and chapter 2 of <span class="citation">Pastor (<a href="#ref-Pastor2008" role="doc-biblioref">2008</a>)</span>.
 This section will focus on only the numbers and mathematical operations relevant to this book.
 The objective here is to present some very well-known ideas in an interesting way, and to intermix them with bits of information that might be new and interesting.
 For doing statistics, what you really <em>need</em> to know here are the operations and the notation, that is, how operations such as addition, multiplication, and exponents are calculated and represented mathematically.</p>
@@ -541,7 +545,7 @@ When multiplying integers, we always get another integer.
 Multiplying two positive numbers always equals another positive number (e.g., <span class="math inline">\(2 \times 6 = 12\)</span>).
 Multiplying a positive and a negative number equals a negative number (e.g., <span class="math inline">\(-2 \times 6 = -12\)</span>).
 And multiplying two negative numbers equals a positive number (e.g., <span class="math inline">\(-2 \times -6 = 12\)</span>).
-There are multiple ways of thinking about why this last one is true <span class="citation">(see, e.g., <a href="#ref-Askey1999" role="doc-biblioref">Askey 1999</a> for one explanation)</span>, but for now we can take it as a given.</p>
+There are multiple ways of thinking about why this last one is true <span class="citation">(see, e.g., <a href="#ref-Askey1999" role="doc-biblioref">Askey, 1999</a> for one explanation)</span>, but for now we can take it as a given.</p>
 <p>As with addition and subtraction, we need an operation that can go back from multiplied values (the product) to the numbers being multiplied.
 In other words, if we multiply to get <span class="math inline">\(2 \times 6 = 12\)</span> (where 12 is the product), then we need something that goes back from 12 to 2.
 Division allows us to do this, such that <span class="math inline">\(12 \div 6 = 2\)</span>.
@@ -588,9 +592,9 @@ Remarkably, the set of irrational numbers is larger than the set of rational num
 <p>Perhaps the most famous irrational number is <span class="math inline">\(\pi\)</span>, which appears throughout science and mathematics and is most commonly introduced as the ratio of a circle’s circumference to its diameter.
 Its value is <span class="math inline">\(\pi \approx 3.14159\)</span>, where the symbol <span class="math inline">\(\approx\)</span> means ‘approximately.’
 Actually, the decimal expansion of <span class="math inline">\(\pi\)</span> is infinite and non-repeating; the decimals go on forever and never repeat themselves in a predictable pattern.
-As of 2019, over 31 trillion (i.e., 31000000000000) decimals of <span class="math inline">\(\pi\)</span> have been calculated <span class="citation">(<a href="#ref-Yee2019" role="doc-biblioref">Yee 2019</a>)</span>.</p>
+As of 2019, over 31 trillion (i.e., 31000000000000) decimals of <span class="math inline">\(\pi\)</span> have been calculated <span class="citation">(<a href="#ref-Yee2019" role="doc-biblioref">Yee, 2019</a>)</span>.</p>
 <p>The rational and irrational numbers together comprise a set of numbers called <em>real</em> numbers (we can represent these with the symbol <span class="math inline">\(\mathbb{R}\)</span>), and this is where we will stop.
-This story of numbers and operations continues with imaginary and complex numbers <span class="citation">(<a href="#ref-Courant1996" role="doc-biblioref">Courant, Robbins, and Stewart 1996</a>; <a href="#ref-Pastor2008" role="doc-biblioref">Pastor 2008</a>)</span>, but these are not necessary for introductory statistics.</p>
+This story of numbers and operations continues with imaginary and complex numbers <span class="citation">(<a href="#ref-Courant1996" role="doc-biblioref">Courant et al., 1996</a>; <a href="#ref-Pastor2008" role="doc-biblioref">Pastor, 2008</a>)</span>, but these are not necessary for introductory statistics.</p>
 </div>
 <div id="logarithms" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Logarithms<a href="Chapter_1.html#logarithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -608,9 +612,9 @@ For the latter, we might say that the base 10 logarithm of 1000 is 3.
 This is actually extremely useful in mathematics and statistics.
 Mathematically, logarithms have the very useful property,</p>
 <p><span class="math display">\[log_{10}(ab) = log_{10}(a) + log_{10}(b).\]</span></p>
-<p>Historically, this has been used to make calculations easier by converting multiplication to addition <span class="citation">(<a href="#ref-Stewart2008" role="doc-biblioref">Stewart 2008</a>)</span>.
+<p>Historically, this has been used to make calculations easier by converting multiplication to addition <span class="citation">(<a href="#ref-Stewart2008" role="doc-biblioref">Stewart, 2008</a>)</span>.
 In statistics, and across the biological and environmental sciences, we often use logarithms when we want to represent something that changes exponentially on a more convenient scale.
-For example, suppose that we wanted to illustrate the change in global CO<span class="math inline">\(_{2}\)</span> emissions over time <span class="citation">(<a href="#ref-Friedlingstein2022" role="doc-biblioref">Friedlingstein et al. 2022</a>)</span>.
+For example, suppose that we wanted to illustrate the change in global CO<span class="math inline">\(_{2}\)</span> emissions over time <span class="citation">(<a href="#ref-Friedlingstein2022" role="doc-biblioref">Friedlingstein et al., 2022</a>)</span>.
 We could show year on the x-axis and emissions in billions of tonnes of CO<span class="math inline">\(_{2}\)</span> on the y-axis (Figure 1.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" alt="A plot showing an exponential increase in global carbon dioxide emissions over time" width="100%" />
@@ -631,7 +635,7 @@ Figure 1.2: Natural logarithm of global carbon dioxide emissions 1750–2021.
 <p>It appears from the logged data in Figure 1.2 that global CO<span class="math inline">\(_{2}\)</span> emissions were indeed increasing from 1750 to 1850.
 Note that Figure 1.2 presents the <em>natural logarithm</em> of CO<span class="math inline">\(_{2}\)</span> emissions on the y-axis.
 The natural logarithm uses Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, as a base.
-Euler’s number <span class="math inline">\(e\)</span> is an irrational number (like <span class="math inline">\(\pi\)</span>), which corresponds to the intrinsic rate of increase of a population’s size in ecology <span class="citation">(<a href="#ref-Gotelli2001" role="doc-biblioref">Gotelli 2001</a>)</span>, or, in banking, interest compounded continuously (like <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
+Euler’s number <span class="math inline">\(e\)</span> is an irrational number (like <span class="math inline">\(\pi\)</span>), which corresponds to the intrinsic rate of increase of a population’s size in ecology <span class="citation">(<a href="#ref-Gotelli2001" role="doc-biblioref">Gotelli, 2001</a>)</span>, or, in banking, interest compounded continuously (like <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
 We probably could have just as easily used 10 as a base, but <span class="math inline">\(e\)</span> is usually the default base to use in science (bases 10 or 2 are also often used).
 Note that we can convert back to the non-logged scale by raising numbers to the power of <span class="math inline">\(e\)</span>.
 For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span class="math inline">\(e^{-2} \approx 0.135\)</span>, <span class="math inline">\(e^{0} = 1\)</span>, and <span class="math inline">\(e^{2} = 7.390\)</span>.</p>
@@ -640,11 +644,11 @@ For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span cl
 <h2><span class="header-section-number">1.3</span> Order of operations<a href="Chapter_1.html#order-of-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Every once in a while, a maths problem like the one below seems to go viral online,</p>
 <p><span class="math display">\[x = 8 \div 2\left(2+2\right).\]</span></p>
-<p>Depending on the order in which calculations are made, some people will conclude that <span class="math inline">\(x = 16\)</span>, while others conclude that <span class="math inline">\(x = 1\)</span> <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>.
+<p>Depending on the order in which calculations are made, some people will conclude that <span class="math inline">\(x = 16\)</span>, while others conclude that <span class="math inline">\(x = 1\)</span> <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff &amp; Zazkis, 2022</a>)</span>.
 The confusion is not caused by the above calculation being difficult, but by peoples’ differences in interpreting the rules for the order by which calculations should be carried out.
 If we first divide 8/2 to get 4, then multiply by (2 + 2), we get 16.
 If we first multiply 2 by (2 + 2) to get 8, then divide, we get 1.
-The truth is that even if there is a ‘right’ answer here <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>, the equation could be written more clearly.
+The truth is that even if there is a ‘right’ answer here <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff &amp; Zazkis, 2022</a>)</span>, the equation could be written more clearly.
 We might, for example, rewrite the above to more clearly express the intended order of operations,</p>
 <p><span class="math display">\[x = \frac{8}{2}\left(2 + 2\right) = 16.\]</span></p>
 <p>We could write it a different way to express a different intended order of operations,</p>
@@ -689,39 +693,39 @@ For example,</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Askey1999" class="csl-entry">
-Askey, R. 1999. <span>“<span class="nocase">Why does a negative x a negative = a positive?</span>”</span> <em>American Educator</em> 23 (3): 4–5.
+Askey, R. (1999). <span class="nocase">Why does a negative x a negative = a positive?</span> <em>American Educator</em>, <em>23</em>(3), 4–5.
 </div>
 <div id="ref-Chernoff2022" class="csl-entry">
-Chernoff, Egan J, and Rina Zazkis. 2022. <span>“<span class="nocase">The simple reason a viral math equation stumped the internet</span>.”</span> <em>The Conversation</em>. <a href="https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518">https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518</a>.
+Chernoff, E. J., &amp; Zazkis, R. (2022). <span class="nocase">The simple reason a viral math equation stumped the internet</span>. <em>The Conversation</em>. <a href="https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518">https://theconversation.com/the-simple-reason-a-viral-math-equation-stumped-the-internet-176518</a>
 </div>
 <div id="ref-Courant1996" class="csl-entry">
-Courant, Richard, Herbert Robbins, and Ian Stewart. 1996. <em><span class="nocase">What is Mathematics?</span></em> 2nd ed. Oxford: Oxford University Press.
+Courant, R., Robbins, H., &amp; Stewart, I. (1996). <em><span class="nocase">What is Mathematics?</span></em> (2nd ed., p. 566). Oxford University Press, Oxford, UK.
 </div>
 <div id="ref-Friedlingstein2022" class="csl-entry">
-Friedlingstein, P., M. O’Sullivan, M. W. Jones, R. M. Andrew, L. Gregor, J. Hauck, C. Le Quéré, et al. 2022. <span>“Global Carbon Budget 2022.”</span> <em>Earth System Science Data</em> 14 (11): 4811–4900. <a href="https://doi.org/10.5194/essd-14-4811-2022">https://doi.org/10.5194/essd-14-4811-2022</a>.
+Friedlingstein, P., O’Sullivan, M., Jones, M. W., Andrew, R. M., Gregor, L., Hauck, J., Le Quéré, C., Luijkx, I. T., Olsen, A., Peters, G. P., Peters, W., Pongratz, J., Schwingshackl, C., Sitch, S., Canadell, J. G., Ciais, P., Jackson, R. B., Alin, S. R., Alkama, R., … Zheng, B. (2022). Global carbon budget 2022. <em>Earth System Science Data</em>, <em>14</em>(11), 4811–4900. <a href="https://doi.org/10.5194/essd-14-4811-2022">https://doi.org/10.5194/essd-14-4811-2022</a>
 </div>
 <div id="ref-Gotelli2001" class="csl-entry">
-Gotelli, Nicholas J. 2001. <em><span>Gotelli</span></em>. 3rd ed. Sunderland, Massachusetts: Sinauer Associates, Inc.
+Gotelli, N. J. (2001). <em><span class="nocase">A Primer of Ecology</span></em> (3rd ed., p. 265). Sinauer Associates, Inc., Sunderland, Massachusetts.
 </div>
 <div id="ref-Mclean1991" class="csl-entry">
-Mclean, Robert A, William L Sanders, and Walter W Stroup. 1991. <span>“<span class="nocase">A unified approach to mixed linear models</span>.”</span> <em>American Statistician</em> 45 (1): 54–64.
+Mclean, R. A., Sanders, W. L., &amp; Stroup, W. W. (1991). <span class="nocase">A unified approach to mixed linear models</span>. <em>American Statistician</em>, <em>45</em>(1), 54–64.
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 <div id="ref-Pastor2008" class="csl-entry">
-Pastor, John. 2008. <em><span class="nocase">Mathematical Ecology of Populations and Ecosystems</span></em>. West Sussex, England: John Wiley &amp; Sons, Inc.
+Pastor, J. (2008). <em><span class="nocase">Mathematical Ecology of Populations and Ecosystems</span></em> (pp. 1–50). John Wiley &amp; Sons, Inc., West Sussex, England.
 </div>
 <div id="ref-Rencher2000" class="csl-entry">
-Rencher, Alivn C. 2000. <em><span class="nocase">Linear Models in Statistics</span></em>. Provo, Utah: John Wiley &amp; Sons, Inc.
+Rencher, A. C. (2000). <em><span class="nocase">Linear Models in Statistics</span></em> (p. 578). John Wiley &amp; Sons, Inc., Provo, Utah, USA.
 </div>
 <div id="ref-Stewart2008" class="csl-entry">
-Stewart, Ian. 2008. <em><span class="nocase">Taming the Infinite</span></em>. London: Quercus.
+Stewart, I. (2008). <em><span class="nocase">Taming the Infinite</span></em> (p. 384). Quercus, London, UK.
 </div>
 <div id="ref-Yee2019" class="csl-entry">
-Yee, Alexander J. 2019. <span>“<span class="nocase">Google Cloud Topples the Pi Record</span>.”</span> <a href="http://www.numberworld.org/blogs/2019_3_14_pi_record/">http://www.numberworld.org/blogs/2019_3_14_pi_record/</a>.
+Yee, A. J. (2019). <em><span class="nocase">Google Cloud Topples the Pi Record</span></em>. <a href="http://www.numberworld.org/blogs/2019_3_14_pi_record/">http://www.numberworld.org/blogs/2019_3_14_pi_record/</a>
 </div>
 </div>
             </section>

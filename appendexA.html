@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="A Answers to chapter exercises | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="A Answers to chapter exercises | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -1014,7 +1018,7 @@ should you conclude from it? <strong><span class="math inline">\(\mathbf{P = 0.0
 <p><span class="math inline">\(df1 =\)</span> <strong>1</strong></p>
 <p><span class="math inline">\(df2 =\)</span> <strong>49</strong></p>
 <p><span class="math inline">\(P =\)</span> <strong>0.030</strong></p>
-<p>What is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F? P: <strong>About 0.03 for F = 5.</strong></p>
+<p>What is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F? <strong>About 0.03 for F = 5.</strong></p>
 <p>Approximately, what is this threshold F value above which we will reject the null hypothesis?
 Approximate threshold F: <strong>Somewhere between 4 and 4.1.</strong></p>
 <p>What should you conclude regarding the null hypothesis that sites have the same mean?
@@ -1193,12 +1197,12 @@ Probability: <strong>0.04052.</strong></p>
 <p>Write down the observed counts of bees that survived and died.</p>
 <p>Survived (<span class="math inline">\(O_{surv}\)</span>): <strong>139</strong></p>
 <p>Died (<span class="math inline">\(O_{died}\)</span>): <strong>117</strong></p>
-<p>What is the <span class="math inline">\(\chi^{2}\)</span> value? <strong>1.89</strong></p>
-<p>How many degrees of freedom are there? <strong>df = 1</strong></p>
+<p>What is the <span class="math inline">\(\chi^{2}\)</span> value? <strong>1.89.</strong></p>
+<p>How many degrees of freedom are there? <strong>df = 1.</strong></p>
 <p>Write these values below, and check to see if the <span class="math inline">\(\chi^{2}\)</span> and df match the values you calculated above by hand.</p>
 <p><span class="math inline">\(\chi^{2}\)</span> = <strong>1.89063</strong></p>
-<p>df = <strong>1</strong></p>
-<p>P = <strong>0.16913</strong></p>
+<p><span class="math inline">\(df =\)</span> <strong>1</strong></p>
+<p><span class="math inline">\(P =\)</span> <strong>0.16913</strong></p>
 </div>
 <div id="exercise-31.2" class="section level3 hasAnchor" number="36.8.2">
 <h3><span class="header-section-number">A.8.2</span> Exercise 31.2<a href="appendexA.html#exercise-31.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1207,27 +1211,27 @@ Probability: <strong>0.04052.</strong></p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>There is a significant difference between expected and observed counts of colonies</strong></p>
 <p>How many colonies are there in this dataset? <strong>8 colonies</strong></p>
 <p>What is the output from the Goodness of Fit table?</p>
-<p><span class="math inline">\(\chi^{2}\)</span> = <strong>3.5</strong></p>
-<p>df = <strong>7</strong></p>
-<p>P = <strong>0.83523</strong></p>
+<p><span class="math inline">\(\chi^{2} =\)</span> <strong>3.5</strong></p>
+<p><span class="math inline">\(df =\)</span> <strong>7</strong></p>
+<p><span class="math inline">\(P =\)</span> <strong>0.83523</strong></p>
 <p>From this output, what can you conclude about how bees were taken from the colonies?</p>
 <p><strong>Bees appear to be taken from colonies in equal frequencies, i.e., with equal probability of sampling among colonies.</strong></p>
 </div>
 <div id="exercise-31.3" class="section level3 hasAnchor" number="36.8.3">
 <h3><span class="header-section-number">A.8.3</span> Exercise 31.3<a href="appendexA.html#exercise-31.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What are the null and alternative hypotheses for this test of association?</p>
-<p><span class="math inline">\(H_{O}\)</span>: <strong>There is no association between bee colony and bee survival.</strong>
-<span class="math inline">\(H_{A}\)</span>: <strong>There is an association between bee colony and bee survival.</strong></p>
+<p><span class="math inline">\(H_{O}\)</span>: <strong>There is no association between bee colony and bee survival.</strong></p>
+<p><span class="math inline">\(H_{A}\)</span>: <strong>There is an association between bee colony and bee survival.</strong></p>
 <p>Report the key statistics in the output table below.</p>
 <p>Chi-square: <strong>11.31033</strong></p>
 <p>df: <strong>7</strong></p>
 <p>p: <strong>0.12564</strong></p>
 <p>From these statistics, should you reject or not reject the null hypothesis?</p>
-<p><span class="math inline">\(H_{O}\)</span>: <strong>Do not reject null hypothesis</strong></p>
+<p><span class="math inline">\(H_{O}\)</span>: <strong>Do not reject null hypothesis.</strong></p>
 <p>What can you conclude from this test? Explain your conclusion as if you were reporting the results of the test to someone who was unfamiliar with statistical hypothesis testing.</p>
 <p><strong>From the statistical analysis, it appears that there is a highly significant association between the level of radiation that bees experience and the frequency with which they survive versus do not survive.</strong></p>
-<p>Lastly, did the order which you placed the two variables matter? What if you switched Rows and Columns? In other words, put ‘survived’ in the Rows box and ‘radiation’ in the Columns box. Does this give you the same answer?</p>
-<p><strong>The ordering of the two variables does not appear to matter. The Chi-square value and P values are the same.</strong></p>
+<p>Lastly, did the order in which you placed the two variables matter? What if you switched Rows and Columns? In other words, put ‘survived’ in the Rows box and ‘radiation’ in the Columns box. Does this give you the same answer?</p>
+<p><strong>The ordering of the two variables does not appear to matter. The Chi-square value and p-values are the same.</strong></p>
 </div>
 <div id="exercise-31.4" class="section level3 hasAnchor" number="36.8.4">
 <h3><span class="header-section-number">A.8.4</span> Exercise 31.4<a href="appendexA.html#exercise-31.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1237,29 +1241,29 @@ Probability: <strong>0.04052.</strong></p>
 <p><span class="math inline">\(H_{O}\)</span>: <strong>The correlation coefficient between bee mass and carbon dioxide output is zero.</strong></p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>The correlation coefficient between bee mass and carbon dioxide output is negative.</strong></p>
 <p>Check this box, then find the p-values for the Shapiro-Wilk test of normality in the panel to the right. Write these p-values down below.</p>
-<p>Mass P = <strong>0.96248</strong></p>
-<p><span class="math inline">\(CO_2\)</span> P = <strong>0.56459</strong></p>
+<p>Mass <span class="math inline">\(P =\)</span> <strong>0.96248</strong></p>
+<p><span class="math inline">\(CO_2\)</span> <span class="math inline">\(P =\)</span> <strong>0.56459</strong></p>
 <p>Based on these p-values, which type of correlation coefficient should we use to test <span class="math inline">\(H_{0}\)</span>, and why?</p>
 <p><strong>We should use the Pearson’s product moment correlation coefficient because both variables appear to be normally distributed.</strong></p>
 <p>This table reports both the correlation coefficient (here called “Pearson’s r”) and the p-value. Write these values below.</p>
-<p>r: <strong>-0.18036</strong>
-P: <strong>0.002</strong></p>
+<p><span class="math inline">\(r =\)</span> <strong>-0.18036</strong></p>
+<p><span class="math inline">\(P =\)</span> <strong>0.002</strong></p>
 <p>Based on this output, what should we conclude about the association between bumblebee mass and carbon dioxide output?</p>
 <p><strong>Bumblebee mass and carbon dioxide output are negatively correlated, meaning that as bumblebee mass increases, carbon dioxide output decreases.</strong></p>
 </div>
 <div id="exercise-31.5" class="section level3 hasAnchor" number="36.8.5">
 <h3><span class="header-section-number">A.8.5</span> Exercise 31.5<a href="appendexA.html#exercise-31.5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What are the null and alternative hypotheses of this test?</p>
-<p><span class="math inline">\(H_{O}\)</span>: <strong>The correlation coefficient between bee mass and nectar consumption is zero.</strong>
-<span class="math inline">\(H_{A}\)</span>: <strong>The correlation coefficient between bee mass and nectar consumption is not zero.</strong></p>
+<p><span class="math inline">\(H_{O}\)</span>: <strong>The correlation coefficient between bee mass and nectar consumption is zero.</strong></p>
+<p><span class="math inline">\(H_{A}\)</span>: <strong>The correlation coefficient between bee mass and nectar consumption is not zero.</strong></p>
 <p>Based on the output of these tests, what kind of correlation coefficient should we use for testing the null hypothesis? <strong>Spearman’s rank correlation coefficient</strong></p>
 <p>What is the correlation coefficient and p-value from this test?</p>
-<p>r = <strong>0.11954</strong>
-P = <strong>0.05611</strong></p>
+<p><span class="math inline">\(r =\)</span> <strong>0.11954</strong></p>
+<p><span class="math inline">\(P =\)</span> <strong>0.05611</strong></p>
 <p>Based on these results, should we reject or not reject the null hypothesis?</p>
-<p><span class="math inline">\(H_{0}\)</span>: <strong>Do not reject null hypothesis</strong></p>
+<p><span class="math inline">\(H_{0}\)</span>: <strong>Do not reject null hypothesis.</strong></p>
 <p>Would we have made the same conclusion about the correlation (or lack thereof) between bee mass and nectar consumption? Why or why not?</p>
-<p><strong>If we had used a Pearson product moment correlation coefficient instead of the Spearman’s rank correlation coefficient, we would have calculated r = 0.12729 and a p-value of P = 0.04186. Because our p-value would have been less than 0.05, we would have incorrectly rejected the null hypothesis.</strong></p>
+<p><strong>If we had used a Pearson product moment correlation coefficient instead of the Spearman’s rank correlation coefficient, we would have calculated <span class="math inline">\(\mathbf{r = 0.12729}\)</span> and a p-value of <span class="math inline">\(\mathbf{P = 0.04186}\)</span>. Because our p-value would have been less than 0.05, we would have incorrectly rejected the null hypothesis.</strong></p>
 </div>
 </div>
 <div id="chapter-34" class="section level2 hasAnchor" number="36.9">
@@ -1269,53 +1273,53 @@ P = <strong>0.05611</strong></p>
 <p>Before doing this, what is the independent variable, and what is the dependent variable?</p>
 <p>Independent variable: <strong>depth</strong></p>
 <p>Dependent variable: <strong>PyC</strong></p>
-<p>What is the sample size of this dataset? <strong>N = 240</strong></p>
+<p>What is the sample size of this dataset? <strong>N = 240.</strong></p>
 <p>Describe the scatterplot that is produced in the jamovi panel to the right.</p>
 <p><strong>Linear relationship with a lot of scatter. Perhaps a slight downward trend?</strong></p>
 <p>In other words, does the scatterplot show any evidence of a curvilinear pattern in the data?</p>
 <p><strong>The relationship appears to be linear.</strong></p>
-<p>In other words, does the variance change along the range of the independent variable (i.e., the x-axis)?</p>
+<p>In other words, does the variance change along the range of the independent variable (i.e., x-axis)?</p>
 <p><strong>No evidence of heteroscedasticity, so this assumption appears to be valid.</strong></p>
-<p>In your own words, what is this test doing? That is, what are we actually testing is or is not normally distributed? Drawing a picture might be helping to explain.</p>
+<p>In your own words, what is this test doing? Drawing a picture might be helping to explain.</p>
 <p><strong>This test is checking to see if the residual values around the regression line are normally distributed.</strong></p>
-<p>What is the p-value of the Shapiro-Wilk test of normality? <strong>P = 0.91624</strong></p>
+<p>What is the p-value of the Shapiro-Wilk test of normality? <strong><span class="math inline">\(\mathbf{P = 0.91624}\)</span></strong></p>
 <p>Based on the above p-value, is it safe to conclude that the residuals are normally distributed? Conclusion: <strong>Yes, residual values are normally distributed.</strong></p>
 <p>A new table will open up in the right panel called ‘Model Fit Measures’. Write the output statistics from this table below:</p>
-<p><span class="math inline">\(R^{2}\)</span> = <strong>0.02532</strong></p>
-<p>F: <strong>6.18319</strong></p>
-<p>df1: <strong>1</strong></p>
-<p>df2: <strong>238</strong></p>
-<p>P: <strong>0.01358</strong></p>
+<p><span class="math inline">\(R^{2} =\)</span> <strong>0.02532</strong></p>
+<p><span class="math inline">\(F =\)</span> <strong>6.18319</strong></p>
+<p><span class="math inline">\(df1 =\)</span> <strong>1</strong></p>
+<p><span class="math inline">\(df2 =\)</span> <strong>238</strong></p>
+<p><span class="math inline">\(P =\)</span> <strong>0.01358</strong></p>
 <p>Based on these statistics, what percentage of the variation in pyrogenic carbon is explained by the linear regression model? <strong>2.532%</strong></p>
 <p>What null hypothesis does the p-value above test?</p>
 <p><span class="math inline">\(H_{O}\)</span>: <strong>A model that includes depth is not a significantly better predictor of PyC than just the mean PyC.</strong></p>
-<p>Do we reject or fail to reject <span class="math inline">\(H_{0}\)</span>? <strong>Reject <span class="math inline">\(H_{0}\)</span></strong></p>
+<p>Do we reject or fail to reject <span class="math inline">\(H_{0}\)</span>? <strong>Reject <span class="math inline">\(H_{0}\)</span>.</strong></p>
 <p>From this table, what are the coefficient estimates for the intercept and the slope (i.e., depth)?</p>
 <p>Intercept: <strong>1.61719</strong></p>
-<p>Slope: <strong>-0.00263</strong></p>
+<p>Slope: <strong><span class="math inline">\(\mathbf{-0.00263}\)</span></strong></p>
 <p>What null hypotheses are we testing when inspecting these p-values?</p>
-<p>Intercept <span class="math inline">\(H_{0}\)</span>: <strong>P &lt; 0.0001, testing null hypothesis that <span class="math inline">\(b_{0} = 0\)</span>.</strong></p>
-<p>Slope <span class="math inline">\(H_{0}\)</span>: <strong>P = 0.01358, test null hypothesis that <span class="math inline">\(b_{1} = 0\)</span></strong></p>
+<p>Intercept <span class="math inline">\(H_{0}\)</span>: <strong><span class="math inline">\(\mathbf{P &lt; 0.0001}\)</span>, testing null hypothesis that <span class="math inline">\(\mathbf{b_{0} = 0}\)</span>.</strong></p>
+<p>Slope <span class="math inline">\(H_{0}\)</span>: <strong><span class="math inline">\(\mathbf{P = 0.01358}\)</span>, testing null hypothesis that <span class="math inline">\(\mathbf{b_{1} = 0}\)</span>.</strong></p>
 <p>Finally, what can we conclude about the relationship between depth and pyrogenic carbon storage? <strong>Pyrogenic carbon changes with increasing soil depth.</strong></p>
 </div>
 <div id="exercise-34.2" class="section level3 hasAnchor" number="36.9.2">
 <h3><span class="header-section-number">A.9.2</span> Exercise 34.2<a href="appendexA.html#exercise-34.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Do all these assumptions appear to be met?</p>
-<p>Linearity: <strong>No issues</strong></p>
-<p>Normality: <strong>No issues</strong></p>
-<p>Homoscedasticity: <strong>No issues</strong></p>
-<p>Using the same protocol as the previous exercise, what percentage of the variation in PyC is explained by the regression model? <strong>Variation explained: 48.2% (0.482 * 100% = 48.2%)</strong></p>
-<p>Is the overall model statistically significant? How do you know? Model significance: <strong>Yes, because overall model test p-value is P &lt; 0.05</strong></p>
+<p>Do all of these assumptions appear to be met?</p>
+<p>Linearity: <strong>No issues.</strong></p>
+<p>Normality: <strong>No issues.</strong></p>
+<p>Homoscedasticity: <strong>No issues.</strong></p>
+<p>Using the same protocol as the previous exercise, what percentage of the variation in PyC is explained by the regression model? <strong>Variation explained: 48.2% (0.482 * 100% = 48.2%).</strong></p>
+<p>Is the overall model statistically significant? How do you know? Model significance: <strong>Yes, because overall model test p-value is <span class="math inline">\(\mathbf{P &lt; 0.05}\)</span>.</strong></p>
 <p>Are the intercept and slope significantly different from zero?</p>
-<p>Intercept: <strong>Yes, significantly different from zero; reject null hypothesis</strong></p>
-<p>Slope: <strong>Yes, significantly different from zero; reject null hypothesis</strong></p>
+<p>Intercept: <strong>Yes, significantly different from zero; reject null hypothesis.</strong></p>
+<p>Slope: <strong>Yes, significantly different from zero; reject null hypothesis.</strong></p>
 <p>Write the intercept (<span class="math inline">\(b_{0}\)</span>) and slope (<span class="math inline">\(b_{1}\)</span>) of the regression below.</p>
 <p><span class="math inline">\(b_{0}\)</span>: <strong>0.88911</strong></p>
 <p><span class="math inline">\(b_{1}\)</span>: <strong>0.05688</strong></p>
 <p>Using these values for the intercept and the slope, write the regression equation to predict pyrogenic carbon (PyC) from fire frequency (fire_freq).</p>
 <p><strong>Y = 0.88911 + (0.05688 * X)</strong> OR <strong>PyC = 0.88911 + (0.05688 * fire_freq)</strong></p>
-<p>Using this equation, what would be the predicted PyC for a location that had experienced 10 fires in the past 20 years (i.e., fire_freq = 10)? PyC = <strong>1.45791</strong></p>
-<p>Explain what these 2 columns of data represent in terms of the scatterplot you made at the start of this exercise. In other words, where would the predicted and residual values be located on the scatterplot?</p>
+<p>Using this equation, what would be the predicted PyC for a location that had experienced 10 fires in the past 20 years (i.e., fire_freq = 10)? PyC = <strong>1.45791.</strong></p>
+<p>Explain what these two columns of data represent in terms of the scatterplot you made at the start of this exercise. In other words, where would the predicted and residual values be located on the scatterplot?</p>
 <p><strong>The predicted values represent the PyC points that fall along the regression line for a particular fire_freq value. That is, what the model predicts PyC should be at each fire frequency. The residual values are the difference between the actual PyC values and what the predicted PyC values are in the model.</strong></p>
 </div>
 <div id="exercise-34.3" class="section level3 hasAnchor" number="36.9.3">
@@ -1323,33 +1327,33 @@ P = <strong>0.05611</strong></p>
 <p>Write down what the independent and dependent variable(s) are for this regression.</p>
 <p>Independent: <strong>Fire frequency and depth</strong></p>
 <p>Dependent: <strong>Pyrogenic carbon</strong></p>
-<p>Do all these assumptions appear to be met?</p>
+<p>Do all of these assumptions appear to be met?</p>
 <p>Linearity: <strong>Yes</strong></p>
 <p>Normality: <strong>Yes</strong></p>
 <p>Homoscedasticity: <strong>Yes</strong></p>
 <p>Report these values from the Model Fit Measures output table below.</p>
-<p><span class="math inline">\(R^{2}\)</span> = <strong>0.48202</strong></p>
-<p>Adjusted <span class="math inline">\(R^{2}\)</span> = <strong>0.47765</strong></p>
-<p>F = <strong>110.27348</strong></p>
-<p><strong>P &lt; 0.0001</strong></p>
+<p><span class="math inline">\(R^{2} =\)</span> <strong>0.48202</strong></p>
+<p>Adjusted <span class="math inline">\(R^{2} =\)</span> <strong>0.47765</strong></p>
+<p><span class="math inline">\(F =\)</span> <strong>110.27348</strong></p>
+<p><strong><span class="math inline">\(\mathbf{P &lt; 0.0001}\)</span></strong></p>
 <p>Which one is most appropriate to use for interpreting the multiple regression?</p>
 <p><strong>The adjusted R-squared takes into account that adding more independent variables will increase the total amount of variation explained in the dependent variable even if the independent variable is not a good predictor. We should therefore use the adjusted R-squared when looking at a multiple regression model.</strong></p>
 <p>What is the null hypothesis of this tested with the F value and the P value shown in the Model Fit Measures table?</p>
 <p><span class="math inline">\(H_{0}\)</span>: <strong>A model that includes the independent variables depth and fire frequency does not explain variation in PyC significantly better than just the mean of PyC.</strong></p>
-<p>Based on the Overall Model Test output, should you reject or not reject <span class="math inline">\(H_{0}\)</span>? <strong>Reject the null hypothesis</strong></p>
+<p>Based on the Overall Model Test output, should you reject or not reject <span class="math inline">\(H_{0}\)</span>? <strong>Reject the null hypothesis.</strong></p>
 <p>What can you conclude about the significance of the Intercept, and the partial regression coefficients for fire frequency and depth?</p>
 <p><strong>The intercept and partial regression coefficient of fire frequency are significantly different from 0. But the partial regression coefficient of depth is not significantly different from 0.</strong></p>
 <p>Using the partial regression coefficient estimates, fill in the equation below,</p>
-<p>PyC = ( <strong>0.89456</strong> ) + ( <strong>0.05680</strong> )fire_freq + ( <strong>-0.00008</strong> )depth.</p>
+<p>PyC = ( <strong>0.89456</strong> ) + ( <strong>0.05680</strong> )fire_freq + ( <span class="math inline">\(\mathbf{-0.00008}\)</span> )depth.</p>
 <p>Next, use this to predict the pyrogenic carbon for a fire frequency of 12 and a depth of 60 cm.</p>
 <p>PyC = <strong>1.57136</strong></p>
 <p>Has the significance of soil depth as an independent variable changed? Based on what you know about the difference between simple linear regression and multiple regression, why might this be the case?</p>
-<p><strong>Yes, the soil depth was significant by itself as a predictor of PyC in the simple linear regression of the first exercise. But in this multiple regression model the partial regression coefficient is not significant. This might be because when you consider depth in the context of fire frequency, the effect of depth by itself is not significant. Once you account for fire frequency, depth no longer is a meaningful predictor of PyC. If you hold fire frequency constant in a model, then depth by itself does not affect PyC.</strong></p>
+<p><strong>Yes, the soil depth was significant by itself as a predictor of PyC in the simple linear regression of the first exercise. But in this multiple regression model, the partial regression coefficient is not significant. This might be because when you consider depth in the context of fire frequency, the effect of depth by itself is not significant. Once you account for fire frequency, depth no longer is a meaningful predictor of PyC. If you hold fire frequency constant in a model, then depth by itself does not affect PyC.</strong></p>
 </div>
 <div id="exercise-34.4" class="section level3 hasAnchor" number="36.9.4">
 <h3><span class="header-section-number">A.9.4</span> Exercise 34.4<a href="appendexA.html#exercise-34.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
-<caption>Table 34.1: Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.</caption>
+<caption><strong>TABLE 34.1</strong> Model Coefficients output table for a multiple regression model predicting pyrogenic carbon from soil depth, fire frequency, and soil pH in Gabon.</caption>
 <colgroup>
 <col width="18%" />
 <col width="20%" />
@@ -1362,38 +1366,38 @@ P = <strong>0.05611</strong></p>
 <th></th>
 <th>Estimate</th>
 <th>Std. Error</th>
-<th>t value</th>
+<th>t Value</th>
 <th>Pr(&gt;</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>(Intercept)</td>
-<td><strong>0.98892</strong></td>
-<td><strong>0.34591</strong></td>
-<td><strong>2.85888</strong></td>
-<td><strong>0.00463</strong></td>
+<td><span class="math inline">\(\mathbf{0.98892}\)</span></td>
+<td><span class="math inline">\(\mathbf{0.34591}\)</span></td>
+<td><span class="math inline">\(\mathbf{2.85888}\)</span></td>
+<td><span class="math inline">\(\mathbf{0.00463}\)</span></td>
 </tr>
 <tr class="even">
 <td>depth</td>
-<td><strong>-0.00006</strong></td>
-<td><strong>8e-04</strong></td>
-<td><strong>-0.07411</strong></td>
-<td><strong>0.94098</strong></td>
+<td><span class="math inline">\(\mathbf{-0.00006}\)</span></td>
+<td><span class="math inline">\(\mathbf{8e-04}\)</span></td>
+<td><span class="math inline">\(\mathbf{-0.07411}\)</span></td>
+<td><span class="math inline">\(\mathbf{0.94098}\)</span></td>
 </tr>
 <tr class="odd">
 <td>fire_freq</td>
-<td><strong>0.05679</strong></td>
-<td><strong>0.00394</strong></td>
-<td><strong>14.42303</strong></td>
-<td><strong>&lt;0.00001</strong></td>
+<td><span class="math inline">\(\mathbf{0.05679}\)</span></td>
+<td><span class="math inline">\(\mathbf{0.00394}\)</span></td>
+<td><span class="math inline">\(\mathbf{14.42303}\)</span></td>
+<td><span class="math inline">\(\mathbf{&lt;0.00001}\)</span></td>
 </tr>
 <tr class="even">
 <td>pH</td>
-<td><strong>-0.01584</strong></td>
-<td><strong>0.05679</strong></td>
-<td><strong>-0.27886</strong></td>
-<td><strong>0.78059</strong></td>
+<td><span class="math inline">\(\mathbf{-0.01584}\)</span></td>
+<td><span class="math inline">\(\mathbf{0.05679}\)</span></td>
+<td><span class="math inline">\(\mathbf{-0.27886}\)</span></td>
+<td><span class="math inline">\(\mathbf{0.78059}\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -1403,12 +1407,12 @@ P = <strong>0.05611</strong></p>
 <p>Is the <span class="math inline">\(R^{2}\)</span> value of this model higher or lower than the multiple regression model without pH?</p>
 <p><strong>The model without pH had an <span class="math inline">\(R^{2}\)</span> = 0.48202, so it was lower without pH.</strong></p>
 <p>Is the Adjusted <span class="math inline">\(R^{2}\)</span> value of this model higher or lower than the multiple regression model without pH?</p>
-<p><strong>The model without pH had an Adjusted <span class="math inline">\(R^{2}\)</span> = 0.47765, so it was higher without pH</strong></p>
-<p>Based on what you know from Chapter 33.1, explain why the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> might have changed in different directions with the addition of a new independent variable.</p>
-<p><strong>The <span class="math inline">\(R^{2}\)</span> just tells us how much variation is the dependent variable is explained by the model, but there is no penalty for adding more independent variables to the model. Consequently, adding the additional independent variable (pH) can only increase (or at least not decrease) the amount of variation explained. In contrast, the adjusted <span class="math inline">\(R^{2}\)</span> penalises the R2 for each additional independent variable in the model, so because we have added the independent variable pH, our adjusted <span class="math inline">\(R^{2}\)</span> can go down.</strong></p>
+<p><strong>The model without pH had an Adjusted <span class="math inline">\(R^{2}\)</span> = 0.47765, so it was higher without pH.</strong></p>
+<p>Based on what you know from Section 33.1, explain why the <span class="math inline">\(R^{2}\)</span> and Adjusted <span class="math inline">\(R^{2}\)</span> might have changed in different directions with the addition of a new independent variable.</p>
+<p><strong>The <span class="math inline">\(R^{2}\)</span> just tells us how much variation in the dependent variable is explained by the model, but there is no penalty for adding more independent variables to the model. Consequently, adding the additional independent variable (pH) can only increase (or at least not decrease) the amount of variation explained. In contrast, the adjusted <span class="math inline">\(R^{2}\)</span> penalises the R2 for each additional independent variable in the model, so because we have added the independent variable pH, our adjusted <span class="math inline">\(R^{2}\)</span> can go down.</strong></p>
 <p>Finally, use the equation of this new model to predict PyC for a soil sample at a depth of 0, fire frequency of 0, and pH of 6.</p>
-<p><strong>PyC = 0.98892 - (0.00006<em>0) + (0.05679 </em> 0) - (0.01584 * 6)</strong></p>
-<p><strong>PyC = 0.89388</strong></p>
+<p><span class="math inline">\(\mathbf{PyC = 0.98892 - (0.00006*0) + (0.05679 * 0) - (0.01584 * 6)}\)</span></p>
+<p><span class="math inline">\(\mathbf{PyC = 0.89388}\)</span></p>
 </div>
 <div id="exercise-33.5" class="section level3 hasAnchor" number="36.9.5">
 <h3><span class="header-section-number">A.9.5</span> Exercise 33.5<a href="appendexA.html#exercise-33.5" class="anchor-section" aria-label="Anchor link to header"></a></h3>

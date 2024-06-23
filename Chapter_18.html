@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 18 Confidence intervals | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 18 Confidence intervals | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -505,7 +509,7 @@ Figure 18.1: Two domestic cats sitting side by side with much different body mas
 </div>
 <p>In other words, if we were to go back out and collect another sample of 20 cats, and then another, and another (and so forth), calculating 95% CIs each time, then in 95% of our samples the true mean will be within our CIs (meaning that 5% of the time it will be outside the CIs).
 Note that this is slightly different than saying that there is a 95% probability that the true mean is between our CIs.<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>
-Instead, the idea is that if we were to repeatedly resample from a population and calculate CIs each time, then 95% of the time the true mean would be within our CIs <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Instead, the idea is that if we were to repeatedly resample from a population and calculate CIs each time, then 95% of the time the true mean would be within our CIs <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 If this idea does not make sense at first, that is okay.
 The calculation is actually relatively straightforward, and we will come back to the statistical concept again afterwards to interpret it.
 First, we will look at CIs assuming a normal distribution, then the special case of a binomial distribution.</p>
@@ -570,7 +574,7 @@ From our collected data, our estimated probability of landing on heads is, <span
 But how would we calculate the CIs around this estimate?
 There are multiple ways to calculate CIs around proportions.
 One common method relies on a normal approximation, that is, approximating the discrete counts of the binomial distribution using the continuous normal distribution.
-For example, we can note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>
+For example, we can note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>
 This means that the standard deviation of <span class="math inline">\(p\)</span> is <span class="math inline">\(\sigma = \sqrt{p\left(1 - p\right)}\)</span>, and <span class="math inline">\(p\)</span> has a standard error,</p>
 <p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
 <p>We could then use this standard error in the same equation from earlier for calculating CIs.
@@ -582,49 +586,49 @@ For example, if we wanted to calculate the lower 95% CI for <span class="math in
 These are quite wide CIs, which suggests that our flip of <span class="math inline">\(\hat{p} = 0.55\)</span> would not be particularly remarkable even if the coin was fair (<span class="math inline">\(p = 0.5\)</span>).<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>
 This CI is called the Wald interval.
 It is easy to calculate, and is instructive for showing another way that CIs can be calculated.
-But it does not actually do a very good job of accurately producing 95% CIs around a proportion, especially when our proportion is very low or high <span class="citation">(<a href="#ref-Schilling2014" role="doc-biblioref">Schilling and Doi 2014</a>; <a href="#ref-Andersson2023" role="doc-biblioref">Andersson 2023</a>)</span>.</p>
-<p>In fact, there are many different methods proposed to calculate binomial CIs, and a lot of statistical research has been done to compare and contrast these methods <span class="citation">(<a href="#ref-Reed2007" role="doc-biblioref">Reed 2007</a>; <a href="#ref-Thulin2014" role="doc-biblioref">Thulin 2014</a>; <a href="#ref-Schilling2014" role="doc-biblioref">Schilling and Doi 2014</a>)</span>.
-Jamovi uses Clopper-Pearson CIs <span class="citation">(<a href="#ref-Clopper1934" role="doc-biblioref">Clopper and Pearson E. S. 1934</a>)</span>.
+But it does not actually do a very good job of accurately producing 95% CIs around a proportion, especially when our proportion is very low or high <span class="citation">(<a href="#ref-Andersson2023" role="doc-biblioref">Andersson, 2023</a>; <a href="#ref-Schilling2014" role="doc-biblioref">Schilling &amp; Doi, 2014</a>)</span>.</p>
+<p>In fact, there are many different methods proposed to calculate binomial CIs, and a lot of statistical research has been done to compare and contrast these methods <span class="citation">(<a href="#ref-Reed2007" role="doc-biblioref">Reed, 2007</a>; <a href="#ref-Schilling2014" role="doc-biblioref">Schilling &amp; Doi, 2014</a>; <a href="#ref-Thulin2014" role="doc-biblioref">Thulin, 2014</a>)</span>.
+Jamovi uses Clopper-Pearson CIs <span class="citation">(<a href="#ref-Clopper1934" role="doc-biblioref">Clopper &amp; Pearson E. S., 1934</a>)</span>.
 Instead of relying on a normal approximation, the Clopper-Pearson method uses the binomial probability distribution (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>) to build CIs.
 This is what is known as an ‘exact method’.
-Clopper-Pearson CIs tend to err on the side of caution (they are often made wider than necessary), but they are a much better option than Wald CIs <span class="citation">(<a href="#ref-Reed2007" role="doc-biblioref">Reed 2007</a>)</span>.</p>
+Clopper-Pearson CIs tend to err on the side of caution (they are often made wider than necessary), but they are a much better option than Wald CIs <span class="citation">(<a href="#ref-Reed2007" role="doc-biblioref">Reed, 2007</a>)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Andersson2023" class="csl-entry">
-Andersson, Per Gösta. 2023. <span>“<span class="nocase">The Wald Confidence Interval for a Binomial p as an Illuminating "Bad" Example</span>.”</span> <em>American Statistician</em> 77 (4): 443–48. <a href="https://doi.org/10.1080/00031305.2023.2183257">https://doi.org/10.1080/00031305.2023.2183257</a>.
+Andersson, P. G. (2023). The <span>W</span>ald confidence interval for a binomial p as an illuminating <span>“bad”</span> example. <em>American Statistician</em>, <em>77</em>(4), 443–448. <a href="https://doi.org/10.1080/00031305.2023.2183257">https://doi.org/10.1080/00031305.2023.2183257</a>
 </div>
 <div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+Box, G. E. P., Hunter, W. G., &amp; Hunter, S. J. (1978). <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
 <div id="ref-Clopper1934" class="csl-entry">
-Clopper, C. J., and Pearson E. S. 1934. <span>“<span class="nocase">The use of confidence or fiducial limits illustrated in the case of the binomial</span>.”</span> <em>Biometrika</em> 26 (4): 404–13.
+Clopper, C. J., &amp; Pearson E. S. (1934). <span class="nocase">The use of confidence or fiducial limits illustrated in the case of the binomial</span>. <em>Biometrika</em>, <em>26</em>(4), 404–413.
 </div>
 <div id="ref-Ellison2004" class="csl-entry">
-Ellison, Aaron M. 2004. <span>“<span class="nocase">Bayesian inference in ecology</span>.”</span> <em>Ecology Letters</em> 7 (6): 509–20. <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">https://doi.org/10.1111/j.1461-0248.2004.00603.x</a>.
+Ellison, A. M. (2004). <span class="nocase">Bayesian inference in ecology</span>. <em>Ecology Letters</em>, <em>7</em>(6), 509–520. <a href="https://doi.org/10.1111/j.1461-0248.2004.00603.x">https://doi.org/10.1111/j.1461-0248.2004.00603.x</a>
 </div>
 <div id="ref-Reed2007" class="csl-entry">
-Reed, James F. 2007. <span>“<span class="nocase">Better binomial confidence intervals</span>.”</span> <em>Journal of Modern Applied Statistical Methods</em> 6 (1): 153–61. <a href="https://doi.org/10.22237/jmasm/1177992840">https://doi.org/10.22237/jmasm/1177992840</a>.
+Reed, J. F. (2007). <span class="nocase">Better binomial confidence intervals</span>. <em>Journal of Modern Applied Statistical Methods</em>, <em>6</em>(1), 153–161. <a href="https://doi.org/10.22237/jmasm/1177992840">https://doi.org/10.22237/jmasm/1177992840</a>
 </div>
 <div id="ref-Schilling2014" class="csl-entry">
-Schilling, Mark F., and Jimmy A. Doi. 2014. <span>“<span class="nocase">A Coverage Probability Approach to Finding an Optimal Binomial Confidence Procedure</span>.”</span> <em>American Statistician</em> 68 (3): 133–45. <a href="https://doi.org/10.1080/00031305.2014.899274">https://doi.org/10.1080/00031305.2014.899274</a>.
+Schilling, M. F., &amp; Doi, J. A. (2014). A coverage probability approach to finding an optimal binomial confidence procedure. <em>American Statistician</em>, <em>68</em>(3), 133–145. <a href="https://doi.org/10.1080/00031305.2014.899274">https://doi.org/10.1080/00031305.2014.899274</a>
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Thulin2014" class="csl-entry">
-Thulin, Måns. 2014. <span>“<span class="nocase">The cost of using exact confidence intervals for a binomial proportion</span>.”</span> <em>Electronic Journal of Statistics</em> 8 (1): 817–40. <a href="https://doi.org/10.1214/14-EJS909">https://doi.org/10.1214/14-EJS909</a>.
+Thulin, M. (2014). <span class="nocase">The cost of using exact confidence intervals for a binomial proportion</span>. <em>Electronic Journal of Statistics</em>, <em>8</em>(1), 817–840. <a href="https://doi.org/10.1214/14-EJS909">https://doi.org/10.1214/14-EJS909</a>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="25">
-<li id="fn25"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called ‘credible intervals’ rather than ‘confidence intervals’ <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective, i.e., based in some way on the subjective opinion of the individual researcher.<a href="Chapter_18.html#fnref25" class="footnote-back">↩︎</a></p></li>
+<li id="fn25"><p>The reason that these two ideas are different has to do with the way that probability is defined in the frequentist approach to statistics (see <a href="Chapter_15.html#Chapter_15">Chapter 15</a>). With this approach, there is no way to get the probability of the true mean being within an interval, strictly speaking. Other approaches to probability, such as Bayesian probability, do allow you to build intervals in which the true mean is contained with some probability. These are called ‘credible intervals’ rather than ‘confidence intervals’ <span class="citation">(e.g., <a href="#ref-Ellison2004" role="doc-biblioref">Ellison, 2004</a>)</span>. The downside to credible intervals (or not, depending on your philosophy of statistics) is that Bayesian probability is at least partly subjective, i.e., based in some way on the subjective opinion of the individual researcher.<a href="Chapter_18.html#fnref25" class="footnote-back">↩︎</a></p></li>
 <li id="fn26"><p><a href="https://bradduthie.github.io/stats/app/zandp/" class="uri">https://bradduthie.github.io/stats/app/zandp/</a><a href="Chapter_18.html#fnref26" class="footnote-back">↩︎</a></p></li>
 <li id="fn27"><p>While it is always important to be careful when searching, typing ‘z-score 99% confidence interval’ will almost always get the intended result.<a href="Chapter_18.html#fnref27" class="footnote-back">↩︎</a></p></li>
 <li id="fn28"><p><a href="https://bradduthie.github.io/stats/app/CI_hist_app/" class="uri">https://bradduthie.github.io/stats/app/CI_hist_app/</a><a href="Chapter_18.html#fnref28" class="footnote-back">↩︎</a></p></li>
-<li id="fn29"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995, 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z-score is not completely accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.<a href="Chapter_18.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn29"><p>What defines a ‘small’ or a ‘large’ sample is a bit arbitrary. A popular suggestion <span class="citation">(e.g., <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995, p. 145</a>)</span> is that any <span class="math inline">\(N &lt; 30\)</span> is too small to use z-scores, but any cut-off <span class="math inline">\(N\)</span> is going to be somewhat arbitrary. Technically, the z-score is not completely accurate until <span class="math inline">\(N \to \infty\)</span>, but for all intents and purposes, it is usually only trivially inaccurate for sample sizes in the hundreds. Fortunately, you do not need to worry about any of this when calculating CIs from continuous data in jamovi because jamovi applies a correction for you, which we will look at in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>.<a href="Chapter_18.html#fnref29" class="footnote-back">↩︎</a></p></li>
 <li id="fn30"><p>The hat over the p, (<span class="math inline">\(\hat{p}\)</span>) is just being used here to indicate the <em>estimate</em> of <span class="math inline">\(P(heads)\)</span>, rather than the <em>true</em> <span class="math inline">\(P(heads)\)</span>.<a href="Chapter_18.html#fnref30" class="footnote-back">↩︎</a></p></li>
 <li id="fn31"><p>Note, the variance of total <em>successes</em> is simply <span class="math inline">\(np\left(1 - p\right)\)</span>, i.e., just multiply the variance of <span class="math inline">\(p\)</span> by <span class="math inline">\(n\)</span>.<a href="Chapter_18.html#fnref31" class="footnote-back">↩︎</a></p></li>
 <li id="fn32"><p>You might ask, why are we doing all of this for the binomial distribution? The central limit theorem is supposed to work for the mean of any distribution, so should that not include the distribution of <span class="math inline">\(p\)</span> too? Can we not just indicate success (heads) with a 1 and failures (tails) with a 0, then estimate the standard error of 22 values of 1 and 18 values of 0? Well, yes! That actually does work and gives an estimate of 0.079663, which is very close to the <span class="math inline">\(\sqrt{\hat{p}(1-\hat{p})/N} = 0.078661\)</span>. The problem arises when the sample size is low, or when <span class="math inline">\(p\)</span> is close to 0 or 1, and we are trying to map the z-score to probability density.<a href="Chapter_18.html#fnref32" class="footnote-back">↩︎</a></p></li>

@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 3 Practical. Preparing data | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 3 Practical. Preparing data | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,7 +481,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_3" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chapter 3</span> <em>Practical</em>. Preparing data<a href="Chapter_3.html#Chapter_3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In this chapter, we will use a spreadsheet to organise datasets following the tidy approach explained in <a href="Chapter_2.html#Chapter_2">Chapter 2</a>, then save these datasets as CSV files to be opened in jamovi statistical software <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>In this chapter, we will use a spreadsheet to organise datasets following the tidy approach explained in <a href="Chapter_2.html#Chapter_2">Chapter 2</a>, then save these datasets as CSV files to be opened in jamovi statistical software <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 The data organisation in this chapter can be completed using <a href="https://www.libreoffice.org/discover/calc/">LibreOffice Calc</a>, MS Excel, or <a href="https://docs.google.com/spreadsheets/">Google Sheets</a>.
 The screenshots below will mostly be of LibreOffice Calc, but the instructions provided will work on any of the three aforementioned spreadsheet programs.</p>
 <p>There are four data exercises in this chapter.
@@ -493,7 +497,7 @@ These are morphological measurements of the same five species of wasps, includin
 The goal in this exercise is to tidy the data, then estimate total wasp volume from the morphological measurements using mathematical formulas, keeping in mind the order of operations from <a href="Chapter_1.html#Chapter_1">Chapter 1</a>.</p>
 <div id="exercise-1-transferring-data-to-a-spreadsheet" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Exercise 1: Transferring data to a spreadsheet<a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Exercise 1 focuses on data collected from the fruits of fig trees collected from Baja, Mexico in 2010 <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
+<p>Exercise 1 focuses on data collected from the fruits of fig trees collected from Baja, Mexico in 2010 <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie &amp; Nason, 2016</a>)</span>.
 Due to the nature of the work, the data needed to be recorded in notebooks and collected in two different locations.
 The first location was the field, where data were collected identifying tree locations and fruit dimensions.
 Baja is hot and sunny (Figure 3.1).</p>
@@ -586,7 +590,7 @@ This will ensure that you always know where your data files are located and can 
 <h2><span class="header-section-number">3.2</span> Exercise 2: Making spreadsheet data tidy<a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Exercise 2 is more self-guided than Exercise 1.
 After reading <a href="Chapter_2.html#Chapter_2">Chapter 2</a> and completing Exercise 1, you should have a bit more confidence in organising data in a tidy format.
-Here we will work with a dataset that includes counts of the number of eggs collected from fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers <span class="citation">(<a href="#ref-Weiblen2002" role="doc-biblioref">Weiblen 2002</a>)</span>.
+Here we will work with a dataset that includes counts of the number of eggs collected from fig wasps, which are small species of insects that lay their eggs into the ovules of fig flowers <span class="citation">(<a href="#ref-Weiblen2002" role="doc-biblioref">Weiblen, 2002</a>)</span>.
 You can download this dataset online<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> or recreate it from Table 3.1.</p>
 <table>
 <caption><strong>TABLE 3.1</strong> Untidy dataset of egg loads from fig wasps of five different species, including two unnamed species of the genus <em>Heterandrium</em> (Het1 and Het2) and three unnamed species of the genus <em>Idarnes</em> (LO1, SO1, and SO2).</caption>
@@ -922,18 +926,18 @@ Other functions such as <code>=count()</code>, <code>=min()</code>, <code>=max()
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Duthie2015b" class="csl-entry">
-Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
+Duthie, A. B., Abbott, K. C., &amp; Nason, J. D. (2015). <span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>. <em>American Naturalist</em>, <em>186</em>(1), 151–158. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>
 </div>
 <div id="ref-Duthie2016" class="csl-entry">
-Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em> 125 (11): 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
+Duthie, A. B., &amp; Nason, J. D. (2016). <span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>. <em>Oikos</em>, <em>125</em>(11), 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 <div id="ref-Weiblen2002" class="csl-entry">
-Weiblen, George D. 2002. <span>“<span class="nocase">How to be a fig wasp</span>.”</span> <em>Annual Review of Entomology</em> 47: 299–330.
+Weiblen, G. D. (2002). <span class="nocase">How to be a fig wasp</span>. <em>Annual Review of Entomology</em>, <em>47</em>, 299–330.
 </div>
 </div>
 <div class="footnotes">

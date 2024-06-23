@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 28 Practical. ANOVA and associated tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 28 Practical. ANOVA and associated tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,9 +481,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_28" class="section level1 hasAnchor" number="28">
 <h1><span class="header-section-number">Chapter 28</span> <em>Practical</em>. ANOVA and associated tests<a href="Chapter_28.html#Chapter_28" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts from Chapters 24-27 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This chapter focuses on applying the concepts from Chapters 24-27 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 The focus will be on ANOVA and associated tests, with five exercises in total.
-The data for this chapter are inspired by the work of Dr Lidia De Sousa Teixeira at the University of Stirling <span class="citation">(<a href="#ref-Teixeira2022" role="doc-biblioref">de Sousa Teixeira 2022</a>)</span>.
+The data for this chapter are inspired by the work of Dr Lidia De Sousa Teixeira at the University of Stirling <span class="citation">(<a href="#ref-Teixeira2022" role="doc-biblioref">de Sousa Teixeira, 2022</a>)</span>.
 This doctoral work included a nutrient analysis of agricultural soil in different regions of Angola.
 Measuring soil nutrient concentrations is essential for assessing soil quality, and these data include measurements of Nitrogen (N), Phosphorus (P), and Potassium (K) concentrations.
 Here we will focus on testing whether or not the concentrations of N, P, and K differ among two different sites and three soil profiles (upper, middle, and lower).
@@ -680,7 +684,7 @@ This is because, when doing a post hoc test, we should choose which test to use 
 This will avoid biasing our results to get the conclusion that we <em>want</em> rather than the conclusion that is <em>accurate</em>.
 If, for example, we first decided to use a Bonferroni correction, but then found that none of our p-values were below 0.05, it would not be okay to try a Tukey’s HSD test instead in hopes of changing this result.
 This kind of practice is colloquially called ‘p-hacking’ (or ‘data dredging’), and it causes an elevated risk of Type I error and a potential for bias in scientific results.
-Put more simply, trying to game the system to get results in which <span class="math inline">\(P &lt; 0.05\)</span> can lead to mistakes in science <span class="citation">(<a href="#ref-Head2015" role="doc-biblioref">Head et al. 2015</a>)</span>.
+Put more simply, trying to game the system to get results in which <span class="math inline">\(P &lt; 0.05\)</span> can lead to mistakes in science <span class="citation">(<a href="#ref-Head2015" role="doc-biblioref">Head et al., 2015</a>)</span>.
 Specifically, p-hacking can lead us to believe that there are patterns in nature where none really exist, which is definitely something that we want to avoid!</p>
 </div>
 <div id="kruskal-wallis-h-test" class="section level2 hasAnchor" number="28.4">
@@ -840,15 +844,15 @@ Based on the ANOVA output, what can you conclude?</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Teixeira2022" class="csl-entry">
-de Sousa Teixeira, Lídia Paula. 2022. <span>“Geochemical, Textural and Micromorphological Properties of Angolan Agroecosystem Soils in Relation Toregion,landscapepositionand Land Management.”</span> PhD thesis, Stirling, UK: University of Stirling.
+de Sousa Teixeira, L. P. (2022). <em>Geochemical, textural and micromorphological properties of <span>A</span>ngolan agroecosystem soils in relation to region, landscape position and land management</em> [PhD thesis]. University of Stirling, Stirling, UK.
 </div>
 <div id="ref-Head2015" class="csl-entry">
-Head, Megan L, Luke Holman, Rob Lanfear, Andrew T Kahn, and Michael D Jennions. 2015. <span>“<span class="nocase">The extent and consequences of p-hacking in science</span>.”</span> <em>PLoS Biology</em> 13 (3): e1002106. <a href="https://doi.org/10.1371/journal.pbio.1002106">https://doi.org/10.1371/journal.pbio.1002106</a>.
+Head, M. L., Holman, L., Lanfear, R., Kahn, A. T., &amp; Jennions, M. D. (2015). <span class="nocase">The extent and consequences of p-hacking in science</span>. <em>PLoS Biology</em>, <em>13</em>(3), e1002106. <a href="https://doi.org/10.1371/journal.pbio.1002106">https://doi.org/10.1371/journal.pbio.1002106</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">

@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 19 The t-interval | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 19 The t-interval | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -487,7 +491,7 @@ For large enough sample sizes (i.e., high <span class="math inline">\(N\)</span>
 <p>If there is a difference between <span class="math inline">\(s\)</span> and <span class="math inline">\(\sigma\)</span>, then our CIs will also be wrong.
 More specifically, the uncertainty between our sample estimate (<span class="math inline">\(s\)</span>) and the true standard deviation (<span class="math inline">\(\sigma\)</span>) is expected to increase the deviation of our sample mean (<span class="math inline">\(\bar{x}\)</span>) from the true mean (<span class="math inline">\(\mu\)</span>).
 This means that when we are using the <em>sample</em> standard deviation instead of the <em>population</em> standard deviation (which is pretty much always), the shape of the standard normal distribution from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> (Figure 18.2) will be wrong.
-The correct shape will be ‘wider and flatter’ <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, with more probability density at the extremes and less in the middle of the distribution <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.
+The correct shape will be ‘wider and flatter’ <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, with more probability density at the extremes and less in the middle of the distribution <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>)</span>.
 What this means is that if we use z-scores when calculating CIs using <span class="math inline">\(s\)</span>, our CIs will not be wide enough, and we will think that we have more confidence in the mean than we really do.
 Instead of using the standard normal distribution, we need to use a t-distribution<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
 <p>The difference between the standard normal distribution and t-distribution depends on our sample size, <span class="math inline">\(N\)</span>.
@@ -507,7 +511,7 @@ Figure 19.1: Standard normal probability distribution showing 95% of probability
 </div>
 <p>Note that in Figure 19.1, a t-distribution with 19 degrees of freedom (df) is shown.
 The t-distribution is parameterised using df, and we lose a degree of freedom when calculating <span class="math inline">\(s^{2}\)</span> from a sample size of <span class="math inline">\(N = 20\)</span>, so <span class="math inline">\(df = 20 - 1 = 19\)</span> is the correct value (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a> for explanation).
-For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in jamovi<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
+For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in jamovi<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
 <p>Recall from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 4.041\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.159\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
 Our corrected lower 95% CI is,</p>
 <p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{\sqrt{20}}\right) = 3.819.\]</span></p>
@@ -532,30 +536,30 @@ The t-distribution also plays a critical role in hypothesis-testing, which is th
 The t-distribution is therefore very important for understanding many statistical techniques.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Borowski2005" class="csl-entry">
-Borowski, E J, and J M Borwein. 2005. <em><span class="nocase">Collins Dictionary of Mathematics</span></em>. 2nd ed. London: HarperCollins Publishers.
+Borowski, E. J., &amp; Borwein, J. M. (2005). <em><span class="nocase">Collins Dictionary of Mathematics</span></em> (2nd ed., p. 641). HarperCollins Publishers, London.
 </div>
 <div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+Box, G. E. P., Hunter, W. G., &amp; Hunter, S. J. (1978). <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="33">
-<li id="fn33"><p>This is also called the ‘Student’s t-distribution’. It was originally discovered by the head brewer of Guinness in Dublin in the early 20th century <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>. The brewer, W. S. Gosset, published under the pseudonym “A. Student” because Guinness had a policy of not allowing employees to publish <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="Chapter_19.html#fnref33" class="footnote-back">↩︎</a></p></li>
-<li id="fn34"><p>How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as <span class="math inline">\(N \to \infty\)</span>, but <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that they are indistinguishable for all intents and purposes once <span class="math inline">\(N &gt; 30\)</span>. It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as jamovi will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.<a href="Chapter_19.html#fnref34" class="footnote-back">↩︎</a></p></li>
-<li id="fn35"><p>We can define the t-distribution mathematically <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, but it is an absolute beast, <span class="math display">\[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom. The <span class="math inline">\(\Gamma\left(\right)\)</span> is called a ‘gamma function’, which is basically the equivalent of a factorial function, but for any number z (not just integers), such that <span class="math inline">\(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\)</span> (where <span class="math inline">\(z &gt; -1\)</span>, or, even more technically, the real part of <span class="math inline">\(z &gt; -1\)</span>). If z is an integer n, then <span class="math inline">\(\Gamma\left({n + 1}\right) = n!\)</span> <span class="citation">(<a href="#ref-Borowski2005" role="doc-biblioref">Borowski and Borwein 2005</a>)</span>. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of two different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.<a href="Chapter_19.html#fnref35" class="footnote-back">↩︎</a></p></li>
-<li id="fn36"><p>Another interesting caveat, which jamovi will take care of automatically (so we do not actually have to worry about it), is that when we calculate <span class="math inline">\(s^{2}\)</span> to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by <span class="math inline">\(1/N\)</span> instead of <span class="math inline">\(1/(N-1)\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. In other words, we no longer need to correct the sample variance <span class="math inline">\(s^{2}\)</span> to account for bias in estimating <span class="math inline">\(\sigma^{2}\)</span> because the t-distribution takes care of this for us.<a href="Chapter_19.html#fnref36" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p>This is also called the ‘Student’s t-distribution’. It was originally discovered by the head brewer of Guinness in Dublin in the early 20th century <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>)</span>. The brewer, W. S. Gosset, published under the pseudonym “A. Student” because Guinness had a policy of not allowing employees to publish <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>.<a href="Chapter_19.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p>How large N needs to be for the t-distribution to considered close enough to the normal distribution is subjective. The two distributions get closer and closer as <span class="math inline">\(N \to \infty\)</span>, but <span class="citation">Sokal &amp; Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that they are indistinguishable for all intents and purposes once <span class="math inline">\(N &gt; 30\)</span>. It is always safe to use the t-distribution when calculating confidence intervals, which is what all statistical programs such as jamovi will do by default, so there is no need to worry about these kinds of arbitrary cutoffs in this case.<a href="Chapter_19.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>We can define the t-distribution mathematically <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, but it is an absolute beast, <span class="math display">\[f(t) = \frac{\Gamma\left(\frac{v + 1}{2} \right)}{\sqrt{\pi v} \Gamma{\left(\frac{v}{2}\right)}}\left(1 + \frac{t^{2}}{v} \right)^{-\frac{v + 1}{2}}.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom. The <span class="math inline">\(\Gamma\left(\right)\)</span> is called a ‘gamma function’, which is basically the equivalent of a factorial function, but for any number z (not just integers), such that <span class="math inline">\(\Gamma(z + 1) = \int_{0}^{\infty}x^{z}e^{-x}dx\)</span> (where <span class="math inline">\(z &gt; -1\)</span>, or, even more technically, the real part of <span class="math inline">\(z &gt; -1\)</span>). If z is an integer n, then <span class="math inline">\(\Gamma\left({n + 1}\right) = n!\)</span> <span class="citation">(<a href="#ref-Borowski2005" role="doc-biblioref">Borowski &amp; Borwein, 2005</a>)</span>. What about the rest of the t probability density function? Why is it all so much? The reason is that it is the result of two different probability distributions affecting t independently, a standard normal distribution and a Chi-square distribution <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>. We will look at the Chi-square in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>. Suffice to say that underlying mathematics of the t-distribution is not important for our purposes in applying statistical techniques.<a href="Chapter_19.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>Another interesting caveat, which jamovi will take care of automatically (so we do not actually have to worry about it), is that when we calculate <span class="math inline">\(s^{2}\)</span> to map t-scores to probability densities in the t-distribution, we multiply the sum of squares by <span class="math inline">\(1/N\)</span> instead of <span class="math inline">\(1/(N-1)\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>. In other words, we no longer need to correct the sample variance <span class="math inline">\(s^{2}\)</span> to account for bias in estimating <span class="math inline">\(\sigma^{2}\)</span> because the t-distribution takes care of this for us.<a href="Chapter_19.html#fnref36" class="footnote-back">↩︎</a></p></li>
 <li id="fn37"><p><a href="https://bradduthie.github.io/stats/app/t_score/" class="uri">https://bradduthie.github.io/stats/app/t_score/</a><a href="Chapter_19.html#fnref37" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

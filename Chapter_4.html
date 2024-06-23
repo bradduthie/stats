@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 4 Populations and samples | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 4 Populations and samples | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -485,7 +489,7 @@ We cannot measure everything, so we need to collect a <em>sample</em> of data an
 For example, while we probably cannot measure the height of every tree in a forest, nor can we measure the concentration of carbon at every possible location in the forest’s soil, we can collect a smaller number of measurements and still make useful conclusions about overall forest tree height and carbon concentration.</p>
 <p>Statistics thereby allows us to approximate properties of entire populations from a limited number of samples.
 This needs to be done with caution, but before getting into the details of how, it is important to fully understand the difference between a <strong>population</strong> and a <strong>sample</strong> to avoid confusing these two concepts.
-A <strong>population</strong> is the entire set of possible observations that could be collected <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+A <strong>population</strong> is the entire set of possible observations that could be collected <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 Some examples will make it easier to understand:</p>
 <ul>
 <li>All of the birch trees in Scotland</li>
@@ -494,7 +498,7 @@ Some examples will make it easier to understand:</p>
 </ul>
 <p>These populations might be important for a particular research question.
 For example, we might want to know something about the feeding behaviours of wrens in the UK.
-But there is no way that we can find and observe the behaviour of every single wren, so we need to take a subset of the population (sample) instead <span class="citation">(<a href="#ref-Fowler1998" role="doc-biblioref">Fowler, Cohen, and Jarvis 1998</a>)</span>.
+But there is no way that we can find and observe the behaviour of every single wren, so we need to take a subset of the population (sample) instead <span class="citation">(<a href="#ref-Fowler1998" role="doc-biblioref">Fowler et al., 1998</a>)</span>.
 Examples of samples include the following:</p>
 <ul>
 <li>25 birch trees from a Scottish forest</li>
@@ -504,11 +508,11 @@ Examples of samples include the following:</p>
 <p>It is important to recognise that the word ‘population’ means something different in statistics than it does in biology.
 A biological population, for example, could be defined as all of the individuals of the same species in the same general location.
 A statistical population, in contrast, refers to a set of observations (i.e., things that we can measure).
-<span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> provide a more technical definition for ‘population’,</p>
+<span class="citation">Sokal &amp; Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> provide a more technical definition for ‘population’,</p>
 <blockquote>
 <p>In statistics, population always means the <em>totality of individual observations about which inferences are to be made, existing anywhere in the world or at least within a definitely specified sampling area limited in space and time</em> [p. 9, emphasis theirs].</p>
 </blockquote>
-<p>They define a sample to be ‘a collection of individual observations selected by a specified procedure’ <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+<p>They define a sample to be ‘a collection of individual observations selected by a specified procedure’ <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 For our purposes, it is not necessary to be able to recite the technical definitions, but it is important to understand the relationship between a population and a sample.
 When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population (Figure 4.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
@@ -519,12 +523,12 @@ Figure 4.1: Conceptual figure illustrating how a statistical population relates 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Fowler1998" class="csl-entry">
-Fowler, Jim, Lou Cohen, and Phil Jarvis. 1998. <em><span class="nocase">Practical Statistics for Field Biology</span></em>. 2nd ed. Chichester, UK: John Wiley &amp; Sons.
+Fowler, J., Cohen, L., &amp; Jarvis, P. (1998). <em><span class="nocase">Practical Statistics for Field Biology</span></em> (2nd ed., p. 259). John Wiley &amp; Sons.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 </div>
             </section>

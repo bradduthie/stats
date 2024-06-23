@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 32 Simple linear regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 32 Simple linear regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -483,19 +487,19 @@ At first, this might sound similar to correlation, which was introduced in <a hr
 Simple linear regression and correlation are indeed similar, both conceptually and mathematically, and the two are frequently confused.
 Both methods focus on two quantitative variables, but the general aim of regression is different from correlation.
 The aim of correlation is to describe how the variance of one variable is associated with the variance of another variable.
-In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 But there is no attempt to predict what the value of one variable will be based on the other.</p>
 <p>Linear regression, in contrast to correlation, focuses on prediction.
 The aim is to predict the value of one quantitative variable Y given the value of another quantitative variable X.
-In other words, regression focuses on an association of dependence in which the value of Y depends on the value of X <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>.
-The Y variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-The X variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In other words, regression focuses on an association of dependence in which the value of Y depends on the value of X <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>.
+The Y variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
+The X variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 Unlike correlation, the distinction between the two variable types matters because the aim is to understand how a change in the independent variable will affect the dependent variable.
 For example, if we increase X by 1, how much will Y change?</p>
 <div id="visual-interpretation-of-regression" class="section level2 hasAnchor" number="32.1">
 <h2><span class="header-section-number">32.1</span> Visual interpretation of regression<a href="Chapter_32.html#visual-interpretation-of-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A visual example using a scatterplot can illustrate one way to think about regression.
-Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.</p>
+Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie &amp; Nason, 2016</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-140"></span>
 <img src="img/FigTree2.jpg" alt="Two panels with green fig fruits are shown on branches with fig wasps on the surface of them, and a panel to the right shows a man on a rock reaching into the crown of a fig tree with a stick." width="100%" />
 <p class="caption">
@@ -692,7 +696,7 @@ In other words, about 62% of the variation in fruit volume is explained by latit
 <div id="regression-assumptions" class="section level2 hasAnchor" number="32.6">
 <h2><span class="header-section-number">32.6</span> Regression assumptions<a href="Chapter_32.html#regression-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is important to be aware of the assumptions underlying linear regression.
-There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>:</p>
+There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li><p>Measurement of the independent variable (<span class="math inline">\(x\)</span>) is completely accurate. In other words, there is no measurement error for the independent variable.
 Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see <a href="Chapter_6.html#accuracy">Section 6.1</a> and <a href="Chapter_7.html#Chapter_7">Chapter 7</a>).</p></li>
@@ -750,7 +754,7 @@ We can test the null hypothesis that <span class="math inline">\(b_{0} = 0\)</sp
 <li><span class="math inline">\(H_{A}\)</span>: The intercept does not equal 0.</li>
 </ul>
 <p>The estimate of <span class="math inline">\(b_{0}\)</span> is t-distributed (see <a href="Chapter_19.html#Chapter_19">Chapter 19</a>) around the true parameter value <span class="math inline">\(\beta_{0}\)</span>.
-Jamovi will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
+Jamovi will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
 </div>
 <div id="significance-of-the-slope" class="section level3 hasAnchor" number="32.7.3">
 <h3><span class="header-section-number">32.7.3</span> Significance of the slope<a href="Chapter_32.html#significance-of-the-slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -825,21 +829,21 @@ In the next chapter, we move on to multiple regression, in which regression mode
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+Box, G. E. P., Hunter, W. G., &amp; Hunter, S. J. (1978). <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
 <div id="ref-Duthie2016" class="csl-entry">
-Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em> 125 (11): 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
+Duthie, A. B., &amp; Nason, J. D. (2016). <span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>. <em>Oikos</em>, <em>125</em>(11), 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>
 </div>
 <div id="ref-Rahman1968" class="csl-entry">
-Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
+Rahman, N. A. (1968). <em><span class="nocase">A Course in Theoretical Statistics</span></em> (p. 542). Charles Griffin &amp; Company, London.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">

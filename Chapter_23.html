@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 23 Practical. Hypothesis testing and t-tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 23 Practical. Hypothesis testing and t-tests | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,7 +481,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_23" class="section level1 hasAnchor" number="23">
 <h1><span class="header-section-number">Chapter 23</span> <em>Practical</em>. Hypothesis testing and t-tests<a href="Chapter_23.html#Chapter_23" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts about hypothesis testing from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> and the statistical tests from <a href="Chapter_22.html#Chapter_22">Chapter 22</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This chapter focuses on applying the concepts about hypothesis testing from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> and the statistical tests from <a href="Chapter_22.html#Chapter_22">Chapter 22</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 There will be five exercises in total, which will focus on using t-tests and their non-parametric equivalents.
 The data for this chapter focus on an example of biology and environmental sciences education.
 Similar to the example in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, it uses datasets of student test scores (note that these data are entirely fictional; I have not used scores from real students).
@@ -520,7 +524,7 @@ Recall from <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a> th
 <p>We will first focus on the first and third assumption.
 First, the sample data are indeed continuous.
 But are the sample means normally distributed around the true mean?
-A sufficient condition to fulfil this assumption is that the sample data are normally distributed <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>.
+A sufficient condition to fulfil this assumption is that the sample data are normally distributed <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson, 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al., 2002</a>)</span>.
 We can test whether or not the overall mean student scores are normally distributed.
 In the jamovi toolbar, find the button that says ‘T-Tests’ (second from the left), then choose ‘One Sample T-test’ from the pull-down menu.
 A new window will open up.
@@ -779,15 +783,15 @@ What could you do to test the null hypothesis that the change in scores from Tes
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Johnson1995" class="csl-entry">
-Johnson, Douglas H. 1995. <span>“<span class="nocase">Statistical sirens: The allure of nonparametrics</span>.”</span> <em>Ecology</em> 76 (6): 1998–2000.
+Johnson, D. H. (1995). <span class="nocase">Statistical sirens: The allure of nonparametrics</span>. <em>Ecology</em>, <em>76</em>(6), 1998–2000.
 </div>
 <div id="ref-Lumley2002" class="csl-entry">
-Lumley, Thomas, Paula Diehr, Scott Emerson, and Lu Chen. 2002. <span>“<span class="nocase">The importance of the normality assumption in large public health data sets</span>.”</span> <em>Annual Review of Public Health</em> 23: 151–69. <a href="https://doi.org/10.1146/annurev.publheath.23.100901.140546">https://doi.org/10.1146/annurev.publheath.23.100901.140546</a>.
+Lumley, T., Diehr, P., Emerson, S., &amp; Chen, L. (2002). <span class="nocase">The importance of the normality assumption in large public health data sets</span>. <em>Annual Review of Public Health</em>, <em>23</em>, 151–169. <a href="https://doi.org/10.1146/annurev.publheath.23.100901.140546">https://doi.org/10.1146/annurev.publheath.23.100901.140546</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">

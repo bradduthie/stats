@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 15 Introduction to probability models | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 15 Introduction to probability models | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -487,7 +491,7 @@ We might mean that we simply do not know whether or not the coin will land heads
 Alternatively, we might reason that if a fair coin were to be flipped many times, all else being equal, then about half of flips should end heads up, so a 50% chance is a reasonable prediction for what will happen in any given flip.
 Or, perhaps we reason that events such as coin flips really are guided by chance on some deeper fundamental level, such that our 50% chance reflects some real causal metaphysical process in the world.
 These are questions concerning the philosophy of probability.
-The philosophy of probability is an interesting sub-discipline in its own right, with implications that can and do affect how researchers do statistics <span class="citation">(<a href="#ref-Edwards1972" role="doc-biblioref">Edwards 1972</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>; <a href="#ref-Gelman2013" role="doc-biblioref">Gelman and Shalizi 2013</a>; <a href="#ref-Suarez2020" role="doc-biblioref">Suárez 2020</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Deborah G. Mayo 2021</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.</p>
+The philosophy of probability is an interesting sub-discipline in its own right, with implications that can and do affect how researchers do statistics <span class="citation">(<a href="#ref-Edwards1972" role="doc-biblioref">Edwards, 1972</a>; <a href="#ref-Gelman2013" role="doc-biblioref">Gelman &amp; Shalizi, 2013</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Mayo, 1996</a>; <a href="#ref-Mayo2021" role="doc-biblioref">Mayo, 2021</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro &amp; Foxcroft, 2022</a>; <a href="#ref-Suarez2020" role="doc-biblioref">Suárez, 2020</a>)</span>.</p>
 <p>In this chapter, we will not worry about the philosophy of probability<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a> and instead focus on the mathematical rules of probability as applied to statistics.
 These rules are important for predicting real-world events in the biological and environmental sciences.
 For example, we might need to make predictions concerning the risk of disease spreading in a population, or the risk of extreme events such as droughts occurring given increasing global temperatures.
@@ -570,7 +574,7 @@ The following are just two hypothetical examples where the calculations in the p
 </ol>
 <p>In both of these examples, we made some assumptions, which might or might not be problematic.
 In the first example, we assumed that the 6 people in our shop were a random and independent sample from the local area (i.e., people with COVID-19 are not more or less likely to be in the shop, and the 6 people in the shop were not associated in a way that would affect their individual probabilities of having COVID-19).
-In the second example, we assumed that individuals mate randomly, and that there is no mutation, migration, or selection on genotypes <span class="citation">(<a href="#ref-Hardy1908" role="doc-biblioref">Hardy 1908</a>)</span>.
+In the second example, we assumed that individuals mate randomly, and that there is no mutation, migration, or selection on genotypes <span class="citation">(<a href="#ref-Hardy1908" role="doc-biblioref">Hardy, 1908</a>)</span>.
 It is important to recognise these assumptions when we are making them, because violations of assumptions could affect the probabilities of events!</p>
 </div>
 <div id="sampling-with-and-without-replacement" class="section level2 hasAnchor" number="15.3">
@@ -620,7 +624,7 @@ Next, we will consider some more interesting distributions.</p>
 <div id="binomial-distribution" class="section level3 hasAnchor" number="15.4.1">
 <h3><span class="header-section-number">15.4.1</span> Binomial distribution<a href="Chapter_15.html#binomial-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The simple distribution with a single trial of a coin flip was actually an example of a binomial distribution.
-More generally, a binomial distribution describes the number of successes in some number of trials <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.
+More generally, a binomial distribution describes the number of successes in some number of trials <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>.
 The word ‘success’ should not be taken too literally here; it does not necessarily indicate a good outcome, or an accomplishment of some kind.
 A success in the context of a binomial distribution just means that an outcome <em>did</em> happen as opposed to it <em>not</em> happening.
 If we define a coin flip landing on heads as a success, we could consider the probability distribution of the number of successes over 10 trials (Figure 15.5).</p>
@@ -702,7 +706,7 @@ In the next section, we consider distributions with a continuous range of possib
 <p>We now move on to continuous distributions, starting with the continuous uniform distribution.
 I introduce this distribution mainly to clarify the difference between a discrete and continuous distribution.
 While the uniform distribution is very important for a lot of statistical tools (notably, simulating pseudorandom numbers), it is not something that we come across much in biological or environmental science data.
-The continuous uniform distribution has two parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
+The continuous uniform distribution has two parameters, <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>.<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>
 Values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> can be any real number (not just integers).
 For example, suppose that <span class="math inline">\(\alpha = 1\)</span> and <span class="math inline">\(\beta = 2.5\)</span>.
 In this case, Figure 15.8 shows the probability distribution for sampling some value <span class="math inline">\(x\)</span>.</p>
@@ -725,7 +729,7 @@ This is the nature of probability when we consider continuous distributions.</p>
 </div>
 <div id="normal-distribution" class="section level3 hasAnchor" number="15.4.4">
 <h3><span class="header-section-number">15.4.4</span> Normal distribution<a href="Chapter_15.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The last distribution, the normal distribution (also known as the “Gaussian distribution” or the “bell curve”) has a special place in statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.
+<p>The last distribution, the normal distribution (also known as the “Gaussian distribution” or the “bell curve”) has a special place in statistics <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>; <a href="#ref-Navarro2022" role="doc-biblioref">Navarro &amp; Foxcroft, 2022</a>)</span>.
 It appears in many places in the biological and environmental sciences and, partly due to the central limit theorem (see <a href="Chapter_16.html#Chapter_16">Chapter 16</a>), is fundamental to many statistical tools.
 The normal distribution is continuous, just like the continuous uniform distribution from the previous section.
 Unlike the uniform distribution, with the normal distribution, it is possible (at least in theory) to sample <em>any</em> real value, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>.
@@ -754,40 +758,40 @@ In <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, we will get an even clos
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Edwards1972" class="csl-entry">
-Edwards, A W F. 1972. <em><span class="nocase">Likelihood: An account of the statistical concept of likelihood and its application to scientific inference</span></em>. Cambridge: Cambridge University Press.
+Edwards, A. W. F. (1972). <em><span class="nocase">Likelihood: An account of the statistical concept of likelihood and its application to scientific inference</span></em> (p. 235). Cambridge University Press, Cambridge, UK.
 </div>
 <div id="ref-Gelman2013" class="csl-entry">
-Gelman, Andrew, and Cosma Rohilla Shalizi. 2013. <span>“<span class="nocase">Philosophy and the practice of Bayesian statistics</span>.”</span> <em>British Journal of Mathematical and Statistical Psychology</em> 66 (1): 8–38. <a href="https://doi.org/10.1111/j.2044-8317.2011.02037.x">https://doi.org/10.1111/j.2044-8317.2011.02037.x</a>.
+Gelman, A., &amp; Shalizi, C. R. (2013). <span class="nocase">Philosophy and the practice of Bayesian statistics</span>. <em>British Journal of Mathematical and Statistical Psychology</em>, <em>66</em>(1), 8–38. <a href="https://doi.org/10.1111/j.2044-8317.2011.02037.x">https://doi.org/10.1111/j.2044-8317.2011.02037.x</a>
 </div>
 <div id="ref-Hardy1908" class="csl-entry">
-Hardy, G H. 1908. <span>“<span class="nocase">Mendelian proportions in a mixed population</span>.”</span> <em>Science</em> 28 (706): 49–50. <a href="https://doi.org/10.1126/science.28.706.49">https://doi.org/10.1126/science.28.706.49</a>.
+Hardy, G. H. (1908). <span class="nocase">Mendelian proportions in a mixed population</span>. <em>Science</em>, <em>28</em>(706), 49–50. <a href="https://doi.org/10.1126/science.28.706.49">https://doi.org/10.1126/science.28.706.49</a>
 </div>
 <div id="ref-Mayo1996" class="csl-entry">
-Mayo, Deborah G. 1996. <em><span class="nocase">Error and the Growth of Experimental Knowledge</span></em>. Chicago: University of Chicago Press.
+Mayo, D. G. (1996). <em><span class="nocase">Error and the Growth of Experimental Knowledge</span></em> (p. 493). University of Chicago Press, Chicago, USA.
 </div>
 <div id="ref-Mayo2021" class="csl-entry">
-———. 2021. <span>“<span class="nocase">Significance Tests: Vitiated or Vindicated by the Replication Crisis in Psychology?</span>”</span> <em>Review of Philosophy and Psychology</em> 12 (1): 101–20. <a href="https://doi.org/10.1007/s13164-020-00501-w">https://doi.org/10.1007/s13164-020-00501-w</a>.
+Mayo, D. G. (2021). Significance tests: Vitiated or vindicated by the replication crisis in psychology? <em>Review of Philosophy and Psychology</em>, <em>12</em>(1), 101–120. <a href="https://doi.org/10.1007/s13164-020-00501-w">https://doi.org/10.1007/s13164-020-00501-w</a>
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 <div id="ref-Navarro2022" class="csl-entry">
-Navarro, Danielle J, and David R Foxcroft. 2022. <em><span class="nocase">Learning Statistics with Jamovi</span></em>. (Version 0.75). <a href="https://doi.org/10.24384/hgc3-7p15">https://doi.org/10.24384/hgc3-7p15</a>.
+Navarro, D. J., &amp; Foxcroft, D. R. (2022). <em><span class="nocase">Learning Statistics with Jamovi</span></em> (pp. 1–583). (Version 0.75). <a href="https://doi.org/10.24384/hgc3-7p15">https://doi.org/10.24384/hgc3-7p15</a>
 </div>
 <div id="ref-Suarez2020" class="csl-entry">
-Suárez, Mauricio. 2020. <em><span class="nocase">Philosophy of Probability and Statistical Modelling</span></em>. Edited by Robert Northcott and Jacob Stegenga. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/9781108985826">https://doi.org/10.1017/9781108985826</a>.
+Suárez, M. (2020). <em><span class="nocase">Philosophy of Probability and Statistical Modelling</span></em> (R. Northcott &amp; J. Stegenga, Eds.; p. 72). Cambridge University Press, Cambridge, UK. <a href="https://doi.org/10.1017/9781108985826">https://doi.org/10.1017/9781108985826</a>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="16">
-<li id="fn16"><p>In the interest of transparency, this book presents a <em>frequentist</em> interpretation of probability <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Deborah G. Mayo 1996</a>)</span>. While this approach does reflect the philosophical inclinations of the author, the reason for working from this interpretation has more to do with the statistical tests that are most appropriate for an introductory statistics module, which are also the tests most widely used in the biological and environmental sciences.<a href="Chapter_15.html#fnref16" class="footnote-back">↩︎</a></p></li>
-<li id="fn17"><p>For those interested, more technically, we can say that a random variable <span class="math inline">\(X\)</span> has binomial distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[b \left(x; n, \theta \right) = {n \choose x} \theta^{x} \left(1 - \theta\right)^{n-x}.\]</span> In this binomial probability mass function, <span class="math inline">\(x = 0, 1, 2, ..., n\)</span> (i.e., <span class="math inline">\(x\)</span> can take any integer value from 0 to n). Note that the <span class="math inline">\(n\)</span> over the <span class="math inline">\(x\)</span> in the first parentheses on the right-hand side of the equation is a binomial coefficient, which can be read ‘n choose x’. This can be written out as, <span class="math display">\[{n \choose x} = \frac{n!}{x!(n - x)!}.\]</span> The exclamation mark indicates a factorial, such that <span class="math inline">\(n! = n \times (n-1) \times (n - 2) \times ... \times 2 \times 1\)</span>. That is, the factorial multiplies every decreasing integer down to 1. For example, <span class="math inline">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>. None of this is critical to know for applying statistical techniques to biological and environmental science data, but it demonstrates just a bit of the theory underlying statistical tools.<a href="Chapter_15.html#fnref17" class="footnote-back">↩︎</a></p></li>
-<li id="fn18"><p>A random variable <span class="math inline">\(X\)</span> has a Poisson distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[p \left(x; \lambda \right) = \frac{\lambda^{x}e^{x}}{x!}.\]</span> Recall from <a href="Chapter_1.html#Chapter_1">Chapter 1</a> Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, and from footnote 18 that the exclamation mark indicates a factorial. In the Poisson probability mass function, <span class="math inline">\(x\)</span> can take any integer value greater than or equal to 0.<a href="Chapter_15.html#fnref18" class="footnote-back">↩︎</a></p></li>
-<li id="fn19"><p>A random variable <span class="math inline">\(X\)</span> has a continuous uniform distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[u\left(x; \alpha, \beta\right) = \frac{1}{\beta - \alpha},\]</span> where <span class="math inline">\(\alpha &lt; x &lt; \beta\)</span>, and <span class="math inline">\(u\left(x; \alpha, \beta\right) = 0\)</span> everywhere else. The value <span class="math inline">\(x\)</span> can take any real number.<a href="Chapter_15.html#fnref19" class="footnote-back">↩︎</a></p></li>
-<li id="fn20"><p>A random variable <span class="math inline">\(X\)</span> has a normal distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[n\left(x; \mu, \sigma\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}}.\]</span> In the normal distribution, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>. Note the appearance of two irrational numbers introduced back in <a href="Chapter_1.html#Chapter_1">Chapter 1</a>: <span class="math inline">\(\pi\)</span> and <span class="math inline">\(e\)</span>.<a href="Chapter_15.html#fnref20" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>In the interest of transparency, this book presents a <em>frequentist</em> interpretation of probability <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Mayo, 1996</a>)</span>. While this approach does reflect the philosophical inclinations of the author, the reason for working from this interpretation has more to do with the statistical tests that are most appropriate for an introductory statistics module, which are also the tests most widely used in the biological and environmental sciences.<a href="Chapter_15.html#fnref16" class="footnote-back">↩︎</a></p></li>
+<li id="fn17"><p>For those interested, more technically, we can say that a random variable <span class="math inline">\(X\)</span> has binomial distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, <span class="math display">\[b \left(x; n, \theta \right) = {n \choose x} \theta^{x} \left(1 - \theta\right)^{n-x}.\]</span> In this binomial probability mass function, <span class="math inline">\(x = 0, 1, 2, ..., n\)</span> (i.e., <span class="math inline">\(x\)</span> can take any integer value from 0 to n). Note that the <span class="math inline">\(n\)</span> over the <span class="math inline">\(x\)</span> in the first parentheses on the right-hand side of the equation is a binomial coefficient, which can be read ‘n choose x’. This can be written out as, <span class="math display">\[{n \choose x} = \frac{n!}{x!(n - x)!}.\]</span> The exclamation mark indicates a factorial, such that <span class="math inline">\(n! = n \times (n-1) \times (n - 2) \times ... \times 2 \times 1\)</span>. That is, the factorial multiplies every decreasing integer down to 1. For example, <span class="math inline">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>. None of this is critical to know for applying statistical techniques to biological and environmental science data, but it demonstrates just a bit of the theory underlying statistical tools.<a href="Chapter_15.html#fnref17" class="footnote-back">↩︎</a></p></li>
+<li id="fn18"><p>A random variable <span class="math inline">\(X\)</span> has a Poisson distribution if and only if its probability mass function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, <span class="math display">\[p \left(x; \lambda \right) = \frac{\lambda^{x}e^{x}}{x!}.\]</span> Recall from <a href="Chapter_1.html#Chapter_1">Chapter 1</a> Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, and from footnote 18 that the exclamation mark indicates a factorial. In the Poisson probability mass function, <span class="math inline">\(x\)</span> can take any integer value greater than or equal to 0.<a href="Chapter_15.html#fnref18" class="footnote-back">↩︎</a></p></li>
+<li id="fn19"><p>A random variable <span class="math inline">\(X\)</span> has a continuous uniform distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, <span class="math display">\[u\left(x; \alpha, \beta\right) = \frac{1}{\beta - \alpha},\]</span> where <span class="math inline">\(\alpha &lt; x &lt; \beta\)</span>, and <span class="math inline">\(u\left(x; \alpha, \beta\right) = 0\)</span> everywhere else. The value <span class="math inline">\(x\)</span> can take any real number.<a href="Chapter_15.html#fnref19" class="footnote-back">↩︎</a></p></li>
+<li id="fn20"><p>A random variable <span class="math inline">\(X\)</span> has a normal distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, <span class="math display">\[n\left(x; \mu, \sigma\right) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^{2}}.\]</span> In the normal distribution, <span class="math inline">\(-\infty &lt; x &lt; \infty\)</span>. Note the appearance of two irrational numbers introduced back in <a href="Chapter_1.html#Chapter_1">Chapter 1</a>: <span class="math inline">\(\pi\)</span> and <span class="math inline">\(e\)</span>.<a href="Chapter_15.html#fnref20" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

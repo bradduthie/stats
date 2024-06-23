@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 26 Kruskal-Wallis H test | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 26 Kruskal-Wallis H test | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -478,7 +482,7 @@ div.csl-indent {
 <div id="Chapter_26" class="section level1 hasAnchor" number="26">
 <h1><span class="header-section-number">Chapter 26</span> Kruskal-Wallis H test<a href="Chapter_26.html#Chapter_26" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>If the assumptions of the one-way ANOVA are violated, then we can consider using a Kruskal-Wallis test.
-The Kruskal-Wallis test is essentially an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Section 22.5.2</a> for samples with more than two groups <span class="citation">(<a href="#ref-Kruskal1952" role="doc-biblioref">William H. Kruskal and Wallis 1952</a>)</span>.
+The Kruskal-Wallis test is essentially an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Section 22.5.2</a> for samples with more than two groups <span class="citation">(<a href="#ref-Kruskal1952" role="doc-biblioref">Kruskal &amp; Wallis, 1952</a>)</span>.
 Like the Mann-Whitney U test, it uses the <em>ranks</em> of values instead of the actual values in the dataset.
 The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (H) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
@@ -590,17 +594,17 @@ There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 </table>
 <p>From these ranks, we calculate a test statistic H from the overall sample size (N), the sample size of each group (<span class="math inline">\(N_{i}\)</span>), the mean of group ranks (<span class="math inline">\(\bar{R}_{i}\)</span>), and the overall mean rank (<span class="math inline">\(\bar{\bar R}\)</span>).
 Of course, we do not need to do this by hand.
-But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a" role="doc-biblioref">William H. Kruskal 1952</a>)</span>,</p>
+But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a" role="doc-biblioref">Kruskal, 1952</a>)</span>,</p>
 <p><span class="math display">\[H = (N - 1) \frac{\sum_{i=1}^{g}N_{i}\left(\bar{R}_{i} - \bar{\bar R} \right)^2}{\sum_{i=1}^{g}\sum_{j=1}^{N_{i}} \left(R_{ij} - \bar{\bar R} \right)^{2}}.\]</span></p>
 <p>For our purposes, the mathematical details are not important.
 The equation is included here only to show the similarity between the calculation of H versus F from <a href="Chapter_24.html#one-way-anova">Section 24.2</a>.
 In the numerator of the equation for H, we are calculating the squared deviation of mean group ranks from the overall mean rank <span class="math inline">\((\bar{R}_{i} - \bar{\bar R})^2\)</span>, as weighted by the group sample size <span class="math inline">\(N_{i}\)</span>.
 We are then dividing by the sum of squared deviations of all ranks (<span class="math inline">\(R_{ij}\)</span>) from the overall mean rank <span class="math inline">\(\bar{\bar R}\)</span>.
 All of this gets multiplied by <span class="math inline">\(N - 1\)</span> to give the test statistic H.
-We can then compare H to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al. 2003</a>)</span>.
-But most statistical programs such as jamovi compare H to a Chi-square distribution (see <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.</p>
+We can then compare H to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al., 2003</a>)</span>.
+But most statistical programs such as jamovi compare H to a Chi-square distribution (see <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>.</p>
 <p>The output of a Kruskal-Wallis H test is quite minimal and easy to read.
-Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 Figure 26.1 shows the output of a Kruskal-Wallis H test on the fig wasp wing lengths data.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
 <img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskal-Wallis H test." width="60%" />
@@ -614,21 +618,21 @@ The Kruskal-Wallis H test does not assume that group variances are the same, unl
 Since we know that the homogeneity of variances assumption is violated for the fig wasp data, it is probably best to be cautious and conclude that there is no evidence that mean wing lengths differ among species.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Choi2003" class="csl-entry">
-Choi, Won, Jae Won Lee, Myung Hoe Huh, and Seung Ho Kang. 2003. <span>“<span class="nocase">An Algorithm for Computing the Exact Distribution of the Kruskal-Wallis Test</span>.”</span> <em>Communications in Statistics Part B: Simulation and Computation</em> 32 (4): 1029–40. <a href="https://doi.org/10.1081/SAC-120023876">https://doi.org/10.1081/SAC-120023876</a>.
+Choi, W., Lee, J. W., Huh, M. H., &amp; Kang, S. H. (2003). <span class="nocase">An algorithm for computing the exact distribution of the Kruskal-Wallis test</span>. <em>Communications in Statistics Part B: Simulation and Computation</em>, <em>32</em>(4), 1029–1040. <a href="https://doi.org/10.1081/SAC-120023876">https://doi.org/10.1081/SAC-120023876</a>
 </div>
 <div id="ref-Kruskal1952a" class="csl-entry">
-Kruskal, William H. 1952. <span>“<span class="nocase">A nonparametric test for the several sample problem</span>.”</span> <em>The Annals of Mathematical Statistics</em> 23 (4): 525–40.
+Kruskal, W. H. (1952). <span class="nocase">A nonparametric test for the several sample problem</span>. <em>The Annals of Mathematical Statistics</em>, <em>23</em>(4), 525–540.
 </div>
 <div id="ref-Kruskal1952" class="csl-entry">
-Kruskal, William H, and W Allen Wallis. 1952. <span>“<span class="nocase">Use of Ranks in One-Criterion Variance Analysis</span>.”</span> <em>Journal of the American Statistical Association</em> 47 (260): 583–621. <a href="https://doi.org/10.1080/01621459.1952.10483441">https://doi.org/10.1080/01621459.1952.10483441</a>.
+Kruskal, W. H., &amp; Wallis, W. A. (1952). Use of ranks in one-criterion variance analysis. <em>Journal of the American Statistical Association</em>, <em>47</em>(260), 583–621. <a href="https://doi.org/10.1080/01621459.1952.10483441">https://doi.org/10.1080/01621459.1952.10483441</a>
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
             </section>

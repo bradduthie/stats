@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 7 Uncertainty propagation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 7 Uncertainty propagation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -492,13 +496,13 @@ For example, we might repeat the measurement of an object’s mass with a differ
 <p>Sometimes it is necessary to combine different measured values.
 For example, we might measure the mass of two different bird eggs in a nest separately, then calculate the total mass of both eggs combined.
 The measurement of each egg will have its own error, and these errors will propagate to determine the error of the total egg mass for the nest.
-How this error propagates differs depending on if they are being added or subtracted, or if they are being multiplied or divided <span class="citation">(<a href="#ref-Navidi2006" role="doc-biblioref">Navidi 2006</a>)</span>.</p>
+How this error propagates differs depending on if they are being added or subtracted, or if they are being multiplied or divided <span class="citation">(<a href="#ref-Navidi2006" role="doc-biblioref">Navidi, 2006</a>)</span>.</p>
 <div id="adding-or-subtracting-errors" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Adding or subtracting errors<a href="Chapter_7.html#adding-or-subtracting-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the case of our egg masses, we can assign the mass of the first egg to the variable <span class="math inline">\(X\)</span> and the mass of the second egg to the variable <span class="math inline">\(Y\)</span>.
 We can assign the total mass to the variable <span class="math inline">\(Z\)</span>, where <span class="math inline">\(Z = X + Y\)</span>.
 The measurement errors associated with the variables <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> can be indicated by <span class="math inline">\(E_{X}\)</span>, <span class="math inline">\(E_{Y}\)</span>, and <span class="math inline">\(E_{Z}\)</span>, respectively.
-In general, if the variable <span class="math inline">\(Z\)</span> is calculated by adding (or subtracting) 2 or more values together, then this is the formula for calculating <span class="math inline">\(E_{Z}\)</span> <span class="citation">(<a href="#ref-Allie2003" role="doc-biblioref">Allie et al. 2003</a>)</span>,</p>
+In general, if the variable <span class="math inline">\(Z\)</span> is calculated by adding (or subtracting) 2 or more values together, then this is the formula for calculating <span class="math inline">\(E_{Z}\)</span> <span class="citation">(<a href="#ref-Allie2003" role="doc-biblioref">Allie et al., 2003</a>)</span>,</p>
 <p><span class="math display">\[E_{Z} = \sqrt{E^{2}_{X} + E^{2}_{Y}}.\]</span></p>
 <p>Hence, for the egg masses, the error of the combined masses (<span class="math inline">\(E_{Z}\)</span>) equals the square root of the error associated with the mass of egg 1 squared (<span class="math inline">\(E^{2}_{X}\)</span>) plus the error associated with the mass of egg 2 squared (<span class="math inline">\(E^{2}_{Y}\)</span>).
 It often helps to provide a concrete example.
@@ -524,16 +528,16 @@ To avoid confusion, the general formula for multiplying or dividing errors is be
 <p><span class="math display">\[E_{Z} = Z \sqrt{\left(\frac{E_{X}}{X} \right)^{2} + \left(\frac{E_{Y}}{Y} \right)^{2}}.\]</span></p>
 <p>Note that the structure of the equation is the exact same, just with different letters used as variables.
 It is necessary to be able to apply these equations correctly to estimate combined measurement error.
-It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in <a href="uncertainty_derivation.html#uncertainty_derivation">Appendix B</a> for the curious <span class="citation">(see chapter 3 of <a href="#ref-Navidi2006" role="doc-biblioref">Navidi 2006</a> for more)</span>.</p>
+It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in <a href="uncertainty_derivation.html#uncertainty_derivation">Appendix B</a> for the curious <span class="citation">(see chapter 3 of <a href="#ref-Navidi2006" role="doc-biblioref">Navidi, 2006</a> for more)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Allie2003" class="csl-entry">
-Allie, Saalih, Andy Buffler, Bob Campbell, Fred Lubben, Dimitris Evangelinos, Dimitris Psillos, and Odysseas Valassiades. 2003. <span>“Teaching Measurement in the Introductory Physics Laboratory.”</span> <em>Physics Teacher</em> 41 (7): 394–401.
+Allie, S., Buffler, A., Campbell, B., Lubben, F., Evangelinos, D., Psillos, D., &amp; Valassiades, O. (2003). Teaching measurement in the introductory physics laboratory. <em>Physics Teacher</em>, <em>41</em>(7), 394–401.
 </div>
 <div id="ref-Navidi2006" class="csl-entry">
-Navidi, William Cyrus. 2006. <em>Statistics for Engineers and Scientists</em>. Vol. 2. McGraw-Hill New York.
+Navidi, W. C. (2006). <em>Statistics for engineers and scientists</em> (Vol. 2). McGraw-Hill, New York, USA.
 </div>
 </div>
             </section>

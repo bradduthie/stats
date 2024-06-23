@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 10 Graphs | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 10 Graphs | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -484,8 +488,8 @@ This chapter focuses on four types of graphs: (1) histograms, (2) pie charts, (3
 Visualisation can often highlight important and obvious properties of a dataset more efficiently than inspecting raw data, calculating summary statistics, or running statistical tests.
 When making graphs to communicate data visually, it is important to ensure that the person reading the graph has a clear understanding of what is being presented.
 In practice, this means clearly labelling axes with meaningful descriptions and appropriate units, including a descriptive caption, and indicating what any graph symbols mean.
-In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher and Wagener 2011</a>)</span>.
-It is also important to ensure that graphs are as accessible as possible, e.g., by providing strong colour contrast and appropriate colour combinations <span class="citation">(<a href="#ref-Elavsky2022" role="doc-biblioref">Elavsky, Bennett, and Moritz 2022</a>)</span>, and alternative text for images where possible.
+In general, it is also best to make the simplest graph possible for visualising the data, which means avoiding unnecessary colour, three-dimensional display, or distractions from the information being conveyed <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>; <a href="#ref-Kelleher2011" role="doc-biblioref">Kelleher &amp; Wagener, 2011</a>)</span>.
+It is also important to ensure that graphs are as accessible as possible, e.g., by providing strong colour contrast and appropriate colour combinations <span class="citation">(<a href="#ref-Elavsky2022" role="doc-biblioref">Elavsky et al., 2022</a>)</span>, and alternative text for images where possible.
 As a guide, the histogram, pie chart, barplot, and box-whisker plot below illustrate good practice when making graphs.</p>
 <div id="histograms" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Histograms<a href="Chapter_10.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -501,7 +505,7 @@ Figure 10.1: Example histogram fig fruit width (cm) using data from 78 fig fruit
 <p>The histogram in Figure 10.1 shows how many fruits there are for different intervals of width, i.e., the frequency with which fruits within some width interval occur in the data.
 For example, there are 6 fruits with a width between 1.0 and 1.2, so for this interval on the x-axis, the bar is 6 units in height on the y-axis.
 In contrast, there is only 1 fig fruit that has a width greater than 2.0 cm (the biggest is 2.1 cm), so we see that the height of the bar for the interval between 2.0 and 2.2 is only 1 unit in frequency.
-The bars of the histogram touch each other, which reinforces the idea that the data are continuous <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+The bars of the histogram touch each other, which reinforces the idea that the data are continuous <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.</p>
 <p>It is especially important to be able to read and understand information from a histogram, because it is often necessary to determine if the data are consistent with the assumptions of a statistical test.
 For example, the <em>shape</em> of the distribution of fig fruit widths might be important for performing a particular test.
 For the purposes of this chapter, the <em>shape</em> of the distribution just means what the data look like when plotted like this in a histogram.
@@ -570,18 +574,18 @@ This outlier is an especially low value of fig fruit width compared to the other
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Dytham2011" class="csl-entry">
-Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+Dytham, C. (2011). <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em> (p. 298). John Wiley &amp; Sons, West Sussex, UK.
 </div>
 <div id="ref-Elavsky2022" class="csl-entry">
-Elavsky, Frank, Cynthia Bennett, and Dominik Moritz. 2022. <span>“<span class="nocase">How accessible is my visualization? Evaluating visualization accessibility with Chartability</span>.”</span> <em>Computer Graphics Forum</em> 41 (3): 57–70. <a href="https://doi.org/10.1111/cgf.14522">https://doi.org/10.1111/cgf.14522</a>.
+Elavsky, F., Bennett, C., &amp; Moritz, D. (2022). <span class="nocase">How accessible is my visualization? Evaluating visualization accessibility with Chartability</span>. <em>Computer Graphics Forum</em>, <em>41</em>(3), 57–70. <a href="https://doi.org/10.1111/cgf.14522">https://doi.org/10.1111/cgf.14522</a>
 </div>
 <div id="ref-Kelleher2011" class="csl-entry">
-Kelleher, Christa, and Thorsten Wagener. 2011. <span>“<span class="nocase">Ten guidelines for effective data visualization in scientific publications</span>.”</span> <em>Environmental Modelling and Software</em> 26 (6): 822–27. <a href="https://doi.org/10.1016/j.envsoft.2010.12.006">https://doi.org/10.1016/j.envsoft.2010.12.006</a>.
+Kelleher, C., &amp; Wagener, T. (2011). <span class="nocase">Ten guidelines for effective data visualization in scientific publications</span>. <em>Environmental Modelling and Software</em>, <em>26</em>(6), 822–827. <a href="https://doi.org/10.1016/j.envsoft.2010.12.006">https://doi.org/10.1016/j.envsoft.2010.12.006</a>
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 </div>
 <div class="footnotes">

@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 29 Frequency and count data | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 29 Frequency and count data | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -501,7 +505,7 @@ We need some probability density distribution that is our null distribution, whi
 We then compare this null distribution to our test statistic to find the probability of sampling a test statistic as or more extreme if the null hypothesis is really true (i.e., a p-value).</p>
 <div id="chi-square-distribution" class="section level2 hasAnchor" number="29.1">
 <h2><span class="header-section-number">29.1</span> Chi-square distribution<a href="Chapter_29.html#chi-square-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
+<p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
 There is a lot to unpack in the previous sentence, so we can go through it step by step.
 First, we can take another look at the standard normal distribution from <a href="Chapter_15.html#normal-distribution">Section 15.4.4</a> (Figure 15.9).
 Suppose that we randomly sampled four values from the standard normal distribution.</p>
@@ -543,9 +547,9 @@ Figure 29.2: Probability density functions for three different Chi-square distri
 And as with the F distribution, it is not necessary to memorise how the <span class="math inline">\(\chi^{2}\)</span> distribution changes with different degrees of freedom.
 The important point is that the distribution changes with different degrees of freedom, and we can map probabilities to the <span class="math inline">\(\chi^{2}\)</span> value on the x-axis in the same way as any other distribution.</p>
 <p>What does any of this have to do with count data? It actually is a bit messy.
-The <span class="math inline">\(\chi^{2}\)</span> distribution is not a perfect tool for comparing observed and expected counts <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+The <span class="math inline">\(\chi^{2}\)</span> distribution is not a perfect tool for comparing observed and expected counts <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 After all, counts are integer values, and the <span class="math inline">\(\chi^{2}\)</span> distribution is clearly continuous (unlike, e.g., the binomial or Poisson distributions from <a href="##probability-distributions">Section 15.4</a>).
-The <span class="math inline">\(\chi^{2}\)</span> distribution is in fact a useful approximation for testing counts, and one that becomes less accurate when sample size <span class="citation">(<a href="#ref-Slakter1968" role="doc-biblioref">Slakter 1968</a>)</span> or expected count size <span class="citation">(<a href="#ref-Tate1973" role="doc-biblioref">Tate and Hyer 1973</a>)</span> is small.
+The <span class="math inline">\(\chi^{2}\)</span> distribution is in fact a useful approximation for testing counts, and one that becomes less accurate when sample size <span class="citation">(<a href="#ref-Slakter1968" role="doc-biblioref">Slakter, 1968</a>)</span> or expected count size <span class="citation">(<a href="#ref-Tate1973" role="doc-biblioref">Tate &amp; Hyer, 1973</a>)</span> is small.
 Nevertheless, we can use the <span class="math inline">\(\chi^{2}\)</span> distribution as a tool for testing whether observed counts are significantly different from expected counts.
 The first test that we will look at is the goodness of fit test.</p>
 </div>
@@ -602,7 +606,7 @@ Next, we will look at testing associations between counts in different types of 
 <h2><span class="header-section-number">29.3</span> Chi-square test of association<a href="Chapter_29.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The second kind of test that we will consider for count data is the Chi-square test of association.
 While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on two different categorical variables.
-What we want to know is whether or not the two categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.
+What we want to know is whether or not the two categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>)</span>.
 In other words, does knowing something about one variable tell us anything about the other variable?
 A concrete example will make it easier to explain.
 We can again make use of the <a href="Chapter_17.html#Chapter_17">Chapter 17</a> game ‘Power Up!’.
@@ -825,7 +829,7 @@ We get a value of about <span class="math inline">\(P = 0.0868\)</span>.
 In other words, if <span class="math inline">\(H_{0}\)</span> is true, then the probability of getting a <span class="math inline">\(\chi^{2}\)</span> of 4.889 or higher is <span class="math inline">\(P = 0.0868\)</span>.
 Consequently, because <span class="math inline">\(P &gt; 0.05\)</span>, we would not reject the null hypothesis.
 We should therefore conclude that there is no evidence for an association between OS and dam size choice.</p>
-<p>Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 To do this, it is necessary to input the categorical data (e.g., Android, MacOS) in a tidy format, which will be a focus of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>.</p>
 <p>There is one final point regarding expected and observed values of the Chi-square test of association.
 There is another way of getting these expected values that is a bit faster (and more widely taught) but does not demonstrate the logic of expected counts as clearly.
@@ -880,34 +884,34 @@ This works for all of combinations of rows and columns, so we could do it to fin
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+Box, G. E. P., Hunter, W. G., &amp; Hunter, S. J. (1978). <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
 <div id="ref-Miller2004" class="csl-entry">
-Miller, Irwin, and Marylees Miller. 2004. <em><span class="nocase">John E. Freund’s mathematical statistics</span></em>. 7th ed. Upper Saddle River, New Jersey: Pearson Prentice Hall.
+Miller, I., &amp; Miller, M. (2004). <em><span class="nocase">John E. Freund’s mathematical statistics</span></em> (7th ed., p. 614). Pearson Prentice Hall, Upper Saddle River, New Jersey, USA.
 </div>
 <div id="ref-Slakter1968" class="csl-entry">
-Slakter, Malcolm J. 1968. <span>“<span class="nocase">Accuracy of an Approximation to the Power of the Chi-Square Goodness of Fit Test with Small but Equal Expected Frequencies</span>.”</span> <em>Journal of the American Statistical Association</em> 63 (323): 912–18. <a href="https://doi.org/10.1080/01621459.1968.11009319">https://doi.org/10.1080/01621459.1968.11009319</a>.
+Slakter, M. J. (1968). Accuracy of an approximation to the power of the chi-square goodness of fit test with small but equal expected frequencies. <em>Journal of the American Statistical Association</em>, <em>63</em>(323), 912–918. <a href="https://doi.org/10.1080/01621459.1968.11009319">https://doi.org/10.1080/01621459.1968.11009319</a>
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Tate1973" class="csl-entry">
-Tate, Merle W, and Leon A Hyer. 1973. <span>“<span class="nocase">Inaccuracy of the X2 test of goodness of fit when expected frequencies are small</span>.”</span> <em>Journal of the American Statistical Association</em> 68 (344): 836–41. <a href="https://doi.org/10.1080/01621459.1973.10481433">https://doi.org/10.1080/01621459.1973.10481433</a>.
+Tate, M. W., &amp; Hyer, L. A. (1973). Inaccuracy of the <span class="math inline">\(X^{2}\)</span> test of goodness of fit when expected frequencies are small. <em>Journal of the American Statistical Association</em>, <em>68</em>(344), 836–841. <a href="https://doi.org/10.1080/01621459.1973.10481433">https://doi.org/10.1080/01621459.1973.10481433</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="65">
-<li id="fn65"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="Chapter_29.html#fnref65" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="Chapter_29.html#fnref65" class="footnote-back">↩︎</a></p></li>
 <li id="fn66"><p><a href="https://bradduthie.github.io/stats/app/chi-square/" class="uri">https://bradduthie.github.io/stats/app/chi-square/</a><a href="Chapter_29.html#fnref66" class="footnote-back">↩︎</a></p></li>
-<li id="fn67"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="Chapter_29.html#fnref67" class="footnote-back">↩︎</a></p></li>
+<li id="fn67"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="Chapter_29.html#fnref67" class="footnote-back">↩︎</a></p></li>
 <li id="fn68"><p>We can call these the ‘marginal probabilities’.<a href="Chapter_29.html#fnref68" class="footnote-back">↩︎</a></p></li>
-<li id="fn69"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract one degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but one probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the ‘Power Up!’ example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="Chapter_29.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<li id="fn69"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract one degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but one probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the ‘Power Up!’ example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.<a href="Chapter_29.html#fnref69" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

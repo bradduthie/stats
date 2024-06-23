@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 20 Practical. z- and t-intervals | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 20 Practical. z- and t-intervals | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,12 +481,12 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_20" class="section level1 hasAnchor" number="20">
 <h1><span class="header-section-number">Chapter 20</span> <em>Practical</em>. z- and t-intervals<a href="Chapter_20.html#Chapter_20" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> and <a href="Chapter_19.html#Chapter_19">Chapter 19</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This chapter focuses on applying the concepts from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> and <a href="Chapter_19.html#Chapter_19">Chapter 19</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 Specifically, we will practice calculating confidence intervals (CIs).
 There will be four exercises focused on calculating CIs in jamovi.
 To complete the first two exercises, you will need the distrACTION module in jamovi.
 If you need to download it again, the instructions to do this are in the second exercise of <a href="Chapter_17.html#Chapter_17">Chapter 17</a> (briefly, go to the Modules option and select ‘jamovi library’, then scroll down until you find the ‘distraACTION’ module).</p>
-<p>The data for this chapter are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
+<p>The data for this chapter are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al., 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al., 2022</a>)</span>.
 The Wren project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).
 It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.
 The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
@@ -807,15 +811,15 @@ There is no right or wrong answer here, but CIs are very challenging to understa
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Fuentes-Montemayor2022" class="csl-entry">
-Fuentes-Montemayor, Elisa, Kirsty J Park, Kypfer Cordts, and Kevin Watts. 2022. <span>“<span class="nocase">The long-term development of temperate woodland creation sites: from tree saplings to mature woodlands</span>.”</span> <em>Forestry</em> 95: 28–37. <a href="https://doi.org/10.1093/forestry/cpab027">https://doi.org/10.1093/forestry/cpab027</a>.
+Fuentes-Montemayor, E., Park, K. J., Cordts, K., &amp; Watts, K. (2022). <span class="nocase">The long-term development of temperate woodland creation sites: from tree saplings to mature woodlands</span>. <em>Forestry</em>, <em>95</em>, 28–37. <a href="https://doi.org/10.1093/forestry/cpab027">https://doi.org/10.1093/forestry/cpab027</a>
 </div>
 <div id="ref-Fuentes-Montemayor2022a" class="csl-entry">
-Fuentes-Montemayor, Elisa, Kevin Watts, Philip Sansum, Will Scott, and Kirsty J Park. 2022. <span>“<span class="nocase">Moth community responses to woodland creation: The influence of woodland age, patch characteristics and landscape attributes</span>.”</span> <em>Diversity and Distributions</em> 28 (9): 1993–2007. <a href="https://doi.org/10.1111/ddi.13599">https://doi.org/10.1111/ddi.13599</a>.
+Fuentes-Montemayor, E., Watts, K., Sansum, P., Scott, W., &amp; Park, K. J. (2022). <span class="nocase">Moth community responses to woodland creation: The influence of woodland age, patch characteristics and landscape attributes</span>. <em>Diversity and Distributions</em>, <em>28</em>(9), 1993–2007. <a href="https://doi.org/10.1111/ddi.13599">https://doi.org/10.1111/ddi.13599</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">

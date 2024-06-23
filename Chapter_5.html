@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 5 Types of variables | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 5 Types of variables | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,14 +481,14 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_5" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Types of variables<a href="Chapter_5.html#Chapter_5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>A variable is any property that is measured in an observation <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, i.e., anything that varies among things that we can measure <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
+<p>A variable is any property that is measured in an observation <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, i.e., anything that varies among things that we can measure <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>)</span>.
 We can summarise how these measurements vary with summary statistics, or visually with figures.
 Often, we will want to predict one variable from a second variable.
 In this case, the variable that we want to predict is called the <strong>response variable</strong>, also known as the <strong>dependent variable</strong> or <strong>Y</strong> variable (‘dependent’ because it <em>depends</em> on other variables, and ‘Y’ because this is the letter we often use to represent it).
 The variable that we use to predict our response variable is the <strong>explanatory variable</strong>, also known as the <strong>independent variable</strong> or <strong>X</strong> variable (‘independent’ because it does not depend on other variables, and ‘X’ because this is the letter most often used to represent it).
 There are several different types of variables:</p>
 <ul>
-<li><p><strong>Categorical</strong> variables take on a fixed number of discrete values <span class="citation">(<a href="#ref-Spiegelhalter2019" role="doc-biblioref">Spiegelhalter 2019</a>)</span>.
+<li><p><strong>Categorical</strong> variables take on a fixed number of discrete values <span class="citation">(<a href="#ref-Spiegelhalter2019" role="doc-biblioref">Spiegelhalter, 2019</a>)</span>.
 In other words, the measurement that we record will assign our data to a specific category.
 Examples of categorical variables include species (e.g., ‘Robin’, ‘Nightingale’, ‘Wren’) or life history stage (e.g., ‘egg’, ‘juvenile’, ‘adult’).
 Categorical variables can be either nominal or ordinal.</p>
@@ -496,7 +500,7 @@ Categorical variables can be either nominal or ordinal.</p>
 That is, unlike categorical variables, we are collecting numbers that really mean something tangible (in contrast, while we might represent low, medium, and high elevations with the numbers 1, 2, and 3, respectively, this is just for convenience; a value of ‘2’ does not always mean ‘medium’ in other contexts).
 Quantitative variables can be either discrete or continuous.</p>
 <ul>
-<li><p><strong>Discrete</strong> variables can take only certain values <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
+<li><p><strong>Discrete</strong> variables can take only certain values <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>)</span>.
 For example, if we want to record the number of species in a forest, then our variable can only take discrete counts (i.e., integer values).
 There could conceivably be any natural number of species (1, 2, 3, etc.), but there could not be 2.51 different species in a forest; that does not make sense.</p></li>
 <li><p><strong>Continuous</strong> variables can take any real value within some range of values (i.e., any number that can be represented by a decimal).
@@ -510,15 +514,15 @@ Similarly, the choice of statistical test to apply to answer a statistical quest
 If presented with a new dataset, it is therefore very important to be able to interpret the different variables and apply the correct statistical techniques.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Dytham2011" class="csl-entry">
-Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+Dytham, C. (2011). <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em> (p. 298). John Wiley &amp; Sons, West Sussex, UK.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 <div id="ref-Spiegelhalter2019" class="csl-entry">
-Spiegelhalter, David. 2019. <em><span class="nocase">The Art of Statistics Learning from Data</span></em>. Penguin UK.
+Spiegelhalter, D. (2019). <em><span class="nocase">The Art of Statistics Learning from Data</span></em> (p. 426). Penguin, Milton Keynes, UK.
 </div>
 </div>
             </section>

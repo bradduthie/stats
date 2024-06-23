@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 9 Decimal places, significant figures, and rounding | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 9 Decimal places, significant figures, and rounding | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -484,12 +488,12 @@ This chapter focuses on correctly interpreting the decimal places and significan
 <h2><span class="header-section-number">9.1</span> Decimal places and significant figures<a href="Chapter_9.html#decimal-places-and-significant-figures" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A higher number of digits communicates a greater level of accuracy.
 For example, the number 2.718 expresses a higher precision than 2.7 does, so reporting 2.718 implies that we know the value is somewhere between 2.7175 and 2.1785.
-But reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+But reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 These numbers therefore have a different number of <em>decimal places</em> and a different number of <em>significant figures</em>.
 Decimal places and significant figures are related, but not the same.</p>
 <p><strong>Decimal places</strong> are conceptually easier to understand. These are just the number of digits to the right of the decimal point. For example, 2.718 has 3 decimal places, and 2.7 has 1 decimal place.</p>
 <p><strong>Significant figures</strong> are a bit more challenging.
-These are the number of digits that you need to infer the accuracy of a value <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>.
+These are the number of digits that you need to infer the accuracy of a value <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>.
 For example, the number 2.718 has 4 significant figures and 2.7 has 2 significant figures. This sounds straightforward, but it can get confusing when numbers start or end with zeros.
 For example, the number 0.045 has only 2 significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy).
 In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.044995 and 0.045005, not just 0.0445 and 0.0455).
@@ -544,7 +548,7 @@ Make sure you are confident that you can report numbers to a given number of dec
 <h2><span class="header-section-number">9.2</span> Rounding<a href="Chapter_9.html#rounding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Often if you want to report a number to a specific number of decimals or significant figures, you will need to round the number.
 Rounding reduces the number of significant figures in a number, which might be necessary if a number that we calculate has more significant figures than we are justified in expressing.
-There are different rules for rounding numbers, but this book will follow <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span>.
+There are different rules for rounding numbers, but this book will follow <span class="citation">Sokal &amp; Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span>.
 When rounding to the nearest decimal, the last decimal written should not be changed if the number that immediately follows is 0, 1, 2, 3, or 4.
 If the number that immediately follows is 5, 6, 7, 8, or 9, then the last decimal written should be increased by 1.</p>
 <p>For example, if we wanted to round the number 3.141593 to 2 significant figures, then we would write it as 3.1 because the digit that immediately follows (i.e., the third digit) is 4.
@@ -598,12 +602,12 @@ If we wanted to round 1253 to 3 significant figures, then we would round by writ
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Rahman1968" class="csl-entry">
-Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin; Company.
+Rahman, N. A. (1968). <em><span class="nocase">A Course in Theoretical Statistics</span></em> (p. 542). Charles Griffin &amp; Company, London.
 </div>
 <div id="ref-Sokal1995" class="csl-entry">
-Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed. New York: W. H. Freeman; Company.
+Sokal, R. R., &amp; Rohlf, F. J. (1995). <em><span>Biometry</span></em> (3rd ed., p. 887). W. H. Freeman &amp; Company, New York, USA.
 </div>
 </div>
             </section>

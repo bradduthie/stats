@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 25 Multiple comparisons | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 25 Multiple comparisons | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -485,13 +489,13 @@ Nevertheless, we need some way to correct for the Type I error problem explained
 That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (P &lt; 0.05) where none really exists.
 A way to avoid this inflated Type I error rate is to set our significance threshold to be lower than the usual <span class="math inline">\(\alpha = 0.05\)</span>.
 We can, for example, divide our <span class="math inline">\(\alpha\)</span> value by the total number of pair-wise t-tests tests that we run.
-This is called a Bonferroni correction <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006" role="doc-biblioref">Narum 2006</a>)</span>.
+This is called a Bonferroni correction <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006" role="doc-biblioref">Narum, 2006</a>)</span>.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the five species.
 This means that if we were to apply a Bonferroni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when <span class="math inline">\(P &lt; 0.005\)</span> instead of <span class="math inline">\(P &lt; 0.05\)</span>.</p>
 <p>Another approach to correcting for multiple comparisons is a Tukey’s honestly significant difference test (Tukey’s HSD, or just a ‘Tukey test’).
 The general idea of a Tukey test is the same as the Bonferroni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
-The Tukey test does this by using a modified t-test, with a t-distribution called the ‘studentised range distribution’ that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.</p>
+The Tukey test does this by using a modified t-test, with a t-distribution called the ‘studentised range distribution’ that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Tukey1949" role="doc-biblioref">Tukey, 1949</a>)</span>.</p>
 <p>Multiple comparisons tests can be run automatically in jamovi.
 Figure 25.1 shows a post hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
@@ -512,18 +516,18 @@ The ANOVA also has more statistical power because it makes use of all 20 measure
 It is therefore not particularly surprising or concerning that we rejected <span class="math inline">\(H_{0}\)</span> for the ANOVA, but the multiple comparisons tests failed to find any significant difference between group means.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Box1978" class="csl-entry">
-Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. New York: John Wiley &amp; Sons.
+Box, G. E. P., Hunter, W. G., &amp; Hunter, S. J. (1978). <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
 <div id="ref-Dytham2011" class="csl-entry">
-Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons.
+Dytham, C. (2011). <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em> (p. 298). John Wiley &amp; Sons, West Sussex, UK.
 </div>
 <div id="ref-Narum2006" class="csl-entry">
-Narum, Shawn R. 2006. <span>“<span class="nocase">Beyond Bonferroni: Less conservative analyses for conservation genetics</span>.”</span> <em>Conservation Genetics</em> 7 (5): 783–87. <a href="https://doi.org/10.1007/s10592-005-9056-y">https://doi.org/10.1007/s10592-005-9056-y</a>.
+Narum, S. R. (2006). <span class="nocase">Beyond Bonferroni: Less conservative analyses for conservation genetics</span>. <em>Conservation Genetics</em>, <em>7</em>(5), 783–787. <a href="https://doi.org/10.1007/s10592-005-9056-y">https://doi.org/10.1007/s10592-005-9056-y</a>
 </div>
 <div id="ref-Tukey1949" class="csl-entry">
-Tukey, John W. 1949. <span>“<span class="nocase">Comparing individual means in the analysis of variance</span>.”</span> <em>Biometrics</em> 5 (2): 99–114.
+Tukey, J. W. (1949). <span class="nocase">Comparing individual means in the analysis of variance</span>. <em>Biometrics</em>, <em>5</em>(2), 99–114.
 </div>
 </div>
             </section>

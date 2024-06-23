@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 8 Practical. Introduction to jamovi | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 8 Practical. Introduction to jamovi | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,14 +481,14 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_8" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Chapter 8</span> <em>Practical</em>. Introduction to jamovi<a href="Chapter_8.html#Chapter_8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on learning how to work with datasets in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This chapter focuses on learning how to work with datasets in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 You can download jamovi (<a href="https://www.jamovi.org/" class="uri">https://www.jamovi.org/</a>) for free or run it directly from a browser using the jamovi cloud (<a href="https://www.jamovi.org/cloud.html" class="uri">https://www.jamovi.org/cloud.html</a>).
 In this chapter, we will work with two datasets.</p>
 <p>The first dataset includes some hypothetical measurements of soil organic carbon (grams of carbon per kilogram of soil) from topsoil and subsoil collected in a national park.
-Such data might be collected to understand how pyrogenic carbon (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
+Such data might be collected to understand how pyrogenic carbon (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Preston2006" role="doc-biblioref">Preston &amp; Schmidt, 2006</a>; <a href="#ref-Santin2016" role="doc-biblioref">Santín et al., 2016</a>)</span>.
 These data can be downloaded online<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
 <p>The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) in Baja, Mexico (Figure 8.1).
-I collected these data in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
+I collected these data in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie &amp; Nason, 2016</a>)</span>.
 Measurements include fig lengths, widths, and heights in centimetres from four different fig trees, and the number of seeds in each fruit.
 This dataset can also be downloaded online<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
@@ -812,21 +816,21 @@ These skills will be used throughout the book, so it is important to be comforta
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Duthie2015b" class="csl-entry">
-Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
+Duthie, A. B., Abbott, K. C., &amp; Nason, J. D. (2015). <span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>. <em>American Naturalist</em>, <em>186</em>(1), 151–158. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>
 </div>
 <div id="ref-Duthie2016" class="csl-entry">
-Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em> 125 (11): 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
+Duthie, A. B., &amp; Nason, J. D. (2016). <span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>. <em>Oikos</em>, <em>125</em>(11), 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>
 </div>
 <div id="ref-Preston2006" class="csl-entry">
-Preston, C. M., and M. W. I. Schmidt. 2006. <span>“<span class="nocase">Black (pyrogenic) carbon: A synthesis of current knowledge and uncertainties with special consideration of boreal regions</span>.”</span> <em>Biogeosciences</em> 3 (4): 397–420. <a href="https://doi.org/10.5194/bg-3-397-2006">https://doi.org/10.5194/bg-3-397-2006</a>.
+Preston, C. M., &amp; Schmidt, M. W. I. (2006). <span class="nocase">Black (pyrogenic) carbon: A synthesis of current knowledge and uncertainties with special consideration of boreal regions</span>. <em>Biogeosciences</em>, <em>3</em>(4), 397–420. <a href="https://doi.org/10.5194/bg-3-397-2006">https://doi.org/10.5194/bg-3-397-2006</a>
 </div>
 <div id="ref-Santin2016" class="csl-entry">
-Santín, Cristina, Stefan H. Doerr, Evan S. Kane, Caroline A. Masiello, Mikael Ohlson, Jose Maria de la Rosa, Caroline M. Preston, and Thorsten Dittmar. 2016. <span>“<span class="nocase">Towards a global assessment of pyrogenic carbon from vegetation fires</span>.”</span> <em>Global Change Biology</em> 22 (1): 76–91. <a href="https://doi.org/10.1111/gcb.12985">https://doi.org/10.1111/gcb.12985</a>.
+Santín, C., Doerr, S. H., Kane, E. S., Masiello, C. A., Ohlson, M., Rosa, J. M. de la, Preston, C. M., &amp; Dittmar, T. (2016). <span class="nocase">Towards a global assessment of pyrogenic carbon from vegetation fires</span>. <em>Global Change Biology</em>, <em>22</em>(1), 76–91. <a href="https://doi.org/10.1111/gcb.12985">https://doi.org/10.1111/gcb.12985</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">

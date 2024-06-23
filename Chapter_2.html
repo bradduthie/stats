@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 2 Data organisation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 2 Data organisation | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -489,8 +493,8 @@ Figure 2.1: Dr Becky Boulton collects data from nest boxes in the field (A), the
 <p>Data are sometimes missing due to circumstances outwith the researcher’s control, and data are usually not collected in a format that is immediately ready for statistical analysis.
 Consequently, we often need to reorganise data from a lab or field book to a spreadsheet on the computer.
 Fortunately, there are some generally agreed upon guidelines for formatting data for statistical analysis.
-This chapter introduces the tidy format <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>, which is widely used for structuring data files.
-This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.</p>
+This chapter introduces the tidy format <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham, 2014</a>)</span>, which is widely used for structuring data files.
+This chapter will provide an example of how to put data into a tidy format, and how to save a dataset into a file that can be read and used in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
 <div id="tidy-data" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Tidy data<a href="Chapter_2.html#tidy-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>After data are collected, they need to be stored digitally (i.e., in a computer file, such as a spreadsheet).
@@ -526,7 +530,7 @@ For example, we might make one or more measurements on a tree, a patch of land, 
 In this case, trees, land patches, or soil samples are our units of <strong>observation</strong>.
 Each attribute of a unit that we are measuring is a <strong>variable</strong>.
 These variables might include tree heights and leaf lengths, forest cover in a patch of land, or carbon and nitrogen content of a soil sample.
-Tidy datasets that can be used in statistical analysis programs are defined by three characteristics <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>:</p>
+Tidy datasets that can be used in statistical analysis programs are defined by three characteristics <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham, 2014</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li>Each variable gets its own column.</li>
 <li>Each observation gets its own row.</li>
@@ -570,7 +574,7 @@ Tidy datasets that can be used in statistical analysis programs are defined by t
 </tr>
 </tbody>
 </table>
-<p>By convention <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham 2014</a>)</span>, variables tend to be in the left-most columns if they are known in advance or fixed in some way by the data collection or experiment (e.g., tree number or species in Table 2.1).
+<p>By convention <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham, 2014</a>)</span>, variables tend to be in the left-most columns if they are known in advance or fixed in some way by the data collection or experiment (e.g., tree number or species in Table 2.1).
 In contrast, variables that are actually measured tend to be in the right-most columns (e.g., tree height or leaf length).
 This is more for readability of the data; jamovi will not care about the order of data columns.</p>
 </div>
@@ -663,12 +667,12 @@ It takes some time to organise files this way, and to get used to saving files i
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 <div id="ref-Wickham2014" class="csl-entry">
-Wickham, Hadley. 2014. <span>“<span>Tiday Data</span>.”</span> <em>Journal of Statistical Software</em> 59 (10): 1–23.
+Wickham, H. (2014). <span class="nocase">Tidy data</span>. <em>Journal of Statistical Software</em>, <em>59</em>(10), 1–23. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>
 </div>
 </div>
             </section>

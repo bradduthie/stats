@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -490,7 +494,7 @@ Mathematical details are generally placed in footnotes, and developing good stat
 Wherever possible, I have tried to introduce new concepts with concrete examples that will likely be familiar to the reader and therefore serve as a useful starting point for understanding the more abstract concepts.
 After reading this book, the reader should be able to understand and communicate fundamental concepts of introductory statistics and apply them in the biological and environmental sciences.</p>
 <p>This book originated as a workbook for the second-year university statistics class that I teach for biological and environmental science students at the University of Stirling in Stirling, Scotland.
-I wanted to rebuild the learning content from scratch after switching from proprietary statistical software to the free and open-source jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+I wanted to rebuild the learning content from scratch after switching from proprietary statistical software to the free and open-source jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 There are a lot of good statistics textbooks (many of which are cited throughout this book), but I could not find anything for biological or environmental science students that used jamovi.
 As a teacher, I have found jamovi to be the ideal tool for teaching introductory statistics.
 Its user friendly interface has made it possible to focus on teaching statistical concepts rather than the details of navigating software.
@@ -504,7 +508,7 @@ Conceptual chapters are generally quite short, and longer chapters are broken do
 Practical skills chapters include multiple exercises in jamovi (except for Chapter 3, which uses spreadsheets outwith jamovi).
 Answers to exercise questions can be found in <a href="appendexA.html#appendexA">Appendix A</a>.
 Together, a set of conceptual chapters and the practical skills chapter that follows (e.g., Chapters 1–3) could be used as one week of material in an introductory statistics class.
-In several places throughout the book, there are footnotes with links to interactive applications that I have written in shiny <span class="citation">(<a href="#ref-Wickham2021" role="doc-biblioref">Wickham 2021</a>; <a href="#ref-Barret2023" role="doc-biblioref">Schloerke and Chang 2023</a>; <a href="#ref-Rshiny" role="doc-biblioref">Chang et al. 2024</a>)</span>.
+In several places throughout the book, there are footnotes with links to interactive applications that I have written in shiny <span class="citation">(<a href="#ref-Rshiny" role="doc-biblioref">Chang et al., 2024</a>; <a href="#ref-Barret2023" role="doc-biblioref">Schloerke &amp; Chang, 2023</a>; <a href="#ref-Wickham2021" role="doc-biblioref">Wickham, 2021</a>)</span>.
 These applications should make it easier to visualise some of the more challenging concepts and reinforce the text.</p>
 </div>
 <div id="datasets" class="section level2 unnumbered hasAnchor">
@@ -515,7 +519,7 @@ They are also stored on GitHub (<a href="https://github.com/bradduthie/stats" cl
 A lot of data were collected from, or based on, my own doctoral work at Iowa State University.
 Other datasets are inspired by projects led by my colleagues at the University of Stirling.
 <strong>These data are for pedagogical purposes only.</strong>
-With some exceptions from my own data collected from the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) system <span class="citation">(see <a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>, all data in this book were constructed solely to illustrate statistical concepts and techniques as effectively as possible.
+With some exceptions from my own data collected from the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) system <span class="citation">(see <a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie &amp; Nason, 2016</a>)</span>, all data in this book were constructed solely to illustrate statistical concepts and techniques as effectively as possible.
 Any data introduced in this book should therefore be treated as entirely hypothetical, and the reader will be reminded of this in subsequent chapters.</p>
 </div>
 <div id="acknowledgements" class="section level2 unnumbered hasAnchor">
@@ -529,7 +533,7 @@ Martina and Ian supported my plan to overhaul the learning material for our stat
 I am also grateful to several colleagues at the University of Stirling who have provided images and inspired me with interesting projects and datasets, including Alan Law, Becky Boulton, Carmen Carmona, David Copplestone, Elisa Fuentes-Montemayor, Izzy Jones, Jens-Arne Subke, Jessica Burrows, Kirsty Park, Lidia De Sousa Teixeira, Matthew Tinsley, Nigel Willby, and Nils Bunnefeld.</p>
 <p>I want to thank CRC Press, and especially Lara Spieker, for making the publishing process such a positive experience.
 This book has benefited from feedback from three anonymous reviewers.
-It was written using Bookdown <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>, <a href="#ref-Xie2016" role="doc-biblioref">2016</a>, <a href="#ref-Xie2023" role="doc-biblioref">2023</a>)</span> within RStudio <span class="citation">(<a href="#ref-Rstudio" role="doc-biblioref">RStudio Team 2020</a>)</span> in the R programming language <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span> running on the Xubuntu open source operating system (<a href="https://xubuntu.org/" class="uri">https://xubuntu.org/</a>).</p>
+It was written using Bookdown <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie, 2015</a>, <a href="#ref-Xie2016" role="doc-biblioref">2016</a>, <a href="#ref-Xie2023" role="doc-biblioref">2023</a>)</span> within RStudio <span class="citation">(<a href="#ref-Rstudio" role="doc-biblioref">RStudio Team, 2020</a>)</span> in the R programming language <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team, 2022</a>)</span> running on the Xubuntu open source operating system (<a href="https://xubuntu.org/" class="uri">https://xubuntu.org/</a>).</p>
 <p>I want to thank my kid, Emrys.
 They are a joy in my life and have taught me so much.</p>
 <p>Lastly, I want to thank my wife Catherine.
@@ -549,39 +553,39 @@ He has taught undergraduate classes in statistics, ecology, and evolution at the
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Rshiny" class="csl-entry">
-Chang, Winston, Joe Cheng, JJ Allaire, Carson Sievert, Barret Schloerke, Yihui Xie, Jeff Allen, Jonathan McPherson, Alan Dipert, and Barbara Borges. 2024. <em>Shiny: Web Application Framework for r</em>. <a href="https://shiny.posit.co/">https://shiny.posit.co/</a>.
+Chang, W., Cheng, J., Allaire, J., Sievert, C., Schloerke, B., Xie, Y., Allen, J., McPherson, J., Dipert, A., &amp; Borges, B. (2024). <em>Shiny: Web application framework for <span>R</span></em>. <a href="https://shiny.posit.co/">https://shiny.posit.co/</a>
 </div>
 <div id="ref-Duthie2015b" class="csl-entry">
-Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
+Duthie, A. B., Abbott, K. C., &amp; Nason, J. D. (2015). <span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>. <em>American Naturalist</em>, <em>186</em>(1), 151–158. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>
 </div>
 <div id="ref-Duthie2016" class="csl-entry">
-Duthie, A Bradley, and John D Nason. 2016. <span>“<span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>.”</span> <em>Oikos</em> 125 (11): 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>.
+Duthie, A. B., &amp; Nason, J. D. (2016). <span class="nocase">Plant connectivity underlies plant-pollinator-exploiter distributions in <em>Ficus petiolaris</em> and associated pollinating and non-pollinating fig wasps</span>. <em>Oikos</em>, <em>125</em>(11), 1597–1606. <a href="https://doi.org/10.1111/oik.02629">https://doi.org/10.1111/oik.02629</a>
 </div>
 <div id="ref-Rproject" class="csl-entry">
-R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. (2022). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
 </div>
 <div id="ref-Rstudio" class="csl-entry">
-RStudio Team. 2020. <em>RStudio: Integrated Development Environment for r</em>. Boston, MA: RStudio, PBC. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.
+RStudio Team. (2020). <em>RStudio: Integrated development environment for r</em>. RStudio, PBC. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>
 </div>
 <div id="ref-Barret2023" class="csl-entry">
-Schloerke, Barret, and Winston Chang. 2023. <em>Shinylive: Run ’Shiny’ Applications in the Browser</em>. <a href="https://CRAN.R-project.org/package=shinylive">https://CRAN.R-project.org/package=shinylive</a>.
+Schloerke, B., &amp; Chang, W. (2023). <em>Shinylive: Run ’shiny’ applications in the browser</em>. <a href="https://CRAN.R-project.org/package=shinylive">https://CRAN.R-project.org/package=shinylive</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 <div id="ref-Wickham2021" class="csl-entry">
-———. 2021. <em>Mastering Shiny</em>. O’Reilly Media. <a href="https://mastering-shiny.org/">https://mastering-shiny.org/</a>.
+Wickham, H. (2021). <em>Mastering shiny</em>. O’Reilly Media. <a href="https://mastering-shiny.org/">https://mastering-shiny.org/</a>
 </div>
 <div id="ref-xie2015" class="csl-entry">
-Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
+Xie, Y. (2015). <em>Dynamic documents with <span>R</span> and knitr</em> (2nd ed.). Chapman &amp; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>
 </div>
 <div id="ref-Xie2016" class="csl-entry">
-———. 2016. <em>Bookdown: Authoring Books and Technical Documents with <span>R</span> Markdown</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/bookdown">https://bookdown.org/yihui/bookdown</a>.
+Xie, Y. (2016). <em>Bookdown: Authoring books and technical documents with <span>R</span> markdown</em>. Chapman &amp; Hall/CRC, Boca Raton, USA. <a href="https://bookdown.org/yihui/bookdown">https://bookdown.org/yihui/bookdown</a>
 </div>
 <div id="ref-Xie2023" class="csl-entry">
-———. 2023. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+Xie, Y. (2023). <em>Bookdown: Authoring books and technical documents with <span>R</span> markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>
 </div>
 </div>
             </section>

@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 14 Practical. Plotting and statistical summaries in jamovi | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 14 Practical. Plotting and statistical summaries in jamovi | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,9 +481,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_14" class="section level1 hasAnchor" number="14">
 <h1><span class="header-section-number">Chapter 14</span> <em>Practical</em>. Plotting and statistical summaries in jamovi<a href="Chapter_14.html#Chapter_14" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts from Chapters 9–13 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
-The data that we will work with in this chapter were inspired by <span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span>.
-<span class="citation">Law, Bunnefeld, and Willby (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span> focused on beaver reintroduction in Scottish habitats and investigated its consequences for the white water lily, <em>Nymphaea alba</em>, which beavers regularly consume.</p>
+<p>This chapter focuses on applying the concepts from Chapters 9–13 in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
+The data that we will work with in this chapter were inspired by <span class="citation">Law et al. (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span>.
+<span class="citation">Law et al. (<a href="#ref-Law2014" role="doc-biblioref">2014</a>)</span> focused on beaver reintroduction in Scottish habitats and investigated its consequences for the white water lily, <em>Nymphaea alba</em>, which beavers regularly consume.</p>
 <p>This chapter will analyse data on the petiole diameter (mm) from <em>N. alba</em> collected from seven different sites on the west coast of Scotland (the petiole is the structure that attaches the plant stem to the blade of the leaf).
 The <em>N. alba</em> dataset is available online<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.
 The data are not in a tidy format, so it is important to first reorganise the data so that they can be analysed in jamovi.
@@ -715,12 +719,12 @@ If so, then what does this say about our ability to make conclusions about the d
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Law2014" class="csl-entry">
-Law, A., N. Bunnefeld, and N. J. Willby. 2014. <span>“<span class="nocase">Beavers and lilies: Selective herbivory and adaptive foraging behaviour</span>.”</span> <em>Freshwater Biology</em> 59 (2): 224–32. <a href="https://doi.org/10.1111/fwb.12259">https://doi.org/10.1111/fwb.12259</a>.
+Law, A., Bunnefeld, N., &amp; Willby, N. J. (2014). <span class="nocase">Beavers and lilies: Selective herbivory and adaptive foraging behaviour</span>. <em>Freshwater Biology</em>, <em>59</em>(2), 224–232. <a href="https://doi.org/10.1111/fwb.12259">https://doi.org/10.1111/fwb.12259</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">

@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="Chapter 34 Practical. Using regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   <meta property="og:type" content="book" />
-  
+  <meta property="og:image" content="/img/cover.png" />
   <meta property="og:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
   <meta name="github-repo" content="bradduthie/statistics_book" />
 
@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Chapter 34 Practical. Using regression | Fundamental statistical concepts and techniques in the biological and environmental sciences: With jamovi" />
   
   <meta name="twitter:description" content="This is an introductory statistics textbook for students in the biological and environmental sciences with examples using jamovi statistical software." />
-  
+  <meta name="twitter:image" content="/img/cover.png" />
 
 <meta name="author" content="A. Bradley Duthie" />
 
@@ -453,7 +453,11 @@ div.csl-indent {
 <li class="chapter" data-level="A.9.5" data-path="appendexA.html"><a href="appendexA.html#exercise-33.5"><i class="fa fa-check"></i><b>A.9.5</b> Exercise 33.5</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a></li>
+<li class="chapter" data-level="B" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html"><i class="fa fa-check"></i><b>B</b> Uncertainty derivation</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-addition-and-subtraction"><i class="fa fa-check"></i><b>B.1</b> Propagation of error for addition and subtraction</a></li>
+<li class="chapter" data-level="B.2" data-path="uncertainty_derivation.html"><a href="uncertainty_derivation.html#propagation-of-error-for-multiplication-and-division"><i class="fa fa-check"></i><b>B.2</b> Propagation of error for multiplication and division</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -477,12 +481,12 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_34" class="section level1 hasAnchor" number="34">
 <h1><span class="header-section-number">Chapter 34</span> <em>Practical</em>. Using regression<a href="Chapter_34.html#Chapter_34" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on practical exercises to apply the concepts in <a href="Chapter_32.html#Chapter_32">Chapter 32</a> and <a href="Chapter_33.html#Chapter_33">Chapter 33</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The Jamovi Project 2022</a>)</span>.
+<p>This chapter focuses on practical exercises to apply the concepts in <a href="Chapter_32.html#Chapter_32">Chapter 32</a> and <a href="Chapter_33.html#Chapter_33">Chapter 33</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 The five exercises in this practical will apply simple linear regression (Exercises 34.1, 34.2, and 34.5) or multiple regression (34.3 and 34.4).
 The dataset used in this practical is inspired by the work of Dr Carmen Carmona, Dr François-Xavier Joly, and Prof Jens-Arne Subke<a href="#fn80" class="footnote-ref" id="fnref80"><sup>80</sup></a>.
 Their work focuses on carbon storage in Gabon.</p>
-<p>When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of it remains sequestered in the soil due to incomplete combustion <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>)</span>.
-This pyrogenic organic carbon can persist in the soil for long periods of time and has positive effects on soil properties <span class="citation">(<a href="#ref-Reisser2016" role="doc-biblioref">Reisser et al. 2016</a>)</span>.
+<p>When biomass is burned, a large proportion of its stored carbon is emitted into the atmosphere in the form of carbon dioxide, but some of it remains sequestered in the soil due to incomplete combustion <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al., 2016</a>)</span>.
+This pyrogenic organic carbon can persist in the soil for long periods of time and has positive effects on soil properties <span class="citation">(<a href="#ref-Reisser2016" role="doc-biblioref">Reisser et al., 2016</a>)</span>.
 In this chapter, we will look at how environmental data might be used to test what factors affect the concentration of pyrogenic carbon in the soil.
 We will use the fire carbon dataset<a href="#fn81" class="footnote-ref" id="fnref81"><sup>81</sup></a>.
 This dataset includes variables for soil depth (cm), fire frequency (total number of years in which a fire occurred during the past 20 years), mean yearly temperature (degrees Celsius), mean monthly rainfall (mm per squared metre per year, <span class="math inline">\(mm\:m^{-2}\:yr^{-1}\)</span>), total soil organic carbon (SOC, as percentage of soil by weight), pyrogenic carbon (PyC, as percentage of soil organic carbon by weight), and soil pH.</p>
@@ -788,15 +792,15 @@ Explain how you figured this out.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
 <div id="ref-Reisser2016" class="csl-entry">
-Reisser, Moritz, Ross S. Purves, Michael W. I. Schmidt, and Samuel Abiven. 2016. <span>“<span class="nocase">Pyrogenic carbon in soils: A literature-based inventory and a global estimation of its content in soil organic carbon and stocks</span>.”</span> <em>Frontiers in Earth Science</em> 4: 1–14. <a href="https://doi.org/10.3389/feart.2016.00080">https://doi.org/10.3389/feart.2016.00080</a>.
+Reisser, M., Purves, R. S., Schmidt, M. W. I., &amp; Abiven, S. (2016). <span class="nocase">Pyrogenic carbon in soils: A literature-based inventory and a global estimation of its content in soil organic carbon and stocks</span>. <em>Frontiers in Earth Science</em>, <em>4</em>, 1–14. <a href="https://doi.org/10.3389/feart.2016.00080">https://doi.org/10.3389/feart.2016.00080</a>
 </div>
 <div id="ref-Santin2016" class="csl-entry">
-Santín, Cristina, Stefan H. Doerr, Evan S. Kane, Caroline A. Masiello, Mikael Ohlson, Jose Maria de la Rosa, Caroline M. Preston, and Thorsten Dittmar. 2016. <span>“<span class="nocase">Towards a global assessment of pyrogenic carbon from vegetation fires</span>.”</span> <em>Global Change Biology</em> 22 (1): 76–91. <a href="https://doi.org/10.1111/gcb.12985">https://doi.org/10.1111/gcb.12985</a>.
+Santín, C., Doerr, S. H., Kane, E. S., Masiello, C. A., Ohlson, M., Rosa, J. M. de la, Preston, C. M., &amp; Dittmar, T. (2016). <span class="nocase">Towards a global assessment of pyrogenic carbon from vegetation fires</span>. <em>Global Change Biology</em>, <em>22</em>(1), 76–91. <a href="https://doi.org/10.1111/gcb.12985">https://doi.org/10.1111/gcb.12985</a>
 </div>
 <div id="ref-Jamovi2022" class="csl-entry">
-The Jamovi Project. 2022. <span>“Jamovi.”</span> Sydney, Australia. <a href="https://www.jamovi.org">https://www.jamovi.org</a>.
+The jamovi project. (2024). <em>Jamovi (version 2.5) [computer software]</em>. <a href="https://www.jamovi.org">https://www.jamovi.org</a>
 </div>
 </div>
 <div class="footnotes">
