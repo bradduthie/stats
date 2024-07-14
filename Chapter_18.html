@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -550,7 +550,7 @@ Suppose, however, that we wanted to be a bit more cautious.
 We could calculate 99% CIs, that is, CIs that contain the true mean in 99% of samples.
 To do this, we just need to find the z-score that corresponds with 99% of the probability density of the standard normal distribution.
 This value is about <span class="math inline">\(z = 2.58\)</span>, which we could find with an interactive application, a <a href="https://www.z-table.com/">z table</a>, some maths, or a quick online search<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.
-Consequently, the upper 99% confidence interval for our example of cat body masses would be,</p>
+Consequently, the lower 99% confidence interval for our example of cat body masses would be,</p>
 <p><span class="math display">\[LCI_{99\%} = 4.1 - \left(2.58 \times \frac{0.6}{\sqrt{20}}\right) = 3.754\]</span></p>
 <p>Our upper 99% confidence interval is,</p>
 <p><span class="math display">\[UCI_{99\%} = 4.1 + \left(2.58 \times \frac{0.6}{\sqrt{20}}\right) = 4.446\]</span></p>
@@ -558,7 +558,7 @@ Consequently, the upper 99% confidence interval for our example of cat body mass
 The 99% CI is now 3.754–4.446, while the 95% CI was 3.837–4.363.
 This is because if we want to be more confident about our interval containing the true mean, we need to make a bigger interval.</p>
 <p>We could make CIs using any percentage that we want, but in practice it is very rare to see anything other than 90% (<span class="math inline">\(z = 1.65\)</span>), 95% (<span class="math inline">\(z = 1.96\)</span>), or 99% (<span class="math inline">\(z = 2.58\)</span>).
-It is useful to see what these different intervals actually look like when calculated from actual data (an interactive application<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> illustrates CIs on a histogram).
+It is useful to see what these different intervals look like when calculated from actual data (an interactive application<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> illustrates CIs on a histogram).
 Unfortunately, the CI calculations from this section are a bit of an idealised situation.
 We assumed that the sample means are normally distributed around the population mean.
 While we know that this <em>should</em> be the case as our sample size increases, it is not quite true when our sample is small.

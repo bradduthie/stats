@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -501,7 +501,7 @@ Part of this project involves the use of mobile games to investigate how people 
 <p>The game ‘Power Up!’ is freely available as an <a href="https://play.google.com/store/apps/details?id=com.hyperluminal.stirlinguniversity.sustainabledevelopmentgame">Android</a> and <a href="https://apps.apple.com/gb/app/power-up/id1585634888">iPhone</a> app.
 Data are collected from players’ decisions and used to investigate social-ecological questions.
 We will use the ‘Power Up!’ dataset<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a> in exercises 1 and 2.
-To get started, first download this and open it in jamovi.
+To get started, first download this dataset and open it in jamovi.
 Note that these data are already in a tidy format, so we do not need to do any reorganising.
 The dataset includes columns for each player’s ID, the OS that they use, the dam size that they decided to build in the game, their in-game investment in Biodiversity, Community, and Energy, and their final Score.</p>
 <div id="probabilities-from-a-dataset" class="section level2 hasAnchor" number="17.1">
@@ -529,7 +529,7 @@ Similarly, for the proportion of iPhone users, we could calculate 18 / 74 = 0.24
 But jamovi already does this for us, with a bit of rounding.
 The second column of the Frequencies table gives us these proportions, but expressed as a percentage.
 The percentage of Android users is 75.7%, and the percentage of iPhone users is 24.3%.
-Percentages are out of a total of 100, so to get back to the proportions, we can just divide by 100%, 75.7 / 100 = 0.757 for Android and 24.3 / 100 = 0.243 for iPhone.
+Percentages are out of a total of 100, so to get back to the proportions, we can just divide by 100%, 75.7% / 100% = 0.757 for Android and 24.3% / 100% = 0.243 for iPhone.
 To answer the original question, our best estimate of the probability that a new Power Up! game player will be an Android user is therefore 0.757.</p>
 <p>Next, use the same procedure to find the probability that a game player will make a small-, medium-, and large-size dam.
 Now, fill in Table 17.1 with counts, percentage, and the estimated probability of a player selecting a small, medium, or large dam.</p>
@@ -648,7 +648,7 @@ More technically, we must assume a specific probability density function that we
 Inspecting Figure 17.3, Player Score appears to be normally distributed.
 In other words, the shape of Player Score distribution appears to be normal, or ‘Gaussian’.
 If we are willing to assume this, then we can calculate probabilities using its mean and standard deviation.
-Use jamovi to find the mean and the standard deviation of player score (note, we can just say that score is unitless, so no need to include units).</p>
+Use jamovi to find the mean and the standard deviation of Player Score (note, we can just say that score is unitless, so no need to include units).</p>
 <p>Mean score: __________________________</p>
 <p>Standard deviation score: __________________________</p>
 <p>We will assume that the <em>sample</em> of scores shown in Figure 17.3 came from a <em>population</em> that is normally distributed with the mean and standard deviation that you wrote above (recall sample versus population from <a href="Chapter_4.html#Chapter_4">Chapter 4</a>).
@@ -851,7 +851,7 @@ To do this, copy the code below and paste it at the bottom of the Rj Editor (som
 <span id="cb43-45"><a href="Chapter_17.html#cb43-45" aria-hidden="true" tabindex="-1"></a>               m31, m32, m33, m34, m35, m36, m37, m38, m39, m40);</span></code></pre></div>
 <p>Now we have calculated the mean for each variable.
 The last line of code defines <code>all_means</code>, which makes a new dataset that includes the mean value of each of our original variables.
-Think about what you think the distribution of these mean values will look like.
+Think about what the distribution of these mean values will look like.
 Sketch what you predict the shape of its distribution will be below.</p>
 <pre><code>
 

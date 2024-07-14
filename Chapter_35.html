@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -495,7 +495,7 @@ Before explaining the randomisation approach, it is useful to summarise the para
 <h2><span class="header-section-number">35.1</span> Summary of parametric hypothesis testing<a href="Chapter_35.html#summary-of-parametric-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the parametric tests introduced in previous chapters, null distributions included the t-distribution, F distribution, and <span class="math inline">\(\chi^{2}\)</span> distribution.
 For the t-tests in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, the test statistic was the t-statistic, which we compared to a t-distribution.
-The <a href="Chapter_22.html#one-sample-t-test">one-sample t-test</a> compared the mean of some variable (<span class="math inline">\(\bar{x}\)</span>) to a specific number (<span class="math inline">\(\mu_{0}\)</span>), the <a href="Chapter_22.html#independent-samples-t-test">independent samples t-test</a> compared two group means, and the <a href="#paired-sample-t-test">paired sample t-test</a> compared the mean difference between two paired groups.
+The <a href="Chapter_22.html#one-sample-t-test">one-sample t-test</a> compared the mean of some variable (<span class="math inline">\(\bar{x}\)</span>) to a specific number (<span class="math inline">\(\mu_{0}\)</span>), the <a href="Chapter_22.html#independent-samples-t-test">independent samples t-test</a> compared two group means, and the <a href="#paired-sample-t-test">paired samples t-test</a> compared the mean difference between two paired groups.
 All of these tests used the t-distribution and calculated some value of t.
 Very low or high values of t at the extreme ends of the t-distribution are unlikely if the null hypothesis is true, so, in a two-tailed test, these are associated with low p-values that lead us to reject the null hypothesis.</p>
 <p>For the analysis of variance (ANOVA) tests of <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, the relevant test statistic was the F statistic, with the F-distribution being the null distribution expected if two variances are equal.
@@ -536,7 +536,7 @@ The fig wasps in Figure 35.1 are two unnamed species of the genus <em>Idarnes</e
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-156"></span>
 <img src="img/fig_wasps.jpg" alt="A two panel figure is shown, with two black wasps under a microscope slide shown side by side, each of which has an ovipositor about twice its body length." width="100%" />
 <p class="caption">
-Figure 35.1: Two fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’. Modified from Duthie, Abbott, and Nason (2015).
+Figure 35.1: Two fig wasp species, roughly 3 mm in length, labelled ‘SO1’ and ‘SO2’. Image modified from Duthie, Abbott, and Nason (2015).
 </p>
 </div>
 <p>The reason that these two species are called ‘SO1’ and ‘SO2’ is that there is actually another species that lays its eggs in <em>F. petiolaris</em> flowers, one with an ovipositor that is at least twice as long as those in Figure 35.1 <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>)</span>.</p>
@@ -591,7 +591,7 @@ It turns out that only 2085 out of 99999 random mean differences between oviposi
 To express this as a probability, we can simply take the number of differences as or more extreme than our observed difference (including the observed one itself), divided by the total number of differences (again, including the observed one),</p>
 <p><span class="math display">\[P = \frac{2085 + 1}{99999 + 1}.\]</span></p>
 <p>When we calculate the above, we get a value of 0.02086.
-Notice that the calculated value is assigned with a ‘P’.
+Notice that the calculated value is assigned with a ‘<span class="math inline">\(P\)</span>’.
 This is because the value <strong>is a p-value</strong> (technically, an unbiased estimate of a p-value). Consider how close it is to the value of <span class="math inline">\(P =\)</span> 0.0218352 that we got from the traditional t-test.
 Conceptually, we are doing the same thing in both cases; we are comparing a test statistic to a null distribution to see how extreme the differences between groups really are.</p>
 </div>
@@ -612,13 +612,13 @@ In other words, we can argue that the difference between groups in the sample re
 </div>
 <div id="bootstrapping" class="section level2 hasAnchor" number="35.5">
 <h2><span class="header-section-number">35.5</span> Bootstrapping<a href="Chapter_35.html#bootstrapping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We also can use randomisation to calculate confidence intervals for a variable of interest. Remember from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> the traditional way to calculate lower and upper confidence intervals using a normal distribution,</p>
+<p>We can also use randomisation to calculate confidence intervals for a variable of interest. Remember from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> the traditional way to calculate lower and upper confidence intervals using a normal distribution,</p>
 <p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
 <p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
 <p>Recall from <a href="Chapter_19.html#Chapter_19">Chapter 19</a> that a t-score is substituted for a z-score to account for a finite population size.</p>
 <p>Suppose we want to calculate 95% confidence intervals for the ovipositor lengths of SO1 (Figure 35.2A).
 There are 17 ovipositor lengths for SO1.</p>
-<p>3.256, 3.133, 3.071, 2.299, 2.995, 2.929, 3.291, 2.658, 3.406, 2.976, 2.817, 3.133, 3, 3.027, 3.178, 3.133, 3.21</p>
+<p>3.256, 3.133, 3.071, 2.299, 2.995, 2.929, 3.291, 2.658, 3.406, 2.976, 2.817, 3.133, 3.000, 3.027, 3.178, 3.133, 3.210</p>
 <p>To get the 95% confidence interval using the method from <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, we would calculate the mean <span class="math inline">\(\bar{x}_{SO1} =\)</span> 3.03, standard deviation <span class="math inline">\(s_{SO1} =\)</span> 0.26, and the t-score for <span class="math inline">\(df = N - 1\)</span> (where N = 17), which is <span class="math inline">\(t = 2.120\)</span>.
 Keeping in mind the formula for standard error <span class="math inline">\(s/\sqrt{N}\)</span>, we can calculate,</p>
 <p><span class="math display">\[LCI = 3.03 - \left(2.120 \times \frac{0.26}{\sqrt{17}}\right),\]</span></p>
@@ -631,11 +631,11 @@ To calculate our 95% confidence intervals, we then only need to rank the calcula
 <p>Remember from <a href="Chapter_15.html#sampling-with-and-without-replacement">Section 15.3</a> that the phrase ‘resampling with replacement’ just means that we are going to randomly sample some values, but not remove them from the pool of possible values after they are sampled.
 If we resample the numbers above with replacement, we might therefore sample some values two or more times by chance, and other values might not be sampled at all.
 The numbers below resample from the above with replacement.</p>
-<p>2.299, 3.027, 2.929, 3.256, 3.071, 2.658, 3.133, 3.027, 2.976, 2.817, 3.406, 3.21, 2.976, 3.133, 3.133, 3.178, 2.299</p>
+<p>2.299, 3.027, 2.929, 3.256, 3.071, 2.658, 3.133, 3.027, 2.976, 2.817, 3.406, 3.210, 2.976, 3.133, 3.133, 3.178, 2.299</p>
 <p>Notice that some values appear more than once in the data above, while other values that were present in the original dataset are no longer present after resampling with replacement. Consequently, these new resampled data have a different mean than the original.
 The mean of the original 17 SO1 ovipositor length values was 3.03, and the mean of the values resampled above is 2.972.
 We can resample another set of numbers to get a new mean.</p>
-<p>3.133, 3.027, 2.658, 3.291, 3.133, 2.299, 2.976, 2.658, 2.929, 3.133, 2.929, 2.995, 3.071, 2.299, 3, 3.133, 3.133</p>
+<p>3.133, 3.027, 2.658, 3.291, 3.133, 2.299, 2.976, 2.658, 2.929, 3.133, 2.929, 2.995, 3.071, 2.299, 3.000, 3.133, 3.133</p>
 <p>The mean of the above sample is 2.929.
 We can continue doing this until we have a high number of random samples and means. Figure 35.5 shows the distribution of means if we repeat this process of resampling with replacement and calculating the mean 10000 times.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-162"></span>

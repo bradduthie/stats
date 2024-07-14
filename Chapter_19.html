@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -482,7 +482,7 @@ div.csl-indent {
 <div id="Chapter_19" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> The t-interval<a href="Chapter_19.html#Chapter_19" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><a href="Chapter_15.html#Chapter_15">Chapter 15</a> introduced the binomial, Poisson, uniform, and normal distributions.
-In this chapter, we introduce another distribution, the t-distribution.
+In this chapter, I introduce another distribution, the t-distribution.
 Unlike the distributions of <a href="Chapter_15.html#Chapter_15">Chapter 15</a>, the t-distribution arises from the need to make accurate statistical inferences, not from any particular kind of data (e.g., successes or failures in a binomial distribution, or events happening over time in a Poisson distribution).
 In <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, we calculated confidence intervals (CIs) using the normal distribution and z-scores.
 In doing so, we made the assumption that the sample standard deviation (<span class="math inline">\(s\)</span>) was the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), <span class="math inline">\(s = \sigma\)</span>.
@@ -512,7 +512,7 @@ Figure 19.1: Standard normal probability distribution showing 95% of probability
 <p>Note that in Figure 19.1, a t-distribution with 19 degrees of freedom (df) is shown.
 The t-distribution is parameterised using df, and we lose a degree of freedom when calculating <span class="math inline">\(s^{2}\)</span> from a sample size of <span class="math inline">\(N = 20\)</span>, so <span class="math inline">\(df = 20 - 1 = 19\)</span> is the correct value (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a> for explanation).
 For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in jamovi<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
-<p>Recall from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 4.041\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.159\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
+<p>Recall from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 3.837\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.363\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.
 Our corrected lower 95% CI is,</p>
 <p><span class="math display">\[LCI_{95\%} = 4.1 - \left(2.093 \times \frac{0.6}{\sqrt{20}}\right) = 3.819.\]</span></p>
 <p>Our upper 95% confidence interval is,</p>

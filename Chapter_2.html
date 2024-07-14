@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -526,8 +526,8 @@ We will look more at how to interact with the spreadsheet in <a href="Chapter_3.
 <p>There are a lot of potential ways that data could be organised in a spreadsheet.
 For good statistical analysis, there are a few principles that are helpful to follow.
 Whenever we collect data, we record observations about different units.
-For example, we might make one or more measurements on a tree, a patch of land, or a sample of soil.
-In this case, trees, land patches, or soil samples are our units of <strong>observation</strong>.
+For example, we might make one or more measurements on a tree, a patch of land, or in a sample of soil.
+In this case, trees, land patches, or soil samples are our <strong>units of observation</strong>.
 Each attribute of a unit that we are measuring is a <strong>variable</strong>.
 These variables might include tree heights and leaf lengths, forest cover in a patch of land, or carbon and nitrogen content of a soil sample.
 Tidy datasets that can be used in statistical analysis programs are defined by three characteristics <span class="citation">(<a href="#ref-Wickham2014" role="doc-biblioref">Wickham, 2014</a>)</span>:</p>
@@ -602,7 +602,7 @@ Figure 2.3 shows the same data when opened with a text editor.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
 <img src="img/wasp_data_csv.png" alt="A plain text file is shown with data collected from different trees being presented with different observations spanning columns and rows." width="100%" />
 <p class="caption">
-Figure 2.3: Plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and sample (fruit), and commas separate the data into columns in which the properties of fruit are recorded. The file has been opened in a program called ‘Mousepad’, but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.
+Figure 2.3: Plain text comma-separated value (CSV) file showing data from fig fruits collected in 2010. Each line is a unique row and unit of observation (fruit), and commas separate the data into columns in which the variables of fruit are recorded. The file has been opened in a program called ‘Mousepad’, but it could also be opened in any text editor such as gedit, Notepad, vim, or emacs. It could also be opened in spreadsheet programs such as LibreOffice Calc, MS Excel, or Google Sheets, or in any number of statistical programs.
 </p>
 </div>
 <p>The data shown in Figure 2.3 are not easy to read or work with, but the format is highly effective for storage because all of the information is in plain text.

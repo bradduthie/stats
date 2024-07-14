@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -496,7 +496,7 @@ For example, we might repeat the measurement of an object’s mass with a differ
 <p>Sometimes it is necessary to combine different measured values.
 For example, we might measure the mass of two different bird eggs in a nest separately, then calculate the total mass of both eggs combined.
 The measurement of each egg will have its own error, and these errors will propagate to determine the error of the total egg mass for the nest.
-How this error propagates differs depending on if they are being added or subtracted, or if they are being multiplied or divided <span class="citation">(<a href="#ref-Navidi2006" role="doc-biblioref">Navidi, 2006</a>)</span>.</p>
+How this error propagates differs depending on if they are being added or subtracted, or if errors are being multiplied or divided <span class="citation">(<a href="#ref-Navidi2006" role="doc-biblioref">Navidi, 2006</a>)</span>.</p>
 <div id="adding-or-subtracting-errors" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Adding or subtracting errors<a href="Chapter_7.html#adding-or-subtracting-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the case of our egg masses, we can assign the mass of the first egg to the variable <span class="math inline">\(X\)</span> and the mass of the second egg to the variable <span class="math inline">\(Y\)</span>.
@@ -523,7 +523,7 @@ We also need to know <span class="math inline">\(L\)</span>, <span class="math i
 If our field has a length of <span class="math inline">\(L = 20\)</span> m and width of <span class="math inline">\(W = 10\)</span> m, then <span class="math inline">\(A = 20 \times 10 = 200\:m^{2}\)</span>.
 If length and width measurements have associated errors of <span class="math inline">\(E_{L} = 2\)</span> m and <span class="math inline">\(E_{W} = 1\)</span> m, then,</p>
 <p><span class="math display">\[E_{A} = 200 \sqrt{\left(\frac{2}{20} \right)^{2} + \left(\frac{1}{10} \right)^{2}} \approx 28.3\:m^{2}.\]</span></p>
-<p>Of course, not every set of measurements with errors to be multiplied will be lengths and widths (note, however, that the units of <span class="math inline">\(E_{A}\)</span> are the same as <span class="math inline">\(A\)</span>, <span class="math inline">\(m^{2}\)</span>).
+<p>Of course, not every set of measurements with errors to be multiplied will be lengths and widths (note, however, that the units of <span class="math inline">\(E_{A}\)</span> are the same as <span class="math inline">\(A\)</span>, metres squared).
 To avoid confusion, the general formula for multiplying or dividing errors is below, with the variables <span class="math inline">\(L\)</span>, <span class="math inline">\(W\)</span>, and <span class="math inline">\(A\)</span> replaced with <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span>, respectively, to match the case of addition and subtraction explained above,</p>
 <p><span class="math display">\[E_{Z} = Z \sqrt{\left(\frac{E_{X}}{X} \right)^{2} + \left(\frac{E_{Y}}{Y} \right)^{2}}.\]</span></p>
 <p>Note that the structure of the equation is the exact same, just with different letters used as variables.

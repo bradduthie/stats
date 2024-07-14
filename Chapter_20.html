@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -487,7 +487,7 @@ There will be four exercises focused on calculating CIs in jamovi.
 To complete the first two exercises, you will need the distrACTION module in jamovi.
 If you need to download it again, the instructions to do this are in the second exercise of <a href="Chapter_17.html#Chapter_17">Chapter 17</a> (briefly, go to the Modules option and select ‘jamovi library’, then scroll down until you find the ‘distraACTION’ module).</p>
 <p>The data for this chapter are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al., 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al., 2022</a>)</span>.
-The Wren project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).
+The WrEN project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).
 It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.
 The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
 Here we will focus on observations of tree diameter at breast height (DBH) and grazing to calculate confidence intervals.</p>
@@ -527,7 +527,7 @@ In other words, if we somehow had access to <em>all possible</em> DBH measuremen
 To find the probability of sampling a tree within a given interval of DBH (e.g., greater than 30), we therefore need to build this distribution with the correct mean and standard deviation.
 We do not know the <em>true</em> mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) of the population, but our best estimate of these values are the mean (<span class="math inline">\(\bar{x}\)</span>) and standard deviation (<span class="math inline">\(s\)</span>) of the sample, as reported above (i.e., the grand mean and standard deviation).
 Using the Mean and SD parameter input boxes in distrACTION, we can build a normal distribution with the same mean and standard deviation as our sample.
-Do this now by inputting the calculated Grand Mean and Grand Standard Deviation from above in the appropriate boxes.
+Do this now by inputting the calculated Grand mean and Grand standard deviation from above in the appropriate boxes.
 Note that the normal distribution on the right has the same shape, but the table of parameters has been updated to reflect the mean and standard deviation.</p>
 <p>In <a href="Chapter_17.html#Chapter_17">Chapter 17</a>, we calculated the probability of sampling a value within a given interval of the normal distribution.
 If we wanted to do the same exercise here, we might find the probability of sampling a DBH &lt; 30 using the Compute probability function (the answer is p = 0.264).
@@ -538,17 +538,17 @@ Make sure that the ‘cumulative quantile’ radio button is selected, then set 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
 <img src="img/jamovi_distrACTION_p75.png" alt="Jamovi window showing with parameters for a normal distribution with a mean of 36.9 and a standard deviatio of 11, and a normal distribution shows a vertical dotted line on an x-axis value of 44.3, below which 75% of values fall." width="100%" />
 <p class="caption">
-Figure 20.1: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75% of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.
+Figure 20.1: Jamovi interface for the ‘distrACTION’ module, in which quantiles have been computed to find the diameter at breast height (DBH) below which 75% of DBHs will be given a normal distribution with a mean of 36.9 and standard deviation of 11. Data for these parameter values were inspired by the Woodland Creation and Ecological Networks (WrEN) project.
 </p>
 </div>
 <p>From Figure 20.1, we can see that the cumulative 0.75 quantile is 44.3, so if DBH is normally distributed with the mean and standard deviation calculated above, 75% of DBH values in a population will be below 44.3 cm.
 Using the same principles, what is the cumulative 0.4 quantile for the DBH data?</p>
-<p>Quantile: _____________________ cm</p>
+<p>Quantile: _____________________</p>
 <p>We can also use the Compute quantile(s) option in jamovi to compute interval quantiles.
 For example, if we want to know the DBH values within which 95% of the probability density is contained, we can set p = 0.95, then select the radio button ‘central interval quantiles’.
 Do this for the DBH data.
 From the Results table on the right, what interval of DBH values will contain 95% of the probability density around the mean?</p>
-<p>Interval: _____________________ cm</p>
+<p>Interval: _____________________</p>
 <p>Remember that we are looking at the full sample distribution of DBH.
 That is, getting intervals for the probability of sampling DBH values around the mean, <em>not</em> confidence intervals around the mean as introduced in <a href="Chapter_18.html#Chapter_18">Chapter 18</a>.
 How would we get confidence intervals around the mean?
@@ -568,7 +568,7 @@ Based on the Results table, what can you infer are the lower and upper 95% CIs a
 But as we saw in <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, when we assume that our sample standard deviation (<span class="math inline">\(s\)</span>) is the same as the population standard deviation (<span class="math inline">\(\sigma\)</span>), then the shape of the normal distribution will be at least a bit off.
 Instead, we can get a more accurate estimate of CIs using a t-distribution.
 Jamovi usually does this automatically when calculating CIs outside of the distrACTION module.
-To get 95% CIs, go back to the Descriptives panel in jamovi, then choose DBH (cm) as variable.
+To get 95% CIs, go back to the Descriptives panel in jamovi, then choose DBH as a variable.
 Scroll down to the Statistics options and check ‘Confidence interval for Mean’ under the <strong>Mean Dispersion</strong> options, and make sure that the number in the box is 95 for 95% confidence.
 Confidence intervals will appear in the Descriptives table on the right.
 From this Descriptives table now, write the lower and upper 95% CIs below.</p>
@@ -642,7 +642,7 @@ From the Descriptives tool in jamovi, write the sample sizes for DBH split by si
 In Exercises 20.1 and 20.2, you used different approaches for calculating 95% CIs from the normal and t-distributions.
 Now, fill in Table 20.1 reporting 95% CIs calculated using each distribution from the four sites using any method you prefer.</p>
 <table>
-<caption><strong>TABLE 20.1</strong> 95% confidence intervals calculated for tree diameter at breast height (DBH) in centimetres. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<caption><strong>TABLE 20.1</strong> 95% confidence intervals calculated for tree diameter at breast height (DBH) in centimetres. Data for these parameter values were inspired by the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>
 <tr class="header">
 <th>Site</th>
@@ -680,7 +680,7 @@ Now, fill in Table 20.1 reporting 95% CIs calculated using each distribution fro
 </table>
 <p>Next, do the same in Table 20.2, but now calculate 99% CIs instead of 95% CIs.</p>
 <table>
-<caption><strong>TABLE 20.2</strong> 99% confidence intervals calculated for tree diameter at breast height (DBH) in centimetres. Data for these parameter values were collected in Scotland as part of the Woodland Creation and Ecological Networks (WrEN) project.</caption>
+<caption><strong>TABLE 20.2</strong> 99% confidence intervals calculated for tree diameter at breast height (DBH) in centimetres. Data for these parameter values were inspired by the Woodland Creation and Ecological Networks (WrEN) project.</caption>
 <thead>
 <tr class="header">
 <th>Site</th>
@@ -740,7 +740,7 @@ From the Descriptives options, find the number of sites grazed versus not grazed
 <p>Grazed: ____________</p>
 <p>Not Grazed: _____________</p>
 <p>From these counts above, what is the estimate (<span class="math inline">\(p\)</span>, or more technically <span class="math inline">\(\hat{p}\)</span>, with the hat indicating that it is an estimate) of the proportion of sites that are grazed?</p>
-<p><span class="math inline">\(p\)</span>: __________</p>
+<p><span class="math inline">\(p =\)</span> __________</p>
 <p><a href="Chapter_18.html#Chapter_18">Chapter 18</a> explained how to calculate lower and upper CIs for binomial distributions (i.e., proportion data).
 It showed how to calculate Wald CIs, but also noted that Clopper-Pearson CIs are generally more accurate.
 First, we will calculate Wald CIs by hand, then use jamovi to calculate Clopper-Pearson CIs.
@@ -749,16 +749,16 @@ To calculate the Wald CIs, we can use equations similar to the ones used for LCI
 <p><span class="math display">\[UCI = p + z \times SE(p),\]</span></p>
 <p>We have already calculated <span class="math inline">\(p\)</span>, and we can find z-scores for CIs in the same way that we did in Exercise 20.2 (i.e., the z-scores associated with 95% CIs do not change just because we are working with proportions).
 All that is left to calculate LCI and UCI are the standard errors of the proportions.
-Remember from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that these are calculated differently from a standard deviation of continuous values such as diameter breast height.
+Remember from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that these are calculated differently from a standard error of continuous values such as diameter breast height.
 The formula for standard error of a proportion is,</p>
 <p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
 <p>We can estimate <span class="math inline">\(p\)</span> as the total number of grazed sites divided by <span class="math inline">\(N\)</span>, where <span class="math inline">\(N\)</span> is the total sample size.
 Using the above equation, what is the standard error of p?</p>
-<p>SE(p): ____________</p>
+<p>SE(p) = ____________</p>
 <p>Using this standard error, what are the Wald lower and upper 95% CIs around <span class="math inline">\(p\)</span>?</p>
 <p>Wald <span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
 <p>Wald <span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
-<p>Next, find the lower and upper 99% CIs around <span class="math inline">\(p\)</span> and report them below (hint: the only difference here from the calculation of the 95% CIs are the z-scores).</p>
+<p>Next, find the lower and upper 99% CIs around <span class="math inline">\(p\)</span> and report them below (hint: the only difference here from the calculation of the 95% CIs is the z-score).</p>
 <p>Wald <span class="math inline">\(LCI_{99\%} =\)</span> ______________</p>
 <p>Wald <span class="math inline">\(UCI_{99\%} =\)</span> ______________</p>
 <p>Do you notice anything unusual about the lower 99% CI?</p>
@@ -775,7 +775,7 @@ From here, move ‘Grazing’ from the left box to the right box.
 Under <strong>Additional Statistics</strong>, check the box for ‘Confidence intervals’, and make sure that the interval is 95.
 A table called ‘Proportion Test (2 Outcomes)’ will appear to the right.
 Find the row with the Grazing Level ‘Yes’, then report what you see for <span class="math inline">\(p\)</span>, and the lower and upper CIs below.</p>
-<p><span class="math inline">\(p\)</span>: __________</p>
+<p><span class="math inline">\(p =\)</span> __________</p>
 <p>Clopper-Pearson <span class="math inline">\(LCI_{95\%} =\)</span> ______________</p>
 <p>Clopper-Pearson <span class="math inline">\(UCI_{95\%} =\)</span> ______________</p>
 <p>To calculate 99% CIs, change the number in the Interval box from 95 to 99.

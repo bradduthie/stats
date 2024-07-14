@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -498,7 +498,7 @@ It is even possible for the sign of the coefficients to change (e.g., from negat
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_32.html#Chapter_32">Chapter 32</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie &amp; Nason, 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).</p>
 <table>
-<caption><strong>TABLE 33.1</strong> Volumes of fig fruits collected from different latitudes and altitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><strong>TABLE 33.1</strong> Volumes (<span class="math inline">\(mm^3\)</span>) of fig fruits collected from different latitudes and altitudes (<span class="math inline">\(m\)</span>) from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -551,8 +551,8 @@ Figure 33.1: Relationship between latitude and fruit volume for seven fig fruits
 </div>
 <p>As with simple regression (<a href="Chapter_32.html#Chapter_32">Chapter 32</a>), we can test whether or not the overall model that includes both latitude and altitude as independent variables produces a significantly better fit to the data than just the mean volume.
 We can also find partial regression coefficients for latitude (<span class="math inline">\(b_{1}\)</span>) and altitude (<span class="math inline">\(b_{2}\)</span>), and test whether or not these coefficients are significantly different from 0.</p>
-<p>In <a href="Chapter_32.html#Chapter_32">Chapter 32</a>, we found that a simple regression of latitude against fruit volume had an intercept of <span class="math inline">\(b_{0} = 3592.36\)</span> and a regression coefficient of <span class="math inline">\(b_{1} = -242.68\)</span>,</p>
-<p><span class="math display">\[Volume = 3592.36 - 242.68(Latitude).\]</span></p>
+<p>In <a href="Chapter_32.html#Chapter_32">Chapter 32</a>, we found that a simple regression of latitude against fruit volume had an intercept of <span class="math inline">\(b_{0} = 8458.3\)</span> and a regression coefficient of <span class="math inline">\(b_{1} = -242.68\)</span>,</p>
+<p><span class="math display">\[Volume = 8458.3 - 242.68(Latitude).\]</span></p>
 <p>The slope of the regression line (<span class="math inline">\(b_{1}\)</span>) was significantly different from zero (<span class="math inline">\(P = 0.03562\)</span>).</p>
 <p>A multiple regression can be used with latitude and altitude as independent variables to predict volume,</p>
 <p><span class="math display">\[Volume = b_{0} + b_{1}(Latitude) + b_{2}(Altitude).\]</span></p>
@@ -608,7 +608,7 @@ This is because we assume that these sample coefficients (<span class="math inli
 In other words, if we were to go back out and repeatedly collect many new datasets (sampling volume, latitude, and altitude <em>ad infinitum</em>), then the distribution of <span class="math inline">\(b\)</span> sample coefficients calculated from these datasets would be normally distributed around the true <span class="math inline">\(\beta\)</span> population coefficients.
 The t-distribution, which accounts for uncertainty that is attributable to a finite sample size (see <a href="Chapter_19.html#Chapter_19">Chapter 19</a>), is therefore the correct one to use when testing the significance of coefficients.</p>
 <p>Second, the intercept has changed from what it was in the simple linear regression model.
-In the simple linear regression, it was 8458.30961, but in the multiple regression it is <span class="math inline">\(b_{0} = 2989.02\)</span>.
+In the simple linear regression, it was 8458.30961, but in the multiple regression it is <span class="math inline">\(b_{0} = 2988.24539\)</span>.
 The p-value of the intercept has also changed.
 In the simple linear model, the p-value was significant (P = 0.0142).
 But in the multiple regression model, it is not significant (P = 0.1532).</p>
@@ -620,7 +620,7 @@ This result illustrates the context dependence of partial regression coefficient
 In other words, although fruit volume appeared to significantly decrease with increasing latitude in the simple regression model of <a href="Chapter_32.html#Chapter_32">Chapter 32</a>, this is no longer the case once we account for the altitude from which the fruit was collected.
 Latitude, <em>by itself</em>, does not appear to affect fruit volume after all.
 It only appeared to affect fruit volume because locations at high latitude also tend to be higher in altitude.
-And each metre of altitude appears to decrease fruit volume by about -2.4 <span class="math inline">\(mm^{3}\)</span> (Table 33.2).
+And each metre of altitude appears to decrease fruit volume by about 2.4 <span class="math inline">\(mm^{3}\)</span> (Table 33.2).
 This partial effect of altitude on fruit volume is statistically significant (P &lt; 0.05).
 We therefore do not reject the null hypothesis that the intercept (<span class="math inline">\(b_{0}\)</span>) and partial coefficient of latitude (<span class="math inline">\(b_{1}\)</span>) is significantly different from 0.
 But we do reject the null hypothesis that <span class="math inline">\(b_{2} = 0\)</span>, and we can conclude that altitude has an effect on fig fruit volume.</p>

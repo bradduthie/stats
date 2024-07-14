@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -526,7 +526,7 @@ The answer is shown in Figure 29.1.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-118"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-118-1.png" alt="Plot of a curved distribution that rapidly increases to a maximum at around 2 then slowly decreases." width="672" />
 <p class="caption">
-Figure 29.1: A Chi-square distribution, which is the expected sum of four squared standard normal deviates, i.e., the sum of four values sampled from a standard normal distribution and squared.
+Figure 29.1: A Chi-square distribution that is the expected sum of four squared standard normal deviates, i.e., the sum of four values sampled from a standard normal distribution and squared.
 </p>
 </div>
 <p>Looking at the shape of Figure 29.1, we can see that most of the time, the sum of deviations from the mean of <span class="math inline">\(\mu = 0\)</span> will be about 2.
@@ -587,7 +587,7 @@ Figure 29.3 shows the appropriate <span class="math inline">\(\chi^{2}\)</span> 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-120"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-120-1.png" alt="Plot of curved distribution that starts around 0.5 and decreases, asymptoting toward 0." width="672" />
 <p class="caption">
-Figure 29.3: A Chi-square distribution, which is the expected sum of four squared standard normal deviates, i.e., the sum of four values sampled from a standard normal distribution and squared.
+Figure 29.3: A Chi-square distribution with 2 degrees of freedom, used in a goodness of fit test to determine if all players of the mobile game ‘Power Up!’ have the same preference for initial dam size. An arrow indicates a <span class="math inline">\(\chi^{2}\)</span> value of 1.2 on the x-axis, and grey shading indicates the probability of a more extreme value under the null hypothesis.
 </p>
 </div>
 <p>Because <span class="math inline">\(P &gt; 0.05\)</span>, we do not reject the null hypothesis that there is no significant difference between expected and observed counts of chosen dam sizes.</p>
@@ -611,18 +611,18 @@ In other words, does knowing something about one variable tell us anything about
 A concrete example will make it easier to explain.
 We can again make use of the <a href="Chapter_17.html#Chapter_17">Chapter 17</a> game ‘Power Up!’.
 As mentioned in the <a href="#chi-squared-goodness-of-fit">previous section</a>, game players choose a small, medium, or large dam at the start of the game.
-Players can play the game on either an Android or MacOS mobile device.
+Players can play the game on either an Android or macOS mobile device.
 We therefore have two categorical variables: dam size and OS type.
-We might want to know, do Android users choose the same dam sizes as MacOS users?
+We might want to know, do Android users choose the same dam sizes as macOS users?
 In other words, are dam size and OS type associated?
 We can state this as a null and alternative hypothesis.</p>
 <ul>
 <li><span class="math inline">\(H_{0}\)</span>: There is no association between OS and dam size choice.</li>
 <li><span class="math inline">\(H_{A}\)</span>: There is an association between OS and dam size choice.</li>
 </ul>
-<p>Consider the data in Table 29.1, which show counts of Android versus MacOS users and their dam choices.</p>
+<p>Consider the data in Table 29.1, which show counts of Android versus macOS users and their dam choices.</p>
 <table style="width:56%;">
-<caption><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or MacOS) and build one of three types of dam in the game (Small, Medium, or Large).</caption>
+<caption><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or macOS) and build one of three types of dam in the game (Small, Medium, or Large).</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -645,7 +645,7 @@ We can state this as a null and alternative hypothesis.</p>
 <td align="center">6</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>MacOS</strong></td>
+<td align="center"><strong>macOS</strong></td>
 <td align="center">10</td>
 <td align="center">8</td>
 <td align="center">12</td>
@@ -653,11 +653,11 @@ We can state this as a null and alternative hypothesis.</p>
 </tbody>
 </table>
 <p>Just looking at the counts in Table 29.1, it appears that there might be an association between the two variables.
-For example, Android users appear to be more likely to choose a medium dam than MacOS users.
-Medium dams are the most popular choice for Android users, but they are the least popular choice for MacOS users.
+For example, Android users appear to be more likely to choose a medium dam than macOS users.
+Medium dams are the most popular choice for Android users, but they are the least popular choice for macOS users.
 Nevertheless, could this just be due to chance?
 If it were due to chance, then how unlikely are the counts in Table 29.1?
-In other words, if Android and MacOS users in the whole population really do choose dam sizes at the same frequencies, then what is the probability of getting a sample of 60 players in which the choices are as or more unbalanced as this?
+In other words, if Android and macOS users in the whole population really do choose dam sizes at the same frequencies, then what is the probability of getting a sample of 60 players in which the choices are as or more unbalanced as this?
 This is what we want to answer with our Chi-square test of association.</p>
 <p>The general idea is the same as with the Chi-square goodness of fit test.
 We have our observed values (Table 29.1).
@@ -668,13 +668,13 @@ There were 60 players and three dam sizes, so the expected frequency of each dam
 Now it is different.
 We are not testing if dam sizes or OS choices are the same.
 We want to know if they are <em>associated</em> with one another.
-That is, regardless of the popularity of Android versus MacOS, or the frequency with which small, medium and large dams are selected, do Android users choose different dam sizes than MacOS users?
-If dam size is not associated with OS, then we would predict that the relative frequency of small, medium, and large dams would be the same for both Android and MacOS.</p>
-<p>To find the expected counts of each variable combination (e.g., Android and Small, or MacOS and Large), we need to get the probability that each category is selected independently.
+That is, regardless of the popularity of Android versus macOS, or the frequency with which small, medium and large dams are selected, do Android users choose different dam sizes than macOS users?
+If dam size is not associated with OS, then we would predict that the relative frequency of small, medium, and large dams would be the same for both Android and macOS.</p>
+<p>To find the expected counts of each variable combination (e.g., Android and Small, or macOS and Large), we need to get the probability that each category is selected independently.
 For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1</p>
 <table style="width:79%;">
-<caption><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or MacOS) and build one of three categories of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected.</caption>
+<caption><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or macOS) and build one of three categories of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected.</caption>
 <colgroup>
 <col width="25%" />
 <col width="11%" />
@@ -700,7 +700,7 @@ Table 29.2 shows these probabilities as additional rows and columns added onto T
 <td align="center">0.5</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>MacOS</strong></td>
+<td align="center"><strong>macOS</strong></td>
 <td align="center">10</td>
 <td align="center">8</td>
 <td align="center">12</td>
@@ -715,7 +715,7 @@ Table 29.2 shows these probabilities as additional rows and columns added onto T
 </tr>
 </tbody>
 </table>
-<p>Since there are 30 total Android users (<span class="math inline">\(8 + 16 + 6 = 30\)</span>) and 30 total MacOS users (<span class="math inline">\(10 + 8 + 12 = 30\)</span>), the probability of a player having an Android OS is <span class="math inline">\(30/60 = 0.5\)</span>, and the probability of a player having a MacOS is also <span class="math inline">\(30 / 60 = 0.5\)</span>.
+<p>Since there are 30 total Android users (<span class="math inline">\(8 + 16 + 6 = 30\)</span>) and 30 total macOS users (<span class="math inline">\(10 + 8 + 12 = 30\)</span>), the probability of a player having an Android OS is <span class="math inline">\(30/60 = 0.5\)</span>, and the probability of a player having a macOS is also <span class="math inline">\(30 / 60 = 0.5\)</span>.
 Similarly, there are 18 small, 24 medium, and 18 large dam choices in total.
 Hence, the probability of a player choosing a small dam is <span class="math inline">\(18/60 = 0.3\)</span>, medium is <span class="math inline">\(24/60 = 0.4\)</span>, and large is <span class="math inline">\(18/60 = 0.3\)</span>.
 If these probabilities combine independently<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>, then we can multiply them to find the probability of a particular combination of categories.
@@ -723,7 +723,7 @@ For example, the probability of a player using Android is 0.5 and choosing a sma
 The probability of a player using Android <strong>and</strong> choosing a medium dam is <span class="math inline">\(0.5 \times 0.4 = 0.2\)</span>.
 We can fill in all of these joint probabilities in a new Table 29.3.</p>
 <table style="width:79%;">
-<caption><strong>TABLE 29.3</strong> Probabilities for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<caption><strong>TABLE 29.3</strong> Probabilities for each combination of categorical variables from a dataset in which players on either an Android or macOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
 <colgroup>
 <col width="25%" />
 <col width="11%" />
@@ -749,7 +749,7 @@ We can fill in all of these joint probabilities in a new Table 29.3.</p>
 <td align="center">0.5</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>MacOS</strong></td>
+<td align="center"><strong>macOS</strong></td>
 <td align="center">0.15</td>
 <td align="center">0.2</td>
 <td align="center">0.15</td>
@@ -772,7 +772,7 @@ For example, the expected count of players who use Android and choose a small da
 Table 29.4 fills in all of the expected counts.
 Note that the sum of all the counts equals our sample size of 60.</p>
 <table style="width:65%;">
-<caption><strong>TABLE 29.4</strong> Expected counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
+<caption><strong>TABLE 29.4</strong> Expected counts for each combination of categorical variables from a dataset in which players on either an Android or macOS choose a dam size in the mobile app game ‘Power Up!’, assuming that variables are independent of one another.</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -798,7 +798,7 @@ Note that the sum of all the counts equals our sample size of 60.</p>
 <td align="center">30</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>MacOS</strong></td>
+<td align="center"><strong>macOS</strong></td>
 <td align="center">9</td>
 <td align="center">12</td>
 <td align="center">9</td>
@@ -830,13 +830,13 @@ In other words, if <span class="math inline">\(H_{0}\)</span> is true, then the 
 Consequently, because <span class="math inline">\(P &gt; 0.05\)</span>, we would not reject the null hypothesis.
 We should therefore conclude that there is no evidence for an association between OS and dam size choice.</p>
 <p>Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
-To do this, it is necessary to input the categorical data (e.g., Android, MacOS) in a tidy format, which will be a focus of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>.</p>
+To do this, it is necessary to input the categorical data (e.g., Android, macOS) in a tidy format, which will be a focus of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>.</p>
 <p>There is one final point regarding expected and observed values of the Chi-square test of association.
 There is another way of getting these expected values that is a bit faster (and more widely taught) but does not demonstrate the logic of expected counts as clearly.
 If we wanted to, we could sum the rows and columns of our original observations.
 Table 29.5 shows the original observations with the sum of each row and column.</p>
 <table style="width:65%;">
-<caption><strong>TABLE 29.5</strong> Observed counts for each combination of categorical variables from a dataset in which players on either an Android or MacOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
+<caption><strong>TABLE 29.5</strong> Observed counts for each combination of categorical variables from a dataset in which players on either an Android or macOS choose a dam size in the mobile app game ‘Power Up!’. The last row and column shows the sum of observed dam sizes and OS users, respectively.</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -862,7 +862,7 @@ Table 29.5 shows the original observations with the sum of each row and column.<
 <td align="center">30</td>
 </tr>
 <tr class="even">
-<td align="center"><strong>MacOS</strong></td>
+<td align="center"><strong>macOS</strong></td>
 <td align="center">10</td>
 <td align="center">8</td>
 <td align="center">12</td>
@@ -879,7 +879,7 @@ Table 29.5 shows the original observations with the sum of each row and column.<
 </table>
 <p>We can get the expected counts from Table 29.5 if we multiply each row sum by each column sum, then divide by the total sample size (<span class="math inline">\(N = 60\)</span>).
 For example, to get the expected counts of Android users who choose a small dam, we can multiply <span class="math inline">\((18 \times 30)/60 = 9\)</span>.
-To get the expected counts of MacOS users who choose a medium dam, we can multiply <span class="math inline">\((30 \times 24)/60 = 12\)</span>.
+To get the expected counts of macOS users who choose a medium dam, we can multiply <span class="math inline">\((30 \times 24)/60 = 12\)</span>.
 This works for all of combinations of rows and columns, so we could do it to find all of the expected counts from Table 29.4.</p>
 </div>
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -549,8 +549,8 @@ Table 27.1 shows the fig wasp wing length dataset for the two species in a tidy 
 <p>We could run a one-way ANOVA (or t-test) to see if wing lengths differ between species, then run another one-way ANOVA to see if wing lengths differ between trees.
 But by including both group types in the same model (species and tree), we can test how one group affects wing length in the context of the other group (e.g., how tree affects wing length, while also accounting for any effects of species on wing length).
 We can also see if there is any synergistic effect between groups, which is called an <strong>interaction effect</strong>.
-For example, if Het1 fig wasps had longer wing lengths than SO1 on Tree A, but shorter wing lengths than SO1 on Tree B, then we would say that there is an interaction between species and tree.
-Given this kind of interaction effect, it would not make sense to say that Het1 fig wasps have longer or shorter wings than SO1 because this would depend on the tree!</p>
+For example, if Het1 fig wasps had longer wing lengths than SO2 on Tree A, but shorter wing lengths than SO2 on Tree B, then we would say that there is an interaction between species and tree.
+Given this kind of interaction effect, it would not make sense to say that Het1 fig wasps have longer or shorter wings than SO2 because this would depend on the tree!</p>
 <p>This chapter will not delve into the mathematics of the two-way ANOVA<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
 Working out a two-way ANOVA by hand requires similar, albeit more laborious, calculations of sum of squares and degrees of freedom than is needed for the one-way ANOVA in <a href="Chapter_24.html#one-way-anova">Section 24.2</a>.
 But the general concept is the same.
@@ -589,9 +589,9 @@ Figure 27.1: Jamovi output table for a two-way ANOVA, which tests for the effect
 </p>
 </div>
 <p>This is a lot more information than the one-way ANOVA, but it helps to think of each row separately as a test of a different null hypothesis.
-From the first row, given the high F = 45.75 and the low P = 0.002, we can reject the null hypothesis that species mean wing lengths are the same.
-Similarly, from the second row, we can reject the null hypothesis that wing lengths are the same in both trees (F = 30.39; P = 0.005).
-In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and tree (F = 0.05, P = 0.839).
+From the first row, given the high <span class="math inline">\(F = 45.75\)</span> and the low <span class="math inline">\(P = 0.002\)</span>, we can reject the null hypothesis that species mean wing lengths are the same.
+Similarly, from the second row, we can reject the null hypothesis that wing lengths are the same in both trees (<span class="math inline">\(F = 30.39\)</span>; <span class="math inline">\(P = 0.005\)</span>).
+In contrast, from the third row, we should not reject the null hypothesis that there is no interaction between species and tree (<span class="math inline">\(F = 0.05\)</span>; <span class="math inline">\(P = 0.839\)</span>).
 Figure 27.2 shows these results visually <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-109"></span>
 <img src="img/two-way_ANOVA_no_interaction.png" alt="A plot is shown in jamovi with species on the x-axis and two connected lines, one blue for Tree A and one orange for Tree B. The lines run in parallel at a downward angle." width="100%" />
@@ -673,9 +673,9 @@ Table 27.2 shows the data.</p>
 Figure 27.3: Jamovi output table for a two-way ANOVA, which tests for the effects of species (SO1 and SO2), tree, and their interaction on fig wasp wing lengths. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Figure 27.3 shows that the effect of species is not significant (P &gt; 0.05), but the effect of tree is significant (P &lt; 0.05).
+<p>Figure 27.3 shows that the effect of species is not significant (<span class="math inline">\(P &gt; 0.05\)</span>), but the effect of tree is significant (<span class="math inline">\(P &lt; 0.05\)</span>).
 Consequently, in terms of the main effects, it appears that species does not affect wing length, but tree does affect wing length.
-Unlike the example test between Het1 and SO2, the interaction between species and tree is significant (P &lt; 0.05) in Figure 27.3.
+Unlike the example test between Het1 and SO2, the interaction between species and tree is significant (<span class="math inline">\(P &lt; 0.05\)</span>) in Figure 27.3.
 This means that we cannot interpret the main effects in isolation because the effect of each on wing length will change in the presence of the other.
 In other words, the effect of tree on wing length will depend on the species.
 Figure 27.4 shows this interaction visually.</p>
@@ -688,7 +688,7 @@ Figure 27.4: An interaction plot for a two-way ANOVA of fig wasp wing measuremen
 <p>Note that for SO1, wing length is basically the same for Trees A and B (the two left points in Figure 27.4).
 In contrast, for SO2, tree has a very noticeable effect on wing length!
 Fig wasps in species SO2 clearly have higher wing lengths on Tree A than they do on Tree B.
-<em>Overall</em>, however, the mean wing length for SO2 appears to be about the same as it is for SO1 (i.e., the mid-way point between the blue and orange points for SO2 is at about the same wing length as it is for SO1, around 1.5 mm).
+<em>Overall</em>, however, the mean wing length for SO2 appears to be about the same as it is for SO1 (i.e., the middle of the two points for SO2 is at about the same wing length as it is for SO1, around 1.5 mm).
 Species therefore does not really have an effect on wing length, at least not by itself.
 But species <em>does</em> have a clear effect if you also take tree into account.
 In other words, to predict how tree will affect wing length (not at all for SO1, or a lot for SO2), it is necessary to know what species of fig wasp is being considered.

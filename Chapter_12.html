@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -482,15 +482,15 @@ div.csl-indent {
 <div id="Chapter_12" class="section level1 hasAnchor" number="12">
 <h1><span class="header-section-number">Chapter 12</span> Measures of spread<a href="Chapter_12.html#Chapter_12" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>It is often important to know how much a set of numbers is spread out.
-That is, do all of the data cluster close to the mean, or are most values distant from the mean.
+That is, do all of the data cluster close to the mean, or are most values distant from the mean?
 For example, all of the numbers below are quite close to the mean of 5.0 (three numbers are exactly 5.0).</p>
 <pre><code>4.9, 5.3, 5.0, 4.7, 5.1, 5.0, 5.0</code></pre>
 <p>In contrast, all of the numbers that follow are relatively distant from the same mean of 5.0.</p>
 <pre><code>3.0, 5.6, 7.8, 1.2, 4.3, 8.2, 4.9</code></pre>
 <p>This chapter focuses on summary statistics that describe the spread of data.
 The approach in this chapter is similar to <a href="Chapter_11.html#Chapter_11">Chapter 11</a>, which provided verbal and mathematical explanations of measures of central tendency.
-We will start with the most intuitive measures of spread, the range and inter-quartile range.
-Then, we will move on to some more conceptually challenging measures of spread, the variance, standard deviation, coefficient of variation, and standard error.
+We will start with the most intuitive measures of spread: the range and inter-quartile range.
+Then, we will move on to some more conceptually challenging measures of spread: the variance, standard deviation, coefficient of variation, and standard error.
 These more challenging measures can be a bit confusing at first, but they are absolutely critical for doing statistics.
 The best approach to learning them is to see them and practice using them in different contexts, which we will do throughout this book.</p>
 <div id="the-range" class="section level2 hasAnchor" number="12.1">
@@ -516,8 +516,8 @@ We can do the same for plant B, which has a highest value of 8.2 g and lowest va
 <p>It is important to mention that the range is highly sensitive to outliers <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro &amp; Foxcroft, 2022</a>)</span>.
 Just adding a single number to either plant A or plant B could dramatically change the range.
 For example, imagine if we measured a leaf in plant A to have a mass of 19.7 g (i.e., we found a huge leaf!).
-The range of plant A would then be <span class="math inline">\(19.7 - 4.7 = 14\)</span> instead of 0.6.
-Just this one massive leaf would then make the range of plant A double the range of plant B.
+The range of plant A would then be <span class="math inline">\(19.7 - 4.7 = 15\)</span> instead of 0.6.
+Just this one massive leaf would then make the range of plant A more than double the range of plant B.
 This lack of robustness can really limit how useful the range is as a statistical measure of spread.</p>
 </div>
 <div id="the-inter-quartile-range" class="section level2 hasAnchor" number="12.2">
@@ -529,8 +529,8 @@ A general formula subtracting the first quartile (<span class="math inline">\(Q_
 <p>Recall from <a href="Chapter_11.html#Chapter_11">Chapter 11</a> how to calculate first and third quartiles.
 As a reminder, we can sort the leaf masses for plant A below.</p>
 <pre><code>4.7, 4.9, 5.0, 5.0, 5.0, 5.1, 5.3</code></pre>
-<p>The first quartile will be the mean between 4.9 and 5.0 (4.95).
-The third quartile will be the mean between 5.0 and 5.1 (5.05).
+<p>The first quartile will be 4.95.
+The third quartile will be 5.05.
 The IQR of plant A is therefore,</p>
 <p><span class="math display">\[IQR_{plant\:A} = 5.05 - 4.95 = 0.1.\]</span></p>
 <p>We can calculate the IQR for plant B in the same way.
@@ -540,7 +540,7 @@ Here are the masses of plant B leaves sorted.</p>
 To get the IQR of plant B,</p>
 <p><span class="math display">\[IQR_{plant\:B} = 6.70 - 3.65 = 3.05.\]</span></p>
 <p>An important point about the IQR is that it is more robust than the range <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>)</span>.
-Recall that if we found an outlier leaf of 19.7 g on plant A, it would change the range of plant leaf mass from 0.6 to 14 g.
+Recall that if we found an outlier leaf of 19.7 g on plant A, it would change the range of plant leaf mass from 0.6 to 15 g.
 The IQR is not nearly so sensitive.
 If we include the outlier, the first quartile for plant A changes from <span class="math inline">\(Q_{1} = 4.95\)</span> to <span class="math inline">\(Q_{1} = 4.975\)</span>.
 The third quartile changes from <span class="math inline">\(Q_{3} = 5.05\)</span> to <span class="math inline">\(Q_{3} = 5.150\)</span>.
@@ -637,7 +637,7 @@ Nevertheless, as a descriptive statistic to communicate the spread of a variable
 <p>This is a simple step, mathematically, but it also is easier to understand conceptually as a measure of spread <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro &amp; Foxcroft, 2022</a>)</span>.
 By taking the square root of the variance, our units are no longer squared, so we can interpret the standard deviation in the same terms as our original data.
 For example, the leaf masses of plant A and plant B in the example above were measured in grams.
-While the variance of these masses were in <span class="math inline">\(g^{2}\)</span>, the standard deviation is in <span class="math inline">\(g\)</span>, just like the original measurements.
+While the variance of these masses was in grams squared, the standard deviation is in grams, just like the original measurements.
 For plant A, we calculated a leaf mass variance of <span class="math inline">\(s^{2} = 0.0333\:g^{2}\)</span>, which means that the standard deviation of leaf masses is <span class="math inline">\(s = \sqrt{0.0333\:g^{2}} = 0.1825\:g\)</span>.
 Because we are reporting <span class="math inline">\(s\)</span> in the original units, it is a very useful measure of spread to report, and it is an important one to be able to interpret.
 To help with the interpretation, an interactive tool can more effectively show how the heights of trees in a forest change across different standard deviation values<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
@@ -664,7 +664,7 @@ For example, to express the CV as a percentage, we would multiply the 0.0365 abo
 </div>
 <div id="the-standard-error" class="section level2 hasAnchor" number="12.6">
 <h2><span class="header-section-number">12.6</span> The standard error<a href="Chapter_12.html#the-standard-error" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The standard error of the mean is the last measure of spread that we will introduce here.
+<p>The standard error of the mean is the last measure of spread that I will introduce.
 It is slightly different than the previous measurements in that it is a measure of the variation in the <em>mean</em> of a sample rather than the sample itself.
 That is, the standard error tells us how far our sample mean <span class="math inline">\(\bar{x}\)</span> is expected to deviate from the true mean <span class="math inline">\(\mu\)</span>.
 Technically, the standard error of the mean is the standard deviation <em>of sample means</em> rather than the standard deviation <em>of samples</em>.

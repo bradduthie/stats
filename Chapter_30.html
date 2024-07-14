@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -483,7 +483,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 30</span> Correlation<a href="Chapter_30.html#Chapter_30" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This chapter focuses on the association between <a href="Chapter_5.html#Chapter_5">types of variables</a> that are quantitative (i.e., represented by numbers).
 It is similar to the <a href="#chi-squared-test-of-association">Chi-square test of association</a> from <a href="Chapter_29.html#Chapter_29">Chapter 29</a> in the sense that it is about how variables are associated.
-The focus of the <a href="#chi-squared-test-of-association">Chi-square test of association</a> was on the association when data were categorical (e.g., ‘Android’ or ‘MacOS’ operating system).
+The focus of the <a href="#chi-squared-test-of-association">Chi-square test of association</a> was on the association when data were categorical (e.g., ‘Android’ or ‘macOS’ operating system).
 Here we focus instead on the association when data are numeric.
 But the concept is generally the same; are variables independent, or does knowing something about one variable tell us something about the other variable?
 For example, does knowing something about the latitude of a location tell us something about its average yearly temperature?</p>
@@ -496,7 +496,7 @@ Consider two fig wasp species of the genus <em>Heterandrium</em> (Figure 30.1).<
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-126"></span>
 <img src="img/heterandrium.png" alt="Two small black iridescent wasps are shown side by side with wings facing upwards." width="100%" />
 <p class="caption">
-Figure 30.1: Fig wasps from two different species, (A) Het1 and (B) Het2. Wasps were collected from Baja, Mexico. Modified from Duthie, Abbott, and Nason (2015).
+Figure 30.1: Fig wasps from two different species, (A) Het1 and (B) Het2. Wasps were collected from Baja, Mexico. Image modified from Duthie, Abbott, and Nason (2015).
 </p>
 </div>
 <p>Both fig wasp species in Figure 30.1 are unnamed.
@@ -635,7 +635,7 @@ The covariance (<span class="math inline">\(cov_{x,y}\)</span>) describes how a 
 <p><span class="math display">\[cov_{x, y} = \frac{1}{N - 1} \sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right).\]</span></p>
 <p>The <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> are the means of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, respectively.
 Note that if <span class="math inline">\(x_{i} = y_{i}\)</span>, then the equation for <span class="math inline">\(cov_{x,y}\)</span> is identical to the equation for <span class="math inline">\(s^{2}\)</span> because <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(x_{i} - \bar{x} \right) = \left(x_{i} - \bar{x} \right)^{2}\)</span>.</p>
-<p>What the equation for <span class="math inline">\(cov_{x,y}\)</span> is describing is how the variation in <span class="math inline">\(x\)</span> relates to variation in <span class="math inline">\(y\)</span>.
+<p>What the equation for <span class="math inline">\(cov_{x,y}\)</span> is describing is how variation in <span class="math inline">\(x\)</span> relates to variation in <span class="math inline">\(y\)</span>.
 If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, and a value of <span class="math inline">\(y_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially high because we will be multiplying two large positive numbers together.
 If a value of <span class="math inline">\(x_{i}\)</span> is much higher than the mean <span class="math inline">\(\bar{x}\)</span>, but the corresponding <span class="math inline">\(y_{i}\)</span> is much lower than the mean <span class="math inline">\(\bar{y}\)</span>, then the product of <span class="math inline">\(\left(x_{i} - \bar{x} \right)\)</span> and <span class="math inline">\(\left(y_{i} - \bar{y} \right)\)</span> will be especially low because we will be multiplying a large positive number and a large negative number.
 Consequently, when <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(y_{i}\)</span> tend to deviate from their means <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span> in a consistent way, we get either high or low values of <span class="math inline">\(cov_{x,y}\)</span>.
@@ -655,11 +655,11 @@ Since the covariance between <span class="math inline">\(x\)</span> and itself i
 <p>As with other statistics defined in this book, it is almost never necessary to calculate <span class="math inline">\(r\)</span> by hand.
 Jamovi will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988" role="doc-biblioref">Rodgers &amp; Nicewander, 1988</a>)</span>.
-To make this link a bit more clear, we can calculate the correlation coefficient of thorax and abdomen length from Table 30.1.
+To make this link a bit clearer, we can calculate the correlation coefficient of thorax and abdomen length from Table 30.1.
 We can set thorax to be the <span class="math inline">\(x\)</span> variable and abdomen to be the <span class="math inline">\(y\)</span> variable.
 Mean thorax length is <span class="math inline">\(\bar{x} = 0.770\)</span>, and mean abdomen length is <span class="math inline">\(\bar{y} = 1.210\)</span>.
-The standard deviation of thorax length is <span class="math inline">\(s_{x} = 0.064\)</span>, and the standard deviation of abdomen length is <span class="math inline">\(s_{y} = 0.123\)</span>.
-This gives us the numbers that we need to calculate the bottom of the fraction for <span class="math inline">\(r\)</span>, which is <span class="math inline">\(s_{x} \times s_{y} = 0.007872\)</span>.
+The standard deviation of thorax length is <span class="math inline">\(s_{x} = 0.06366161\)</span>, and the standard deviation of abdomen length is <span class="math inline">\(s_{y} = 0.1231806\)</span>.
+This gives us the numbers that we need to calculate the bottom of the fraction for <span class="math inline">\(r\)</span>, which is <span class="math inline">\(s_{x} \times s_{y} = 0.007841875\)</span>.
 We now need to calculate the covariance on the top.
 To get the covariance, we first need to calculate <span class="math inline">\(\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)\)</span> for each row (<span class="math inline">\(i\)</span>) in Table 30.1.
 For example, for row 1, <span class="math inline">\(\left(0.767 - 0.770\right) \left(1.288 - 1.210\right) = -0.000234.\)</span>
@@ -752,10 +752,10 @@ Table 30.2 shows the thorax length (<span class="math inline">\(x_{i}\)</span>),
 </tbody>
 </table>
 <p>If we sum up all of the values in the column ‘Squared Deviation’ from Table 30.2, we get a value of 0.059487.
-We can multiply this value by <span class="math inline">\(1 / (N - 1)\)</span> to get the top of the equation for <span class="math inline">\(r\)</span>, <span class="math inline">\((1 / (11-1)) \times 0.059487 = 0.0059487\)</span>.
+We can multiply this value by <span class="math inline">\(1 / (N - 1)\)</span> to get the top of the equation for <span class="math inline">\(r\)</span> (i.e., <span class="math inline">\(cov_{x,y}\)</span>), <span class="math inline">\((1 / (11-1)) \times 0.059487 = 0.0059487\)</span>.
 We now have all of the values we need to calculate <span class="math inline">\(r\)</span> between fig wasp thorax and abdomen length,</p>
-<p><span class="math display">\[r_{x,y} = \frac{0.0059487}{0.064 \times 0.123}.\]</span></p>
-<p>Our final value is <span class="math inline">\(r_{x, y} = 0.7556784\)</span>.
+<p><span class="math display">\[r_{x,y} = \frac{0.0059487}{0.06366161 \times 0.1231806}.\]</span></p>
+<p>Our final value is <span class="math inline">\(r_{x, y} = 0.759\)</span>.
 As suggested by the scatterplot in Figure 30.2, thorax and abdomen lengths are highly correlated.
 We will test whether or not this value of <span class="math inline">\(r\)</span> is statistically significant in <a href="Chapter_30.html#correlation-hypothesis-testing">Section 30.3</a>, but first we will introduce the Spearman’s rank correlation coefficient.</p>
 </div>

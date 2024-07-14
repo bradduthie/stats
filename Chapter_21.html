@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -486,7 +486,7 @@ In science, a hypothesis should make some kind of testable statement about the r
 For example, we might hypothesise that in a particular population of sparrows, juveniles that have higher body mass will also have higher survival rates.
 In contrast, statistical hypotheses compare a sample outcome to the outcome predicted given a relevant statistical distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 That is, we start with a hypothesis that our data are sampled from some distribution, then work out whether or not we should reject this hypothesis.
-This concept is counter-intuitive, but it is absolutely fundamental for understanding the logic underlying most modern statistical techniques <span class="citation">(<a href="#ref-Greenland2016" role="doc-biblioref">Greenland et al., 2016</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Mayo, 1996</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, including all subsequent chapters of this workbook, so we will focus on it here in-depth.
+This concept is counter-intuitive, but it is absolutely fundamental for understanding the logic underlying most modern statistical techniques <span class="citation">(<a href="#ref-Greenland2016" role="doc-biblioref">Greenland et al., 2016</a>; <a href="#ref-Mayo1996" role="doc-biblioref">Mayo, 1996</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, including all subsequent chapters of this book, so we will focus on it here in-depth.
 The most instructive way to explain the general idea is with the example of coin flips <span class="citation">(<a href="#ref-Mayo1996" role="doc-biblioref">Mayo, 1996</a>)</span>, as we looked at in <a href="Chapter_15.html#Chapter_15">Chapter 15</a>.</p>
 <div id="how-ridiculous-is-our-hypothesis" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> How ridiculous is our hypothesis?<a href="Chapter_21.html#how-ridiculous-is-our-hypothesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -589,8 +589,8 @@ In the case of our coin flipping example, we cannot really know the probability 
 But we can say that <strong>if</strong> the coin <strong>is</strong> fair, then an observation of <span class="math inline">\(\leq 45\)</span> would occur with a probability of <span class="math inline">\(P = 0.0967\)</span>.</p>
 <p>Before actually calculating a p-value, we typically set a threshold level (<span class="math inline">\(\alpha\)</span>) below which we will conclude that our p-value is <strong>statistically significant</strong><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.
 As mentioned in <a href="Chapter_21.html#how-ridiculous-is-our-hypothesis">Section 21.1</a>, we traditionally set <span class="math inline">\(\alpha= 0.05\)</span> in the biological and environmental sciences (although rarely <span class="math inline">\(\alpha = 0.01\)</span> is used).
-This means that if <span class="math inline">\(P \leq 0.05\)</span>, then we reject <span class="math inline">\(H_{0}\)</span> and conclude that our observation is statistically significant.
-It also means that even when <span class="math inline">\(H_{0}\)</span> really is true (e.g., the coin is really fair), we will mistakenly reject <span class="math inline">\(H_{0}\)</span> with a probability of 0.05 (i.e., 5% of the time).
+This means that if <span class="math inline">\(P &lt; 0.05\)</span>, then we reject <span class="math inline">\(H_{0}\)</span> and conclude that our observation is statistically significant.
+It also means that even when <span class="math inline">\(H_{0}\)</span> really is true (e.g., the coin really is fair), we will mistakenly reject <span class="math inline">\(H_{0}\)</span> with a probability of 0.05 (i.e., 5% of the time).
 This is called a <strong>Type I error</strong> (i.e., false positive), and it typically means that we will infer a pattern of some kind (e.g., difference between groups, or relationship between variables) where none really exists.
 This is obviously an error that we want to avoid, which is why we set <span class="math inline">\(\alpha\)</span> to a low value.</p>
 <p>In contrast, we can also fail to reject <span class="math inline">\(H_{0}\)</span> when <span class="math inline">\(H_{A}\)</span> is actually true.
@@ -673,7 +673,7 @@ Wasserstein, R. L., &amp; Lazar, N. A. (2016). The ASA’s statement on p-values
 <ol start="40">
 <li id="fn40"><p>I have heard many apocryphal stories about how a probability of 0.05 was decided upon, but I have no idea which, if any, of these stories are actually true.<a href="Chapter_21.html#fnref40" class="footnote-back">↩︎</a></p></li>
 <li id="fn41"><p>Technically, it also assumes that all of the assumptions of the model underlying the hypothesis test are true, but we will worry about this later.<a href="Chapter_21.html#fnref41" class="footnote-back">↩︎</a></p></li>
-<li id="fn42"><p>In fact, the p-value is so easy to misinterpret and so widely misused, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein &amp; Lazar, 2016</a>; <a href="#ref-Mayo2019" role="doc-biblioref">Mayo, 2019</a>; but see <a href="#ref-Stanton-Geddes2014" role="doc-biblioref">Stanton-Geddes et al., 2014</a>)</span>.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>In fact, the p-value is so easy to misinterpret and so widely misused, that some scientists have called for them to be abandoned entirely <span class="citation">(<a href="#ref-Wasserstein2016" role="doc-biblioref">Wasserstein &amp; Lazar, 2016</a>)</span>, but see <span class="citation">Stanton-Geddes et al. (<a href="#ref-Stanton-Geddes2014" role="doc-biblioref">2014</a>)</span> and <span class="citation">Mayo (<a href="#ref-Mayo2019" role="doc-biblioref">2019</a>)</span>.<a href="Chapter_21.html#fnref42" class="footnote-back">↩︎</a></p></li>
 <li id="fn43"><p>Like p-values, setting thresholds below which we consider <span class="math inline">\(P\)</span> to be significant is at least somewhat controversial <span class="citation">(<a href="#ref-Mayo2021" role="doc-biblioref">Mayo, 2021</a>; <a href="#ref-McShane2019" role="doc-biblioref">McShane et al., 2019</a>)</span>. But the use of statistical significance thresholds is ubiquitous in the biological and environmental sciences, so we will use them throughout this book (it is important to understand them and interpret them).<a href="Chapter_21.html#fnref43" class="footnote-back">↩︎</a></p></li>
 <li id="fn44"><p>Note that we might, for non-statistical reasons, conclude the absence of a particular phenomenon or relationship between observations. For example, following a statistical test, we might become convinced that a coin really is fair, or that there is no relationship between sparrow body mass and survival. But these are conclusions about scientific hypotheses, not statistical hypotheses.<a href="Chapter_21.html#fnref44" class="footnote-back">↩︎</a></p></li>
 </ol>

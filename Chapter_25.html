@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -486,9 +486,9 @@ We can therefore conclude that at least one species has a different mean wing le
 We can try to find this out using a post hoc comparison (<em>post hoc</em> is Latin for ‘after the event’).
 That is, after we have rejected the null hypothesis in the one-way ANOVA, we can start comparing individual groups (Het1 vs Het2, Het1 vs LO1, etc.).
 Nevertheless, we need some way to correct for the Type I error problem explained at the beginning of <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
-That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (P &lt; 0.05) where none really exists.
+That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (<span class="math inline">\(P &lt; 0.05\)</span>) where none really exists.
 A way to avoid this inflated Type I error rate is to set our significance threshold to be lower than the usual <span class="math inline">\(\alpha = 0.05\)</span>.
-We can, for example, divide our <span class="math inline">\(\alpha\)</span> value by the total number of pair-wise t-tests tests that we run.
+We can, for example, divide our <span class="math inline">\(\alpha\)</span> value by the total number of pair-wise t-tests that we run.
 This is called a Bonferroni correction <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006" role="doc-biblioref">Narum, 2006</a>)</span>.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the five species.
 This means that if we were to apply a Bonferroni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when <span class="math inline">\(P &lt; 0.005\)</span> instead of <span class="math inline">\(P &lt; 0.05\)</span>.</p>

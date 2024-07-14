@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -508,7 +508,7 @@ Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico
 </div>
 <p>A sample of fig fruits from different latitudes is shown in Table 32.1.</p>
 <table>
-<caption><strong>TABLE 32.1</strong> Volumes of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><strong>TABLE 32.1</strong> Volumes (<span class="math inline">\(mm^3\)</span>) of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -624,9 +624,9 @@ The latitude at which this fruit was sampled was <span class="math inline">\(x_{
 From the previous section, we know that <span class="math inline">\(b_{0} =\)</span> 8458.3 and <span class="math inline">\(b_{1} =\)</span> -242.7.
 If we substitute all of these values,</p>
 <p><span class="math display">\[2941.7 = 8458.3 - 242.68(24) + 307.84.\]</span></p>
-<p>Note that if we remove the residual 307.84, then we get the expected volume for our fig fruit at 24 degrees latitude,</p>
+<p>Note that if we remove the residual 307.84, then we get the predicted volume for our fig fruit at 24 degrees latitude,</p>
 <p><span class="math display">\[2633.98 = 8458.3 - 242.68(24).\]</span></p>
-<p>Visually, this is where the dotted line meets the solid regression line in Figure 32.3.</p>
+<p>Visually, this is where the dotted residual line meets the solid regression line in Figure 32.3.</p>
 <p>This explains the relationship between the independent and dependent variables using the intercept, slope, and residuals.
 But how do we actually define the line of best fit?
 In other words, what makes the regression line in this example better than some other line that we might use instead?
@@ -639,19 +639,19 @@ Figure 32.4 shows the same regression as in Figures 32.2 and 32.3, but with the 
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-144"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-144-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards; thin dashed vertical lines link points to the line of best fit." width="672" />
 <p class="caption">
-Figure 32.4: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point.
+Figure 32.4: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the vertical dashed lines show the residuals for each point. Residuals are rounded to one decimal place.
 </p>
 </div>
 <p>Some of the values are positive, and some are negative.
 An intuitive reason the line in Figure 32.4 is the line of best fit is the positive and negative values exactly balance each other out.
 In other words, the sum of all the residual values in Figure 32.4 is 0,</p>
-<p><span class="math display">\[0 = -307.6 + 307.7 + 194 + 406.9 - 677.3 - 262.2 + 338.5.\]</span></p>
+<p><span class="math display">\[0 = -307.715 + 307.790 + 193.976 + 406.950 - 677.340 - 262.172 + 338.511.\]</span></p>
 <p>If we were to move the regression line, then the sum of residuals would no longer be 0.
 There is only one line that fits.</p>
 <p>More technically, the line of best fit minimises the sum of squared residuals (<span class="math inline">\(SS_{residual}\)</span>).
 In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,</p>
-<p><span class="math display">\[SS_{residual} = (-307.6)^{2} + (307.7)^2 + ... + (338.5)^{2}.\]</span></p>
-<p>For the regression in Figure 32.4, <span class="math inline">\(SS_{residual} =\)</span> 1034690.
+<p><span class="math display">\[SS_{residual} = (-307.715)^{2} + (307.790)^2 + ... + (338.511)^{2}.\]</span></p>
+<p>For the regression in Figure 32.4, <span class="math inline">\(SS_{residual} =\)</span> 1034772.
 Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a> in which a random set of points are placed on a scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
 <p>We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
 The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.</p>
@@ -675,22 +675,22 @@ Figure 32.5: Examples of scatterplots with different coefficients of determinati
 </div>
 <p>We can calculate the <span class="math inline">\(R^{2}\)</span> value for our example of fig fruit volumes over a latitudinal gradient.
 To do this, we need to calculate the sum of the squared residual values (<span class="math inline">\(SS_{residual}\)</span>) and the total sum of squared deviations of <span class="math inline">\(y_{i}\)</span> from the mean <span class="math inline">\(\bar{y}\)</span> (<span class="math inline">\(SS_{total}\)</span>).
-From the previous section, we have already found that <span class="math inline">\(SS_{residaul} = 1034567\)</span>.
+From the previous section, we have already found that <span class="math inline">\(SS_{residual} = 1034772\)</span>.
 Now, to get <span class="math inline">\(SS_{total}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Section 12.3</a>).
 We can visualise this as the sum of squared deviations from the mean fruit volume of <span class="math inline">\(\bar{y} =\)</span> 1930.1 instead of the value predicted by the regression line (Figure 32.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-146-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
 <p class="caption">
-Figure 32.6: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (dashed) and deviations from the mean (dotted).
+Figure 32.6: Relationship between latitude and fruit volume for seven fig fruits collected from Baja, Mexico in 2010. The solid black line shows the regression line of best fit, and the horizontal dotted line shows the mean of fruit volume. Vertical dashed lines show the model residuals (dashed) and deviations from the mean (dotted). Residuals are rounded to one decimal place.
 </p>
 </div>
 <p>The numbers in Figure 32.6 show the deviations of each point from the regression line, just like in Figure 32.4.
 New numbers have been added to Figure 32.6 to show the deviation of each point from the mean fruit volume.
-Summing the squared values of residuals from the regression line gives a value of 1034567.
-Summing the squared deviations of values from the mean <span class="math inline">\(\bar{y} =\)</span> 1930.1 gives a value of 2721718.
+Summing the squared values of residuals from the regression line gives a value of 1034772
+Summing the squared deviations of values from the mean <span class="math inline">\(\bar{y} =\)</span> 1930.1 gives a value of 2721530.
 To calculate <span class="math inline">\(R^{2}\)</span>,</p>
-<p><span class="math display">\[R^{2} = 1 - \frac{1034567}{2721718}.\]</span></p>
-<p>The above gives us a value of <span class="math inline">\(R^{2} = 0.6198846\)</span>.
+<p><span class="math display">\[R^{2} = 1 - \frac{1034772}{2721530}.\]</span></p>
+<p>The above gives us a value of <span class="math inline">\(R^{2} = 0.619783\)</span>.
 In other words, about 62% of the variation in fruit volume is explained by latitude.</p>
 </div>
 <div id="regression-assumptions" class="section level2 hasAnchor" number="32.6">
@@ -712,7 +712,7 @@ The term for this is ‘homoscedasticity’, meaning that the variance is consta
 This is in contrast to heteroscedasticity, which means that the variance is not constant.</p></li>
 </ol>
 <p>Figure 32.7 shows a classic example of heteroscedasticity.
-Notice that the variance of <span class="math inline">\(y_{i}\)</span> values around the regression line increases with increasing <span class="math inline">\(x\)</span>.</p>
+Notice that the variance of <span class="math inline">\(y_{i}\)</span> values increases with increasing <span class="math inline">\(x\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-147-1.png" alt="A scatterplot is shown in which data points increase in variance around a regression line as the x variable increases, forming a funnel shape with the narrow point on the left." width="672" />
 <p class="caption">
@@ -773,7 +773,7 @@ But we often do care if our dependent variable is increasing or decreasing with 
 </div>
 <div id="simple-regression-output" class="section level3 hasAnchor" number="32.7.4">
 <h3><span class="header-section-number">32.7.4</span> Simple regression output<a href="Chapter_32.html#simple-regression-output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>If we run the simple regression of fig fruit latitude against fruit volume, we can find output statistics <span class="math inline">\(R^{2} = 0.6198\)</span>, and <span class="math inline">\(P = 0.03562\)</span> for the overall model.
+<p>If we run the simple regression of fig fruit latitude against fruit volume, we can find output statistics <span class="math inline">\(R^{2} = 0.6198\)</span>, and <span class="math inline">\(P = 0.03562\)</span> for the overall model in jamovi.
 This means that the model explains about 61.98% of the total variation in fruit volume, and the overall model does a significantly better job of predicting fruit volume than the mean.
 We therefore reject the null hypothesis and conclude that the model with latitude as an independent variables fits the data significantly better than a model with just the mean of fruit volume (Figure 32.8).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-148"></span>
@@ -853,7 +853,7 @@ The jamovi project. (2024). <em>Jamovi (version 2.5)</em>. <a href="https://www.
 <li id="fn76"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_32.html#fnref76" class="footnote-back">↩︎</a></p></li>
 <li id="fn77"><p><a href="https://bradduthie.github.io/stats/app/regr_click/">https://bradduthie.github.io/stats/app/regr_click/</a><a href="Chapter_32.html#fnref77" class="footnote-back">↩︎</a></p></li>
 <li id="fn78"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when two variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref78" class="footnote-back">↩︎</a></p></li>
-<li id="fn79"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721718\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1687069\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034649\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1687069/1 = 1687069\)</span> and <span class="math inline">\(MS_{residual} = 1034649/5 = 206929.8\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1687069 / 206929.8 = 8.152857\)</span>.<a href="Chapter_32.html#fnref79" class="footnote-back">↩︎</a></p></li>
+<li id="fn79"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721530\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1686758\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034772\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1686758/1 = 1686758\)</span> and <span class="math inline">\(MS_{residual} = 1034772/5 = 206954.4\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1686758 / 206954.4 = 8.150385\)</span>.<a href="Chapter_32.html#fnref79" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

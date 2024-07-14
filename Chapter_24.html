@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -483,7 +483,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 24</span> Analysis of variance<a href="Chapter_24.html#Chapter_24" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>An ANalysis Of VAriance (ANOVA) is, as the name implies, a method for analysing variances in a dataset.
 This is confusing, at first, because the most common application of an ANOVA is to test for differences among group <em>means</em>.
-That is, an ANOVA can be used to test the same null hypothesis as the independent samples student’s t-test introduced in <a href="Chapter_22.html#independent-samples-t-test">Section 22.2</a>; are two groups sampled from a population that has the same mean?
+That is, an ANOVA can be used to test the same null hypothesis as the independent samples Student’s t-test introduced in <a href="Chapter_22.html#independent-samples-t-test">Section 22.2</a>; are two groups sampled from a population that has the same mean?
 The t-test works fine when we have only two groups, but it does not work when there are three or more groups, and we want to know if the groups all have the same mean.
 An ANOVA can be used to test the null hypothesis that <em>all</em> groups in a dataset are sampled from a population with the same mean.
 For example, we might want to know if mean wing length is the same for five species of fig wasps sampled from the same area <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie et al., 2015</a>)</span>.
@@ -594,7 +594,7 @@ The probability of erroneously rejecting <strong>at least 1</strong> of the 10 n
 In other words, about 40% of the time, we would conclude that at least two species differ in their mean wing lengths<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a> even when all species <em>really do</em> have the same wing length.
 This is not a mistake that we want to make, which is why we should first test if all of the means are equal:</p>
 <ul>
-<li><span class="math inline">\(H_{0}:\)</span> All mean species wing lengths are the same</li>
+<li><span class="math inline">\(H_{0}:\)</span> Mean species wing lengths are all the same</li>
 <li><span class="math inline">\(H_{A}:\)</span> Mean species wing lengths are not all the same</li>
 </ul>
 <p>We can use an ANOVA to test the null hypothesis above against the alternative hypothesis.
@@ -656,14 +656,14 @@ We can also get the sample mean values of each group, individually.
 For example, for Het1,</p>
 <p><span class="math display">\[\bar{x}_{Het1} = \frac{2.122 + 1.938 + 1.765 + 1.7}{4} = 1.88125.\]</span></p>
 <p>We can calculate the means for all five fig wasps (Table 24.3).</p>
-<table style="width:56%;">
+<table style="width:69%;">
 <caption><strong>TABLE 24.3</strong> Mean wing lengths (mm) from five unnamed species of non-pollinating fig wasps collected from fig trees in 2010 near La Paz in Baja, Mexico. Each species mean was calculated from four wasps (N = 4).</caption>
 <colgroup>
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
+<col width="13%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -676,11 +676,11 @@ For example, for Het1,</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">1.881</td>
-<td align="center">1.708</td>
-<td align="center">1.711</td>
-<td align="center">1.515</td>
-<td align="center">1.53</td>
+<td align="center">1.88125</td>
+<td align="center">1.70775</td>
+<td align="center">1.71125</td>
+<td align="center">1.51525</td>
+<td align="center">1.53000</td>
 </tr>
 </tbody>
 </table>
@@ -712,14 +712,14 @@ For example, for Het1, we calculate,</p>
               0.0135141 +
               0.0328516 = 0.1075467.\]</span></p>
 <p>Table 24.4 shows what happens after taking the wing lengths from Table 23.1, subtracting the means, then squaring.</p>
-<table style="width:78%;">
+<table style="width:99%;">
 <caption><strong>TABLE 24.4</strong> Squared deviations from species means for each wing length presented in Table 24.1.</caption>
 <colgroup>
-<col width="15%" />
-<col width="15%" />
-<col width="13%" />
-<col width="16%" />
-<col width="16%" />
+<col width="19%" />
+<col width="19%" />
+<col width="18%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -732,44 +732,44 @@ For example, for Het1, we calculate,</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">0.05796</td>
-<td align="center">0.01046</td>
-<td align="center">0.02489</td>
-<td align="center">0.001743</td>
-<td align="center">0.01102</td>
+<td align="center">0.057960563</td>
+<td align="center">0.010455063</td>
+<td align="center">0.02488506</td>
+<td align="center">0.0017430625</td>
+<td align="center">0.01102500</td>
 </tr>
 <tr class="even">
-<td align="center">0.003221</td>
-<td align="center">0.01283</td>
-<td align="center">0.06039</td>
-<td align="center">0.0004951</td>
-<td align="center">0.0289</td>
+<td align="center">0.003220563</td>
+<td align="center">0.012825563</td>
+<td align="center">0.06039306</td>
+<td align="center">0.0004950625</td>
+<td align="center">0.02890000</td>
 </tr>
 <tr class="odd">
-<td align="center">0.01351</td>
-<td align="center">0.002998</td>
-<td align="center">0.01495</td>
-<td align="center">0.002048</td>
-<td align="center">0.01513</td>
+<td align="center">0.013514062</td>
+<td align="center">0.002997562</td>
+<td align="center">0.01494506</td>
+<td align="center">0.0020475625</td>
+<td align="center">0.01512900</td>
 </tr>
 <tr class="even">
-<td align="center">0.03285</td>
-<td align="center">0.02584</td>
-<td align="center">0.0791</td>
-<td align="center">0.0006631</td>
-<td align="center">0.0231</td>
+<td align="center">0.032851562</td>
+<td align="center">0.025840562</td>
+<td align="center">0.07910156</td>
+<td align="center">0.0006630625</td>
+<td align="center">0.02310400</td>
 </tr>
 </tbody>
 </table>
 <p>If we sum each column (i.e., do what we did for <span class="math inline">\(SS_{Het1}\)</span> for each species), then we get the SS for each species (Table 24.5).</p>
-<table style="width:69%;">
+<table style="width:90%;">
 <caption><strong>TABLE 24.5</strong> Sum of squared deviations from species means for each wing length presented in Table 24.1.</caption>
 <colgroup>
-<col width="12%" />
-<col width="13%" />
-<col width="12%" />
-<col width="15%" />
-<col width="15%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -782,15 +782,15 @@ For example, for Het1, we calculate,</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">0.1075</td>
-<td align="center">0.05212</td>
-<td align="center">0.1793</td>
-<td align="center">0.004949</td>
-<td align="center">0.07816</td>
+<td align="center">0.10754675</td>
+<td align="center">0.05211875</td>
+<td align="center">0.17932475</td>
+<td align="center">0.00494875</td>
+<td align="center">0.07815800</td>
 </tr>
 </tbody>
 </table>
-<p>If we sum the squared deviations in Table 24.5, we get a <span class="math inline">\(SS_{within} =\)</span> 0.422097.
+<p>If we sum the squared deviations in Table 24.5, we get <span class="math inline">\(SS_{within} =\)</span> 0.422097.
 Note that each species included four wing lengths.
 We lose a degree of freedom for each of the five species (because we had to calculate the species mean), so our total df is 3 for each species, and <span class="math inline">\(5 \times 3 = 15\)</span> degrees of freedom within groups (<span class="math inline">\(df_{within}\)</span>).
 To get the mean variance within groups (denominator of F), we calculate <span class="math inline">\(MS_{within} = SS_{within} / df_{within} =\)</span> 0.0281398.</p>
@@ -821,7 +821,7 @@ Note that the critical value of F (i.e., for which <span class="math inline">\(P
 <p>When running an ANOVA in a statistical program, output includes (at least) the calculated F-statistic, degrees of freedom, and the p-value.
 Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths in jamovi.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-101"></span>
-<img src="img/jamovi_ANOVA_output.png" alt="Jamovi output is shown with a table called 'One-Way ANOVA', which includes a single measurement for F, df1, df2, and p." width="60%" />
+<img src="img/jamovi_ANOVA_output.png" alt="Jamovi output is shown with a table called 'One-Way ANOVA', which includes a single measurement for F, df1, df2, and p." width="100%" />
 <p class="caption">
 Figure 24.3: Jamovi output for a one-way ANOVA of wing length measurements in five species of fig wasps collected in 2010 near La Paz in Baja, Mexico.
 </p>
@@ -903,7 +903,7 @@ The jamovi project. (2024). <em>Jamovi (version 2.5)</em>. <a href="https://www.
 <hr />
 <ol start="54">
 <li id="fn54"><p>Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, <span class="math display">\[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\]</span> The number of combinations therefore increases with increasing group number (g).<a href="Chapter_24.html#fnref54" class="footnote-back">↩︎</a></p></li>
-<li id="fn55"><p>To get the 0.4, we can first calculate the probability that we (correctly) do not reject <span class="math inline">\(H_{0}\)</span> for all 10 pair-wise species combinations <span class="math inline">\((1 - 0.05)^{10} \approx 0.60\)</span>, then subtract from 1, <span class="math inline">\(P(Do\:not\:reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\)</span>. That is, we find the probability of there not being a Type I error in the first test <span class="math inline">\((1 - 0.05)\)</span>, <strong>and</strong> the second test <span class="math inline">\((1 - 0.05)\)</span>, and so forth, thereby multiplying <span class="math inline">\((1 - 0.05)\)</span> by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least one Type I error is 1 minus this probability.<a href="Chapter_24.html#fnref55" class="footnote-back">↩︎</a></p></li>
+<li id="fn55"><p>To get the 0.4, we can first calculate the probability that we (correctly) do not reject <span class="math inline">\(H_{0}\)</span> for all 10 pair-wise species combinations <span class="math inline">\((1 - 0.05)^{10} \approx 0.60\)</span>, then subtract from 1, <span class="math inline">\(P(Reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\)</span>. That is, we find the probability of there not being a Type I error in the first test <span class="math inline">\((1 - 0.05)\)</span>, <strong>and</strong> the second test <span class="math inline">\((1 - 0.05)\)</span>, and so forth, thereby multiplying <span class="math inline">\((1 - 0.05)\)</span> by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least one Type I error is 1 minus this probability.<a href="Chapter_24.html#fnref55" class="footnote-back">↩︎</a></p></li>
 <li id="fn56"><p>The F-distribution was originally discovered in the context of the ratio of random variables with Chi-square distributions, with each variable being divided by its own degree of freedom <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>. We will look at the Chi-square distribution in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>.<a href="Chapter_24.html#fnref56" class="footnote-back">↩︎</a></p></li>
 <li id="fn57"><p><a href="https://bradduthie.github.io/stats/app/f_distribution/" class="uri">https://bradduthie.github.io/stats/app/f_distribution/</a><a href="Chapter_24.html#fnref57" class="footnote-back">↩︎</a></p></li>
 <li id="fn58"><p>Note that the SS divided by the degrees of freedom (<span class="math inline">\(N - 1\)</span>) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{Het1}\)</span>, <span class="math inline">\(s^{2}_{Het2}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref58" class="footnote-back">↩︎</a></p></li>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-01" />
+<meta name="date" content="2024-07-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,10 +165,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3" data-path="Chapter_3.html"><a href="Chapter_3.html"><i class="fa fa-check"></i><b>3</b> <em>Practical</em>. Preparing data</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-1-transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Exercise 1: Transferring data to a spreadsheet</a></li>
-<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-2-making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Exercise 2: Making spreadsheet data tidy</a></li>
-<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-3-making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Exercise 3: Making data tidy again</a></li>
-<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#exercise-4-tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Exercise 4: Tidy data and spreadsheet calculations</a></li>
+<li class="chapter" data-level="3.1" data-path="Chapter_3.html"><a href="Chapter_3.html#transferring-data-to-a-spreadsheet"><i class="fa fa-check"></i><b>3.1</b> Transferring data to a spreadsheet</a></li>
+<li class="chapter" data-level="3.2" data-path="Chapter_3.html"><a href="Chapter_3.html#making-spreadsheet-data-tidy"><i class="fa fa-check"></i><b>3.2</b> Making spreadsheet data tidy</a></li>
+<li class="chapter" data-level="3.3" data-path="Chapter_3.html"><a href="Chapter_3.html#making-data-tidy-again"><i class="fa fa-check"></i><b>3.3</b> Making data tidy again</a></li>
+<li class="chapter" data-level="3.4" data-path="Chapter_3.html"><a href="Chapter_3.html#tidy-data-and-spreadsheet-calculations"><i class="fa fa-check"></i><b>3.4</b> Tidy data and spreadsheet calculations</a></li>
 <li class="chapter" data-level="3.5" data-path="Chapter_3.html"><a href="Chapter_3.html#summary"><i class="fa fa-check"></i><b>3.5</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="Chapter_4.html"><a href="Chapter_4.html"><i class="fa fa-check"></i><b>4</b> Populations and samples</a></li>
@@ -536,9 +536,9 @@ For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
 </tr>
 </tbody>
 </table>
-<p>Recall that in the one-way ANOVA from <a href="Chapter_24.html#one-way-anova">Section 24.2</a>, we reject the null hypothesis that all species had the same mean wing length (P = 0.042).
+<p>Recall that in the one-way ANOVA from <a href="Chapter_24.html#one-way-anova">Section 24.2</a>, we reject the null hypothesis that all species had the same mean wing length (<span class="math inline">\(P = 0.042\)</span>).
 But we had not actually tested the assumptions of the one-way ANOVA before running the test!
-If we had tested the ANOVA assumptions, we would not reject the null hypothesis that wing length is normally distributed (Shapiro-Wilk test P = 0.698).
+If we had tested the ANOVA assumptions, we would not reject the null hypothesis that wing length is normally distributed (Shapiro-Wilk test <span class="math inline">\(P = 0.698\)</span>).
 But a Levene’s test of homogeneity of variances convincingly rejects the null hypothesis that the group variances are equal (P = 0.008).
 Consequently, we should probably have considered the non-parametric Kruskal-Wallis H test instead.
 To do this, we first need to rank all of the values in Table 26.1.
@@ -592,7 +592,7 @@ There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 </tr>
 </tbody>
 </table>
-<p>From these ranks, we calculate a test statistic H from the overall sample size (N), the sample size of each group (<span class="math inline">\(N_{i}\)</span>), the mean of group ranks (<span class="math inline">\(\bar{R}_{i}\)</span>), and the overall mean rank (<span class="math inline">\(\bar{\bar R}\)</span>).
+<p>From these ranks, we calculate a test statistic H from the overall sample size (N), the sample size (<span class="math inline">\(N_{i}\)</span>) of each of the groups (<span class="math inline">\(g\)</span>), the mean of group ranks (<span class="math inline">\(\bar{R}_{i}\)</span>), and the overall mean rank (<span class="math inline">\(\bar{\bar R}\)</span>).
 Of course, we do not need to do this by hand.
 But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a" role="doc-biblioref">Kruskal, 1952</a>)</span>,</p>
 <p><span class="math display">\[H = (N - 1) \frac{\sum_{i=1}^{g}N_{i}\left(\bar{R}_{i} - \bar{\bar R} \right)^2}{\sum_{i=1}^{g}\sum_{j=1}^{N_{i}} \left(R_{ij} - \bar{\bar R} \right)^{2}}.\]</span></p>
@@ -607,7 +607,7 @@ But most statistical programs such as jamovi compare H to a Chi-square distribut
 Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 Figure 26.1 shows the output of a Kruskal-Wallis H test on the fig wasp wing lengths data.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
-<img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskal-Wallis H test." width="60%" />
+<img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskal-Wallis H test." width="100%" />
 <p class="caption">
 Figure 26.1: Jamovi output table for a non-parametric Kruskal-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for five different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
