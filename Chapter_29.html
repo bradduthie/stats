@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -534,17 +534,17 @@ But sometimes we will get a much lower or higher value of <span class="math inli
 <p>If we summed a different number of squared <span class="math inline">\(x_{i}\)</span> values, then we would expect the distribution of <span class="math inline">\(\chi^{2}\)</span> to change.
 Had we sampled fewer than four <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be lower just because we are adding up fewer numbers.
 Similarly, had we sampled more than four <span class="math inline">\(x_{i}\)</span> values, the expected <span class="math inline">\(\chi^{2}\)</span> would be higher just because we are adding up more numbers.
-The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(n\)</span>), or more specifically the degrees of freedom (df, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = n - 1\)</span>.
+The shape of the <span class="math inline">\(\chi^{2}\)</span> distribution<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> is therefore determined by the number of values sampled (<span class="math inline">\(n\)</span>), or more specifically the degrees of freedom (<span class="math inline">\(df\)</span>, or sometimes <span class="math inline">\(v\)</span>), which in a sample is <span class="math inline">\(df = n - 1\)</span>.
 This is the same idea as the t-distribution from <a href="Chapter_19.html#Chapter_19">Chapter 19</a>, which also changed shape depending on the degrees of freedom.
 Figure 29.2 shows the different <span class="math inline">\(\chi^{2}\)</span> probability density distributions for different degrees of freedom.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-119-1.png" alt="A plot is shown with three different curve lines, which show three different Chi-square distributions with different degrees of freedom." width="672" />
 <p class="caption">
-Figure 29.2: Probability density functions for three different Chi-square distributions, each of which has different degrees of freedom (df).
+Figure 29.2: Probability density functions for three different Chi-square distributions, each of which has different degrees of freedom (<span class="math inline">\(df\)</span>).
 </p>
 </div>
-<p>As with the F distribution from <a href="#the-f-distribution">Section 24.1</a>, visualising the <span class="math inline">\(\chi^{2}\)</span> distribution is easier using an interactive application<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
-And as with the F distribution, it is not necessary to memorise how the <span class="math inline">\(\chi^{2}\)</span> distribution changes with different degrees of freedom.
+<p>As with the F-distribution from <a href="#the-f-distribution">Section 24.1</a>, visualising the <span class="math inline">\(\chi^{2}\)</span> distribution is easier using an interactive application<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
+And as with the F-distribution, it is not necessary to memorise how the <span class="math inline">\(\chi^{2}\)</span> distribution changes with different degrees of freedom.
 The important point is that the distribution changes with different degrees of freedom, and we can map probabilities to the <span class="math inline">\(\chi^{2}\)</span> value on the x-axis in the same way as any other distribution.</p>
 <p>What does any of this have to do with count data? It actually is a bit messy.
 The <span class="math inline">\(\chi^{2}\)</span> distribution is not a perfect tool for comparing observed and expected counts <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
@@ -563,10 +563,10 @@ A simple concrete example will make this a bit more clear.</p>
 Suppose that we are interested in the size of dam that policy-makers choose to build when playing the game, so we find 60 such people in Scotland and ask them to play the game.
 Perhaps we do not think that the policy-makers will have any preference for a particular dam size (and therefore just pick one of the three dam sizes at random).
 We would therefore expect an equal number of small, medium, and large dams to be selected among the 60 players.
-That is, for our expected counts of each dam size (<span class="math inline">\(E_{size}\)</span>), we expect 20 small (<span class="math inline">\(E_{small} = 20\)</span>), 20 medium (<span class="math inline">\(E_{medium} = 20\)</span>), and 20 large (<span class="math inline">\(E_{large} = 20\)</span>) dams in total (because <span class="math inline">\(60/3 = 20\)</span>).</p>
+That is, for our expected counts of each dam size (<span class="math inline">\(E_{\mathrm{size}}\)</span>), we expect 20 small (<span class="math inline">\(E_{\mathrm{small}} = 20\)</span>), 20 medium (<span class="math inline">\(E_{\mathrm{medium}} = 20\)</span>), and 20 large (<span class="math inline">\(E_{\mathrm{large}} = 20\)</span>) dams in total (because <span class="math inline">\(60/3 = 20\)</span>).</p>
 <p>Of course, even if our players have no preference for a particular dam size, the number of small, medium, and large dams will not always be <em>exactly</em> the same.
-The expected counts might still be a bit different from the observed counts of each dam size (<span class="math inline">\(O_{size}\)</span>).
-Suppose, for example, we find that out of our total 60 policy-makers, we observe 18 small (<span class="math inline">\(O_{small} = 18\)</span>), 24 medium (<span class="math inline">\(O_{medium} = 24\)</span>), and 18 large (<span class="math inline">\(O_{large} = 18\)</span>), dams were actually chosen by game players.
+The expected counts might still be a bit different from the observed counts of each dam size (<span class="math inline">\(O_{\mathrm{size}}\)</span>).
+Suppose, for example, we find that out of our total 60 policy-makers, we observe 18 small (<span class="math inline">\(O_{\mathrm{small}} = 18\)</span>), 24 medium (<span class="math inline">\(O_{\mathrm{medium}} = 24\)</span>), and 18 large (<span class="math inline">\(O_{\mathrm{large}} = 18\)</span>), dams were actually chosen by game players.
 What we want to test is the null hypothesis that there is no significant difference between expected and observed counts.</p>
 <ul>
 <li><span class="math inline">\(H_{0}\)</span>: There is no significant difference between expected and observed counts.</li>
@@ -596,7 +596,7 @@ For a goodness of fit test, we can have any number of different count categories
 The expectations also do not need to be integers.
 For example, if we only managed to find 59 policy makers instead of 60, then our expected counts would have been <span class="math inline">\(59/3 = 19.33\)</span> instead of <span class="math inline">\(60/3 = 20\)</span>.
 The expectations also do not <em>need</em> to be the same.
-For example, we could have tested the null hypothesis that twice as many policy-makers would choose large dams (i.e., <span class="math inline">\(E_{large} = 40\)</span>, <span class="math inline">\(E_{medium} = 10\)</span>, and <span class="math inline">\(E_{small} = 10\)</span>).
+For example, we could have tested the null hypothesis that twice as many policy-makers would choose large dams (i.e., <span class="math inline">\(E_{\mathrm{large}} = 40\)</span>, <span class="math inline">\(E_{\mathrm{medium}} = 10\)</span>, and <span class="math inline">\(E_{\mathrm{small}} = 10\)</span>).
 For <span class="math inline">\(n\)</span> categories, the more general equation for the <span class="math inline">\(\chi^{2}\)</span> statistic is,</p>
 <p><span class="math display">\[\chi^{2} = \sum_{i = 1}^{n} \frac{\left(O_{i} - E_{i}\right)^{2}}{E_{i}}.\]</span></p>
 <p>We can therefore use this general equation to calculate a <span class="math inline">\(\chi^{2}\)</span> for any number of categories (<span class="math inline">\(n\)</span>).
@@ -622,7 +622,7 @@ We can state this as a null and alternative hypothesis.</p>
 </ul>
 <p>Consider the data in Table 29.1, which show counts of Android versus macOS users and their dam choices.</p>
 <table style="width:56%;">
-<caption><strong>TABLE 29.1</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or macOS) and build one of three types of dam in the game (Small, Medium, or Large).</caption>
+<caption><strong>TABLE 29.1</strong> Counts (<span class="math inline">\(N = 60\)</span>) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or macOS) and build one of three types of dam in the game (Small, Medium, or Large).</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -674,7 +674,7 @@ If dam size is not associated with OS, then we would predict that the relative f
 For example, what is the probability of a player selecting a large dam, regardless of the OS that they are using?
 Table 29.2 shows these probabilities as additional rows and columns added onto Table 29.1</p>
 <table style="width:79%;">
-<caption><strong>TABLE 29.2</strong> Counts (N = 60) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or macOS) and build one of three categories of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected.</caption>
+<caption><strong>TABLE 29.2</strong> Counts (<span class="math inline">\(N = 60\)</span>) from a mobile game called ‘Power Up!’, in which players are confronted with trade-offs between energy output, energy justice, and biodiversity. Players can use one of two categories of Operating System (Android or macOS) and build one of three categories of dam in the game (Small, Medium, or Large). Outer rows and columns show the probabilities of categories being selected.</caption>
 <colgroup>
 <col width="25%" />
 <col width="11%" />
@@ -767,7 +767,7 @@ We can fill in all of these joint probabilities in a new Table 29.3.</p>
 <p>From Table 29.3, we now have the probability of each combination of variables.
 Note that all of these probabilities sum to 1.</p>
 <p><span class="math display">\[0.15 + 0.2 + 0.15 + 0.15 + 0.2 + 0.15 = 1.\]</span></p>
-<p>To get the expected count of each combination, we just need to multiply the probability by the sample size, i.e., the total number of players (N = 60).
+<p>To get the expected count of each combination, we just need to multiply the probability by the sample size, i.e., the total number of players (<span class="math inline">\(N = 60\)</span>).
 For example, the expected count of players who use Android and choose a small dam will be <span class="math inline">\(0.15 \times 60 = 9\)</span>.
 Table 29.4 fills in all of the expected counts.
 Note that the sum of all the counts equals our sample size of 60.</p>
@@ -822,7 +822,7 @@ To get our <span class="math inline">\(\chi^{2}\)</span> test statistic, we use 
 We can compare this to the null <span class="math inline">\(\chi^{2}\)</span> distribution as we did in the <a href="#chi-squared-goodness-of-fit">Section 29.2</a> goodness of fit test, but we need to know the correct degrees of freedom.
 The correct degrees of freedom<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a> is the number of categories in variable 1 (<span class="math inline">\(n_{1}\)</span>) minus 1, times the number of categories in variable 2 (<span class="math inline">\(n_{2}\)</span>) minus 1,</p>
 <p><span class="math display">\[df = (n_{1} - 1) \times (n_{2} - 1).\]</span></p>
-<p>In our example, the degrees of freedom equals the number of dam types minus 1 (<span class="math inline">\(n_{dam} = 3 - 1)\)</span> times the number of operating systems minus 1 (<span class="math inline">\(n_{OS} = 2 - 1\)</span>).
+<p>In our example, the degrees of freedom equals the number of dam types minus 1 (<span class="math inline">\(n_{\mathrm{dam}} = 3 - 1)\)</span> times the number of operating systems minus 1 (<span class="math inline">\(n_{\mathrm{OS}} = 2 - 1\)</span>).
 The correct degrees of freedom is therefore <span class="math inline">\(df = 2 \times 1 = 2\)</span>.
 We now just need to find the p-value for a Chi-square distribution with two degrees of freedom and a test statistic of <span class="math inline">\(\chi^{2} = 4.889\)</span>.
 We get a value of about <span class="math inline">\(P = 0.0868\)</span>.

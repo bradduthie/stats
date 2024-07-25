@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -495,7 +495,7 @@ This means that if we were to apply a Bonferroni correction and run 10 separate 
 <p>Another approach to correcting for multiple comparisons is a Tukey’s honestly significant difference test (Tukey’s HSD, or just a ‘Tukey test’).
 The general idea of a Tukey test is the same as the Bonferroni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
-The Tukey test does this by using a modified t-test, with a t-distribution called the ‘studentised range distribution’ that applies the range of mean group values (i.e., <span class="math inline">\(max(\bar{x}) - min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Tukey1949" role="doc-biblioref">Tukey, 1949</a>)</span>.</p>
+The Tukey test does this by using a modified t-test, with a t-distribution called the ‘studentised range distribution’ that applies the range of mean group values (i.e., <span class="math inline">\(\max(\bar{x}) - \min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Tukey1949" role="doc-biblioref">Tukey, 1949</a>)</span>.</p>
 <p>Multiple comparisons tests can be run automatically in jamovi.
 Figure 25.1 shows a post hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
@@ -505,13 +505,13 @@ Figure 25.1: Jamovi output showing a table of 10 post hoc comparisons between sp
 </p>
 </div>
 <p>The column ‘p’ in Figure 25.1 is the uncorrected p-value, i.e., the p-value that a t-test would produce without any correction for multiple comparisons.
-The columns <span class="math inline">\(p_{tukey}\)</span> and <span class="math inline">\(p_{bonferroni}\)</span> show corrected p-values for the Tukey test and Bonferroni corrected t-test, respectively.
+The columns <span class="math inline">\(p_{\mathrm{tukey}}\)</span> and <span class="math inline">\(p_{\mathrm{bonferroni}}\)</span> show corrected p-values for the Tukey test and Bonferroni corrected t-test, respectively.
 We can interpret these p-values as usual, concluding that two species have different means if <span class="math inline">\(P &lt; 0.05\)</span> (i.e., jamovi does the correction for us; we do not need to divide <span class="math inline">\(\alpha = 0.05\)</span> to figure out what the significance threshold should be, given the Bonferroni correction).</p>
 <p>Note that from Figure 25.1, it appears that both the Tukey test and the Bonferroni correction fail to find that any pair of species have significantly different means.
 This does not mean that we have done the test incorrectly.
 The multiple comparisons tests are asking a slightly different question than the one-way ANOVA.
 The multiple comparisons tests are testing the null hypothesis that two <em>particular</em> species have the same mean wing lengths.
-The one-way ANOVA tested the null hypothesis that all species have the same mean, and our result for the ANOVA was barely below the <span class="math inline">\(\alpha = 0.05\)</span> threshold (P = 0.042).
+The one-way ANOVA tested the null hypothesis that all species have the same mean, and our result for the ANOVA was barely below the <span class="math inline">\(\alpha = 0.05\)</span> threshold (<span class="math inline">\(P = 0.042\)</span>).
 The ANOVA also has more statistical power because it makes use of all 20 measurements in the dataset, not just a subset of measurements between two of the five species.
 It is therefore not particularly surprising or concerning that we rejected <span class="math inline">\(H_{0}\)</span> for the ANOVA, but the multiple comparisons tests failed to find any significant difference between group means.</p>
 </div>

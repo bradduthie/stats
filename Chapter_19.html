@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -509,7 +509,7 @@ Figure 19.1 shows the difference between the standard normal distribution and th
 Figure 19.1: Standard normal probability distribution showing 95% of probability density surrounding the mean (dark grey shading). On top of the standard normal distribution in dark grey, hatched lines show a t-distribution with 19 degrees of freedom. Hatched lines indicate 95% of the probability density of the t-distribution.
 </p>
 </div>
-<p>Note that in Figure 19.1, a t-distribution with 19 degrees of freedom (df) is shown.
+<p>Note that in Figure 19.1, a t-distribution with 19 degrees of freedom (<span class="math inline">\(df\)</span>) is shown.
 The t-distribution is parameterised using df, and we lose a degree of freedom when calculating <span class="math inline">\(s^{2}\)</span> from a sample size of <span class="math inline">\(N = 20\)</span>, so <span class="math inline">\(df = 20 - 1 = 19\)</span> is the correct value (see <a href="Chapter_12.html#Chapter_12">Chapter 12</a> for explanation).
 For calculating CIs, df will always be <span class="math inline">\(N - 1\)</span>, and this will be taken care of automatically in jamovi<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.</p>
 <p>Recall from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that our body mass measurements of 20 cats had a sample mean of <span class="math inline">\(\bar{x} = 4.1\)</span> kg and sample standard deviation of <span class="math inline">\(s = 0.6\)</span> kg. We calculated the lower 95% CI to be <span class="math inline">\(LCI_{95\%} = 3.837\)</span> and the upper 95% CI to be <span class="math inline">\(UCI_{95\%} = 4.363\)</span>. We can now repeat the calculation using the t-score 2.093 instead of the z-score 1.96.

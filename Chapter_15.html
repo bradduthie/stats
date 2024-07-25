@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -502,9 +502,9 @@ Here I will introduce practical examples of probability, then introduce some com
 <h2><span class="header-section-number">15.1</span> Instructive example<a href="Chapter_15.html#instructive-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Probability focuses on the outcomes of trials, such as the <strong>outcome</strong> (heads or tails) of the <strong>trial</strong> of a coin flip.
 The probability of a specific outcome is the relative number of times it is expected to happen given a large number of trials,</p>
-<p><span class="math display">\[P(outcome) = \frac{Number\:of\:times\:outcome\:occurs}{Total\:number\:of\:trials}.\]</span></p>
+<p><span class="math display">\[P(outcome) = \frac{\mathrm{Number\:of\:times\:outcome\:occurs}}{\mathrm{Total\:number\:of\:trials}}.\]</span></p>
 <p>For the outcome of a flipped coin landing on heads,</p>
-<p><span class="math display">\[P(heads) = \frac{Flips\:landing\:on\:heads}{Total\:number\:of\:flips}.\]</span></p>
+<p><span class="math display">\[P(heads) = \frac{\mathrm{Flips\:landing\:on\:heads}}{\mathrm{Total\:number\:of\:flips}}.\]</span></p>
 <p>As the total number of flips becomes very large, the number of flips that land on heads should get closer and closer to half the total, <span class="math inline">\(1/2\)</span> or <span class="math inline">\(0.5\)</span> (more on this later).
 The above equations use the notation <span class="math inline">\(P(E)\)</span> to define the probability (<span class="math inline">\(P\)</span>) of some event (<span class="math inline">\(E\)</span>) happening.
 Note that the number of times an outcome occurs cannot be less than 0, so <span class="math inline">\(P(E) \geq 0\)</span> must always be true.
@@ -592,14 +592,14 @@ Figure 15.3: Playing cards can be useful for illustrating concepts in probabilit
 <p>Figure 15.3 shows 10 playing cards: 5 hearts and 5 spades.
 If we shuffle these cards thoroughly and randomly select 1 card, what is the probability of selecting a heart?
 This is simply,</p>
-<p><span class="math display">\[P(heart) = \frac{5\:hearts}{10\:total\:cards} = 0.5.\]</span></p>
+<p><span class="math display">\[P(heart) = \frac{5\:\mathrm{hearts}}{10\mathrm{\:total\:cards}} = 0.5.\]</span></p>
 <p>What is the probability of randomly selecting 2 hearts?
 This depends if we are sampling with or without replacement.
 If we sample 1 card, then put it back into the deck before sampling the second card, then the probability of sampling a heart does not change (in both samples, we have 5 hearts and 10 cards).
 Hence, the probability of sampling 2 hearts with replacement is <span class="math inline">\(P(heart) \times P(heart) = 0.5 \times 0.5 = 0.25\)</span>.
 If we do not put the first card back into the deck before sampling again, then we have changed the total number of cards.
 After sampling the first heart, we have one fewer heart in the deck and one fewer card, so the new probability for sampling a heart becomes,</p>
-<p><span class="math display">\[P(heart) = \frac{4\:hearts}{9\:total\:cards} = 0.444.\]</span></p>
+<p><span class="math display">\[P(heart) = \frac{4\:\mathrm{hearts}}{9\:\mathrm{total\:cards}} = 0.444.\]</span></p>
 <p>Since the probability has changed after the first heart is sampled, we need to use this adjusted probability when sampling without replacement.
 In this case, the probability of sampling two hearts is <span class="math inline">\(0.5 \times 0.444 = 0.222\)</span>.
 This is a bit lower than the probability of sampling with replacement because we have decreased the number of hearts that can be sampled.

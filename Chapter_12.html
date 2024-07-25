@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -499,7 +499,7 @@ The best approach to learning them is to see them and practice using them in dif
 It is simply the difference between the highest and the lowest value of a dataset <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 To calculate it, we just need to take the highest value minus the lowest value.
 If we want to be technical, then we can write a general equation for the range of a random variable <span class="math inline">\(X\)</span>,</p>
-<p><span class="math display">\[Range(X) = \max(X) - \min(X).\]</span></p>
+<p><span class="math display">\[\mathrm{Range}(X) = \max(X) - \min(X).\]</span></p>
 <p>But really, all we need to worry about is finding the highest and lowest values, then subtracting.
 Consider again the two sets of numbers introduced at the beginning of the chapter.
 In examples, it is often helpful to imagine numbers as representing something concrete that has been measured, so suppose that these numbers are the measured masses (in grams) of leaves from two different plants.
@@ -508,10 +508,10 @@ Below are the masses of plant A, in which leaf masses are very similar and close
 <p>Plant B masses are below, which are more spread out around the same mean of 5.</p>
 <pre><code>3.0, 5.6, 7.8, 1.2, 4.3, 8.2, 4.9</code></pre>
 <p>To get the range of plant A, we just need to find the highest (5.3 g) and lowest (4.7 g) mass, then subtract,</p>
-<p><span class="math display">\[Range(Plant\:A) = 5.3 - 4.7 = 0.6\]</span></p>
+<p><span class="math display">\[\mathrm{Range}(Plant\:A) = 5.3 - 4.7 = 0.6\]</span></p>
 <p>Plant A therefore has a range of 0.6 g.
 We can do the same for plant B, which has a highest value of 8.2 g and lowest value of 1.2 g,</p>
-<p><span class="math display">\[Range(Plant\:B) = 8.2 - 1.2 = 7.0\]</span></p>
+<p><span class="math display">\[\mathrm{Range}(Plant\:B) = 8.2 - 1.2 = 7.0\]</span></p>
 <p>Plant B therefore has a much higher range than plant A.</p>
 <p>It is important to mention that the range is highly sensitive to outliers <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro &amp; Foxcroft, 2022</a>)</span>.
 Just adding a single number to either plant A or plant B could dramatically change the range.
@@ -532,13 +532,13 @@ As a reminder, we can sort the leaf masses for plant A below.</p>
 <p>The first quartile will be 4.95.
 The third quartile will be 5.05.
 The IQR of plant A is therefore,</p>
-<p><span class="math display">\[IQR_{plant\:A} = 5.05 - 4.95 = 0.1.\]</span></p>
+<p><span class="math display">\[IQR_{\mathrm{plant\:A}} = 5.05 - 4.95 = 0.1.\]</span></p>
 <p>We can calculate the IQR for plant B in the same way.
 Here are the masses of plant B leaves sorted.</p>
 <pre><code>1.2, 3.0, 4.3, 4.9, 5.6, 7.8, 8.2</code></pre>
 <p>The first quartile of plant B is 3.65, and the third quartile is 6.70.
 To get the IQR of plant B,</p>
-<p><span class="math display">\[IQR_{plant\:B} = 6.70 - 3.65 = 3.05.\]</span></p>
+<p><span class="math display">\[IQR_{\mathrm{plant\:B}} = 6.70 - 3.65 = 3.05.\]</span></p>
 <p>An important point about the IQR is that it is more robust than the range <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham, 2011</a>)</span>.
 Recall that if we found an outlier leaf of 19.7 g on plant A, it would change the range of plant leaf mass from 0.6 to 15 g.
 The IQR is not nearly so sensitive.
@@ -618,13 +618,13 @@ In calculating the variance, the mathematics introduces a constraint by includin
 <p>This was a lot of information.
 The variance is not an intuitive concept.
 In addition to being a challenge to calculate, the calculation of a variance leaves us with a value in units squared.
-That is, for the example of plant leaf mass in grams, the variance is measured in grams squared, <span class="math inline">\(g^{2}\)</span>, which is not particularly easy to interpret.
+That is, for the example of plant leaf mass in grams, the variance is measured in grams squared, <span class="math inline">\(\mathrm{g^{2}}\)</span>, which is not particularly easy to interpret.
 For more on this, <span class="citation">Navarro &amp; Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span> have a really good <a href="https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html#variance">section</a> on the variance.
 Despite its challenges as a descriptive statistic, the variance has some mathematical properties that are very useful <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro &amp; Foxcroft, 2022</a>)</span>, especially in the biological and environmental sciences.</p>
-<p>For example, variances are additive, meaning that if we are measuring two separate characteristics of a sample, A and B, then the variance of A+B equals the variance of A plus the variance of B, i.e., <span class="math inline">\(Var(A + B) = Var(A) + Var(B)\)</span>.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>
+<p>For example, variances are additive, meaning that if we are measuring two separate characteristics of a sample, A and B, then the variance of A+B equals the variance of A plus the variance of B, i.e., <span class="math inline">\(\mathrm{Var}(A + B) = \mathrm{Var}(A) + \mathrm{Var}(B)\)</span>.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>
 This is relevant to genetics when measuring heritability.
 Here, the total variance in the phenotype of a population (e.g., body mass of animals) can be partitioned into variance attributable to genetics plus variance attributable to the environment,</p>
-<p><span class="math display">\[Var(Phenotype) = Var(Genotype) + Var(Environment).\]</span></p>
+<p><span class="math display">\[\mathrm{Var}(Phenotype) = \mathrm{Var}(Genotype) + \mathrm{Var}(Environment).\]</span></p>
 <p>This is also sometimes written as <span class="math inline">\(V_{P} = V_{G} + V_{E}\)</span>.
 Applying this equation to calculate heritability (<span class="math inline">\(H^{2} = V_{G} / V_{P}\)</span>) can be used to predict how a population will respond to natural selection.
 This is just one place where variance reveals itself to be a highly useful statistic in practice.
@@ -638,7 +638,7 @@ Nevertheless, as a descriptive statistic to communicate the spread of a variable
 By taking the square root of the variance, our units are no longer squared, so we can interpret the standard deviation in the same terms as our original data.
 For example, the leaf masses of plant A and plant B in the example above were measured in grams.
 While the variance of these masses was in grams squared, the standard deviation is in grams, just like the original measurements.
-For plant A, we calculated a leaf mass variance of <span class="math inline">\(s^{2} = 0.0333\:g^{2}\)</span>, which means that the standard deviation of leaf masses is <span class="math inline">\(s = \sqrt{0.0333\:g^{2}} = 0.1825\:g\)</span>.
+For plant A, we calculated a leaf mass variance of <span class="math inline">\(s^{2} = 0.0333\:\mathrm{g^{2}}\)</span>, which means that the standard deviation of leaf masses is <span class="math inline">\(s = \sqrt{0.0333\:\mathrm{g^{2}}} = 0.1825\:\mathrm{g}\)</span>.
 Because we are reporting <span class="math inline">\(s\)</span> in the original units, it is a very useful measure of spread to report, and it is an important one to be able to interpret.
 To help with the interpretation, an interactive tool can more effectively show how the heights of trees in a forest change across different standard deviation values<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
 Another interactive tool can help show how the shape of a histogram changes when the standard deviation of a distribution is changed<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a>.
@@ -646,21 +646,21 @@ Another interactive tool can help show how the shape of a histogram changes when
 </div>
 <div id="the-coefficient-of-variation" class="section level2 hasAnchor" number="12.5">
 <h2><span class="header-section-number">12.5</span> The coefficient of variation<a href="Chapter_12.html#the-coefficient-of-variation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The coefficient of variation (CV) is just the standard deviation divided by the mean,</p>
+<p>The coefficient of variation (<span class="math inline">\(CV\)</span>) is just the standard deviation divided by the mean,</p>
 <p><span class="math display">\[CV = \frac{s}{\bar{x}}.\]</span></p>
 <p>Dividing by the mean seems a bit arbitrary at first, but this can often be useful for comparing variables with different means or different units.
 The reason for this is that the units cancel out when dividing the standard deviation by the mean.
-For example, for the leaf masses of plant A, we calculated a standard deviation of 0.1825 g and a mean of 5 g.
+For example, for the leaf masses of plant A, we calculated a standard deviation of 0.1825 <span class="math inline">\(\mathrm{g}\)</span> and a mean of 5 <span class="math inline">\(\mathrm{g}\)</span>.
 We can see the units cancel below,</p>
-<p><span class="math display">\[CV = \frac{0.1825\:g}{5\:g} = 0.0365.\]</span></p>
-<p>The resulting CV of 0.0365 has no units; it is <em>dimensionless</em> <span class="citation">(<a href="#ref-Lande1977" role="doc-biblioref">Lande, 1977</a>)</span>.
+<p><span class="math display">\[CV = \frac{0.1825\:\mathrm{g}}{5\:\mathrm{g}} = 0.0365.\]</span></p>
+<p>The resulting <span class="math inline">\(CV\)</span> of 0.0365 has no units; it is <em>dimensionless</em> <span class="citation">(<a href="#ref-Lande1977" role="doc-biblioref">Lande, 1977</a>)</span>.
 Because it has no units, it is often used to compare measurements with much different means or with different measurement units.
 For example, <span class="citation">Sokal &amp; Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that biologists might want to compare tail length variation between animals with much different body sizes, such as elephants and mice.
 The standard deviation of tail lengths between these two species will likely be much different just because of their difference in size, so by standardising by mean tail length, it can be easier to compare relative standard deviation.
-This is a common application of the CV in biology, but it needs to be interpreted carefully <span class="citation">(<a href="#ref-Pelabon2020" role="doc-biblioref">Pélabon et al., 2020</a>)</span>.</p>
+This is a common application of the <span class="math inline">\(CV\)</span> in biology, but it needs to be interpreted carefully <span class="citation">(<a href="#ref-Pelabon2020" role="doc-biblioref">Pélabon et al., 2020</a>)</span>.</p>
 <p>Often, we will want to express the coefficient of variation as a percentage of the mean.
-To do this, we just need to multiply the CV above by 100%.
-For example, to express the CV as a percentage, we would multiply the 0.0365 above by 100%, which would give us a final answer of CV <span class="math inline">\(= 3.65\)</span>%.</p>
+To do this, we just need to multiply the <span class="math inline">\(CV\)</span> above by 100%.
+For example, to express the <span class="math inline">\(CV\)</span> as a percentage, we would multiply the 0.0365 above by 100%, which would give us a final answer of <span class="math inline">\(CV\)</span> <span class="math inline">\(= 3.65\)</span>%.</p>
 </div>
 <div id="the-standard-error" class="section level2 hasAnchor" number="12.6">
 <h2><span class="header-section-number">12.6</span> The standard error<a href="Chapter_12.html#the-standard-error" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1040,7 +1040,7 @@ Wardlaw, A. C. (1985). <em><span class="nocase">Practical Statistics for Experim
 <li id="fn9"><p>If you are wondering why we square the difference <span class="math inline">\(x_{i} - \bar{x}\)</span> instead of just taking its absolute value, this is an excellent question! You have just invented something called the mean absolute deviation. There are some reasons why the mean absolute deviation is not as good of a measure of spread as the variance. <span class="citation">Navarro &amp; Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span> explain the mean absolute deviation, and how it relates to the variance, very well in <a href="https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html#mean-absolute-deviation">section 4.2.3</a> of their textbook. We will not get into these points here, but it would be good to check out <span class="citation">Navarro &amp; Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span> for more explanation.<a href="Chapter_12.html#fnref9" class="footnote-back">↩︎</a></p></li>
 <li id="fn10"><p>To get the true population variance <span class="math inline">\(\sigma^{2}\)</span>, we would also need to know the true mean <span class="math inline">\(\mu\)</span>. But we can only estimate <span class="math inline">\(\mu\)</span> from the sample, <span class="math inline">\(\bar{x}\)</span>. That is, what we would really want to calculate is <span class="math inline">\(x_{i} - \mu\)</span>, but the best we can do is <span class="math inline">\(x_{i} - \bar{x}\)</span>. The consequence of this is that there will be some error that underestimates the true distance of <span class="math inline">\(x_{i}\)</span> values from the population mean, <span class="math inline">\(\mu\)</span>. Here is the really cool part: to determine the extent to which our estimate of the variance is biased by using <span class="math inline">\(\bar{x}\)</span> instead of <span class="math inline">\(\mu\)</span>, we just need to know the expected squared difference between the two values, <span class="math inline">\((\bar{x} - \mu)^{2}\)</span>. It turns out that this difference (i.e., the bias of our estimate <span class="math inline">\(s^{2}\)</span>) is just <span class="math inline">\(\sigma^{2} / N\)</span>, that is, the true variance of the population divided by the sample size. If we subtract this value from <span class="math inline">\(\sigma^{2}\)</span>, so <span class="math inline">\(\sigma^{2} - \sigma^{2}/N\)</span>, then we can get the expected difference between the true variance and the estimate from the sample size. We can rearrange <span class="math inline">\(\sigma^{2} - \sigma^{2}/N\)</span> to get <span class="math inline">\(\sigma^{2} \times (N - 1)/N\)</span>, which means that we need to correct our sample variance by <span class="math inline">\(N / (N-1)\)</span> to get an unbiased estimate of <span class="math inline">\(\sigma^{2}\)</span>. If all of this is confusing, that is okay! This is really only relevant for those interested in statistical theory, which is not the focus of this book.<a href="Chapter_12.html#fnref10" class="footnote-back">↩︎</a></p></li>
 <li id="fn11"><p>In the case of sample variance, note that we needed to use all the values <span class="math inline">\(x_{i}\)</span> in the dataset and the sample mean <span class="math inline">\(\bar{x}\)</span>. But if we know what all of the <span class="math inline">\(x_{i}\)</span> values are, then we also know <span class="math inline">\(\bar{x}\)</span>. And if we know all but one value of <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(\bar{x}\)</span>, then we could figure out the last <span class="math inline">\(x_{i}\)</span>. Hence, while we are using <span class="math inline">\(N\)</span> values in the calculation of <span class="math inline">\(s^{2}\)</span>, the use of <span class="math inline">\(\bar{x}\)</span> reduces the degree to which these values are free to vary. We have lost 1 degree of freedom in the calculation of <span class="math inline">\(\bar{x}\)</span>, so we need to account for this in our calculation of <span class="math inline">\(s^{2}\)</span> by dividing by <span class="math inline">\(N - 1\)</span>. This is another way to think about the <span class="math inline">\(N - 1\)</span> correction factor <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span> explained in the previous footnote.<a href="Chapter_12.html#fnref11" class="footnote-back">↩︎</a></p></li>
-<li id="fn12"><p>This has one caveat, which is not important for now. Values of A and B must be uncorrelated. That is, A and B cannot covary. If A and B covary, i.e., <span class="math inline">\(Cov(A, B) \neq 0\)</span>, then <span class="math inline">\(Var(A+B) = Var(A) + Var(B) + Cov(A, B)\)</span>. That is, we need to account for the covariance when calculating <span class="math inline">\(Var(A+B)\)</span>.<a href="Chapter_12.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>This has one caveat, which is not important for now. Values of A and B must be uncorrelated. That is, A and B cannot covary. If A and B covary, i.e., <span class="math inline">\(\mathrm{Cov}(A, B) \neq 0\)</span>, then <span class="math inline">\(\mathrm{Var}(A+B) = \mathrm{Var}(A) + \mathrm{Var}(B) + \mathrm{Cov}(A, B)\)</span>. That is, we need to account for the covariance when calculating <span class="math inline">\(\mathrm{Var}(A+B)\)</span>.<a href="Chapter_12.html#fnref12" class="footnote-back">↩︎</a></p></li>
 <li id="fn13"><p><a href="https://bradduthie.github.io/stats/app/forest/" class="uri">https://bradduthie.github.io/stats/app/forest/</a><a href="Chapter_12.html#fnref13" class="footnote-back">↩︎</a></p></li>
 <li id="fn14"><p><a href="https://bradduthie.github.io/stats/app/normal_pos_neg/" class="uri">https://bradduthie.github.io/stats/app/normal_pos_neg/</a><a href="Chapter_12.html#fnref14" class="footnote-back">↩︎</a></p></li>
 </ol>

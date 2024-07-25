@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -525,7 +525,7 @@ Figure 28.1: Jamovi interface for running a one-way ANOVA to test if Nitrogen co
 <p>Confirm that the Shapiro-Wilk test of normality and Levene’s test of homogeneity of variances are consistent with what you concluded when testing the assumptions of the t-test above.
 Since there is no reason to reject the null hypothesis that group variances are equal, we can use Fisher’s One-Way ANOVA by checking ‘Assume equal (Fisher’s)’ under <strong>Variances</strong>.
 A table called ‘One-Way ANOVA’ will appear in the panel on the right.
-Write down the test statistic (F), degrees of freedom, and p-value from this table below.</p>
+Write down the test statistic (<span class="math inline">\(F\)</span>), degrees of freedom, and p-value from this table below.</p>
 <p><span class="math inline">\(F =\)</span> _______________</p>
 <p><span class="math inline">\(df1 =\)</span> _______________</p>
 <p><span class="math inline">\(df2 =\)</span> _______________</p>
@@ -533,12 +533,12 @@ Write down the test statistic (F), degrees of freedom, and p-value from this tab
 <p>Remember from <a href="Chapter_24.html#Chapter_24">Chapter 24</a> that the ANOVA calculates an F-statistic (mean variance among groups divided by mean variance withing groups).
 This F-statistic is then compared to the null F-distribution with the correct degrees of freedom to calculate the p-value.
 You can use the interactive app to visualise this from the above jamovi output<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
-To do this, move the ‘Variance 1’ slider in the app until it is approximately equal to F, then change df1 and df2 to the values above.
-From the interactive app, what is the approximate area under the curve (i.e., orange area) where the F value on the x-axis is greater than your calculated F?</p>
+To do this, move the ‘Variance 1’ slider in the app until it is approximately equal to <span class="math inline">\(F\)</span>, then change <span class="math inline">\(df1\)</span> and <span class="math inline">\(df2\)</span> to the values above.
+From the interactive app, what is the approximate area under the curve (i.e., orange area) where the <span class="math inline">\(F\)</span> value on the x-axis is greater than your calculated <span class="math inline">\(F\)</span>?</p>
 <p><span class="math inline">\(P =\)</span> _________________</p>
-<p>Slide the ‘Variance 1’ to the left now until you find the F value where the probability density in the tail (orange) is about <span class="math inline">\(P = 0.05\)</span>.
-Approximately, what is this threshold F value above which we will reject the null hypothesis?</p>
-<p>Approximate threshold F: __________________</p>
+<p>Slide the ‘Variance 1’ to the left now until you find the <span class="math inline">\(F\)</span> value where the probability density in the tail (orange) is about <span class="math inline">\(P = 0.05\)</span>.
+Approximately, what is this threshold <span class="math inline">\(F\)</span> value above which we will reject the null hypothesis?</p>
+<p>Approximate threshold <span class="math inline">\(F\)</span>: __________________</p>
 <p>What should you conclude regarding the null hypothesis that sites have the same mean?</p>
 <p>Conclusion: _________________</p>
 <p>Look again at the p-value from the one-way ANOVA output and the Student’s t-test output.
@@ -575,16 +575,16 @@ What are the output statistics in the One-Way ANOVA table?</p>
 <p>In the previous Exercise 28.1, we used an <a href="https://bradduthie.github.io/stats/app/f_distribution/">interactive app</a> to visualise the relationship between the F-statistic and the p-value.
 We can do the same thing with the distrACTION module in jamovi.
 To do this, go to the distrACTION option in the jamovi toolbar and select ‘F-Distribution’ from the pull-down menu.
-Place the df1 and df2 from the One-Way ANOVA table into the df1 and df2 boxes under <strong>Parameters</strong> (ignore <span class="math inline">\(\lambda\)</span>).
-Under <strong>Function</strong>, select ‘Compute probability’, then place the F value from the One-Way ANOVA table in the box for x1.
-We want the upper tail of the F probability distribution, so choose <span class="math inline">\(P(X \geq x1)\)</span> from the radio buttons below.
+Place the <span class="math inline">\(df1\)</span> and <span class="math inline">\(df2\)</span> from the One-Way ANOVA table into the df1 and df2 boxes under <strong>Parameters</strong> (ignore <span class="math inline">\(\lambda\)</span>).
+Under <strong>Function</strong>, select ‘Compute probability’, then place the <span class="math inline">\(F\)</span> value from the One-Way ANOVA table in the box for x1.
+We want the upper tail of the <span class="math inline">\(F\)</span> probability distribution, so choose <span class="math inline">\(P(X \geq x1)\)</span> from the radio buttons below.
 Write down the ‘Probability’ value from the Results table in the panel to the right.</p>
 <p>Probability: _________________</p>
 <p>Note that this is the same value (perhaps with a rounding error) as the p-value from the One-Way ANOVA table above.
-We can also find the threshold value of F, above which we will reject the null hypothesis.
+We can also find the threshold value of <span class="math inline">\(F\)</span>, above which we will reject the null hypothesis.
 To do this, check the ‘Compute quantile’ box and set p = 0.95 in the box below.
-From the Results table, what is the critical F value (‘Quantile’), above which we would reject the null hypothesis that all groups have the same mean?</p>
-<p>Critical F value: ________________</p>
+From the Results table, what is the critical <span class="math inline">\(F\)</span> value (‘Quantile’), above which we would reject the null hypothesis that all groups have the same mean?</p>
+<p>Critical <span class="math inline">\(F\)</span> value: ________________</p>
 <p>Note that the objective of working this out in the distrACTION module (and with the interactive app) is to help explain what these different values in the One-Way ANOVA table actually mean.
 To actually test the null hypothesis, the One-Way ANOVA output table is all that we really need.</p>
 <p>Finally, note that in the ANOVA pull-down menu from the jamovi toolbar, the option ‘ANOVA’ is just below the ‘One-way ANOVA’ that we used in this exercise and Exercise 28.1.
@@ -600,7 +600,7 @@ Figure 28.2: Jamovi interface for running an ANOVA to test if Nitrogen concentra
 <p>The output in the right panel shows an ANOVA table.
 It includes the sum of squares of the among-group (Profile) and within-group (Residuals) sum of squares and mean square.
 This is often how ANOVA results are presented in the literature.
-Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and p.</p>
+Fill in the table below (Table 28.1) with the information for degrees of freedom, <span class="math inline">\(F\)</span>, and <span class="math inline">\(p\)</span>.</p>
 <table style="width:83%;">
 <caption><strong>TABLE 28.1</strong> ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across three different soil profiles in Angola. Data for this test were inspired by the doctoral thesis of Dr Lidia de Sousa Teixeira.</caption>
 <colgroup>
@@ -652,7 +652,7 @@ Move ‘Profile’ to the box to the right, then select the ‘Tukey’ checkbox
 Doing this will run Tukey’s honestly significant difference (HSD) test introduced in <a href="Chapter_25.html#Chapter_25">Chapter 25</a>.
 The output will appear in the panel on the right in a table called ‘Post Hoc Tests’.
 Note that these post hoc tests use the t-distribution to test for significance.
-Find the p-values associated with Tukey’s HSD (<span class="math inline">\(P_{tukey}\)</span>) for each profile pairing.
+Find the p-values associated with Tukey’s HSD (<span class="math inline">\(p_{\mathrm{tukey}}\)</span>) for each profile pairing.
 Report these below.</p>
 <p>Tukey’s HSD Lower - Middle: <span class="math inline">\(P =\)</span> _____________</p>
 <p>Tukey’s HSD Lower - Upper: <span class="math inline">\(P =\)</span> _____________</p>
@@ -663,7 +663,7 @@ Report these below.</p>
 
 </code></pre>
 <p>Next, instead of running Tukey’s HSD test, we will use a series of t-tests with a Bonferroni correction.
-Check the box for ‘Bonferroni’ in the ANOVA Post Hoc Tests input panel, then find the p-values for the Bonferroni correction (<span class="math inline">\(p_{bonferroni}\)</span>).
+Check the box for ‘Bonferroni’ in the ANOVA Post Hoc Tests input panel, then find the p-values for the Bonferroni correction (<span class="math inline">\(p_{\mathrm{bonferroni}}\)</span>).
 Note that we do not need to change the <span class="math inline">\(\alpha\)</span> threshold ourselves (i.e., we do not need to see if <span class="math inline">\(P\)</span> is less than <span class="math inline">\(\alpha = 0.05/3 = 0.016667\)</span> instead of <span class="math inline">\(\alpha = 0.05\)</span>).
 Jamovi modifies the p-values appropriately for the Bonferroni correction (we can see the difference by clicking the checkbox for ‘No correction’ in the Post Hoc Tests input panel).
 Report the p-values for the Bonferroni correction below.</p>
@@ -715,7 +715,7 @@ To run a Kruskal-Wallis H test, select the Analyses tab, then the ‘ANOVA’ bu
 In the pull-down ANOVA menu, choose ‘One-Way ANOVA: Kruskal-Wallis’.</p>
 <p>The Kruskal-Wallis input is basically the same as the one-way ANOVA input.
 We just need to put ‘Potassium’ in the dependent variable list and ‘Profile’ in the Grouping Variable box.
-The output table includes the test statistic (jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which we will introduce in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), degrees of freedom, and p-value.
+The output table includes the test statistic (jamovi uses a <span class="math inline">\(\chi^{2}\)</span> value as a test statistic, which I will introduce in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), degrees of freedom, and p-value.
 Report these values below.</p>
 <p><span class="math inline">\(\chi^{2} =\)</span> _____________</p>
 <p><span class="math inline">\(df =\)</span> _____________</p>

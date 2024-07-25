@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -487,7 +487,7 @@ and the <a href="Chapter_30.html#correlation-hypothesis-testing">correlation coe
 For all of these examples, this chapter will use a dataset inspired by <span class="citation">Burrows et al. (<a href="#ref-Burrows2022" role="doc-biblioref">2022</a>)</span>.
 This experimental work tested the effects of radiation on bumblebee nectar consumption, carbon dioxide output, and body mass in different bee colonies.</p>
 <p>The chapter will use the bumblebee dataset<a href="#fn74" class="footnote-ref" id="fnref74"><sup>74</sup></a>.
-This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30-day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (<span class="math inline">\(CO_2\)</span>) in micromoles per minute, and the daily volume of nectar consumed by the bee in millilitres (nectar).</p>
+This dataset includes variables for the radiation level experienced by the bee (radiation), the colony from which the bee came (colony), whether or not the bee survived to the end of the 30-day experiment (survived), the mass of the bee in grams at the beginning of the experiment (mass), the output of carbon dioxide put out by the bee (CO<sub>2</sub>) in micromoles per minute, and the daily volume of nectar consumed by the bee in millilitres (nectar).</p>
 <div id="survival-goodness-of-fit" class="section level2 hasAnchor" number="31.1">
 <h2><span class="header-section-number">31.1</span> Survival goodness of fit<a href="Chapter_31.html#survival-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Suppose that we want to run a simple goodness of fit test to determine whether or not bees are equally likely to survive versus die in the experiment.
@@ -498,11 +498,11 @@ What are the null and alternative hypotheses for this <span class="math inline">
 <li><p><span class="math inline">\(H_{0}\)</span>: _________________</p></li>
 <li><p><span class="math inline">\(H_{A}\)</span>: _________________</p></li>
 </ul>
-<p>What is the sample size (N) of the dataset?</p>
+<p>What is the sample size (<span class="math inline">\(N\)</span>) of the dataset?</p>
 <p><span class="math inline">\(N =\)</span> __________________</p>
 <p>Based on this sample size, what are the expected counts for bees that survived and died?</p>
-<p>Survived (<span class="math inline">\(E_{surv}\)</span>): _________________</p>
-<p>Died (<span class="math inline">\(E_{died}\)</span>): ______________</p>
+<p>Survived (<span class="math inline">\(E_{\mathrm{surv}}\)</span>): _________________</p>
+<p>Died (<span class="math inline">\(E_{\mathrm{died}}\)</span>): ______________</p>
 <p>Next, we can find the observed counts of bees that survived and died.
 To do this, we need to use the Frequency tables option in jamovi.
 We did this once in <a href="Chapter_17.html#Chapter_17">Chapter 17</a> for calculating probabilities.
@@ -510,11 +510,11 @@ As a reminder, to find the counts of bumblebees that survived (Yes) or did not s
 Place ‘Survival’ in the Variables box, then check the box for ‘Frequency tables’ below.
 A Frequencies table will appear in the panel on the right.
 Write down the observed counts of bees that survived and died.</p>
-<p>Survived (<span class="math inline">\(O_{surv}\)</span>): _________________</p>
-<p>Died (<span class="math inline">\(O_{died}\)</span>): ______________</p>
+<p>Survived (<span class="math inline">\(O_{\mathrm{surv}}\)</span>): _________________</p>
+<p>Died (<span class="math inline">\(O_{\mathrm{died}}\)</span>): ______________</p>
 <p>Try to use the formula in <a href="#chi-squared-goodness-of-fit">Section 29.2</a> to calculate the <span class="math inline">\(\chi^{2}\)</span> test statistic.
 Here is what it should look like for the two counts in this dataset,</p>
-<p><span class="math display">\[\chi^{2} = \frac{(O_{surv} - E_{surv})^{2}}{E_{surv}} + \frac{(O_{died} - E_{died})^{2}}{E_{died}}.\]</span>
+<p><span class="math display">\[\chi^{2} = \frac{(O_{\mathrm{surv}} - E_{\mathrm{surv}})^{2}}{E_{\mathrm{surv}}} + \frac{(O_{\mathrm{died}} - E_{\mathrm{died}})^{2}}{E_{\mathrm{died}}}.\]</span>
 What is the <span class="math inline">\(\chi^{2}\)</span> value?</p>
 <p><span class="math inline">\(\chi^{2} =\)</span> _____________</p>
 <p>There are two categories for survival (Yes and No).
@@ -534,7 +534,7 @@ Figure 31.1: Jamovi interface for running a Chi-square goodness of fit test on b
 </div>
 <p>The <span class="math inline">\(\chi^{2}\)</span> Goodness of Fit table will appear in the panel to the right.
 From this table, we can see the <span class="math inline">\(\chi^{2}\)</span> test statistic, degrees of freedom (df), and the p-value (p).
-Write these values below, and check to see if the <span class="math inline">\(\chi^{2}\)</span> and df match the values you calculated above by hand.</p>
+Write these values below, and check to see if the <span class="math inline">\(\chi^{2}\)</span> and <span class="math inline">\(df\)</span> match the values you calculated above by hand.</p>
 <p><span class="math inline">\(\chi^{2} =\)</span> _____________</p>
 <p><span class="math inline">\(df =\)</span> ________________</p>
 <p><span class="math inline">\(P =\)</span> ________________</p>
@@ -614,12 +614,12 @@ Does this give you the same answer?</p>
 </div>
 <div id="pearson-product-moment-correlation-test" class="section level2 hasAnchor" number="31.4">
 <h2><span class="header-section-number">31.4</span> Pearson product moment correlation test<a href="Chapter_31.html#pearson-product-moment-correlation-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that we want to test if bumblebee mass at the start of the experiment (mass) is associated with carbon dioxide output (<span class="math inline">\(CO_{2}\)</span>).
+<p>Suppose that we want to test if bumblebee mass at the start of the experiment (mass) is associated with carbon dioxide output (CO<sub>2</sub>).
 Specifically, we want to know if more massive bees also output less carbon dioxide.
 Before running any test, it is a good idea to plot the two variables using a scatterplot.
 To do this, select the ‘Exploration’ button from the toolbar in jamovi, but instead of choosing ‘Descriptives’ as usual from the pull-down menu, select ‘Scatterplot’.
 A new window will open up that allows you to build a scatterplot by selecting the variables that you place on the x-axis and the y-axis.
-Put mass on the x-axis and <span class="math inline">\(CO_2\)</span> on the y-axis, as shown in Figure 31.3.</p>
+Put mass on the x-axis and CO<sub>2</sub> on the y-axis, as shown in Figure 31.3.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-135"></span>
 <img src="img/jamovi_simple_scatterplot.png" alt="Jamovi interface is shown with a variable called 'mass' placed in a box called 'X-Axis', and a variable called 'CO_2' placed in a box called 'Y-axis'." width="100%" />
 <p class="caption">
@@ -628,7 +628,7 @@ Figure 31.3: Jamovi interface for building a scatterplot with bumblebee mass on 
 </div>
 <p>Notice that the scatterplot appears in the panel on the right.
 Each point in the scatterplot is a different bee (i.e., row).
-Just looking at the scatterplot, does it appear as though bee mass and <span class="math inline">\(CO_2\)</span> output are correlated?
+Just looking at the scatterplot, does it appear as though bee mass and CO<sub>2</sub> output are correlated?
 Why or why not?</p>
 <pre><code>
 
@@ -636,7 +636,7 @@ Why or why not?</p>
 </code></pre>
 <p>Note that it is possible to separate points in the scatterplot by group.,
 Try placing ‘survived’ in the box ‘Group’.</p>
-<p>Now we can test whether or not bee mass and <span class="math inline">\(CO_{2}\)</span> output are negatively correlated.
+<p>Now we can test whether or not bee mass and CO<sub>2</sub> output are negatively correlated.
 What are the null and alternative hypotheses of this test?</p>
 <ul>
 <li><p><span class="math inline">\(H_{0}\)</span>: _________________</p></li>
@@ -644,14 +644,14 @@ What are the null and alternative hypotheses of this test?</p>
 </ul>
 <p>Before we test whether or not the correlation coefficient (<span class="math inline">\(r\)</span>) is significant, we need to know which correlation coefficient to use.
 Remember from <a href="Chapter_30.html#correlation-hypothesis-testing">Section 30.3</a> that a test of the Pearson product moment correlation assumes that the sample <span class="math inline">\(r\)</span> is normally distributed around the true correlation coefficient.
-If both of our variables (mass and <span class="math inline">\(CO_{2}\)</span>) are normally distributed, then we can be confident that this assumption will not be violated.
+If both of our variables (mass and CO<sub>2</sub>) are normally distributed, then we can be confident that this assumption will not be violated.
 But if one or both variables are not normally distributed, then we should consider using Spearman’s rank correlation coefficient instead.
-To test if mass and <span class="math inline">\(CO_{2}\)</span> are normally distributed, navigate to the Descriptives panel in jamovi (where we usually find the summary statistics of variables).
-Place mass and <span class="math inline">\(CO_{2}\)</span> in the ‘Variables’ box, then scroll down and notice that there is a checkbox under <strong>Normality</strong> for ‘Shapiro-Wilk’.
+To test if mass and CO<sub>2</sub> are normally distributed, navigate to the Descriptives panel in jamovi (where we usually find the summary statistics of variables).
+Place mass and CO<sub>2</sub> in the ‘Variables’ box, then scroll down and notice that there is a checkbox under <strong>Normality</strong> for ‘Shapiro-Wilk’.
 Check this box, then find the p-values for the Shapiro-Wilk test of normality in the panel to the right.
 Write these p-values down below.</p>
 <p>Mass: <span class="math inline">\(P =\)</span> _____________</p>
-<p><span class="math inline">\(CO_{2}\)</span>: <span class="math inline">\(P =\)</span> ___________</p>
+<p>CO<sub>2</sub>: <span class="math inline">\(P =\)</span> ___________</p>
 <p>Based on these p-values, which type of correlation coefficient should we use to test <span class="math inline">\(H_{0}\)</span>, and why?</p>
 <pre><code>
 
@@ -667,7 +667,7 @@ Figure 31.4: Jamovi interface for testing correlation coefficients.
 <p>Notice that the Pearson product moment correlation is selected in the checkbox of Figure 31.4 (‘Pearson’).
 Immediately below this checkbox is a box called ‘Spearman’, which would report Spearman’s rank correlation coefficient test.
 Below the <strong>Correlation Coefficients</strong> options, there are options for <strong>Hypothesis</strong>.
-Remember that we are interested in the alternative hypothesis that mass and <span class="math inline">\(CO_{2}\)</span> are negatively correlated, so we should select the radio button ‘Correlated negatively’.</p>
+Remember that we are interested in the alternative hypothesis that mass and CO<sub>2</sub> are negatively correlated, so we should select the radio button ‘Correlated negatively’.</p>
 <p>The output of the correlation test appears in the panel on the right in the form of a table called ‘Correlation Matrix’.
 This table reports both the correlation coefficient (here called ‘Pearson’s r’) and the p-value.
 Write these values below.</p>
@@ -743,7 +743,7 @@ Figure 31.5: Jamovi data frame with a simple organisation of count data.
 </div>
 <p>Next, navigate to the ‘Analyses’ tab and choose ‘N Outcomes’ to do a goodness of fit test.
 Place ‘Survived’ in the Variable box, then place ‘Count’ in the Counts (optional) box.
-Notice that you will get the same <span class="math inline">\(\chi^{2}\)</span>, df, and p values in the output table as you did in Exercise 31.1.</p>
+Notice that you will get the same <span class="math inline">\(\chi^{2}\)</span>, <span class="math inline">\(df\)</span>, and p-values in the output table as you did in Exercise 31.1.</p>
 <p>We could do the same for a <span class="math inline">\(\chi^{2}\)</span> test of association, although it would be a bit more complicated.
 To test for an association between radiation and survival, as we did at the end of Exercise 31.3, we would need three columns and eight rows of data (Table 31.2).</p>
 <table style="width:43%;">

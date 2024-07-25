@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -584,8 +584,8 @@ This activity will demonstrate how to calculate CIs from z- and t-scores.
 Recall the formula for lower and upper CIs from <a href="Chapter_18.html#normal-distribution-cis">Section 18.1</a>,</p>
 <p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
 <p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
-<p>We could calculate 95% CIs for DBH with just the sample mean (<span class="math inline">\(\bar{x}\)</span>), z-score (z), and standard error (SE).
-We have already calculated <span class="math inline">\(\bar{x}\)</span> and SE for the DBH in Exercise 19.1 above, so we just need to figure out z.
+<p>We could calculate 95% CIs for DBH with just the sample mean (<span class="math inline">\(\bar{x}\)</span>), z-score (<span class="math inline">\(z\)</span>), and standard error (SE).
+We have already calculated <span class="math inline">\(\bar{x}\)</span> and SE for the DBH in Exercise 20.1 above, so we just need to figure out z.
 Recall that z-scores are <em>standard normal deviates</em>, that is, deviations from the mean given a standard normal distribution, in which the mean equals 0 and standard deviation equals 1.
 For example, <span class="math inline">\(z = -1\)</span> is 1 standard deviation below the mean of a standard normal distribution, and <span class="math inline">\(z = 2\)</span> is 2 standard deviations above the mean of a standard normal distribution.
 What values of z contain 95% of the probability density of a standard normal distribution?
@@ -595,26 +595,26 @@ Notice that by default, a standard normal distribution is already set (Mean = 0 
 All that we need to do now is compute quantiles for p = 0.95.
 From these quantiles, what is the proper z-score to use in the equations for LCI and UCI above?</p>
 <p>z-score: ________________</p>
-<p>Now, use the values of <span class="math inline">\(\bar{x}\)</span>, z, and SE for DBH in the equations above to calculate lower and upper 95% CIs again.</p>
+<p>Now, use the values of <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(z\)</span>, and SE for DBH in the equations above to calculate lower and upper 95% CIs again.</p>
 <p>Lower 95% CI: ________________</p>
 <p>Upper 95% CI: ________________</p>
-<p>Are these CIs the same as what you calculated in Exercise 19.1?</p>
+<p>Are these CIs the same as what you calculated in Exercise 20.1?</p>
 <pre><code>
 
 </code></pre>
 <p>Lastly, instead of using the z-score, we can do the same with a t-score.
 We can find the appropriate t-score from the t-distribution in the distrACTION module.
 To get the t-score, click on the distrACTION module button and choose ‘T-Distribution’ from the pull-down menu.
-To get quantiles with the t-distribution, we need to know the degrees of freedom (df) of the sample.
-<a href="Chapter_19.html#Chapter_19">Chapter 19</a> explains how to calculate df from the sample size N.
-What are the appropriate df for DBH?</p>
-<p>df: _________________</p>
+To get quantiles with the t-distribution, we need to know the degrees of freedom (<span class="math inline">\(df\)</span>) of the sample.
+<a href="Chapter_19.html#Chapter_19">Chapter 19</a> explains how to calculate <span class="math inline">\(df\)</span> from the sample size <span class="math inline">\(N\)</span>.
+What are the appropriate <span class="math inline">\(df\)</span> for DBH?</p>
+<p><span class="math inline">\(df\)</span>: _________________</p>
 <p>Put the df in the Parameters box.
 Ignore the box for lambda (<span class="math inline">\(\lambda\)</span>); this is not needed.
 Under the <strong>Function</strong> options, choose ‘Compute quantile(s)’ as before to calculate Quantiles.
 From the Results table, what is the proper t-score to use in the equations for LCI and UCI?</p>
 <p>t-score: _______________</p>
-<p>Again, use the values of <span class="math inline">\(\bar{x}\)</span>, t, and SE for DBH in the equations above to calculate lower and upper 95% CIs.</p>
+<p>Again, use the values of <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(t\)</span>, and <span class="math inline">\(SE\)</span> for DBH in the equations above to calculate lower and upper 95% CIs.</p>
 <p>Lower 95% CI: ________________</p>
 <p>Upper 95% CI: ________________</p>
 <p>How similar are the estimates for lower and upper CIs when using z- versus t-scores.
@@ -628,14 +628,14 @@ Reflect on any similarities or differences that you see in all of these differen
 </div>
 <div id="confidence-intervals-for-different-sample-sizes" class="section level2 hasAnchor" number="20.3">
 <h2><span class="header-section-number">20.3</span> Confidence intervals for different sample sizes<a href="Chapter_20.html#confidence-intervals-for-different-sample-sizes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In Exercises 20.1 and 20.2, the sample size of DBH was fairly large (N = 120).
+<p>In Exercises 20.1 and 20.2, the sample size of DBH was fairly large (<span class="math inline">\(N = 120\)</span>).
 Now, we will calculate CIs for the mean DBH of each of the four different sites using both z- and t-scores.
 These sites have much different sample sizes.
 From the Descriptives tool in jamovi, write the sample sizes for DBH split by site below.</p>
-<p>Site 1182: N = _________</p>
-<p>Site 1223: N = _________</p>
-<p>Site 3008: N = _________</p>
-<p>Site 10922: N = _________</p>
+<p>Site 1182: <span class="math inline">\(N =\)</span> _________</p>
+<p>Site 1223: <span class="math inline">\(N =\)</span> _________</p>
+<p>Site 3008: <span class="math inline">\(N =\)</span> _________</p>
+<p>Site 10922: <span class="math inline">\(N =\)</span> _________</p>
 <p>For which of these sites would you predict CIs calculated from z-scores versus t-scores to differ the most?</p>
 <p>Site: ______________</p>
 <p>The next part of this exercise is self-guided.
@@ -745,13 +745,13 @@ From the Descriptives options, find the number of sites grazed versus not grazed
 It showed how to calculate Wald CIs, but also noted that Clopper-Pearson CIs are generally more accurate.
 First, we will calculate Wald CIs by hand, then use jamovi to calculate Clopper-Pearson CIs.
 To calculate the Wald CIs, we can use equations similar to the ones used for LCI and UCI from Exercise 20.2 above,</p>
-<p><span class="math display">\[LCI = p - z \times SE(p),\]</span></p>
-<p><span class="math display">\[UCI = p + z \times SE(p),\]</span></p>
+<p><span class="math display">\[LCI = p - z \times \mathrm{SE}(p),\]</span></p>
+<p><span class="math display">\[UCI = p + z \times \mathrm{SE}(p),\]</span></p>
 <p>We have already calculated <span class="math inline">\(p\)</span>, and we can find z-scores for CIs in the same way that we did in Exercise 20.2 (i.e., the z-scores associated with 95% CIs do not change just because we are working with proportions).
 All that is left to calculate LCI and UCI are the standard errors of the proportions.
 Remember from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> that these are calculated differently from a standard error of continuous values such as diameter breast height.
 The formula for standard error of a proportion is,</p>
-<p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
+<p><span class="math display">\[\mathrm{SE}(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
 <p>We can estimate <span class="math inline">\(p\)</span> as the total number of grazed sites divided by <span class="math inline">\(N\)</span>, where <span class="math inline">\(N\)</span> is the total sample size.
 Using the above equation, what is the standard error of p?</p>
 <p>SE(p) = ____________</p>

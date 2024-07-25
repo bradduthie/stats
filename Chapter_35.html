@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -493,17 +493,17 @@ Second, it helps reinforce the concept of what null hypothesis testing is and wh
 Before explaining the randomisation approach, it is useful to summarise the parametric hypothesis tests introduced in earlier chapters.</p>
 <div id="summary-of-parametric-hypothesis-testing" class="section level2 hasAnchor" number="35.1">
 <h2><span class="header-section-number">35.1</span> Summary of parametric hypothesis testing<a href="Chapter_35.html#summary-of-parametric-hypothesis-testing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For the parametric tests introduced in previous chapters, null distributions included the t-distribution, F distribution, and <span class="math inline">\(\chi^{2}\)</span> distribution.
+<p>For the parametric tests introduced in previous chapters, null distributions included the t-distribution, F-distribution, and <span class="math inline">\(\chi^{2}\)</span> distribution.
 For the t-tests in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, the test statistic was the t-statistic, which we compared to a t-distribution.
 The <a href="Chapter_22.html#one-sample-t-test">one-sample t-test</a> compared the mean of some variable (<span class="math inline">\(\bar{x}\)</span>) to a specific number (<span class="math inline">\(\mu_{0}\)</span>), the <a href="Chapter_22.html#independent-samples-t-test">independent samples t-test</a> compared two group means, and the <a href="#paired-sample-t-test">paired samples t-test</a> compared the mean difference between two paired groups.
 All of these tests used the t-distribution and calculated some value of t.
 Very low or high values of t at the extreme ends of the t-distribution are unlikely if the null hypothesis is true, so, in a two-tailed test, these are associated with low p-values that lead us to reject the null hypothesis.</p>
-<p>For the analysis of variance (ANOVA) tests of <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, the relevant test statistic was the F statistic, with the F-distribution being the null distribution expected if two variances are equal.
+<p>For the analysis of variance (ANOVA) tests of <a href="Chapter_24.html#Chapter_24">Chapter 24</a>, the relevant test statistic was the <span class="math inline">\(F\)</span> statistic, with the F-distribution being the null distribution expected if two variances are equal.
 The <a href="Chapter_24.html#one-way-anova">one-way ANOVA</a> used the within and among group variances of two or more groups to test the null hypothesis that all group means are equal.
 The two-way ANOVA of <a href="Chapter_27.html#Chapter_27">Chapter 27</a> extended the framework of the one-way ANOVA, allowing for a second variable of groups.
 This made it possible to simultaneously test whether or not the means of two different group types were the same, and whether or not there was an interaction between group types.
-All of these ANOVA tests calculated some value of F and compared it to the F distribution with appropriate degrees of freedom.
-Sufficiently high F values were associated with a low p-value and therefore the rejection of the null hypothesis.</p>
+All of these ANOVA tests calculated some value of <span class="math inline">\(F\)</span> and compared it to the F distribution with appropriate degrees of freedom.
+Sufficiently high <span class="math inline">\(F\)</span> values were associated with a low p-value and therefore the rejection of the null hypothesis.</p>
 <p>The Chi-square tests introduced in <a href="Chapter_29.html#Chapter_29">Chapter 29</a> were used to test the frequencies of categorical observations and determine if they matched some expected frequencies (<a href="#chi-squared-goodness-of-fit">Chi-square goodness of fit</a> test) or were associated in some way with the frequencies of another variable (<a href="#chi-squared-test-of-association">Chi-square test of association</a>).
 In these tests, the <span class="math inline">\(\chi^{2}\)</span> statistic was used and compared to a null <span class="math inline">\(\chi^{2}\)</span> distribution with an appropriate degrees of freedom.
 High <span class="math inline">\(\chi^{2}\)</span> values were associated with low p-values and the rejection of the null hypothesis.</p>
@@ -552,20 +552,20 @@ Figure 35.2: Ovipositor length distributions for two unnamed species of fig wasp
 The null hypothesis would be that the two means are the same, and the alternative (two-sided) hypothesis would be that the two means are not the same.
 We would need to check the assumption that the data are normally distributed, and that both samples have similar variances.
 Assuming that the assumption of normality is not violated (in which case we would need to consider a Mann-Whitney U test), and that both groups had similar variances (if not, we would use Welch’s t-test), we could proceed with calculating our t-statistic for pooled sample variance,</p>
-<p><span class="math display">\[t_{\bar{y}_{SO1} - \bar{y}_{SO2}} = \frac{\bar{y}_{SO1} - \bar{y}_{SO2}}{s_{p}}.\]</span></p>
+<p><span class="math display">\[t_{\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}}} = \frac{\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}}}{s_{p}}.\]</span></p>
 <p>The <span class="math inline">\(s_{p}\)</span> is just being used as a short-hand to indicate the pooled standard deviation.
-For the two species of fig wasps, <span class="math inline">\(\bar{y}_{SO1} =\)</span> 3.0301176, <span class="math inline">\(\bar{y}_{SO2} =\)</span> 2.8448667, and <span class="math inline">\(s_{p} =\)</span> 0.0765801.
-We can therefore calculate <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}}\)</span>,</p>
-<p><span class="math display">\[t_{\bar{y}_{SO1} - \bar{y}_{SO2}} = \frac{3.03 - 2.845}{0.077}.\]</span></p>
-<p>After we calculate our t-statistic as <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419, we would use the t-distribution to find the p-value (or, rather, get jamovi to do this for us).
-Figure 35.3 shows the t-distribution for 30 degrees of freedom with an arrow pointing at the value of <span class="math inline">\(t_{\bar{y}_{SO1} - \bar{y}_{SO2}} =\)</span> 2.419.</p>
+For the two species of fig wasps, <span class="math inline">\(\bar{y}_{\mathrm{SO1}} =\)</span> 3.0301176, <span class="math inline">\(\bar{y}_{\mathrm{SO2}} =\)</span> 2.8448667, and <span class="math inline">\(s_{p} =\)</span> 0.0765801.
+We can therefore calculate <span class="math inline">\(t_{\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}}}\)</span>,</p>
+<p><span class="math display">\[t_{\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}}} = \frac{3.03 - 2.845}{0.077}.\]</span></p>
+<p>After we calculate our t-statistic as <span class="math inline">\(t_{\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}}} =\)</span> 2.419, we would use the t-distribution to find the p-value (or, rather, get jamovi to do this for us).
+Figure 35.3 shows the t-distribution for 30 degrees of freedom with an arrow pointing at the value of <span class="math inline">\(t_{\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}}} =\)</span> 2.419.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-158"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-158-1.png" alt="A bell curve of the t-distribution is shown with an arrow pointing downward on the x-axis value around 2.419." width="672" />
 <p class="caption">
 Figure 35.3: A t-distribution is shown with a calculated t-statistic of 2.419 indicated with a downward arrow.
 </p>
 </div>
-<p>If the null hypothesis is true, and <span class="math inline">\(\bar{y}_{SO1}\)</span> and <span class="math inline">\(\bar{y}_{SO2}\)</span> are actually sampled from a population with the same mean, then the probability of randomly sampling a value more extreme than 2.419 (i.e., greater than 2.419 or less than -2.419) is <span class="math inline">\(P =\)</span> 0.0218352.
+<p>If the null hypothesis is true, and <span class="math inline">\(\bar{y}_{\mathrm{SO1}}\)</span> and <span class="math inline">\(\bar{y}_{\mathrm{SO2}}\)</span> are actually sampled from a population with the same mean, then the probability of randomly sampling a value more extreme than 2.419 (i.e., greater than 2.419 or less than -2.419) is <span class="math inline">\(P =\)</span> 0.0218352.
 We therefore reject the null hypothesis because <span class="math inline">\(P &lt; 0.05\)</span>, and we conclude that the mean ovipositor lengths of each species are not the same.</p>
 <p>Randomisation takes a different approach to the same problem.
 Instead of using the t-distribution in Figure 35.3, we will build our own null distribution using the fig wasp ovipositor length data.
@@ -575,7 +575,7 @@ In other words, what would the difference between group means be if we just mixe
 If we just do this once, then we cannot learn much.
 But if we randomly shuffle the groups many, many times (say at least 9999), then we could see what the difference between group means would look like just by chance, i.e., if ovipositor length really was not different between SO1 and SO2.
 We could then compare our actual difference between mean ovipositor lengths to this null distribution in which the difference between groups means really is random (it has to be, we randomised the groups ourselves!).
-The idea is easiest to see using an interactive application<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a> that builds a null distribution of differences between the mean of SO1 and SO2 and compares it to the observed difference of <span class="math inline">\(\bar{y}_{SO1} - \bar{y}_{SO2} =\)</span> 0.185.</p>
+The idea is easiest to see using an interactive application<a href="#fn82" class="footnote-ref" id="fnref82"><sup>82</sup></a> that builds a null distribution of differences between the mean of SO1 and SO2 and compares it to the observed difference of <span class="math inline">\(\bar{y}_{\mathrm{SO1}} - \bar{y}_{\mathrm{SO2}} =\)</span> 0.185.</p>
 <p>With modern computing power, we do not need to do this randomisation manually.
 A desktop computer can easily reshuffle the species identities and calculate a difference between means thousands of times in less than a second.
 The histogram below shows the distribution of the difference between species mean ovipositor length if we were to randomly reshuffle groups 99999 times.</p>
@@ -619,7 +619,7 @@ In other words, we can argue that the difference between groups in the sample re
 <p>Suppose we want to calculate 95% confidence intervals for the ovipositor lengths of SO1 (Figure 35.2A).
 There are 17 ovipositor lengths for SO1.</p>
 <p>3.256, 3.133, 3.071, 2.299, 2.995, 2.929, 3.291, 2.658, 3.406, 2.976, 2.817, 3.133, 3.000, 3.027, 3.178, 3.133, 3.210</p>
-<p>To get the 95% confidence interval using the method from <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, we would calculate the mean <span class="math inline">\(\bar{x}_{SO1} =\)</span> 3.03, standard deviation <span class="math inline">\(s_{SO1} =\)</span> 0.26, and the t-score for <span class="math inline">\(df = N - 1\)</span> (where N = 17), which is <span class="math inline">\(t = 2.120\)</span>.
+<p>To get the 95% confidence interval using the method from <a href="Chapter_18.html#Chapter_18">Chapter 18</a>, we would calculate the mean <span class="math inline">\(\bar{x}_{SO1} =\)</span> 3.03, standard deviation <span class="math inline">\(s_{\mathrm{SO1}} =\)</span> 0.26, and the t-score for <span class="math inline">\(df = N - 1\)</span> (where <span class="math inline">\(N = 17\)</span>), which is <span class="math inline">\(t = 2.120\)</span>.
 Keeping in mind the formula for standard error <span class="math inline">\(s/\sqrt{N}\)</span>, we can calculate,</p>
 <p><span class="math display">\[LCI = 3.03 - \left(2.120 \times \frac{0.26}{\sqrt{17}}\right),\]</span></p>
 <p><span class="math display">\[UCI = 3.03 + \left(2.120 \times \frac{0.26}{\sqrt{17}}\right).\]</span></p>

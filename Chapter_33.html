@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -498,7 +498,7 @@ It is even possible for the sign of the coefficients to change (e.g., from negat
 <p>To illustrate a multiple regression, consider again the fig fruit volume example from <a href="Chapter_32.html#Chapter_32">Chapter 32</a> <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie &amp; Nason, 2016</a>)</span>.
 Suppose that in addition to latitude, altitude was also measured in metres for each fruit (Table 33.1).</p>
 <table>
-<caption><strong>TABLE 33.1</strong> Volumes (<span class="math inline">\(mm^3\)</span>) of fig fruits collected from different latitudes and altitudes (<span class="math inline">\(m\)</span>) from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><strong>TABLE 33.1</strong> Volumes (mm<sup>3</sup>) of fig fruits collected from different latitudes and altitudes (m) from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -561,7 +561,7 @@ We now need to run a multiple regression to find the intercept (<span class="mat
 In jamovi, running a multiple regression is just a matter of including the additional independent variable (Altitude, in this case).
 Table 33.2 shows an output table, which gives us estimates of <span class="math inline">\(b_{0}\)</span>, <span class="math inline">\(b_{1}\)</span>, and <span class="math inline">\(b_{2}\)</span> (column ‘Estimate’), along with p-values for the intercept and each partial regression coefficient (column ‘Pr(&gt;|t|)’).</p>
 <table style="width:88%;">
-<caption><strong>TABLE 33.2</strong> Output showing the intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (t value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
+<caption><strong>TABLE 33.2</strong> Output showing the intercept and partial regression coefficients (Estimate), standard errors (Std. Error), t-scores (<span class="math inline">\(t\)</span> value), and p-values (Pr(&gt;|t|)) for a multiple regression model including Latitude and Altitude as independent variables and fig fruit volume as a dependent variable.</caption>
 <colgroup>
 <col width="25%" />
 <col width="15%" />
@@ -610,8 +610,8 @@ The t-distribution, which accounts for uncertainty that is attributable to a fin
 <p>Second, the intercept has changed from what it was in the simple linear regression model.
 In the simple linear regression, it was 8458.30961, but in the multiple regression it is <span class="math inline">\(b_{0} = 2988.24539\)</span>.
 The p-value of the intercept has also changed.
-In the simple linear model, the p-value was significant (P = 0.0142).
-But in the multiple regression model, it is not significant (P = 0.1532).</p>
+In the simple linear model, the p-value was significant (<span class="math inline">\(P = 0.0142\)</span>).
+But in the multiple regression model, it is not significant (<span class="math inline">\(P = 0.1532\)</span>).</p>
 <p>Third, and perhaps most strikingly, the prediction and significance of latitude has changed completely.
 In the simple linear regression model from <a href="Chapter_32.html#simple-regression-output">Section 32.7.4</a>, fruit volume decreased with latitude (<span class="math inline">\(b_{1} = -242.68\)</span>), and this decrease was statistically significant (<span class="math inline">\(P = 0.0356\)</span>).
 Now the multiple regression output is telling us that, if anything, fruit volume appears to <em>increase</em> with latitude (<span class="math inline">\(b_{1} = 5.59\)</span>), although this is not statistically significant (<span class="math inline">\(P = 0.9415\)</span>).
@@ -620,8 +620,8 @@ This result illustrates the context dependence of partial regression coefficient
 In other words, although fruit volume appeared to significantly decrease with increasing latitude in the simple regression model of <a href="Chapter_32.html#Chapter_32">Chapter 32</a>, this is no longer the case once we account for the altitude from which the fruit was collected.
 Latitude, <em>by itself</em>, does not appear to affect fruit volume after all.
 It only appeared to affect fruit volume because locations at high latitude also tend to be higher in altitude.
-And each metre of altitude appears to decrease fruit volume by about 2.4 <span class="math inline">\(mm^{3}\)</span> (Table 33.2).
-This partial effect of altitude on fruit volume is statistically significant (P &lt; 0.05).
+And each metre of altitude appears to decrease fruit volume by about 2.4 <span class="math inline">\(\mathrm{mm}^{3}\)</span> (Table 33.2).
+This partial effect of altitude on fruit volume is statistically significant (<span class="math inline">\(P &lt; 0.05\)</span>).
 We therefore do not reject the null hypothesis that the intercept (<span class="math inline">\(b_{0}\)</span>) and partial coefficient of latitude (<span class="math inline">\(b_{1}\)</span>) is significantly different from 0.
 But we do reject the null hypothesis that <span class="math inline">\(b_{2} = 0\)</span>, and we can conclude that altitude has an effect on fig fruit volume.</p>
 <p>We can also look at the overall multiple regression model.
@@ -632,9 +632,9 @@ Figure 33.2 shows what this model output looks like reported by jamovi <span cla
 Figure 33.2: Jamovi output table for a multiple linear regression in which latitude and altitude are independent variables and fig fruit volume is a dependent variable.
 </p>
 </div>
-<p>As with the simple linear regression output from <a href="Chapter_32.html#simple-regression-output">Chapter 32.7.4</a>, the overall model test output table includes columns for <span class="math inline">\(R^{2}\)</span>, F, degrees of freedom, and a p-value for the overall model.
+<p>As with the simple linear regression output from <a href="Chapter_32.html#simple-regression-output">Chapter 32.7.4</a>, the overall model test output table includes columns for <span class="math inline">\(R^{2}\)</span>, <span class="math inline">\(F\)</span>, degrees of freedom, and a p-value for the overall model.
 There is one key difference between this output table and the overall model output for a simple linear regression, and that is the Adjusted <span class="math inline">\(R^{2}\)</span>.
-This is the adjusted coefficient of determination <span class="math inline">\(R^{2}_{adj}\)</span>, which is necessary to compare regression models with different numbers of independent variables.</p>
+This is the adjusted coefficient of determination <span class="math inline">\(R^{2}_{\mathrm{adj}}\)</span>, which is necessary to compare regression models with different numbers of independent variables.</p>
 <div id="adjusted-coefficient-of-determination" class="section level2 hasAnchor" number="33.1">
 <h2><span class="header-section-number">33.1</span> Adjusted coefficient of determination<a href="Chapter_33.html#adjusted-coefficient-of-determination" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Recall from <a href="Chapter_32.html#coefficient-of-determination">Section 32.5</a> that the coefficient of determination (<span class="math inline">\(R^{2}\)</span>) tells us how much of the total variation in the dependent variable is explained by the regression model.
@@ -644,11 +644,11 @@ In other words, any new independent variable that we choose to add to the model 
 The absolute <em>worst</em> that an independent variable can do is explain zero variation.
 And even if the independent variable is just a set of random numbers, it will likely explain <em>some</em> of the variation in the dependent variable just by chance.
 Hence, even if newly added independent variables are bad predictors, they might still improve the goodness of fit of our model by chance.
-To help account for this spurious improvement of fit, we can use an adjusted R squared (<span class="math inline">\(R^{2}_{adj}\)</span>).
-The <span class="math inline">\(R^{2}_{adj}\)</span> takes into account the <span class="math inline">\(R^{2}\)</span>, the sample size (<span class="math inline">\(N\)</span>), and the number of independent variables (<span class="math inline">\(k\)</span>),</p>
-<p><span class="math display">\[R^{2}_{adj} = 1 - \left(1 - R^{2}\right)\left(\frac{N - 1}{N - k - 1}\right).\]</span></p>
+To help account for this spurious improvement of fit, we can use an adjusted R squared (<span class="math inline">\(R^{2}_{\mathrm{adj}}\)</span>).
+The <span class="math inline">\(R^{2}_{\mathrm{adj}}\)</span> takes into account the <span class="math inline">\(R^{2}\)</span>, the sample size (<span class="math inline">\(N\)</span>), and the number of independent variables (<span class="math inline">\(k\)</span>),</p>
+<p><span class="math display">\[R^{2}_{\mathrm{adj}} = 1 - \left(1 - R^{2}\right)\left(\frac{N - 1}{N - k - 1}\right).\]</span></p>
 <p>As <span class="math inline">\(k\)</span> increases, the value of <span class="math inline">\((N-1)/(N-k-1)\)</span> gets bigger.
-And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}_{adj}\)</span> decreases.
+And as this fraction gets bigger, we are subtracting a bigger value from 1, so <span class="math inline">\(R^{2}_{\mathrm{adj}}\)</span> decreases.
 Consequently, more independent variables cause a decrease in the adjusted R-squared value.
 This attempts to account for the inevitable tendency of <span class="math inline">\(R^{2}\)</span> to increase with <span class="math inline">\(k\)</span>.</p>
 </div>

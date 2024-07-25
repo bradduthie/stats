@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -509,7 +509,7 @@ The dataset includes columns for each player’s ID, the OS that they use, the d
 <p>Suppose that we want to estimate the probability that a new Power Up! game player will be an Android user.
 To estimate this probability, we can use the proportion of players in the dataset who are Android users.
 To get this proportion, we need to divide the number of Android users by the total number of players,</p>
-<p><span class="math display">\[P(Android) = \frac{Number\:of\:Android\:users}{Number\:of\:players}.\]</span></p>
+<p><span class="math display">\[P(Android) = \frac{\mathrm{Number\:of\:Android\:users}}{\mathrm{Number\:of\:players}}.\]</span></p>
 <p>In jamovi, you could figure this out the long way by counting up the number of rows with ‘Android’ in the second column, then dividing by the total number of rows.
 But there is an easier way, which is faster and less prone to human error than manually tallying up items.
 To do this, go to the ‘Analyses’ tab in jamovi and navigate to ‘Exploration’, then ‘Descriptives’.
@@ -567,7 +567,7 @@ Now, fill in Table 17.1 with counts, percentage, and the estimated probability o
 <p>We can use these estimated probabilities of small, medium, and large dam size selection to predict what will happen in future games.
 Suppose that a new player decides to play the game.
 What is the probability that this player chooses a small <strong>or</strong> a large dam?</p>
-<p><span class="math inline">\(P(small\:or\:large) =\)</span> __________________________</p>
+<p><span class="math inline">\(P(small\:\mathrm{or}\:large) =\)</span> __________________________</p>
 <p>Now suppose that 3 new players arrive and decide to play the game.
 What is the probability that all 3 of these new players choose a large dam?</p>
 <p><span class="math inline">\(P(3\:large) =\)</span> __________________________</p>
@@ -597,7 +597,7 @@ Figure 17.2: Jamovi Descriptives toolbar showing the dam size column from the Po
 </div>
 <p>To get the proportion of Android users who choose to build a large dam, we just need to divide the number of Android users who chose the large dam size by the total number of Android users (i.e., sum of the first column in the Frequencies table; Figure 17.2).
 Note that the vertical bar, <span class="math inline">\(|\)</span>, in the equation below just means ‘given’ (or, rather, ‘conditional up’, so the number of players that chose a large dam <em>given</em> that they are Android users),</p>
-<p><span class="math display">\[P(Large | Android) = \frac{Number\:of\:Android\:users\:choosing\:large\:dam}{Number\:of\:Android\:users}.\]</span></p>
+<p><span class="math display">\[P(Large | Android) = \frac{\mathrm{Number\:of\:Android\:users\:choosing\:large\:dam}}{\mathrm{Number\:of\:Android\:users}}.\]</span></p>
 <p>Now, recreate the table in Figure 17.2 and estimate the probability that an Android user will choose to build a large dam,</p>
 <p><span class="math inline">\(P(Large | Android) =\)</span> __________________________</p>
 <p>Is <span class="math inline">\(P(Large | Android)\)</span> much different from the probability that <em>any</em> player chooses a large dam, as calculated in Table 17.1? Do you think that the difference is significant?</p>

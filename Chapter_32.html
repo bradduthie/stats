@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -490,12 +490,12 @@ The aim of correlation is to describe how the variance of one variable is associ
 In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 But there is no attempt to predict what the value of one variable will be based on the other.</p>
 <p>Linear regression, in contrast to correlation, focuses on prediction.
-The aim is to predict the value of one quantitative variable Y given the value of another quantitative variable X.
-In other words, regression focuses on an association of dependence in which the value of Y depends on the value of X <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>.
-The Y variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
-The X variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
+The aim is to predict the value of one quantitative variable <span class="math inline">\(Y\)</span> given the value of another quantitative variable <span class="math inline">\(X\)</span>.
+In other words, regression focuses on an association of dependence in which the value of <span class="math inline">\(Y\)</span> depends on the value of <span class="math inline">\(X\)</span> <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>.
+The <span class="math inline">\(Y\)</span> variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
+The <span class="math inline">\(X\)</span> variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.
 Unlike correlation, the distinction between the two variable types matters because the aim is to understand how a change in the independent variable will affect the dependent variable.
-For example, if we increase X by 1, how much will Y change?</p>
+For example, if we increase <span class="math inline">\(X\)</span> by 1, how much will <span class="math inline">\(Y\)</span> change?</p>
 <div id="visual-interpretation-of-regression" class="section level2 hasAnchor" number="32.1">
 <h2><span class="header-section-number">32.1</span> Visual interpretation of regression<a href="Chapter_32.html#visual-interpretation-of-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A visual example using a scatterplot can illustrate one way to think about regression.
@@ -508,7 +508,7 @@ Figure 32.1: Fruits of the Sonoran Desert Rock Fig in the desert of Baja, Mexico
 </div>
 <p>A sample of fig fruits from different latitudes is shown in Table 32.1.</p>
 <table>
-<caption><strong>TABLE 32.1</strong> Volumes (<span class="math inline">\(mm^3\)</span>) of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
+<caption><strong>TABLE 32.1</strong> Volumes (<span class="math inline">\(\mathrm{mm}^3\)</span>) of fig fruits collected from different latitudes from trees of the Sonoran Desert Rock Fig in Baja, Mexico.</caption>
 <colgroup>
 <col width="19%" />
 <col width="11%" />
@@ -554,13 +554,13 @@ Figure 32.2: Relationship between latitude and fruit volume for seven fig fruits
 </p>
 </div>
 <p>In Figure 32.2, each of the seven points is a different fig fruit.
-The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in <span class="math inline">\(mm^{3}\)</span>.
+The x-axis shows the latitude from which the fruit was collected, and the y-axis shows the volume of the fruit in <span class="math inline">\(\mathrm{mm}^{3}\)</span>.
 The thin dotted line shows the mean fruit volume for the seven fruits, <span class="math inline">\(\bar{y} =\)</span> 1930.1.
 The thick black line trending downwards in Figure 32.2 is the regression line, also called the line of best fit.
 How this line is calculated will be explained later, but for now there are two important concepts to take away from Figure 32.2.
 First, the regression line gives us the best prediction of what fruit volume will be for any given latitude.
 For example, if we wanted to predict what fruit volume would be for a fruit collected at 28 degrees north latitude, we could find the value 28 on the x-axis, then find what fruit value this corresponds to on the y-axis using the regression line.
-At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 <span class="math inline">\(mm^{3}\)</span>.</p>
+At an x-axis value of 28, the regression line has a y-axis value of approximately 1660, so we would predict that a fig fruit collected at 28 degrees north latitude would have a volume of 1660 <span class="math inline">\(\mathrm{mm}^{3}\)</span>.</p>
 <p>This leads to the second important concept to take away from Figure 32.2.
 In the absence of any other information (including latitude), our best guess of what any given fruit’s volume will be is just the mean (<span class="math inline">\(\bar{y} =\)</span> 1930.1).
 A key aim of regression is to test if the regression line can do a significantly better job of predicting what fruit volume will be.
@@ -573,7 +573,7 @@ Before answering this question, a few new terms are needed.</p>
 These three numbers are the intercept (<span class="math inline">\(b_{0}\)</span>), the slope (<span class="math inline">\(b_{1}\)</span>), and the residual (<span class="math inline">\(\epsilon_{i}\)</span>).
 The intercept is the point on the regression line where <span class="math inline">\(x = 0\)</span>, i.e., where latitude is 0 in the example of fig fruit volumes.
 This point is not actually visible in Figure 32.2 because the lowest latitude on the x-axis is 23.
-At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 <span class="math inline">\(mm^{3}\)</span>.
+At a latitude of 23, we can see that the regression line predicts a fruit volume of approximately 2900 <span class="math inline">\(\mathrm{mm}^{3}\)</span>.
 If we were to extend this regression line all the way back to a latitude of 0, then we would predict a fruit volume of 8458.3.
 This is our intercept<a href="#fn75" class="footnote-ref" id="fnref75"><sup>75</sup></a> in Figure 32.2.</p>
 <p>The slope is the direction and steepness of the regression line.
@@ -584,8 +584,8 @@ Consequently, the slope is -242.7.
 Since we are predicting using a straight line, this decrease is the same at every latitude.
 This means that we can use the slope to predict how much our dependent variable will change given any amount of units of change in our independent variable.
 For example, we can predict how fruit volume will change for any amount of change in degrees latitude.
-If latitude increases by 2 degrees, then we would predict a 2 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> -485.4 <span class="math inline">\(mm^{3}\)</span> change in fruit volume (i.e., a decrease of 485.4).
-If latitude decreases by 3 degrees, then we would predict a -3 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> 728.1 <span class="math inline">\(mm^{3}\)</span> change in fruit volume (i.e., an increase of 728.1).</p>
+If latitude increases by 2 degrees, then we would predict a 2 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> -485.4 <span class="math inline">\(\mathrm{mm}^{3}\)</span> change in fruit volume (i.e., a decrease of 485.4).
+If latitude decreases by 3 degrees, then we would predict a -3 <span class="math inline">\(\times\)</span> -242.7 <span class="math inline">\(=\)</span> 728.1 <span class="math inline">\(\mathrm{mm}^{3}\)</span> change in fruit volume (i.e., an increase of 728.1).</p>
 <p>We can describe the regression line using just the intercept and the slope.
 For the example in Figure 31.2, this means that we can predict fruit volume for any given latitude with just these two numbers.
 But prediction almost always comes with some degree of uncertainty.
@@ -648,11 +648,11 @@ In other words, the sum of all the residual values in Figure 32.4 is 0,</p>
 <p><span class="math display">\[0 = -307.715 + 307.790 + 193.976 + 406.950 - 677.340 - 262.172 + 338.511.\]</span></p>
 <p>If we were to move the regression line, then the sum of residuals would no longer be 0.
 There is only one line that fits.</p>
-<p>More technically, the line of best fit minimises the sum of squared residuals (<span class="math inline">\(SS_{residual}\)</span>).
+<p>More technically, the line of best fit minimises the sum of squared residuals (<span class="math inline">\(SS_{\mathrm{residual}}\)</span>).
 In other words, when we take all of the residual values, square them, then add up the squares, the sum should be lower than any other line we could draw,</p>
-<p><span class="math display">\[SS_{residual} = (-307.715)^{2} + (307.790)^2 + ... + (338.511)^{2}.\]</span></p>
-<p>For the regression in Figure 32.4, <span class="math inline">\(SS_{residual} =\)</span> 1034772.
-Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{residual}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a> in which a random set of points are placed on a scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
+<p><span class="math display">\[SS_{\mathrm{residual}} = (-307.715)^{2} + (307.790)^2 + ... + (338.511)^{2}.\]</span></p>
+<p>For the regression in Figure 32.4, <span class="math inline">\(SS_{\mathrm{residual}} =\)</span> 1034772.
+Any line other than the regression line shown in Figure 32.4 would result in a higher <span class="math inline">\(SS_{\mathrm{residual}}\)</span> (to get a better intuition for how this works, we can use an interactive application<a href="#fn77" class="footnote-ref" id="fnref77"><sup>77</sup></a> in which a random set of points are placed on a scatterplot and the intercept and slope are changed until the residual sum of squares is minimised).</p>
 <p>We have seen how key terms in regression are defined, what regression coefficients are, and how the line of best fit is calculated.
 The next section focuses on the coefficient of determination, which describes how well data points fit around the regression line.</p>
 </div>
@@ -662,9 +662,9 @@ The next section focuses on the coefficient of determination, which describes ho
 In other words, are most of the data near the regression line (indicating a good fit), or are most far away from the regression line?
 How closely the data fit to the regression line is described by the <strong>coefficient of determination</strong> (<span class="math inline">\(R^{2}\)</span>).
 More formally, the <span class="math inline">\(R^{2}\)</span> tells us how much of the total variation in <span class="math inline">\(y\)</span> is explained by the regression line<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>,</p>
-<p><span class="math display">\[R^{2} = 1 - \frac{SS_{residual}}{SS_{total}}.\]</span></p>
-<p>Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model (<span class="math inline">\(SS_{residual}\)</span>) to what the sum of squared residuals would be had we just used the mean value of <span class="math inline">\(y\)</span> (<span class="math inline">\(SS_{total}\)</span>).
-If <span class="math inline">\(SS_{residual}\)</span> is very small compared to <span class="math inline">\(SS_{total}\)</span>, then subtracting <span class="math inline">\(SS_{residual}/SS_{total}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
+<p><span class="math display">\[R^{2} = 1 - \frac{SS_{\mathrm{residual}}}{SS_{\mathrm{total}}}.\]</span></p>
+<p>Mathematically, the coefficient of determination compares the sum of squared residuals from the linear model (<span class="math inline">\(SS_{\mathrm{residual}}\)</span>) to what the sum of squared residuals would be had we just used the mean value of <span class="math inline">\(y\)</span> (<span class="math inline">\(SS_{\mathrm{total}}\)</span>).
+If <span class="math inline">\(SS_{\mathrm{residual}}\)</span> is very small compared to <span class="math inline">\(SS_{\mathrm{total}}\)</span>, then subtracting <span class="math inline">\(SS_{\mathrm{residual}}/SS_{\mathrm{total}}\)</span> from 1 will give a large <span class="math inline">\(R^{2}\)</span> value.
 This large <span class="math inline">\(R^{2}\)</span> means that the model is doing a good job of explaining variation in the data.
 Figure 32.5 shows some examples of scatterplots with different <span class="math inline">\(R^{2}\)</span> values.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-145"></span>
@@ -674,9 +674,9 @@ Figure 32.5: Examples of scatterplots with different coefficients of determinati
 </p>
 </div>
 <p>We can calculate the <span class="math inline">\(R^{2}\)</span> value for our example of fig fruit volumes over a latitudinal gradient.
-To do this, we need to calculate the sum of the squared residual values (<span class="math inline">\(SS_{residual}\)</span>) and the total sum of squared deviations of <span class="math inline">\(y_{i}\)</span> from the mean <span class="math inline">\(\bar{y}\)</span> (<span class="math inline">\(SS_{total}\)</span>).
-From the previous section, we have already found that <span class="math inline">\(SS_{residual} = 1034772\)</span>.
-Now, to get <span class="math inline">\(SS_{total}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Section 12.3</a>).
+To do this, we need to calculate the sum of the squared residual values (<span class="math inline">\(SS_{\mathrm{residual}}\)</span>) and the total sum of squared deviations of <span class="math inline">\(y_{i}\)</span> from the mean <span class="math inline">\(\bar{y}\)</span> (<span class="math inline">\(SS_{\mathrm{total}}\)</span>).
+From the previous section, we have already found that <span class="math inline">\(SS_{\mathrm{residual}} = 1034772\)</span>.
+Now, to get <span class="math inline">\(SS_{\mathrm{total}}\)</span>, we just need to get the sum of squares for fruit volume (see <a href="Chapter_12.html#the-variance">Section 12.3</a>).
 We can visualise this as the sum of squared deviations from the mean fruit volume of <span class="math inline">\(\bar{y} =\)</span> 1930.1 instead of the value predicted by the regression line (Figure 32.6).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-146-1.png" alt="A scatter plot is shown with Latitude on the x-axis and Fruit volume on the y-axis, and there are seven points on the plot with a line of best fit trending downwards and a dotted line indicating the mean; thin dashed vertical lines link points to the line of best fit." width="672" />
@@ -807,7 +807,7 @@ We could therefore write our regression equation,</p>
 For example, Figure 32.2 shows that there is a gap in fruit collection between 24 and 27 degrees north latitude.
 If we wanted to predict how large a fig fruit would be at a volume of 25, then we could set <span class="math inline">\(Latitude = 25\)</span> in our regression equation,</p>
 <p><span class="math display">\[Volume = 8458.3 - 242.68(25).\]</span></p>
-<p>Our predicted fig fruit volume at 25 degrees north latitude would be 2391.3 <span class="math inline">\(mm^{3}\)</span>.
+<p>Our predicted fig fruit volume at 25 degrees north latitude would be 2391.3 <span class="math inline">\(\mathrm{mm}^{3}\)</span>.
 Note that this is a point on the regression line in Figure 32.2.
 To find it visually in Figure 32.2, we just need to find 25 on the x-axis, then scan upwards until we see where this position on the x-axis hits the regression line.</p>
 <p>There is an important caveat to consider when making a prediction using regression equations.
@@ -852,8 +852,8 @@ The jamovi project. (2024). <em>Jamovi (version 2.5)</em>. <a href="https://www.
 <li id="fn75"><p>Biologically, a fruit volume of 8458.3 might be entirely unrealistic, which is why we need to be careful when extrapolating beyond the range of our independent variable (more on this later).<a href="Chapter_32.html#fnref75" class="footnote-back">↩︎</a></p></li>
 <li id="fn76"><p>Another common way to represent the above is, <span class="math inline">\(y = \hat{\beta}_{0} + \hat{\beta}_{1}x\)</span>, where <span class="math inline">\(\hat{\beta}_{0}\)</span> and <span class="math inline">\(\hat{\beta}_{1}\)</span> are sample estimates of the true parameters <span class="math inline">\({\beta}_{0}\)</span> and <span class="math inline">\({\beta}_{1}\)</span>.<a href="Chapter_32.html#fnref76" class="footnote-back">↩︎</a></p></li>
 <li id="fn77"><p><a href="https://bradduthie.github.io/stats/app/regr_click/">https://bradduthie.github.io/stats/app/regr_click/</a><a href="Chapter_32.html#fnref77" class="footnote-back">↩︎</a></p></li>
-<li id="fn78"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when two variables are more strongly correlated (i.e., r is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref78" class="footnote-back">↩︎</a></p></li>
-<li id="fn79"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{deviation} = 2721530\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{model} = 1686758\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{residual} = 1034772\)</span> with 5 degrees of freedom. To get an F value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{model} = 1686758/1 = 1686758\)</span> and <span class="math inline">\(MS_{residual} = 1034772/5 = 206954.4\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1686758 / 206954.4 = 8.150385\)</span>.<a href="Chapter_32.html#fnref79" class="footnote-back">↩︎</a></p></li>
+<li id="fn78"><p>Note that, mathematically, <span class="math inline">\(R^{2}\)</span> is in fact the square of the correlation coefficient. Intuitively this should make some sense; when two variables are more strongly correlated (i.e., <span class="math inline">\(r\)</span> is near -1 or 1), data are also more tightly distributed around the regression line. But it is also important to understand <span class="math inline">\(R^{2}\)</span> conceptually in terms of variation explained by the regression model.<a href="Chapter_32.html#fnref78" class="footnote-back">↩︎</a></p></li>
+<li id="fn79"><p>For the fig fruit volume example, the total variation is the sum of squared deviations of fruit volume from the mean is <span class="math inline">\(SS_{\mathrm{deviation}} = 2721530\)</span>. The amount of variation explained by the model is <span class="math inline">\(SS_{\mathrm{model}} = 1686758\)</span> with 1 degree of freedom. The remaining residual variation is <span class="math inline">\(SS_{\mathrm{residual}} = 1034772\)</span> with 5 degrees of freedom. To get an <span class="math inline">\(F\)</span> value, we can use the same approach as with the ANOVA in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>. We calculate the mean squared errors as <span class="math inline">\(MS_{\mathrm{model}} = 1686758/1 = 1686758\)</span> and <span class="math inline">\(MS_{\mathrm{residual}} = 1034772/5 = 206954.4\)</span>, then take the ratio to get the value <span class="math inline">\(F = 1686758 / 206954.4 = 8.150385\)</span>.<a href="Chapter_32.html#fnref79" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

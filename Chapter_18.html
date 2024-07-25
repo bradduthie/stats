@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -518,14 +518,14 @@ First, we will look at CIs assuming a normal distribution, then the separate cas
 <p>Remember from the Central Limit Theorem in <a href="Chapter_16.html#Chapter_16">Chapter 16</a> that as our sample size <span class="math inline">\(N\)</span> increases, the distribution of our sample mean <span class="math inline">\(\bar{x}\)</span> will start looking more and more like a normal distribution.
 Also from <a href="Chapter_16.html#Chapter_16">Chapter 16</a>, we know that we can calculate the probability associated with any interval of values in a normal distribution.
 For example, we saw that about 68.2% of the probability density of a normal distribution is contained within one standard deviation of the mean.
-We can use this knowledge from <a href="Chapter_16.html#Chapter_16">Chapter 16</a> to set confidence intervals for any percentage of values around the sample mean (<span class="math inline">\(\bar{x}\)</span>) using a standard error (SE) and z-score (z).
+We can use this knowledge from <a href="Chapter_16.html#Chapter_16">Chapter 16</a> to set confidence intervals for any percentage of values around the sample mean (<span class="math inline">\(\bar{x}\)</span>) using a standard error (SE) and z-score (<span class="math inline">\(z\)</span>).
 Confidence intervals include two numbers.
 The <strong>lower confidence interval</strong> (LCI) is below the mean, and the <strong>upper confidence interval</strong> (UCI) is above the mean.
 Here is how they are calculated,</p>
 <p><span class="math display">\[LCI = \bar{x} - (z \times SE),\]</span></p>
 <p><span class="math display">\[UCI = \bar{x} + (z \times SE).\]</span></p>
 <p>Note that the equations are the same, except that for the LCI, we are subtracting <span class="math inline">\(z \times SE\)</span>, and for the UCI we are adding it.
-The specific value of z determines the confidence interval that we are calculating.
+The specific value of <span class="math inline">\(z\)</span> determines the confidence interval that we are calculating.
 For example, about 95% of the probability density of a standard normal distribution lies between <span class="math inline">\(z = -1.96\)</span> and <span class="math inline">\(z = 1.96\)</span> (Figure 18.2).
 Hence, if we use <span class="math inline">\(z = 1.96\)</span> to calculate LCI and UCI, we would be getting 95% confidence intervals around our mean (an interactive application<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a> helps visualise the relationship between probability intervals and z-scores more generally).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-77"></span>
@@ -576,7 +576,7 @@ There are multiple ways to calculate CIs around proportions.
 One common method relies on a normal approximation, that is, approximating the discrete counts of the binomial distribution using the continuous normal distribution.
 For example, we can note that the variance of <span class="math inline">\(p\)</span> for a binomial distribution is <span class="math inline">\(\sigma^{2} = p\left(1 - p\right)\)</span> <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box et al., 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal &amp; Rohlf, 1995</a>)</span>.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a>
 This means that the standard deviation of <span class="math inline">\(p\)</span> is <span class="math inline">\(\sigma = \sqrt{p\left(1 - p\right)}\)</span>, and <span class="math inline">\(p\)</span> has a standard error,</p>
-<p><span class="math display">\[SE(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
+<p><span class="math display">\[\mathrm{SE}(p) = \sqrt{\frac{p\left(1 - p\right)}{N}}.\]</span></p>
 <p>We could then use this standard error in the same equation from earlier for calculating CIs.
 For example, if we wanted to calculate the lower 95% CI for <span class="math inline">\(\hat{p} = 0.55\)</span>,</p>
 <p><span class="math display">\[LCI_{95\%} = 0.55 - 1.96 \sqrt{\frac{0.55\left(1 - 0.55\right)}{40}} = 0.396\]</span></p>

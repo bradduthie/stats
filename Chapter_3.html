@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -820,8 +820,8 @@ Your dataset should have all of the relevant information about wasp head, thorax
 Suppose that we wanted our new dataset to include information about the volumes of each of the three wasp body segments, and wasp total volume.
 To do this, let us assume that the wasp head is a sphere (it is not, exactly, but this is probably the best estimate that we can get under the circumstances).
 Calculate the head volume of each wasp using the following formula,</p>
-<p><span class="math display">\[V_{head} = \frac{4}{3}\pi \left(\frac{Head_L + Head_W}{4}\right)^{3}.\]</span></p>
-<p>In the equation above, <span class="math inline">\(Head_{L}\)</span> is head length (mm) and <span class="math inline">\(Head_{W}\)</span> is head width (note, <span class="math inline">\((Head_L + Head_W)/4\)</span> estimates the radius of the head).
+<p><span class="math display">\[V_{\mathrm{head}} = \frac{4}{3}\pi \left(\frac{Head_L + Head_W}{4}\right)^{3}.\]</span></p>
+<p>In the equation above, <span class="math inline">\(Head_{\mathrm{L}}\)</span> is head length (mm) and <span class="math inline">\(Head_{\mathrm{W}}\)</span> is head width (note, <span class="math inline">\((Head_\mathrm{L} + Head_\mathrm{W})/4\)</span> estimates the radius of the head).
 You can replace <span class="math inline">\(\pi\)</span> with the approximation <span class="math inline">\(\pi \approx 3.14\)</span>.
 To make this calculation in your spreadsheet, find the cell in which you want to put the head volume.
 By typing in the <code>=</code> sign, the spreadsheet will know to start a new calculation or function in that cell.
@@ -829,7 +829,7 @@ Try this with an empty cell by typing ‘= 5 + 4’ in it (without quotes).
 When you hit ‘Enter’, the spreadsheet will make the calculation for you, and the number in the new cell will be 9.
 To see the equation again, you just need to double-click on the cell.</p>
 <p>To get an estimate of head volume into the dataset, we can create a new column of data.
-To calculate <span class="math inline">\(V_{head}\)</span> for the first wasp in row 2 of the spreadsheet, we could select the spreadsheet cell H2 and type the code, <code>=(4/3)*(3.14)*((B2+C2)/4)^3</code>.
+To calculate <span class="math inline">\(V_{\mathrm{head}}\)</span> for the first wasp in row 2 of the spreadsheet, we could select the spreadsheet cell H2 and type the code, <code>=(4/3)*(3.14)*((B2+C2)/4)^3</code>.
 Notice that the code recognises B2 and C2 as spreadsheet cells, and takes the values from these cells when doing these calculations.
 If the values of B2 or C2 were to change, then so would the calculated value in H2.
 Also notice that we are using parentheses to make sure that the order of operations is correct.
@@ -889,10 +889,10 @@ However you do it, you should now have a new column of calculated head volumes.<
 Unlike wasp heads, wasp thoraxes and abdomens are clearly not spheres.
 But it is perhaps not entirely unreasonable to model them as ellipsoids.
 To calculate wasp thorax and abdomen volumes assuming an ellipsoid shape, we can use the formula,</p>
-<p><span class="math display">\[V_{thorax} = \frac{4}{3}\pi \left(\frac{Thorax_{L}}{2}\right)\left(\frac{Thorax_{W}}{2}\right)^{2}.\]</span>
-In the equation above, <span class="math inline">\(Thorax_{L}\)</span> is thorax length (mm) and <span class="math inline">\(Thorax_{W}\)</span> is thorax width.
-Substitute <span class="math inline">\(Abdomen_{L}\)</span> and <span class="math inline">\(Abdomen_{W}\)</span> to instead calculate abdomen volume (<span class="math inline">\(V_{abdomen}\)</span>).
-What formula will you type into your empty spreadsheet cell to calculate <span class="math inline">\(V_{thorax}\)</span>?
+<p><span class="math display">\[V_{\mathrm{thorax}} = \frac{4}{3}\pi \left(\frac{Thorax_{\mathrm{L}}}{2}\right)\left(\frac{Thorax_{\mathrm{W}}}{2}\right)^{2}.\]</span>
+In the equation above, <span class="math inline">\(Thorax_{\mathrm{L}}\)</span> is thorax length (mm) and <span class="math inline">\(Thorax_{\mathrm{W}}\)</span> is thorax width.
+Substitute <span class="math inline">\(Abdomen_{\mathrm{L}}\)</span> and <span class="math inline">\(Abdomen_{\mathrm{W}}\)</span> to instead calculate abdomen volume (<span class="math inline">\(V_{\mathrm{abdomen}}\)</span>).
+What formula will you type into your empty spreadsheet cell to calculate <span class="math inline">\(V_{\mathrm{thorax}}\)</span>?
 Keep in mind the order of operations indicated in the equation above.</p>
 <pre><code>
 

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -872,9 +872,9 @@ To get Spearman’s rank correlation coefficient, we just calculate <span class=
 The ranks number from 1 to 11 for both variables, so the mean rank is 6 and the standard deviation is 3.317 for both thorax and abdomen ranks.
 We can then go through each row and calculate <span class="math inline">\(\left(x_{i} - \bar{x} \right) \times \left(y_{i} - \bar{y} \right)\)</span> using the ranks.
 For the first row, this gives us <span class="math inline">\(\left(4 - 6 \right) \left(9 - 6 \right) = -6\)</span>.
-If we do this same calculation for each row and sum them up, then multiply by 1/(N-1), we get a value of 6.4.
+If we do this same calculation for each row and sum them up, then multiply by <span class="math inline">\(1/(N-1)\)</span>, we get a value of 6.4.
 To calculate <span class="math inline">\(r\)</span>,</p>
-<p><span class="math display">\[r_{rank(x),rank(y)} = \frac{6.4}{3.317 \times 3.317}\]</span></p>
+<p><span class="math display">\[r_{\mathrm{rank}(x),\mathrm{rank}(y)} = \frac{6.4}{3.317 \times 3.317}\]</span></p>
 <p>Our Spearman’s rank correlation coefficient is therefore <span class="math inline">\(r = 0.582\)</span>, which is a bit lower than our Pearson product moment correlation was.
 The key point here is that the definition of the correlation coefficient has not changed; we are just using the ranks of our measurements instead of the measurements themselves.
 The reason why we might want to use Spearman’s rank correlation coefficient instead of the Pearson product moment correlation coefficient is explained in the next section.</p>
@@ -892,8 +892,8 @@ We therefore want to test the null hypothesis that <span class="math inline">\(r
 <p>Note that <span class="math inline">\(H_{A}\)</span> above is for a two-tailed test, in which we do not care about direction.
 We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</span> is that the correlation coefficient is greater than (or less than) zero.</p>
 <p>How do we actually test the null hypothesis?
-As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true correlation (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(SE(r)\)</span>)<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>,</p>
-<p><span class="math display">\[t = \frac{r - \rho}{SE(r)}.\]</span></p>
+As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true correlation (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(\mathrm{SE}(r)\)</span>)<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>,</p>
+<p><span class="math display">\[t = \frac{r - \rho}{\mathrm{SE}(r)}.\]</span></p>
 <p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
 Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
@@ -937,7 +937,7 @@ The jamovi project. (2024). <em>Jamovi (version 2.5)</em>. <a href="https://www.
 <ol start="70">
 <li id="fn70"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref70" class="footnote-back">↩︎</a></p></li>
 <li id="fn71"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref71" class="footnote-back">↩︎</a></p></li>
-<li id="fn72"><p>We can calculate the standard error of r as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>, <span class="math display">\[SE(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (<span class="math inline">\(N - 2\)</span>), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
+<li id="fn72"><p>We can calculate the standard error of <span class="math inline">\(r\)</span> as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman, 1968</a>)</span>, <span class="math display">\[\mathrm{SE}(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (<span class="math inline">\(N - 2\)</span>), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
 <li id="fn73"><p><a href="https://bradduthie.github.io/stats/app/corr_click/" class="uri">https://bradduthie.github.io/stats/app/corr_click/</a><a href="Chapter_30.html#fnref73" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>

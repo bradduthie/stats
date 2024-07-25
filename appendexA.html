@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -676,17 +676,17 @@ mean?</p>
 </tbody>
 </table>
 <p>What is the probability that this player chooses a small or a large dam?</p>
-<p><strong>To get this probability, calculate the probability that the player chooses a small dam plus the probability that the player chooses a large dam: P(small or large) = 0.284 + 0.541 = 0.825.</strong></p>
+<p><strong>To get this probability, calculate the probability that the player chooses a small dam plus the probability that the player chooses a large dam: <em>P</em>(small or large) = 0.284 + 0.541 = 0.825.</strong></p>
 <p>Now suppose that 3 new players arrive and decide to play the game. What is the probability that all 3 of these new players choose a large dam?</p>
-<p><strong>To get this probability, calculate the probability of choosing a large dam raised to the power of 3: P(3 large) = 0.541 <span class="math inline">\(\times\)</span> 0.541 <span class="math inline">\(\times\)</span> 0.541 = 0.541<span class="math inline">\(\mathbf{^{3}}\)</span> = 0.158.</strong></p>
+<p><strong>To get this probability, calculate the probability of choosing a large dam raised to the power of 3: <em>P</em>(3 large) = 0.541 <span class="math inline">\(\times\)</span> 0.541 <span class="math inline">\(\times\)</span> 0.541 = 0.541<span class="math inline">\(\mathbf{^{3}}\)</span> = 0.158.</strong></p>
 <p>What is the probability that the first player chooses a small dam, the second player chooses a medium dam, and the third player chooses a large dam?</p>
-<p><strong>To get this probability, calculate the probability of choosing small dam, times a medium dam, times a large dam: P(Player 1 = small, Player 2 = medium, Player 3 = large) = 0.541 <span class="math inline">\(\times\)</span> 0.176 <span class="math inline">\(\times\)</span> 0.284 = 0.027.</strong></p>
+<p><strong>To get this probability, calculate the probability of choosing small dam, times a medium dam, times a large dam: <em>P</em>(Player 1 = small, Player 2 = medium, Player 3 = large) = 0.541 <span class="math inline">\(\times\)</span> 0.176 <span class="math inline">\(\times\)</span> 0.284 = 0.027.</strong></p>
 <p>Imagine that you randomly choose one of the 74 players with equal probability (i.e., every player is equally likely to be chosen). What is the probability that you choose player 20?</p>
-<p><strong>To get this probability, we just need to calculate one divided by 74: P(Player 20) = 1/74 = 0.01351.</strong></p>
+<p><strong>To get this probability, we just need to calculate one divided by 74: <em>P</em>(Player 20) = 1/74 = 0.01351.</strong></p>
 <p>What is the probability that you choose player 20, <em>then</em> choose a different player with a large dam? As a hint, remember that you are now sampling <em>without replacement</em>. The second choice cannot be player 20 again, so the probability of choosing a player with a large dam has changed from the estimated probability in Table 17.1.</p>
-<p><strong>To get this probability, we need to first recognise that there is a 1/74 probability (0.01351) of choosing Player 20. Player 20 chose a large dam, so the number of remaining players in the dataset is now 73, and now only 39 of them chose large dams. Hence, the probability of choosing a large dam from the remaining players is 39/73 (0.53425). To calculate the probability of both events happening, we need to multiply: P(Player 20, Large) = 0.01351 <span class="math inline">\(\times\)</span> 0.53425 = 0.00722.</strong></p>
+<p><strong>To get this probability, we need to first recognise that there is a 1/74 probability (0.01351) of choosing Player 20. Player 20 chose a large dam, so the number of remaining players in the dataset is now 73, and now only 39 of them chose large dams. Hence, the probability of choosing a large dam from the remaining players is 39/73 (0.53425). To calculate the probability of both events happening, we need to multiply: <em>P</em>(Player 20, Large) = 0.01351 <span class="math inline">\(\times\)</span> 0.53425 = 0.00722.</strong></p>
 <p>Now, recreate the table in Figure 17.3 and estimate the probability that an Android user will choose to build a large dam.</p>
-<p><strong>To get this probability, divide the number of Android players that choose a large dam (31) by the total number of Android users (56): P(Large | Android) = 31/56 = 0.554.</strong></p>
+<p><strong>To get this probability, divide the number of Android players that choose a large dam (31) by the total number of Android users (56): <em>P</em>(Large | Android) = 31/56 = 0.554.</strong></p>
 <p>Is P(Large|Android) much different from the probability that any player chooses a large dam, as calculated in Table 17.1? Do you think that the difference is significant?</p>
 <p><strong>This is a small difference, but not that much. It is probably not significant.</strong></p>
 </div>
@@ -755,7 +755,7 @@ and UCI above?</p>
 <p><strong>These confidence intervals are the same as those calculated from the normal distribution, bu they are slightly different from those from the ‘Descriptives’ menu as those ones are calculated with t-scores (which are more accurate), rather than z-scores.</strong></p>
 <p>What are the appropriate df for DBH? <strong>df: </strong></p>
 <p>From the Results table, what is the proper t-score to use in the equations for LCI and UCI? <strong>t-score: 1.980.</strong></p>
-<p>Again, use the values of <span class="math inline">\(\bar{x}\)</span>, t, and SE for DBH in the equations above to calculate lower and upper 95% confidence intervals.</p>
+<p>Again, use the values of <span class="math inline">\(\bar{x}\)</span>, <span class="math inline">\(t\)</span>, and <span class="math inline">\(SE\)</span> for DBH in the equations above to calculate lower and upper 95% confidence intervals.</p>
 <p>Lower 95% CI: <strong>34.92</strong></p>
 <p>Upper 95% CI: <strong>38.99</strong></p>
 <p>Reflect on any similarities or differences that you see in all of these different ways of calculating confidence intervals.</p>
@@ -915,7 +915,7 @@ Report the 99% CIs below.</p>
 <p>What is the alternative hypothesis (<span class="math inline">\(H_{A}\)</span>), and should you use a one- or two-tailed test?</p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>The overall student scores were sampled from a population with a mean lower than 60.1.</strong></p>
 <p>One- or two-tailed? <strong>One-tailed.</strong></p>
-<p>From the Normality Test table, what is the p-value of the Shapiro-Wilk test? <strong><span class="math inline">\(\mathbf{P = 0.112}\)</span>.</strong></p>
+<p>From the Normality Test table, what is the p-value of the Shapiro-Wilk test? <strong><em>P</em> = 0.112</strong></p>
 <p>Based on this p-value, should we reject the null hypothesis?</p>
 <p><strong>No, we do not reject the null hypothesis that the data are normally distributed.</strong></p>
 <p>On the right panel of jamovi, you will see a table with the t-statistic, degrees of freedom, and p-value of the one sample t-test. Write these values down below.</p>
@@ -923,7 +923,7 @@ Report the 99% CIs below.</p>
 <p>degrees of freedom: <strong>20</strong></p>
 <p>p-value: <strong>0.244</strong></p>
 <p>Based on the p-value, should you reject the null hypothesis that your students’ mean overall grade is the same as the national average? Why or why not?</p>
-<p><strong>We should not reject the null hypothesis because our p-value is greater than our threshold Type I error rate of 0.05 (i.e., <span class="math inline">\(\mathbf{P &gt; 0.05}\)</span>). Assuming that the null hypothesis is true, the probability getting a t-statistic as extreme as the one we observed is only about 1 in 4, which is not especially unlikely.</strong></p>
+<p><strong>We should not reject the null hypothesis because our p-value is greater than our threshold Type I error rate of 0.05 (i.e., <em>P</em> &gt; 0.05). Assuming that the null hypothesis is true, the probability getting a t-statistic as extreme as the one we observed is only about 1 in 4, which is not especially unlikely.</strong></p>
 <p>Based on this test, how would you respond to your colleague who is concerned that your students are performing below the national average?</p>
 <p><strong>There is no evidence that students in this class are performing below the national average.</strong></p>
 <p>Is there an assumption that might be particularly suspect when comparing the scores of students in a single classroom with a national average? Why or why not?</p>
@@ -939,16 +939,16 @@ Report the 99% CIs below.</p>
 <p>Write these values down below.</p>
 <p>t-statistic: <strong><span class="math inline">\(\mathbf{-8.18}\)</span></strong></p>
 <p>degrees of freedom: <strong>20</strong></p>
-<p>p-value: <strong><span class="math inline">\(\mathbf{P &lt; 0.001}\)</span></strong></p>
+<p>p-value: <strong><em>P</em> &lt; 0.001</strong></p>
 <p>Based on this p-value, should you reject or fail to reject your null hypothesis? What can you then conclude about student test scores?</p>
-<p><strong>Because <span class="math inline">\(\mathbf{P &lt; 0.05}\)</span>, we reject the null hypothesis. We can conclude that the mean score for Test 1 is less than the mean score for Test 2, so the grades appear to have improved.</strong></p>
+<p><strong>Because <em>P</em> &lt; 0.05, we reject the null hypothesis. We can conclude that the mean score for Test 1 is less than the mean score for Test 2, so the grades appear to have improved.</strong></p>
 </div>
 <div id="exercise-23.3" class="section level3 hasAnchor" number="36.6.3">
 <h3><span class="header-section-number">A.6.3</span> Exercise 23.3<a href="appendexA.html#exercise-23.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are not interested in whether the scores are higher or lower than 62, just that
 they are different. Consequently, what should our alternative hypothesis (<span class="math inline">\(H_{A}\)</span>) be?</p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>Test 3 scores were sampled from a population with a mean not equal to 62.</strong></p>
-<p>What is the p-value of the Shaprio-Wilk test this time? <strong><span class="math inline">\(\mathbf{P = 0.022}\)</span>.</strong></p>
+<p>What is the p-value of the Shaprio-Wilk test this time? <strong><em>P</em> = 0.022.</strong></p>
 <p>What inference can you make from the Q-Q plot? Do the points fall along the diagonal line?</p>
 <p><strong>The points appear to be a bit curved. They do not cleanly fall along the diagonal line.</strong></p>
 <p>Based on the Shapiro-Wilk test and Q-Q plot, is it safe to assume that the Test 3 scores are normally distributed?</p>
@@ -960,7 +960,7 @@ they are different. Consequently, what should our alternative hypothesis (<span 
 <p>Based on what you learned in Section 22.5.1, what does this test statistic actually mean?</p>
 <p><strong>It means that if we subtract 62 from the Test 3 values, then rank each by its absolute value, the sum of ranks that came from positive values should equal 53.</strong></p>
 <p>Now look at the p-value for the Wilcoxon test. What is the p-value, and what
-should you conclude from it? <strong><span class="math inline">\(\mathbf{P = 0.055}\)</span>.</strong></p>
+should you conclude from it? <strong><em>P</em> = 0.055.</strong></p>
 <p>Conclusion: <strong>We do not reject the null hypothesis that the median Test 3 score is 62.</strong></p>
 </div>
 <div id="exercise-23.4" class="section level3 hasAnchor" number="36.6.4">
@@ -968,11 +968,11 @@ should you conclude from it? <strong><span class="math inline">\(\mathbf{P = 0.0
 <p>One- or two-tailed? <strong>Two-tailed.</strong></p>
 <p>Based on the Assumption Checks in jamovi (and Figure 23.5), what can you conclude about the t-test assumptions?</p>
 <p><strong>The data appear to be normally distributed, but the groups do not have equal variances.</strong></p>
-<p>What is the p-value for Levene’s test? <strong><span class="math inline">\(\mathbf{P = 0.021}\)</span>.</strong></p>
+<p>What is the p-value for Levene’s test? <strong><em>P</em> = 0.021.</strong></p>
 <p>Based on what you learnt in Chapter 22.2, what is the appropriate test to run in this case? Test: <strong>Welch’s independent samples t-test.</strong></p>
 <p>Check the box for the correct test, then report the test statistic and p-value from the table that appears in the right panel.</p>
 <p>Test statistic: <strong><span class="math inline">\(\mathbf{-0.3279}\)</span></strong></p>
-<p><strong><span class="math inline">\(\mathbf{P = 0.745}\)</span></strong></p>
+<p><strong>P* = 0.745</strong>*</p>
 <p>What can you conclude from this t-test?</p>
 <p><strong>There is no evidence to reject the null hypothesis that both years were sampled from a population from the same mean score. The overall scores appear to be the same between years.</strong></p>
 </div>
@@ -983,8 +983,8 @@ should you conclude from it? <strong><span class="math inline">\(\mathbf{P = 0.0
 <p><span class="math inline">\(H_{A}\)</span>: <strong>Test 3 scores in 2022 and 2023 were sampled from a population with different means.</strong></p>
 <p>Is this a one or two tailed test?: <strong>Two-tailed test.</strong></p>
 <p>Do the variances appear to be the same for Test 3 scores in 2022 versus 2023? How can you make this conclusion?</p>
-<p><strong>The homogeneity of variances test (i.e., Levene’s test) show a test statistic of <span class="math inline">\(\mathbf{F = 0.1379}\)</span> and a p-value of <span class="math inline">\(\mathbf{P = 0.712}\)</span>, so there is no evidence to reject the null hypothesis that the two years have different variances.</strong></p>
-<p>What is the p-value of the Shapiro-Wilk test? <strong><span class="math inline">\(\mathbf{P &lt; 0.001}\)</span></strong></p>
+<p><strong>The homogeneity of variances test (i.e., Levene’s test) show a test statistic of <em>F</em> = 0.1379 and a p-value of <em>P</em> = 0.712, so there is no evidence to reject the null hypothesis that the two years have different variances.</strong></p>
+<p>What is the p-value of the Shapiro-Wilk test? <strong><em>P</em> &lt; 0.001</strong></p>
 <p>Now, have a look at the Q-Q plot. What can you infer from this plot about the normality of the data, and why?</p>
 <p><strong>The data appear to deviate from the diagonal line, suggesting non-normality.</strong></p>
 <p>Based on what you found from testing the model assumptions above, and the material in Chapter 22, what test is the most appropriate one to use?</p>
@@ -1011,16 +1011,16 @@ should you conclude from it? <strong><span class="math inline">\(\mathbf{P = 0.0
 <p>Normality conclusion: <strong>Do not reject null hypothesis that data are normally distributed.</strong></p>
 <p>Homogeneity of variances conclusion: <strong>Do not reject null hypothesis that groups have the same variances.</strong></p>
 <p>Given the conclusions from the checks of normality and homogeneity of variances above, what kind of test should you use to see if the mean Nitrogen concentration is significantly different in Funda versus Bailundo? Test: <strong>Independent samples Student’s t-test.</strong></p>
-<p>Run the test above in jamovi. What is the p-value of the test, and what conclusion do you make about Nitrogen concentration at the two sites? <strong><span class="math inline">\(\mathbf{P = 0.030}\)</span></strong></p>
+<p>Run the test above in jamovi. What is the p-value of the test, and what conclusion do you make about Nitrogen concentration at the two sites? <strong><em>P</em> = 0.030</strong></p>
 <p>Conclusion: <strong>Mean nitrogen concentration is different in the 2 sites (reject null hypothesis).</strong></p>
-<p>Write down the test statistic (F), degrees of freedom, and p-values from this table below.</p>
+<p>Write down the test statistic (<span class="math inline">\(F\)</span>), degrees of freedom, and p-values from this table below.</p>
 <p><span class="math inline">\(F =\)</span> <strong>4.98377</strong></p>
 <p><span class="math inline">\(df1 =\)</span> <strong>1</strong></p>
 <p><span class="math inline">\(df2 =\)</span> <strong>49</strong></p>
 <p><span class="math inline">\(P =\)</span> <strong>0.030</strong></p>
-<p>What is the approximate area under the curve (i.e., the orange area) where the F value on the x-axis is greater than your calculated F? <strong>About 0.03 for F = 4.98.</strong></p>
+<p>What is the approximate area under the curve (i.e., orange area) where the <span class="math inline">\(F\)</span> value on the x-axis is greater than your calculated <span class="math inline">\(F\)</span>? <strong>About 0.03 for <em>F</em> = 4.98.</strong></p>
 <p>Approximately, what is this threshold F value above which we will reject the null hypothesis?
-Approximate threshold F: <strong>Somewhere between 4.03 and 4.05.</strong></p>
+Approximate threshold <span class="math inline">\(F\)</span>: <strong>Somewhere between 4.03 and 4.05.</strong></p>
 <p>What should you conclude regarding the null hypothesis that sites have the same mean?
 Conclusion: <strong>Reject the null hypothesis that sites have the same mean.</strong></p>
 <p>Look again at the p-value from the one-way ANOVA output and the Student’s t-test output. Are the two values the same, or different? Why might this be?</p>
@@ -1040,8 +1040,8 @@ Conclusion: <strong>Reject the null hypothesis that sites have the same mean.</s
 <p>Conclusion: <strong>Profiles do not have the same mean nitrogen concentration (reject null hypothesis).</strong></p>
 <p>Write down the ‘Probability’ value from the Results table in the panel to the right.
 Probability: <strong>0.04044.</strong></p>
-<p>From the Results table, what is the critical F value (‘Quantile’), above which we would reject the null hypothesis that all groups have the same mean? <strong>Critical F value: 3.19.</strong></p>
-<p>Fill in the table below (Table 28.1) with the information for degrees of freedom, F, and P.</p>
+<p>From the Results table, what is the critical <span class="math inline">\(F\)</span> value (‘Quantile’), above which we would reject the null hypothesis that all groups have the same mean? <strong>Critical <em>F</em> value: 3.19.</strong></p>
+<p>Fill in the table below (Table 28.1) with the information for degrees of freedom, <span class="math inline">\(F\)</span>, and <span class="math inline">\(P\)</span>.</p>
 <table>
 <caption><strong>TABLE 28.1</strong> ANOVA output testing the null hypothesis that mean Nitrogen concentration is the same across three different soil profiles in Angola.</caption>
 <colgroup>
@@ -1085,15 +1085,15 @@ Probability: <strong>0.04044.</strong></p>
 <div id="exercise-28.3" class="section level3 hasAnchor" number="36.7.3">
 <h3><span class="header-section-number">A.7.3</span> Exercise 28.3<a href="appendexA.html#exercise-28.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Find the p-values associated with the Tukey’s HSD (<span class="math inline">\(P_{Tukey}\)</span>) for each profile pairing. Report these below.</p>
-<p>Tukey’s HSD Lower - Middle: <strong><span class="math inline">\(\mathbf{P = 0.705}\)</span></strong></p>
-<p>Tukey’s HSD Lower - Upper: <strong><span class="math inline">\(\mathbf{P = 0.193}\)</span></strong></p>
-<p>Tukey’s HSD Middle - Upper: <strong><span class="math inline">\(\mathbf{P = 0.035}\)</span></strong></p>
+<p>Tukey’s HSD Lower - Middle: <strong><em>P</em> = 0.705</strong></p>
+<p>Tukey’s HSD Lower - Upper: <strong><em>P</em> = 0.193</strong></p>
+<p>Tukey’s HSD Middle - Upper: <strong><em>P</em> = 0.035</strong></p>
 <p>From this output, what can we conclude about the difference among soil profiles?</p>
 <p><strong>Middle and upper profiles appear to have significantly different mean nitrogen concentrations, but other combinations are not significant.</strong></p>
 <p>Report the p-values for the Bonferonni correction below.</p>
-<p>Bonferonni Lower - Middle: <strong><span class="math inline">\(\mathbf{P = 1.000}\)</span></strong></p>
-<p>Bonferonni Lower - Upper: <strong><span class="math inline">\(\mathbf{P = 0.253}\)</span></strong></p>
-<p>Bonferonni Middle - Upper: <strong><span class="math inline">\(\mathbf{P = 0.040}\)</span></strong></p>
+<p>Bonferonni Lower - Middle: <strong><em>P</em> = 1.000}$</strong></p>
+<p>Bonferonni Lower - Upper: <strong><em>P</em> = 0.253</strong></p>
+<p>Bonferonni Middle - Upper: <strong><em>P</em> = 0.040</strong></p>
 <p>In general, how are the p-values different between Tukey’s HSD and the Bonferroni correction? Are they about the same, higher, or lower?</p>
 <p><strong>In general, p-values from the Bonferonni correction are higher.</strong></p>
 <p>In general, how are the p-values different between Tukey’s HSD and the Bonferroni correction? Are they about the same, higher, or lower?</p>
@@ -1104,7 +1104,7 @@ Probability: <strong>0.04044.</strong></p>
 <p>How would you describe the distribution? Do the data appear to be normally distributed?</p>
 <p><strong>The histogram appears to show a distribution that is very right-skewed. This does not look normally distributed.</strong></p>
 <p>From the Levene’s test, the Shapiro-Wilk test, and the Q-Q plot, what assumptions of ANOVA might be violated?</p>
-<p><strong>From the Shapiro-Wilk test (<span class="math inline">\(\mathbf{P &lt; 0.001}\)</span>) and Levene’s test (<span class="math inline">\(\mathbf{P = 0.024}\)</span>), it appears that the assumptions of normality and equal variances are violated.</strong></p>
+<p><strong>From the Shapiro-Wilk test (<em>P</em> &lt; 0.001) and Levene’s test (<em>P</em> = 0.024), it appears that the assumptions of normality and equal variances are violated.</strong></p>
 <p>Report these values below.</p>
 <p><span class="math inline">\(\chi^{2} =\)</span> <strong>0.38250</strong></p>
 <p><span class="math inline">\(df =\)</span> <strong>2</strong></p>
@@ -1189,17 +1189,18 @@ Probability: <strong>0.04044.</strong></p>
 <div id="exercise-31.1" class="section level3 hasAnchor" number="36.8.1">
 <h3><span class="header-section-number">A.8.1</span> Exercise 31.1<a href="appendexA.html#exercise-31.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What are the null and alternative hypotheses for this Chi-square goodness of fit test?</p>
-<p><span class="math inline">\(H_{O}\)</span>: <strong>There is no significant difference between expected and observed counts of living and dead bees.</strong></p>
+<p><span class="math inline">\(H_{O}\)</span>: <strong>There is no significant difference between expected and</strong>
+<strong>observed counts of living and dead bees.</strong></p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>There is a significant difference between expected and observed counts of living and dead bees.</strong></p>
-<p>What is the sample size (N) of the dataset? <strong>N: 256</strong></p>
+<p>What is the sample size (<span class="math inline">\(N\)</span>) of the dataset? <strong><em>N</em>: 256.</strong></p>
 <p>Based on this sample size, what are the expected counts for bees that survived and died?</p>
-<p>Survived (<span class="math inline">\(E_{surv}\)</span>): <strong>128</strong></p>
-<p>Died (<span class="math inline">\(E_{died}\)</span>): <strong>128</strong></p>
+<p>Survived (<span class="math inline">\(E_{\mathrm{surv}}\)</span>): <strong>128</strong></p>
+<p>Died (<span class="math inline">\(E_{\mathrm{died}}\)</span>): <strong>128</strong></p>
 <p>Write down the observed counts of bees that survived and died.</p>
-<p>Survived (<span class="math inline">\(O_{surv}\)</span>): <strong>139</strong></p>
-<p>Died (<span class="math inline">\(O_{died}\)</span>): <strong>117</strong></p>
+<p>Survived (<span class="math inline">\(O_{\mathrm{surv}}\)</span>): <strong>139</strong></p>
+<p>Died (<span class="math inline">\(O_{\mathrm{died}}\)</span>): <strong>117</strong></p>
 <p>What is the <span class="math inline">\(\chi^{2}\)</span> value? <strong>1.89.</strong></p>
-<p>How many degrees of freedom are there? <strong>df = 1.</strong></p>
+<p>How many degrees of freedom are there? <strong><em>df</em> = 1.</strong></p>
 <p>Write these values below, and check to see if the <span class="math inline">\(\chi^{2}\)</span> and df match the values you calculated above by hand.</p>
 <p><span class="math inline">\(\chi^{2}\)</span> = <strong>1.89063</strong></p>
 <p><span class="math inline">\(df =\)</span> <strong>1</strong></p>
@@ -1225,8 +1226,8 @@ Probability: <strong>0.04044.</strong></p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>There is an association between bee colony and bee survival.</strong></p>
 <p>Report the key statistics in the output table below.</p>
 <p>Chi-square: <strong>11.31033</strong></p>
-<p>df: <strong>7</strong></p>
-<p>p: <strong>0.12564</strong></p>
+<p><span class="math inline">\(df =\)</span> <strong>7</strong></p>
+<p><span class="math inline">\(P =\)</span> <strong>0.12564</strong></p>
 <p>From these statistics, should you reject or not reject the null hypothesis?</p>
 <p><span class="math inline">\(H_{O}\)</span>: <strong>Do not reject null hypothesis.</strong></p>
 <p>What can you conclude from this test? Explain your conclusion as if you were reporting the results of the test to someone who was unfamiliar with statistical hypothesis testing.</p>
@@ -1236,14 +1237,14 @@ Probability: <strong>0.04044.</strong></p>
 </div>
 <div id="exercise-31.4" class="section level3 hasAnchor" number="36.8.4">
 <h3><span class="header-section-number">A.8.4</span> Exercise 31.4<a href="appendexA.html#exercise-31.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Just looking at the scatterplot, does it appear as though bee mass and <span class="math inline">\(CO_{2}\)</span> output are correlated? Why or why not?</p>
+<p>Just looking at the scatterplot, does it appear as though bee mass and CO<sub>2</sub> output are correlated? Why or why not?</p>
 <p><strong>The scatterplot might indicate a slight negative correlation, but it is difficult to say for sure just based on a visualisation.</strong></p>
 <p>What are the null and alternative hypotheses of this test?</p>
 <p><span class="math inline">\(H_{O}\)</span>: <strong>The correlation coefficient between bee mass and carbon dioxide output is zero.</strong></p>
 <p><span class="math inline">\(H_{A}\)</span>: <strong>The correlation coefficient between bee mass and carbon dioxide output is negative.</strong></p>
 <p>Check this box, then find the p-values for the Shapiro-Wilk test of normality in the panel to the right. Write these p-values down below.</p>
 <p>Mass <span class="math inline">\(P =\)</span> <strong>0.96248</strong></p>
-<p><span class="math inline">\(CO_2\)</span> <span class="math inline">\(P =\)</span> <strong>0.56459</strong></p>
+<p>CO<sub>2</sub> <span class="math inline">\(P =\)</span> <strong>0.56459</strong></p>
 <p>Based on these p-values, which type of correlation coefficient should we use to test <span class="math inline">\(H_{0}\)</span>, and why?</p>
 <p><strong>We should use the Pearson’s product moment correlation coefficient because both variables appear to be normally distributed.</strong></p>
 <p>This table reports both the correlation coefficient (here called ‘Pearson’s r’) and the p-value. Write these values below.</p>
@@ -1264,7 +1265,7 @@ Probability: <strong>0.04044.</strong></p>
 <p>Based on these results, should we reject or not reject the null hypothesis?</p>
 <p><span class="math inline">\(H_{0}\)</span>: <strong>Do not reject null hypothesis.</strong></p>
 <p>Would we have made the same conclusion about the correlation (or lack thereof) between bee mass and nectar consumption? Why or why not?</p>
-<p><strong>If we had used a Pearson product moment correlation coefficient instead of the Spearman’s rank correlation coefficient, we would have calculated <span class="math inline">\(\mathbf{r = 0.12729}\)</span> and a p-value of <span class="math inline">\(\mathbf{P = 0.04186}\)</span>. Because our p-value would have been less than 0.05, we would have incorrectly rejected the null hypothesis.</strong></p>
+<p><strong>If we had used a Pearson product moment correlation coefficient instead of the Spearman’s rank correlation coefficient, we would have calculated <em>r</em> = 0.12729 and a p-value of <em>P</em> = 0.04186. Because our p-value would have been less than 0.05, we would have incorrectly rejected the null hypothesis.</strong></p>
 </div>
 </div>
 <div id="chapter-34" class="section level2 hasAnchor" number="36.9">
@@ -1274,7 +1275,7 @@ Probability: <strong>0.04044.</strong></p>
 <p>Before doing this, what is the independent variable, and what is the dependent variable?</p>
 <p>Independent variable: <strong>depth</strong></p>
 <p>Dependent variable: <strong>PyC</strong></p>
-<p>What is the sample size of this dataset? <strong>N = 240.</strong></p>
+<p>What is the sample size of this dataset? <strong><em>N</em> = 240.</strong></p>
 <p>Describe the scatterplot that is produced in the jamovi panel to the right.</p>
 <p><strong>Linear relationship with a lot of scatter. Perhaps a slight downward trend?</strong></p>
 <p>In other words, does the scatterplot show any evidence of a curvilinear pattern in the data?</p>
@@ -1283,7 +1284,7 @@ Probability: <strong>0.04044.</strong></p>
 <p><strong>No evidence of heteroscedasticity, so this assumption appears to be valid.</strong></p>
 <p>In your own words, what is this test doing? Drawing a picture might be helping to explain.</p>
 <p><strong>This test is checking to see if the residual values around the regression line are normally distributed.</strong></p>
-<p>What is the p-value of the Shapiro-Wilk test of normality? <strong><span class="math inline">\(\mathbf{P = 0.91624}\)</span></strong></p>
+<p>What is the p-value of the Shapiro-Wilk test of normality? <strong><em>P</em> = 0.91624</strong></p>
 <p>Based on the above p-value, is it safe to conclude that the residuals are normally distributed? Conclusion: <strong>Yes, residual values are normally distributed.</strong></p>
 <p>A new table will open up in the right panel called ‘Model Fit Measures’. Write the output statistics from this table below:</p>
 <p><span class="math inline">\(R^{2} =\)</span> <strong>0.02532</strong></p>
@@ -1299,8 +1300,8 @@ Probability: <strong>0.04044.</strong></p>
 <p>Intercept: <strong>1.61719</strong></p>
 <p>Slope: <strong><span class="math inline">\(\mathbf{-0.00263}\)</span></strong></p>
 <p>What null hypotheses are we testing when inspecting these p-values?</p>
-<p>Intercept <span class="math inline">\(H_{0}\)</span>: <strong><span class="math inline">\(\mathbf{P &lt; 0.0001}\)</span>, testing null hypothesis that <span class="math inline">\(\mathbf{b_{0} = 0}\)</span>.</strong></p>
-<p>Slope <span class="math inline">\(H_{0}\)</span>: <strong><span class="math inline">\(\mathbf{P = 0.01358}\)</span>, testing null hypothesis that <span class="math inline">\(\mathbf{b_{1} = 0}\)</span>.</strong></p>
+<p>Intercept <span class="math inline">\(H_{0}\)</span>: <strong><em>P</em> &lt; 0.0001, testing null hypothesis that <span class="math inline">\(\mathbf{b_{0} = 0}\)</span>.</strong></p>
+<p>Slope <span class="math inline">\(H_{0}\)</span>: <strong><em>P</em> = 0.01358, testing null hypothesis that <span class="math inline">\(\mathbf{b_{1} = 0}\)</span>.</strong></p>
 <p>Finally, what can we conclude about the relationship between depth and pyrogenic carbon storage? <strong>Pyrogenic carbon changes with increasing soil depth.</strong></p>
 </div>
 <div id="exercise-34.2" class="section level3 hasAnchor" number="36.9.2">
@@ -1310,7 +1311,7 @@ Probability: <strong>0.04044.</strong></p>
 <p>Normality: <strong>No issues.</strong></p>
 <p>Homoscedasticity: <strong>No issues.</strong></p>
 <p>Using the same protocol as the previous exercise, what percentage of the variation in PyC is explained by the regression model? <strong>Variation explained: 48.2% (0.482 * 100% = 48.2%).</strong></p>
-<p>Is the overall model statistically significant? How do you know? Model significance: <strong>Yes, because overall model test p-value is <span class="math inline">\(\mathbf{P &lt; 0.05}\)</span>.</strong></p>
+<p>Is the overall model statistically significant? How do you know? Model significance: <strong>Yes, because overall model test p-value is <em>P</em> &lt; 0.05.</strong></p>
 <p>Are the intercept and slope significantly different from zero?</p>
 <p>Intercept: <strong>Yes, significantly different from zero; reject null hypothesis.</strong></p>
 <p>Slope: <strong>Yes, significantly different from zero; reject null hypothesis.</strong></p>
@@ -1318,7 +1319,7 @@ Probability: <strong>0.04044.</strong></p>
 <p><span class="math inline">\(b_{0}\)</span>: <strong>0.88911</strong></p>
 <p><span class="math inline">\(b_{1}\)</span>: <strong>0.05688</strong></p>
 <p>Using these values for the intercept and the slope, write the regression equation to predict pyrogenic carbon (PyC) from fire frequency (fire_freq).</p>
-<p><strong>Y = 0.88911 + (0.05688 * X)</strong> OR <strong>PyC = 0.88911 + (0.05688 * fire_freq)</strong></p>
+<p><strong><em>Y</em> = 0.88911 + (0.05688 * <em>X</em>)</strong> OR <strong>PyC = 0.88911 + (0.05688 * fire_freq)</strong></p>
 <p>Using this equation, what would be the predicted PyC for a location that had experienced 10 fires in the past 20 years (i.e., fire_freq = 10)? PyC = <strong>1.45791.</strong></p>
 <p>Explain what these two columns of data represent in terms of the scatterplot you made at the start of this exercise. In other words, where would the predicted and residual values be located on the scatterplot?</p>
 <p><strong>The predicted values represent the PyC points that fall along the regression line for a particular fire_freq value. That is, what the model predicts PyC should be at each fire frequency. The residual values are the difference between the actual PyC values and what the predicted PyC values are in the model.</strong></p>
@@ -1336,10 +1337,10 @@ Probability: <strong>0.04044.</strong></p>
 <p><span class="math inline">\(R^{2} =\)</span> <strong>0.48202</strong></p>
 <p>Adjusted <span class="math inline">\(R^{2} =\)</span> <strong>0.47765</strong></p>
 <p><span class="math inline">\(F =\)</span> <strong>110.27348</strong></p>
-<p><strong><span class="math inline">\(\mathbf{P &lt; 0.0001}\)</span></strong></p>
+<p><strong><em>P</em> &lt; 0.0001</strong></p>
 <p>Which one is most appropriate to use for interpreting the multiple regression?</p>
 <p><strong>The adjusted R-squared takes into account that adding more independent variables will increase the total amount of variation explained in the dependent variable even if the independent variable is not a good predictor. We should therefore use the adjusted R-squared when looking at a multiple regression model.</strong></p>
-<p>What is the null hypothesis of this tested with the F value and the P value shown in the Model Fit Measures table?</p>
+<p>What is the null hypothesis of this tested with the <span class="math inline">\(F\)</span> value and the <span class="math inline">\(P\)</span> value shown in the Model Fit Measures table?</p>
 <p><span class="math inline">\(H_{0}\)</span>: <strong>A model that includes the independent variables depth and fire frequency does not explain variation in PyC significantly better than just the mean of PyC.</strong></p>
 <p>Based on the Overall Model Test output, should you reject or not reject <span class="math inline">\(H_{0}\)</span>? <strong>Reject the null hypothesis.</strong></p>
 <p>What can you conclude about the significance of the Intercept, and the partial regression coefficients for fire frequency and depth?</p>

@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -484,7 +484,7 @@ div.csl-indent {
 <p>If the assumptions of the one-way ANOVA are violated, then we can consider using a Kruskal-Wallis test.
 The Kruskal-Wallis test is essentially an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Section 22.5.2</a> for samples with more than two groups <span class="citation">(<a href="#ref-Kruskal1952" role="doc-biblioref">Kruskal &amp; Wallis, 1952</a>)</span>.
 Like the Mann-Whitney U test, it uses the <em>ranks</em> of values instead of the actual values in the dataset.
-The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (H) that increases as the difference among group ranks increases, relative to the difference within group ranks.
+The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (<span class="math inline">\(H\)</span>) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
 For convenience, Table 24.1 is reproduced here as Table 26.1.</p>
 <table style="width:56%;">
@@ -592,17 +592,17 @@ There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 </tr>
 </tbody>
 </table>
-<p>From these ranks, we calculate a test statistic H from the overall sample size (N), the sample size (<span class="math inline">\(N_{i}\)</span>) of each of the groups (<span class="math inline">\(g\)</span>), the mean of group ranks (<span class="math inline">\(\bar{R}_{i}\)</span>), and the overall mean rank (<span class="math inline">\(\bar{\bar R}\)</span>).
+<p>From these ranks, we calculate a test statistic <span class="math inline">\(H\)</span> from the overall sample size (N), the sample size (<span class="math inline">\(N_{i}\)</span>) of each of the groups (<span class="math inline">\(g\)</span>), the mean of group ranks (<span class="math inline">\(\bar{R}_{i}\)</span>), and the overall mean rank (<span class="math inline">\(\bar{\bar R}\)</span>).
 Of course, we do not need to do this by hand.
 But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a" role="doc-biblioref">Kruskal, 1952</a>)</span>,</p>
 <p><span class="math display">\[H = (N - 1) \frac{\sum_{i=1}^{g}N_{i}\left(\bar{R}_{i} - \bar{\bar R} \right)^2}{\sum_{i=1}^{g}\sum_{j=1}^{N_{i}} \left(R_{ij} - \bar{\bar R} \right)^{2}}.\]</span></p>
 <p>For our purposes, the mathematical details are not important.
-The equation is included here only to show the similarity between the calculation of H versus F from <a href="Chapter_24.html#one-way-anova">Section 24.2</a>.
-In the numerator of the equation for H, we are calculating the squared deviation of mean group ranks from the overall mean rank <span class="math inline">\((\bar{R}_{i} - \bar{\bar R})^2\)</span>, as weighted by the group sample size <span class="math inline">\(N_{i}\)</span>.
+The equation is included here only to show the similarity between the calculation of <span class="math inline">\(H\)</span> versus <span class="math inline">\(F\)</span> from <a href="Chapter_24.html#one-way-anova">Section 24.2</a>.
+In the numerator of the equation for <span class="math inline">\(H\)</span>, we are calculating the squared deviation of mean group ranks from the overall mean rank <span class="math inline">\((\bar{R}_{i} - \bar{\bar R})^2\)</span>, as weighted by the group sample size <span class="math inline">\(N_{i}\)</span>.
 We are then dividing by the sum of squared deviations of all ranks (<span class="math inline">\(R_{ij}\)</span>) from the overall mean rank <span class="math inline">\(\bar{\bar R}\)</span>.
-All of this gets multiplied by <span class="math inline">\(N - 1\)</span> to give the test statistic H.
-We can then compare H to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al., 2003</a>)</span>.
-But most statistical programs such as jamovi compare H to a Chi-square distribution (see <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>.</p>
+All of this gets multiplied by <span class="math inline">\(N - 1\)</span> to give the test statistic <span class="math inline">\(H\)</span>.
+We can then compare <span class="math inline">\(H\)</span> to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al., 2003</a>)</span>.
+But most statistical programs such as jamovi compare <span class="math inline">\(H\)</span> to a Chi-square distribution (see <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller &amp; Miller, 2004</a>)</span>.</p>
 <p>The output of a Kruskal-Wallis H test is quite minimal and easy to read.
 Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project, 2024</a>)</span>.
 Figure 26.1 shows the output of a Kruskal-Wallis H test on the fig wasp wing lengths data.</p>
@@ -612,7 +612,7 @@ Figure 26.1 shows the output of a Kruskal-Wallis H test on the fig wasp wing len
 Figure 26.1: Jamovi output table for a non-parametric Kruskal-Wallis H test, which tests the null hypothesis that species mean wing lengths are the same for five different species of fig wasps. Species wing length measurements were collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Given the Kruskal-Wallis H test output (Figure 26.1), we should not reject the null hypothesis that species have different wing lengths because P &gt; 0.05.
+<p>Given the Kruskal-Wallis H test output (Figure 26.1), we should not reject the null hypothesis that species have different wing lengths because <span class="math inline">\(P &gt; 0.05\)</span>.
 This is in contrast to our one-way ANOVA result, for which we did reject the same null hypothesis.
 The Kruskal-Wallis H test does not assume that group variances are the same, unlike the one-way ANOVA.
 Since we know that the homogeneity of variances assumption is violated for the fig wasp data, it is probably best to be cautious and conclude that there is no evidence that mean wing lengths differ among species.</p>

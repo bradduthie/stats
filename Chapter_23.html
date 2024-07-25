@@ -23,7 +23,7 @@
 <meta name="author" content="A. Bradley Duthie" />
 
 
-<meta name="date" content="2024-07-18" />
+<meta name="date" content="2024-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -500,7 +500,7 @@ Your input should look like Figure 23.1.</p>
 Figure 23.1: Jamovi interface for adding a new computed variable called ‘Overall’ and calculating the mean of the three tests.
 </p>
 </div>
-<p>After calculating the overall grade for each student, find the sample size (N), overall sample mean (<span class="math inline">\(\bar{x}\)</span>), and sample standard deviation (<span class="math inline">\(s\)</span>).
+<p>After calculating the overall grade for each student, find the sample size (<span class="math inline">\(N\)</span>), overall sample mean (<span class="math inline">\(\bar{x}\)</span>), and sample standard deviation (<span class="math inline">\(s\)</span>).
 Report these below.</p>
 <p><span class="math inline">\(N =\)</span> __________________</p>
 <p><span class="math inline">\(\bar{x} =\)</span> _______________</p>
@@ -615,11 +615,11 @@ Next, we will consider a case in which the assumption of normality is violated.<
 </div>
 <div id="wilcoxon-test-1" class="section level2 hasAnchor" number="23.3">
 <h2><span class="header-section-number">23.3</span> Wilcoxon test<a href="Chapter_23.html#wilcoxon-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Suppose that we want to test the null hypothesis that the scores from Test 3 of the dataset used in Exercises 1 and 2 were sampled from a population with a mean of <span class="math inline">\(\mu_{0} = 62\)</span>.
+<p>Suppose that we want to test the null hypothesis that the scores from Test 3 of the dataset used in Exercises 23.1 and 23.2 were sampled from a population with a mean of <span class="math inline">\(\mu_{0} = 62\)</span>.
 We are not interested in whether the scores are higher or lower than 62, just that they are different.
 Consequently, what should our alternative hypothesis (<span class="math inline">\(H_{A}\)</span>) be?</p>
 <p><span class="math inline">\(H_{A}\)</span>: ___________________</p>
-<p>Use the same procedure that you did in Exercise 1 to test this new hypothesis concerning Test 3 scores.
+<p>Use the same procedure that you did in Exercise 23.1 to test this new hypothesis concerning Test 3 scores.
 First, check the assumption that the Test 3 scores are normally distributed.
 What is the p-value of the Shapiro-Wilk test this time?</p>
 <p><span class="math inline">\(P\)</span> = ____________________</p>
@@ -695,7 +695,7 @@ This is called a ‘Levene’s test’, and we can interpret it in a similar way
 Figure 23.3: Jamovi interface for running the assumptions of an Independent Samples T-Test. Here, we are testing if the Overall grades of students differ by Year (2022 versus 2023). Assumption Checks include a test for homogeneity of variances (Homogeneity test) and normal distribution of Overall grades (Normality test and Q-Q plot).
 </p>
 </div>
-<p>If our p-value is sufficiently low (P &lt; 0.05), then we reject the null hypothesis that the groups have the same variances.
+<p>If our p-value is sufficiently low (<span class="math inline">\(P &lt; 0.05\)</span>), then we reject the null hypothesis that the groups have the same variances.
 Based on the <strong>Assumption Checks</strong> in jamovi (and Figure 23.3), what can you conclude about the t-test assumptions?</p>
 <pre><code>
 
